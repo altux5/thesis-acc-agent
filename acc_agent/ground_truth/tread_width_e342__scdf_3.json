@@ -1,0 +1,17 @@
+{
+  "case_id": "tread_width_e342__scdf_3",
+  "rule": "The width of a tread must not be less than the minimum required for this type of building.\n\nRegulatory text (the authoritative clause - use it to interpret the requirement; you must still work out how to read it out of the IFC):\nBCA Approved Document (Acceptable Solutions V7.08) - E.3.4 Risers and treads:\nE.3.4.2 The width of a tread of a staircase (see Figure E.3.4.2(a) for measurement of \u201ctread\u201d) shall not be less than:\n  a) 225 mm, if the staircase is in a residential unit within a residential building;\n  b) 250 mm, if the staircase is in an industrial building; or\n  c) 275 mm, if the staircase is in any other type of building, including common staircases in a residential building.\n\nThis model is a building that is neither industrial nor residential, and all of its staircases are common staircases - none of them sits inside a residential unit. A flight whose tread width is not recorded anywhere in the model cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcStairFlight) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Location of exits & access to exits (EIB related)/Test Models/uat2_scdf_2.2.12_3_v1.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "3ekyhSwXP7KgftL3jX3S12": "PASS",
+    "3ekyhSwXP7KgftL3jX3S2d": "PASS",
+    "3ekyhSwXP7KgftL3jX3T_h": "PASS"
+  },
+  "notes": "Solihin & Eastman class 1. Reference implementation on uat2_scdf_2.2.12_3_v1.ifc (other, split=test): 3 anchor IfcStairFlight elements labelled {'PASS': 3}.",
+  "clause": "e.3.4.2",
+  "source": "simple_rules.py::tread_width_e342::scdf_3"
+}

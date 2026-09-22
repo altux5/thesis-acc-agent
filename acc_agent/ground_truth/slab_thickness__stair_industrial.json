@@ -1,0 +1,16 @@
+{
+  "case_id": "slab_thickness__stair_industrial",
+  "rule": "Every slab must have a thickness between 100 mm and 1000 mm inclusive.\n\nSlab thickness is stored under different names depending on the authoring tool: a base-quantity depth, a dimension property, or a vendor-specific property set. A slab with no recorded thickness cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Staircase width/Test models/E3.3 INDUSTRIAL.V2.ifc",
+  "complexity": 1,
+  "threshold_mm": 1000.0,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "3myA1cgH51dvDA3ZBCUzu4": "PASS",
+    "3myA1cgH51dvDA3ZBCUzvZ": "PASS"
+  },
+  "notes": "Solihin & Eastman class 1. Reference implementation on E3.3 INDUSTRIAL.V2.ifc (industrial, split=test): 2 anchor IfcSlab elements labelled {'PASS': 2}.",
+  "clause": "BIM validation",
+  "source": "simple_rules.py::slab_thickness::stair_industrial"
+}

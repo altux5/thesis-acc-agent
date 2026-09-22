@@ -1,0 +1,6 @@
+PROVIDER=openrouter
+MODEL=anthropic/claude-sonnet-4.5
+OPENROUTER_API_KEY=
+MINIMAX_API_KEY=
+REASONING=0
+ENV_PRIMER=1
