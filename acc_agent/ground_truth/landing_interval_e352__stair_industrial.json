@@ -1,0 +1,15 @@
+{
+  "case_id": "landing_interval_e352__stair_industrial",
+  "rule": "Except for spiral staircases, no run of more than 18 risers may occur without an intermediate landing.\n\nRegulatory text (the authoritative clause - use it to interpret the requirement; you must still work out how to read it out of the IFC):\nBCA Approved Document (Acceptable Solutions V7.08) - E.3.5 Landing:\nE.3.5.1 A landing shall be provided at every floor level and door opening.\nE.3.5.2 Except for spiral staircases, an intermediate landing shall be provided in between floor levels at intervals of not more than 18 risers.\n\nA landing separates one stair flight from the next, so a flight that itself contains more than 18 risers runs past the required landing interval. A flight whose riser count is not recorded cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcStairFlight) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Staircase width/Test models/E3.3 INDUSTRIAL.V2.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "3myA1cgH51dvDA3ZBCUzx7": "ALERT"
+  },
+  "notes": "Solihin & Eastman class 2. Reference implementation on E3.3 INDUSTRIAL.V2.ifc (industrial, split=test): 1 anchor IfcStairFlight elements labelled {'ALERT': 1}.",
+  "clause": "e.3.5.2",
+  "source": "simple_rules.py::landing_interval_e352::stair_industrial"
+}

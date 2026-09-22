@@ -1,0 +1,3310 @@
+{
+  "case_id": "slab_thickness__mall_v2",
+  "rule": "Every slab must have a thickness between 100 mm and 1000 mm inclusive.\n\nSlab thickness is stored under different names depending on the authoring tool: a base-quantity depth, a dimension property, or a vendor-specific property set. A slab with no recorded thickness cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Headroom/Test Models/beta mall_UAT1_v6.4.ifc",
+  "complexity": 1,
+  "threshold_mm": 1000.0,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "09zUu1LI6eXGUOEmUdSxp_": "ALERT",
+    "0H3lYi$2hpBY4$BnyR5b7S": "ALERT",
+    "0NaMhR93H5peOrMQRZHykw": "PASS",
+    "0NaMhR93H5peOrMQRZHzVQ": "PASS",
+    "0NaMhR93H5peOrMQRZHzlZ": "PASS",
+    "0NaMhR93H5peOrMQRZHzv7": "PASS",
+    "0VaBaLYsrEAeSmjl5wBD$C": "PASS",
+    "0VaBaLYsrEAeSmjl5wBD3D": "PASS",
+    "0VaBaLYsrEAeSmjl5wBD8G": "PASS",
+    "0aOOtCZwiInyAmD4EKiLMN": "ALERT",
+    "0sqOwQDQ98jOlJ6bNI2qHQ": "PASS",
+    "0sqOwQDQ98jOlJ6bNI2rb6": "PASS",
+    "0sqOwQDQ98jOlJ6bNI2rkE": "PASS",
+    "0x3uWE0yL0qxJznmCGuEuQ": "PASS",
+    "0yAKpbt_j1r9QmibL1Lz34": "PASS",
+    "0zSawmR2r0h8FA7HJTz2hC": "PASS",
+    "15dGhv5J9BEhWJpRxfuEMj": "PASS",
+    "15dGhv5J9BEhWJpRxfuETC": "PASS",
+    "16eD2_sevC99$piXHZ0PBf": "PASS",
+    "1J$z6BjNbEiAfGnVGLbRah": "PASS",
+    "1J$z6BjNbEiAfGnVGLbRcJ": "PASS",
+    "1J$z6BjNbEiAfGnVGLbS9E": "PASS",
+    "1J$z6BjNbEiAfGnVGLbSIr": "PASS",
+    "1J$z6BjNbEiAfGnVGLbSJe": "PASS",
+    "1J$z6BjNbEiAfGnVGLbT$V": "PASS",
+    "1J$z6BjNbEiAfGnVGLbT6V": "PASS",
+    "1J$z6BjNbEiAfGnVGLbTR2": "PASS",
+    "1J$z6BjNbEiAfGnVGLbTvs": "PASS",
+    "1J$z6BjNbEiAfGnVGLbV63": "PASS",
+    "1J$z6BjNbEiAfGnVGLbVi4": "PASS",
+    "1J$z6BjNbEiAfGnVGLbVjO": "PASS",
+    "1J$z6BjNbEiAfGnVGLbVpH": "PASS",
+    "1J$z6BjNbEiAfGnVGLbVs3": "PASS",
+    "1J$z6BjNbEiAfGnVGLbVus": "PASS",
+    "1PQCq0b21FPPz$FWGArZCB": "PASS",
+    "1USkUC81TD988OYvhRzrAt": "PASS",
+    "1ZqocTetf6$fCthUDu48be": "PASS",
+    "1_sjoFQDPBkQ0xaBIHe5_s": "PASS",
+    "1_sjoFQDPBkQ0xaBIHe5vl": "PASS",
+    "1_sjoFQDPBkQ0xaBIHe5xN": "PASS",
+    "1eP2ijolHBVBHZ42vyF$NX": "PASS",
+    "1eP2ijolHBVBHZ42vyF_0b": "PASS",
+    "1eP2ijolHBVBHZ42vyF_8x": "PASS",
+    "1eP2ijolHBVBHZ42vyF_Hr": "PASS",
+    "1eP2ijolHBVBHZ42vyF_kZ": "PASS",
+    "1eP2ijolHBVBHZ42vyF_lB": "PASS",
+    "1eP2ijolHBVBHZ42vyFuJS": "PASS",
+    "1eP2ijolHBVBHZ42vyFuWI": "PASS",
+    "1eP2ijolHBVBHZ42vyFug3": "PASS",
+    "1tK89PzXr2OPnbn5o0$EWg": "PASS",
+    "1uhFyMtjf70Rwoq1ysFftQ": "PASS",
+    "1yK8GtZrXBCfh4Tzh7GeXA": "PASS",
+    "1yK8GtZrXBCfh4Tzh7Geja": "PASS",
+    "1yK8GtZrXBCfh4Tzh7Gepu": "PASS",
+    "1yK8GtZrXBCfh4Tzh7Geym": "PASS",
+    "1yt7FqvfuiQh6s5kIxcMMq": "ALERT",
+    "22KrR6OPjFB8$H01Xk0ThZ": "PASS",
+    "22KrR6OPjFB8$H01Xk0TiE": "PASS",
+    "24c7$xi954nOCCkGbkZaxo": "PASS",
+    "24c7$xi954nOCCkGbkZg9a": "PASS",
+    "24c7$xi954nOCCkGbkZh2I": "PASS",
+    "24c7$xi954nOCCkGbkZhMv": "PASS",
+    "24c7$xi954nOCCkGbkZhcg": "PASS",
+    "24c7$xi954nOCCkGbkZhta": "PASS",
+    "24c7$xi954nOCCkGbkZi66": "PASS",
+    "24c7$xi954nOCCkGbkZkm7": "PASS",
+    "28f2ax195bun20vkQ4sIS6": "ALERT",
+    "2K_o8APEIgoSIfcFpihngH": "ALERT",
+    "2NeAykLghDzPTe9JbWIM0E": "ALERT",
+    "2XdADGt6D17gkCuO1NDqbD": "PASS",
+    "2bITg05VT0QhaBJJBSQtW9": "PASS",
+    "2jRzzva4cbn1jj6dBWQtKu": "ALERT",
+    "2nnmn$wtvDQO1W9NS56g6F": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9e": "PASS",
+    "2nnmn$wtvDQO1W9NS56hMG": "PASS",
+    "2othVyEOv04e9ZEWny$0SU": "PASS",
+    "2othVyEOv04e9ZEWny$0TO": "PASS",
+    "2othVyEOv04e9ZEWny$0V2": "PASS",
+    "2othVyEOv04e9ZEWny$2I4": "PASS",
+    "2othVyEOv04e9ZEWny$3xP": "PASS",
+    "2rK8nl2OrCnwKCZCMRpG4p": "PASS",
+    "2rK8nl2OrCnwKCZCMRpGHD": "PASS",
+    "2rK8nl2OrCnwKCZCMRpGIz": "PASS",
+    "2rK8nl2OrCnwKCZCMRpGQK": "PASS",
+    "2rglNVXTnAmwX4CbILOvxz": "PASS",
+    "30kv45cpL50v0MZiKsl8ec": "PASS",
+    "30kv45cpL50v0MZiKsl8jU": "PASS",
+    "30kv45cpL50v0MZiKsl9q7": "PASS",
+    "30kv45cpL50v0MZiKsl9sr": "PASS",
+    "30kv45cpL50v0MZiKsl9z2": "PASS",
+    "30kv45cpL50v0MZiKslBHG": "PASS",
+    "30kv45cpL50v0MZiKslBI3": "PASS",
+    "30kv45cpL50v0MZiKslBm8": "PASS",
+    "30kv45cpL50v0MZiKslBr8": "PASS",
+    "30kv45cpL50v0MZiKslEc3": "PASS",
+    "30kv45cpL50v0MZiKslEhG": "PASS",
+    "30kv45cpL50v0MZiKslEnC": "PASS",
+    "30kv45cpL50v0MZiKslF77": "PASS",
+    "30kv45cpL50v0MZiKslFn0": "PASS",
+    "30kv45cpL50v0MZiKslFnE": "PASS",
+    "32pGJniqfA8P8p29AMlGrM": "PASS",
+    "32pGJniqfA8P8p29AMlLDS": "PASS",
+    "32pGJniqfA8P8p29AMlN02": "PASS",
+    "3A5s8Y1G8J12k3wutCHeQ7": "ALERT",
+    "3CkY$adyn4NAKdZIUfYfEv": "ALERT",
+    "3U7wYY2zj3Zxbv8m9vX7ug": "PASS",
+    "3U7wYY2zj3Zxbv8m9vX7w2": "PASS",
+    "3U7wYY2zj3Zxbv8m9vX7xN": "PASS",
+    "3XZTdBhnZDWAIntmK2lGu4": "ALERT",
+    "3YWpfLml5HmVCLNio220rz": "ALERT",
+    "3sk7tA6$f2TOPF01$Pu32G": "PASS",
+    "3u9HHxN2L01x5PoEnuILUe": "PASS"
+  },
+  "notes": "Version 2: 100 PASS, 12 ALERT, 0 FAIL. Property-based coverage/missing-data/false-positive control, not a violation-recall benchmark. Legacy version remains unchanged.",
+  "clause": "BIM validation",
+  "source": "slab_reference.py::build_case",
+  "reference": {
+    "version": 2,
+    "supersedes": "slab_thickness__mall",
+    "review_date": "2026-09-07",
+    "status": "evidence-backed project adjudication; not expert regulatory certification",
+    "ifc_sha256": "544b8251f0f2dfb4e1e97df82a8b87a049d04609f8bc3a03ad36a6cceec6e77b",
+    "length_scale_to_mm": 1.0,
+    "population": "All IfcSlab, including landings",
+    "policy": "Recorded total/monolithic thickness within 100-1000 mm with 0.5 mm numerical tolerance; missing recorded thickness is ALERT. No geometry substitution.",
+    "limitations": "Two agreeing properties may originate from the same authoring tool and are not independent expert judgements. Conflicting base-depth interpretation is specific to the audited mall export. Zero FAIL labels means violation recall cannot be evaluated."
+  },
+  "provenance": {
+    "09zUu1LI6eXGUOEmUdSxp_": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 3:2",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "0H3lYi$2hpBY4$BnyR5b7S": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 1:2",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "0NaMhR93H5peOrMQRZHykw": {
+      "name": "Floor:Floor_500_200_100:618846",
+      "label": "PASS",
+      "value_mm": 500.00000000000006,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 328853,
+          "value": 500.00000000000006,
+          "value_mm": 500.00000000000006,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 328850,
+          "value": 500.00000000000006,
+          "value_mm": 500.00000000000006,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 328833,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 328833,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0NaMhR93H5peOrMQRZHzVQ": {
+      "name": "Floor:Floor_550_200_150:617790",
+      "label": "PASS",
+      "value_mm": 550.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 328572,
+          "value": 550.0,
+          "value_mm": 550.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 328569,
+          "value": 550.0,
+          "value_mm": 550.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 328551,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 328551,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0NaMhR93H5peOrMQRZHzlZ": {
+      "name": "Floor:Floor_200_0:614663",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 326367,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0NaMhR93H5peOrMQRZHzv7": {
+      "name": "Floor:Floor_400_200:615587",
+      "label": "PASS",
+      "value_mm": 400.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 328157,
+          "value": 400.0,
+          "value_mm": 400.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 328154,
+          "value": 400.0,
+          "value_mm": 400.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 328130,
+          "value": 200.0000000000065,
+          "value_mm": 200.0000000000065,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 328130,
+        "value": 200.0000000000065,
+        "value_mm": 200.0000000000065,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0VaBaLYsrEAeSmjl5wBD$C": {
+      "name": "Floor:Floor_250_50:719028",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 438353,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 438342,
+          "value": 246.59848095803738,
+          "value_mm": 246.59848095803738,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 438342,
+        "value": 246.59848095803738,
+        "value_mm": 246.59848095803738,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0VaBaLYsrEAeSmjl5wBD3D": {
+      "name": "Cast-In-Place Stair:Stair:717687 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 438091,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 438056,
+          "value": 1050.00096069096,
+          "value_mm": 1050.00096069096,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 438056,
+        "value": 1050.00096069096,
+        "value_mm": 1050.00096069096,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0VaBaLYsrEAeSmjl5wBD8G": {
+      "name": "Floor:Floor_250_50:718184",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 438150,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 438139,
+          "value": 248.97330161692474,
+          "value_mm": 248.97330161692474,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 438139,
+        "value": 248.97330161692474,
+        "value_mm": 248.97330161692474,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0aOOtCZwiInyAmD4EKiLMN": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 1:3",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "0sqOwQDQ98jOlJ6bNI2qHQ": {
+      "name": "Floor:Floor_200_0:905244",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 495108,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 495093,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0sqOwQDQ98jOlJ6bNI2rb6": {
+      "name": "Cast-In-Place Stair:Stair:903266 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 495011,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0sqOwQDQ98jOlJ6bNI2rkE": {
+      "name": "Floor:Floor_200_0:905160",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 495061,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 495047,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0x3uWE0yL0qxJznmCGuEuQ": {
+      "name": "Floor:Floor_200_0:692600",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 393016,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 393001,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0yAKpbt_j1r9QmibL1Lz34": {
+      "name": "Cast-In-Place Stair:Stair:712029 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 437426,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "0zSawmR2r0h8FA7HJTz2hC": {
+      "name": "Floor:Floor_200_0:674397",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 385995,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 385980,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "15dGhv5J9BEhWJpRxfuEMj": {
+      "name": "Cast-In-Place Stair:Stair:714519 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 437683,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "15dGhv5J9BEhWJpRxfuETC": {
+      "name": "Floor:Floor_200_0:716629",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 437734,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 437719,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "16eD2_sevC99$piXHZ0PBf": {
+      "name": "Cast-In-Place Stair:Stair:660035 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 381784,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 381731,
+          "value": 1599.9999999999914,
+          "value_mm": 1599.9999999999914,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 381731,
+        "value": 1599.9999999999914,
+        "value_mm": 1599.9999999999914,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbRah": {
+      "name": "Floor:Floor_200_0:499710",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 120574,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 120559,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbRcJ": {
+      "name": "Floor:Floor_200_0:499526",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 120528,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 120513,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbS9E": {
+      "name": "Floor:Floor_200_0:517275",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 134145,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 134130,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbSIr": {
+      "name": "Floor:Floor_200_0:516704",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 133872,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 133857,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbSJe": {
+      "name": "Floor:Floor_200_0:516669",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 133827,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 133812,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbT$V": {
+      "name": "Floor:Floor_200_0:522506",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 135352,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbT6V": {
+      "name": "Floor:Floor_200_0:522058",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 135110,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 135095,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbTR2": {
+      "name": "Floor:Floor_200_0:520215",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 134524,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 134509,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbTvs": {
+      "name": "Floor:Floor_200_0:522403",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 135220,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbV63": {
+      "name": "Floor:Floor_200_0:513878",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 128601,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbVi4": {
+      "name": "Floor:Floor_250_50:515537",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 129853,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 129825,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 129825,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbVjO": {
+      "name": "Floor:Floor_250_50:515469",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 129705,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 129690,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 129690,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbVpH": {
+      "name": "Floor:Floor_250_50:514564",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 129248,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 129215,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 129215,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbVs3": {
+      "name": "Floor:Floor_200_0:514902",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 129616,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1J$z6BjNbEiAfGnVGLbVus": {
+      "name": "Floor:Floor_200_0:514275",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 129051,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1PQCq0b21FPPz$FWGArZCB": {
+      "name": "Floor:Floor_200_0:867617",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 490364,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1USkUC81TD988OYvhRzrAt": {
+      "name": "Floor:Floor_200_0:676134",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 386124,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 386110,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1ZqocTetf6$fCthUDu48be": {
+      "name": "Floor:Floor_250_50:556296",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 229789,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 229743,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 229743,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1_sjoFQDPBkQ0xaBIHe5_s": {
+      "name": "Floor:Floor_200_0:851804",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 482729,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 482714,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1_sjoFQDPBkQ0xaBIHe5vl": {
+      "name": "Floor:Floor_200_0:851589",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 482684,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 482669,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1_sjoFQDPBkQ0xaBIHe5xN": {
+      "name": "Floor:Floor_200_0:851517",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 482639,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 482624,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyF$NX": {
+      "name": "Cast-In-Place Stair:Stair:669888 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 385484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyF_0b": {
+      "name": "Cast-In-Place Stair:Stair:666419 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 383114,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyF_8x": {
+      "name": "Cast-In-Place Stair:Stair:667078 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 383281,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyF_Hr": {
+      "name": "Cast-In-Place Stair:Stair:663789 Landing 3",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 382989,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyF_kZ": {
+      "name": "Cast-In-Place Stair:Stair:663789 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 382982,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 382882,
+          "value": 1299.9999999696981,
+          "value_mm": 1299.9999999696981,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 382882,
+        "value": 1299.9999999696981,
+        "value_mm": 1299.9999999696981,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyF_lB": {
+      "name": "Cast-In-Place Stair:Stair:663789 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 382975,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 382875,
+          "value": 1300.0000000000337,
+          "value_mm": 1300.0000000000337,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 382875,
+        "value": 1300.0000000000337,
+        "value_mm": 1300.0000000000337,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyFuJS": {
+      "name": "Cast-In-Place Stair:Stair:672593 Landing 3",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 385952,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyFuWI": {
+      "name": "Cast-In-Place Stair:Stair:672593 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 385938,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1eP2ijolHBVBHZ42vyFug3": {
+      "name": "Cast-In-Place Stair:Stair:672593 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 385945,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1tK89PzXr2OPnbn5o0$EWg": {
+      "name": "Floor:Floor_100_0_Slope:646225",
+      "label": "PASS",
+      "value_mm": 100.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 381101,
+          "value": 100.0,
+          "value_mm": 100.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 381098,
+          "value": 100.0,
+          "value_mm": 100.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1uhFyMtjf70Rwoq1ysFftQ": {
+      "name": "Floor:Floor_200_0:659816",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 381625,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 381610,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1yK8GtZrXBCfh4Tzh7GeXA": {
+      "name": "Floor:Floor_200_0:619862",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 329021,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 329006,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1yK8GtZrXBCfh4Tzh7Geja": {
+      "name": "Floor:Floor_200_0:620152",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 329068,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 329053,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1yK8GtZrXBCfh4Tzh7Gepu": {
+      "name": "Floor:Floor_200_0:618980",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 328912,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 328897,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1yK8GtZrXBCfh4Tzh7Geym": {
+      "name": "Floor:Floor_200_0:619052",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 328957,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 328942,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "1yt7FqvfuiQh6s5kIxcMMq": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 2:3",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "22KrR6OPjFB8$H01Xk0ThZ": {
+      "name": "Cast-In-Place Stair:Stair:454289 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 112898,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 112743,
+          "value": 1100.0000000000184,
+          "value_mm": 1100.0000000000184,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 112743,
+        "value": 1100.0000000000184,
+        "value_mm": 1100.0000000000184,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "22KrR6OPjFB8$H01Xk0TiE": {
+      "name": "Cast-In-Place Stair:Stair:454289 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 112881,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 112736,
+          "value": 1174.9999999999927,
+          "value_mm": 1174.9999999999927,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 112736,
+        "value": 1174.9999999999927,
+        "value_mm": 1174.9999999999927,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZaxo": {
+      "name": "Floor:Floor_200_0:491819",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 120396,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 120381,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZg9a": {
+      "name": "Floor:Floor_200_0:486845",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 119826,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 119811,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZh2I": {
+      "name": "Floor:Floor_200_0:491339",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 120351,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 120336,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZhMv": {
+      "name": "Floor:Floor_200_0:490080",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 120306,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 120291,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZhcg": {
+      "name": "Floor:Floor_200_0:489075",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 120039,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 120024,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZhta": {
+      "name": "Floor:Floor_200_0:487997",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 119993,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 119978,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZi66": {
+      "name": "Floor:Floor_200_0:462431",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 113003,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 112988,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "24c7$xi954nOCCkGbkZkm7": {
+      "name": "Floor:Floor_250_50:467934",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 113126,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 113109,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 113109,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "28f2ax195bun20vkQ4sIS6": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 2:2",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "2K_o8APEIgoSIfcFpihngH": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 1:3",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "2NeAykLghDzPTe9JbWIM0E": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 2:2",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "2XdADGt6D17gkCuO1NDqbD": {
+      "name": "Floor:Floor_200_0:787071",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 463395,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 463380,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2bITg05VT0QhaBJJBSQtW9": {
+      "name": "Floor:Floor_200_0:853787",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 485181,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 485166,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2jRzzva4cbn1jj6dBWQtKu": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 1:2",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "2nnmn$wtvDQO1W9NS56g6F": {
+      "name": "Floor:Floor_250_50:610000",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 298631,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 298593,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 298593,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2nnmn$wtvDQO1W9NS56h9e": {
+      "name": "Floor:Floor_250_50:613687",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 326251,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 326219,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 326219,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2nnmn$wtvDQO1W9NS56hMG": {
+      "name": "Floor:Floor_250_50:613071",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 310024,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 309986,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 309986,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2othVyEOv04e9ZEWny$0SU": {
+      "name": "Cast-In-Place Stair:Stair:676994 Landing 3",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 386575,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2othVyEOv04e9ZEWny$0TO": {
+      "name": "Cast-In-Place Stair:Stair:676994 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 386568,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2othVyEOv04e9ZEWny$0V2": {
+      "name": "Cast-In-Place Stair:Stair:676994 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 386561,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2othVyEOv04e9ZEWny$2I4": {
+      "name": "Floor:Floor_200_0:685662",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 390726,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 390711,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2othVyEOv04e9ZEWny$3xP": {
+      "name": "Floor:Floor_200_0:683011",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 386618,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 386603,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2rK8nl2OrCnwKCZCMRpG4p": {
+      "name": "Floor:Floor_250_50:720107",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 438546,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 438535,
+          "value": 249.44628946403847,
+          "value_mm": 249.44628946403847,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 438535,
+        "value": 249.44628946403847,
+        "value_mm": 249.44628946403847,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2rK8nl2OrCnwKCZCMRpGHD": {
+      "name": "Floor:Floor_250_50:719253",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 438485,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 438470,
+          "value": 199.99999999999784,
+          "value_mm": 199.99999999999784,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 438470,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2rK8nl2OrCnwKCZCMRpGIz": {
+      "name": "Floor:Floor_250_50:719205",
+      "label": "PASS",
+      "value_mm": 250.00000000000003,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 113129,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 438420,
+          "value": 250.00000000000003,
+          "value_mm": 250.00000000000003,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 438410,
+          "value": 249.1364395612194,
+          "value_mm": 249.1364395612194,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 438410,
+        "value": 249.1364395612194,
+        "value_mm": 249.1364395612194,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2rK8nl2OrCnwKCZCMRpGQK": {
+      "name": "Cast-In-Place Stair:Stair:718931 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 438294,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 438259,
+          "value": 1049.9999998322635,
+          "value_mm": 1049.9999998322635,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 438259,
+        "value": 1049.9999998322635,
+        "value_mm": 1049.9999998322635,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "2rglNVXTnAmwX4CbILOvxz": {
+      "name": "Cast-In-Place Stair:Stair:872457 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 491679,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 491640,
+        "value": 199.99999999999997,
+        "value_mm": 199.99999999999997,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKsl8ec": {
+      "name": "Cast-In-Place Stair:Stair:841658 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 481693,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 481618,
+          "value": 1250.000000000005,
+          "value_mm": 1250.000000000005,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 481618,
+        "value": 1250.000000000005,
+        "value_mm": 1250.000000000005,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKsl8jU": {
+      "name": "Cast-In-Place Stair:Stair:841658 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 481686,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 481611,
+          "value": 1249.999999999993,
+          "value_mm": 1249.999999999993,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 481611,
+        "value": 1249.999999999993,
+        "value_mm": 1249.999999999993,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKsl9q7": {
+      "name": "Cast-In-Place Stair:Stair:837318 Landing 3",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 481368,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKsl9sr": {
+      "name": "Cast-In-Place Stair:Stair:837318 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 481361,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKsl9z2": {
+      "name": "Cast-In-Place Stair:Stair:837318 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 481354,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslBHG": {
+      "name": "Cast-In-Place Stair:Stair:844364 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 482043,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 481968,
+          "value": 1250.000000000005,
+          "value_mm": 1250.000000000005,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 481968,
+        "value": 1250.000000000005,
+        "value_mm": 1250.000000000005,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslBI3": {
+      "name": "Cast-In-Place Stair:Stair:844364 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 482036,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 481961,
+          "value": 1249.999999999967,
+          "value_mm": 1249.999999999967,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 481961,
+        "value": 1249.999999999967,
+        "value_mm": 1249.999999999967,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslBm8": {
+      "name": "Cast-In-Place Stair:Stair:846213 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 482474,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 482398,
+          "value": 1250.000000000005,
+          "value_mm": 1250.000000000005,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 482398,
+        "value": 1250.000000000005,
+        "value_mm": 1250.000000000005,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslBr8": {
+      "name": "Cast-In-Place Stair:Stair:846213 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 482467,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 482391,
+          "value": 1249.999999999967,
+          "value_mm": 1249.999999999967,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 482391,
+        "value": 1249.999999999967,
+        "value_mm": 1249.999999999967,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslEc3": {
+      "name": "Cast-In-Place Stair:Stair:832977 Landing 3",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 480896,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslEhG": {
+      "name": "Cast-In-Place Stair:Stair:832977 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 480889,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslEnC": {
+      "name": "Cast-In-Place Stair:Stair:832977 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 480882,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslF77": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 480425,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslFn0": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 480432,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "30kv45cpL50v0MZiKslFnE": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 3",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 480439,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "32pGJniqfA8P8p29AMlGrM": {
+      "name": "Floor:Floor_200_0:442147",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 101480,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "32pGJniqfA8P8p29AMlLDS": {
+      "name": "Floor:Floor_200_0:450857",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 105944,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 105914,
+        "value": 200.0,
+        "value_mm": 200.0,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "32pGJniqfA8P8p29AMlN02": {
+      "name": "Floor:Floor_200_0:442999",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 101749,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "3A5s8Y1G8J12k3wutCHeQ7": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 2:3",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "3CkY$adyn4NAKdZIUfYfEv": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 3:2",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "3U7wYY2zj3Zxbv8m9vX7ug": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 3",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 382540,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "3U7wYY2zj3Zxbv8m9vX7w2": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 1",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 382526,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 382381,
+          "value": 1299.9999999696981,
+          "value_mm": 1299.9999999696981,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 382381,
+        "value": 1299.9999999696981,
+        "value_mm": 1299.9999999696981,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "3U7wYY2zj3Zxbv8m9vX7xN": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 2",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Monolithic Thickness",
+          "ifc_id": 112883,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Total Thickness",
+          "ifc_id": 382533,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [
+        {
+          "path": "Qto_SlabBaseQuantities.Depth",
+          "ifc_id": 382388,
+          "value": 1300.0000000000337,
+          "value_mm": 1300.0000000000337,
+          "units": "IFC project length unit (no quantity override)",
+          "reason": "Exported base depth conflicts with agreeing explicit thickness fields. Excluded under this mall-specific adjudication, not a universal IFC priority rule."
+        }
+      ],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 382388,
+        "value": 1300.0000000000337,
+        "value_mm": 1300.0000000000337,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "3XZTdBhnZDWAIntmK2lGu4": {
+      "name": "Cast-In-Place Stair:Stair:825294 Landing 3:3",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "3YWpfLml5HmVCLNio220rz": {
+      "name": "Cast-In-Place Stair:Stair:661822 Landing 3:3",
+      "label": "ALERT",
+      "value_mm": null,
+      "sources": [],
+      "conflicting_sources": [],
+      "decision": "No recorded thickness in instance or inherited type property sets. Geometry is not a fallback under this rule."
+    },
+    "3sk7tA6$f2TOPF01$Pu32G": {
+      "name": "Floor:Floor_200_0:519978",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 134477,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": null,
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    },
+    "3u9HHxN2L01x5PoEnuILUe": {
+      "name": "Floor:Floor_200_0:894063",
+      "label": "PASS",
+      "value_mm": 200.0,
+      "sources": [
+        {
+          "path": "Construction.Default Thickness",
+          "ifc_id": 101484,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        },
+        {
+          "path": "Dimensions.Thickness",
+          "ifc_id": 494285,
+          "value": 200.0,
+          "value_mm": 200.0,
+          "units": "IFC project length unit (no property override)"
+        }
+      ],
+      "conflicting_sources": [],
+      "quantity_depth": {
+        "path": "Qto_SlabBaseQuantities.Depth",
+        "ifc_id": 494270,
+        "value": 199.99999999999784,
+        "value_mm": 199.99999999999784,
+        "units": "IFC project length unit (no quantity override)"
+      },
+      "decision": "Explicit dimension and construction thickness values agree. Use recorded total/monolithic slab thickness; do not substitute a conflicting exported base depth."
+    }
+  }
+}

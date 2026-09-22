@@ -1,0 +1,16 @@
+{
+  "case_id": "riser_height_e341__planterbox",
+  "rule": "The height of a riser must not be more than 175 mm.\n\nRegulatory text (the authoritative clause - use it to interpret the requirement; you must still work out how to read it out of the IFC):\nBCA Approved Document (Acceptable Solutions V7.08) - E.3.4 Risers and treads:\nE.3.4.1 The height of a riser shall not be more than 175 mm. (see Figure E.3.4.2(a) for measurement of \u201criser\u201d)\n\nThe riser height is the vertical rise of one step of a stair flight. A flight whose riser height is not recorded anywhere in the model cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcStairFlight) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Planter boxes/Test models/20240313_URA_Planterbox.ifc",
+  "complexity": 1,
+  "threshold_mm": 175.0,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "1htswfSyH2TvqYjduovEE8": "PASS",
+    "1htswfSyH2TvqYjduovEEA": "PASS"
+  },
+  "notes": "Solihin & Eastman class 1. Reference implementation on 20240313_URA_Planterbox.ifc (other, split=train): 2 anchor IfcStairFlight elements labelled {'PASS': 2}.",
+  "clause": "e.3.4.1",
+  "source": "simple_rules.py::riser_height_e341::planterbox"
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "planter_box_gfa",
+  "rule": "Determine depth and width of planter box to exclude or add in gfa.\n\nReport the GlobalId of every element (modelled as IfcFurniture) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Planter boxes/Test models/20240313_URA_Planterbox.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": null,
+  "violations": [
+    "0Jq$VcATn1YuQDyanOGt8m",
+    "0Jq$VcATn1YuQDyanOGtXE",
+    "0Jq$VcATn1YuQDyanOGtwf",
+    "0Jq$VcATn1YuQDyanOGut1",
+    "1htswfSyH2TvqYjduovEQL",
+    "1htswfSyH2TvqYjduovERI",
+    "1htswfSyH2TvqYjduovETR"
+  ],
+  "labels": {
+    "0Jq$VcATn1YuQDyanOGt8m": "FAIL",
+    "0Jq$VcATn1YuQDyanOGtXE": "FAIL",
+    "0Jq$VcATn1YuQDyanOGtwf": "FAIL",
+    "0Jq$VcATn1YuQDyanOGut1": "FAIL",
+    "1htswfSyH2TvqYjduovEQL": "FAIL",
+    "1htswfSyH2TvqYjduovERI": "FAIL",
+    "1htswfSyH2TvqYjduovETR": "FAIL",
+    "1htswfSyH2TvqYjduovEU2": "PASS"
+  },
+  "notes": "Imported from gt_comparison. 7 fail / 8 labelled rows; expert buckets {'pass': 1, 'fail': 7} -> labels {'FAIL': 7, 'PASS': 1}.",
+  "clause": "-",
+  "source": "planter_box.xlsx::20240313_URA_Planterbox::-"
+}
