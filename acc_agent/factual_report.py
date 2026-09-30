@@ -355,10 +355,12 @@ def render_text(report: Report, include_timeline: bool = True) -> str:
     lines.append("Labels submitted are not proof of inspection. Missing log content cannot be recovered.")
     if report.metadata.get("Harness", "").startswith("level 3"):
         lines.append("WARNING: level 3 uses same-case reference feedback; TRAIN results only.")
-    if report.metadata.get("Case") == "slab_thickness__mall":
-        lines.append("WARNING: this slab reference is known to be invalid (see NOTES.md); do not rank agents by these scores.")
-    if report.metadata.get("Case") == "slab_thickness__mall_v2":
-        lines.append("WARNING: reference v2 is a 100 PASS / 12 ALERT / zero FAIL control. F1 cannot measure violation detection on this case.")
+    if report.metadata.get("Case") in ("slab_thickness__mall", "slab_thickness__mall_deprecated_v1"):
+        # Pre-2026-09-30 logs used the plain ID for the invalid legacy reference; its logs record no version 2.
+        if report.metadata.get("Reference") == "2":
+            lines.append("WARNING: reference v2 is a 100 PASS / 12 ALERT / zero FAIL control. F1 cannot measure violation detection on this case.")
+        else:
+            lines.append("WARNING: this slab reference is known to be invalid (see NOTES.md); do not rank agents by these scores.")
     if len(report.runs) < report.expected_runs:
         lines.append("WARNING: fewer runs logged than requested; sweep may be interrupted.")
     for mode in dict.fromkeys(run.mode for run in report.runs):

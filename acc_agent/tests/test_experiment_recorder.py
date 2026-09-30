@@ -184,7 +184,7 @@ class RecorderTests(unittest.TestCase):
             with store.connection() as connection:
                 details = json.loads(connection.execute("SELECT details FROM runs WHERE id=?", (row["id"],)).fetchone()["details"])
             self.assertEqual(details["messages"], result.transcript)
-            self.assertEqual(details["agent_protocol"], "langchain-codeact-v1")
+            self.assertEqual(details["agent_protocol"], "langchain-codeact-v2")
             transcript = json.loads(Path(row["log_path"]).read_text(encoding="utf-8"))
             self.assertEqual(transcript["completion_status"], "complete")
             self.assertEqual(transcript["messages"], result.transcript)

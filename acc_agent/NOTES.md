@@ -15,6 +15,14 @@ by the dated decisions and changelog entries.
 entry to the Changelog for anything that changes behaviour or numbers. Keep it
 terse; this file is read before work starts, so length costs.
 
+**Case names (decision 2026-09-30, user):** a case ID names the check and never
+changes; the current reference owns the plain ID. No `_v2`/`_full`-style tags. An
+update keeps the old file as `<case_id>_deprecated_v<N>` (oldest N=1, never
+renumbered or reused), sets `supersedes`, and writes the new reference under the
+same ID. The GUI hides deprecated cases. Rules in [instruction.md](instruction.md).
+Earlier entries below use the old names; the mapping is
+`ground_truth.RENAMED_BEFORE_2026_09_30`.
+
 ---
 
 ## Environment and paths
@@ -74,9 +82,10 @@ terse; this file is read before work starts, so length costs.
   is covered by `test_survives_a_caller_patching_threading_thread`.
 - **The kernel is containment, not a sandbox.** The worker runs as the same user with
   the same filesystem access and can still read `ground_truth/`, the SQLite DB and a
-  `.env` file. Each worker gets a private temp directory as its cwd, so a *relative*
-  write neither lands in the source tree nor outlives the worker; an *absolute* write
-  still persists. Known API-key-shaped env vars and all `PYTHON*` vars are dropped from
+  `.env` file. Each worker gets a private temp directory as its cwd and `TEMP`. Since
+  2026-09-30 an audit hook refuses Python-level writes outside it (`open` in write
+  modes, `os`/`shutil` mutations, moves out); native extension writes are not covered
+  and reads are unrestricted. Known API-key-shaped env vars and all `PYTHON*` vars are dropped from
   its environment, which reduces exposure without preventing it. Native writes to fd 1
   are redirected to stderr rather than captured (same as in-process, where they went to
   the console). The host's imported-code fingerprint cannot attest what the worker ran,
@@ -120,11 +129,17 @@ terse; this file is read before work starts, so length costs.
   appends `[truncated N characters]` and keeps a separate traceback (max6000chars).
   New logs/DB use structured error/truncation flags. Legacy logs use text fallback.
   This does not limit arbitrary code allocation, CPU time or filesystem effects.
-- **Staircase ground truth is incomplete.** The IFC has 59 stairs, but only 49
-  have expert labels. Since 2026-09-17, `annotated-subset-v1` explicitly excludes
-  the ten unannotated IFC IDs from agreement metrics and level-3 feedback only.
-  Completion still requires all 59; unannotated does not mean PASS, FAIL or NA.
-  Report accuracy as agreement on the 49 authored labels, not all stairs.
+- **Staircase hard case is now `staircase_width_v8_full`.** All 59 stairs are
+  labelled (26 PASS / 23 FAIL / 6 NA / 4 MANUAL_CHECK). The 49-stair subset case
+  `staircase_width_v8` is unchanged, marked Review/superseded, and keeps its
+  `annotated-subset-v1` scoring for historical comparisons. Never pool the two.
+  The full case's rule states E.2.1/E.2.4 plus the reference checker's manual-check
+  and width conventions; those conventions are benchmark policy, not regulation.
+- **The full staircase audit does not recompute geometry.** `audit_case` checks the
+  recorded evidence against the workbook, adjudications and IFC hash in seconds.
+  Geometry regeneration loads ~620k triangles (railings dominate) and takes about
+  two minutes: run `python acc_agent/stair_width_reference.py --check` after
+  changing the builder or model files.
 - **Harness level 3 leaks.** The run is scored against the case it is being graded on.
   Those results carry `feedback_leakage: true` and are **train numbers only**. Levels
   1 and 2 are leakage-free.
@@ -138,6 +153,124 @@ terse; this file is read before work starts, so length costs.
 
 ## Findings
 
+- **2026-09-29 - usable_2 suite, stateless (after completion v3 and write confinement;
+  30 runs, 17 complete, 2 abstained, 11 incomplete).** All runs used the new prompt.
+  One early UNKNOWN was rejected (exit scdf_3 r3). The write hook refused one
+  `os.replace` of the benchmark IFC into temp (exit scdf_3 r2); the model file is
+  intact. **New failure:** twice (landing mall r1 at call 11, tread mall r1 at call 3)
+  MiniMax returned its native tool-call syntax as plain text with `stop`; the loop
+  treated it as a final answer and ended the run with calls left, and the issue text
+  wrongly blames the budget. Budget caused the other 9 incomplete runs, including all
+  exit runs. Space elevation scdf_3 complete runs now score 1.00 with the fixed
+  reference. The landing traps held (mall r3, scdf_5 r1/r3). Headroom r2 said 1800 mm
+  fails but submitted 0 FAILs; planter r2's reason contradicts its labels.
+- **2026-09-29 - first usable_2 suite (OpenRouter minimax-m3, H1, stateful only,
+  3 repeats, 20 calls; 30 runs, 20 complete, ~$0.68, 84 min).** Harness recorded
+  everything (all audits `evidence-checked`, no context changes). Door headroom 3/3
+  exact; tread mall 2/3 exact (r1 read "single riser" as "single tread"); landing v8
+  finds all 28 FAILs but misses the attic/single-step E.2.4/E.2.1 NAs; scdf_5
+  landing trap caught the agent 3/3 (6 false FAILs); mall trap: 1 run FAIL, 2 runs
+  ALERT; exit scdf_5 0/3 labelled (budget; boundary API errors); planter L-shape
+  judged by bounding box 2/2, plus one premature UNKNOWN after one code block that
+  the completion gate accepted. **Reference defect:** 2 scdf_3 "Area" spaces
+  (NOTDEFINED but carrying SGPset_SpaceArea_GFA) are GFA objects; the agent's NA is
+  right, the reference FAIL is not. Side channel still open: runs wrote
+  `%TEMP%\flights.json` and `Documents\cache_planter.pkl` via absolute paths.
+  Budget exhaustion caused 8 of the 10 incomplete runs, twice with correct labels.
+
+- **2026-09-29 - usable_2 build and second verification (offline, no paid runs).**
+  - The earlier landing estimate was superseded: geometric riser counts have a +-1
+    arrival ambiguity, so the builder uses (low, high) bounds; v8 is 28 FAIL /
+    20 PASS / 19 NA. v8 and scdf_5 stair-level `NumberOfRiser` equals the sum of
+    chosen flight counts on every stair; mall's four 27-total stairs use geometric
+    upper bounds (sum 28-29, every flight <= 12, outcome robust).
+  - The OBOS model records `OwnerBuiltOwnerStay = TRUE`: E.2.4(d) exempts every
+    staircase, so its landing/tread cases cannot be repaired (would be all NA).
+    **Condo also records TRUE**; under E.2.4(d) its stairs are exempt from riser
+    and tread rules. The Usable `tread_width_e342__condo` rule instead states "all
+    staircases are common" and omits E.2.4, so it is a recorded-property task, not
+    a regulatory one. Likewise the only FAIL of Usable `riser_height_e341__stair_v8`
+    (`38SnC...Sxe`, 200 mm) is an attic stair the expert exempts under E.2.4(c).
+    Health-suite cases were deliberately left unchanged; decide before reporting.
+  - Mall treads: every tread measured; tapered treads at 500 mm from the narrow end
+    (`0yAK...LzTF` 281 mm, near the 275 mm limit; spiral 255 mm). Stair-level
+    `TreadLength` gives the same outcome for every judged flight.
+  - Mall headroom spaces are NOT usable: 118/123 expert values equal the modelled
+    IfcSpace height, ramps at 1.3-1.6 m above parking places/an office and a beam
+    at 1.6 m in a kitchen are labelled PASS, and the one FAIL is not reproduced.
+  - Mall door headroom follows the authority's ClearHeight convention exactly; the
+    test model sets ClearHeight independently of leaf size (4 PASS doors 1800 mm
+    high, 3 FAIL doors 2100-2400 mm), so the convention is stated in the rule.
+  - Planter: re-measured widest strip (maximum inscribed circle) and communal
+    overlap agree with every expert row. Expert depths exceed the mesh height, but
+    no label depends on which reading is used.
+  - Space elevation: placement origins differ from geometric bottoms for most FAIL
+    spaces (Revit base offsets), so the rule states "bottom of the modelled volume".
+  - EC3 rules not added: E.3.4.4 uniform risers/treads (one plausible violation in
+    all models; end risers are not measurable from flight meshes); large spaces
+    >= 50 m2 with 2 doors (door/opening counting and area source ambiguous, 26/40
+    mall spaces would fail); stair-slab connection (partial models, adjacency needs
+    adjudication); the remaining catalogue rules need the paper's models or ADA data.
+
+- **2026-09-29 - repairability review of non-suite cases (read-only, no labels changed).**
+  Provenance: simple_rules.py cases take rule choice from the EC3-2026 paper
+  (studies/) with BCA V7.08 clauses and coded single-property references; the four
+  import_bca_gt.py cases come from the advisors' `analysis/gt_comparison/*.xlsx`
+  (expert CSV joined to candidate output; `requirement` truncated to 300 chars by
+  `build_gt_comparison.py`, which is why exit access is cut off). BCA Template
+  xlsx files are blank row lists but define each clause's authority scope.
+  - Landing E.3.5.2: flight meshes confirm v8/OBOS single-flight straight stairs
+    with 24 recorded risers really have 23 modelled treads over 3833 mm (genuine
+    FAIL); spirals should be NA. Mall/scdf_5 FAILs are stair totals on 4/2-flight
+    stairs (flights have 1-12 risers). Repair: per-flight count, spiral NA.
+    v8 becomes about 25 PASS / 30 FAIL / 12 NA (3 flights with 19 recorded and 18
+    modelled risers, plus 3 PASS flights with >18 levels, need adjudication).
+  - Tread mall: 46/78 flights agree with step-centroid geometry; 30 short/winder
+    flights unmeasured by that method; spiral centroid 281 vs recorded 250.
+    v8/OBOS treads are all 250-260 mm, so their outcome depends only on the
+    assumed building type (v8 mixes residential, industrial and cinema spaces).
+  - Slab (non-mall): exporters disagree across Depth, explicit thickness and mesh
+    (condo roofs Depth 100 vs mesh 50; OBOS landing Depth 1200 vs mesh 201;
+    scdf models have no explicit thickness). Not repairable without per-model
+    adjudication of an arbitrary BIM range.
+  - Exit scdf_5: the 39 labelled spaces are exactly the template rows; the other
+    84 are corridors, exit stairs, lobbies and duplicate-named rooms. Full clause
+    is in the template. scdf_3 has 12 template rows, all PASS.
+  - Planter: expert messages state all four criteria and measured values.
+  - Headroom: door rows follow SGPset ClearHeight=2000; 8 condo and 4 mall PASS
+    doors have OverallHeight/mesh 650-1980 mm. Mall sheet has complete labels
+    (each row duplicated blank): doors 154 P / 3 F, spaces 118 P / 56 NA / 1 F.
+
+- **2026-09-29 - first paired health suites (OpenRouter minimax-m3, H1, 20 calls,
+  3 repeats).** Stateful 21/21 complete, stateless 20/21 (one plain-text final
+  answer with correct labels); every labelled run matched the reference exactly, so
+  accuracy is at ceiling and only effort differs (stateful 7.2 calls / 44.6k input
+  tokens per run, stateless 6.4 / 30.8k; n=3 per cell, high variance). Staircase
+  full: 0/3 stateful complete at 20 calls; the labelled run used flight extents as
+  clear width (0.69). Audit of 334 code blocks: no reads of references, logs, ledger,
+  env or network. **Side channel:** staircase runs wrote `stair_*.txt` to the
+  workspace root via absolute paths to bypass the output cap, and one condo run kept
+  labels in `%TEMP%\labels_state.json`. In stateless mode this would be hidden memory;
+  fix before new tests. Summary deck: `slides/build_deck_vol6.py`.
+
+- **2026-09-28 - the ten "unannotated" v8 stairs were annotated under E.2.4.**
+  The gt_comparison v8 sheet has all 59 rows; the importer kept only `e.3.3.1`.
+  The other ten are six `exempt` (plant room, production area, attic <10 m2 x3,
+  single step) and four `alert` "requires manual checking" (cinema x3,
+  NOTDEFINED shape x1). IFC spaces, storeys and geometry support nine directly.
+  `38SnC...Su4` starts in a 28.7 m2 2nd-storey room and rises into the 9.7 m2
+  attic room, so its NA is an adjudicated interpretation. The single-step stair's
+  Pset says 2 risers, but its geometry rises one 167 mm step with nothing above.
+  Building use (industrial) and residential-unit status are not in the IFC.
+- **2026-09-28 - clear widths independently measured.** `stair_width_reference.py`
+  ray-casts cross sections (radial for spirals) over the 2 m zone above the treads.
+  It reproduces 40/49 expert widths within 10 mm and 48/49 outcomes. The expert
+  convention measures from walls or flight edges; railings count only when they
+  project >80 mm, and a railing within a flight splits it (`...9kN`: 900 mm lane
+  of a 3000 mm flight). A strict balustrade-inner-side reading flips `...KfP`
+  (1000 -> 924) and `...fnh` (910 -> 1030). Outcome conflict `35pIuS$v94_8nIIWR7TtCO`:
+  expert 1000 PASS, but a Run 2 railing sits 75-125 mm inside the flight edge
+  (875 mm under either reading). Not expert certification.
 - **2026-09-17 - all 43 reference cases reviewed.** All 2,425 stored label entries
   resolve to IFC IDs; source reproduction succeeds, but that does not validate
   their physical meaning. Detailed evidence and every case's assessment are in
@@ -296,6 +429,34 @@ terse; this file is read before work starts, so length costs.
 
 ## Decisions
 
+- **2026-09-29 - context between model calls (user-approved), `langchain-codeact-v2`.**
+  History stays append-only: every call resends system prompt, rule, all code, all
+  outputs and the model's earlier reasoning. No trimming, summarization or context
+  editing, so stateless/stateful differ only in the interpreter and prompt caching
+  keeps its prefix (measured 90-99% cache reads after the first calls on OpenRouter
+  minimax-m3). Reasoning is resent by both adapters as MiniMax requires for
+  interleaved thinking; do not strip it. Tool results use LangChain
+  `content_and_artifact`: the model gets the plain output text (truncation marker and
+  traceback once); `error`, `error_text`, `truncated`, `output_dropped_chars`,
+  `labels_valid` go to the `ToolMessage.artifact`. v1 sent a JSON wrapper with
+  escaped newlines and the traceback twice. The model no longer sees `labels_valid`;
+  a failed block still clears labels and the completion check reports it. Do not
+  pool v1 and v2 runs.
+- **2026-09-29 - usable_2 tier and retirements (user-approved).** Repaired and new
+  cases are generated by [reference_v2.py](reference_v2.py) under new IDs and shown
+  as tier `usable_2`; superseded cases stay unchanged (Problematic/Review with a
+  pointer). Retired, not deleted: slab thickness condo/planterbox/scdf_3/scdf_5/OBOS,
+  tread v8/OBOS, headroom condo, and landing OBOS (all-NA once E.2.4(d) is applied).
+  The health suites are unchanged. usable_2 cases are not pilots or suite members;
+  pool them only per case and version.
+- **2026-09-28 - full-population staircase reference.** User approved adding the
+  E.2.1/E.2.4 wording, scoring the four manual-check stairs as `MANUAL_CHECK`
+  (also exercises that label), and independent IFC checks. Made autonomously while
+  the user was unavailable, pending review: `...TtCO` adjudicated FAIL from the model
+  geometry; `...Su4` kept NA; the expert width convention is stated in the rule text
+  rather than relabelling to the strict balustrade reading. The new case is a new
+  ID with version `full-population-v1`; the tier stays Provisional. Unrecorded
+  expert/IFC disagreements stop regeneration.
 - **2026-09-17 - GUI health-suite selection.** Keep the six usable cases below,
   mall slab v2 as a control, and staircase width as a provisional hard case.
   Display Usable / Control / Provisional / Review / Problematic tiers for the
@@ -474,7 +635,7 @@ These are rule/model cases, not eight independent buildings or regulations.
 | `riser_height_e341__stair_v8` | Usable | 66 / 1 / 0 | Recorded height; only one failure |
 | `tread_width_e342__condo` | Usable | 29 / 1 / 0 | Supplied common-stair assumption |
 | `slab_thickness__mall_v2` | Control | 100 / 0 / 12 | Missing-data and false-positive control, not recall |
-| `staircase_width_v8` | Provisional | 27 / 22 / 0 | 49 annotated of 59 stairs; physical clear width not independently certified |
+| `staircase_width_v8_full` | Provisional | 26 / 23 / 0 (+6 NA, 4 MANUAL_CHECK) | All 59 stairs; workbook labels cross-checked against IFC widths/spaces; 2 adjudicated; stated width convention |
 
 The GUI defaults to this shortlist. **Run 8-case health suite** confirms the
 selected mode(s), repeats, total runs and maximum model calls before starting.
@@ -499,6 +660,23 @@ Use a fixed model/settings/budget and compare individual runs as well as means.
 Passing supports consistent operation on these tasks, not general compliance
 reliability. No paid suite was launched while implementing these controls.
 
+## usable_2 cases (not in the suites)
+
+Built by `reference_v2.py`; regenerate or check with `python acc_agent/reference_v2.py [--check]`.
+
+| Case | PASS / FAIL / NA | Note |
+| --- | --- | --- |
+| `landing_interval_e352__stair_v8_v2` | 20 / 28 / 19 | Per flight; spiral and E.2.1/E.2.4 NA |
+| `landing_interval_e352__mall_v2` | 76 / 0 / 2 | Trap control: flights repeat the 27-riser stair total |
+| `landing_interval_e352__scdf_5_v2` | 73 / 0 / 0 | Trap control: flights repeat the 21-riser stair total |
+| `tread_width_e342__mall_v2` | 40 / 36 / 2 | Every tread measured; tapered at 500 mm |
+| `exit_requirements__scdf_5_v2` | 23 / 3 / 13 | 39 template spaces scored, 84 unscored |
+| `exit_requirements__scdf_3_v2` | 10 / 0 / 2 | Control; 47 unscored |
+| `planter_box_gfa_v2` | 1 / 7 / 0 | PASS = excluded from GFA; eight elements |
+| `headroom_door_c321__mall` | 154 / 3 / 0 | ClearHeight convention stated; 33 lift doors unscored |
+| `space_elevation__mall` | 186 / 19 / 4 | EC3 BIM consistency rule |
+| `space_elevation__scdf_3` | 53 / 1 / 5 | EC3 BIM consistency rule; GFA area objects NA |
+
 ## Historical pilot cases
 
 The earlier three-case pilot remains available in the GUI's Pilots filter.
@@ -509,7 +687,7 @@ health-suite run.
 | --- | --- | --- | --- |
 | `slab_thickness__mall_v2` | 1 | 112 (100 pass, 12 alert, zero fail) | evidence-backed control; not a violation-recall test |
 | `doors_windows_storey__condo` | 2 | 212 (4 fail, 208 pass) | 2% violation rate; where union accuracy earns its keep |
-| `staircase_width_v8` | 3 | 49 labelled of 59 stairs (22 fail, 27 pass) | explicit annotated-subset scoring; completion requires all 59 |
+| `staircase_width_v8_full` | 3 | 59 stairs (23 fail, 26 pass, 6 NA, 4 manual check) | full population; the older 49-stair subset case is superseded |
 
 ## Open items
 
@@ -532,10 +710,10 @@ health-suite run.
   versus N repair attempts on execution error only. Papers differ; pick one and justify
   it in the methods chapter. Expect A to fail the completion gate often — that is a
   measurement, not a bug to patch. The historical A/B/C/D goal no longer includes D.
-- Before the next comparison: retain the explicit staircase evaluation mask,
-  adjudicate physical clear-width measurements, keep problematic cases and legacy
-  scores out of primary findings, and freeze/log rules, references, completion
-  contract, prompts, budgets and sampling. Cross-run skills remain retired.
+- Before the next comparison: user review of the 2026-09-28 staircase adjudications
+  and width convention, keep problematic cases and legacy scores out of primary
+  findings, and freeze/log rules, references, completion contract, prompts, budgets
+  and sampling. Cross-run skills remain retired.
 - RQ3 (sub-task decomposition) unimplemented. Pick between deepagents level 4 and the
   in-house `spawn_subcheck` builtin.
 - RQ4 (IfcJSON, graph representations, geometry libs) unimplemented and framed as
@@ -548,6 +726,111 @@ health-suite run.
 
 ## Changelog
 
+- **2026-09-30 - stable case IDs.** Renamed 17 reference files: current
+  `slab_thickness__mall_v2`, `staircase_width_v8_full`, `landing_interval_e352__{stair_v8,mall,scdf_5}_v2`,
+  `tread_width_e342__mall_v2`, `exit_requirements__{scdf_5,scdf_3}_v2`, `planter_box_gfa_v2`
+  lost their suffix; the superseded `slab_thickness__mall`, `staircase_width_v8`,
+  `landing_interval_e352__{stair_v8,mall,scdf_5}`, `tread_width_e342__mall`,
+  `exit_requirements_v0` (now `exit_requirements__scdf_5_deprecated_v1`) and `planter_box_gfa`
+  became `_deprecated_v1`. Current files were regenerated by their builders; deprecated
+  files only had `case_id` changed. The GUI's Problematic/Review tiers are gone
+  (deprecated cases are hidden; `case_assessment` returns `Deprecated`). The ledger is
+  unchanged: `list_runs` maps IDs of rows with `recording_version` < 4 (the recorder
+  now writes 4). Logs, evals and Langfuse keep old names. The factual report decides the
+  slab warning by the logged reference version, because old logs used the plain slab ID
+  for the invalid legacy reference. New runs get a new reference hash (the ID is inside
+  the reference) and do not pool with earlier runs. `reference_v2.py` keeps its file name.
+  Verified: all 54 files equal their pre-rename content with only IDs substituted;
+  241 offline tests pass; the ledger reads 5 old subset runs as
+  `staircase_width_v8_deprecated_v1` and the rest under current IDs.
+- **2026-09-30 - `dashboard.py` (read-only charts).** Tabs: *Latest run* (the GUI
+  suite containing the newest run, matched by case log file name against
+  `logs/*_health_suite.json`, else that run's sweep; per case and mode), *All runs*
+  (per case and version) and *Over time* (runs per day by outcome, OpenRouter-reported
+  cost). Version = recorded `agent_protocol` (none = pre-LangChain loop) plus
+  `completion_checks`; All runs pools modes and prompt changes within a version, so it
+  is descriptive only. The window redraws when the ledger or its WAL changes;
+  `--save DIR` writes PNGs. Adds matplotlib.
+- **2026-09-30 - fixes from the usable_2 suite run:**
+  - References: `space_elevation__*` now also labels NA any IfcSpace carrying an
+    `SGPset_SpaceArea*` set (scdf_3: 53 PASS / 1 FAIL / 5 NA; mall unchanged). The
+    tread rule now says a flight with two or more risers has a tread and is assessed.
+    Both cases rebuilt; `reference_v2.py --check` passes. Earlier scdf_3 and tread
+    scores used the old reference and wording.
+  - Completion checks v3: UNKNOWN is accepted only on the final model call; earlier
+    it is rejected with the calls remaining. The system prompt states this and the
+    relative-path rule, so the prompt hash changed. Do not pool new runs with older ones.
+  - Kernel: an audit hook in the worker refuses Python-level writes outside the
+    scratch folder, and `TEMP`/`TMP`/`TMPDIR` point to scratch. The stray
+    `%TEMP%\flights.json` and `Documents\cache_planter.pkl` were deleted.
+    `check_runtime_parity.py` passes.
+- **2026-09-29 - usable_2 suite button:** runs all ten usable_2 cases at a fixed
+  3 repeats through the same suite runner, confirmation, stop and index as the
+  health suites. With both modes this is 60 runs, at most 1,200 model calls.
+- **2026-09-29 - protocol v2 tool results:** `run_python` is a
+  `content_and_artifact` tool; transcripts record the artifact; GUI log header reads
+  `AGENT_PROTOCOL`. Tests: plain output with one traceback (ScriptedClient), and the
+  MiniMax/OpenRouter roundtrip now asserts earlier reasoning and plain tool output
+  reach the second request. Full offline suite (236) passes; no paid runs.
+- **2026-09-29 - usable_2 references:** added `reference_v2.py` (10 cases):
+  landing E.3.5.2 v8/mall/scdf_5 `_v2`, tread mall `_v2`, exit access scdf_5/scdf_3
+  `_v2` (full template clause, authority definitions, template-scope subset with
+  exempt Pass rows as NA), planter GFA `_v2` (criteria stated), mall door headroom
+  (`headroom_door_c321__mall`), and EC3 same-storey elevation (mall, scdf_3). GUI
+  tiers `usable_2` and `Retired`; audit status `evidence-checked` via fast
+  `verify_recorded`. `reference_v2.py --check` reproduces all 10 stored cases; all
+  235 offline tests pass. Restart the GUI to load the new tiers.
+- **2026-09-29 - 7-case suite button:** runs the six usable cases plus the slab
+  control, without the staircase hard case, at a fixed 3 repeats (the repeat
+  slider is ignored and left unchanged). Same runner, budget, confirmation, stop
+  and suite index as the 8-case suite; the index records its case list and repeats.
+  With both modes this is 42 runs, at most 840 model calls. GUI tests pass.
+
+- **2026-09-28 - first live OpenRouter run reviewed (door width, stateful, H1,
+  `minimax/minimax-m3`):** pipeline sound - completion complete (34/34 labels),
+  usage reported (55,476 in / 4,550 out, 10 calls), log, report, Langfuse trace and
+  score recorded. Two prompt defects fixed in `LABEL_PROTOCOL`: (1) the model spent
+  calls 4-8 trying to import `report_labels`; the prompt now says it is predefined.
+  (2) The rule never stated the references' 0.5 mm float-noise tolerance, so a
+  literal `< 900` check flagged nine nominal-900 doors (P=0.44, F1=0.61, union 0.735)
+  - the agent followed the text correctly. Without tolerance, riser mall also changes
+  3 labels. The prompt now states that values within 0.5 mm of a limit meet it; this
+  is general, not case-specific, and matches every reference. Runs before this change
+  have a different prompt hash and must not be pooled.
+
+- **2026-09-28 - OpenRouter timeout unit fix:** `langchain_openrouter` takes the
+  request timeout in milliseconds; we passed 180, i.e. 0.18 s, and the first live
+  OpenRouter request hung with no error. Now 180,000 ms (MiniMax/Anthropic stays
+  180 s). Verified with two 16-token live calls (~$0.00004 each): raw HTTP 2.9 s,
+  app client 3.7 s. Observation: `minimax/minimax-m3` via OpenRouter produced
+  reasoning tokens even with `REASONING=0`, so it is not the same condition as the
+  MiniMax-direct thinking-off smoke test; record and do not pool.
+
+- **2026-09-28 - GUI provider switch:** Provider (minimax/openrouter) is chosen in
+  the GUI per run and passed to `llm.load_llm(model, provider)`; switching resets the
+  model field to that provider's default. The OpenRouter default is now
+  `minimax/minimax-m3` (same model family as the MiniMax path; OpenRouter lists tools
+  and structured outputs, $0.30/$1.20 per M tokens on 2026-09-28). The provider is
+  recorded in run identity, so MiniMax-direct and OpenRouter runs never pool.
+  OpenRouter is still not live-tested; do one single cheap run first.
+
+- **2026-09-28 - fixed model-call cap:** every run (GUI single runs, health suite,
+  CLI and evaluation defaults) uses `config.MAX_ITERATIONS = 20` model calls. The
+  GUI slider was removed and per-group recommendations now cover repeats only. It is
+  a cap, not a quota: a run ends as soon as its FinalReport is accepted.
+  Reason: Sept 8 staircase runs used 15-16 of a 16-call cap under the old loop,
+  which also allowed up to 3 extra finalization turns; the new budget counts the
+  plan and final report too. Simple cases used 5-14 and stop when done. If the
+  first 16-run suite shows the staircase hitting 20, revisit before 48 runs.
+  CLI `--max-iterations` remains for explicit experiments; such runs get a
+  different configuration identity and must not be pooled.
+
+- **2026-09-28 - full v8 staircase reference:** added `stair_width_reference.py`
+  and `ground_truth/staircase_width_v8_full.json`; GUI pilot and health suite now
+  use it, the subset case is Review/superseded, and `evidence-checked` audits are
+  comparison-eligible. Added `tests/test_stair_width_reference.py`. All 226 offline
+  tests pass; `stair_width_reference.py --check` reproduces the stored evidence.
+  No paid model calls. Restart the GUI to load the new case routing.
 - **2026-09-17 - reviewed case tiers and confirmed eight-case GUI suite:** added
   all-catalogue selection statuses, reference warnings, a sequential suite button,
   run-count/call-budget confirmation, stop-after-current-run control and known

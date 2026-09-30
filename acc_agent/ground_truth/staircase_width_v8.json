@@ -1,6 +1,6 @@
 {
   "case_id": "staircase_width_v8",
-  "rule": "The clear width of the staircase must be at least 1 m.\n\nRegulatory text (the authoritative clause \u2014 use it to interpret the requirement; you must still work out how to measure it from the IFC geometry):\nBCA Approved Document (Acceptable Solutions) \u2014 E.3.3 Width of staircase:\nE.3.3.1 The clear width of every staircase shall not be less than 1000 mm.\nNote: If the projection of the handrail into the clear width does NOT exceed 80 mm on each side of the staircase, the width is measured from:\n  (a) the finished surfaces of the walls, if the staircase is enclosed on both sides by walls only; or\n  (b) the finished surface of the wall and the inner side of the balustrade, if the staircase has a wall on one side and a balustrade on the other; or\n  (c) the inner sides of the balustrades if the staircase has balustrades on both sides.\nIf the projection of the handrail into the clear width EXCEEDS 80 mm on one or more side, the clear width is measured from:\n  (a) the finished surface of the wall and the inner side of the handrail, if the staircase has a wall on one side and a handrail on the other; or\n  (b) the inner sides of the handrails if the staircase has handrails on both sides.\n(E.3.2.1: no projection other than handrails is allowed into the staircase space within 2.0 m of the landing or pitch line.)\n\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "rule": "The clear width of the staircase must be at least 1 m.\n\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to measure it from the IFC geometry):\nBCA Approved Document (Acceptable Solutions) V7.08 - applicability:\nE.2.1 A staircase (including a flight of 2 steps or more) shall provide a safe and suitable passage for movement of people.\nE.2.2 A staircase must have - ... (c) sufficient width, tread and riser to avoid injury; ...\nE.2.4 The requirements in paragraph E.2.2(b) and (c) do not apply to a staircase located in any of the following rooms or spaces:\n  (a) any equipment or plant room;\n  (b) any production area of an industrial building;\n  (c) any attic that - (ii) does not exceed an area of 10 square metres; and (iii) is in a residential building;\n  (d) any house built for the owner's own use.\n\nBCA Approved Document (Acceptable Solutions) \u2014 E.3.3 Width of staircase:\nE.3.3.1 The clear width of every staircase shall not be less than 1000 mm.\nNote: If the projection of the handrail into the clear width does NOT exceed 80 mm on each side of the staircase, the width is measured from:\n  (a) the finished surfaces of the walls, if the staircase is enclosed on both sides by walls only; or\n  (b) the finished surface of the wall and the inner side of the balustrade, if the staircase has a wall on one side and a balustrade on the other; or\n  (c) the inner sides of the balustrades if the staircase has balustrades on both sides.\nIf the projection of the handrail into the clear width EXCEEDS 80 mm on one or more side, the clear width is measured from:\n  (a) the finished surface of the wall and the inner side of the handrail, if the staircase has a wall on one side and a handrail on the other; or\n  (b) the inner sides of the handrails if the staircase has handrails on both sides.\n(E.3.2.1: no projection other than handrails is allowed into the staircase space within 2.0 m of the landing or pitch line.)\n\nBenchmark labelling policy: Label every IfcStair. Use NA for a staircase exempt under E.2.1 or E.2.4. Use MANUAL_CHECK for a staircase located in a cinema, theatre or amphitheatre space, or whose stair shape type is not defined in the model (IfcStair PredefinedType NOTDEFINED); the reference checker does not assess these automatically. Measure the clear width from walls or other solid elements, or from the edge of the stair flight where there is none; a railing reduces the width only where it projects more than 80 mm inside that line, and a railing within the flight divides it so that the narrowest part counts. This policy comes from the reference checker, not from the regulation text.\n\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
   "ifc_path": "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Staircase width/Test models/BCA_[E-3-3]_v8.ifc",
   "complexity": 3,
   "threshold_mm": null,
@@ -27,17 +27,23 @@
     "0lh9vifGX2fxa3kEt93Rby",
     "2rGbARwyPEPxsbm4sHwXIH",
     "35pIuS$v94_8nIIWR7TtBw",
+    "35pIuS$v94_8nIIWR7TtCO",
     "3O2csS3mX79PMK3UW4Bki_"
   ],
   "labels": {
     "04eUmXcUr9CgpkrqW8vjwo": "PASS",
+    "0CgACbmPTCHfvUYxwYhVfB": "NA",
+    "0CgACbmPTCHfvUYxwYhVft": "NA",
     "0Gt5mJb7b63uPG7PGHa9c7": "FAIL",
     "0Gt5mJb7b63uPG7PGHa9ir": "PASS",
     "0Gt5mJb7b63uPG7PGHa9kN": "FAIL",
     "0Gt5mJb7b63uPG7PGHa9pN": "FAIL",
     "0Gt5mJb7b63uPG7PGHa9tx": "PASS",
+    "0Gt5mJb7b63uPG7PGHaEKH": "MANUAL_CHECK",
     "0Pi72lxqT7rB3T2_y3sB1J": "PASS",
+    "0Pi72lxqT7rB3T2_y3sBxH": "NA",
     "0Pi72lxqT7rB3T2_y3sKfP": "PASS",
+    "0Pi72lxqT7rB3T2_y3sKtT": "MANUAL_CHECK",
     "0fPAIu9ojFpAvfjEI31fL0": "FAIL",
     "0fPAIu9ojFpAvfjEI31fLX": "PASS",
     "0fPAIu9ojFpAvfjEI31flF": "PASS",
@@ -69,9 +75,14 @@
     "2WUftTkg92EQYKeFufTBCu": "PASS",
     "2WUftTkg92EQYKeFufTBE6": "PASS",
     "2rGbARwyPEPxsbm4sHwXIH": "FAIL",
+    "2rGbARwyPEPxsbm4sHwXi2": "MANUAL_CHECK",
+    "2rGbARwyPEPxsbm4sHwXj_": "MANUAL_CHECK",
     "32LxQhrpb98OSFI7LEe0E7": "PASS",
+    "35pIuS$v94_8nIIWR7Tt5U": "NA",
     "35pIuS$v94_8nIIWR7TtBw": "FAIL",
-    "35pIuS$v94_8nIIWR7TtCO": "PASS",
+    "35pIuS$v94_8nIIWR7TtCO": "FAIL",
+    "38SnCByaD3oPaKe_iSvSu4": "NA",
+    "38SnCByaD3oPaKe_iSvSxf": "NA",
     "3O2csS3mX79PMK3UW4Bkg0": "PASS",
     "3O2csS3mX79PMK3UW4Bki_": "FAIL",
     "3g3S4PX31608cOsYvA7TLr": "PASS",
@@ -80,26 +91,2125 @@
     "3g3S4PX31608cOsYvA7TmK": "PASS",
     "3g3S4PX31608cOsYvA7Twz": "PASS"
   },
-  "notes": "Imported from gt_comparison. 22 fail / 49 labelled rows; expert buckets {'pass': 27, 'fail': 22} -> labels {'FAIL': 22, 'PASS': 27}.",
+  "notes": "Full population of 59 IfcStair: {'FAIL': 23, 'MANUAL_CHECK': 4, 'NA': 6, 'PASS': 26}. Expert workbook labels with independent IFC applicability and clear-width evidence. The 49-stair subset case remains unchanged.",
   "clause": "e.3.3.1",
-  "source": "staircase_width.xlsx::Staircase width_bca__e-3-3__v8::e.3.3.1",
+  "source": "stair_width_reference.py::build_case (staircase_width.xlsx::Staircase width_bca__e-3-3__v8, e.3.3.1 + e.2.4)",
   "reference": {
-    "version": "annotated-subset-v1",
-    "evaluation_scope": "annotated_subset",
+    "version": "full-population-v1",
+    "supersedes": "staircase_width_v8_deprecated_v1",
+    "review_date": "2026-09-28",
+    "evaluation_scope": "full_population",
     "ifc_sha256": "89d11d0eb4a19773415b1239ebdd896264628a62f263c505643a986b2c738f81",
     "population": 59,
-    "unscored_ids": [
-      "0CgACbmPTCHfvUYxwYhVfB",
-      "0CgACbmPTCHfvUYxwYhVft",
-      "0Gt5mJb7b63uPG7PGHaEKH",
-      "0Pi72lxqT7rB3T2_y3sBxH",
-      "0Pi72lxqT7rB3T2_y3sKtT",
-      "2rGbARwyPEPxsbm4sHwXi2",
-      "2rGbARwyPEPxsbm4sHwXj_",
-      "35pIuS$v94_8nIIWR7Tt5U",
-      "38SnCByaD3oPaKe_iSvSu4",
-      "38SnCByaD3oPaKe_iSvSxf"
+    "status": "expert workbook labels cross-checked against IFC evidence with 2 recorded adjudications; not independent expert certification",
+    "width_convention": "Stated in the rule text: clear width between walls/solids or flight edges; railings reduce the width only where they project more than 80 mm; a railing within the flight divides it and the narrowest lane counts. Independent measurement: 40 of 49 expert widths within 10 mm, 48 of 49 outcomes agree.",
+    "balustrade_sensitive_ids": [
+      "0Pi72lxqT7rB3T2_y3sKfP",
+      "0fPAIu9ojFpAvfjEI31fnh"
     ],
-    "limitation": "Workbook-labelled subset only; unannotated stairs have no reference judgment. Completion still requires the full IFC population."
+    "limitations": "The stated convention differs from a strict reading measured from each balustrade's own inner side, which would change the outcome for the listed IDs. Industrial building use and residential-unit status are not recorded in the IFC; the E.2.4 and manual-check conditions rely on space names, storey names and occupancy properties. Geometry checks corroborate the workbook; they are not independent expert certification."
+  },
+  "provenance": {
+    "04eUmXcUr9CgpkrqW8vjwo": {
+      "name": "Precast Stair:Stair:317022",
+      "predefined_type": "HALF_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 2201,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1100mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1100
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1056,
+        "balustrade_reading_mm": 1013,
+        "narrowest_flight": "04eUmXcUr9CgpkrqW8vjvw",
+        "flight_width_mm": 1152,
+        "elements_in_section": [
+          "Railing:1100mm:317294",
+          "Railing:1100mm:317298"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0CgACbmPTCHfvUYxwYhVfB": {
+      "name": "Cast-In-Place Stair:Stair:315266",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [
+        {
+          "guid": "0CgACbmPTCHfvUYxwYhVgu",
+          "name": "PRODUCTION AREA 5",
+          "area_m2": 27.23,
+          "occupancy": "m&e area",
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 19.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3000,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "exempt",
+        "message": "This clause does not apply to this element due to the space or the building in which it is located.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "NA",
+        "reason": "Located in a production area (E.2.4(b)); building use is not recorded in the IFC."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 730,
+        "balustrade_reading_mm": 654,
+        "narrowest_flight": "0CgACbmPTCHfvUYxwYhVfA",
+        "flight_width_mm": 730,
+        "elements_in_section": [
+          "Railing:1100mm:315269",
+          "Railing:1100mm:315273"
+        ]
+      },
+      "conflicts": [],
+      "label": "NA"
+    },
+    "0CgACbmPTCHfvUYxwYhVft": {
+      "name": "Cast-In-Place Stair:Stair:315326",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [
+        {
+          "guid": "0CgACbmPTCHfvUYxwYhVgc",
+          "name": "PLANT ROOM 4",
+          "area_m2": 27.23,
+          "occupancy": "m&e area",
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 19.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3000,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "exempt",
+        "message": "This clause does not apply to this element due to the space or the building in which it is located.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "NA",
+        "reason": "Located in a plant/equipment room (E.2.4(a))."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 730,
+        "balustrade_reading_mm": 654,
+        "narrowest_flight": "0CgACbmPTCHfvUYxwYhVfs",
+        "flight_width_mm": 730,
+        "elements_in_section": [
+          "Railing:1100mm:315329",
+          "Railing:1100mm:315333"
+        ]
+      },
+      "conflicts": [],
+      "label": "NA"
+    },
+    "0Gt5mJb7b63uPG7PGHa9c7": {
+      "name": "Precast Stair:Stair:309368",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 770mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 770
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 793,
+        "balustrade_reading_mm": 782,
+        "narrowest_flight": "0Gt5mJb7b63uPG7PGHa9c6",
+        "flight_width_mm": 1001,
+        "elements_in_section": [
+          "Railing:1100mm:309371",
+          "Railing:1100mm:309375",
+          "Round:300mm Diameter:332950"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0Gt5mJb7b63uPG7PGHa9ir": {
+      "name": "Precast Stair:Stair:309962",
+      "predefined_type": "QUARTER_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 18.0,
+      "riser_height_mm": 169.3,
+      "modelled_rise_mm": 1725,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1000mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1000
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1075,
+        "balustrade_reading_mm": 1075,
+        "narrowest_flight": "0Gt5mJb7b63uPG7PGHa9io",
+        "flight_width_mm": 1200,
+        "elements_in_section": [
+          "Railing:1100mm:309969",
+          "Railing:1100mm:310030"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0Gt5mJb7b63uPG7PGHa9kN": {
+      "name": "Precast Stair:Stair:309864",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 18.0,
+      "riser_height_mm": 169.3,
+      "modelled_rise_mm": 3048,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0Gt5mJb7b63uPG7PGHa9kM",
+        "flight_width_mm": 3000,
+        "elements_in_section": [
+          "Railing:1100mm:309868",
+          "Railing:1100mm:309912"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0Gt5mJb7b63uPG7PGHa9pN": {
+      "name": "Cast-In-Place Stair:Stair:310568",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3833,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 950mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 950
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 955,
+        "balustrade_reading_mm": 955,
+        "narrowest_flight": "0Gt5mJb7b63uPG7PGHa9pM",
+        "flight_width_mm": 1100,
+        "elements_in_section": [
+          "Basic Wall:100:310189",
+          "Railing:Glass_Panel-Bottom_Fill:310571"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0Gt5mJb7b63uPG7PGHa9tx": {
+      "name": "Cast-In-Place Stair:Stair:310276",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3833,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1050mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1050
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1055,
+        "balustrade_reading_mm": 1055,
+        "narrowest_flight": "0Gt5mJb7b63uPG7PGHa9sr",
+        "flight_width_mm": 1200,
+        "elements_in_section": [
+          "Railing:Glass_Panel-Bottom_Fill:310451"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0Gt5mJb7b63uPG7PGHaEKH": {
+      "name": "Stairs 1:Stairs 1:312558",
+      "predefined_type": "NOTDEFINED",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 0.0,
+      "riser_height_mm": null,
+      "modelled_rise_mm": null,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "alert",
+        "message": "Staircase is flagged as oddly-shaped and was not automatically checked for staircase-related rules. Requires manual checking.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "MANUAL_CHECK",
+        "reason": "Stair shape type NOTDEFINED (reference-checker policy)."
+      },
+      "clear_width": null,
+      "conflicts": [],
+      "label": "MANUAL_CHECK"
+    },
+    "0Pi72lxqT7rB3T2_y3sB1J": {
+      "name": "Precast Stair:Stair:329643",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "3rd Storey Attic",
+      "spaces": [
+        {
+          "guid": "0Pi72lxqT7rB3T2_y3sBg1",
+          "name": "Area 2",
+          "area_m2": 60.559,
+          "occupancy": null,
+          "samples": "18/18"
+        },
+        {
+          "guid": "0Pi72lxqT7rB3T2_y3sKkU",
+          "name": "Living Room 6",
+          "area_m2": 32.64,
+          "occupancy": "multi-unit residential",
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 17.0,
+      "riser_height_mm": 164.7,
+      "modelled_rise_mm": 2800,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1000mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1000
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1000,
+        "balustrade_reading_mm": 1000,
+        "narrowest_flight": "0Pi72lxqT7rB3T2_y3sB$v",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Basic Wall:100:328007",
+          "Railing:1100mm:329782"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0Pi72lxqT7rB3T2_y3sBxH": {
+      "name": "Precast Stair:Stair:330025",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "3rd Storey Attic",
+      "spaces": [
+        {
+          "guid": "0Pi72lxqT7rB3T2_y3sBg1",
+          "name": "Area 2",
+          "area_m2": 60.559,
+          "occupancy": null,
+          "samples": "18/18"
+        },
+        {
+          "guid": "0Pi72lxqT7rB3T2_y3sKjf",
+          "name": "KITCHEN 7",
+          "area_m2": 9.426,
+          "occupancy": "single dwelling residential",
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 17.0,
+      "riser_height_mm": 164.7,
+      "modelled_rise_mm": 2800,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "exempt",
+        "message": "Element is in an attic storey inside a Residential Unit space with area less than 10m\u00b2.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "NA",
+        "reason": "Attic storey, residential space of at most 10 m2 (E.2.4(c))."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1000,
+        "balustrade_reading_mm": 1000,
+        "narrowest_flight": "0Pi72lxqT7rB3T2_y3sBxI",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Railing:1100mm:330036"
+        ]
+      },
+      "conflicts": [],
+      "label": "NA"
+    },
+    "0Pi72lxqT7rB3T2_y3sKfP": {
+      "name": "Precast Stair:Stair:327073",
+      "predefined_type": "QUARTER_TURN_STAIR",
+      "storey": "2nd Storey",
+      "spaces": [
+        {
+          "guid": "32LxQhrpb98OSFI7LEe0JM",
+          "name": "Area 1",
+          "area_m2": 60.559,
+          "occupancy": null,
+          "samples": "18/18"
+        },
+        {
+          "guid": "35pIuS$v94_8nIIWR7TtLs",
+          "name": "Living Room 2",
+          "area_m2": 32.64,
+          "occupancy": "multi-unit residential",
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 2201,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1000mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1000
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1000,
+        "balustrade_reading_mm": 924,
+        "narrowest_flight": "0Pi72lxqT7rB3T2_y3sKda",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Railing:1100mm:327450",
+          "Railing:1100mm:327454"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": true,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0Pi72lxqT7rB3T2_y3sKtT": {
+      "name": "cinema stairs:cinema stairs:326181",
+      "predefined_type": "NOTDEFINED",
+      "storey": "1st Storey",
+      "spaces": [
+        {
+          "guid": "35pIuS$v94_8nIIWR7TtC4",
+          "name": "CINEMA 1",
+          "area_m2": 85.988,
+          "occupancy": null,
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 0.0,
+      "riser_height_mm": null,
+      "modelled_rise_mm": null,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "alert",
+        "message": "Element is contained inside a Cinema Theatre or Amphitheatre space. Requires manual checking.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "MANUAL_CHECK",
+        "reason": "Stair shape type NOTDEFINED (reference-checker policy)."
+      },
+      "clear_width": null,
+      "conflicts": [],
+      "label": "MANUAL_CHECK"
+    },
+    "0fPAIu9ojFpAvfjEI31fL0": {
+      "name": "Precast Stair:Stair:347086",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31fL1",
+        "flight_width_mm": 900,
+        "elements_in_section": [
+          "Basic Wall:100:347089"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31fLX": {
+      "name": "Precast Stair:Stair:347119",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1300mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1300
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1300,
+        "balustrade_reading_mm": 1300,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31fL_",
+        "flight_width_mm": 1300,
+        "elements_in_section": [
+          "Basic Wall:100:347122",
+          "Railing:1100mm Railing at Stringer 8:347123",
+          "Railing:70mm:347652"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31flF": {
+      "name": "Precast Stair:Stair:345409",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1150mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1150
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1150,
+        "balustrade_reading_mm": 1150,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31flC",
+        "flight_width_mm": 1350,
+        "elements_in_section": [
+          "Railing:1100mm Railing at Stringer 7:346132",
+          "Railing:1100mm Railing at Stringer 9:345633"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31flg": {
+      "name": "Precast Stair:Stair:345444",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31flh",
+        "flight_width_mm": 1100,
+        "elements_in_section": [
+          "Basic Wall:100:346461",
+          "Railing:1100mm Railing at Stringer 7:346281",
+          "Railing:1100mm Railing at Stringer 7:346562"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31fnU": {
+      "name": "Precast Stair:Stair:344784",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1210,
+        "balustrade_reading_mm": 1330,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31fnV",
+        "flight_width_mm": 1400,
+        "elements_in_section": [
+          "Railing:pipe - 60mm:344788",
+          "Railing:pipe - 60mm:345004"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31fnh": {
+      "name": "Precast Stair:Stair:344805",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 910,
+        "balustrade_reading_mm": 1030,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31fne",
+        "flight_width_mm": 1100,
+        "elements_in_section": [
+          "Railing:pipe - 60mm:344809",
+          "Railing:pipe - 60mm:345239"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": true,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31fuA": {
+      "name": "Precast Stair:Stair:344196",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 930mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 930
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 930,
+        "balustrade_reading_mm": 930,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31fuB",
+        "flight_width_mm": 1200,
+        "elements_in_section": [
+          "Railing:pipe 1:344200",
+          "Railing:pipe 1:344606"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31fxb": {
+      "name": "Precast Stair:Stair:344171",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1130mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1130
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1130,
+        "balustrade_reading_mm": 1130,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31fxY",
+        "flight_width_mm": 1400,
+        "elements_in_section": [
+          "Railing:pipe 1:344175",
+          "Railing:pipe 1:344432"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31k22": {
+      "name": "Precast Stair:Stair:343564",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 850mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 850
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 850,
+        "balustrade_reading_mm": 850,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31k23",
+        "flight_width_mm": 950,
+        "elements_in_section": [
+          "Basic Wall:100:343567",
+          "Basic Wall:100:343978"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31k8J": {
+      "name": "Precast Stair:Stair:343197",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1300mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1300
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1300,
+        "balustrade_reading_mm": 1232,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31k8G",
+        "flight_width_mm": 1300,
+        "elements_in_section": [
+          "Basic Wall:100:343200"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31kCW": {
+      "name": "Precast Stair:Stair:343470",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1100mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1100
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1100,
+        "balustrade_reading_mm": 1100,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31kCX",
+        "flight_width_mm": 1200,
+        "elements_in_section": [
+          "Basic Wall:100:343473",
+          "Basic Wall:100:343779"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31kKd": {
+      "name": "Precast Stair:Stair:342953",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31kKa",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Railing:1100mm Railing at Stringer 7:343127"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31kNe": {
+      "name": "Precast Stair:Stair:342886",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31kNf",
+        "flight_width_mm": 900,
+        "elements_in_section": [
+          "Basic Wall:100:342889",
+          "Railing:70mm:342890"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31k_F": {
+      "name": "Precast Stair:Stair:340225",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1200,
+        "balustrade_reading_mm": 1200,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31k_C",
+        "flight_width_mm": 1300,
+        "elements_in_section": [
+          "Railing:1100mm Railing at Stringer 9:342494"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31kuf": {
+      "name": "Precast Stair:Stair:340135",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1205,
+        "balustrade_reading_mm": 1265,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31kuc",
+        "flight_width_mm": 1300,
+        "elements_in_section": [
+          "Railing:pipe - 60mm:340139"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31kvE": {
+      "name": "Precast Stair:Stair:340160",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 950mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 950
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 905,
+        "balustrade_reading_mm": 965,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31kvF",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Railing:pipe - 60mm:340164"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31l5J": {
+      "name": "Precast Stair:Stair:339933",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 860mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 860
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 865,
+        "balustrade_reading_mm": 865,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31l5G",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Railing:pipe 1:339937"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31lIg": {
+      "name": "Precast Stair:Stair:338468",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1160mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1160
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1165,
+        "balustrade_reading_mm": 1165,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31lJO",
+        "flight_width_mm": 1300,
+        "elements_in_section": [
+          "Railing:pipe 1:338831"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31lUt": {
+      "name": "Precast Stair:Stair:338233",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31lUq",
+        "flight_width_mm": 950,
+        "elements_in_section": [
+          "Basic Wall:100:338237",
+          "Basic Wall:100:338238"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31l_0": {
+      "name": "Precast Stair:Stair:336142",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 898,
+        "balustrade_reading_mm": 898,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31l_1",
+        "flight_width_mm": 901,
+        "elements_in_section": [
+          "Round:200mm 2:336154"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31l_5": {
+      "name": "Precast Stair:Stair:336139",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 23.0,
+      "riser_height_mm": 173.9,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 901,
+        "balustrade_reading_mm": 901,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31l_2",
+        "flight_width_mm": 901,
+        "elements_in_section": []
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31l_A": {
+      "name": "Precast Stair:Stair:336132",
+      "predefined_type": "HALF_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 32.0,
+      "riser_height_mm": 169.3,
+      "modelled_rise_mm": 2910,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31l_9",
+        "flight_width_mm": 900,
+        "elements_in_section": []
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31lm9": {
+      "name": "Precast Stair:Stair:336519",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1150mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1150
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1150,
+        "balustrade_reading_mm": 1150,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31lmv",
+        "flight_width_mm": 1200,
+        "elements_in_section": [
+          "Basic Wall:100:336944",
+          "Basic Wall:100:337131"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "0fPAIu9ojFpAvfjEI31lvn": {
+      "name": "Precast Stair:Stair:336127",
+      "predefined_type": "QUARTER_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 32.0,
+      "riser_height_mm": 169.3,
+      "modelled_rise_mm": 2910,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31l_E",
+        "flight_width_mm": 900,
+        "elements_in_section": []
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0fPAIu9ojFpAvfjEI31lvo": {
+      "name": "Precast Stair:Stair:336124",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 900,
+        "balustrade_reading_mm": 900,
+        "narrowest_flight": "0fPAIu9ojFpAvfjEI31lvp",
+        "flight_width_mm": 900,
+        "elements_in_section": []
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "0lh9vifGX2fxa3kEt93Rby": {
+      "name": "Precast Stair:Stair:320060",
+      "predefined_type": "HALF_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 2201,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 900mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 900
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 853,
+        "balustrade_reading_mm": 853,
+        "narrowest_flight": "0lh9vifGX2fxa3kEt93Rbz",
+        "flight_width_mm": 935,
+        "elements_in_section": [
+          "Railing:1100mm:320068",
+          "Railing:1100mm:320072"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "2WUftTkg92EQYKeFufTB8i": {
+      "name": "Precast Stair:Stair:331616",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1201,
+        "balustrade_reading_mm": 1162,
+        "narrowest_flight": "2WUftTkg92EQYKeFufTB8j",
+        "flight_width_mm": 1201,
+        "elements_in_section": [
+          "Railing:standard 1100:331619",
+          "Railing:standard 1100:331644"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "2WUftTkg92EQYKeFufTBBT": {
+      "name": "Precast Stair:Stair:331665",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1201,
+        "balustrade_reading_mm": 1119,
+        "narrowest_flight": "2WUftTkg92EQYKeFufTBBU",
+        "flight_width_mm": 1201,
+        "elements_in_section": [
+          "Railing:1100_Pipe:331668",
+          "Railing:1100_Pipe:331693"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "2WUftTkg92EQYKeFufTBCu": {
+      "name": "Precast Stair:Stair:331380",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1201,
+        "balustrade_reading_mm": 1162,
+        "narrowest_flight": "2WUftTkg92EQYKeFufTBCv",
+        "flight_width_mm": 1201,
+        "elements_in_section": [
+          "Railing:Standard 1m:331383",
+          "Railing:Standard 1m:331432"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "2WUftTkg92EQYKeFufTBE6": {
+      "name": "Precast Stair:Stair:331466",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1201,
+        "balustrade_reading_mm": 1119,
+        "narrowest_flight": "2WUftTkg92EQYKeFufTBE7",
+        "flight_width_mm": 1201,
+        "elements_in_section": [
+          "Railing:900mm_Pipe:331469",
+          "Railing:900mm_Pipe:331494"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "2rGbARwyPEPxsbm4sHwXIH": {
+      "name": "Cast-In-Place Stair:Stair:321189",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3833,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 855mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 855
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 920,
+        "balustrade_reading_mm": 920,
+        "narrowest_flight": "2rGbARwyPEPxsbm4sHwXII",
+        "flight_width_mm": 1400,
+        "elements_in_section": [
+          "Basic Wall:100:312808",
+          "Railing:pipe 1:321192"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "2rGbARwyPEPxsbm4sHwXi2": {
+      "name": "Cast-In-Place Stair:Stair:321846",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [
+        {
+          "guid": "35pIuS$v94_8nIIWR7TtC4",
+          "name": "CINEMA 1",
+          "area_m2": 85.988,
+          "occupancy": null,
+          "samples": "12/18"
+        }
+      ],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3833,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "alert",
+        "message": "Element is contained inside a Cinema Theatre or Amphitheatre space. Requires manual checking.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "MANUAL_CHECK",
+        "reason": "Located in a cinema/theatre space (reference-checker policy)."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1315,
+        "balustrade_reading_mm": 1315,
+        "narrowest_flight": "2rGbARwyPEPxsbm4sHwXi3",
+        "flight_width_mm": 1460,
+        "elements_in_section": [
+          "Basic Wall:100:322579",
+          "Railing:Glass_Panel-Bottom_Fill:321850"
+        ]
+      },
+      "conflicts": [],
+      "label": "MANUAL_CHECK"
+    },
+    "2rGbARwyPEPxsbm4sHwXj_": {
+      "name": "Cast-In-Place Stair:Stair:321866",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [
+        {
+          "guid": "35pIuS$v94_8nIIWR7TtC4",
+          "name": "CINEMA 1",
+          "area_m2": 85.988,
+          "occupancy": null,
+          "samples": "12/18"
+        }
+      ],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3833,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "alert",
+        "message": "Element is contained inside a Cinema Theatre or Amphitheatre space. Requires manual checking.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "MANUAL_CHECK",
+        "reason": "Located in a cinema/theatre space (reference-checker policy)."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 855,
+        "balustrade_reading_mm": 855,
+        "narrowest_flight": "2rGbARwyPEPxsbm4sHwXj$",
+        "flight_width_mm": 1001,
+        "elements_in_section": [
+          "Basic Wall:100:321845",
+          "Railing:Glass_Panel-Bottom_Fill:321869"
+        ]
+      },
+      "conflicts": [],
+      "label": "MANUAL_CHECK"
+    },
+    "32LxQhrpb98OSFI7LEe0E7": {
+      "name": "Precast Stair:Stair:316000",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1170mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1170
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1087,
+        "balustrade_reading_mm": 1074,
+        "narrowest_flight": "32LxQhrpb98OSFI7LEe0Bb",
+        "flight_width_mm": 1201,
+        "elements_in_section": [
+          "Columns_Rectangular:450x450mm:333023",
+          "Railing:1100mm:316194"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "35pIuS$v94_8nIIWR7Tt5U": {
+      "name": "Cast-In-Place Stair:Stair:313744",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 2.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 167,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "exempt",
+        "message": "Staircase has less than two risers. The staircase width requirement does not apply.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "NA",
+        "reason": "Modelled flight rises by a single step; fewer than 2 steps is not a staircase (E.2.1)."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 860,
+        "balustrade_reading_mm": 860,
+        "narrowest_flight": "35pIuS$v94_8nIIWR7Tt5m",
+        "flight_width_mm": 860,
+        "elements_in_section": []
+      },
+      "conflicts": [],
+      "label": "NA"
+    },
+    "35pIuS$v94_8nIIWR7TtBw": {
+      "name": "Cast-In-Place Stair:Stair:313908",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 19.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 3000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 730mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 730
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 730,
+        "balustrade_reading_mm": 654,
+        "narrowest_flight": "35pIuS$v94_8nIIWR7TtA2",
+        "flight_width_mm": 730,
+        "elements_in_section": [
+          "Railing:1100mm:314003",
+          "Railing:1100mm:314007"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "35pIuS$v94_8nIIWR7TtCO": {
+      "name": "Precast Stair:Stair:314326",
+      "predefined_type": "QUARTER_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 18.0,
+      "riser_height_mm": 169.3,
+      "modelled_rise_mm": 1725,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1000mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1000
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 875,
+        "balustrade_reading_mm": 875,
+        "narrowest_flight": "35pIuS$v94_8nIIWR7TtCN",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Railing:1100mm:314333",
+          "Railing:1100mm:314381"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "outcome conflict",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [
+        "width: edge reading 875 mm gives FAIL, expert 1000 mm gives PASS"
+      ],
+      "adjudication": {
+        "label": "FAIL",
+        "reason": "Expert: 1000 mm PASS. In the IFC a railing runs along Run 2 75-125 mm inside the 1000 mm flight edge, leaving 875 mm under the stated convention (and under a strict balustrade reading). Labelled from the model geometry; the subset case keeps the expert label."
+      },
+      "label": "FAIL"
+    },
+    "38SnCByaD3oPaKe_iSvSu4": {
+      "name": "Cast-In-Place Stair:Stair:349529",
+      "predefined_type": "QUARTER_TURN_STAIR",
+      "storey": "2nd Storey",
+      "spaces": [
+        {
+          "guid": "38SnCByaD3oPaKe_iSvSAW",
+          "name": "Living Room 9",
+          "area_m2": 28.694,
+          "occupancy": "multi-unit residential",
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 2181,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "exempt",
+        "message": "Element is in an attic storey inside a Residential Unit space with area less than 10m\u00b2.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 992,
+        "balustrade_reading_mm": 924,
+        "narrowest_flight": "38SnCByaD3oPaKe_iSvSu1",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Basic Wall:100:349496",
+          "Railing:1100mm:349536",
+          "Railing:1100mm:349540"
+        ]
+      },
+      "conflicts": [
+        "applicability: IFC evidence gives None, expert gives NA"
+      ],
+      "adjudication": {
+        "label": "NA",
+        "reason": "Flight rises from the 2nd storey into the 9.7 m2 residential attic room; the expert treats it as that attic's staircase (E.2.4(c)). Its base is in a 28.7 m2 living room, so the 'located in' reading is an interpretation."
+      },
+      "label": "NA"
+    },
+    "38SnCByaD3oPaKe_iSvSxf": {
+      "name": "Precast Stair:Stair:349620",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "3rd Storey Attic",
+      "spaces": [
+        {
+          "guid": "38SnCByaD3oPaKe_iSvSBA",
+          "name": "Area 4",
+          "area_m2": 9.745,
+          "occupancy": null,
+          "samples": "18/18"
+        },
+        {
+          "guid": "38SnCByaD3oPaKe_iSvSAf",
+          "name": "Living Room 8",
+          "area_m2": 9.745,
+          "occupancy": "multi-unit residential",
+          "samples": "18/18"
+        }
+      ],
+      "pset_number_of_risers": 13.0,
+      "riser_height_mm": 200.0,
+      "modelled_rise_mm": 2600,
+      "expert": {
+        "clause": "e.2.4",
+        "bucket": "exempt",
+        "message": "Element is in an attic storey inside a Residential Unit space with area less than 10m\u00b2.",
+        "width_mm": null
+      },
+      "applicability": {
+        "finding": "NA",
+        "reason": "Attic storey, residential space of at most 10 m2 (E.2.4(c))."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1000,
+        "balustrade_reading_mm": 1000,
+        "narrowest_flight": "38SnCByaD3oPaKe_iSvSxe",
+        "flight_width_mm": 1000,
+        "elements_in_section": [
+          "Basic Wall:100:349508",
+          "Railing:1100mm:349623",
+          "Railing:1100mm:349627"
+        ]
+      },
+      "conflicts": [],
+      "label": "NA"
+    },
+    "3O2csS3mX79PMK3UW4Bkg0": {
+      "name": "Precast Stair:Stair:333137",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1200mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1200
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1201,
+        "balustrade_reading_mm": 1162,
+        "narrowest_flight": "3O2csS3mX79PMK3UW4Bkg3",
+        "flight_width_mm": 1201,
+        "elements_in_section": [
+          "Railing:1100mm:333141",
+          "Railing:1100mm:333145"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "3O2csS3mX79PMK3UW4Bki_": {
+      "name": "Precast Stair:Stair:333039",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "fail",
+        "message": "The clear width of the staircase is 800mm which is less than the minimum requirement of 1000mm.",
+        "width_mm": 800
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 763,
+        "balustrade_reading_mm": 764,
+        "narrowest_flight": "3O2csS3mX79PMK3UW4BkiX",
+        "flight_width_mm": 1001,
+        "elements_in_section": [
+          "Railing:1100mm:333042",
+          "Railing:1100mm:333046"
+        ]
+      },
+      "measured_label": "FAIL",
+      "width_agreement": "same outcome, different width",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "FAIL"
+    },
+    "3g3S4PX31608cOsYvA7TLr": {
+      "name": "Precast Stair:Stair:333665",
+      "predefined_type": "STRAIGHT_RUN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1100mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1100
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1100,
+        "balustrade_reading_mm": 1100,
+        "narrowest_flight": "3g3S4PX31608cOsYvA7TND",
+        "flight_width_mm": 1100,
+        "elements_in_section": []
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "3g3S4PX31608cOsYvA7TYY": {
+      "name": "Precast Stair:Stair:334518",
+      "predefined_type": "HALF_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 32.0,
+      "riser_height_mm": 127.0,
+      "modelled_rise_mm": 2229,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1100mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1100
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1100,
+        "balustrade_reading_mm": 1100,
+        "narrowest_flight": "3g3S4PX31608cOsYvA7Tc5",
+        "flight_width_mm": 1100,
+        "elements_in_section": []
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "3g3S4PX31608cOsYvA7Te8": {
+      "name": "Precast Stair:Stair:333852",
+      "predefined_type": "QUARTER_TURN_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 32.0,
+      "riser_height_mm": 169.3,
+      "modelled_rise_mm": 2910,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1100mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1100
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "cross sections",
+        "edge_reading_mm": 1100,
+        "balustrade_reading_mm": 1100,
+        "narrowest_flight": "3g3S4PX31608cOsYvA7Tgx",
+        "flight_width_mm": 1100,
+        "elements_in_section": []
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "3g3S4PX31608cOsYvA7TmK": {
+      "name": "Precast Stair:Stair:335360",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 24.0,
+      "riser_height_mm": 166.7,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1050mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1050
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1047,
+        "balustrade_reading_mm": 1047,
+        "narrowest_flight": "3g3S4PX31608cOsYvA7TmL",
+        "flight_width_mm": 1100,
+        "elements_in_section": [
+          "Round:200mm:335406"
+        ]
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    },
+    "3g3S4PX31608cOsYvA7Twz": {
+      "name": "Precast Stair:Stair:335017",
+      "predefined_type": "SPIRAL_STAIR",
+      "storey": "1st Storey",
+      "spaces": [],
+      "pset_number_of_risers": 23.0,
+      "riser_height_mm": 173.9,
+      "modelled_rise_mm": 4000,
+      "expert": {
+        "clause": "e.3.3.1",
+        "bucket": "pass",
+        "message": "The clear width of the staircase is 1100mm which meets the minimum requirement of 1000mm.",
+        "width_mm": 1100
+      },
+      "applicability": {
+        "finding": null,
+        "reason": "No exemption or manual-check condition found."
+      },
+      "clear_width": {
+        "method": "radial sections",
+        "edge_reading_mm": 1101,
+        "balustrade_reading_mm": 1101,
+        "narrowest_flight": "3g3S4PX31608cOsYvA7Tw_",
+        "flight_width_mm": 1101,
+        "elements_in_section": []
+      },
+      "measured_label": "PASS",
+      "width_agreement": "within 10 mm",
+      "balustrade_reading_changes_outcome": false,
+      "conflicts": [],
+      "label": "PASS"
+    }
   }
 }

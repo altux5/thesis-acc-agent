@@ -7,8 +7,8 @@ from dataclasses import replace
 
 from ground_truth import GT_DIR, GroundTruth, load
 
-CASE_ID = "slab_thickness__mall_v2"
-LEGACY_CASE_ID = "slab_thickness__mall"
+CASE_ID = "slab_thickness__mall"
+LEGACY_CASE_ID = "slab_thickness__mall_deprecated_v1"
 TOLERANCE_MM = 0.5
 
 

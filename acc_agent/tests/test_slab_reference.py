@@ -36,7 +36,7 @@ class SlabReferenceTests(unittest.TestCase):
         self.assertEqual(loaded.provenance, case.provenance)
 
     def test_live_mall_evidence_and_legacy_preservation(self):
-        legacy_path = ground_truth.GT_DIR / "slab_thickness__mall.json"
+        legacy_path = ground_truth.GT_DIR / "slab_thickness__mall_deprecated_v1.json"
         legacy = ground_truth.load(legacy_path)
         if not legacy.resolve_ifc().exists():
             self.skipTest("Mall IFC is not distributed with the repository")
@@ -55,12 +55,12 @@ class SlabReferenceTests(unittest.TestCase):
         import simple_rules
         from gui import App, PILOTS, GROUP_SIMPLE_1
 
-        expected = ground_truth.GroundTruth("slab_thickness__mall_v2", "rule", "model.ifc", complexity=1)
+        expected = ground_truth.GroundTruth("slab_thickness__mall", "rule", "model.ifc", complexity=1)
         with patch("slab_reference.build_case", return_value=expected):
             actual = simple_rules.build_case(simple_rules.BY_ID["slab_thickness"], "mall")
         self.assertIs(actual, expected)
         self.assertIn(actual.case_id, PILOTS)
-        self.assertNotIn("slab_thickness__mall", PILOTS)
+        self.assertNotIn("slab_thickness__mall_deprecated_v1", PILOTS)
         self.assertEqual(App._group_of(actual), GROUP_SIMPLE_1)
 
 

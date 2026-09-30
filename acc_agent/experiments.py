@@ -17,6 +17,8 @@ from pathlib import Path
 from code_identity import capture_module
 capture_module()
 
+from ground_truth import RENAMED_BEFORE_2026_09_30  # noqa: E402
+
 SCHEMA_VERSION = 2
 # Rows written before the column existed. The kernel runtime did not exist then,
 # so they were in-process, but that is inferred rather than recorded.
@@ -203,11 +205,13 @@ class ExperimentStore:
         for row in rows:
             item = dict(row)
             details = json.loads(item["details"] or "{}")
+            if json.loads(item["configuration"] or "{}").get("recording_version", 0) < 4:
+                item["case_id"] = RENAMED_BEFORE_2026_09_30.get(item["case_id"], item["case_id"])
             item["usage_complete"] = details.get("usage_complete")
             executions, errors = item["executions"], item["error_count"]
             item["code_error_rate"] = (errors / executions if executions is not None and executions > 0
                                        and errors is not None and 0 <= errors <= executions else None)
-            item["comparable"] = (item["audit_status"] in ("control-only", "relations-checked", "expert-subset-checked")
+            item["comparable"] = (item["audit_status"] in ("control-only", "relations-checked", "expert-subset-checked", "evidence-checked")
                                   and item["harness"] < 3 and not item["skills_enabled"] and not item["context_changed"])
             if comparison_only and not item["comparable"]:
                 continue

@@ -332,3 +332,27 @@ or a clearer policy is needed. "Hold" means a demonstrated defect blocks use.
 5. Before thesis sweeps, freeze accepted rules, references, provenance and
    applicability. Separate related model versions across any claimed held-out
    evaluation, and report per-case completion plus class-specific performance.
+
+## usable_2 Repairs And Retirements - 2026-09-29
+
+[reference_v2.py](reference_v2.py) rebuilds the repairable cases under new IDs and
+adds new ones; `--check` regenerates all ten from the IFC and workbooks. Each
+builder stops on an unrecorded disagreement between recorded properties, model
+geometry and expert rows. Held cases above are unchanged; their GUI notes point to
+the replacement. The full list and counts are in [NOTES.md](NOTES.md).
+
+- Landing: per-flight riser counts from recorded values within geometric bounds;
+  repeated staircase totals detected by summing flight geometry; spiral flights and
+  E.2.1/E.2.4-exempt staircases NA (v8 exemptions reused from the full staircase
+  reference). OBOS cannot be repaired: the building is recorded as owner-built.
+- Tread (mall): every tread measured; tapered treads 500 mm from the narrow end.
+- Exit access: full template clause, authority definitions, template-scope subset;
+  expert Pass rows that state an exemption are NA; FAIL rows checked against
+  space-boundary doors and electromechanical-device properties.
+- Planter: URA criteria and definitions stated; width outcome and communal overlap
+  re-measured.
+- New: mall door headroom (authority ClearHeight convention) and the EC3
+  same-storey space elevation rule (mall, scdf_3).
+- Retired: slab thickness condo/planterbox/scdf_3/scdf_5/OBOS, tread v8/OBOS,
+  headroom condo, landing OBOS. Mall headroom spaces were not added: expert values
+  are modelled space heights and several overhead ramps/beams below 2 m are PASS.

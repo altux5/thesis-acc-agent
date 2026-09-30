@@ -1,0 +1,1359 @@
+{
+  "case_id": "exit_requirements__scdf_5",
+  "rule": "Every occupant must have direct access to the required exits without passing through another room or tenanted space; where that is not possible, the escape route may pass through at most one other room of the same tenant, through an exit access door fitted with an electromechanical device.\n\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nSCDF Fire Code 2023, clause 2.2.12:\nLocation of exits & access to exits. All exits and access facilities shall be required to comply with the following: b. Every occupant within a building or storey of a building shall have direct access to the required exit or exits without the need to pass through another room(s) or other tenanted space(s). Where direct access to the required exit or exits of the storey is not possible, occupants shall only be allowed to pass through a maximum of one other room or space belonging to the same tenant with the following conditions being complied with:  1. The exit access door separating the rooms or spaces which the egress route passes through shall only be fitted with an electromechanical device designed by Cl.2.3.9k.(2); 2. The doorway of the exit access door shall not be blocked/obstructed and be kept clear at all times.\n\nExemptions (authority summary): dwelling units in Purpose Group I and II buildings; non-functional spaces and enclosed spaces (no door or opening); spaces provided with only one exit towards exit facilities.\nAuthority interpretation: the clause detects 'room-to-room' issues. A room-to-room issue occurs when more than one exit is provided from a room or space and some of these exits could be locked while the room or space is still accessible through the remaining door(s). An escape route has no room-to-room issue when (a) it opens into a common area such as a corridor or lobby; (b) a room or space opens into a reception area; or (c) it moves from one room to another room with only one egress route. A reception or tenanted corridor that does not share its space with another room is not counted as a room. Condition 2 (obstruction of the doorway) is not part of this check.\nAuthority IFC conventions: exit facilities are IfcSpace with SGPset_Space.SpaceName InternalExitStaircase, ExternalExitStaircase, InternalExitPassageway, ExternalExitPassageway, InternalExitRamp or ExternalExitRamp; an exit access is an IfcDoor with Pset_DoorCommon.FireExit = TRUE or an IfcOpeningElement of type OPENING; an exit access door with an electromechanical device has SGPset_Door.ElectromechanicalLockingDevice = TRUE; egress indicator boxes (IfcBuildingElementProxy EGRESSINDICATORBOX) mark the egress side of exit access doors. Common areas are corridors, lobbies and similar shared circulation spaces (the authority's space classification list is not supplied).\n\nLabel every space: PASS when every escape route of its occupants complies, FAIL when a route has a room-to-room issue that the clause does not permit, NA when the space is exempt. Spaces that are themselves common areas or exit facilities may be labelled NA.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Location of exits & access to exits (EIB related)/Test Models/uat2_scdf_2.2.12_5_v0.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0eIFN9_CjDohnfRZazdLH9",
+    "0eIFN9_CjDohnfRZazdLK5",
+    "2lT0qxKLn7DeJJTwVYq$_b"
+  ],
+  "labels": {
+    "0XSUWjfCz55Q2b5Heu8HgM": "NA",
+    "0XSUWjfCz55Q2b5Heu8HgU": "PASS",
+    "0XSUWjfCz55Q2b5Heu8HlW": "PASS",
+    "0XSUWjfCz55Q2b5Heu8IHb": "NA",
+    "0XSUWjfCz55Q2b5Heu8IHj": "PASS",
+    "0XSUWjfCz55Q2b5Heu8IJl": "PASS",
+    "0XSUWjfCz55Q2b5Heu8IKk": "NA",
+    "0XSUWjfCz55Q2b5Heu8IKs": "PASS",
+    "0XSUWjfCz55Q2b5Heu8IMu": "PASS",
+    "0XSUWjfCz55Q2b5Heu8ISi": "NA",
+    "0XSUWjfCz55Q2b5Heu8ISq": "PASS",
+    "0XSUWjfCz55Q2b5Heu8IUs": "PASS",
+    "0ZzUMFhSfDiONPwLAeU_3_": "NA",
+    "0ZzUMFhSfDiONPwLAeU_74": "NA",
+    "0ZzUMFhSfDiONPwLAeU_78": "PASS",
+    "0ZzUMFhSfDiONPwLAeU_7E": "PASS",
+    "0ZzUMFhSfDiONPwLAeU_7Q": "PASS",
+    "0ZzUMFhSfDiONPwLAeU_YM": "NA",
+    "0ZzUMFhSfDiONPwLAeU_bS": "NA",
+    "0ZzUMFhSfDiONPwLAeU_bW": "PASS",
+    "0ZzUMFhSfDiONPwLAeU_bc": "PASS",
+    "0ZzUMFhSfDiONPwLAeU_bo": "PASS",
+    "0eIFN9_CjDohnfRZazdLH9": "FAIL",
+    "0eIFN9_CjDohnfRZazdLHn": "NA",
+    "0eIFN9_CjDohnfRZazdLHp": "PASS",
+    "0eIFN9_CjDohnfRZazdLI7": "PASS",
+    "0eIFN9_CjDohnfRZazdLK5": "FAIL",
+    "0eIFN9_CjDohnfRZazdLKD": "NA",
+    "0eIFN9_CjDohnfRZazdLKF": "PASS",
+    "0eIFN9_CjDohnfRZazdLVB": "NA",
+    "2FoNhqhGP5fQbwmdvhU8K$": "PASS",
+    "2FoNhqhGP5fQbwmdvhU8K7": "NA",
+    "2FoNhqhGP5fQbwmdvhU8Mv": "PASS",
+    "2lT0qxKLn7DeJJTwVYq$_X": "NA",
+    "2lT0qxKLn7DeJJTwVYq$_b": "FAIL",
+    "2lT0qxKLn7DeJJTwVYq$_d": "PASS",
+    "2lT0qxKLn7DeJJTwVYq$_j": "PASS",
+    "2lT0qxKLn7DeJJTwVYq$vJ": "PASS",
+    "2lT0qxKLn7DeJJTwVYq$vR": "PASS"
+  },
+  "notes": "Expert rows for the 39 spaces listed in the authority template: {'FAIL': 3, 'NA': 13, 'PASS': 23}; 84 other IfcSpace are unscored. Supersedes exit_requirements__scdf_5_deprecated_v1 (truncated rule, no declared subset).",
+  "clause": "fc:2.2.12b",
+  "source": "reference_v2.py::build_exit (exit_requirements.xlsx::uat2_scdf_2.2.12_5_v0)",
+  "reference": {
+    "tier": "usable_2",
+    "review_date": "2026-09-29",
+    "version": 2,
+    "supersedes": "exit_requirements__scdf_5_deprecated_v1",
+    "evaluation_scope": "annotated_subset",
+    "unscored_ids": [
+      "07Tqjv_G9EWhkVhPvyOwUu",
+      "0UiKR8dA5BG9txu31i7ei1",
+      "0UiKR8dA5BG9txu31i7ei3",
+      "0UiKR8dA5BG9txu31i7ei5",
+      "0UiKR8dA5BG9txu31i7ei7",
+      "0UiKR8dA5BG9txu31i7ei9",
+      "0UiKR8dA5BG9txu31i7eiB",
+      "0UiKR8dA5BG9txu31i7eiD",
+      "0UiKR8dA5BG9txu31i7eiF",
+      "0UiKR8dA5BG9txu31i7eiQ",
+      "0UiKR8dA5BG9txu31i7ej$",
+      "0UiKR8dA5BG9txu31i7ejn",
+      "0UiKR8dA5BG9txu31i7ejp",
+      "0UiKR8dA5BG9txu31i7ejr",
+      "0UiKR8dA5BG9txu31i7ejt",
+      "0UiKR8dA5BG9txu31i7ejz",
+      "0UiKR8dA5BG9txu31i7el9",
+      "0XSUWjfCz55Q2b5Heu8HgI",
+      "0XSUWjfCz55Q2b5Heu8HgK",
+      "0XSUWjfCz55Q2b5Heu8HgO",
+      "0XSUWjfCz55Q2b5Heu8HgQ",
+      "0XSUWjfCz55Q2b5Heu8HgS",
+      "0XSUWjfCz55Q2b5Heu8IHX",
+      "0XSUWjfCz55Q2b5Heu8IHZ",
+      "0XSUWjfCz55Q2b5Heu8IHd",
+      "0XSUWjfCz55Q2b5Heu8IHf",
+      "0XSUWjfCz55Q2b5Heu8IHh",
+      "0XSUWjfCz55Q2b5Heu8IKg",
+      "0XSUWjfCz55Q2b5Heu8IKi",
+      "0XSUWjfCz55Q2b5Heu8IKm",
+      "0XSUWjfCz55Q2b5Heu8IKo",
+      "0XSUWjfCz55Q2b5Heu8IKq",
+      "0XSUWjfCz55Q2b5Heu8ISe",
+      "0XSUWjfCz55Q2b5Heu8ISg",
+      "0XSUWjfCz55Q2b5Heu8ISk",
+      "0XSUWjfCz55Q2b5Heu8ISm",
+      "0XSUWjfCz55Q2b5Heu8ISo",
+      "0ZzUMFhSfDiONPwLAeU_7A",
+      "0ZzUMFhSfDiONPwLAeU_7C",
+      "0ZzUMFhSfDiONPwLAeU_7G",
+      "0ZzUMFhSfDiONPwLAeU_7I",
+      "0ZzUMFhSfDiONPwLAeU_7K",
+      "0ZzUMFhSfDiONPwLAeU_7M",
+      "0ZzUMFhSfDiONPwLAeU_7O",
+      "0ZzUMFhSfDiONPwLAeU_bY",
+      "0ZzUMFhSfDiONPwLAeU_ba",
+      "0ZzUMFhSfDiONPwLAeU_be",
+      "0ZzUMFhSfDiONPwLAeU_bg",
+      "0ZzUMFhSfDiONPwLAeU_bi",
+      "0ZzUMFhSfDiONPwLAeU_bk",
+      "0ZzUMFhSfDiONPwLAeU_bm",
+      "0eIFN9_CjDohnfRZazdLHD",
+      "0eIFN9_CjDohnfRZazdLHF",
+      "0eIFN9_CjDohnfRZazdLHr",
+      "0eIFN9_CjDohnfRZazdLHt",
+      "0eIFN9_CjDohnfRZazdLK9",
+      "0eIFN9_CjDohnfRZazdLKB",
+      "0eIFN9_CjDohnfRZazdLKn",
+      "0eIFN9_CjDohnfRZazdLKp",
+      "0vLArw2SP9nO$yiTrI05LG",
+      "0vLArw2SP9nO$yiTrI05LL",
+      "0vLArw2SP9nO$yiTrI05Mi",
+      "0vLArw2SP9nO$yiTrI05Ml",
+      "16jHRir$PFqfLV$GfFIBFi",
+      "2FoNhqhGP5fQbwmdvhU8K1",
+      "2FoNhqhGP5fQbwmdvhU8K3",
+      "2FoNhqhGP5fQbwmdvhU8K5",
+      "2FoNhqhGP5fQbwmdvhU8KB",
+      "2FoNhqhGP5fQbwmdvhU8Kz",
+      "2FoNhqhGP5fQbwmdvhU8SX",
+      "2FoNhqhGP5fQbwmdvhU8SZ",
+      "2FoNhqhGP5fQbwmdvhU8Sd",
+      "2FoNhqhGP5fQbwmdvhU8TP",
+      "2FoNhqhGP5fQbwmdvhU8TR",
+      "2FoNhqhGP5fQbwmdvhU8TT",
+      "2FoNhqhGP5fQbwmdvhU8TV",
+      "2FoNhqhGP5fQbwmdvhU8VL",
+      "2lT0qxKLn7DeJJTwVYq$_Z",
+      "2lT0qxKLn7DeJJTwVYq$_f",
+      "2lT0qxKLn7DeJJTwVYq$_l",
+      "2lT0qxKLn7DeJJTwVYq$vM",
+      "2lT0qxKLn7DeJJTwVYq$vP",
+      "2lT0qxKLn7DeJJTwVYq$vT",
+      "2lT0qxKLn7DeJJTwVYq$vV"
+    ],
+    "population": 123,
+    "ifc_sha256": "9650a46d924defce62d39522e7d7e682c938a0d201b470221c4db88be04ef8f9",
+    "status": "Advisor expert rows; FAIL rows cross-checked against space-boundary doors and electromechanical-device properties. Not independent expert certification.",
+    "policy": "Scope is the authority template's spaces; other IfcSpace are unscored. Expert Pass rows whose explanation states an exemption (one exit, non-functional space) are NA. Full clause text from the template.",
+    "limitations": "The advisors' own checker agreed with 44 of 51 exit rows; the tenant-internal corridor FAIL (0eIFN9_CjDohnfRZazdLH9, ...LK5) is an interpretation of the authority's reception/transitional-space rule."
+  },
+  "provenance": {
+    "0XSUWjfCz55Q2b5Heu8HgM": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"reception\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8HgY",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0XSUWjfCz55Q2b5Heu8HgU": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8Hga",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8Hi1",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0XSUWjfCz55Q2b5Heu8HlW": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8Hgc",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8HlZ",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0XSUWjfCz55Q2b5Heu8IHb": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"reception\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IHn",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0XSUWjfCz55Q2b5Heu8IHj": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IGn",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "reception"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IHp",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0XSUWjfCz55Q2b5Heu8IJl": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IHr",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IJk",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0XSUWjfCz55Q2b5Heu8IKk": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"reception\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IKw",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0XSUWjfCz55Q2b5Heu8IKs": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IKy",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8INw",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0XSUWjfCz55Q2b5Heu8IMu": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IK_",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IMx",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0XSUWjfCz55Q2b5Heu8ISi": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"reception\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8ISu",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0XSUWjfCz55Q2b5Heu8ISq": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8ISw",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IVu",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0XSUWjfCz55Q2b5Heu8IUs": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8ISy",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0XSUWjfCz55Q2b5Heu8IUv",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0ZzUMFhSfDiONPwLAeU_3_": {
+      "space": "reception",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "reception: 1 exit to \"office\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_3h",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "function room"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0ZzUMFhSfDiONPwLAeU_74": {
+      "space": "reception",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "reception: 1 exit to \"office\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0ZzUMFhSfDiONPwLAeU_78": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_5r",
+          "class": "IfcDoor",
+          "fire_exit": null,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_5x",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "function room"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_6t",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0ZzUMFhSfDiONPwLAeU_7E": {
+      "space": "function room",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "function room: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_5x",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_6n",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0ZzUMFhSfDiONPwLAeU_7Q": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_2o",
+          "class": "IfcDoor",
+          "fire_exit": null,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_3f",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0ZzUMFhSfDiONPwLAeU_YM": {
+      "space": "reception",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "reception: 1 exit to \"office\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_Y3",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "function room"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0ZzUMFhSfDiONPwLAeU_bS": {
+      "space": "reception",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "reception: 1 exit to \"office\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0ZzUMFhSfDiONPwLAeU_bW": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_aD",
+          "class": "IfcDoor",
+          "fire_exit": null,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_aJ",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "function room"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_bF",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0ZzUMFhSfDiONPwLAeU_bc": {
+      "space": "function room",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "function room: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_aJ",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_b9",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0ZzUMFhSfDiONPwLAeU_bo": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_XA",
+          "class": "IfcDoor",
+          "fire_exit": null,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0ZzUMFhSfDiONPwLAeU_Y1",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0eIFN9_CjDohnfRZazdLH9": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "fail",
+        "message": "office: exit to corridor leads to another office only, no access to exit facility; ElectromechanicalLockingDevice not set on room-to-room door"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLH7",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLU5",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "FAIL",
+      "mapping": "Expert verdict."
+    },
+    "0eIFN9_CjDohnfRZazdLHn": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"reception\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLH5",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0eIFN9_CjDohnfRZazdLHp": {
+      "space": "reception",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "reception: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLH3",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLH5",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLU5",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "office"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0eIFN9_CjDohnfRZazdLI7": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLJ0",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLKT",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0eIFN9_CjDohnfRZazdLK5": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "fail",
+        "message": "office: exit to corridor leads to another office only, no access to exit facility; ElectromechanicalLockingDevice not set on room-to-room door"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLK3",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLL1",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "FAIL",
+      "mapping": "Expert verdict."
+    },
+    "0eIFN9_CjDohnfRZazdLKD": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"reception\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLK1",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "reception"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "0eIFN9_CjDohnfRZazdLKF": {
+      "space": "reception",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "reception: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLK1",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLKV",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLL1",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "office"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "0eIFN9_CjDohnfRZazdLVB": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"corridor\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "0eIFN9_CjDohnfRZazdLH1",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "0eIFN9_CjDohnfRZazdLV4",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "2FoNhqhGP5fQbwmdvhU8K$": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "2FoNhqhGP5fQbwmdvhU8Kr",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "2FoNhqhGP5fQbwmdvhU8Lx",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "office"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "2FoNhqhGP5fQbwmdvhU8K7": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: 1 exit to \"office\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "2FoNhqhGP5fQbwmdvhU8Kx",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "office"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "2FoNhqhGP5fQbwmdvhU8Mv": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: direct exit(s) to corridor"
+      },
+      "boundary_doors": [
+        {
+          "element": "2FoNhqhGP5fQbwmdvhU8Kt",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": null,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "2FoNhqhGP5fQbwmdvhU8Mu",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "2lT0qxKLn7DeJJTwVYq$_X": {
+      "space": "private corridor",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "private corridor: 1 exit to \"reception\"; exempt from fc:2.2.12b"
+      },
+      "boundary_doors": [
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqcq",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqdQ",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "reception"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqdz",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": false,
+          "to": [
+            "storage"
+          ]
+        }
+      ],
+      "label": "NA",
+      "mapping": "Expert Pass whose explanation states an exemption is NA."
+    },
+    "2lT0qxKLn7DeJJTwVYq$_b": {
+      "space": "pantry",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "fail",
+        "message": "pantry: exit to \"workshop\" [3 exits]: ElectromechanicalLockingDevice not set"
+      },
+      "boundary_doors": [
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqfE",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqkj",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "workshop"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqlK",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "workshop"
+          ]
+        }
+      ],
+      "label": "FAIL",
+      "mapping": "Expert verdict."
+    },
+    "2lT0qxKLn7DeJJTwVYq$_d": {
+      "space": "office",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "office: exit to \"storage\" (room-to-room, EM device present); exit to \"private corridor\" (1 egress route; not a room); exit to \"pantry\" (room-to-room, EM device present)"
+      },
+      "boundary_doors": [
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqXH",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "storage"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqcq",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "private corridor"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqeL",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "reception"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqfE",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "pantry"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "2lT0qxKLn7DeJJTwVYq$_j": {
+      "space": "reception",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "reception: direct exit(s) to smoke free lobby"
+      },
+      "boundary_doors": [
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqa1",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": false,
+          "to": [
+            "smoke free lobby"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqdQ",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "private corridor"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqeL",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqhO",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": false,
+          "to": [
+            "toilet"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "2lT0qxKLn7DeJJTwVYq$vJ": {
+      "space": "storage",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "storage: direct exit(s) to driveway"
+      },
+      "boundary_doors": [
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqWw",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": false,
+          "to": [
+            "driveway"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqXH",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "office"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqZg",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": false,
+          "to": [
+            "driveway"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqq_N",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": false,
+          "to": [
+            "driveway"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqdz",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": false,
+          "to": [
+            "private corridor"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    },
+    "2lT0qxKLn7DeJJTwVYq$vR": {
+      "space": "workshop",
+      "expert": {
+        "clause": "fc:2.2.12b",
+        "bucket": "pass",
+        "message": "workshop: direct exit(s) to corridor, driveway"
+      },
+      "boundary_doors": [
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqjK",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": []
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqkj",
+          "class": "IfcDoor",
+          "fire_exit": true,
+          "electromechanical_device": false,
+          "to": [
+            "pantry"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqqlK",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "pantry"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqrHC",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "driveway"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqrHz",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "corridor"
+          ]
+        },
+        {
+          "element": "2lT0qxKLn7DeJJTwVYqrMv",
+          "class": "IfcDoor",
+          "fire_exit": false,
+          "electromechanical_device": true,
+          "to": [
+            "driveway"
+          ]
+        }
+      ],
+      "label": "PASS",
+      "mapping": "Expert verdict."
+    }
+  }
+}
