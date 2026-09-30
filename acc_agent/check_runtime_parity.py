@@ -1,8 +1,8 @@
 """Offline kernel contract check; the historical command name is retained.
 
 Checks expected output, reporting, interpreter persistence/reset and a real IFC
-classification against the stored reference. Legacy two-runtime comparisons are
-preserved below as comments; they are not executed.
+classification against the stored reference. The retired two-runtime comparisons are
+archived in archive/inprocess_runtime.py.
 
     python acc_agent/check_runtime_parity.py
 
@@ -18,7 +18,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import ground_truth
-# from executor import CodeExecutor
 from kernel_executor import KernelCodeExecutor
 
 OBSERVED = ("last_error", "labels_valid", "label_reports", "reported_labels")
@@ -48,23 +47,6 @@ def observe(executor) -> dict:
         **{name: getattr(executor, name) for name in OBSERVED},
         "status": {key: executor.last_execution.get(key) for key in STATUS},
     }
-
-
-# def compare_blocks(stateful: bool, limit: int) -> list[str]:
-#     problems = []
-#     inproc = CodeExecutor(stateful=stateful, output_char_limit=limit)
-#     kernel = KernelCodeExecutor(stateful=stateful, output_char_limit=limit, timeout=60)
-#     try:
-#         for name, code in BLOCKS:
-#             left, right = inproc.run(code), kernel.run(code)
-#             if left != right:
-#                 problems.append(f"[{name}] output differs\n  in-process: {left!r}\n  kernel:     {right!r}")
-#             if observe(inproc) != observe(kernel):
-#                 problems.append(f"[{name}] state differs\n  in-process: {observe(inproc)}\n  kernel:     {observe(kernel)}")
-#     finally:
-#         inproc.close()
-#         kernel.close()
-#     return problems
 
 
 def check_blocks(stateful: bool, limit: int) -> list[str]:
@@ -160,38 +142,6 @@ print("classified", len(labels))
 """
 
 
-# def compare_real_model() -> list[str]:
-#     problems = []
-#     case = ground_truth.load(
-#         Path(__file__).resolve().parent / "ground_truth" / "slab_thickness__mall_v2.json")
-#     ifc = case.resolve_ifc()
-#     code = CLASSIFY.format(ifc=ifc)
-#     results = {}
-#     for name, executor in (("in-process", CodeExecutor(stateful=True)),
-#                            ("kernel", KernelCodeExecutor(stateful=True, timeout=600))):
-#         try:
-#             output = executor.run(code)
-#             if executor.last_error:
-#                 problems.append(f"[{name}] classification raised:\n{output[-800:]}")
-#             results[name] = dict(executor.reported_labels)
-#         finally:
-#             executor.close()
-#     if results.get("in-process") != results.get("kernel"):
-#         left, right = results.get("in-process", {}), results.get("kernel", {})
-#         differing = [k for k in set(left) | set(right) if left.get(k) != right.get(k)]
-#         problems.append(f"label maps differ on {len(differing)} elements, e.g. {differing[:5]}")
-#     reference = case.labels
-#     produced = results.get("kernel", {})
-#     if set(produced) != set(reference):
-#         problems.append(f"anchor set differs from reference: produced {len(produced)}, reference {len(reference)}")
-#     counts: dict[str, int] = {}
-#     for value in produced.values():
-#         counts[value] = counts.get(value, 0) + 1
-#     agree = sum(1 for k, v in produced.items() if reference.get(k) == v)
-#     print(f"  mall slabs: {len(produced)} labels {counts}, {agree} agree with the reference")
-#     return problems
-
-
 def check_real_model() -> list[str]:
     problems = []
     case = ground_truth.load(Path(__file__).resolve().parent / "ground_truth" / "slab_thickness__mall.json")
@@ -212,29 +162,6 @@ def check_real_model() -> list[str]:
         finally:
             executor.close()
     return problems
-
-
-# def main() -> int:
-#     failures = []
-#     for stateful in (True, False):
-#         label = "stateful" if stateful else "stateless"
-#         print(f"Comparing {len(BLOCKS)} blocks, {label} ...")
-#         found = compare_blocks(stateful, 6000)
-#         print(f"  {'OK' if not found else str(len(found)) + ' DIFFERENCES'}")
-#         failures += found
-#     print("Comparing truncation behaviour at a 60-character cap ...")
-#     found = compare_blocks(True, 60)
-#     print(f"  {'OK' if not found else str(len(found)) + ' DIFFERENCES'}")
-#     failures += found
-#     print("Replaying a real classification over the mall IFC ...")
-#     found = compare_real_model()
-#     print(f"  {'OK' if not found else str(len(found)) + ' DIFFERENCES'}")
-#     failures += found
-#     if failures:
-#         print("\nDIFFERENCES FOUND:\n" + "\n".join(failures))
-#         return 1
-#     print("\nThe two runtimes agree on every checked observable.")
-#     return 0
 
 
 def main() -> int:

@@ -15,6 +15,7 @@ Read this file before planning, building, or changing this application. Then rea
 
 - Use standard library/framework capabilities before inventing custom infrastructure.
 - Maintain one active implementation for each responsibility. Replace superseded paths rather than wrapping them or leaving commented implementations behind.
+- Keep retired code for the thesis in `archive/`, not as comments in live files: copy it verbatim into a file there with a header (retired when, why, replaced by what, source file and line range at the latest tag), then remove it from the live file. Nothing imports from `archive/`. Tag milestones in the publishing repository so each stage can be checked out whole.
 - Reuse suitable modules and tests. Do not introduce speculative abstractions, framework adapters, plugin systems, or future-proofing layers.
 - No case-specific checking logic, hints, or reference answers in the evaluated agent. Preserve the separation between execution and offline scoring.
 - Preserve user changes, historical experiments, and reference data. Do not delete features merely because they look unused; confirm scope first.
