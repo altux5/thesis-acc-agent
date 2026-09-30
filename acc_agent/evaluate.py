@@ -41,7 +41,6 @@ from agent import AgentResult, CodeActAgent, save_transcript
 from completion import COMPLETION_CHECKS_VERSION
 from executor import make_executor
 from experiment_recorder import SweepRecorder
-# from skill_library import SkillLibrary
 
 PROJECT_DIR = Path(__file__).resolve().parent
 
@@ -73,7 +72,6 @@ def _run_once(
     executor = make_executor(
         stateful=(mode == "stateful"),
         output_char_limit=config.OUTPUT_CHAR_LIMIT,
-        # skill_library=skill_library,
     )
     agent = CodeActAgent(
         llm_client,
@@ -221,8 +219,6 @@ def main() -> None:
         "no",
     )
     env_primer = os.environ.get("ENV_PRIMER", "1").lower() not in ("0", "false", "no")
-    # skills_enabled = os.environ.get("SKILLS", "1").lower() not in ("0", "false", "no")
-    # skill_library = SkillLibrary(enabled=skills_enabled)
     recorder = SweepRecorder(
         entrypoint="eval", requested=len(args.modes) * args.repeats, case=gt, rule=rule,
         ifc_path=ifc_path, client=llm_client, max_iterations=args.max_iterations,
@@ -266,7 +262,6 @@ def main() -> None:
                     "metadata": {"case_id": gt.case_id, "repeat": i},
                 },
                 env_primer=env_primer,
-                # skill_library=skill_library,
                 harness=args.harness,
                 gt_labels=gt_labels,
                 recorder=recorder,

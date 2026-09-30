@@ -23,7 +23,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import skill_library  # noqa: E402
 from agent import CodeActAgent  # noqa: E402
-# from executor import CodeExecutor, make_executor  # Retired runtime.
 from executor import make_executor  # noqa: E402
 from kernel_executor import KernelCodeExecutor  # noqa: E402
 from .test_agent import ScriptedClient, reply, python_call, final_call  # noqa: E402
@@ -101,12 +100,6 @@ class KernelExecutorTest(unittest.TestCase):
         )
         self.assertFalse(executor.last_error, output)
         self.assertIn("readable True True", output)
-
-    # def test_inprocess_stateless_leaks_what_the_kernel_does_not(self):
-    #     executor = CodeExecutor(stateful=False)
-    #     executor.run("import os\nos.environ['ACC_INPROCESS_PROBE'] = 'leaked'")
-    #     self.addCleanup(os.environ.pop, "ACC_INPROCESS_PROBE", None)
-    #     self.assertIn("leaked", executor.run("import os\nprint(os.environ.get('ACC_INPROCESS_PROBE'))"))
 
     def test_legacy_executor_class_is_not_available(self):
         import executor
@@ -476,17 +469,6 @@ class KernelContractTest(unittest.TestCase):
                 "reports": executor.label_reports, "error": executor.last_error,
                 "status": {k: executor.last_execution.get(k) for k in
                            ("error", "truncated", "output_dropped_chars", "labels_valid")}}
-
-    # def test_identical_output_and_state_for_the_same_blocks(self):
-    #     for stateful in (True, False):
-    #         for limit in (6000, 60):
-    #             inproc = CodeExecutor(stateful=stateful, output_char_limit=limit)
-    #             kernel = KernelCodeExecutor(stateful=stateful, output_char_limit=limit, timeout=60)
-    #             self.addCleanup(kernel.close)
-    #             for code in self.CASES:
-    #                 with self.subTest(stateful=stateful, limit=limit, code=code[:30]):
-    #                     self.assertEqual(inproc.run(code), kernel.run(code))
-    #                     self.assertEqual(self.observed(inproc), self.observed(kernel))
 
     def test_expected_output_and_reporting_in_both_modes(self):
         from check_runtime_parity import check_blocks

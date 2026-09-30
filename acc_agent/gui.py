@@ -50,7 +50,6 @@ from executor import RUNTIME_ISOLATION, make_executor
 from experiment_recorder import SweepRecorder
 from experiment_view import ExperimentsView
 from scoring import ParsedVerdict, aggregate, score
-# from skill_library import SkillLibrary
 from gui_widgets import (
     ACCENT, BACKGROUND, BORDER, HOVER, MUTED, PANEL, PRIMARY, SURFACE, TEXT,
     BLUE, GREEN, ORANGE, RED, ResultView, ScoreView, bind_wrapping, dark_text, result_presentation,
@@ -69,18 +68,6 @@ DEFAULT_RULE = (
 )
 
 CUSTOM_CHOICE = "Custom (manual rule / IFC)"
-
-# KERNEL_LABEL = "kernel"
-# INPROCESS_LABEL = "in-process"
-# RUNTIME_CHOICES = {"kernel": KERNEL_LABEL, "inprocess": INPROCESS_LABEL}
-# RUNTIME_NOTES = {
-#     KERNEL_LABEL: "Code runs in a separate process. Stateless restarts it per block, "
-#                   "so modules, environment and files really do not carry over. "
-#                   "Timeouts and crash containment apply.",
-#     INPROCESS_LABEL: "Legacy runtime, retained to reproduce runs from before 2026-09-08. "
-#                      "Stateless only swaps the namespace dict: imported modules, "
-#                      "environment and files survive the reset.",
-# }
 
 # --- test-case grouping ---------------------------------------------------- #
 # The catalogue has grown past 40 cases, so the picker groups them by Solihin &
@@ -354,33 +341,6 @@ class App(ctk.CTk):
             unselected_hover_color=HOVER, fg_color=SURFACE, text_color=TEXT, height=32, corner_radius=4,
         )
         self.mode_control.pack(fill="x", padx=10, pady=(0, 6))
-        # label("Execution runtime")
-        # self.runtime_var = tk.StringVar(value=RUNTIME_CHOICES.get(RUNTIME_ISOLATION, KERNEL_LABEL))
-        # self.runtime_control = ctk.CTkSegmentedButton(
-        #     bar, values=list(RUNTIME_CHOICES.values()), variable=self.runtime_var,
-        #     command=self._on_runtime, selected_color=PRIMARY, selected_hover_color=HOVER,
-        #     unselected_color=SURFACE, unselected_hover_color=HOVER, fg_color=SURFACE,
-        #     text_color=TEXT, height=32, corner_radius=4,
-        # )
-        # self.runtime_control.pack(fill="x", padx=10, pady=(0, 2))
-        # self.runtime_note = ctk.CTkLabel(bar, text="", font=("Segoe UI", 11), text_color=MUTED,
-        #     wraplength=250, anchor="w", justify="left")
-        # self.runtime_note.pack(fill="x", padx=10, pady=(0, 6))
-        # self._on_runtime()
-        # self.skills_var = tk.BooleanVar(value=os.environ.get("SKILLS", "1").lower() not in ("0", "false", "no"))
-        # self.skills_control = ctk.CTkCheckBox(
-        #     bar, text="Use skills", variable=self.skills_var, font=("Segoe UI", 12), command=self._refresh_skill_health,
-        #     text_color=MUTED, fg_color=PRIMARY, hover_color=HOVER, checkbox_width=16, checkbox_height=16,
-        #     border_color=BORDER, border_width=1,
-        # )
-        # self.skills_control.pack(fill="x", padx=10, pady=(4, 8))
-        # self.skill_health_label = ctk.CTkLabel(bar, text="", height=18, font=("Segoe UI", 11),
-        #     text_color=MUTED, wraplength=250, anchor="w", justify="left")
-        # self.skill_health_label.pack(fill="x", padx=10, pady=(0, 2))
-        # self.skill_details_btn = ctk.CTkButton(bar, text="Skill details", command=self._show_skill_health,
-        #     fg_color="transparent", hover_color=SURFACE, text_color=BLUE, height=24, corner_radius=4, anchor="w")
-        # self.skill_details_btn.pack(fill="x", padx=10, pady=(0, 6))
-        # self._refresh_skill_health()
         label("Harness")
         self.harness_var = tk.IntVar(value=1)
         self.harness_choice = tk.StringVar(value=HARNESS_LABELS[1])
@@ -586,60 +546,8 @@ class App(ctk.CTk):
         for widget in (self.case_group_menu, self.case_menu, self.provider_control, self.model_entry, self.mode_control,
                        self.harness_control, self.repeats_slider,
                        self.ifc_entry, self.browse_btn, self.rule_box,
-                       # self.skills_control,
-                       # self.runtime_control,
                        ):
             widget.configure(state=state)
-
-    # def _runtime_choice(self) -> str:
-    #     return "inprocess" if self.runtime_var.get() == INPROCESS_LABEL else "kernel"
-    #
-    # def _on_runtime(self, _value: str | None = None) -> None:
-    #     label = self.runtime_var.get()
-    #     self.runtime_note.configure(
-    #         text=RUNTIME_NOTES[label],
-    #         text_color=MUTED if label == KERNEL_LABEL else ORANGE,
-    #     )
-
-    # def _refresh_skill_health(self) -> dict:
-    #     health = SkillLibrary(enabled=bool(self.skills_var.get())).health()
-    #     if not health["enabled"]:
-    #         self.skill_health_label.configure(text="Off | No skill loading or saving", text_color=MUTED)
-    #     else:
-    #         entries = health["skills"]
-    #         bad = sum(entry["status"] == "unavailable" for entry in entries) + len(health["issues"])
-    #         legacy = sum(entry["version"] == "legacy" for entry in entries)
-    #         self.skill_health_label.configure(
-    #             text=f"{len(entries)} saved | {legacy} legacy | {bad} unavailable",
-    #             text_color=ORANGE if bad or legacy else MUTED,
-    #         )
-    #     return health
-    #
-    # def _show_skill_health(self) -> None:
-    #     health = self._refresh_skill_health()
-    #     dialog = ctk.CTkToplevel(self)
-    #     dialog.title("Skill library status")
-    #     dialog.geometry("620x450")
-    #     dialog.minsize(400, 300)
-    #     dialog.configure(fg_color=BACKGROUND)
-    #     dialog.transient(self)
-    #     dialog.grid_columnconfigure(0, weight=1)
-    #     dialog.grid_rowconfigure(0, weight=1)
-    #     content = dark_text(dialog)
-    #     content.grid(row=0, column=0, sticky="nsew", padx=12, pady=12)
-    #     scrollbar = ctk.CTkScrollbar(dialog, command=content.yview)
-    #     scrollbar.grid(row=0, column=1, sticky="ns")
-    #     content.configure(yscrollcommand=scrollbar.set)
-    #     lines = ["SKILL LIBRARY", "Self-tests are not independent correctness verification. Status inspection does not execute code."]
-    #     if not health["enabled"]:
-    #         lines.append("Use skills is off: saved helpers and save_skill are not injected into new runs.")
-    #     lines.extend(health["issues"])
-    #     for entry in health["skills"]:
-    #         lines.append(f"\n{entry['name']} | version {entry['version']} | {entry['status']}\n{entry['validation']}")
-    #         lines.append(entry.get("issue") or entry.get("path", ""))
-    #     content.insert("1.0", "\n".join(lines))
-    #     content.configure(state="disabled")
-    #     dialog.bind("<Escape>", lambda event: dialog.destroy())
 
     # ---- small helpers -----------------------------------------------------
     def _on_provider(self, provider: str) -> None:
@@ -1103,10 +1011,7 @@ class App(ctk.CTk):
         rule = self.rule_box.get("1.0", "end").strip()
         reasoning_enabled = os.environ.get("REASONING", "1").lower() not in ("0", "false", "no")
         env_primer = os.environ.get("ENV_PRIMER", "1").lower() not in ("0", "false", "no")
-        # skills_enabled = bool(self.skills_var.get())
-        # skill_library = SkillLibrary(enabled=skills_enabled)
         skills_enabled = False
-        # runtime = self._runtime_choice()
         runtime = RUNTIME_ISOLATION
         gt = self.current_gt
         gt_set = gt.violation_set if gt is not None else None
@@ -1163,7 +1068,6 @@ class App(ctk.CTk):
             f"- **Reference scope:** {len(gt_labels)} labelled; {len(unscored_ids)} unannotated IFC elements unscored, still required for completion\n"
             f"- **Skills enabled:** {skills_enabled}\n"
             f"- **Execution runtime:** {runtime}"
-            # f"{'  (separate worker process; stateless restarts it per block)' if runtime == 'kernel' else '  (legacy in-process namespace swap; a stateless reset leaves modules, environment and files in place)'}\n"
             "  (separate worker process; stateless restarts it per block)\n"
             f"- **Max iterations:** {max_iter}\n"
             f"- **IFC:** {ifc}\n"
@@ -1199,7 +1103,6 @@ class App(ctk.CTk):
                     ifc_path=Path(ifc), client=llm_client, max_iterations=max_iter,
                     reasoning=reasoning_enabled, env_primer=env_primer, library=None,
                     output_limit=config.OUTPUT_CHAR_LIMIT, log_path=self.current_log_path,
-                    # runtime=runtime,
                     warning=lambda message: self.q.put(("notice", {"message": message})),
                 )
                 per_mode: dict[str, list] = {}
@@ -1216,8 +1119,6 @@ class App(ctk.CTk):
                         executor = make_executor(
                             stateful=(mode == "stateful"),
                             output_char_limit=config.OUTPUT_CHAR_LIMIT,
-                            # skill_library=skill_library,
-                            # runtime=runtime,
                         )
                         agent = CodeActAgent(
                             llm_client, executor,
@@ -1440,7 +1341,6 @@ class App(ctk.CTk):
         elif event_type == "__threaddone__":
             self.run_btn.configure(state="normal", text="Run checks")
             self._set_settings_enabled(True)
-            # self._refresh_skill_health()
             if self.log_fh:
                 self.log_fh.close()
                 self.log_fh = None

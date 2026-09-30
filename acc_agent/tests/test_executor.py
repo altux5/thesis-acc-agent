@@ -62,9 +62,6 @@ class ExecutorSubmissionTests(unittest.TestCase):
     def test_keyboard_interrupt_restarts_worker_and_invalidates_labels(self):
         executor = self.executor()
         executor.run('report_labels({"anchor":"PASS"})')
-        # The retired in-process executor propagated KeyboardInterrupt to the host.
-        # with self.assertRaises(KeyboardInterrupt):
-        #     executor.run('raise KeyboardInterrupt()')
         output = executor.run('raise KeyboardInterrupt()')
         self.assertIn("KeyboardInterrupt", output)
         self.assertTrue(executor.last_execution["kernel_restarted"])

@@ -23,6 +23,16 @@ same ID. The GUI hides deprecated cases. Rules in [instruction.md](instruction.m
 Earlier entries below use the old names; the mapping is
 `ground_truth.RENAMED_BEFORE_2026_09_30`.
 
+**Design history (where each stage's code lives):**
+- 8 Sep: pre-LangChain custom loop, live in-process executor and skills: commit `fa7b163`
+  of altux5/Thesis-initial (the `tez` repository).
+- 16-17 Sep: in-process runtime and cross-run skills retired: `archive/inprocess_runtime.py`,
+  `archive/skill_integration.py` (verbatim, with source line ranges).
+- 22 Sep: LangChain create_agent (`langchain-codeact-v1`), kernel only: tag `langchain-v1`
+  of altux5/thesis-acc-agent.
+- 30 Sep: `langchain-codeact-v2`, completion checks v3, write confinement, usable_2
+  references, stable case IDs, dashboard: tag `stable-case-names`.
+
 ---
 
 ## Environment and paths
@@ -69,8 +79,8 @@ Earlier entries below use the old names; the mapping is
   unsupported completion stays incomplete. Only thinking-off MiniMax was tested live.
 - **Historical in-process results must not be pooled with kernel results.** The
   retired executor reset only a namespace, leaving modules, environment, cwd and
-  other process state intact. Its class and selection branches are now commented
-  out, not aliased to the kernel. New runs always record `runtime_isolation=kernel`;
+  other process state intact. Its class and selection branches are archived in
+  `archive/inprocess_runtime.py`, not aliased to the kernel. New runs always record `runtime_isolation=kernel`;
   older rows retain their identities, including the inferred `inprocess-legacy`
   value where runtime was not recorded. Both current modes replay the transcript.
   Statelessness means a fresh interpreter, not erased conversation/external files.
@@ -109,7 +119,7 @@ Earlier entries below use the old names; the mapping is
   The historical filename is retained; this is now a kernel-only contract check.
   It checks 15 blocks against expected output/reporting in both modes at two caps,
   verifies interpreter and scratch-state persistence/reset, and compares mall slab
-  labels with the v2 reference in both modes. The old parity code is commented out.
+  labels with the v2 reference in both modes. The old parity code is in `archive/inprocess_runtime.py`.
 - **Self-tested skills are not independently verified.** Skill globals and copied
   fixtures are isolated, but execution is still in-process: imported module state
   and external side effects are not sandboxed. Tests are required and retained,
@@ -726,6 +736,21 @@ health-suite run.
 
 ## Changelog
 
+- **2026-09-30 - commented-out code moved to `archive/`.** 48 fragments (about 290
+  lines) from executor, gui, check_runtime_parity, evaluate, run, experiment_recorder,
+  kernel_executor, kernel_worker and two test files now live verbatim in
+  `archive/inprocess_runtime.py` and `archive/skill_integration.py`, each with its line
+  range at tag `stable-case-names`. Verified: every fragment equals the tagged lines;
+  every live file has the same AST as at the tag (only the executor and
+  check_runtime_parity docstrings changed to point to the archive). The publishing
+  file list now includes `acc_agent/archive/*.py`.
+- **2026-09-30 - published to thesis-acc-agent.** Commit `1751f49` (60 paths: 17 added,
+  1 renamed, 1 deleted, 40 modified); tags `langchain-v1` (`426377d`, 22 Sep) and
+  `stable-case-names` (`1751f49`). Code history: pre-LangChain loop = `tez` commit
+  `fa7b163` (8 Sep, `Thesis-initial`); later stages = tags above. Publishing-root tests:
+  241 pass, 17 skipped (IFC models and authority templates are not distributed);
+  `check_runtime_parity.py` passed in the source workspace. Fixed
+  `test_reference_v2` to skip, not error, when the exit authority template is missing.
 - **2026-09-30 - stable case IDs.** Renamed 17 reference files: current
   `slab_thickness__mall_v2`, `staircase_width_v8_full`, `landing_interval_e352__{stair_v8,mall,scdf_5}_v2`,
   `tread_width_e342__mall_v2`, `exit_requirements__{scdf_5,scdf_3}_v2`, `planter_box_gfa_v2`

@@ -114,7 +114,6 @@ class _Worker:
         self.skill_loaded: dict = {}
         self.skill_issues: list[str] = []
         self.blocks = 0
-        # reply = self.request({"op": "prime", "skills": bool(skills)}, STARTUP_TIMEOUT)
         reply = self.request({"op": "prime"}, STARTUP_TIMEOUT)
         if not isinstance(reply, dict) or not reply.get("ok"):
             self.kill()
@@ -209,7 +208,6 @@ class KernelCodeExecutor:
             raise ValueError("output_char_limit must be a positive integer")
         self.stateful = stateful
         self.output_char_limit = output_char_limit
-        # self.skill_library = skill_library
         self.skill_library = None
         self.timeout = DEFAULT_TIMEOUT if timeout is None else float(timeout)
         self.last_error = False
@@ -231,17 +229,12 @@ class KernelCodeExecutor:
 
     # ---- worker lifetime ---------------------------------------------------
     def _skills_enabled(self) -> bool:
-        # return getattr(self.skill_library, "enabled", False) is True
         return False
 
     def _start(self) -> None:
         worker = _Worker(self._skills_enabled())
         self._slot["worker"] = worker
         self.skill_load_issues = list(worker.skill_issues)
-        # library = self.skill_library
-        # if library is not None and self._skills_enabled():
-        #     library.loaded = dict(worker.skill_loaded)
-        #     library.load_issues = list(worker.skill_issues)
 
     def _replace_worker(self) -> None:
         worker = self._slot["worker"]
@@ -256,8 +249,6 @@ class KernelCodeExecutor:
         _shutdown_slot(self._slot)
 
     def skill_prompt_section(self) -> str:
-        # lib = self.skill_library
-        # return lib.prompt_section(loaded_only=True) if lib is not None else ""
         return ""
 
     # ---- execution ---------------------------------------------------------

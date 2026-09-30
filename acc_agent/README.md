@@ -16,8 +16,8 @@ the GUI after migration; this verification does not establish benchmark accuracy
 
 **Current scope (2026-09-17): kernel-only execution, without persistent skills.**
 The thesis compares within-run stateful and stateless execution without cross-run
-tool reuse. `SKILLS=1` no longer enables skills, and the GUI skill controls are
-commented out. The in-process runtime and its GUI selector are also commented out.
+tool reuse. `SKILLS=1` no longer enables skills, and the GUI has no skill controls
+or runtime selector; the retired code is kept verbatim in [archive/](archive/).
 Ordinary Python functions still work within a stateful session.
 
 The point of this first prototype is to make the **stateful vs. stateless** difference
@@ -38,7 +38,8 @@ stateless runs start with a fresh worker and restart it before each subsequent
 code block. Both modes use the same execution, timeout and reporting machinery.
 
 The original namespace-reset executor retained imported modules, environment
-changes and other process state. It is now preserved as commented code, not a
+changes and other process state. It is archived in
+[archive/inprocess_runtime.py](archive/inprocess_runtime.py), not a
 supported execution path. `EXECUTION_RUNTIME` is ignored; explicit factory requests
 for `inprocess` raise an error instead of silently selecting a different runtime.
 The GUI retains the **Session mode** control but no longer offers a runtime choice.
@@ -84,7 +85,7 @@ After changing execution code, run the kernel contract check (historical filenam
 It checks output, errors, label commits and truncation against expected behavior in
 both modes, verifies interpreter/scratch-state persistence or reset, and checks
 the real mall slab label map against its reference in both modes. The previous
-two-runtime comparison code remains commented out in that file.
+two-runtime comparison code is in [archive/inprocess_runtime.py](archive/inprocess_runtime.py).
 
 New runs record `runtime_isolation=kernel`. Historical in-process results and their
 configuration identities are retained, but are not pooled with kernel results.
@@ -189,7 +190,7 @@ run.py        CLI: pick IFC / rule / mode, wire everything, print + save results
 config.py     shared settings (iteration/output caps) + legacy OpenRouter client
 llm.py        small factory: LangChain ChatAnthropic (MiniMax) / ChatOpenRouter
 executor.py   shared reporting/output helpers, kernel-only factory;
-              the original CodeExecutor class is preserved as comments
+              the original CodeExecutor class is in archive/inprocess_runtime.py
 kernel_executor.py  out-of-process runtime: worker lifetime, per-block timeout,
               crash containment; the only active execution runtime
 kernel_worker.py    the child process it drives; not imported by the host
@@ -537,7 +538,7 @@ validation on unseen cases. This would broaden the thesis beyond its primary
 comparison of within-run execution state. This is not evidence that skills harm
 performance; no controlled skills-on/off conclusion is claimed.
 
-The activation code is retained as comments. CLI, evaluation, GUI, agent prompts
+The activation code is archived in [archive/skill_integration.py](archive/skill_integration.py). CLI, evaluation, GUI, agent prompts
 and the kernel worker no longer load, save or advertise skills, even with `SKILLS=1`
 or an explicitly enabled library argument. The standalone library and its tests
 remain for reference; saved helpers and historical results are not deleted.

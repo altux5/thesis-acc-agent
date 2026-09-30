@@ -24,7 +24,6 @@ from llm import model_identity
 
 PROJECT_DIR = Path(__file__).resolve().parent
 CORE_FILES = ("agent.py", "completion.py", "executor.py", "llm.py", "scoring.py",
-              # "skill_library.py",  # Archived, no longer imported by the agent.
               "experiment_recorder.py", "experiments.py", "code_identity.py")
 
 
@@ -87,7 +86,6 @@ class RunTicket:
             output = str(payload.get("output", ""))
             self.errors += int(payload["error"] if isinstance(payload.get("error"), bool) else "Traceback (most recent call last):" in output)
             self.truncations += int(payload["truncated"] if isinstance(payload.get("truncated"), bool) else bool(re.search(r"\[truncated \d+ characters\]", output)))
-            # self.skill_saves += output.count("[skill saved]")
 
 
 class SweepRecorder:
@@ -98,7 +96,6 @@ class SweepRecorder:
         self.warning = warning
         self.store = None
         self.sweep_id = None
-        # self.library = library
         self.library = None
         self.ifc_path = Path(ifc_path).resolve()
         self.log_path = str(Path(log_path).resolve()) if log_path else ""
@@ -132,15 +129,12 @@ class SweepRecorder:
                 "model_retries": 0, "max_concurrency": 1,
                 "completion_checks": COMPLETION_CHECKS_VERSION,
                 "reasoning": reasoning, "env_primer": env_primer, "output_limit": output_limit,
-                # "runtime_isolation": runtime or RUNTIME_ISOLATION,
-                # "runtime_isolation_note": "inprocess: stateless resets the namespace dict only, so modules/env/cwd/files persist; kernel: stateless restarts the worker process. Never pool the two.",
                 "runtime_isolation": RUNTIME_ISOLATION,
                 "runtime_isolation_note": "kernel only: stateful keeps one worker; stateless restarts it per block. Conversation history and external files can persist. Historical in-process runs remain separate.",
                 "kernel_settings": {
                     "execution_timeout_seconds": kernel_executor.DEFAULT_TIMEOUT,
                     "startup_timeout_seconds": kernel_executor.STARTUP_TIMEOUT,
                     "python_hash_seed": kernel_executor.HASH_SEED,
-                # } if (runtime or RUNTIME_ISOLATION).strip().lower() in ("kernel", "subprocess", "worker") else None,
                 },
                 "kernel_files_disk_hash": {name: file_hash(PROJECT_DIR / name)
                                            for name in ("kernel_executor.py", "kernel_worker.py")},
@@ -162,7 +156,6 @@ class SweepRecorder:
             return None
         try:
             skills = skills_snapshot(self.library)
-            # section = self.library.prompt_section() if self.library is not None else ""
             system = build_system_prompt(str(self.ifc_path), mode == "stateful", self.base["env_primer"])
             current = {**self.base, "mode": mode, "harness": harness, "feedback_leakage": False,
                        "skills_enabled": skills["enabled"], "skill_snapshot": skills,

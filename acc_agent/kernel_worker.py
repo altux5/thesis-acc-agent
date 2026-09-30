@@ -88,7 +88,6 @@ from executor import (  # noqa: E402  - path must be set first
 
 NAMESPACE: dict[str, object] = {}
 STATE: dict[str, object] = {"pending": None, "reports": 0, "warnings": []}
-# LIBRARY = None
 
 
 def _report_labels(mapping: dict) -> str:
@@ -100,18 +99,10 @@ def _report_labels(mapping: dict) -> str:
 
 def _prime(request: dict) -> dict:
     """Inject reporting only, even if an old host requests skills."""
-    # global LIBRARY
     NAMESPACE.clear()
     NAMESPACE["report_labels"] = _report_labels
     loaded: dict = {}
     issues: list[str] = []
-    # if request.get("skills"):
-    #     from skill_library import SkillLibrary
-    #
-    #     LIBRARY = SkillLibrary(enabled=True)
-    #     NAMESPACE["save_skill"] = LIBRARY.make_save_skill(NAMESPACE)
-    #     issues = LIBRARY.preload(NAMESPACE) or []
-    #     loaded = LIBRARY.loaded
     STATE["warnings"] = list(issues)
     return {"ok": True, "skill_loaded": loaded, "skill_issues": issues}
 

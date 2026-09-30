@@ -25,7 +25,6 @@ from agent import AgentResult, CodeActAgent, save_transcript
 from executor import make_executor
 from experiment_recorder import SweepRecorder
 from ground_truth import resolve_model_path
-# from skill_library import SkillLibrary
 
 PROJECT_DIR = Path(__file__).resolve().parent
 WORKSPACE_ROOT = PROJECT_DIR.parent
@@ -93,12 +92,9 @@ def main() -> None:
         raise SystemExit(f"IFC file not found: {args.ifc}")
 
     llm_client = llm.load_llm(args.model)
-    # skills_enabled = os.environ.get("SKILLS", "1").lower() not in ("0", "false", "no")
-    # skill_library = SkillLibrary(enabled=skills_enabled)
     executor = make_executor(
         stateful=(args.mode == "stateful"),
         output_char_limit=config.OUTPUT_CHAR_LIMIT,
-        # skill_library=skill_library,
     )
     # OpenRouter `reasoning` is on unless REASONING=0 is set in the environment.
     reasoning_enabled = os.environ.get("REASONING", "1").lower() not in ("0", "false", "no")
