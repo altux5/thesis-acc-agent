@@ -1,0 +1,678 @@
+{
+  "case_id": "space_elevation__scdf_3",
+  "rule": "Spaces in the same building storey must share the same bottom elevation.\n\nSource: BIM validation rule 'Same-storey elevation' of the EC3-2026 rule catalogue (general space check: spaces in the same storey share a bottom elevation).\nA space fails when the bottom of its modelled volume differs by more than 10 mm from the bottom elevation shared by most spaces of the storey it belongs to. Area and zone objects that are not rooms (IfcSpace with PredefinedType USERDEFINED, e.g. AREA_GFA or AREA_STRATA, or any IfcSpace carrying an IFC-SG area property set such as SGPset_SpaceArea_GFA) are not assessed: label them NA.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Location of exits & access to exits (EIB related)/Test Models/uat2_scdf_2.2.12_3_v1.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "3XyDpez5n3NfzZ4QomE7aL"
+  ],
+  "labels": {
+    "0CQrLE2hvDDBAu0$vqJUPl": "PASS",
+    "0CQrLE2hvDDBAu0$vqJUPn": "PASS",
+    "0Vkg5_FCT5Mvc8MngUY7Ug": "PASS",
+    "0p__ZGB8b14PA5UI1fEuaJ": "PASS",
+    "0p__ZGB8b14PA5UI1fEuaR": "PASS",
+    "0p__ZGB8b14PA5UI1fEudX": "PASS",
+    "0p__ZGB8b14PA5UI1fEudh": "PASS",
+    "0p__ZGB8b14PA5UI1fEudv": "PASS",
+    "0p__ZGB8b14PA5UI1fEul7": "PASS",
+    "0p__ZGB8b14PA5UI1fEur2": "PASS",
+    "11ISeFLGn5duFGZcxTdbP0": "PASS",
+    "11ISeFLGn5duFGZcxTdbPW": "PASS",
+    "11ISeFLGn5duFGZcxTdbPY": "PASS",
+    "11ISeFLGn5duFGZcxTdbP_": "PASS",
+    "11ISeFLGn5duFGZcxTdbPa": "PASS",
+    "11ISeFLGn5duFGZcxTdbPc": "PASS",
+    "11ISeFLGn5duFGZcxTdbPe": "PASS",
+    "11ISeFLGn5duFGZcxTdbPg": "PASS",
+    "11ISeFLGn5duFGZcxTdbPi": "PASS",
+    "11ISeFLGn5duFGZcxTdbPk": "PASS",
+    "11ISeFLGn5duFGZcxTdbPm": "PASS",
+    "11ISeFLGn5duFGZcxTdbPo": "PASS",
+    "11ISeFLGn5duFGZcxTdbPq": "PASS",
+    "11ISeFLGn5duFGZcxTdbPs": "PASS",
+    "11ISeFLGn5duFGZcxTdbPu": "PASS",
+    "11ISeFLGn5duFGZcxTdbPw": "PASS",
+    "11ISeFLGn5duFGZcxTdbPy": "PASS",
+    "11ISeFLGn5duFGZcxTdbUU": "PASS",
+    "11ISeFLGn5duFGZcxTdbma": "PASS",
+    "11ISeFLGn5duFGZcxTdbnS": "PASS",
+    "1TA9i4aKHDBx0x9Y6q3p4g": "PASS",
+    "1TA9i4aKHDBx0x9Y6q3p4i": "PASS",
+    "1TA9i4aKHDBx0x9Y6q3p72": "PASS",
+    "23jMh7sVfANQ5dZaLTD8iq": "PASS",
+    "23jMh7sVfANQ5dZaLTD8iw": "PASS",
+    "23jMh7sVfANQ5dZaLTD8k8": "PASS",
+    "23jMh7sVfANQ5dZaLTDBok": "PASS",
+    "23jMh7sVfANQ5dZaLTDBpA": "PASS",
+    "23jMh7sVfANQ5dZaLTDBpD": "PASS",
+    "23jMh7sVfANQ5dZaLTDBpF": "PASS",
+    "23jMh7sVfANQ5dZaLTDBpn": "PASS",
+    "23jMh7sVfANQ5dZaLTDBpp": "PASS",
+    "23jMh7sVfANQ5dZaLTDBpr": "PASS",
+    "23jMh7sVfANQ5dZaLTDBpt": "PASS",
+    "2zTyjmWW16zwa_wWH6UKaI": "PASS",
+    "2zTyjmWW16zwa_wWH6UKaV": "PASS",
+    "2zTyjmWW16zwa_wWH6UKb3": "NA",
+    "2zTyjmWW16zwa_wWH6UKb6": "NA",
+    "2zTyjmWW16zwa_wWH6UKq8": "PASS",
+    "3XyDpez5n3NfzZ4QomE7aL": "FAIL",
+    "3XyDpez5n3NfzZ4QomE7ag": "PASS",
+    "3YjZkH$F1CPO6sp2Ug5sod": "PASS",
+    "3YjZkH$F1CPO6sp2Ug5szi": "PASS",
+    "3YjZkH$F1CPO6sp2Ug5vXT": "PASS",
+    "3YjZkH$F1CPO6sp2Ug5vyK": "PASS",
+    "3YjZkH$F1CPO6sp2Ug5vyk": "PASS",
+    "3dP8PPjrP38xq6DyxdbyD7": "NA",
+    "3dP8PPjrP38xq6DyxdbyFP": "NA",
+    "3dP8PPjrP38xq6DyxdbyFQ": "NA"
+  },
+  "notes": "EC3 same-storey elevation rule on all IfcSpace: {'FAIL': 1, 'NA': 5, 'PASS': 53}.",
+  "clause": "BIM validation",
+  "source": "reference_v2.py::build_space_elevation",
+  "reference": {
+    "tier": "usable_2",
+    "review_date": "2026-09-29",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 59,
+    "ifc_sha256": "93c1cd5808ffac38501d5ad7dd29108dafaafdce8ba68a1024fc4691fa998911",
+    "status": "Coded reference from IfcSpace geometry and spatial aggregation; no value lies between 1 mm and 50 mm from the shared level.",
+    "policy": "Shared level = most common rounded bottom elevation of the storey's room spaces; tolerance 10 mm. USERDEFINED spaces and spaces carrying IFC-SG area property sets are NA.",
+    "limitations": "A BIM consistency rule, not a building regulation: intentional raised or sunken floors (kitchens, wet areas) are reported as violations, as the rule states."
+  },
+  "provenance": {
+    "0CQrLE2hvDDBAu0$vqJUPl": {
+      "space": "parking place",
+      "storey": "Blk 5&6_1st Storey",
+      "bottom_mm": 33800.0,
+      "storey_shared_bottom_mm": 33800,
+      "spaces_in_storey": 4,
+      "spaces_at_shared_bottom": 3,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0CQrLE2hvDDBAu0$vqJUPn": {
+      "space": "generator room",
+      "storey": "Blk 5&6_1st Storey",
+      "bottom_mm": 33800.0,
+      "storey_shared_bottom_mm": 33800,
+      "spaces_in_storey": 4,
+      "spaces_at_shared_bottom": 3,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0Vkg5_FCT5Mvc8MngUY7Ug": {
+      "space": "shop",
+      "storey": "Blk 3_1st Storey",
+      "bottom_mm": 30050.0,
+      "storey_shared_bottom_mm": 30050,
+      "spaces_in_storey": 5,
+      "spaces_at_shared_bottom": 5,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0p__ZGB8b14PA5UI1fEuaJ": {
+      "space": "bedroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0p__ZGB8b14PA5UI1fEuaR": {
+      "space": "bedroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0p__ZGB8b14PA5UI1fEudX": {
+      "space": "bedroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0p__ZGB8b14PA5UI1fEudh": {
+      "space": "bedroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0p__ZGB8b14PA5UI1fEudv": {
+      "space": "corridor",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0p__ZGB8b14PA5UI1fEul7": {
+      "space": "corridor",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "0p__ZGB8b14PA5UI1fEur2": {
+      "space": "internal exit staircase",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbP0": {
+      "space": "Reception",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPW": {
+      "space": "store",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPY": {
+      "space": "Office",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbP_": {
+      "space": "Toilet",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPa": {
+      "space": "Lift Shaft",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPc": {
+      "space": "Lift Shaft",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPe": {
+      "space": "Office",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPg": {
+      "space": "Office",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPi": {
+      "space": "Corridor",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPk": {
+      "space": "store",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPm": {
+      "space": "Office",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPo": {
+      "space": "Shop",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPq": {
+      "space": "Shop",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPs": {
+      "space": "Corridor",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPu": {
+      "space": "Shop",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPw": {
+      "space": "Shop",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbPy": {
+      "space": "Office",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbUU": {
+      "space": "Office",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbma": {
+      "space": "Toilet",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "11ISeFLGn5duFGZcxTdbnS": {
+      "space": "Toilet",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "1TA9i4aKHDBx0x9Y6q3p4g": {
+      "space": "shop",
+      "storey": "Blk 3_1st Storey",
+      "bottom_mm": 30050.0,
+      "storey_shared_bottom_mm": 30050,
+      "spaces_in_storey": 5,
+      "spaces_at_shared_bottom": 5,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "1TA9i4aKHDBx0x9Y6q3p4i": {
+      "space": "shop",
+      "storey": "Blk 3_1st Storey",
+      "bottom_mm": 30050.0,
+      "storey_shared_bottom_mm": 30050,
+      "spaces_in_storey": 5,
+      "spaces_at_shared_bottom": 5,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "1TA9i4aKHDBx0x9Y6q3p72": {
+      "space": "Bin Point",
+      "storey": "Blk 3_1st Storey",
+      "bottom_mm": 30050.0,
+      "storey_shared_bottom_mm": 30050,
+      "spaces_in_storey": 5,
+      "spaces_at_shared_bottom": 5,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTD8iq": {
+      "space": "foyer",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTD8iw": {
+      "space": "living",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTD8k8": {
+      "space": "dining",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBok": {
+      "space": "balcony",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBpA": {
+      "space": "master bedroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBpD": {
+      "space": "bathroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBpF": {
+      "space": "master bathroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBpn": {
+      "space": "kitchen",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBpp": {
+      "space": "householdshelter",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBpr": {
+      "space": "bedroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "23jMh7sVfANQ5dZaLTDBpt": {
+      "space": "bedroom",
+      "storey": "Blk 5&6_2nd Storey",
+      "bottom_mm": 38850.0,
+      "storey_shared_bottom_mm": 38850,
+      "spaces_in_storey": 18,
+      "spaces_at_shared_bottom": 18,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "2zTyjmWW16zwa_wWH6UKaI": {
+      "space": "Roof Garden",
+      "storey": "Blk 3_2nd Storey",
+      "bottom_mm": 33200.0,
+      "storey_shared_bottom_mm": 33200,
+      "spaces_in_storey": 2,
+      "spaces_at_shared_bottom": 2,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "2zTyjmWW16zwa_wWH6UKaV": {
+      "space": "Roof Garden",
+      "storey": "Blk 3_2nd Storey",
+      "bottom_mm": 33200.0,
+      "storey_shared_bottom_mm": 33200,
+      "spaces_in_storey": 2,
+      "spaces_at_shared_bottom": 2,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "2zTyjmWW16zwa_wWH6UKb3": {
+      "space": "Area",
+      "object_type": null,
+      "predefined_type": "NOTDEFINED",
+      "area_property_sets": [
+        "SGPset_SpaceArea_GFA"
+      ],
+      "label": "NA",
+      "reason": "Area or zone object, not a room."
+    },
+    "2zTyjmWW16zwa_wWH6UKb6": {
+      "space": "Area",
+      "object_type": null,
+      "predefined_type": "NOTDEFINED",
+      "area_property_sets": [
+        "SGPset_SpaceArea_GFA"
+      ],
+      "label": "NA",
+      "reason": "Area or zone object, not a room."
+    },
+    "2zTyjmWW16zwa_wWH6UKq8": {
+      "space": "bin centre",
+      "storey": "Blk 3_1st Storey",
+      "bottom_mm": 30050.0,
+      "storey_shared_bottom_mm": 30050,
+      "spaces_in_storey": 5,
+      "spaces_at_shared_bottom": 5,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "3XyDpez5n3NfzZ4QomE7aL": {
+      "space": "wash area",
+      "storey": "Blk 5&6_1st Storey",
+      "bottom_mm": 33700.0,
+      "storey_shared_bottom_mm": 33800,
+      "spaces_in_storey": 4,
+      "spaces_at_shared_bottom": 3,
+      "difference_mm": -100.0,
+      "label": "FAIL"
+    },
+    "3XyDpez5n3NfzZ4QomE7ag": {
+      "space": "bin centre 1",
+      "storey": "Blk 5&6_1st Storey",
+      "bottom_mm": 33800.0,
+      "storey_shared_bottom_mm": 33800,
+      "spaces_in_storey": 4,
+      "spaces_at_shared_bottom": 3,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "3YjZkH$F1CPO6sp2Ug5sod": {
+      "space": "parking place",
+      "storey": "Lower Basement",
+      "bottom_mm": 20225.0,
+      "storey_shared_bottom_mm": 20225,
+      "spaces_in_storey": 2,
+      "spaces_at_shared_bottom": 2,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "3YjZkH$F1CPO6sp2Ug5szi": {
+      "space": "parking place",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "3YjZkH$F1CPO6sp2Ug5vXT": {
+      "space": "parking place",
+      "storey": "Lower Basement",
+      "bottom_mm": 20225.0,
+      "storey_shared_bottom_mm": 20225,
+      "spaces_in_storey": 2,
+      "spaces_at_shared_bottom": 2,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "3YjZkH$F1CPO6sp2Ug5vyK": {
+      "space": "driveway",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "3YjZkH$F1CPO6sp2Ug5vyk": {
+      "space": "detention tank",
+      "storey": "Middle Basement",
+      "bottom_mm": 22275.0,
+      "storey_shared_bottom_mm": 22275,
+      "spaces_in_storey": 23,
+      "spaces_at_shared_bottom": 23,
+      "difference_mm": 0.0,
+      "label": "PASS"
+    },
+    "3dP8PPjrP38xq6DyxdbyD7": {
+      "space": "Area",
+      "object_type": "AREA_GFA",
+      "predefined_type": "USERDEFINED",
+      "area_property_sets": [
+        "SGPset_SpaceArea_GFA"
+      ],
+      "label": "NA",
+      "reason": "Area or zone object, not a room."
+    },
+    "3dP8PPjrP38xq6DyxdbyFP": {
+      "space": "Area",
+      "object_type": "AREA_GFA",
+      "predefined_type": "USERDEFINED",
+      "area_property_sets": [
+        "SGPset_SpaceArea_GFA"
+      ],
+      "label": "NA",
+      "reason": "Area or zone object, not a room."
+    },
+    "3dP8PPjrP38xq6DyxdbyFQ": {
+      "space": "Area",
+      "object_type": "AREA_GFA",
+      "predefined_type": "USERDEFINED",
+      "area_property_sets": [
+        "SGPset_SpaceArea_GFA"
+      ],
+      "label": "NA",
+      "reason": "Area or zone object, not a room."
+    }
+  }
+}

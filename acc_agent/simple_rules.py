@@ -499,8 +499,14 @@ BY_ID: dict[str, SimpleRule] = {r.rule_id: r for r in RULES}
 # --------------------------------------------------------------------------- #
 # Case generation
 # --------------------------------------------------------------------------- #
+# Coded references replaced by reference_v2.py, which owns the plain case IDs.
+SUPERSEDED = {"landing_interval_e352__mall", "landing_interval_e352__scdf_5", "landing_interval_e352__stair_v8",
+              "tread_width_e342__mall"}
+
+
 def case_id(rule_id: str, model_id: str) -> str:
-    return f"{rule_id}__{model_id}"
+    name = f"{rule_id}__{model_id}"
+    return f"{name}_deprecated_v1" if name in SUPERSEDED else name
 
 
 def _population(model, rule: SimpleRule) -> int:

@@ -15,6 +15,7 @@ from langchain.agents.middleware.tool_call_limit import ToolCallLimitExceededErr
 from langchain.agents.middleware.types import hook_config
 from langchain.agents.structured_output import ToolStrategy
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
+from langchain_core.tools import tool
 from langgraph.errors import GraphRecursionError
 from pydantic import BaseModel, ConfigDict, model_validator
 
@@ -26,7 +27,7 @@ from kernel_executor import KernelCodeExecutor
 from llm import LLMClient, model_identity, with_reasoning
 import tracing
 
-AGENT_PROTOCOL = "langchain-codeact-v1"
+AGENT_PROTOCOL = "langchain-codeact-v2"
 ENVIRONMENT_PRIMER = """
 Working with this IFC environment (general reference, not a checking algorithm):
 - ifcopenshell.util.element.get_psets(entity) returns property and quantity sets,
@@ -49,10 +50,13 @@ Working with this IFC environment (general reference, not a checking algorithm):
 """
 LABEL_PROTOCOL = """
 Call report_labels({"<GlobalId>": "<LABEL>", ...}) from executed Python to commit
-the full population, not just failures. Each submission replaces the last mapping.
+the full population, not just failures. report_labels is already defined in the
+Python session; do not import it. Each submission replaces the last mapping.
 Labels: PASS meets the rule; FAIL violates it; ALERT required model data is absent
 or unreadable; MANUAL_CHECK a person must resolve a genuinely non-deterministic
 judgment; NA the rule does not apply. Missing data is not a violation.
+Recorded IFC lengths carry floating-point export noise: a value within 0.5 mm of a
+numeric limit meets that limit.
 Do not invent PASS labels to fill coverage gaps. Submit only supported judgments.
 """
 PLAN_REQUEST = """Before executing code, provide a short plan covering the element
@@ -72,12 +76,14 @@ ifcopenshell is installed; import what you need. IFC path: {ifc_path}
 {persistence}
 Only real tool results are execution evidence. Wait for the result before deciding
 what it means. Print compact results; the executor bounds output length.
+Files can be written only inside the current working folder: use relative paths.
 {ENVIRONMENT_PRIMER if env_primer else ''}{LABEL_PROTOCOL}
 Finish using the FinalReport structured response, separately from Python tool calls.
 Its violations must exactly match committed FAIL labels. Use NON_COMPLIANT if there
 are failures, COMPLIANT if supported completed judgments contain no failures, or
 UNKNOWN with a concrete reason if you cannot reach a supported judgment. UNKNOWN
-cannot conceal known failures. Never claim compliance merely because time ran out.
+is accepted only on the final model call and cannot conceal known failures.
+Never claim compliance merely because time ran out.
 Coverage and successful execution are checked independently before acceptance.
 Inspect data before concluding; do not guess values that you could read or measure.
 """
@@ -124,7 +130,8 @@ def message_record(message) -> dict:
         record.update(tool_calls=message.tool_calls, invalid_tool_calls=message.invalid_tool_calls,
                       additional_kwargs=message.additional_kwargs, response_metadata=message.response_metadata)
     elif message.type == "tool":
-        record.update(tool_call_id=message.tool_call_id, name=message.name, status=message.status)
+        record.update(tool_call_id=message.tool_call_id, name=message.name, status=message.status,
+                      artifact=message.artifact)
     return record
 
 
@@ -290,14 +297,16 @@ class CodeActAgent:
             def validate_evidence(report):
                 _, issues = validate_submission(report.model_dump(), self.executor.reported_labels,
                                                self.executor.label_reports if self.executor.labels_valid else 0,
-                                               self.executor.last_error, anchors)
+                                               self.executor.last_error, anchors,
+                                               self.max_iterations - len(result.llm_calls))
                 if issues:
                     result.completion_issues = issues
                     emit("notice", message="Completion rejected: " + " ".join(issues))
                     raise ValueError(" ".join(issues))
                 return report
 
-        def run_python(code: str) -> str:
+        @tool(response_format="content_and_artifact")
+        def run_python(code: str) -> tuple[str, dict]:
             """Execute Python against the IFC. Wait for real output before concluding.
 
             Commit the full label map with report_labels(mapping) inside the code.
@@ -315,7 +324,7 @@ class CodeActAgent:
             record.update(status="returned", output=output, **self.executor.last_execution)
             self._capture_progress(result)
             emit("output", output=output, **self.executor.last_execution)
-            return json.dumps({"output": output, **self.executor.last_execution})
+            return output, dict(self.executor.last_execution)
 
         bridge = RunEvents(self, result, system, emit)
         graph = create_agent(self.llm, tools=[run_python], system_prompt=system,
@@ -335,7 +344,8 @@ class CodeActAgent:
             if report is not None:
                 payload, issues = validate_submission(report.model_dump(), self.executor.reported_labels,
                                                      self.executor.label_reports if self.executor.labels_valid else 0,
-                                                     self.executor.last_error, anchors)
+                                                     self.executor.last_error, anchors,
+                                                     self.max_iterations - len(result.llm_calls))
                 if payload is not None:
                     result.verdict_label = payload["verdict"]
                     result.violations = sorted(payload["violations"])

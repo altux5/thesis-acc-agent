@@ -50,7 +50,7 @@ class LLMUsageTests(unittest.TestCase):
         self.assertTrue(usage["truncated"])
         self.assertEqual(send.call_args.kwargs["reasoning"], {"enabled": False})
         self.assertEqual(model.max_retries, 0)
-        self.assertEqual(model.request_timeout, 180)
+        self.assertEqual(model.request_timeout, 180_000)  # OpenRouter SDK timeout is in milliseconds
 
     def test_missing_usage_is_explicit_not_a_measured_zero(self):
         usage = usage_record(AIMessage(content="reply"))
@@ -64,6 +64,13 @@ class LLMUsageTests(unittest.TestCase):
         with patch.dict("os.environ", {"PROVIDER": "minimax", "MINIMAX_API_KEY": ""}):
             with self.assertRaisesRegex(RuntimeError, "MINIMAX_API_KEY"):
                 load_llm()
+
+    def test_explicit_provider_overrides_environment(self):
+        with patch.dict("os.environ", {"PROVIDER": "minimax", "MINIMAX_API_KEY": "offline-test",
+                                      "OPENROUTER_API_KEY": "offline-test", "MODEL": ""}):
+            self.assertEqual(model_identity(load_llm(provider="openrouter")),
+                             {"provider": "openrouter", "model": "minimax/minimax-m3"})
+            self.assertEqual(model_identity(load_llm()), {"provider": "minimax", "model": "MiniMax-M3"})
 
     def test_complete_agent_roundtrip_through_both_native_adapters(self):
         calls = [
@@ -79,14 +86,15 @@ class LLMUsageTests(unittest.TestCase):
                 stack.callback(executor.close)
                 if provider == "minimax":
                     responses = [Message(id=call_id, type="message", role="assistant", model="fixture",
-                                         content=[{"type": "tool_use", "name": name, "id": call_id, "input": arguments}],
+                                         content=[{"type": "thinking", "thinking": f"reasoning {call_id}", "signature": "sig"},
+                                                  {"type": "tool_use", "name": name, "id": call_id, "input": arguments}],
                                          stop_reason="tool_use", usage={"input_tokens": 100, "output_tokens": 20})
                                  for name, arguments, call_id in calls]
                     transport = stack.enter_context(patch.object(model._client.messages.with_raw_response, "create",
                         side_effect=[Mock(parse=Mock(return_value=response)) for response in responses]))
                 else:
-                    responses = [{"choices": [{"message": {"role": "assistant", "content": "", "tool_calls": [
-                        {"id": call_id, "type": "function", "function": {"name": name, "arguments": json.dumps(arguments)}}]},
+                    responses = [{"choices": [{"message": {"role": "assistant", "content": "", "reasoning": f"reasoning {call_id}",
+                        "tool_calls": [{"id": call_id, "type": "function", "function": {"name": name, "arguments": json.dumps(arguments)}}]},
                         "finish_reason": "tool_calls"}], "usage": {"prompt_tokens": 100, "completion_tokens": 20, "total_tokens": 120}}
                         for name, arguments, call_id in calls]
                     transport = stack.enter_context(patch.object(model.client.chat, "send", side_effect=responses))
@@ -98,6 +106,11 @@ class LLMUsageTests(unittest.TestCase):
                 schemas = transport.call_args_list[0].kwargs["tools"]
                 names = {schema.get("name") or schema["function"]["name"] for schema in schemas}
                 self.assertEqual(names, {"run_python", "FinalReport"})
+                # Interleaved thinking requires earlier reasoning in history; tool results are plain text.
+                sent = json.dumps(transport.call_args_list[1].kwargs["messages"], default=str)
+                self.assertIn("reasoning execute", sent)
+                self.assertIn(json.dumps(result.execution_records[0]["output"])[1:-1], sent)
+                self.assertNotIn("labels_valid", sent)
 
 
 if __name__ == "__main__":

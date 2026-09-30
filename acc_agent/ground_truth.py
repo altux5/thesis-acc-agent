@@ -36,6 +36,35 @@ PROJECT_DIR = Path(__file__).resolve().parent
 WORKSPACE_ROOT = PROJECT_DIR.parent
 GT_DIR = PROJECT_DIR / "ground_truth"
 
+# A case ID names the check and never changes; the current reference owns it. A
+# superseded reference keeps its file as ``<case_id>_deprecated_v<N>`` (oldest N=1).
+DEPRECATED_MARK = "_deprecated_v"
+# IDs recorded before this scheme (ledger recording_version < 4) and their current names.
+RENAMED_BEFORE_2026_09_30 = {
+    "slab_thickness__mall": "slab_thickness__mall_deprecated_v1",
+    "slab_thickness__mall_v2": "slab_thickness__mall",
+    "staircase_width_v8": "staircase_width_v8_deprecated_v1",
+    "staircase_width_v8_full": "staircase_width_v8",
+    "landing_interval_e352__stair_v8": "landing_interval_e352__stair_v8_deprecated_v1",
+    "landing_interval_e352__stair_v8_v2": "landing_interval_e352__stair_v8",
+    "landing_interval_e352__mall": "landing_interval_e352__mall_deprecated_v1",
+    "landing_interval_e352__mall_v2": "landing_interval_e352__mall",
+    "landing_interval_e352__scdf_5": "landing_interval_e352__scdf_5_deprecated_v1",
+    "landing_interval_e352__scdf_5_v2": "landing_interval_e352__scdf_5",
+    "tread_width_e342__mall": "tread_width_e342__mall_deprecated_v1",
+    "tread_width_e342__mall_v2": "tread_width_e342__mall",
+    "exit_requirements_v0": "exit_requirements__scdf_5_deprecated_v1",
+    "exit_requirements__scdf_5_v2": "exit_requirements__scdf_5",
+    "exit_requirements__scdf_3_v2": "exit_requirements__scdf_3",
+    "planter_box_gfa": "planter_box_gfa_deprecated_v1",
+    "planter_box_gfa_v2": "planter_box_gfa",
+}
+
+
+def is_deprecated(case_id: str) -> bool:
+    return DEPRECATED_MARK in case_id
+
+
 # The BCA test-case drops are untracked bulk data: they may sit directly at the
 # workspace root or inside the gitignored ``gitignore/`` folder.
 MODEL_ROOTS = (WORKSPACE_ROOT, WORKSPACE_ROOT / "gitignore")

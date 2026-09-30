@@ -1,0 +1,1950 @@
+{
+  "case_id": "headroom_door_c321__mall",
+  "rule": "The headroom of every room, access route and circulation space must be at least 2.0 m; at a doorway it is measured to the underside of the transom.\n\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nBCA Approved Document (Acceptable Solutions) V7.08:\nC.3.2.1 The headroom of every room, access route and circulation space shall not be less than 2.0 metres.\nNote: 1 The term \u201caccess route\u201d shall include a covered walkway or footway of a building. 2 The headroom is measured from the finished floor level to - a) in the case of a doorway, the underside of the transom; ... c) in all other cases, the underside of any beam, duct, service pipe, fixture, fitting or other obstruction or projection.\nAuthority IFC convention (headroom test summary): the underside of the transom is the door's recorded ClearHeight in its IFC-SG door property set.\nBenchmark policy: every doorway is assessed; the room exemptions (attics, plant rooms, small stores, owner-built houses) do not exempt a doorway.\n\nLabel every door.\nReport the GlobalId of every element (modelled as IfcDoor) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Headroom/Test Models/beta mall_UAT1_v6.4.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "04z09705r2efQzCXRRrizx",
+    "2bITg05VT0QhaBJJBSQtZd",
+    "2bITg05VT0QhaBJJBSQtgB"
+  ],
+  "labels": {
+    "04z09705r2efQzCXRRrizx": "FAIL",
+    "0INDUrHw9DV81_NR3xOc2R": "PASS",
+    "0INDUrHw9DV81_NR3xOcZ0": "PASS",
+    "0INDUrHw9DV81_NR3xOd93": "PASS",
+    "0INDUrHw9DV81_NR3xOdBK": "PASS",
+    "0INDUrHw9DV81_NR3xOdCf": "PASS",
+    "0INDUrHw9DV81_NR3xOdDk": "PASS",
+    "0INDUrHw9DV81_NR3xOdGE": "PASS",
+    "0INDUrHw9DV81_NR3xOdGw": "PASS",
+    "0INDUrHw9DV81_NR3xOdHZ": "PASS",
+    "0INDUrHw9DV81_NR3xOdJR": "PASS",
+    "0INDUrHw9DV81_NR3xOdPU": "PASS",
+    "0INDUrHw9DV81_NR3xOj2q": "PASS",
+    "0INDUrHw9DV81_NR3xOjWU": "PASS",
+    "0INDUrHw9DV81_NR3xOjhD": "PASS",
+    "0NaMhR93H5peOrMQRZHzjk": "PASS",
+    "0NaMhR93H5peOrMQRZHzk1": "PASS",
+    "0NaMhR93H5peOrMQRZHzk2": "PASS",
+    "0NaMhR93H5peOrMQRZHzkA": "PASS",
+    "0NaMhR93H5peOrMQRZHzku": "PASS",
+    "0SD6Zw1mP2IwbVOlH2RAMk": "PASS",
+    "0SD6Zw1mP2IwbVOlH2Rs85": "PASS",
+    "1HNo$1BaT6hAgCuGpe7AkX": "PASS",
+    "1J$z6BjNbEiAfGnVGLbOg2": "PASS",
+    "1J$z6BjNbEiAfGnVGLbOg5": "PASS",
+    "1J$z6BjNbEiAfGnVGLbOgC": "PASS",
+    "1J$z6BjNbEiAfGnVGLbOgR": "PASS",
+    "1J$z6BjNbEiAfGnVGLbSON": "PASS",
+    "1J$z6BjNbEiAfGnVGLbSRz": "PASS",
+    "1J$z6BjNbEiAfGnVGLbST7": "PASS",
+    "1J$z6BjNbEiAfGnVGLbVcv": "PASS",
+    "1P1G77bzz7Rh$v2y1AS7zB": "PASS",
+    "1ZqocTetf6$fCthUDu46Jo": "PASS",
+    "1ZqocTetf6$fCthUDu46Jp": "PASS",
+    "1ZqocTetf6$fCthUDu46Js": "PASS",
+    "1ZqocTetf6$fCthUDu46Jt": "PASS",
+    "1ZqocTetf6$fCthUDu46Ju": "PASS",
+    "1ZqocTetf6$fCthUDu46Jv": "PASS",
+    "1ZqocTetf6$fCthUDu46Jw": "PASS",
+    "1ZqocTetf6$fCthUDu46Jx": "PASS",
+    "1ZqocTetf6$fCthUDu46Jy": "PASS",
+    "1ZqocTetf6$fCthUDu46Jz": "PASS",
+    "1ZqocTetf6$fCthUDu48HA": "PASS",
+    "1ZqocTetf6$fCthUDu49kK": "PASS",
+    "1ZqocTetf6$fCthUDu49l3": "PASS",
+    "1ZqocTetf6$fCthUDu49l4": "PASS",
+    "1ZqocTetf6$fCthUDu49l9": "PASS",
+    "1ZqocTetf6$fCthUDu49lA": "PASS",
+    "1ZqocTetf6$fCthUDu49lB": "PASS",
+    "1ZqocTetf6$fCthUDu49lw": "PASS",
+    "1ZqocTetf6$fCthUDu49ly": "PASS",
+    "1ZqocTetf6$fCthUDu4T59": "PASS",
+    "1dlg8SFz13Dxy5xbbmTeMf": "PASS",
+    "1dlg8SFz13Dxy5xbbmTeMk": "PASS",
+    "1dlg8SFz13Dxy5xbbmTeOA": "PASS",
+    "1eP2ijolHBVBHZ42vyF$8w": "PASS",
+    "1eP2ijolHBVBHZ42vyF$_o": "PASS",
+    "2C2zI5pkb1QvX7FnquBj_q": "PASS",
+    "2C2zI5pkb1QvX7FnquBkNK": "PASS",
+    "2XdADGt6D17gkCuO1NDqdl": "PASS",
+    "2bITg05VT0QhaBJJBSQtZd": "FAIL",
+    "2bITg05VT0QhaBJJBSQtgB": "FAIL",
+    "2nnmn$wtvDQO1W9NS56gZo": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZp": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZq": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZr": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZs": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZt": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZu": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZv": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZw": "PASS",
+    "2nnmn$wtvDQO1W9NS56gZx": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdg": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdh": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdi": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdj": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdo": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdp": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdw": "PASS",
+    "2nnmn$wtvDQO1W9NS56gdy": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9A": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9B": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9C": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9D": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9E": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9F": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9G": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9H": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9I": "PASS",
+    "2nnmn$wtvDQO1W9NS56h9J": "PASS",
+    "2nnmn$wtvDQO1W9NS56hE$": "PASS",
+    "2nnmn$wtvDQO1W9NS56hE4": "PASS",
+    "2nnmn$wtvDQO1W9NS56hE5": "PASS",
+    "2nnmn$wtvDQO1W9NS56hEC": "PASS",
+    "2nnmn$wtvDQO1W9NS56hEE": "PASS",
+    "2nnmn$wtvDQO1W9NS56hE_": "PASS",
+    "2nnmn$wtvDQO1W9NS56hEy": "PASS",
+    "2nnmn$wtvDQO1W9NS56hEz": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKb": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKc": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKd": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKe": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKj": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKk": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKr": "PASS",
+    "2nnmn$wtvDQO1W9NS56hKt": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNp": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNq": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNr": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNs": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNt": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNu": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNv": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNw": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNx": "PASS",
+    "2nnmn$wtvDQO1W9NS56hNy": "PASS",
+    "2o0Mqm2o571eRODu72qYiC": "PASS",
+    "2o0Mqm2o571eRODu72qZMg": "PASS",
+    "2othVyEOv04e9ZEWny$3_k": "PASS",
+    "2othVyEOv04e9ZEWny$3pn": "PASS",
+    "2xw1klyxT4JxIG_b9w_H1w": "PASS",
+    "2xw1klyxT4JxIG_b9w_H2U": "PASS",
+    "2xw1klyxT4JxIG_b9w_H7p": "PASS",
+    "2xw1klyxT4JxIG_b9w_H9$": "PASS",
+    "2xw1klyxT4JxIG_b9w_HF3": "PASS",
+    "2xw1klyxT4JxIG_b9w_HmY": "PASS",
+    "2xw1klyxT4JxIG_b9w_Hvd": "PASS",
+    "2xw1klyxT4JxIG_b9w_HwD": "PASS",
+    "2xw1klyxT4JxIG_b9w_Hyl": "PASS",
+    "32pGJniqfA8P8p29AMlL0U": "PASS",
+    "32pGJniqfA8P8p29AMlL1B": "PASS",
+    "32pGJniqfA8P8p29AMlLGG": "PASS",
+    "32pGJniqfA8P8p29AMlLSH": "PASS",
+    "32pGJniqfA8P8p29AMlLwo": "PASS",
+    "32pGJniqfA8P8p29AMlMTo": "PASS",
+    "32pGJniqfA8P8p29AMlMTy": "PASS",
+    "32pGJniqfA8P8p29AMlMU2": "PASS",
+    "32pGJniqfA8P8p29AMlMU3": "PASS",
+    "32pGJniqfA8P8p29AMlMUD": "PASS",
+    "32pGJniqfA8P8p29AMlMWz": "PASS",
+    "37TxPeqdL6_95uRmciyA1q": "PASS",
+    "37TxPeqdL6_95uRmciyA4f": "PASS",
+    "37TxPeqdL6_95uRmciyB0f": "PASS",
+    "37TxPeqdL6_95uRmciyB1Q": "PASS",
+    "37TxPeqdL6_95uRmciyBKY": "PASS",
+    "37TxPeqdL6_95uRmciyBOG": "PASS",
+    "37TxPeqdL6_95uRmciyC$7": "PASS",
+    "37TxPeqdL6_95uRmciyC$V": "PASS",
+    "37TxPeqdL6_95uRmciyC$g": "PASS",
+    "37TxPeqdL6_95uRmciyC$m": "PASS",
+    "37TxPeqdL6_95uRmciyCNZ": "PASS",
+    "37TxPeqdL6_95uRmciyC_v": "PASS",
+    "37TxPeqdL6_95uRmciyDFA": "PASS",
+    "3KtJSuCzX0QQuDjMohyRcC": "PASS",
+    "3KvE5DfsH398rc0H6jCP4R": "PASS",
+    "3YiGGAeSPFow$uQIMGihrN": "PASS",
+    "3YiGGAeSPFow$uQIMGihy8": "PASS"
+  },
+  "notes": "Doorway headroom of the 157 template doors: {'FAIL': 3, 'PASS': 154}; 33 lift doors outside the template are unscored.",
+  "clause": "c.3.2.1",
+  "source": "reference_v2.py::build_headroom_doors (headroom.xlsx::Headroom_beta mall_UAT1_v6.4)",
+  "reference": {
+    "tier": "usable_2",
+    "review_date": "2026-09-29",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "unscored_ids": [
+      "0NaMhR93H5peOrMQRZHzkf",
+      "1J$z6BjNbEiAfGnVGLbOgJ",
+      "1J$z6BjNbEiAfGnVGLbOhe",
+      "1J$z6BjNbEiAfGnVGLbOhg",
+      "1J$z6BjNbEiAfGnVGLbOhh",
+      "1J$z6BjNbEiAfGnVGLbQi5",
+      "1ZqocTetf6$fCthUDu49lf",
+      "1ZqocTetf6$fCthUDu49lg",
+      "1ZqocTetf6$fCthUDu49lh",
+      "1ZqocTetf6$fCthUDu49lo",
+      "24c7$xi954nOCCkGbkZlzw",
+      "24c7$xi954nOCCkGbkZlzy",
+      "24c7$xi954nOCCkGbkZlzz",
+      "2nnmn$wtvDQO1W9NS56gd4",
+      "2nnmn$wtvDQO1W9NS56gdB",
+      "2nnmn$wtvDQO1W9NS56gdC",
+      "2nnmn$wtvDQO1W9NS56gdD",
+      "2nnmn$wtvDQO1W9NS56hEM",
+      "2nnmn$wtvDQO1W9NS56hET",
+      "2nnmn$wtvDQO1W9NS56hEU",
+      "2nnmn$wtvDQO1W9NS56hEV",
+      "2nnmn$wtvDQO1W9NS56hK$",
+      "2nnmn$wtvDQO1W9NS56hK6",
+      "2nnmn$wtvDQO1W9NS56hK7",
+      "2nnmn$wtvDQO1W9NS56hK8",
+      "32pGJniqfA8P8p29AMlMCK",
+      "32pGJniqfA8P8p29AMlMCL",
+      "32pGJniqfA8P8p29AMlMCT",
+      "32pGJniqfA8P8p29AMlMCg",
+      "3QO6Mg3Qr4WRo9DNMQKXg$",
+      "3QO6Mg3Qr4WRo9DNMQKXg_",
+      "3QO6Mg3Qr4WRo9DNMQKXgv",
+      "3QO6Mg3Qr4WRo9DNMQKXgx"
+    ],
+    "population": 190,
+    "ifc_sha256": "544b8251f0f2dfb4e1e97df82a8b87a049d04609f8bc3a03ad36a6cceec6e77b",
+    "status": "Advisor expert rows, each reproduced from the recorded ClearHeight under the authority's stated IFC convention.",
+    "policy": "Doorway headroom is the recorded ClearHeight (authority convention); every template door is assessed.",
+    "limitations": "By OverallHeight, 4 PASS doors are below 2000 mm and 3 FAIL doors are at least 2000 mm; the test model sets ClearHeight independently of the leaf size."
+  },
+  "provenance": {
+    "04z09705r2efQzCXRRrizx": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "fail",
+        "message": "Door ClearHeight 1800mm < 2000mm (deficit 200mm)"
+      },
+      "clear_height_mm": 1800.0,
+      "overall_height_mm": 2400.0,
+      "label": "FAIL",
+      "conflict": "OverallHeight gives the opposite outcome; the authority convention (ClearHeight) governs."
+    },
+    "0INDUrHw9DV81_NR3xOc2R": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOcZ0": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOd93": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdBK": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdCf": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdDk": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdGE": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdGw": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdHZ": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdJR": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOdPU": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOj2q": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 3000.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOjWU": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0INDUrHw9DV81_NR3xOjhD": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0NaMhR93H5peOrMQRZHzjk": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0NaMhR93H5peOrMQRZHzk1": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0NaMhR93H5peOrMQRZHzk2": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0NaMhR93H5peOrMQRZHzkA": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0NaMhR93H5peOrMQRZHzku": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0SD6Zw1mP2IwbVOlH2RAMk": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0SD6Zw1mP2IwbVOlH2Rs85": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2840.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1HNo$1BaT6hAgCuGpe7AkX": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbOg2": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbOg5": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbOgC": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbOgR": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbSON": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbSRz": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbST7": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1J$z6BjNbEiAfGnVGLbVcv": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1P1G77bzz7Rh$v2y1AS7zB": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jo": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jp": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Js": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jt": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Ju": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jv": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jw": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jx": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jy": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu46Jz": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu48HA": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49kK": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49l3": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49l4": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49l9": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49lA": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49lB": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49lw": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu49ly": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZqocTetf6$fCthUDu4T59": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2540.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1dlg8SFz13Dxy5xbbmTeMf": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1dlg8SFz13Dxy5xbbmTeMk": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1dlg8SFz13Dxy5xbbmTeOA": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1eP2ijolHBVBHZ42vyF$8w": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1eP2ijolHBVBHZ42vyF$_o": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2C2zI5pkb1QvX7FnquBj_q": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 1800.0,
+      "label": "PASS",
+      "conflict": "OverallHeight gives the opposite outcome; the authority convention (ClearHeight) governs."
+    },
+    "2C2zI5pkb1QvX7FnquBkNK": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2XdADGt6D17gkCuO1NDqdl": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2bITg05VT0QhaBJJBSQtZd": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "fail",
+        "message": "Door ClearHeight 1800mm < 2000mm (deficit 200mm)"
+      },
+      "clear_height_mm": 1800.0,
+      "overall_height_mm": 2100.0,
+      "label": "FAIL",
+      "conflict": "OverallHeight gives the opposite outcome; the authority convention (ClearHeight) governs."
+    },
+    "2bITg05VT0QhaBJJBSQtgB": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "fail",
+        "message": "Door ClearHeight 1800mm < 2000mm (deficit 200mm)"
+      },
+      "clear_height_mm": 1800.0,
+      "overall_height_mm": 2100.0,
+      "label": "FAIL",
+      "conflict": "OverallHeight gives the opposite outcome; the authority convention (ClearHeight) governs."
+    },
+    "2nnmn$wtvDQO1W9NS56gZo": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZp": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZq": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZr": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZs": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZt": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZu": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZv": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZw": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gZx": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdg": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdh": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdi": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdj": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdo": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdp": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdw": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56gdy": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9A": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9B": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9C": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9D": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9E": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9F": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9G": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9H": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9I": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56h9J": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hE$": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hE4": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hE5": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hEC": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hEE": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hE_": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hEy": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hEz": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKb": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKc": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKd": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKe": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKj": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKk": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKr": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hKt": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNp": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNq": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNr": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNs": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNt": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNu": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNv": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNw": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNx": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2nnmn$wtvDQO1W9NS56hNy": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2o0Mqm2o571eRODu72qYiC": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2o0Mqm2o571eRODu72qZMg": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2othVyEOv04e9ZEWny$3_k": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2othVyEOv04e9ZEWny$3pn": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_H1w": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_H2U": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_H7p": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_H9$": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_HF3": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_HmY": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_Hvd": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_HwD": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2xw1klyxT4JxIG_b9w_Hyl": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlL0U": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlL1B": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlLGG": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 1800.0,
+      "label": "PASS",
+      "conflict": "OverallHeight gives the opposite outcome; the authority convention (ClearHeight) governs."
+    },
+    "32pGJniqfA8P8p29AMlLSH": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 1800.0,
+      "label": "PASS",
+      "conflict": "OverallHeight gives the opposite outcome; the authority convention (ClearHeight) governs."
+    },
+    "32pGJniqfA8P8p29AMlLwo": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 1800.0,
+      "label": "PASS",
+      "conflict": "OverallHeight gives the opposite outcome; the authority convention (ClearHeight) governs."
+    },
+    "32pGJniqfA8P8p29AMlMTo": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlMTy": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlMU2": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlMU3": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlMUD": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2840.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "32pGJniqfA8P8p29AMlMWz": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyA1q": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2100.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyA4f": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyB0f": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyB1Q": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyBKY": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyBOG": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyC$7": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyC$V": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyC$g": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyC$m": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyCNZ": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2412.5,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyC_v": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37TxPeqdL6_95uRmciyDFA": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3KtJSuCzX0QQuDjMohyRcC": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3KvE5DfsH398rc0H6jCP4R": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2400.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3YiGGAeSPFow$uQIMGihrN": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2110.0,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3YiGGAeSPFow$uQIMGihy8": {
+      "expert": {
+        "clause": "c.3.2",
+        "bucket": "pass",
+        "message": "Door ClearHeight 2000mm >= 2000mm"
+      },
+      "clear_height_mm": 2000.0,
+      "overall_height_mm": 2800.0,
+      "label": "PASS",
+      "conflict": null
+    }
+  }
+}

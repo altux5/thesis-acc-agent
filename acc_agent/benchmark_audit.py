@@ -11,7 +11,7 @@ from completion import scope_classes
 from ground_truth import GT_DIR, GroundTruth, load
 from scoring import LABELS
 
-PILOTS = ("slab_thickness__mall_v2", "doors_windows_storey__condo", "staircase_width_v8")
+PILOTS = ("slab_thickness__mall", "doors_windows_storey__condo", "staircase_width_v8")
 
 
 def file_hash(path: Path) -> str:
@@ -110,9 +110,9 @@ def audit_case(case: GroundTruth, ifc_path: Path | None = None) -> dict:
                 result["issues"].append("Reference labels and declared unscored IDs do not cover exactly the public IFC population.")
         elif subset:
             result["issues"].append("Subset scoring requires a verifiable public IFC class scope.")
-        if case.case_id == "slab_thickness__mall":
+        if case.case_id == "slab_thickness__mall_deprecated_v1":
             result["issues"].append("Legacy slab reference mistakes exported depth for thickness and misses recorded properties.")
-        elif case.case_id == "slab_thickness__mall_v2":
+        elif case.case_id == "slab_thickness__mall":
             from slab_reference import build_case
 
             rebuilt = build_case()
@@ -128,7 +128,7 @@ def audit_case(case: GroundTruth, ifc_path: Path | None = None) -> dict:
                 result["issues"].append("Raw IFC relationship traversal disagrees with reference labels.")
             result["status"] = "relations-checked"
             result["limitation"] = "Raw IFC relationships cross-checked, not an expert regulatory judgement."
-        elif case.case_id == "staircase_width_v8":
+        elif case.case_id == "staircase_width_v8_deprecated_v1":
             from import_bca_gt import CASES, extract
 
             imported, _ = extract(next(item for item in CASES if item.case_id == case.case_id))
@@ -137,6 +137,20 @@ def audit_case(case: GroundTruth, ifc_path: Path | None = None) -> dict:
                 result["issues"].append("Expert workbook import differs from stored labels.")
             result["status"] = "expert-subset-checked" if subset else "workbook-checked"
             result["limitation"] = "Agreement is measured only on workbook-labelled stairs, not the full IFC population. Clear-width geometry and unlabelled stairs are not independently adjudicated."
+        elif case.case_id == "staircase_width_v8":
+            from stair_width_reference import verify_recorded
+
+            result["issues"].extend(verify_recorded(case))
+            if case.reference.get("ifc_sha256") != result["ifc_sha256"]:
+                result["issues"].append("Full staircase reference IFC fingerprint differs from the current model.")
+            result["status"] = "evidence-checked"
+            result["limitation"] = "Workbook labels cross-checked against IFC spaces and measured clear widths at generation, with recorded adjudications; regenerate with stair_width_reference.py --check. Not independent expert certification."
+        elif case.reference.get("tier") == "usable_2":
+            from reference_v2 import verify_recorded as verify_usable_2
+
+            result["issues"].extend(verify_usable_2(case, result["ifc_sha256"]))
+            result["status"] = "evidence-checked"
+            result["limitation"] = "Evidence recorded at generation (2026-09-29 review); regenerate with reference_v2.py --check. Not independent expert certification."
     except Exception as exc:
         result["issues"].append(f"Audit could not finish: {type(exc).__name__}: {exc}")
         result["status"] = "unverified"

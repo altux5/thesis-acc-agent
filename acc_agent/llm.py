@@ -14,7 +14,7 @@ capture_module()
 LLMClient = BaseChatModel
 MAX_TOKENS = 8000
 REQUEST_TIMEOUT = 180
-DEFAULT_MODELS = {"openrouter": "anthropic/claude-sonnet-4.5", "minimax": "MiniMax-M3"}
+DEFAULT_MODELS = {"openrouter": "minimax/minimax-m3", "minimax": "MiniMax-M3"}
 MINIMAX_BASE_URL = "https://api.minimax.io/anthropic"
 
 
@@ -42,8 +42,8 @@ def with_reasoning(model: BaseChatModel, enabled: bool) -> BaseChatModel:
     return model
 
 
-def load_llm(model: str | None = None) -> BaseChatModel:
-    provider = resolve_provider()
+def load_llm(model: str | None = None, provider: str | None = None) -> BaseChatModel:
+    provider = (provider or resolve_provider()).strip().lower()
     name = model or default_model(provider)
     if provider not in DEFAULT_MODELS:
         raise RuntimeError(f"Unknown PROVIDER={provider!r}. Use 'minimax' or 'openrouter'.")
@@ -52,9 +52,10 @@ def load_llm(model: str | None = None) -> BaseChatModel:
     if not key:
         raise RuntimeError(f"{key_name} is not set. Configure it in the environment or .env file.")
     settings = dict(model=name, max_tokens=MAX_TOKENS, max_retries=0,
-                    timeout=REQUEST_TIMEOUT, metadata={"provider": provider, "model": name})
+                    metadata={"provider": provider, "model": name})
     if provider == "minimax":
-        client = ChatAnthropic(api_key=key, base_url=MINIMAX_BASE_URL, **settings)
+        client = ChatAnthropic(api_key=key, base_url=MINIMAX_BASE_URL, timeout=REQUEST_TIMEOUT, **settings)
     else:
-        client = ChatOpenRouter(api_key=key, **settings)
+        # The OpenRouter SDK takes milliseconds; 180 here meant 0.18 s and hung the first request.
+        client = ChatOpenRouter(api_key=key, timeout=REQUEST_TIMEOUT * 1000, **settings)
     return with_reasoning(client, os.environ.get("REASONING", "1").lower() not in ("0", "false", "no"))

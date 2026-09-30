@@ -94,7 +94,7 @@ STAIRCASE_E331_REGULATION = (
 CASES: tuple[BcaCase, ...] = (
     # ⭐ True "clear width" geometric rule: 27 pass / 22 fail across 49 IfcStair.
     BcaCase(
-        case_id="staircase_width_v8",
+        case_id="staircase_width_v8_deprecated_v1",
         rule_file="staircase_width.xlsx",
         sheet="Staircase width_bca__e-3-3__v8",
         clause="e.3.3.1",
@@ -106,7 +106,7 @@ CASES: tuple[BcaCase, ...] = (
     ),
     # Exit access: 36 pass / 3 fail.
     BcaCase(
-        case_id="exit_requirements_v0",
+        case_id="exit_requirements__scdf_5_deprecated_v1",
         rule_file="exit_requirements.xlsx",
         sheet="uat2_scdf_2.2.12_5_v0",
         clause="fc:2.2.12b",
@@ -125,7 +125,7 @@ CASES: tuple[BcaCase, ...] = (
     ),
     # Planter box GFA (fuzzy rule, kept for completeness): 1 pass / 7 fail.
     BcaCase(
-        case_id="planter_box_gfa",
+        case_id="planter_box_gfa_deprecated_v1",
         rule_file="planter_box.xlsx",
         sheet="20240313_URA_Planterbox",
         clause="-",

@@ -3,6 +3,7 @@ anthropic==1.6.0
 ifcopenshell==0.8.5
 python-dotenv==1.2.2
 customtkinter==6.0.0
+matplotlib==3.11.2
 langfuse==4.14.1
 openpyxl==3.1.5
 numpy==2.5.0

@@ -18,9 +18,10 @@ deadline, and containment when native code in ifcopenshell takes the interpreter
 down. Each worker also gets a private scratch directory as its working directory,
 so a relative write neither lands in the source tree nor outlives the worker.
 
-It is **not** a security boundary: the worker runs as the same user with the same
-filesystem access, so a write to an *absolute* path still persists, and known API
-keys are merely dropped from its environment rather than made unreachable.
+It is **not** a security boundary: the worker runs as the same user and can read the
+filesystem. Python-level writes (open, os/shutil file operations) outside its scratch
+directory are refused by an audit hook in the worker; native library code is not
+covered. Known API keys are merely dropped from its environment, not made unreachable.
 
 Reporting helpers remain in executor.py; the old in-process class is commented
 out there. The public execution interface is unchanged.
@@ -86,8 +87,11 @@ class _Worker:
 
     def __init__(self, skills: bool) -> None:
         # A private cwd, so a relative write neither lands in the source tree nor
-        # outlives the worker. Absolute paths are still reachable.
+        # outlives the worker; the worker refuses Python-level writes elsewhere.
         self.scratch = tempfile.mkdtemp(prefix="acc_kernel_")
+        environment = _child_environment()
+        for name in ("TEMP", "TMP", "TMPDIR"):
+            environment[name] = self.scratch
         try:
             self._proc = subprocess.Popen(
                 [sys.executable, "-s", str(WORKER), str(PROJECT_DIR)],
@@ -95,7 +99,7 @@ class _Worker:
                 stdout=subprocess.PIPE,
                 stderr=None,  # inherited, so native-level noise stays visible
                 cwd=self.scratch,
-                env=_child_environment(),
+                env=environment,
                 text=True,
                 encoding="utf-8",
                 errors="backslashreplace",

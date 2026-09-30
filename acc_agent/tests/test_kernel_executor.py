@@ -12,6 +12,7 @@ import contextlib
 import io
 import json
 import os
+import shutil
 import sys
 import tempfile
 import unittest
@@ -74,6 +75,32 @@ class KernelExecutorTest(unittest.TestCase):
         scratch = Path(executor._worker.scratch)
         executor.close()
         self.assertFalse(scratch.exists())
+
+    def test_writes_outside_the_scratch_directory_are_refused(self):
+        executor = self.executor(stateful=True)
+        outside = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, outside, ignore_errors=True)
+        target = outside / "leak.txt"
+        attempts = {
+            "open": f"open({str(target)!r}, 'w').write('x')",
+            "pathlib": f"import pathlib\npathlib.Path({str(target)!r}).write_text('x')",
+            "os.open": f"import os\nos.open({str(target)!r}, os.O_WRONLY | os.O_CREAT)",
+            "move out": f"import os\nopen('here.txt', 'w').write('x')\nos.replace('here.txt', {str(target)!r})",
+            "chdir": f"import os\nos.chdir({str(outside)!r})\nopen('leak.txt', 'w').write('x')",
+        }
+        for name, code in attempts.items():
+            with self.subTest(name):
+                output = executor.run(code)
+                self.assertTrue(executor.last_error, output)
+                self.assertIn("PermissionError", output)
+                self.assertFalse(target.exists())
+        output = executor.run(
+            "import os, tempfile, json\n"
+            "with tempfile.NamedTemporaryFile('w', delete=False) as handle: handle.write('x')\n"
+            f"print('readable', len(open({str(Path(__file__))!r}).read()) > 0, os.path.exists(handle.name))"
+        )
+        self.assertFalse(executor.last_error, output)
+        self.assertIn("readable True True", output)
 
     # def test_inprocess_stateless_leaks_what_the_kernel_does_not(self):
     #     executor = CodeExecutor(stateful=False)

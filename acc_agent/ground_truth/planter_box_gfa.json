@@ -1,10 +1,10 @@
 {
   "case_id": "planter_box_gfa",
-  "rule": "Determine depth and width of planter box to exclude or add in gfa.\n\nReport the GlobalId of every element (modelled as IfcFurniture) that does NOT satisfy this requirement.",
-  "ifc_path": "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Planter boxes/Test models/20240313_URA_Planterbox.ifc",
+  "rule": "A communal planter box is excluded from Gross Floor Area (GFA) only if it meets every requirement below; otherwise the entire planter box is included in GFA (there is no partial exclusion).\n\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nURA GFA Handbook - planter boxes (authority summary):\nCommunal planter boxes are excluded from GFA if they comply with the following requirements: maximum width of 1.0 m; minimum depth of 500 mm (for planting purposes); to be sufficiently externalised. Planter boxes provided behind full height screening and internalised planter boxes are included as GFA. A planter box that is not within a common or communal area is included as GFA.\nAuthority definitions: planter box - IfcFurniture USERDEFINED PLANTERBOX; communal use - IfcSpace USERDEFINED AREA_STRATA whose SGPset_SpaceArea_Strata.AST_AreaType contains 'Common' or 'Communal'; communal planter box - any part of the planter box overlaps a communal space in plan; width - the length of the side measured from the edge near the building to the edge away from the building (if the width varies, no width may exceed 1 m); depth - the overall height of the planter box (if the depth varies, no depth may be less than 500 mm); externalised - the sides of the planter box facing out are not obstructed by any building within 20 m. Suggested externalisation check: place 2 layers of 3 points along the building-edge length of the planter's bounding box, at 1100 mm and 1500 mm above the planter surface; project 10 rays outwards from each point for 20 m; the planter is externalised if at least 40% of the rays at each layer are not obstructed by other physical elements.\n\nLabel every planter box: PASS when it qualifies for exclusion from GFA, FAIL when it must be included in GFA.\nReport the GlobalId of every element (modelled as IfcFurniture) that does NOT satisfy this requirement.",
+  "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Planter boxes/Test models/20240313_URA_Planterbox.ifc",
   "complexity": 3,
   "threshold_mm": null,
-  "tolerance_mm": null,
+  "tolerance_mm": 0.5,
   "violations": [
     "0Jq$VcATn1YuQDyanOGt8m",
     "0Jq$VcATn1YuQDyanOGtXE",
@@ -24,7 +24,137 @@
     "1htswfSyH2TvqYjduovETR": "FAIL",
     "1htswfSyH2TvqYjduovEU2": "PASS"
   },
-  "notes": "Imported from gt_comparison. 7 fail / 8 labelled rows; expert buckets {'pass': 1, 'fail': 7} -> labels {'FAIL': 7, 'PASS': 1}.",
+  "notes": "GFA-exclusion eligibility of all 8 planter boxes: {'FAIL': 7, 'PASS': 1}. PASS = excluded from GFA. Supersedes planter_box_gfa_deprecated_v1, which gave no criteria.",
   "clause": "-",
-  "source": "planter_box.xlsx::20240313_URA_Planterbox::-"
+  "source": "reference_v2.py::build_planter (planter_box.xlsx::20240313_URA_Planterbox)",
+  "reference": {
+    "tier": "usable_2",
+    "review_date": "2026-09-29",
+    "version": 2,
+    "supersedes": "planter_box_gfa_deprecated_v1",
+    "evaluation_scope": "full_population",
+    "population": 8,
+    "ifc_sha256": "166f23acd718e6b3e5d419c9d0fbc9d58a65a81fb0ca9c415bca89785d7cc164",
+    "status": "Advisor expert rows; width outcome and communal overlap re-measured from the IFC. Externalisation is not independently re-measured.",
+    "policy": "The rule states the URA criteria and the authority's IFC definitions; FAIL means the planter must be included in GFA.",
+    "limitations": "Eight elements only. The advisors' checker disagreed on 1 of 8 (width axis of the L-shaped excluded planter); the measured widest strip there is 1000 mm."
+  },
+  "provenance": {
+    "0Jq$VcATn1YuQDyanOGt8m": {
+      "expert": {
+        "clause": "-",
+        "bucket": "fail",
+        "message": "Included in GFA (Communal planter box). Fails: width > 1000mm; not externalised. depth=550mm, width=1030mm (dx), externalised=False."
+      },
+      "measured_widest_strip_mm": 1030,
+      "mesh_height_mm": 375,
+      "overlapping_strata": [
+        "Communal Area"
+      ],
+      "label": "FAIL",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    },
+    "0Jq$VcATn1YuQDyanOGtXE": {
+      "expert": {
+        "clause": "-",
+        "bucket": "fail",
+        "message": "Included in GFA (Communal planter box). Fails: depth < 500mm. depth=425mm, width=1000mm (dx), externalised=True."
+      },
+      "measured_widest_strip_mm": 1000,
+      "mesh_height_mm": 375,
+      "overlapping_strata": [
+        "Communal Area"
+      ],
+      "label": "FAIL",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    },
+    "0Jq$VcATn1YuQDyanOGtwf": {
+      "expert": {
+        "clause": "-",
+        "bucket": "fail",
+        "message": "Included in GFA (Communal planter box). Fails: depth < 500mm; width > 1000mm. depth=425mm, width=1030mm (dx), externalised=True."
+      },
+      "measured_widest_strip_mm": 1030,
+      "mesh_height_mm": 375,
+      "overlapping_strata": [
+        "Communal Area",
+        "Strata (Private)"
+      ],
+      "label": "FAIL",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    },
+    "0Jq$VcATn1YuQDyanOGut1": {
+      "expert": {
+        "clause": "-",
+        "bucket": "fail",
+        "message": "Included in GFA (Communal planter box). Fails: not externalised. depth=550mm, width=1000mm (dx), externalised=False."
+      },
+      "measured_widest_strip_mm": 1000,
+      "mesh_height_mm": 375,
+      "overlapping_strata": [
+        "Communal Area"
+      ],
+      "label": "FAIL",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    },
+    "1htswfSyH2TvqYjduovEQL": {
+      "expert": {
+        "clause": "-",
+        "bucket": "fail",
+        "message": "Included in GFA (Communal planter box). Fails: width > 1000mm. depth=650mm, width=2120mm, externalised=True."
+      },
+      "measured_widest_strip_mm": 1897,
+      "mesh_height_mm": 500,
+      "overlapping_strata": [
+        "Communal Area"
+      ],
+      "label": "FAIL",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    },
+    "1htswfSyH2TvqYjduovERI": {
+      "expert": {
+        "clause": "-",
+        "bucket": "fail",
+        "message": "Included in GFA (Communal planter box). Fails: width > 1000mm. depth=650mm, width=1530mm, externalised=True."
+      },
+      "measured_widest_strip_mm": 1527,
+      "mesh_height_mm": 500,
+      "overlapping_strata": [
+        "Communal Area",
+        "Strata (Private)"
+      ],
+      "label": "FAIL",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    },
+    "1htswfSyH2TvqYjduovETR": {
+      "expert": {
+        "clause": "-",
+        "bucket": "fail",
+        "message": "Included in GFA (Communal planter box). Fails: width > 1000mm. depth=650mm, width=4650mm, externalised=True."
+      },
+      "measured_widest_strip_mm": 2973,
+      "mesh_height_mm": 500,
+      "overlapping_strata": [
+        "Communal Area",
+        "Strata (Private)"
+      ],
+      "label": "FAIL",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    },
+    "1htswfSyH2TvqYjduovEU2": {
+      "expert": {
+        "clause": "-",
+        "bucket": "pass",
+        "message": "Excluded in GFA (Communal planter box). depth=650mm, width=1000mm, externalised=True."
+      },
+      "measured_widest_strip_mm": 1000,
+      "mesh_height_mm": 500,
+      "overlapping_strata": [
+        "Communal Area",
+        "Strata (Private)"
+      ],
+      "label": "PASS",
+      "check": "Width-limit outcome and communal overlap re-measured and agree with the expert row. The expert depth (overall height) exceeds the mesh height of the planter body; no label depends on which reading is used."
+    }
+  }
 }

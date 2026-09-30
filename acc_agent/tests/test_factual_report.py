@@ -327,9 +327,12 @@ FINAL: {"verdict": "COMPLIANT", "violations": []}
         self.assertNotIn("Final verdict recorded", render_html(report))
 
     def test_version_two_warning_does_not_call_repaired_reference_invalid(self):
-        report = parse_log(HEADER.replace("sample", "slab_thickness__mall_v2"), Path("v2.md"))
+        header = HEADER.replace("sample", "slab_thickness__mall").replace("- **Model:**", "- **Reference:** 2\n- **Model:**")
+        report = parse_log(header, Path("v2.md"))
         self.assertIn("100 PASS / 12 ALERT / zero FAIL", render_text(report))
         self.assertNotIn("known to be invalid", render_text(report))
+        legacy = parse_log(HEADER.replace("sample", "slab_thickness__mall_deprecated_v1"), Path("v1.md"))
+        self.assertIn("known to be invalid", render_text(legacy))
 
     def test_cli_handles_unicode_with_ascii_console(self):
         with TemporaryDirectory() as directory:

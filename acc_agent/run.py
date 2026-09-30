@@ -73,12 +73,12 @@ def main() -> None:
         default=None,
         help=(
             "Model id. Defaults to the configured provider's default "
-            "(MiniMax-M3 for minimax, anthropic/claude-sonnet-4.5 for openrouter). "
+            "(MiniMax-M3 for minimax, minimax/minimax-m3 for openrouter). "
             "Override here or with the MODEL env var."
         ),
     )
     parser.add_argument(
-        "--max-iterations", type=int, default=max(config.MAX_ITERATIONS, 12)
+        "--max-iterations", type=int, default=config.MAX_ITERATIONS
     )
     parser.add_argument(
         "--harness",

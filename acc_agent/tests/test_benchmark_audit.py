@@ -56,7 +56,7 @@ class BenchmarkAuditTests(unittest.TestCase):
     def test_staircase_subset_metadata_is_explicit_and_reproducible(self):
         from import_bca_gt import CASES, GT_COMPARISON_DIR, extract
 
-        case = load("staircase_width_v8")
+        case = load("staircase_width_v8_deprecated_v1")
         self.assertEqual(len(case.unscored_ids), 10)
         self.assertEqual(case.reference["population"], 59)
         self.assertFalse(case.unscored_ids & set(case.labels))
@@ -69,13 +69,13 @@ class BenchmarkAuditTests(unittest.TestCase):
         self.assertEqual(rebuilt.reference, case.reference)
 
     def test_subset_metadata_cannot_exclude_authored_labels(self):
-        case = load("staircase_width_v8")
+        case = load("staircase_width_v8_deprecated_v1")
         case.reference["unscored_ids"][0] = next(iter(case.labels))
         with self.assertRaises(ValueError):
             _ = case.unscored_ids
 
     def test_staircase_declared_subset_passes_workbook_and_ifc_audit(self):
-        case = load("staircase_width_v8")
+        case = load("staircase_width_v8_deprecated_v1")
         if not case.resolve_ifc().exists():
             self.skipTest("Local IFC unavailable")
         result = audit_case(case)
@@ -86,12 +86,12 @@ class BenchmarkAuditTests(unittest.TestCase):
         self.assertEqual(result["issues"], [])
 
     def test_undeclared_or_stale_staircase_subsets_remain_invalid(self):
-        original = load("staircase_width_v8")
+        original = load("staircase_width_v8_deprecated_v1")
         if not original.resolve_ifc().exists():
             self.skipTest("Local IFC unavailable")
         for defect in ("undeclared", "fingerprint", "wrong_id", "wrong_label"):
             with self.subTest(defect=defect):
-                case = load("staircase_width_v8")
+                case = load("staircase_width_v8_deprecated_v1")
                 if defect == "undeclared":
                     case.reference = {}
                 elif defect == "fingerprint":
@@ -112,7 +112,7 @@ class BenchmarkAuditTests(unittest.TestCase):
         from scoring import ParsedVerdict, score
         import json
 
-        case = load("staircase_width_v8")
+        case = load("staircase_width_v8_deprecated_v1")
         for outcome in ("PASS", "FAIL", "ALERT", "MANUAL_CHECK", "NA"):
             with self.subTest(unannotated_outcome=outcome):
                 labels = {**case.labels, **dict.fromkeys(case.unscored_ids, outcome)}
@@ -131,7 +131,7 @@ class BenchmarkAuditTests(unittest.TestCase):
     def test_legacy_scoring_and_missing_reference_penalties_are_preserved(self):
         from scoring import ParsedVerdict, score
 
-        case = load("staircase_width_v8")
+        case = load("staircase_width_v8_deprecated_v1")
         labels = {**case.labels, **dict.fromkeys(case.unscored_ids, "PASS")}
         parsed = ParsedVerdict("NON_COMPLIANT", case.violation_set, True, labels=labels)
         self.assertEqual(score(parsed, case.violation_set, case.labels).union_accuracy, 49 / 59)

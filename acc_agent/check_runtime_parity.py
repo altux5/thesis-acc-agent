@@ -194,7 +194,7 @@ print("classified", len(labels))
 
 def check_real_model() -> list[str]:
     problems = []
-    case = ground_truth.load(Path(__file__).resolve().parent / "ground_truth" / "slab_thickness__mall_v2.json")
+    case = ground_truth.load(Path(__file__).resolve().parent / "ground_truth" / "slab_thickness__mall.json")
     code = CLASSIFY.format(ifc=case.resolve_ifc())
     for stateful in (True, False):
         executor = KernelCodeExecutor(stateful=stateful, timeout=600)

@@ -185,7 +185,7 @@ def main() -> None:
     )
     parser.add_argument("--model", type=str, default=None, help="Model id override.")
     parser.add_argument(
-        "--max-iterations", type=int, default=max(config.MAX_ITERATIONS, 12)
+        "--max-iterations", type=int, default=config.MAX_ITERATIONS
     )
     parser.add_argument(
         "--ifc", type=Path, default=None, help="Override the IFC path from the case."

@@ -50,6 +50,15 @@ class CompletionTests(unittest.TestCase):
         self.assertIsNone(self.check("UNKNOWN", reports=0)[0])
         self.assertIsNotNone(self.check("UNKNOWN", reports=0, reason="Model could not be read.")[0])
 
+    def test_abstention_is_accepted_only_on_the_final_call(self):
+        from completion import validate_submission
+
+        payload = {"verdict": "UNKNOWN", "violations": [], "reason": "Reading the IFC."}
+        early, issues = validate_submission(payload, {}, 0, False, {"one"}, calls_remaining=18)
+        self.assertIsNone(early)
+        self.assertIn("18 call(s) remain", issues[0])
+        self.assertIsNotNone(validate_submission(payload, {}, 0, False, {"one"}, calls_remaining=0)[0])
+
     def test_prose_and_malformed_json_do_not_bypass_validation(self):
         for text in ['COMPLIANT', 'FINAL: {}', 'FINAL: {"verdict":[],"violations":[]}', 'FINAL: {"verdict":"COMPLIANT","violations":"guid"}', 'FINAL: {bad', 'FINAL: {"verdict":"COMPLIANT","violations":[]} extra']:
             with self.subTest(text=text):

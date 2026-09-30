@@ -44,7 +44,7 @@ import ground_truth
 import llm
 import simple_rules
 import tracing
-from agent import AgentResult, CodeActAgent
+from agent import AGENT_PROTOCOL, AgentResult, CodeActAgent
 from completion import COMPLETION_CHECKS_VERSION
 from executor import RUNTIME_ISOLATION, make_executor
 from experiment_recorder import SweepRecorder
@@ -110,7 +110,7 @@ GROUP_ORDER = (
 # leaves headroom - not 0 %, not 100 %, and not a single-element set where F1
 # collapses to a coin flip; (c) it exercises something the class is actually about.
 PILOTS: dict[str, str] = {
-    "slab_thickness__mall_v2": (
+    "slab_thickness__mall": (
         "Repaired, evidence-backed reference: 100 PASS, 12 ALERT, zero FAIL. "
         "Coverage, missing-data and false-positive control only; this case cannot "
         "measure violation recall. The original invalid reference is retained as legacy."
@@ -122,22 +122,21 @@ PILOTS: dict[str, str] = {
         "isolates class-2 reasoning."
     ),
     "staircase_width_v8": (
-        "The thesis anchor case and the best-balanced expert-labelled set we have "
-        "(22 fail / 59 stairs). No EC3 counterpart - the paper's class-3 rules use "
-        "models we do not hold - so treat it as our own class-3 reference rather "
-        "than a comparison."
+        "The thesis anchor case: all 59 stairs of the v8 model, 23 FAIL / 26 PASS / "
+        "6 NA / 4 MANUAL_CHECK. Expert labels cross-checked against IFC geometry and "
+        "spaces. No EC3 counterpart - the paper's class-3 rules use models we do not "
+        "hold - so treat it as our own class-3 reference rather than a comparison."
     ),
 }
 
-# Recommended (max iterations, repeats per mode) per group. Harder rules need a
-# longer CodeAct loop and more repeats, because their run-to-run variance is what
-# the stateful-vs-stateless comparison is measuring.
-RECOMMENDED: dict[str, tuple[int, int]] = {
-    GROUP_SIMPLE_1: (8, 3),
-    GROUP_SIMPLE_2: (10, 3),
-    GROUP_HARD_3: (16, 5),
-    GROUP_CONTROL: (6, 3),
-    GROUP_OTHER: (12, 3),
+# Recommended repeats per mode per group. Harder rules need more repeats, because
+# their run-to-run variance is what the stateful-vs-stateless comparison measures.
+RECOMMENDED: dict[str, int] = {
+    GROUP_SIMPLE_1: 3,
+    GROUP_SIMPLE_2: 3,
+    GROUP_HARD_3: 5,
+    GROUP_CONTROL: 3,
+    GROUP_OTHER: 3,
 }
 # Pilots are the cases we will report on, so they get the larger repeat budget
 # their class would otherwise only get at class 3.
@@ -152,34 +151,45 @@ USABLE_CASES = (
     "riser_height_e341__stair_v8",
     "tread_width_e342__condo",
 )
-HEALTH_SUITE_CASES = USABLE_CASES + ("slab_thickness__mall_v2", "staircase_width_v8")
-PROBLEM_CASES = {
-    "landing_interval_e352__mall": "Whole-stair counts repeated on flights; spiral exemption ignored.",
-    "landing_interval_e352__scdf_5": "All six FAILs use whole-stair counts on separated flights.",
-    "landing_interval_e352__stair_obos": "Eight spiral flights incorrectly labelled FAIL.",
-    "landing_interval_e352__stair_v8": "Twelve spiral flights incorrectly labelled FAIL.",
-    "slab_thickness__condo": "All 16 ALERTs overlook recorded thickness.",
-    "slab_thickness__mall": "Invalid legacy reference: depth/thickness errors and overlooked properties.",
-    "slab_thickness__scdf_3": "At least three ALERTs overlook recorded layer quantities.",
-    "slab_thickness__scdf_5": "All five FAILs have depth/thickness evidence conflicts.",
-    "slab_thickness__stair_obos": "All four FAILs conflict with thin landing geometry.",
-    "headroom_condo_c32": "Conflicting door-height evidence and undefined room/element scope.",
-    "exit_requirements_v0": "Truncated rule; only 39 of 123 spaces labelled, without a declared subset.",
-    "planter_box_gfa": "Missing criteria; GFA inclusion is not automatically a violation.",
+HEALTH_SUITE_CASES = USABLE_CASES + ("slab_thickness__mall", "staircase_width_v8")
+QUICK_SUITE_CASES = USABLE_CASES + ("slab_thickness__mall",)
+QUICK_SUITE_REPEATS = 3
+# One cap for every run so cases and modes are compared under the same budget.
+MAX_MODEL_CALLS = config.MAX_ITERATIONS
+# Held out for good after the 2026-09-29 review; files are kept for historical runs.
+RETIRED_CASES = {
+    "slab_thickness__condo": "Retired: thickness sources conflict (Depth 100 vs mesh 50 mm on roofs); arbitrary BIM range.",
+    "slab_thickness__planterbox": "Retired: only exported Depth recorded; roofs Depth 100 vs mesh 50 mm; arbitrary BIM range.",
+    "slab_thickness__scdf_3": "Retired: no explicit thickness recorded; ALERTs overlook layer quantities; arbitrary BIM range.",
+    "slab_thickness__scdf_5": "Retired: all five FAILs are plan-depth values; no explicit thickness recorded.",
+    "slab_thickness__stair_obos": "Retired: all four FAILs read plan depth (1200 mm) on 201 mm landings.",
+    "tread_width_e342__stair_v8": "Retired: all treads 250-260 mm, so the outcome depends only on the assumed building type.",
+    "tread_width_e342__stair_obos": "Retired: owner-built house (E.2.4(d) exempts every staircase); IDs overlap v8.",
+    "headroom_condo_c32": "Retired: door labels follow ClearHeight while 8 doors are 650-1980 mm high; room scope undefined.",
+    "landing_interval_e352__stair_obos": "Retired: the building is recorded as owner-built (E.2.4(d)), so every staircase is exempt; a repaired case would be all NA.",
 }
-REVIEW_CASES = {
-    "slab_thickness__planterbox": "Recorded-versus-derived thickness policy needs review.",
-    "tread_width_e342__mall": "Promising mixed case; tapered/spiral measurements need adjudication.",
-    "tread_width_e342__stair_obos": "All FAIL; curved tread measurement unverified; IDs overlap v8.",
-    "tread_width_e342__stair_v8": "All FAIL; curved tread measurement unverified.",
+# Built by reference_v2.py (2026-09-29 review): repaired or new cases with recorded IFC evidence.
+USABLE_2_CASES = {
+    "landing_interval_e352__stair_v8": "E.3.5.2 per flight: 28 FAIL / 20 PASS / 19 NA (spiral, E.2.1/E.2.4). Counts corroborated by step geometry.",
+    "landing_interval_e352__mall": "Control with a trap: 16 flights record the 27-riser staircase total; every flight has at most 12 risers.",
+    "landing_interval_e352__scdf_5": "Control with a trap: 6 flights record the 21-riser staircase total; all 73 flights pass.",
+    "tread_width_e342__mall": "Every tread measured (tapered treads at 500 mm from the narrow end): 36 FAIL / 40 PASS / 2 NA.",
+    "exit_requirements__scdf_5": "Full SCDF clause and authority definitions; 39 template spaces scored (3 FAIL / 23 PASS / 13 NA), 84 unscored.",
+    "exit_requirements__scdf_3": "Control: 12 template spaces scored (10 PASS / 2 NA), 47 unscored.",
+    "planter_box_gfa": "URA GFA-exclusion criteria stated: 1 PASS / 7 FAIL. Only eight elements.",
+    "headroom_door_c321__mall": "Doorway headroom by the authority's ClearHeight convention: 3 FAIL / 154 PASS; 33 lift doors unscored.",
+    "space_elevation__mall": "EC3 same-storey elevation rule: 19 FAIL / 186 PASS / 4 NA. BIM consistency, not a regulation.",
+    "space_elevation__scdf_3": "EC3 same-storey elevation rule: 1 FAIL / 53 PASS / 5 NA. BIM consistency, not a regulation.",
 }
+USABLE_2_SUITE_CASES = tuple(USABLE_2_CASES)
+USABLE_2_SUITE_REPEATS = 3
 CONTROL_CASES = {
     "doors_windows_storey__planterbox", "doors_windows_storey__scdf_3", "doors_windows_storey__scdf_5",
     "landing_interval_e352__condo", "landing_interval_e352__planterbox", "landing_interval_e352__scdf_3",
     "landing_interval_e352__stair_industrial",
     "riser_height_e341__condo", "riser_height_e341__planterbox", "riser_height_e341__scdf_3",
     "riser_height_e341__scdf_5", "riser_height_e341__stair_industrial", "riser_height_e341__stair_obos",
-    "slab_thickness__mall_v2", "slab_thickness__stair_industrial", "slab_thickness__stair_v8",
+    "slab_thickness__mall", "slab_thickness__stair_industrial", "slab_thickness__stair_v8",
     "tread_width_e342__planterbox", "tread_width_e342__scdf_3", "tread_width_e342__scdf_5",
     "tread_width_e342__stair_industrial",
 }
@@ -189,12 +199,14 @@ def case_assessment(case_id: str) -> tuple[str, str]:
     """Human-reviewed selection guidance, not automatic reference certification."""
     if case_id in USABLE_CASES:
         return "Usable", "Supported for the stated recorded-IFC task; not general physical compliance certification."
-    if case_id in PROBLEM_CASES:
-        return "Problematic", PROBLEM_CASES[case_id]
-    if case_id in REVIEW_CASES:
-        return "Review", REVIEW_CASES[case_id]
+    if case_id in USABLE_2_CASES:
+        return "usable_2", USABLE_2_CASES[case_id]
+    if case_id in RETIRED_CASES:
+        return "Retired", RETIRED_CASES[case_id]
+    if ground_truth.is_deprecated(case_id):
+        return "Deprecated", "Superseded reference kept only for historical runs; not shown in the case picker."
     if case_id == "staircase_width_v8":
-        return "Provisional", "Hard case: 49 annotated of 59 stairs. Clear-width geometry is not independently certified."
+        return "Provisional", "Hard case: all 59 stairs. Expert labels cross-checked against IFC geometry and spaces; 2 adjudicated; width convention stated in the rule."
     if case_id in CONTROL_CASES:
         return "Control", "Negative, missing-data or abstention control only; no violation-recall evidence."
     return "Unreviewed", "Not covered by the 2026-09-17 reference review."
@@ -295,7 +307,7 @@ class App(ctk.CTk):
         first = next((name for name, metadata in self.case_labels.items() if metadata["case_id"] == USABLE_CASES[0]), first)
         self.case_filter = tk.StringVar(value="Health suite")
         self.case_group_menu = ctk.CTkOptionMenu(
-            bar, values=["Health suite", "Usable", "Controls", "Provisional", "Review", "Problematic", "Pilots", "All cases", "Class 1", "Class 2", "Class 3", "Custom"],
+            bar, values=["Health suite", "Usable", "usable_2", "Controls", "Provisional", "Retired", "Pilots", "All cases", "Class 1", "Class 2", "Class 3", "Custom"],
             variable=self.case_filter, command=self._filter_cases, height=30, corner_radius=4,
             fg_color=SURFACE, button_color=SURFACE, button_hover_color=HOVER,
             text_color=MUTED, dropdown_fg_color=SURFACE, dropdown_text_color=TEXT,
@@ -321,6 +333,14 @@ class App(ctk.CTk):
         self.execution_heading = ctk.CTkFrame(bar, fg_color="transparent", height=1)
         self.execution_heading.pack(fill="x")
         section("02 / EXECUTION")
+        label("Provider")
+        self.provider_var = tk.StringVar(value=llm.resolve_provider())
+        self.provider_control = ctk.CTkSegmentedButton(
+            bar, values=list(llm.DEFAULT_MODELS), variable=self.provider_var, command=self._on_provider,
+            selected_color=PRIMARY, selected_hover_color=HOVER, unselected_color=SURFACE,
+            unselected_hover_color=HOVER, fg_color=SURFACE, text_color=TEXT, height=32, corner_radius=4,
+        )
+        self.provider_control.pack(fill="x", padx=10, pady=(0, 6))
         label("Model")
         self.model_var = tk.StringVar(value=llm.default_model())
         self.model_entry = ctk.CTkEntry(bar, textvariable=self.model_var, height=32, corner_radius=4,
@@ -385,16 +405,10 @@ class App(ctk.CTk):
             progress_color=PRIMARY, button_color=ACCENT, button_hover_color=GREEN, fg_color=BORDER,
         )
         self.repeats_slider.pack(fill="x", padx=10, pady=(0, 8))
-        default_iters = max(config.MAX_ITERATIONS, 12)
-        self.iter_label = ctk.CTkLabel(bar, text=f"Max model calls: {default_iters}", text_color=MUTED)
-        self.iter_label.pack(anchor="w", padx=10)
-        self.iter_var = tk.IntVar(value=default_iters)
-        self.iter_slider = ctk.CTkSlider(
-            bar, from_=1, to=16, number_of_steps=15,
-            variable=self.iter_var, command=self._on_iter,
-            progress_color=PRIMARY, button_color=ACCENT, button_hover_color=GREEN, fg_color=BORDER,
-        )
-        self.iter_slider.pack(fill="x", padx=10, pady=(0, 4))
+        ctk.CTkLabel(
+            bar, text=f"Max model calls: {MAX_MODEL_CALLS} (fixed cap; a run stops earlier once its report is accepted)",
+            text_color=MUTED, anchor="w", justify="left", wraplength=250,
+        ).pack(fill="x", padx=10, pady=(0, 4))
         self.reco_label = ctk.CTkLabel(
             bar, text="", font=ctk.CTkFont(size=11), text_color=GREY,
             anchor="w", justify="left", wraplength=250,
@@ -424,6 +438,16 @@ class App(ctk.CTk):
         self.suite_btn = ctk.CTkButton(footer, text="Run 8-case health suite", height=34,
             command=self._on_suite, fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.suite_btn.pack(fill="x", pady=(6, 0))
+        self.quick_suite_btn = ctk.CTkButton(
+            footer, text=f"Run {len(QUICK_SUITE_CASES)}-case suite (no staircase, {QUICK_SUITE_REPEATS} repeats)", height=34,
+            command=lambda: self._on_suite(QUICK_SUITE_CASES, QUICK_SUITE_REPEATS),
+            fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
+        self.quick_suite_btn.pack(fill="x", pady=(6, 0))
+        self.usable_2_suite_btn = ctk.CTkButton(
+            footer, text=f"Run {len(USABLE_2_SUITE_CASES)}-case usable_2 suite ({USABLE_2_SUITE_REPEATS} repeats)", height=34,
+            command=lambda: self._on_suite(USABLE_2_SUITE_CASES, USABLE_2_SUITE_REPEATS),
+            fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
+        self.usable_2_suite_btn.pack(fill="x", pady=(6, 0))
         self.stop_btn = ctk.CTkButton(footer, text="Stop after current run", height=28,
             command=self._on_stop, state="disabled", fg_color=SURFACE, hover_color=HOVER,
             text_color=ORANGE, corner_radius=4)
@@ -559,8 +583,8 @@ class App(ctk.CTk):
 
     def _set_settings_enabled(self, enabled: bool) -> None:
         state = "normal" if enabled else "disabled"
-        for widget in (self.case_group_menu, self.case_menu, self.model_entry, self.mode_control,
-                       self.harness_control, self.repeats_slider, self.iter_slider,
+        for widget in (self.case_group_menu, self.case_menu, self.provider_control, self.model_entry, self.mode_control,
+                       self.harness_control, self.repeats_slider,
                        self.ifc_entry, self.browse_btn, self.rule_box,
                        # self.skills_control,
                        # self.runtime_control,
@@ -618,8 +642,8 @@ class App(ctk.CTk):
     #     dialog.bind("<Escape>", lambda event: dialog.destroy())
 
     # ---- small helpers -----------------------------------------------------
-    def _on_iter(self, val: float) -> None:
-        self.iter_label.configure(text=f"Max model calls: {int(float(val))}")
+    def _on_provider(self, provider: str) -> None:
+        self.model_var.set(llm.DEFAULT_MODELS[provider])
 
     def _on_repeats(self, val: float) -> None:
         self.repeats_label.configure(text=f"Repeats per mode: {int(float(val))}")
@@ -633,9 +657,9 @@ class App(ctk.CTk):
         self.harness_info.configure(text=HARNESS_HELP[level])
 
     def _cases(self) -> list[str]:
-        """All ground-truth case ids available under ground_truth/."""
+        """Current ground-truth case ids under ground_truth/; deprecated references are hidden."""
         d = ground_truth.GT_DIR
-        return sorted(p.stem for p in d.glob("*.json")) if d.exists() else []
+        return sorted(p.stem for p in d.glob("*.json") if not ground_truth.is_deprecated(p.stem)) if d.exists() else []
 
     @staticmethod
     def _group_of(gt) -> str:
@@ -675,6 +699,15 @@ class App(ctk.CTk):
         clause = (gt.clause or "").strip()
         if source.startswith("slab_reference.py::"):
             return "BIM", "Project reference v2: recorded property evidence and documented conflict decisions; not expert regulatory certification"
+        if source.startswith("reference_v2.py::"):
+            origin = "usable_2 reference (reference_v2.py): IFC evidence, workbook rows and recorded adjudications; not expert certification"
+            if clause.startswith("fc:"):
+                return "SCDF", f"SCDF Fire Code 2023, clause 2.2.12b \u00b7 {origin}"
+            if clause == "-":
+                return "URA", f"URA Gross Floor Area guidelines (planter boxes) \u00b7 {origin}"
+            if clause == "BIM validation":
+                return "EC3", f"Rule catalogue of the advisors' EC3-2026 paper (same-storey elevation) \u00b7 {origin}"
+            return "BCA", f"BCA Approved Document (Acceptable Solutions V7.08), clause {clause.upper()} \u00b7 {origin}"
         # BCA paragraphs read as "E.3.4.2"; other authorities use their own casing
         # (e.g. the fire code's "fc:2.2.12b"), so only upper-case the former.
         pretty = clause.upper() if re.fullmatch(r"[a-z](\.\d+)+", clause) else clause
@@ -728,8 +761,10 @@ class App(ctk.CTk):
                 "doors_windows_storey": "Host storey", "slab_thickness": "Slab",
                 "riser_height_e341": "Riser", "tread_width_e342": "Tread",
                 "landing_interval_e352": "Landing", "staircase_width_v8": "Stair width / v8",
-                "headroom_condo_c32": "Headroom / condo", "exit_requirements_v0": "Exit access / SCDF 5",
+                "headroom_condo_c32": "Headroom / condo",
                 "planter_box_gfa": "Planter GFA",
+                "exit_requirements": "Exit access", "headroom_door_c321": "Door headroom",
+                "space_elevation": "Space elevation",
             }.get(family, family.replace("_", " "))
             if model_id:
                 model_name = {"stair_industrial": "industrial", "stair_obos": "OBOS", "stair_v8": "v8"}.get(model_id, model_id.replace("_", " "))
@@ -773,17 +808,13 @@ class App(ctk.CTk):
         return values, labels
 
     def _apply_recommended(self, class_group: str, pilot: bool = False) -> None:
-        """Set the iteration / repeat sliders to the recommendation for *class_group*."""
-        iters, repeats = RECOMMENDED.get(class_group, RECOMMENDED[GROUP_OTHER])
+        """Set the repeat slider to the recommendation for *class_group*."""
+        repeats = RECOMMENDED.get(class_group, RECOMMENDED[GROUP_OTHER])
         if pilot:
             repeats = max(repeats, PILOT_REPEATS)
-        self.iter_var.set(iters)
         self.repeats_var.set(repeats)
-        self._on_iter(iters)
         self._on_repeats(repeats)
-        self.reco_label.configure(
-            text=f"Recommended: {iters} model calls / {repeats} repeats"
-        )
+        self.reco_label.configure(text=f"Recommended: {repeats} repeats")
 
     def _on_case(self, choice: str, *, apply_recommended: bool = True) -> None:
         """Load the selected case's ground truth and populate the rule + IFC fields."""
@@ -837,7 +868,7 @@ class App(ctk.CTk):
             )
         self.case_info.configure(text="\n".join(lines))
         summary = f"{assessment} | Class {gt.complexity or '?'} | {gt.anchor_count} reference elements\n{len(gt.violation_set)} FAIL / {gt.label_counts.get('ALERT', 0)} ALERT\n{review_note}"
-        colors = {"Usable": GREEN, "Control": BLUE, "Problematic": RED, "Review": ORANGE, "Provisional": ORANGE}
+        colors = {"Usable": GREEN, "usable_2": GREEN, "Control": BLUE, "Deprecated": RED, "Provisional": ORANGE, "Retired": GREY}
         self.case_summary.configure(text=summary, text_color=colors.get(assessment, MUTED))
         if apply_recommended:
             self._apply_recommended(class_group, pilot)
@@ -908,11 +939,15 @@ class App(ctk.CTk):
             webbrowser.open(self.current_report_path.resolve().as_uri())
 
     # ---- run lifecycle -----------------------------------------------------
-    def _on_suite(self) -> None:
+    def _set_suite_buttons(self, state: str) -> None:
+        for button in (self.suite_btn, self.quick_suite_btn, self.usable_2_suite_btn):
+            button.configure(state=state)
+
+    def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES, repeats: int | None = None) -> None:
         if self._suite is not None or (self.worker and self.worker.is_alive()):
             return
         try:
-            for case_id in HEALTH_SUITE_CASES:
+            for case_id in case_ids:
                 case = ground_truth.load(case_id)
                 if not case.resolve_ifc().is_file() or not case.rule.strip():
                     raise ValueError(f"{case_id}: IFC file missing or rule empty.")
@@ -922,25 +957,27 @@ class App(ctk.CTk):
             return
         mode = self.mode_var.get()
         modes = ["stateful", "stateless"] if mode == "both" else [mode]
-        repeats = int(self.repeats_var.get())
-        budget = int(self.iter_var.get())
-        runs = len(HEALTH_SUITE_CASES) * len(modes) * repeats
+        repeats = repeats or int(self.repeats_var.get())
+        budget = MAX_MODEL_CALLS
+        runs = len(case_ids) * len(modes) * repeats
+        tiers = ", ".join(f"{sum(case_assessment(c)[0] == tier for c in case_ids)} {tier.lower()}"
+                          for tier in ("Usable", "usable_2", "Control", "Provisional") if any(case_assessment(c)[0] == tier for c in case_ids))
+        staircase = "Staircase width is scored on all 59 stairs.\n" if "staircase_width_v8" in case_ids else ""
         if not messagebox.askyesno(
             "Confirm paid health suite",
-            f"6 usable cases + 1 control + 1 provisional hard case\n\n"
-            f"Model: {self.model_var.get()}\nModes: {', '.join(modes)}\n"
+            f"{len(case_ids)} cases: {tiers}\n\n"
+            f"Provider: {self.provider_var.get()}\nModel: {self.model_var.get()}\nModes: {', '.join(modes)}\n"
             f"{repeats} repeat(s) per mode: {runs} runs\n"
-            f"{budget} model calls per run: at most {runs * budget} model calls\n\n"
+            f"Fixed {budget} model calls per run: at most {runs * budget} model calls\n\n"
             "Each case uses its stored rule and IFC, not the edited input fields.\n"
-            "Staircase width is scored on 49 annotated stairs; all 59 must be reported.\n\n"
+            f"{staircase}\n"
             "Token cost is unknown and can reach millions of tokens. This is not a token/spend cap.\n"
-            "One repeat in both modes is 16 runs; three repeats is 48.\n"
             "Stop takes effect after the current agent run. Provider errors stop the suite.\n\nStart?",
             parent=self, default="no",
         ):
             return
         try:
-            self._suite_client = llm.load_llm(self.model_var.get().strip() or None)
+            self._suite_client = llm.load_llm(self.model_var.get().strip() or None, self.provider_var.get())
         except Exception as exc:
             messagebox.showerror("Model unavailable", str(exc), parent=self)
             return
@@ -948,7 +985,7 @@ class App(ctk.CTk):
         self._suite_path = LOG_DIR / f"{stamp}_health_suite.json"
         self._suite = {
             "suite_id": f"health-{stamp}", "status": "running",
-            "case_ids": list(HEALTH_SUITE_CASES), "cases": [],
+            "case_ids": list(case_ids), "cases": [],
             "settings": {**llm.model_identity(self._suite_client), "modes": modes, "repeats": repeats,
                          "max_model_calls": budget, "harness": int(self.harness_var.get()),
                          "reasoning": os.environ.get("REASONING", "1").lower() not in ("0", "false", "no"),
@@ -986,12 +1023,12 @@ class App(ctk.CTk):
             self._end_suite("error")
             return
         self._set_settings_enabled(True)
-        self.case_filter.set("Health suite")
-        self.case_menu.configure(values=[name for name, metadata in self.case_labels.items() if metadata["case_id"] in HEALTH_SUITE_CASES])
+        self.case_filter.set("Health suite" if case_id in HEALTH_SUITE_CASES else case_assessment(case_id)[0])
+        self.case_menu.configure(values=[name for name, metadata in self.case_labels.items() if metadata["case_id"] in suite["case_ids"]])
         self.case_var.set(choice)
         self._on_case(choice, apply_recommended=False)
         suite["cases"].append({"case_id": case_id, "assessment": case_assessment(case_id)[0], "status": "running"})
-        self.suite_status.configure(text=f"Case {index + 1}/8 | {suite['finished_runs']}/{suite['requested_runs']} runs finished", text_color=MUTED)
+        self.suite_status.configure(text=f"Case {index + 1}/{len(suite['case_ids'])} | {suite['finished_runs']}/{suite['requested_runs']} runs finished", text_color=MUTED)
         try:
             started = self.current_case == case_id and self._on_run()
         except Exception as exc:
@@ -1021,7 +1058,7 @@ class App(ctk.CTk):
         self._suite_client = None
         self._suite_next = False
         self.run_btn.configure(state="normal", text="Run checks")
-        self.suite_btn.configure(state="normal")
+        self._set_suite_buttons("normal")
         self.stop_btn.configure(state="disabled")
         self._set_settings_enabled(True)
         self.views.set("Scores")
@@ -1037,7 +1074,7 @@ class App(ctk.CTk):
 
         if self._suite is None:
             assessment, note = case_assessment(self.current_case or "custom")
-            if assessment in ("Problematic", "Review", "Provisional") and not messagebox.askyesno(
+            if assessment in ("Deprecated", "Provisional", "Retired") and not messagebox.askyesno(
                     "Reference warning", f"{assessment}: {note}\n\nRun as an exploratory check?",
                     parent=self, default="no"):
                 return False
@@ -1052,7 +1089,7 @@ class App(ctk.CTk):
 
         model = self.model_var.get().strip() or None
         try:
-            llm_client = self._suite_client if self._suite is not None else llm.load_llm(model)
+            llm_client = self._suite_client if self._suite is not None else llm.load_llm(model, self.provider_var.get())
         except Exception as exc:
             self._write(str(exc) + "\n", "bad")
             return False
@@ -1061,8 +1098,8 @@ class App(ctk.CTk):
         model = identity["model"]
         mode_choice = self.mode_var.get()
         modes = ["stateful", "stateless"] if mode_choice == "both" else [mode_choice]
-        repeats = int(self.repeats_var.get())
-        max_iter = int(self.iter_var.get())
+        repeats = self._suite["settings"]["repeats"] if self._suite is not None else int(self.repeats_var.get())
+        max_iter = MAX_MODEL_CALLS
         rule = self.rule_box.get("1.0", "end").strip()
         reasoning_enabled = os.environ.get("REASONING", "1").lower() not in ("0", "false", "no")
         env_primer = os.environ.get("ENV_PRIMER", "1").lower() not in ("0", "false", "no")
@@ -1093,7 +1130,7 @@ class App(ctk.CTk):
             self.score_view.reset("Waiting for scored results." if gt is not None else "Custom rule: no reference scores available.")
         self.artifact_label.configure(text="")
         self.run_btn.configure(state="disabled", text="Running...")
-        self.suite_btn.configure(state="disabled")
+        self._set_suite_buttons("disabled")
         self.stop_btn.configure(state="normal", text="Stop after current run")
         self._set_settings_enabled(False)
         self.current_report_path = None
@@ -1118,7 +1155,7 @@ class App(ctk.CTk):
             f"- **Health suite:** {suite_id or 'none'}\n"
             f"- **Modes:** {', '.join(modes)}  \u00d7 {repeats}\n"
             f"- **Harness:** level {harness}\n"
-            f"- **Agent protocol:** langchain-codeact-v1\n"
+            f"- **Agent protocol:** {AGENT_PROTOCOL}\n"
             f"- **Provider:** {identity['provider']}\n"
             f"- **Model:** {model}\n"
             f"- **Completion checks:** v{COMPLETION_CHECKS_VERSION} (IFC scope and committed labels; no reference answers)\n"
@@ -1398,7 +1435,7 @@ class App(ctk.CTk):
                 suite["known_output_tokens"] += payload["completion_tokens"]
                 suite["usage_complete"] = suite["usage_complete"] and payload["usage_complete"]
                 tokens = suite["known_input_tokens"] + suite["known_output_tokens"]
-                self.suite_status.configure(text=f"Case {len(suite['cases'])}/8 | {suite['finished_runs']}/{suite['requested_runs']} runs finished\n{tokens:,} known tokens")
+                self.suite_status.configure(text=f"Case {len(suite['cases'])}/{len(suite['case_ids'])} | {suite['finished_runs']}/{suite['requested_runs']} runs finished\n{tokens:,} known tokens")
                 self._save_suite()
         elif event_type == "__threaddone__":
             self.run_btn.configure(state="normal", text="Run checks")
@@ -1409,7 +1446,7 @@ class App(ctk.CTk):
                 self.log_fh = None
             status = "error" if payload.get("error") else "stopped" if payload.get("stopped") else "finished"
             self.header.configure(text=f"Sweep {status} | " + self._sweep_caption)
-            self.suite_btn.configure(state="normal")
+            self._set_suite_buttons("normal")
             self.stop_btn.configure(state="disabled")
             self.report_load_btn.configure(state="normal")
             if self.current_log_path:
@@ -1423,7 +1460,7 @@ class App(ctk.CTk):
                     self._end_suite(status if status != "finished" else "stopped")
                 else:
                     self.run_btn.configure(state="disabled")
-                    self.suite_btn.configure(state="disabled")
+                    self._set_suite_buttons("disabled")
                     self._set_settings_enabled(False)
                     self._suite_next = True
 

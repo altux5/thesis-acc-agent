@@ -6,9 +6,11 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import Mock, patch
 
+import ground_truth
 from agent import AgentResult
 from ground_truth import GroundTruth
-from gui import App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, USABLE_CASES, case_assessment
+from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, MAX_MODEL_CALLS, QUICK_SUITE_CASES, QUICK_SUITE_REPEATS, USABLE_CASES,
+                 USABLE_2_CASES, USABLE_2_SUITE_CASES, USABLE_2_SUITE_REPEATS, case_assessment)
 from kernel_executor import KernelCodeExecutor
 from gui_widgets import METRIC_GUIDE, GREEN, ORANGE, RED, bind_wrapping, result_presentation
 from scoring import ParsedVerdict, aggregate, score
@@ -131,20 +133,26 @@ class GuiWorkflowTests(unittest.TestCase):
 
     def test_reference_tiers_cover_catalogue_and_health_suite(self):
         app = self.app
-        self.assertEqual(len(app.case_labels), 43)
+        self.assertEqual(len(app.case_labels), 46)
+        self.assertFalse(any(ground_truth.is_deprecated(metadata["case_id"]) for metadata in app.case_labels.values()))
         self.assertEqual(len(USABLE_CASES), 6)
         self.assertEqual(len(set(HEALTH_SUITE_CASES)), 8)
         self.assertEqual(case_assessment("future_case")[0], "Unreviewed")
         self.assertTrue(all(metadata["assessment"] != "Unreviewed" for metadata in app.case_labels.values()))
-        for group, count in (("Health suite", 8), ("Usable", 6), ("Problematic", 12), ("Review", 4), ("Controls", 20), ("Provisional", 1)):
+        for group, count in (("Health suite", 8), ("Usable", 6), ("usable_2", 10),
+                             ("Retired", 9), ("Controls", 20), ("Provisional", 1)):
             with self.subTest(group=group):
                 app._filter_cases(group)
                 self.assertEqual(len(app.case_menu.cget("values")), count)
-        app._filter_cases("Problematic")
-        self.assertIn("Problematic", app.case_summary.cget("text"))
-        self.assertEqual(app.case_summary.cget("text_color"), RED)
+        app._filter_cases("Retired")
+        self.assertIn("Retired", app.case_summary.cget("text"))
+        app._filter_cases("usable_2")
+        self.assertIn("usable_2", app.case_summary.cget("text"))
+        self.assertEqual(case_assessment("headroom_condo_c32")[0], "Retired")
         app._filter_cases("Provisional")
-        self.assertIn("49 annotated of 59", app.case_summary.cget("text"))
+        self.assertIn("all 59 stairs", app.case_summary.cget("text"))
+        self.assertEqual(case_assessment("staircase_width_v8")[0], "Provisional")
+        self.assertEqual(case_assessment("staircase_width_v8_deprecated_v1")[0], "Deprecated")
 
     @contextlib.contextmanager
     def suite_fixture(self, *, approve=True, stop=False, fail=False):
@@ -154,15 +162,12 @@ class GuiWorkflowTests(unittest.TestCase):
             model = root / "fixture.ifc"
             model.touch()
             cases = {}
-            for case_id in HEALTH_SUITE_CASES:
+            for case_id in HEALTH_SUITE_CASES + USABLE_2_SUITE_CASES:
                 labels = {case_id + "-one": "FAIL", case_id + "-two": "PASS"}
-                if case_id == "slab_thickness__mall_v2":
+                if case_id == "slab_thickness__mall":
                     labels = {case_id + "-one": "PASS", case_id + "-two": "ALERT"}
                 cases[case_id] = GroundTruth(case_id, "Rule for " + case_id, str(model), labels=labels,
                     violations=[guid for guid, label in labels.items() if label == "FAIL"])
-            cases["staircase_width_v8"].reference = {
-                "evaluation_scope": "annotated_subset", "population": 3, "unscored_ids": ["unannotated-stair"],
-            }
             seen = []
             executors = []
 
@@ -172,7 +177,7 @@ class GuiWorkflowTests(unittest.TestCase):
                 return executor
 
             def make_agent(client, executor, **settings):
-                self.assertEqual(settings["max_iterations"], 4)
+                self.assertEqual(settings["max_iterations"], MAX_MODEL_CALLS)
                 self.assertEqual(settings["harness"], 2)
 
                 def check(rule, ifc, on_event, trace_attrs):
@@ -215,7 +220,6 @@ class GuiWorkflowTests(unittest.TestCase):
             stack.enter_context(patch.object(app, "after"))
             app.mode_var.set("both")
             app.repeats_var.set(1)
-            app.iter_var.set(4)
             app.harness_var.set(2)
             yield root, cases, seen, executors, client, confirm, errors
 
@@ -235,7 +239,7 @@ class GuiWorkflowTests(unittest.TestCase):
             client.assert_called_once()
             confirm.assert_called_once()
             self.assertIn("16 runs", confirm.call_args.args[1])
-            self.assertIn("64 model calls", confirm.call_args.args[1])
+            self.assertIn(f"{16 * MAX_MODEL_CALLS} model calls", confirm.call_args.args[1])
             self.assertEqual(confirm.call_args.kwargs["default"], "no")
             errors.assert_not_called()
             self.assertTrue(all(executor.close.called for executor in executors))
@@ -260,6 +264,50 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertEqual(len(stored), 16)
             self.assertEqual({row["case_id"] for row in stored}, set(HEALTH_SUITE_CASES))
             self.assertEqual(len({row["sweep_id"] for row in stored}), 8)
+
+    def test_quick_suite_skips_staircase_and_uses_three_repeats(self):
+        app = self.app
+        with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors):
+            app.quick_suite_btn.invoke()
+            for _ in range(8):
+                if app._suite is None:
+                    break
+                app._poll()
+            self.assertIsNone(app._suite)
+            self.assertNotIn("staircase_width_v8", QUICK_SUITE_CASES)
+            expected = [(case_id, stateful) for case_id in QUICK_SUITE_CASES for stateful in (True, False)
+                        for _ in range(QUICK_SUITE_REPEATS)]
+            self.assertEqual(sorted(seen), sorted(expected))
+            self.assertIn("42 runs", confirm.call_args.args[1])
+            self.assertNotIn("Staircase", confirm.call_args.args[1])
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["case_ids"], list(QUICK_SUITE_CASES))
+            self.assertEqual(manifest["settings"]["repeats"], QUICK_SUITE_REPEATS)
+            self.assertEqual(manifest["finished_runs"], 42)
+            self.assertEqual(int(app.repeats_var.get()), 1)
+            errors.assert_not_called()
+
+    def test_usable_2_suite_runs_every_usable_2_case_three_times(self):
+        app = self.app
+        with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors):
+            app.usable_2_suite_btn.invoke()
+            for _ in range(len(USABLE_2_SUITE_CASES) + 1):
+                if app._suite is None:
+                    break
+                app._poll()
+            self.assertIsNone(app._suite)
+            self.assertEqual(set(USABLE_2_SUITE_CASES), set(USABLE_2_CASES))
+            expected = [(case_id, stateful) for case_id in USABLE_2_SUITE_CASES for stateful in (True, False)
+                        for _ in range(USABLE_2_SUITE_REPEATS)]
+            self.assertEqual(sorted(seen), sorted(expected))
+            self.assertIn(f"{len(USABLE_2_SUITE_CASES)} usable_2", confirm.call_args.args[1])
+            self.assertIn(f"{len(expected)} runs", confirm.call_args.args[1])
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["case_ids"], list(USABLE_2_SUITE_CASES))
+            self.assertEqual(manifest["settings"]["repeats"], USABLE_2_SUITE_REPEATS)
+            self.assertEqual(manifest["finished_runs"], len(expected))
+            self.assertEqual(int(app.repeats_var.get()), 1)
+            errors.assert_not_called()
 
     def test_declining_health_suite_makes_no_provider_or_worker_calls(self):
         with self.suite_fixture(approve=False) as (_, _, seen, executors, client, confirm, _):
@@ -326,7 +374,7 @@ class GuiWorkflowTests(unittest.TestCase):
         final = 'FINAL: {"verdict":"NON_COMPLIANT","violations":["door-a"]}'
 
         def make_agent(client, executor, **settings):
-            self.assertEqual(settings["max_iterations"], 4)
+            self.assertEqual(settings["max_iterations"], MAX_MODEL_CALLS)
             self.assertEqual(settings["harness"], 2)
             self.assertIsInstance(executor, KernelCodeExecutor)
             self.assertIsNone(executor.skill_library)
@@ -354,7 +402,6 @@ class GuiWorkflowTests(unittest.TestCase):
             app.ifc_var.set(str(model))
             app.mode_var.set("both")
             app.repeats_var.set(1)
-            app.iter_var.set(4)
             app.harness_var.set(2)
             app.current_case = "offline"
             app.current_gt = GroundTruth("offline", "rule", str(model), labels=labels)

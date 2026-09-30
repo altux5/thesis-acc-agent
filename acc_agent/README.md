@@ -62,8 +62,10 @@ The GUI retains the **Session mode** control but no longer offers a runtime choi
 Both modes retain conversation history; stateless execution is not a memoryless LLM.
 The worker has a private temporary working directory, removed on restart. It is
 **containment and reproducibility, not a security sandbox**: the worker runs as the
-same user with the same filesystem access, so code writing to an absolute path still
-leaves it behind.
+same user with the same filesystem access. Python-level writes outside the scratch
+directory (`open` in a write mode, `os`/`shutil` mutations, moving files out) are
+refused with `PermissionError` by an audit hook, and `TEMP`/`TMP` point to scratch.
+Reads are unrestricted, and native extension code is not covered by the hook.
 
 IFC paths passed to the agent are resolved against the host working directory before
 building the prompt, so relative CLI or GUI inputs work with the private kernel cwd.
@@ -170,8 +172,9 @@ A full transcript of each run (every message + token counts) is written to
 ### Model & reasoning
 
 - The default model depends on the provider: **`MiniMax-M3`** for MiniMax,
-  **`anthropic/claude-sonnet-4.5`** for OpenRouter. Set the `MODEL` environment
-  variable (or `--model`) to use a different one.
+  **`minimax/minimax-m3`** (the same model) for OpenRouter. Set the `MODEL` environment
+  variable (or `--model`) to use a different one. The GUI's Provider switch selects
+  the provider per run and resets the model field to that provider's default.
 - **Reasoning** is enabled by default: the model's step-by-step thinking is requested
   and preserved across turns so it can continue its chain of thought. On MiniMax this
   uses Anthropic `thinking` blocks (`thinking: {"type": "adaptive"}`); on OpenRouter it
@@ -285,7 +288,7 @@ rule judges — with one of five mutually exclusive outcomes:
 | `NA` | out of scope / exempt |
 
 `ALERT` is the one that changes the numbers. The original reference labelled
-**35 of 112 slabs** in `slab_thickness__mall` as missing thickness. The later audit
+**35 of 112 slabs** in the original mall slab reference (now `slab_thickness__mall_deprecated_v1`) as missing thickness. The later audit
 found that many had usable properties the reference missed, so these counts are
 not validated outcomes. See the pilot warning below and [NOTES.md](NOTES.md).
 The expert BCA workbooks already carried these distinctions (`pass` / `fail` /
@@ -328,7 +331,7 @@ so a difference in score is attributable to the harness:
 
 ```powershell
 python run.py --harness 2                                  # plan before coding
-python evaluate.py --case slab_thickness__mall_v2 --harness 2
+python evaluate.py --case slab_thickness__mall --harness 2
 ```
 
 **Level 3 is retired.** It disclosed reference answers during execution. Historical
@@ -336,7 +339,7 @@ H3 records retain their training-only identity; new runs expose only H1/H2 and
 receive no reference feedback. This does not make the Python worker a filesystem
 security sandbox.
 
-### Completion checks (version 2)
+### Completion checks (version 3)
 
 All harness levels now apply the same deterministic submission checks. A decided
 FinalReport must match its schema, follow a successful code attempt and a `report_labels`
@@ -353,6 +356,10 @@ those labels: the agent must submit a complete mapping again from a successful
 block. Namespace variables themselves are not rolled back. This closes the
 "provisional PASS -> exception -> unrelated print -> COMPLIANT" failure path.
 
+Version 3 accepts UNKNOWN only on the final model call. Earlier, the checker rejects
+it and asks the agent to continue and label undecidable elements ALERT. This closes
+the "one code block, then UNKNOWN" early exit seen in the usable_2 suite.
+
 For catalogue rules with an explicit `(modelled as Ifc...)` scope, the checker
 enumerates those classes directly from the IFC and requires exactly that set of
 label keys. The default `Every door (IfcDoor)` rule is also supported. This does
@@ -366,8 +373,10 @@ the API timeout is 180 seconds, and automatic provider retries are disabled. Exi
 kernel execution/startup timeouts and output caps remain unchanged. There is no
 cumulative token/cost cap. `finalization_attempts` now counts FinalReport submissions.
 
-New runs carry `agent_protocol=langchain-codeact-v1` and recording version 3; do not
+New runs carry `agent_protocol=langchain-codeact-v2` and recording version 3; do not
 pool them with historical protocols or budgets as if they were identical settings.
+In v2 the model receives execution output as plain text (traceback once); status
+metadata is kept as the tool message artifact. v1 sent a JSON wrapper instead.
 
 GUI logs, factual reports, saved transcripts, eval JSON and traces distinguish:
 
@@ -395,15 +404,17 @@ with no authored label are skipped).
 
 ```powershell
 python import_bca_gt.py --list           # show the registered cases
-python import_bca_gt.py                   # generate them all (validates GUIDs)
+python import_bca_gt.py                   # regenerate the imported cases (validates GUIDs)
 python evaluate.py --case staircase_width_v8 --repeats 5 --max-iterations 10
 ```
 
-The standout case is **staircase_width_v8** — clause E.3.3.1, *"the clear width of
-the staircase must be at least 1 m"* (49 expert-labelled `IfcStair` out of 59 in the
-model, 22 fail / 27 pass): a genuine
-clear-width geometric rule, far harder than the door-`OverallWidth` proxy. Also
-registered: `exit_requirements_v0`, `headroom_condo_c32`, `planter_box_gfa`. These
+The standout case is **staircase_width_v8**: clause E.3.3.1, *"the clear width of
+the staircase must be at least 1 m"*, on all 59 `IfcStair` of the v8 model
+(26 pass / 23 fail / 6 NA / 4 manual check), built by
+[stair_width_reference.py](stair_width_reference.py) from the expert workbook and
+IFC evidence. The importer now only reproduces superseded cases
+(`staircase_width_v8_deprecated_v1`, `exit_requirements__scdf_5_deprecated_v1`,
+`planter_box_gfa_deprecated_v1`) and the retired `headroom_condo_c32`. These
 require `openpyxl` (in `requirements.txt`).
 
 ### Easier cases: the low-complexity rule ladder
@@ -441,19 +452,24 @@ The models carry a paper-style `train` / `val` / `test` split (see `SPLIT` in
 `simple_rules.py`); the current per-model agent ignores it, but it is there if the
 reusable-function pipeline from the paper is added later.
 
+### Case names
+
+A case ID names the check and never changes. The current reference always owns
+the plain ID (no `_v2`, `_full` or similar tags). When a reference is replaced,
+the old file is kept as `<case_id>_deprecated_v<N>` (oldest `N=1`) so historical
+runs can still be traced; deprecated cases are hidden from the GUI. The ledger
+translates IDs recorded before the 2026-09-30 renaming. The reference version and
+hash in each run's configuration identify which reference a run used.
+
 ### The pilot set
 
-**Slab reference repaired:** use `slab_thickness__mall_v2` for future runs. It has
+**Slab reference repaired:** use `slab_thickness__mall`. It has
 100 PASS, 12 ALERT and zero FAIL, with per-element property evidence and recorded
-decisions. The unchanged `slab_thickness__mall` case is the invalid legacy version;
-old logs and scores remain historical records. `staircase_width_v8` has 49 expert
-labels for 59 stairs. Its explicit `annotated-subset-v1` reference policy excludes
-only the ten known unannotated IFC IDs from agreement metrics and Harness 3
-feedback. Completion still requires all 59 stairs; missing annotations are not
-PASS, FAIL or NA. Accuracy describes the 49 labelled stairs only. The audit checks
-the workbook, exact population and IFC fingerprint before admitting new subset
-runs to comparisons. Historical scores retain the old policy and are not pooled
-with new runs. See [PILOT_AUDIT.md](PILOT_AUDIT.md).
+decisions. The invalid legacy version is `slab_thickness__mall_deprecated_v1`;
+old logs and scores remain historical records. `staircase_width_v8` labels all
+59 stairs. Its predecessor, `staircase_width_v8_deprecated_v1`, had 49 expert
+labels and an explicit `annotated-subset-v1` policy; historical subset scores are
+not pooled with full-population runs. See [PILOT_AUDIT.md](PILOT_AUDIT.md).
 The generated condo reference also remains unaudited. See [NOTES.md](NOTES.md).
 
 The catalogue is too large to report on in full. Three are marked **pilot** (★ in the GUI picker,
@@ -462,9 +478,9 @@ the experiment:
 
 | case | class | source | anchors | why |
 | --- | --- | --- | --- | --- |
-| `slab_thickness__mall_v2` | 1 | Project adjudication | 112 (100 pass, 12 alert, zero fail) | coverage, missing-data and false-positive control; cannot measure violation recall |
+| `slab_thickness__mall` | 1 | Project adjudication | 112 (100 pass, 12 alert, zero fail) | coverage, missing-data and false-positive control; cannot measure violation recall |
 | `doors_windows_storey__condo` | 2 | EC3 | 212 (4 fail, 208 pass) | the paper's own rule (1.00 train → 0.25 test); pure relation traversal, no geometry. The 4-in-212 rate is exactly where union accuracy earns its keep |
-| `staircase_width_v8` | 3 | BCA | 49 labelled of 59 stairs (22 fail, 27 pass) | thesis anchor; explicit annotated-subset scoring, full-population completion |
+| `staircase_width_v8` | 3 | BCA | 59 stairs (23 fail, 26 pass, 6 NA, 4 manual check) | thesis anchor; clear-width geometry and E.2.4 exemptions |
 
 Two of the three come from the EC3-2026 rule catalogue on purpose: the paper
 publishes per-rule F1 numbers for them, so our results can be read against a
@@ -473,11 +489,23 @@ the paper's class-3 rules use models we do not hold — so it is our own referen
 not a comparison.
 
 The repaired slab control has no violations. Condo has about 2% violations and
-the labelled staircase subset about 45%. Do not compare F1 across these populations
+the staircase case 23 of 59 (about 39%). Do not compare F1 across these populations
 without coverage, completion status and the reference limitations.
 
 Pilots get 5 repeats per mode rather than 3, since they are the cases that end up
 in the write-up; iteration budgets still follow their class.
+
+### usable_2 cases (2026-09-29 review)
+
+[reference_v2.py](reference_v2.py) builds ten repaired or new cases shown in the GUI
+as tier `usable_2` (landing, tread, exit access, planter, door headroom and the EC3
+same-storey space elevation rule). Superseded cases are kept as `_deprecated_v1`
+files; nine weak cases are marked `Retired`. See [NOTES.md](NOTES.md) for counts and limitations.
+
+```powershell
+python reference_v2.py            # write all usable_2 cases
+python reference_v2.py --check    # regenerate and compare with the stored files
+```
 
 ### Regenerating the repaired slab reference
 
@@ -487,7 +515,7 @@ python slab_reference.py
 python simple_rules.py --generate --rule slab_thickness --model mall
 ```
 
-Both write only `ground_truth/slab_thickness__mall_v2.json`. The legacy case stays
+Both write only `ground_truth/slab_thickness__mall.json`. The deprecated legacy case stays
 intact. Version 2 requires at least two agreeing explicit recorded thickness
 sources; base-depth conflicts are documented, not silently discarded. Missing
 recorded thickness stays ALERT even if geometry could be measured, as required by

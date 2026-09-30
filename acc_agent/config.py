@@ -24,7 +24,7 @@ OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 DEFAULT_MODEL = os.environ.get("MODEL", "anthropic/claude-sonnet-4.5")
 
 # Safety caps for the agent loop.
-MAX_ITERATIONS = 8  # max code-execution rounds before we stop
+MAX_ITERATIONS = 20  # cap on model calls per run; a run ends earlier once its report is accepted
 OUTPUT_CHAR_LIMIT = 6000  # truncate execution output fed back to the model
 
 

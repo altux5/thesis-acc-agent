@@ -20,3 +20,11 @@ Read this file before planning, building, or changing this application. Then rea
 - Preserve user changes, historical experiments, and reference data. Do not delete features merely because they look unused; confirm scope first.
 - Make a small testable change, run the focused check, and expand only after it passes. Report limitations honestly; do not claim tests or live API checks that were not run.
 - Record meaningful architecture decisions and verification in [NOTES.md](NOTES.md).
+
+## Test Case Names
+
+- A case ID names the check (rule and model) and never changes. The current reference always owns the plain ID.
+- Do not add version or scope tags such as `_v2`, `_v0`, `_full` or `_new` to case IDs. Record the version inside the reference (`reference.version`, `supersedes`), not in the name.
+- To update a test, keep the old file as `<case_id>_deprecated_v<N>` (oldest `N=1`, never renumbered), point `supersedes` at it, and write the new reference under the unchanged ID. The GUI hides deprecated cases.
+- Never reuse a deprecated ID. Runs are identified by reference hash, so old and new runs of one ID never pool.
+- For requested GitHub updates, publish only reviewed agent files to [altux5/thesis-acc-agent](https://github.com/altux5/thesis-acc-agent) through the separate `C:\Users\Cogalgil\Documents\thesis-acc-agent` checkout, following the [publishing workflow](../.github/copilot-instructions.md#publishing-the-acc-agent). Exclude credentials, private artifacts and old Git history; leave the original `tez` repository untouched.

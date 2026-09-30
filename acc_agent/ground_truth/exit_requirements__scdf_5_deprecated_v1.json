@@ -1,5 +1,5 @@
 {
-  "case_id": "exit_requirements_v0",
+  "case_id": "exit_requirements__scdf_5_deprecated_v1",
   "rule": "Location of exits & access to exits. all exits and access facilities shall be required to comply with the following: b. every occupant within a building or storey of a building shall have direct access to the required exit or exits without the need to pass through another room(s) or other tenanted s\n\nReport the GlobalId of every element that does NOT satisfy this requirement.",
   "ifc_path": "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Location of exits & access to exits (EIB related)/Test models/uat2_scdf_2.2.12_5_v0.ifc",
   "complexity": 3,

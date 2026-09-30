@@ -41,6 +41,41 @@ def _split_control_channel():
 
 CONTROL_IN, CONTROL_OUT = _split_control_channel()
 
+SCRATCH = os.path.normcase(os.path.abspath(os.getcwd()))
+_WRITE_FLAGS = os.O_WRONLY | os.O_RDWR | os.O_APPEND | os.O_CREAT | os.O_TRUNC
+# os.* / shutil.* audit events whose path arguments are modified on disk.
+_MUTATING_EVENTS = {"os.remove", "os.rename", "os.rmdir", "os.mkdir", "os.symlink", "os.link",
+                    "os.truncate", "os.chmod", "os.utime", "shutil.rmtree", "shutil.move", "shutil.copyfile",
+                    "shutil.copytree", "shutil.chown"}
+
+
+def _outside_scratch(path) -> bool:
+    if isinstance(path, int) or path is None:
+        return False  # an already-open descriptor or no path argument
+    full = os.path.normcase(os.path.abspath(os.fsdecode(path)))
+    return full != SCRATCH and not full.startswith(SCRATCH + os.sep) and full != os.path.normcase(os.devnull)
+
+
+def _confine_writes(event: str, args: tuple) -> None:
+    """Refuse Python-level writes outside the worker's private scratch directory."""
+    if event == "open":
+        path, mode, flags = args
+        writing = any(c in mode for c in "wax+") if isinstance(mode, str) else bool((flags or 0) & _WRITE_FLAGS)
+        targets = [path] if writing else []
+    elif event in _MUTATING_EVENTS:
+        paths = [arg for arg in args if isinstance(arg, (str, bytes, os.PathLike))]
+        # Copies and links only create their destination; the source is merely read.
+        targets = paths[1:] if event in ("shutil.copyfile", "shutil.copytree", "os.link", "os.symlink") else paths
+    else:
+        return
+    for target in targets:
+        if _outside_scratch(target):
+            raise PermissionError(f"Writing outside the working folder is not allowed: {os.fsdecode(target)}. "
+                                  "Use a relative path.")
+
+
+sys.addaudithook(_confine_writes)
+
 sys.path.insert(0, sys.argv[1])
 
 from executor import (  # noqa: E402  - path must be set first

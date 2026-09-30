@@ -8,7 +8,7 @@ import re
 from code_identity import capture_module
 capture_module()
 
-COMPLETION_CHECKS_VERSION = 2
+COMPLETION_CHECKS_VERSION = 3
 
 
 def scope_classes(rule: str) -> list[str]:
@@ -57,6 +57,7 @@ def validate_submission(
     label_reports: int,
     last_error: bool,
     anchors: set[str] | None,
+    calls_remaining: int = 0,
 ) -> tuple[dict | None, list[str]]:
     """Validate a structured submission against execution evidence, never references."""
     if not isinstance(payload, dict) or not isinstance(payload.get("verdict"), str) or payload["verdict"] not in {"COMPLIANT", "NON_COMPLIANT", "UNKNOWN"}:
@@ -73,6 +74,9 @@ def validate_submission(
             return None, ["UNKNOWN requires a concrete reason for not completing the check."]
         if violations or failures:
             return None, ["UNKNOWN conflicts with reported failures; finish or revise the label submission."]
+        if calls_remaining > 0:
+            return None, [f"UNKNOWN is accepted only on the final model call; {calls_remaining} call(s) remain. "
+                          "Continue the check and commit labels (ALERT for elements that cannot be judged)."]
         return payload, []
     issues = []
     if label_reports == 0:

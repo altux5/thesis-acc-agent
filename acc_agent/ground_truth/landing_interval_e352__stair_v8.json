@@ -1,14 +1,11 @@
 {
   "case_id": "landing_interval_e352__stair_v8",
-  "rule": "Except for spiral staircases, no run of more than 18 risers may occur without an intermediate landing.\n\nRegulatory text (the authoritative clause - use it to interpret the requirement; you must still work out how to read it out of the IFC):\nBCA Approved Document (Acceptable Solutions V7.08) - E.3.5 Landing:\nE.3.5.1 A landing shall be provided at every floor level and door opening.\nE.3.5.2 Except for spiral staircases, an intermediate landing shall be provided in between floor levels at intervals of not more than 18 risers.\n\nA landing separates one stair flight from the next, so a flight that itself contains more than 18 risers runs past the required landing interval. A flight whose riser count is not recorded cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcStairFlight) that does NOT satisfy this requirement.",
+  "rule": "Except for spiral staircases, an intermediate landing must be provided at intervals of not more than 18 risers: no stair flight may rise more than 18 risers without a landing.\n\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nBCA Approved Document (Acceptable Solutions) V7.08 - applicability:\nE.2.1 A staircase (including a flight of 2 steps or more) shall provide a safe and suitable passage for movement of people.\nE.2.2 A staircase must have - ... (b) landings to break a fall and provide a place for rest; (c) sufficient width, tread and riser to avoid injury; ...\nE.2.4 The requirements in paragraph E.2.2(b) and (c) do not apply to a staircase located in any of the following rooms or spaces:\n  (a) any equipment or plant room;\n  (b) any production area of an industrial building;\n  (c) any attic that - (ii) does not exceed an area of 10 square metres; and (iii) is in a residential building;\n  (d) any house built for the owner's own use.\nE.3.5 Landing:\nE.3.5.1 A landing shall be provided at every floor level and door opening.\nE.3.5.2 Except for spiral staircases, an intermediate landing shall be provided in between floor levels at intervals of not more than 18 risers.\nE.3.5.4 ... A winder does not constitute a landing ... (winders are counted as risers).\n\nLabel every stair flight. A flight is one run between landings or floor levels; its riser count includes the final riser up to the landing or floor it arrives at. Label a flight NA when it belongs to a spiral staircase or to a staircase exempt under E.2.1 or E.2.4. Building use is not recorded in these models: a space named as a production area is treated as a production area of an industrial building (E.2.4(b)). A flight whose riser count cannot be determined cannot be judged: label it ALERT, and do NOT report it as a violation.\nReport the GlobalId of every element (modelled as IfcStairFlight) that does NOT satisfy this requirement.",
   "ifc_path": "bca_tests-main/bca_tests-main/BCATestCases/Staircase width/Test models/BCA_[E-3-3]_v8.ifc",
   "complexity": 2,
   "threshold_mm": null,
   "tolerance_mm": 0.5,
   "violations": [
-    "0CgACbmPTCHfvUYxwYhVfA",
-    "0CgACbmPTCHfvUYxwYhVfs",
-    "0Gt5mJb7b63uPG7PGHa9c6",
     "0Gt5mJb7b63uPG7PGHa9pM",
     "0Gt5mJb7b63uPG7PGHa9sr",
     "0fPAIu9ojFpAvfjEI31fL1",
@@ -30,38 +27,27 @@
     "0fPAIu9ojFpAvfjEI31l5G",
     "0fPAIu9ojFpAvfjEI31lJO",
     "0fPAIu9ojFpAvfjEI31lUq",
-    "0fPAIu9ojFpAvfjEI31l_1",
-    "0fPAIu9ojFpAvfjEI31l_2",
     "0fPAIu9ojFpAvfjEI31lmv",
     "0fPAIu9ojFpAvfjEI31lvp",
-    "2WUftTkg92EQYKeFufTB8j",
-    "2WUftTkg92EQYKeFufTBBU",
-    "2WUftTkg92EQYKeFufTBCv",
-    "2WUftTkg92EQYKeFufTBE7",
     "2rGbARwyPEPxsbm4sHwXII",
     "2rGbARwyPEPxsbm4sHwXi3",
     "2rGbARwyPEPxsbm4sHwXj$",
-    "32LxQhrpb98OSFI7LEe0Bb",
     "35pIuS$v94_8nIIWR7TtA2",
-    "3O2csS3mX79PMK3UW4Bkg3",
-    "3O2csS3mX79PMK3UW4BkiX",
-    "3g3S4PX31608cOsYvA7TND",
-    "3g3S4PX31608cOsYvA7TmL",
-    "3g3S4PX31608cOsYvA7Tw_"
+    "3g3S4PX31608cOsYvA7TND"
   ],
   "labels": {
     "04eUmXcUr9CgpkrqW8vj$F": "PASS",
     "04eUmXcUr9CgpkrqW8vjvw": "PASS",
-    "0CgACbmPTCHfvUYxwYhVfA": "FAIL",
-    "0CgACbmPTCHfvUYxwYhVfs": "FAIL",
-    "0Gt5mJb7b63uPG7PGHa9c6": "FAIL",
+    "0CgACbmPTCHfvUYxwYhVfA": "NA",
+    "0CgACbmPTCHfvUYxwYhVfs": "NA",
+    "0Gt5mJb7b63uPG7PGHa9c6": "NA",
     "0Gt5mJb7b63uPG7PGHa9io": "PASS",
     "0Gt5mJb7b63uPG7PGHa9iq": "PASS",
     "0Gt5mJb7b63uPG7PGHa9kM": "PASS",
     "0Gt5mJb7b63uPG7PGHa9pM": "FAIL",
     "0Gt5mJb7b63uPG7PGHa9sr": "FAIL",
     "0Pi72lxqT7rB3T2_y3sB$v": "PASS",
-    "0Pi72lxqT7rB3T2_y3sBxI": "PASS",
+    "0Pi72lxqT7rB3T2_y3sBxI": "NA",
     "0Pi72lxqT7rB3T2_y3sKaD": "PASS",
     "0Pi72lxqT7rB3T2_y3sKda": "PASS",
     "0fPAIu9ojFpAvfjEI31fL1": "FAIL",
@@ -83,8 +69,8 @@
     "0fPAIu9ojFpAvfjEI31l5G": "FAIL",
     "0fPAIu9ojFpAvfjEI31lJO": "FAIL",
     "0fPAIu9ojFpAvfjEI31lUq": "FAIL",
-    "0fPAIu9ojFpAvfjEI31l_1": "FAIL",
-    "0fPAIu9ojFpAvfjEI31l_2": "FAIL",
+    "0fPAIu9ojFpAvfjEI31l_1": "NA",
+    "0fPAIu9ojFpAvfjEI31l_2": "NA",
     "0fPAIu9ojFpAvfjEI31l_9": "PASS",
     "0fPAIu9ojFpAvfjEI31l_B": "PASS",
     "0fPAIu9ojFpAvfjEI31l_C": "PASS",
@@ -93,32 +79,1453 @@
     "0fPAIu9ojFpAvfjEI31lvp": "FAIL",
     "0lh9vifGX2fxa3kEt93Rb$": "PASS",
     "0lh9vifGX2fxa3kEt93Rbz": "PASS",
-    "2WUftTkg92EQYKeFufTB8j": "FAIL",
-    "2WUftTkg92EQYKeFufTBBU": "FAIL",
-    "2WUftTkg92EQYKeFufTBCv": "FAIL",
-    "2WUftTkg92EQYKeFufTBE7": "FAIL",
+    "2WUftTkg92EQYKeFufTB8j": "NA",
+    "2WUftTkg92EQYKeFufTBBU": "NA",
+    "2WUftTkg92EQYKeFufTBCv": "NA",
+    "2WUftTkg92EQYKeFufTBE7": "NA",
     "2rGbARwyPEPxsbm4sHwXII": "FAIL",
     "2rGbARwyPEPxsbm4sHwXi3": "FAIL",
     "2rGbARwyPEPxsbm4sHwXj$": "FAIL",
-    "32LxQhrpb98OSFI7LEe0Bb": "FAIL",
-    "35pIuS$v94_8nIIWR7Tt5m": "PASS",
+    "32LxQhrpb98OSFI7LEe0Bb": "NA",
+    "35pIuS$v94_8nIIWR7Tt5m": "NA",
     "35pIuS$v94_8nIIWR7TtA2": "FAIL",
     "35pIuS$v94_8nIIWR7TtCN": "PASS",
     "35pIuS$v94_8nIIWR7TtCP": "PASS",
-    "38SnCByaD3oPaKe_iSvSu1": "PASS",
-    "38SnCByaD3oPaKe_iSvSu7": "PASS",
-    "38SnCByaD3oPaKe_iSvSxe": "PASS",
-    "3O2csS3mX79PMK3UW4Bkg3": "FAIL",
-    "3O2csS3mX79PMK3UW4BkiX": "FAIL",
+    "38SnCByaD3oPaKe_iSvSu1": "NA",
+    "38SnCByaD3oPaKe_iSvSu7": "NA",
+    "38SnCByaD3oPaKe_iSvSxe": "NA",
+    "3O2csS3mX79PMK3UW4Bkg3": "NA",
+    "3O2csS3mX79PMK3UW4BkiX": "NA",
     "3g3S4PX31608cOsYvA7TND": "FAIL",
     "3g3S4PX31608cOsYvA7Tat": "PASS",
     "3g3S4PX31608cOsYvA7Tc5": "PASS",
     "3g3S4PX31608cOsYvA7Tgx": "PASS",
     "3g3S4PX31608cOsYvA7TlZ": "PASS",
-    "3g3S4PX31608cOsYvA7TmL": "FAIL",
-    "3g3S4PX31608cOsYvA7Tw_": "FAIL"
+    "3g3S4PX31608cOsYvA7TmL": "NA",
+    "3g3S4PX31608cOsYvA7Tw_": "NA"
   },
-  "notes": "Solihin & Eastman class 2. Reference implementation on BCA_[E-3-3]_v8.ifc (other, split=train): 67 anchor IfcStairFlight elements labelled {'FAIL': 42, 'PASS': 25}.",
+  "notes": "E.3.5.2 per flight with spiral and E.2.1/E.2.4 applicability: {'FAIL': 28, 'NA': 19, 'PASS': 20}. Supersedes landing_interval_e352__stair_v8_deprecated_v1, which applied staircase totals to flights and ignored the spiral exception.",
   "clause": "e.3.5.2",
-  "source": "simple_rules.py::landing_interval_e352::stair_v8"
+  "source": "reference_v2.py::build_landing",
+  "reference": {
+    "tier": "usable_2",
+    "review_date": "2026-09-29",
+    "version": 2,
+    "supersedes": "landing_interval_e352__stair_v8_deprecated_v1",
+    "evaluation_scope": "full_population",
+    "ifc_sha256": "89d11d0eb4a19773415b1239ebdd896264628a62f263c505643a986b2c738f81",
+    "population": 67,
+    "status": "IFC evidence: recorded riser counts corroborated by step geometry; applicability from building properties and containing spaces. Not expert certification.",
+    "policy": "Riser count per flight includes the arrival riser. A recorded count equal on every flight of a multi-flight stair and equal to the sum of their geometric counts is treated as the staircase total. Spiral staircase flights and E.2.1/E.2.4-exempt staircases are NA.",
+    "limitations": "Building use is not recorded in every model; E.2.4 relies on space names/occupancy and building properties. Geometric counts come from tread-face levels."
+  },
+  "provenance": {
+    "04eUmXcUr9CgpkrqW8vj$F": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        12,
+        12
+      ],
+      "stair": "04eUmXcUr9CgpkrqW8vjwo",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "12 risers in the flight (recorded, within geometric bounds)."
+    },
+    "04eUmXcUr9CgpkrqW8vjvw": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        12,
+        12
+      ],
+      "stair": "04eUmXcUr9CgpkrqW8vjwo",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "12 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0CgACbmPTCHfvUYxwYhVfA": {
+      "recorded_riser_count": 19.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 18,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        18,
+        19
+      ],
+      "stair": "0CgACbmPTCHfvUYxwYhVfB",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "staircase_width_v8: Located in a production area (E.2.4(b)); building use is not recorded in the IFC.",
+      "riser_count": {
+        "count": 19,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "staircase_width_v8: Located in a production area (E.2.4(b)); building use is not recorded in the IFC."
+    },
+    "0CgACbmPTCHfvUYxwYhVfs": {
+      "recorded_riser_count": 19.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 18,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        18,
+        19
+      ],
+      "stair": "0CgACbmPTCHfvUYxwYhVft",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "staircase_width_v8: Located in a plant/equipment room (E.2.4(a)).",
+      "riser_count": {
+        "count": 19,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "staircase_width_v8: Located in a plant/equipment room (E.2.4(a))."
+    },
+    "0Gt5mJb7b63uPG7PGHa9c6": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "0Gt5mJb7b63uPG7PGHa9c7",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "0Gt5mJb7b63uPG7PGHa9io": {
+      "recorded_riser_count": 9.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 9,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        9,
+        9
+      ],
+      "stair": "0Gt5mJb7b63uPG7PGHa9ir",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 9,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "9 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0Gt5mJb7b63uPG7PGHa9iq": {
+      "recorded_riser_count": 9.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 9,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        9,
+        9
+      ],
+      "stair": "0Gt5mJb7b63uPG7PGHa9ir",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 9,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "9 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0Gt5mJb7b63uPG7PGHa9kM": {
+      "recorded_riser_count": 18.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 18,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        18,
+        18
+      ],
+      "stair": "0Gt5mJb7b63uPG7PGHa9kN",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 18,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "18 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0Gt5mJb7b63uPG7PGHa9pM": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 23,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        23,
+        24
+      ],
+      "stair": "0Gt5mJb7b63uPG7PGHa9pN",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0Gt5mJb7b63uPG7PGHa9sr": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 23,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        23,
+        24
+      ],
+      "stair": "0Gt5mJb7b63uPG7PGHa9tx",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0Pi72lxqT7rB3T2_y3sB$v": {
+      "recorded_riser_count": 17.0,
+      "recorded_riser_height_mm": 164.7,
+      "step_levels": 17,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        17,
+        17
+      ],
+      "stair": "0Pi72lxqT7rB3T2_y3sB1J",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 17,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "17 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0Pi72lxqT7rB3T2_y3sBxI": {
+      "recorded_riser_count": 17.0,
+      "recorded_riser_height_mm": 164.7,
+      "step_levels": 17,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        17,
+        17
+      ],
+      "stair": "0Pi72lxqT7rB3T2_y3sBxH",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "staircase_width_v8: Attic storey, residential space of at most 10 m2 (E.2.4(c)).",
+      "riser_count": {
+        "count": 17,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "staircase_width_v8: Attic storey, residential space of at most 10 m2 (E.2.4(c))."
+    },
+    "0Pi72lxqT7rB3T2_y3sKaD": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        12,
+        12
+      ],
+      "stair": "0Pi72lxqT7rB3T2_y3sKfP",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "12 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0Pi72lxqT7rB3T2_y3sKda": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        12,
+        12
+      ],
+      "stair": "0Pi72lxqT7rB3T2_y3sKfP",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "12 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31fL1": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31fL0",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31fL_": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31fLX",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31flC": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31flF",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31flh": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31flg",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31fnV": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31fnU",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31fne": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31fnh",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31fuB": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31fuA",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31fxY": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31fxb",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31k23": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31k22",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31k8G": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31k8J",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31kCX": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31kCW",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31kKa": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31kKd",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31kNf": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31kNe",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31k_C": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31k_F",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31kuc": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31kuf",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31kvF": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31kvE",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31l5G": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31l5J",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31lJO": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31lIg",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31lUq": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31lUt",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31l_1": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31l_0",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "0fPAIu9ojFpAvfjEI31l_2": {
+      "recorded_riser_count": 23.0,
+      "recorded_riser_height_mm": 173.9,
+      "step_levels": 23,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        23,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31l_5",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 23,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "0fPAIu9ojFpAvfjEI31l_9": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31l_A",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31l_B": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31l_A",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31l_C": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31lvn",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31l_E": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31lvn",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31lmv": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31lm9",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0fPAIu9ojFpAvfjEI31lvp": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "0fPAIu9ojFpAvfjEI31lvo",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0lh9vifGX2fxa3kEt93Rb$": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        12,
+        12
+      ],
+      "stair": "0lh9vifGX2fxa3kEt93Rby",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "12 risers in the flight (recorded, within geometric bounds)."
+    },
+    "0lh9vifGX2fxa3kEt93Rbz": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        12,
+        12
+      ],
+      "stair": "0lh9vifGX2fxa3kEt93Rby",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "12 risers in the flight (recorded, within geometric bounds)."
+    },
+    "2WUftTkg92EQYKeFufTB8j": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "2WUftTkg92EQYKeFufTB8i",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "2WUftTkg92EQYKeFufTBBU": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "2WUftTkg92EQYKeFufTBBT",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "2WUftTkg92EQYKeFufTBCv": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "2WUftTkg92EQYKeFufTBCu",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "2WUftTkg92EQYKeFufTBE7": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "2WUftTkg92EQYKeFufTBE6",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "2rGbARwyPEPxsbm4sHwXII": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 23,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        23,
+        24
+      ],
+      "stair": "2rGbARwyPEPxsbm4sHwXIH",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "2rGbARwyPEPxsbm4sHwXi3": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 23,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        23,
+        24
+      ],
+      "stair": "2rGbARwyPEPxsbm4sHwXi2",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "2rGbARwyPEPxsbm4sHwXj$": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 23,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        23,
+        24
+      ],
+      "stair": "2rGbARwyPEPxsbm4sHwXj_",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "32LxQhrpb98OSFI7LEe0Bb": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "32LxQhrpb98OSFI7LEe0E7",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "35pIuS$v94_8nIIWR7Tt5m": {
+      "recorded_riser_count": 2.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 1,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        1,
+        2
+      ],
+      "stair": "35pIuS$v94_8nIIWR7Tt5U",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "staircase_width_v8: Modelled flight rises by a single step; fewer than 2 steps is not a staircase (E.2.1).",
+      "riser_count": {
+        "count": 2,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "staircase_width_v8: Modelled flight rises by a single step; fewer than 2 steps is not a staircase (E.2.1)."
+    },
+    "35pIuS$v94_8nIIWR7TtA2": {
+      "recorded_riser_count": 19.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 18,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        18,
+        19
+      ],
+      "stair": "35pIuS$v94_8nIIWR7TtBw",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 19,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "19 risers in the flight (recorded, within geometric bounds)."
+    },
+    "35pIuS$v94_8nIIWR7TtCN": {
+      "recorded_riser_count": 9.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 9,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        9,
+        9
+      ],
+      "stair": "35pIuS$v94_8nIIWR7TtCO",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 9,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "9 risers in the flight (recorded, within geometric bounds)."
+    },
+    "35pIuS$v94_8nIIWR7TtCP": {
+      "recorded_riser_count": 9.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 9,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        9,
+        9
+      ],
+      "stair": "35pIuS$v94_8nIIWR7TtCO",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 9,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "9 risers in the flight (recorded, within geometric bounds)."
+    },
+    "38SnCByaD3oPaKe_iSvSu1": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        12,
+        13
+      ],
+      "stair": "38SnCByaD3oPaKe_iSvSu4",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "staircase_width_v8: Flight rises from the 2nd storey into the 9.7 m2 residential attic room; the expert treats it as that attic's staircase (E.2.4(c)). Its base is in a 28.7 m2 living room, so the 'located in' reading is an interpretation.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "staircase_width_v8: Flight rises from the 2nd storey into the 9.7 m2 residential attic room; the expert treats it as that attic's staircase (E.2.4(c)). Its base is in a 28.7 m2 living room, so the 'located in' reading is an interpretation."
+    },
+    "38SnCByaD3oPaKe_iSvSu7": {
+      "recorded_riser_count": 12.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 12,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        12,
+        13
+      ],
+      "stair": "38SnCByaD3oPaKe_iSvSu4",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "staircase_width_v8: Flight rises from the 2nd storey into the 9.7 m2 residential attic room; the expert treats it as that attic's staircase (E.2.4(c)). Its base is in a 28.7 m2 living room, so the 'located in' reading is an interpretation.",
+      "riser_count": {
+        "count": 12,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "staircase_width_v8: Flight rises from the 2nd storey into the 9.7 m2 residential attic room; the expert treats it as that attic's staircase (E.2.4(c)). Its base is in a 28.7 m2 living room, so the 'located in' reading is an interpretation."
+    },
+    "38SnCByaD3oPaKe_iSvSxe": {
+      "recorded_riser_count": 13.0,
+      "recorded_riser_height_mm": 200.0,
+      "step_levels": 13,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        13,
+        13
+      ],
+      "stair": "38SnCByaD3oPaKe_iSvSxf",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "staircase_width_v8: Attic storey, residential space of at most 10 m2 (E.2.4(c)).",
+      "riser_count": {
+        "count": 13,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "staircase_width_v8: Attic storey, residential space of at most 10 m2 (E.2.4(c))."
+    },
+    "3O2csS3mX79PMK3UW4Bkg3": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "3O2csS3mX79PMK3UW4Bkg0",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "3O2csS3mX79PMK3UW4BkiX": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "3O2csS3mX79PMK3UW4Bki_",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "3g3S4PX31608cOsYvA7TND": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        24,
+        24
+      ],
+      "stair": "3g3S4PX31608cOsYvA7TLr",
+      "stair_type": "STRAIGHT_RUN_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "FAIL",
+      "reason": "24 risers in the flight (recorded, within geometric bounds)."
+    },
+    "3g3S4PX31608cOsYvA7Tat": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 127.0,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "3g3S4PX31608cOsYvA7TYY",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "3g3S4PX31608cOsYvA7Tc5": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 127.0,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "3g3S4PX31608cOsYvA7TYY",
+      "stair_type": "HALF_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "3g3S4PX31608cOsYvA7Tgx": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "3g3S4PX31608cOsYvA7Te8",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "3g3S4PX31608cOsYvA7TlZ": {
+      "recorded_riser_count": 16.0,
+      "recorded_riser_height_mm": 169.3,
+      "step_levels": 16,
+      "top_face_is_arrival": true,
+      "geometric_riser_bounds": [
+        16,
+        16
+      ],
+      "stair": "3g3S4PX31608cOsYvA7Te8",
+      "stair_type": "QUARTER_TURN_STAIR",
+      "flights_in_stair": 2,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 16,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "PASS",
+      "reason": "16 risers in the flight (recorded, within geometric bounds)."
+    },
+    "3g3S4PX31608cOsYvA7TmL": {
+      "recorded_riser_count": 24.0,
+      "recorded_riser_height_mm": 166.7,
+      "step_levels": 24,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        24,
+        25
+      ],
+      "stair": "3g3S4PX31608cOsYvA7TmK",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 24,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    },
+    "3g3S4PX31608cOsYvA7Tw_": {
+      "recorded_riser_count": 23.0,
+      "recorded_riser_height_mm": 173.9,
+      "step_levels": 23,
+      "top_face_is_arrival": false,
+      "geometric_riser_bounds": [
+        23,
+        24
+      ],
+      "stair": "3g3S4PX31608cOsYvA7Twz",
+      "stair_type": "SPIRAL_STAIR",
+      "flights_in_stair": 1,
+      "applicability": "No exemption in staircase_width_v8.",
+      "riser_count": {
+        "count": 23,
+        "source": "recorded, within geometric bounds",
+        "note": ""
+      },
+      "label": "NA",
+      "reason": "Flight of a spiral staircase (E.3.5.2 exception)."
+    }
+  }
 }

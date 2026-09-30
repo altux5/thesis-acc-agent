@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch
 
 from langchain_core.language_models.chat_models import BaseChatModel
-from langchain_core.messages import AIMessage
+from langchain_core.messages import AIMessage, ToolMessage
 from langchain_core.outputs import ChatGeneration, ChatResult
 from pydantic import Field
 
@@ -101,6 +101,19 @@ class AgentRegressionTests(unittest.TestCase):
                 self.assertEqual(result.label_reports, 2)
                 self.assertTrue(any("No report_labels" in str(entry["content"]) for entry in result.transcript))
 
+    def test_model_sees_plain_output_with_one_traceback(self):
+        executor = KernelCodeExecutor(timeout=30)
+        self.addCleanup(executor.close)
+        model = ScriptedClient([reply(python_call('print("line one\\nline two")\nraise ValueError("boom")')),
+                                reply(final_call("UNKNOWN", reason="Execution failed."))])
+        with patch("agent.discover_scope", return_value=({"anchor"}, "public test scope")):
+            CodeActAgent(model, executor, max_iterations=2, env_primer=False).check("Judge anchor", "not-opened.ifc")
+        tool_message = next(message for message in model.requests[1] if isinstance(message, ToolMessage))
+        self.assertTrue(tool_message.content.startswith("line one\nline two"))
+        self.assertEqual(tool_message.content.count("ValueError: boom"), 1)
+        self.assertTrue(tool_message.artifact["error"])
+        self.assertIn("ValueError: boom", tool_message.artifact["error_text"])
+
     def test_budget_does_not_add_finalization_turns(self):
         result = self.run_script([reply(python_call('print(123)')), reply(final_call())], budget=2)
         self.assertEqual(result.iterations, 2)
@@ -140,6 +153,14 @@ class AgentRegressionTests(unittest.TestCase):
         result = self.run_script([reply(malformed), reply(final_call("UNKNOWN", reason="No measurements obtained."))])
         self.assertEqual(result.executions, 0)
         self.assertEqual(result.completion_status, "abstained")
+
+    def test_early_abstention_is_rejected_while_calls_remain(self):
+        result = self.run_script([reply(python_call('print("schema")')),
+                                  reply(final_call("UNKNOWN", reason="Reading the IFC.")),
+                                  reply(python_call('report_labels({"anchor":"PASS"})')), reply(final_call())])
+        self.assertEqual(result.completion_status, "complete")
+        self.assertEqual(result.finalization_attempts, 2)
+        self.assertTrue(any("only on the final model call" in str(entry["content"]) for entry in result.transcript))
 
     def test_planning_uses_same_agent_and_budget(self):
         result = self.run_script([reply(text="Inspect scope, measure, label, verify."),

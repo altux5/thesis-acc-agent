@@ -36,6 +36,15 @@ class ExperimentStoreTests(unittest.TestCase):
         self.assertEqual(groups[0]["attempts"], 2)
         self.assertEqual(groups[0]["f1_mean"], 0.75)
 
+    def test_case_ids_recorded_before_the_renaming_read_as_current_names(self):
+        sweep = self.store.start_sweep("test", 3)
+        for repeat, config in enumerate((configuration(case_id="staircase_width_v8"),
+                                         configuration(case_id="staircase_width_v8_full"),
+                                         configuration(case_id="staircase_width_v8", recording_version=4)), 1):
+            self.store.start_run(sweep, config, repeat)
+        self.assertEqual(sorted(row["case_id"] for row in self.store.list_runs()),
+                         ["staircase_width_v8", "staircase_width_v8", "staircase_width_v8_deprecated_v1"])
+
     def test_record_errors_missing_metrics_and_configuration_means(self):
         sweep = self.store.start_sweep("test", 3)
         for repeat, status, scores in [(1, "complete", {"f1": 1.0, "union_accuracy": 1.0}),
