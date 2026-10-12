@@ -114,7 +114,7 @@ class SweepRecorder:
             if not isinstance(max_tokens, int):
                 max_tokens = None
             self.base = {
-                "recording_version": 4, "entrypoint": entrypoint, "agent_protocol": AGENT_PROTOCOL,
+                "recording_version": 5, "entrypoint": entrypoint, "agent_protocol": AGENT_PROTOCOL,
                 "code_identity_scope": "imported module code, not mutable runtime state; config uses effective settings below",
                 "config_file_disk_hash": file_hash(PROJECT_DIR / "config.py"),
                 "case_id": case.case_id if case else "custom",
@@ -156,7 +156,7 @@ class SweepRecorder:
             return None
         try:
             skills = skills_snapshot(self.library)
-            system = build_system_prompt(str(self.ifc_path), mode == "stateful", self.base["env_primer"])
+            system = build_system_prompt(str(self.ifc_path), mode == "stateful", self.base["env_primer"], self.base["max_iterations"])
             current = {**self.base, "mode": mode, "harness": harness, "feedback_leakage": False,
                        "skills_enabled": skills["enabled"], "skill_snapshot": skills,
                        "skill_hash": fingerprint(skills), "system_prompt_hash": fingerprint(system),
@@ -213,6 +213,7 @@ class SweepRecorder:
                 has_usage = not result.llm_calls or any(item.get("usage_reported") for item in result.llm_calls)
                 metadata.update(
                     verdict=result.verdict_label, raw_verdict=result.verdict, labels=result.labels,
+                    pending_labels=sum(label == "PENDING" for label in result.labels.values()),
                     violations=result.violations, labels_reported=len(result.labels),
                     labels_expected=result.expected_anchors, prompt_tokens=result.prompt_tokens if has_usage else None,
                     completion_tokens=result.completion_tokens if has_usage else None, iterations=result.iterations, executions=result.executions,

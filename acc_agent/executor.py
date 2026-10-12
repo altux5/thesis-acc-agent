@@ -18,9 +18,9 @@ capture_module()
 # to do that before any caller patches it.
 from kernel_executor import KernelCodeExecutor
 
-# Element outcomes the agent may report. Mirrors ``scoring.LABELS``; kept as a
-# literal here so the executor has no import-time dependency on the scorer.
-REPORT_LABELS = ("PASS", "FAIL", "ALERT", "MANUAL_CHECK", "NA")
+# Labels the agent may submit: the outcomes in ``scoring.LABELS`` plus the provisional
+# PENDING placeholder. Literal here so the executor does not import the scorer.
+REPORT_LABELS = ("PASS", "FAIL", "ALERT", "MANUAL_CHECK", "NA", "PENDING")
 
 # Frames from these harness files are stripped from tracebacks shown to the model.
 HARNESS_FILES = frozenset({"executor.py", "kernel_executor.py", "kernel_worker.py"})

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
+import time
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Callable, Literal
@@ -27,9 +28,14 @@ from kernel_executor import KernelCodeExecutor
 from llm import LLMClient, model_identity, with_reasoning
 import tracing
 
-AGENT_PROTOCOL = "langchain-codeact-v2"
+AGENT_PROTOCOL = "langchain-codeact-v5"
+# Remaining model calls (including the current one) at which the agent is told to commit labels.
+WRAP_UP_CALLS = 4
 ENVIRONMENT_PRIMER = """
 Working with this IFC environment (general reference, not a checking algorithm):
+- Import the helper modules you use explicitly; `import ifcopenshell` alone does not
+  load them: import ifcopenshell.util.element, ifcopenshell.util.unit,
+  ifcopenshell.util.shape, ifcopenshell.geom
 - ifcopenshell.util.element.get_psets(entity) returns property and quantity sets,
   including inherited properties. Dimensions may be stored in Qto_* sets.
 - Use ifcopenshell.util.element.get_decomposition(entity) for assembly parts and
@@ -55,6 +61,8 @@ Python session; do not import it. Each submission replaces the last mapping.
 Labels: PASS meets the rule; FAIL violates it; ALERT required model data is absent
 or unreadable; MANUAL_CHECK a person must resolve a genuinely non-deterministic
 judgment; NA the rule does not apply. Missing data is not a violation.
+PENDING is a provisional placeholder for an element you have not resolved yet;
+COMPLIANT and NON_COMPLIANT are rejected while any PENDING remains.
 Recorded IFC lengths carry floating-point export noise: a value within 0.5 mm of a
 numeric limit meets that limit.
 Do not invent PASS labels to fill coverage gaps. Submit only supported judgments.
@@ -62,9 +70,22 @@ Do not invent PASS labels to fill coverage gaps. Submit only supported judgments
 PLAN_REQUEST = """Before executing code, provide a short plan covering the element
 scope, candidate measurement sources and units, PASS/FAIL condition, missing data
 and exemptions, and how you will verify coverage. Plan only in this first response."""
+BUDGET_NOTE = """
+You have {calls} model calls in total. Every response counts, including FinalReport;
+tool results show how many remain. As soon as you can list every element in scope,
+commit a complete provisional labelling with report_labels, using PENDING for
+elements you have not resolved yet, then resolve them while calls remain. Use ALERT
+and MANUAL_CHECK only in their defined meaning. The last call accepts only
+FinalReport: submit your committed labels, or UNKNOWN naming what is unresolved.
+"""
+NO_TOOL_CALL = ("No tool call received. Text alone does not end the check: call run_python "
+                "to execute code, or submit FinalReport.")
+LAST_CALL = ("This is the last model call and only FinalReport is accepted: run_python sent now is "
+             "rejected and does not run. Submit FinalReport from your committed labels, or UNKNOWN "
+             "naming what is unresolved.")
 
 
-def build_system_prompt(ifc_path: str, stateful: bool, env_primer: bool = True) -> str:
+def build_system_prompt(ifc_path: str, stateful: bool, env_primer: bool = True, max_calls: int | None = None) -> str:
     persistence = (
         "Python is PERSISTENT: variables, imports, functions and the model survive between calls."
         if stateful else
@@ -77,7 +98,7 @@ ifcopenshell is installed; import what you need. IFC path: {ifc_path}
 Only real tool results are execution evidence. Wait for the result before deciding
 what it means. Print compact results; the executor bounds output length.
 Files can be written only inside the current working folder: use relative paths.
-{ENVIRONMENT_PRIMER if env_primer else ''}{LABEL_PROTOCOL}
+{ENVIRONMENT_PRIMER if env_primer else ''}{LABEL_PROTOCOL}{BUDGET_NOTE.format(calls=max_calls) if max_calls else ''}
 Finish using the FinalReport structured response, separately from Python tool calls.
 Its violations must exactly match committed FAIL labels. Use NON_COMPLIANT if there
 are failures, COMPLIANT if supported completed judgments contain no failures, or
@@ -160,10 +181,15 @@ class RunEvents(AgentMiddleware):
     def before_model(self, state, runtime):
         self.capture(state["messages"])
         number = len(self.result.llm_calls) + 1
+        total = self.owner.max_iterations
         if self.owner.harness == 2 and number == 1:
             return {"messages": [HumanMessage(PLAN_REQUEST)]}
-        if number == self.owner.max_iterations:
-            return {"messages": [HumanMessage("This is the last model call. Submit FinalReport if supported; otherwise explain the blocker. No extra calls follow.")]}
+        if number == total:
+            return {"messages": [HumanMessage(LAST_CALL)]}
+        if number > 1 and total - number + 1 == WRAP_UP_CALLS:
+            return {"messages": [HumanMessage(
+                f"Model call {number} of {total}: {WRAP_UP_CALLS} calls remain, including this one. Commit your complete "
+                "labelling with report_labels now (PENDING where unresolved); the last call accepts only FinalReport.")]}
         return None
 
     def wrap_model_call(self, request, handler):
@@ -178,15 +204,16 @@ class RunEvents(AgentMiddleware):
         self.capture(request.messages)
         if planning:
             request = request.override(tools=[], response_format=None)
+        started = time.perf_counter()
         try:
             response = handler(request)
         except BaseException as exc:
-            record.update(status="error", error=f"{type(exc).__name__}: {exc}")
+            record.update(status="error", error=f"{type(exc).__name__}: {exc}", seconds=round(time.perf_counter() - started, 3))
             result.usage_complete = False
             self.emit("usage", **record)
             raise
         message = next(item for item in response.result if isinstance(item, AIMessage))
-        record.update(status="returned", **usage_record(message))
+        record.update(status="returned", seconds=round(time.perf_counter() - started, 3), **usage_record(message))
         result.usage_complete = result.usage_complete and record["usage_reported"]
         for name in ("prompt_tokens", "completion_tokens", "cache_read_input_tokens", "cache_creation_input_tokens"):
             setattr(result, name, getattr(result, name) + (record[name] or 0))
@@ -208,9 +235,14 @@ class RunEvents(AgentMiddleware):
         last_ai = state["messages"][last_index]
         if self.owner.harness == 2 and len(self.result.llm_calls) == 1:
             return {"messages": [HumanMessage("Now execute your plan with run_python, then submit FinalReport.")], "jump_to": "model"}
+        if not last_ai.tool_calls:
+            self.emit("notice", message=NO_TOOL_CALL)
+            return {"messages": [HumanMessage(NO_TOOL_CALL)], "jump_to": "model"}
         names = {call["name"] for call in last_ai.tool_calls}
-        if "run_python" in names and "FinalReport" in names:
-            issue = "Mixed execution and FinalReport rejected. No code from this response ran. Submit Python first, then a separate FinalReport after inspecting its output."
+        last_call = len(self.result.llm_calls) == self.owner.max_iterations
+        if "run_python" in names and ("FinalReport" in names or last_call):
+            # The tool list stays unchanged on the last call so the provider's prompt cache still applies.
+            issue = LAST_CALL if last_call else "Mixed execution and FinalReport rejected. No code from this response ran. Submit Python first, then a separate FinalReport after inspecting its output."
             self.emit("notice", message=issue)
             existing = {message.tool_call_id: message.id for message in state["messages"][last_index + 1:] if isinstance(message, ToolMessage)}
             responses = [ToolMessage(content=issue, tool_call_id=call["id"], name=call["name"],
@@ -280,7 +312,7 @@ class CodeActAgent:
             if on_event:
                 on_event(event, payload)
 
-        system = build_system_prompt(ifc_path, self.executor.stateful, self.env_primer)
+        system = build_system_prompt(ifc_path, self.executor.stateful, self.env_primer, self.max_iterations)
         result = AgentResult(harness=self.harness)
         self.partial_result = result
         anchors, result.scope_note = discover_scope(rule, ifc_path)
@@ -315,16 +347,22 @@ class CodeActAgent:
             record = {"code": code, "status": "started"}
             result.execution_records.append(record)
             emit("code", code=code)
+            started = time.perf_counter()
             try:
                 output = self.executor.run(code)
             except BaseException as exc:
-                record.update(status="interrupted", error_text=f"{type(exc).__name__}: {exc}")
+                record.update(status="interrupted", error_text=f"{type(exc).__name__}: {exc}",
+                              seconds=round(time.perf_counter() - started, 3))
                 self._capture_progress(result)
                 raise
-            record.update(status="returned", output=output, **self.executor.last_execution)
+            # Includes the worker restart and any IFC reload in stateless mode.
+            record.update(status="returned", output=output, seconds=round(time.perf_counter() - started, 3),
+                          **self.executor.last_execution)
             self._capture_progress(result)
             emit("output", output=output, **self.executor.last_execution)
-            return output, dict(self.executor.last_execution)
+            used = len(result.llm_calls)
+            budget = f"\n[Model call {used} of {self.max_iterations} used; {self.max_iterations - used} remain.]"
+            return output + budget, dict(self.executor.last_execution)
 
         bridge = RunEvents(self, result, system, emit)
         graph = create_agent(self.llm, tools=[run_python], system_prompt=system,

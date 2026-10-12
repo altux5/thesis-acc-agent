@@ -52,6 +52,28 @@ class LLMUsageTests(unittest.TestCase):
         self.assertEqual(model.max_retries, 0)
         self.assertEqual(model.request_timeout, 180_000)  # OpenRouter SDK timeout is in milliseconds
 
+    def test_openrouter_claude_requests_prompt_caching(self):
+        import httpx
+        bodies = []
+
+        def reply(request):
+            bodies.append(json.loads(request.content))
+            return httpx.Response(200, json={"id": "fixture", "object": "chat.completion", "created": 0, "model": "fixture",
+                                             "system_fingerprint": None,
+                                             "choices": [{"index": 0, "message": {"role": "assistant", "content": "reply"},
+                                                          "finish_reason": "stop"}],
+                                             "usage": {"prompt_tokens": 10, "completion_tokens": 1, "total_tokens": 11}})
+
+        for name, cached in (("anthropic/claude-sonnet-5.5", True), ("minimax/minimax-m3", False)):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "offline-test"}):
+                model = load_llm(name, "openrouter")
+            model.client.sdk_configuration.client = httpx.Client(transport=httpx.MockTransport(reply))
+            model.bind_tools([{"type": "function", "function": {"name": "run_python", "parameters": {}}}],
+                             tool_choice="any").invoke("fixture request")
+            self.assertEqual(bodies[-1].get("cache_control"), {"type": "ephemeral"} if cached else None)
+            # Claude 5.x rejects forced tool use; MiniMax keeps it.
+            self.assertEqual(bodies[-1].get("tool_choice"), None if cached else "required")
+
     def test_missing_usage_is_explicit_not_a_measured_zero(self):
         usage = usage_record(AIMessage(content="reply"))
         self.assertFalse(usage["usage_reported"])

@@ -9,8 +9,8 @@ from unittest.mock import Mock, patch
 import ground_truth
 from agent import AgentResult
 from ground_truth import GroundTruth
-from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, MAX_MODEL_CALLS, QUICK_SUITE_CASES, QUICK_SUITE_REPEATS, USABLE_CASES,
-                 USABLE_2_CASES, USABLE_2_SUITE_CASES, USABLE_2_SUITE_REPEATS, case_assessment)
+from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, MAX_MODEL_CALLS, QUICK_SUITE_CASES, USABLE_CASES,
+                 USABLE_2_CASES, USABLE_2_SUITE_CASES, case_assessment)
 from kernel_executor import KernelCodeExecutor
 from gui_widgets import METRIC_GUIDE, GREEN, ORANGE, RED, bind_wrapping, result_presentation
 from scoring import ParsedVerdict, aggregate, score
@@ -265,9 +265,10 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertEqual({row["case_id"] for row in stored}, set(HEALTH_SUITE_CASES))
             self.assertEqual(len({row["sweep_id"] for row in stored}), 8)
 
-    def test_quick_suite_skips_staircase_and_uses_three_repeats(self):
+    def test_quick_suite_skips_staircase_and_uses_slider_repeats(self):
         app = self.app
         with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors):
+            app.repeats_var.set(2)
             app.quick_suite_btn.invoke()
             for _ in range(8):
                 if app._suite is None:
@@ -276,20 +277,20 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertIsNone(app._suite)
             self.assertNotIn("staircase_width_v8", QUICK_SUITE_CASES)
             expected = [(case_id, stateful) for case_id in QUICK_SUITE_CASES for stateful in (True, False)
-                        for _ in range(QUICK_SUITE_REPEATS)]
+                        for _ in range(2)]
             self.assertEqual(sorted(seen), sorted(expected))
-            self.assertIn("42 runs", confirm.call_args.args[1])
+            self.assertIn("28 runs", confirm.call_args.args[1])
             self.assertNotIn("Staircase", confirm.call_args.args[1])
             manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
             self.assertEqual(manifest["case_ids"], list(QUICK_SUITE_CASES))
-            self.assertEqual(manifest["settings"]["repeats"], QUICK_SUITE_REPEATS)
-            self.assertEqual(manifest["finished_runs"], 42)
-            self.assertEqual(int(app.repeats_var.get()), 1)
+            self.assertEqual(manifest["settings"]["repeats"], 2)
+            self.assertEqual(manifest["finished_runs"], 28)
             errors.assert_not_called()
 
-    def test_usable_2_suite_runs_every_usable_2_case_three_times(self):
+    def test_usable_2_suite_runs_every_usable_2_case_with_slider_repeats(self):
         app = self.app
         with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors):
+            app.repeats_var.set(2)
             app.usable_2_suite_btn.invoke()
             for _ in range(len(USABLE_2_SUITE_CASES) + 1):
                 if app._suite is None:
@@ -298,15 +299,14 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertIsNone(app._suite)
             self.assertEqual(set(USABLE_2_SUITE_CASES), set(USABLE_2_CASES))
             expected = [(case_id, stateful) for case_id in USABLE_2_SUITE_CASES for stateful in (True, False)
-                        for _ in range(USABLE_2_SUITE_REPEATS)]
+                        for _ in range(2)]
             self.assertEqual(sorted(seen), sorted(expected))
             self.assertIn(f"{len(USABLE_2_SUITE_CASES)} usable_2", confirm.call_args.args[1])
             self.assertIn(f"{len(expected)} runs", confirm.call_args.args[1])
             manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
             self.assertEqual(manifest["case_ids"], list(USABLE_2_SUITE_CASES))
-            self.assertEqual(manifest["settings"]["repeats"], USABLE_2_SUITE_REPEATS)
+            self.assertEqual(manifest["settings"]["repeats"], 2)
             self.assertEqual(manifest["finished_runs"], len(expected))
-            self.assertEqual(int(app.repeats_var.get()), 1)
             errors.assert_not_called()
 
     def test_declining_health_suite_makes_no_provider_or_worker_calls(self):

@@ -34,6 +34,13 @@ def model_identity(model: BaseChatModel) -> dict:
     return {"provider": metadata.get("provider", "offline"), "model": metadata.get("model", name or "scripted")}
 
 
+class ClaudeOpenRouter(ChatOpenRouter):
+    """Claude 5.x rejects forced tool use; RunEvents returns tool-less replies to the model instead."""
+
+    def bind_tools(self, tools, *, tool_choice=None, **kwargs):
+        return super().bind_tools(tools, **kwargs)
+
+
 def with_reasoning(model: BaseChatModel, enabled: bool) -> BaseChatModel:
     if isinstance(model, ChatAnthropic):
         return model.model_copy(update={"thinking": {"type": "adaptive" if enabled else "disabled"}})
@@ -56,6 +63,10 @@ def load_llm(model: str | None = None, provider: str | None = None) -> BaseChatM
     if provider == "minimax":
         client = ChatAnthropic(api_key=key, base_url=MINIMAX_BASE_URL, timeout=REQUEST_TIMEOUT, **settings)
     else:
+        claude = name.startswith("anthropic/")
+        # Claude caches only when asked; the top-level field moves the breakpoint to the latest message.
+        if claude:
+            settings["model_kwargs"] = {"cache_control": {"type": "ephemeral"}}
         # The OpenRouter SDK takes milliseconds; 180 here meant 0.18 s and hung the first request.
-        client = ChatOpenRouter(api_key=key, timeout=REQUEST_TIMEOUT * 1000, **settings)
+        client = (ClaudeOpenRouter if claude else ChatOpenRouter)(api_key=key, timeout=REQUEST_TIMEOUT * 1000, **settings)
     return with_reasoning(client, os.environ.get("REASONING", "1").lower() not in ("0", "false", "no"))

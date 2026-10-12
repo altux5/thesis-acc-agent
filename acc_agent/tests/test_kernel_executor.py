@@ -40,6 +40,16 @@ class KernelExecutorTest(unittest.TestCase):
         executor.run("import json\nvalue = 7")
         self.assertIn("7 json", executor.run("print(value, json.__name__)"))
 
+    def test_ifcopenshell_submodules_are_preloaded_but_not_injected(self):
+        for stateful in (True, False):
+            with self.subTest(stateful=stateful):
+                executor = self.executor(stateful=stateful)
+                output = executor.run("print(sorted(n for n in dir() if not n.startswith('_')))\n"
+                                      "import ifcopenshell\n"
+                                      "print(callable(ifcopenshell.util.unit.calculate_unit_scale), hasattr(ifcopenshell, 'geom'))")
+                self.assertFalse(executor.last_error, output)
+                self.assertIn("['report_labels']\nTrue True", output)
+
     def test_stateless_restarts_the_interpreter(self):
         executor = self.executor(stateful=False)
         probe = Path(tempfile.mkdtemp()) / "scratch.txt"
