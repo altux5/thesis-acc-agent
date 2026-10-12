@@ -179,7 +179,73 @@ class AgentRegressionTests(unittest.TestCase):
             prompt = " ".join(build_system_prompt("model.ifc", stateful).split())
             self.assertIn("are in metres by default", prompt)
             self.assertIn("Do NOT apply the model unit scale", prompt)
+            self.assertIn("import ifcopenshell.util.element, ifcopenshell.util.unit", prompt)
             self.assertNotIn("Mesh vertices", build_system_prompt("model.ifc", stateful, False))
+
+    def test_budget_is_stated_counted_and_announced_before_the_end(self):
+        executor = KernelCodeExecutor(timeout=30)
+        self.addCleanup(executor.close)
+        model = ScriptedClient([reply(python_call('print("first")')), reply(python_call('print("second")')),
+                                reply(python_call('report_labels({"anchor":"PASS"})')), reply(final_call()), reply(final_call())])
+        with patch("agent.discover_scope", return_value=({"anchor"}, "public test scope")):
+            result = CodeActAgent(model, executor, max_iterations=6, env_primer=False).check("Judge anchor", "not-opened.ifc")
+        self.assertEqual(result.completion_status, "complete")
+        self.assertIn("You have 6 model calls in total", " ".join(model.requests[0][0].content.split()))
+        tool_message = next(message for message in model.requests[1] if isinstance(message, ToolMessage))
+        self.assertTrue(tool_message.content.endswith("[Model call 1 of 6 used; 5 remain.]"))
+        self.assertEqual(result.execution_records[0]["output"], "first")
+        self.assertTrue(all(record["seconds"] >= 0 for record in result.execution_records + result.llm_calls))
+        wrap_up = [message.content for message in model.requests[2] if "4 calls remain" in str(message.content)]
+        self.assertEqual(len(wrap_up), 1)
+        self.assertIn("Model call 3 of 6", wrap_up[0])
+        self.assertFalse(any("calls remain" in str(message.content) for message in model.requests[1] if message.type == "human"))
+
+    def test_text_without_a_tool_call_returns_to_the_model(self):
+        result = self.run_script([reply(text="All doors pass."), reply(python_call('report_labels({"anchor":"PASS"})')),
+                                  reply(final_call())])
+        self.assertEqual(result.completion_status, "complete")
+        self.assertEqual(result.iterations, 3)
+        self.assertTrue(any("No tool call received" in str(entry["content"]) for entry in result.transcript))
+
+    def test_text_on_the_last_call_leaves_the_run_incomplete(self):
+        result = self.run_script([reply(python_call('report_labels({"anchor":"PASS"})')), reply(text="Done: compliant.")])
+        self.assertEqual(result.completion_status, "incomplete")
+        self.assertFalse(result.parse_ok)
+        self.assertIn("Budget", result.reason)
+
+    def test_last_call_accepts_only_final_report_and_runs_no_code(self):
+        model = ScriptedClient([reply(python_call('report_labels({"anchor":"PASS"})')),
+                                reply(python_call('report_labels({"anchor":"FAIL"})'))])
+        executor = KernelCodeExecutor(timeout=30)
+        self.addCleanup(executor.close)
+        with patch("agent.discover_scope", return_value=({"anchor"}, "public test scope")):
+            result = CodeActAgent(model, executor, max_iterations=2, env_primer=False).check("Judge anchor", "not-opened.ifc")
+        from langchain_core.utils.function_calling import convert_to_openai_tool
+
+        def names(tools):
+            return [convert_to_openai_tool(tool)["function"]["name"] for tool in tools]
+
+        self.assertEqual(names(model.bindings[0]), ["run_python", "FinalReport"])
+        self.assertEqual(names(model.bindings[-1]), ["run_python", "FinalReport"])
+        self.assertEqual(result.executions, 1)
+        self.assertEqual(result.labels, {"anchor": "PASS"})
+        self.assertEqual(result.completion_status, "incomplete")
+        self.assertTrue(any("only FinalReport is accepted" in str(entry["content"]) for entry in result.transcript))
+
+    def test_pending_labels_block_a_decided_verdict_but_allow_final_unknown(self):
+        result = self.run_script([reply(python_call('report_labels({"anchor":"PASS","second":"pending"})')),
+                                  reply(final_call()),
+                                  reply(final_call("UNKNOWN", reason="Element second is unresolved."))],
+                                 anchors={"anchor", "second"})
+        self.assertEqual(result.labels, {"anchor": "PASS", "second": "PENDING"})
+        self.assertEqual(result.completion_status, "abstained")
+        self.assertTrue(any("still PENDING" in str(entry["content"]) for entry in result.transcript))
+
+    def test_resolved_pending_labels_complete_normally(self):
+        result = self.run_script([reply(python_call('report_labels({"anchor":"PENDING"})')),
+                                  reply(python_call('report_labels({"anchor":"FAIL"})')),
+                                  reply(final_call("NON_COMPLIANT", ["anchor"]))])
+        self.assertEqual(result.completion_status, "complete")
 
 
 if __name__ == "__main__":

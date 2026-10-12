@@ -1,3 +1,6 @@
+# Archived 2026-10-01, file otherwise unchanged. Early helper from the door-width warm-up;
+# nothing imports it. ground_truth.door_width_ground_truth() now builds that reference.
+# To run it again, copy it back to acc_agent/ (it imports ground_truth from there).
 """Ground-truth helper: list every IfcDoor and its OverallWidth.
 
 Reads the width directly from each IfcDoor, independent of the agent, so it can

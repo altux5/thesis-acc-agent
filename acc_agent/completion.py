@@ -8,7 +8,7 @@ import re
 from code_identity import capture_module
 capture_module()
 
-COMPLETION_CHECKS_VERSION = 3
+COMPLETION_CHECKS_VERSION = 4
 
 
 def scope_classes(rule: str) -> list[str]:
@@ -76,9 +76,13 @@ def validate_submission(
             return None, ["UNKNOWN conflicts with reported failures; finish or revise the label submission."]
         if calls_remaining > 0:
             return None, [f"UNKNOWN is accepted only on the final model call; {calls_remaining} call(s) remain. "
-                          "Continue the check and commit labels (ALERT for elements that cannot be judged)."]
+                          "Continue the check and commit labels (PENDING for elements not yet resolved)."]
         return payload, []
     issues = []
+    pending = sum(label == "PENDING" for label in labels.values())
+    if pending:
+        issues.append(f"{pending} element(s) are still PENDING. Resolve them to PASS, FAIL, ALERT, MANUAL_CHECK or NA "
+                      "and resubmit; if calls run out, return UNKNOWN naming what is unresolved.")
     if label_reports == 0:
         issues.append("No report_labels submission is valid for the current execution state. Submit the complete mapping from a successful code block.")
     if last_error:

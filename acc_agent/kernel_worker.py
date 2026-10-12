@@ -86,6 +86,13 @@ from executor import (  # noqa: E402  - path must be set first
     normalise_label_map,
 )
 
+# Module cache only: the agent still writes its own imports, but `import ifcopenshell`
+# then exposes these submodules as attributes. Nothing is added to the namespace.
+import ifcopenshell.geom  # noqa: E402,F401
+import ifcopenshell.util.element  # noqa: E402,F401
+import ifcopenshell.util.shape  # noqa: E402,F401
+import ifcopenshell.util.unit  # noqa: E402,F401
+
 NAMESPACE: dict[str, object] = {}
 STATE: dict[str, object] = {"pending": None, "reports": 0, "warnings": []}
 

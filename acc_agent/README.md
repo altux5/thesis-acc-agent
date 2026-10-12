@@ -185,28 +185,76 @@ A full transcript of each run (every message + token counts) is written to
 
 ## How it works
 
-```
-run.py        CLI: pick IFC / rule / mode, wire everything, print + save results
-config.py     shared settings (iteration/output caps) + legacy OpenRouter client
-llm.py        small factory: LangChain ChatAnthropic (MiniMax) / ChatOpenRouter
-executor.py   shared reporting/output helpers, kernel-only factory;
-              the original CodeExecutor class is in archive/inprocess_runtime.py
-kernel_executor.py  out-of-process runtime: worker lifetime, per-block timeout,
-              crash containment; the only active execution runtime
-kernel_worker.py    the child process it drives; not imported by the host
-agent.py      create_agent, run_python tool, structured submission validation,
-              bounded H1/basic or H2/planning, and the existing event interface
-scoring.py    parse the FINAL verdict + score set agreement (precision/recall/F1)
-              and union accuracy over the element labels
-ground_truth.py  GroundTruth cases (rule + IFC + per-element labels)
-import_bca_gt.py  import the advisor's BCA cases (staircase width, headroom, ...) as GT
-simple_rules.py   low-complexity (class 1-2) BCA rules + their reference implementations
-evaluate.py   run the agent k times per mode and report mean ± std agreement
-tracing.py    optional Langfuse tracing (no-op unless LANGFUSE_* keys are set)
-skill_library.py  archived exploratory library; not integrated into new runs
-tests/        automated software regression checks, separate from benchmark cases
-NOTES.md      running project memory: findings, decisions, pitfalls, changelog
-```
+All code sits flat in `acc_agent/`; this map groups it by role. Programs are
+started from the workspace root, e.g. `python acc_agent/gui.py`.
+
+**Programs you start**
+
+| File | What it does |
+| --- | --- |
+| [gui.py](gui.py) | Desktop app: pick a case, run stateful/stateless sweeps and suites, live log, scores, experiment table |
+| [dashboard.py](dashboard.py) | Read-only charts of the experiment ledger (latest run, all runs by version, over time); `--save DIR` writes PNGs |
+| [evaluate.py](evaluate.py) | Command line: run one case k times per mode and report agreement with the reference |
+| [run.py](run.py) | Command line: one run with any rule and IFC, unscored |
+
+**Agent core**
+
+| File | What it does |
+| --- | --- |
+| [agent.py](agent.py) | LangChain `create_agent` loop, `run_python` tool, FinalReport validation, harness levels 1-2 |
+| [llm.py](llm.py) | Model clients: MiniMax (ChatAnthropic) and OpenRouter |
+| [completion.py](completion.py) | Completion checks on IFC scope and label/verdict consistency; never uses reference answers |
+| [config.py](config.py) | Shared settings (model-call budget, output cap) and the legacy OpenRouter client |
+| [tracing.py](tracing.py) | Optional Langfuse tracing; does nothing without `LANGFUSE_*` keys |
+| [code_identity.py](code_identity.py) | Fingerprints of the imported code, recorded with every run |
+
+**Code execution**
+
+| File | What it does |
+| --- | --- |
+| [executor.py](executor.py) | Label validation, output and traceback formatting, kernel-only executor factory |
+| [kernel_executor.py](kernel_executor.py) | Runs the agent's code in a separate worker process: lifetime, per-block timeout, crash restarts |
+| [kernel_worker.py](kernel_worker.py) | The worker process itself; never imported by the host |
+
+**Experiments and reports**
+
+| File | What it does |
+| --- | --- |
+| [experiments.py](experiments.py) | Local SQLite experiment ledger: runs, configurations, summaries |
+| [experiment_recorder.py](experiment_recorder.py) | Records each run's configuration, code and reference fingerprints, audit and results |
+| [experiment_view.py](experiment_view.py) | The GUI's sortable experiment table |
+| [scoring.py](scoring.py) | Parses the verdict; precision/recall/F1 and union accuracy |
+| [factual_report.py](factual_report.py) | Offline report from a GUI log; no AI calls |
+| [gui_widgets.py](gui_widgets.py) | Shared GUI widgets and colours |
+
+**Test cases and references**
+
+| File | What it does |
+| --- | --- |
+| [ground_truth.py](ground_truth.py) | Case format, loading, model paths and the case-name rules |
+| `ground_truth/` | The case JSON files; `_deprecated_vN` files are superseded versions |
+| [simple_rules.py](simple_rules.py) | Class 1-2 rule catalogue with coded reference checks |
+| [import_bca_gt.py](import_bca_gt.py) | Imports the advisors' expert workbooks (now only superseded and retired cases) |
+| [slab_reference.py](slab_reference.py) | Builds `slab_thickness__mall` from recorded properties |
+| [stair_width_reference.py](stair_width_reference.py) | Builds `staircase_width_v8` from the expert workbook and measured clear widths |
+| [reference_v2.py](reference_v2.py) | Builds the ten usable_2 cases from IFC evidence and workbooks |
+| [benchmark_audit.py](benchmark_audit.py) | Checks a reference against its IFC before runs are compared |
+
+**Checks and history**
+
+| File | What it does |
+| --- | --- |
+| [check_runtime_parity.py](check_runtime_parity.py) | Offline contract check of the worker process; no model calls |
+| `tests/` | Automated offline tests, separate from the benchmark cases |
+| `archive/` | Retired code kept for the thesis; never imported |
+| [skill_library.py](skill_library.py) | Retired cross-run skill library, kept with its tests; not used by runs |
+
+**Documents:** [README.md](README.md), [NOTES.md](NOTES.md) (decisions, findings,
+changelog), [instruction.md](instruction.md) (rules for changing the code),
+[PILOT_AUDIT.md](PILOT_AUDIT.md), [langchain.md](langchain.md).
+
+**Output folders (local, not published):** `logs/`, `runs/`, `evals/`,
+`langfuse_traces/`, `skills/`, `slides/`.
 
 The default check is: *"every `IfcDoor` must be at least 900 mm wide (using the
 `OverallWidth` attribute)."* The agent has to discover the doors and their widths
@@ -340,7 +388,7 @@ H3 records retain their training-only identity; new runs expose only H1/H2 and
 receive no reference feedback. This does not make the Python worker a filesystem
 security sandbox.
 
-### Completion checks (version 3)
+### Completion checks (version 4)
 
 All harness levels now apply the same deterministic submission checks. A decided
 FinalReport must match its schema, follow a successful code attempt and a `report_labels`
@@ -361,6 +409,11 @@ Version 3 accepts UNKNOWN only on the final model call. Earlier, the checker rej
 it and asks the agent to continue and label undecidable elements ALERT. This closes
 the "one code block, then UNKNOWN" early exit seen in the usable_2 suite.
 
+Version 4 rejects COMPLIANT and NON_COMPLIANT while any element is labelled `PENDING`,
+the agent's placeholder for unresolved elements. On the final call, UNKNOWN naming
+what is unresolved is accepted if no FAIL was committed; otherwise the run stays
+incomplete.
+
 For catalogue rules with an explicit `(modelled as Ifc...)` scope, the checker
 enumerates those classes directly from the IFC and requires exactly that set of
 label keys. The default `Every door (IfcDoor)` rule is also supported. This does
@@ -374,10 +427,23 @@ the API timeout is 180 seconds, and automatic provider retries are disabled. Exi
 kernel execution/startup timeouts and output caps remain unchanged. There is no
 cumulative token/cost cap. `finalization_attempts` now counts FinalReport submissions.
 
-New runs carry `agent_protocol=langchain-codeact-v2` and recording version 3; do not
+New runs carry `agent_protocol=langchain-codeact-v5` and recording version 5; do not
 pool them with historical protocols or budgets as if they were identical settings.
-In v2 the model receives execution output as plain text (traceback once); status
+v5 is frozen for the final evaluation (2026-10-12). Recording v5 adds wall-clock
+`seconds` per model call and per code block (stateless blocks include the worker
+restart and IFC reload); agent behaviour is unchanged from recording v4.
+Since v2 the model receives execution output as plain text (traceback once); status
 metadata is kept as the tool message artifact. v1 sent a JSON wrapper instead.
+v3 states the call budget in the prompt, ends every tool result with
+`[Model call k of N used; N-k remain.]`, reminds the agent to commit labels when four
+calls remain, and returns a reply without any tool call to the model as a protocol
+error instead of ending the run. The worker pre-imports the ifcopenshell helper
+modules (module cache only; the agent still writes its own imports and opens the model).
+v4 adds the agent-only label `PENDING` for elements not resolved yet: a decided
+FinalReport is rejected while any remain (completion checks v4), and PENDING never
+matches a reference label. On the last model call only FinalReport is accepted: any
+code sent is rejected without running. v5 keeps the tool list unchanged on that call
+so the provider's prompt cache still applies.
 
 GUI logs, factual reports, saved transcripts, eval JSON and traces distinguish:
 

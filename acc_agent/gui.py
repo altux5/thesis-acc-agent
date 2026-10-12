@@ -140,7 +140,6 @@ USABLE_CASES = (
 )
 HEALTH_SUITE_CASES = USABLE_CASES + ("slab_thickness__mall", "staircase_width_v8")
 QUICK_SUITE_CASES = USABLE_CASES + ("slab_thickness__mall",)
-QUICK_SUITE_REPEATS = 3
 # One cap for every run so cases and modes are compared under the same budget.
 MAX_MODEL_CALLS = config.MAX_ITERATIONS
 # Held out for good after the 2026-09-29 review; files are kept for historical runs.
@@ -169,7 +168,6 @@ USABLE_2_CASES = {
     "space_elevation__scdf_3": "EC3 same-storey elevation rule: 1 FAIL / 53 PASS / 5 NA. BIM consistency, not a regulation.",
 }
 USABLE_2_SUITE_CASES = tuple(USABLE_2_CASES)
-USABLE_2_SUITE_REPEATS = 3
 CONTROL_CASES = {
     "doors_windows_storey__planterbox", "doors_windows_storey__scdf_3", "doors_windows_storey__scdf_5",
     "landing_interval_e352__condo", "landing_interval_e352__planterbox", "landing_interval_e352__scdf_3",
@@ -399,13 +397,13 @@ class App(ctk.CTk):
             command=self._on_suite, fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.suite_btn.pack(fill="x", pady=(6, 0))
         self.quick_suite_btn = ctk.CTkButton(
-            footer, text=f"Run {len(QUICK_SUITE_CASES)}-case suite (no staircase, {QUICK_SUITE_REPEATS} repeats)", height=34,
-            command=lambda: self._on_suite(QUICK_SUITE_CASES, QUICK_SUITE_REPEATS),
+            footer, text=f"Run {len(QUICK_SUITE_CASES)}-case suite (no staircase)", height=34,
+            command=lambda: self._on_suite(QUICK_SUITE_CASES),
             fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.quick_suite_btn.pack(fill="x", pady=(6, 0))
         self.usable_2_suite_btn = ctk.CTkButton(
-            footer, text=f"Run {len(USABLE_2_SUITE_CASES)}-case usable_2 suite ({USABLE_2_SUITE_REPEATS} repeats)", height=34,
-            command=lambda: self._on_suite(USABLE_2_SUITE_CASES, USABLE_2_SUITE_REPEATS),
+            footer, text=f"Run {len(USABLE_2_SUITE_CASES)}-case usable_2 suite", height=34,
+            command=lambda: self._on_suite(USABLE_2_SUITE_CASES),
             fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.usable_2_suite_btn.pack(fill="x", pady=(6, 0))
         self.stop_btn = ctk.CTkButton(footer, text="Stop after current run", height=28,
@@ -851,7 +849,7 @@ class App(ctk.CTk):
         for button in (self.suite_btn, self.quick_suite_btn, self.usable_2_suite_btn):
             button.configure(state=state)
 
-    def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES, repeats: int | None = None) -> None:
+    def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES) -> None:
         if self._suite is not None or (self.worker and self.worker.is_alive()):
             return
         try:
@@ -865,7 +863,7 @@ class App(ctk.CTk):
             return
         mode = self.mode_var.get()
         modes = ["stateful", "stateless"] if mode == "both" else [mode]
-        repeats = repeats or int(self.repeats_var.get())
+        repeats = int(self.repeats_var.get())
         budget = MAX_MODEL_CALLS
         runs = len(case_ids) * len(modes) * repeats
         tiers = ", ".join(f"{sum(case_assessment(c)[0] == tier for c in case_ids)} {tier.lower()}"

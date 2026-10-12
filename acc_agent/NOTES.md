@@ -32,6 +32,20 @@ Earlier entries below use the old names; the mapping is
   of altux5/thesis-acc-agent.
 - 30 Sep: `langchain-codeact-v2`, completion checks v3, write confinement, usable_2
   references, stable case IDs, dashboard: tag `stable-case-names`.
+- 1 Oct: `langchain-codeact-v3` (visible budget, wrap-up reminder, no-tool-call replies
+  returned to the model, ifcopenshell submodules pre-imported). Not yet tagged.
+- 1 Oct: `langchain-codeact-v4` + completion checks v4 (PENDING placeholder label,
+  last call offers only FinalReport). Not yet tagged.
+- 2 Oct: `langchain-codeact-v5` (last call keeps the full tool list; final-report-only is
+  enforced by rejection, which keeps the prompt cache). Not yet tagged.
+
+**Agent improvement plan (decision 2026-10-01, user):** fix harness mechanics before
+strategy, one protocol version per step so the dashboard separates effects. Step 1 =
+v3 (above). Step 2, still open: code-first evaluation with output by exception, H2
+planning on multi-criteria rules, cross-checking decisive evidence. No case-specific
+hints and no bigger budget as a fix. The worker does NOT preload the IFC `model`:
+model loading stays the agent's job so "what the agent keeps" remains the measured
+variable; preloading in both modes would be a separate, labelled experiment.
 
 ---
 
@@ -163,6 +177,73 @@ Earlier entries below use the old names; the mapping is
 
 ## Findings
 
+- **2026-10-04 - Sonnet 5.5 on staircase_width_v8 (2 stateful v5 runs).** Both complete,
+  0.95 and 0.97 (MiniMax: 0 of 6 v1/v2 runs completed; no v3+ runs). 18 and 20 calls
+  (r1 finished on its last call), 543k/714k input at 91-92% cache, $0.45/$0.54, 12-13
+  min. Errors are exemption rows (NA labelled FAIL/PASS: a stair inside a residential
+  unit, a 2-riser stair, an attic stair) plus one FAIL labelled PASS (...pN).
+
+- **2026-10-04 - Sonnet 5.5 on the exit cases (5 runs, OpenRouter, reasoning off).** All
+  complete in 7-13 calls (MiniMax 16-20), 1-3.4 min, $0.13-0.31 per run, cache reads
+  80-86%, no tool-less replies. scdf_3: 1.00 and 0.75 (r2 labelled shops 296/297 and
+  office 298 FAIL although its own reason says each has its own exit). scdf_5: 0.67,
+  0.54, 0.56, i.e. near the reachable ceiling: 12 of the 39 scored rows disagree with
+  the reference in 7 of 8 complete v5 runs of both models. Seven offices with one exit
+  to a reception are NA in the reference via the authority's transitional-space
+  exemption, which the rule text does not state; three receptions are PASS although
+  the prompt says common areas "may" be NA; the two tenant-internal corridor FAILs
+  (...LH9, ...LK5) are the interpretation the reference itself lists as a limitation.
+  A run that reads these consistently scores at most 27/39 = 0.69, so scdf_5 does not
+  separate the models. Needs a decision on the case text or reference, not an agent fix.
+
+- **2026-10-03 - v5 usable_2 suites on OpenRouter (30 stateful runs on 2 Oct, 30
+  stateless on 3 Oct).** Both 29/30 complete (v3: 74%); exit cases 5/6 complete in each.
+  Stateful 6.1M input / 0.33M output, $0.96, 3.2 h; stateless 7.1M / 0.49M, $1.26,
+  2.0 h; cache reads about 84% in both. Replaying two slow stateful runs' code took
+  0.6 of 27.7 min and 0.2 of 13.0 min, so wall time is model latency. Stateless:
+  16 of 438 calls hit `MAX_TOKENS` (8000) with empty content and no tool call; the
+  reasoning had degenerated into repetition loops (e.g. "Look at placement.</parameter>"
+  repeated). These calls used 128k output tokens and $0.19, and each cost one budget
+  call (the harness returned them to the model). All 30 OpenRouter length stops since
+  2026-09-30 came from the upstream without a `system_fingerprint`; none in 529 calls
+  from the vLLM upstream or in 590 MiniMax-direct calls. OpenRouter's upstream provider
+  name is not recorded. Accuracy as before, except exit scdf_3 stateless r3 complete at
+  0.17 and space elevation mall stateless 0.93 in 2 of 3 runs.
+- **2026-10-02 - token use (first 6 v4 runs, all landing cases, MiniMax direct).** 1.48M
+  input / 55k output tokens, in line with v3 on the same cases (108-315k input per hard
+  run; easy cases 15-50k). Every call resends the conversation (1.9k -> 32.7k prompt
+  over 20 calls), so long runs grow superlinearly; about 88% was cache reads. Since
+  2026-10-01 10:38 the GUI runs used the `minimax` provider, which reports no cost, so
+  the ledger shows $0. v4 side effect: restricting the tool list on the last call broke
+  the prompt cache (32.7k prompt, 1.1k cached), doubling that run's uncached input.
+- **2026-10-01 - effect of v3 (46 stateful usable_2 runs vs 37 v2 runs, same cases).**
+  Completion 65% -> 74% (without the two exit cases 74% -> 92%: landing mall 1/3 -> 5/6,
+  space elevation mall 1/3 -> 3/3, landing v8 3/5 -> 5/6, planter 2/3 -> 3/3, tread mall
+  5/6 -> 6/6); accuracy unchanged. util.unit/element import errors 11 -> 0; 10
+  no-tool-call replies returned to the model, 3 of those runs completed. The wrap-up
+  reminder was ignored: all 11 budget-exhausted v3 runs kept running code on calls
+  17-20 (10 already had full labels) and never tried FinalReport. Side effect: 4 of 44
+  labelled runs ended with provisional ALERT/MANUAL_CHECK where the reference differs
+  (58 labels; e.g. landing mall's 16 trap flights). Exit cases still fail. Two suites
+  were interrupted: OpenRouter returned `provider_unavailable` without `choices`
+  (the SDK raised ResponseValidationError; retries are off, suites stop on errors),
+  then a local connection loss.
+- **2026-10-01 - why the hard cases fail (141 LangChain runs analysed).** Eleven cases
+  complete about 95% of runs in 4-15 calls; seven (staircase width, exit scdf_5/scdf_3,
+  landing mall/v8, space elevation mall, planter) need 14-20 of 20 calls and 136-332k
+  input tokens. 23 of 30 incomplete runs hit the budget. (1) Late commitment: 16
+  incomplete runs had valid labels, 14 of them committed in call 20 itself, leaving no
+  call for FinalReport; the budget was never shown before the last call. (2) Python used
+  as a viewer: hard runs print element listings in 5.2 blocks per run, 35k output
+  characters and 2.6-3.7 truncations per run; the model then labels in its reasoning
+  ("Stair 0: SPIRAL, 2199mm, PASS ...") and pages through truncated output. (3) Stateful
+  runs reopen the IFC in 43% of later blocks (latest staircase run: every block), so the
+  persistence under test is barely used. (4) 40 of the AttributeErrors were
+  `ifcopenshell.util.unit` not loaded, a primer defect; others are wrong attribute names
+  or relationship directions. (5) Completed-but-wrong runs trust one recorded value
+  (landing mall: flight `NumberOfRiser` 27 is the staircase total; staircase: flight
+  extent as clear width). (6) Two MiniMax replies carried tool syntax as plain text and
+  ended the run.
 - **2026-09-29 - usable_2 suite, stateless (after completion v3 and write confinement;
   30 runs, 17 complete, 2 abstained, 11 incomplete).** All runs used the new prompt.
   One early UNKNOWN was rejected (exit scdf_3 r3). The write hook refused one
@@ -439,6 +520,17 @@ Earlier entries below use the old names; the mapping is
 
 ## Decisions
 
+- **2026-10-12 - freeze `langchain-codeact-v5` for the final evaluation (user).** No
+  further agent behaviour changes: prompts, budget (20 calls, 8000 output tokens),
+  completion checks v4, kernel settings and label protocol stay as they are. Only
+  measurement was added: recording v5 stores `seconds` per model call and per code
+  block (stateless blocks include the worker restart and IFC reload). Provider:
+  OpenRouter, reasoning off; Claude requests carry `cache_control` and no forced
+  `tool_choice` (adapter only, agent unchanged). Final matrix: usable_2 + staircase
+  width, both modes, 3 repeats, MiniMax M3 and Sonnet 5.5; later the Solibri cases;
+  optional third model stateful only. Pre-freeze v5 runs (recording v4) stay as a
+  replication. Paid runs other than MiniMax need the user's approval.
+
 - **2026-09-29 - context between model calls (user-approved), `langchain-codeact-v2`.**
   History stays append-only: every call resends system prompt, rule, all code, all
   outputs and the model's earlier reasoning. No trimming, summarization or context
@@ -644,8 +736,8 @@ These are rule/model cases, not eight independent buildings or regulations.
 | `riser_height_e341__mall` | Usable | 77 / 1 / 0 | Recorded height; mesh corroboration where measurable |
 | `riser_height_e341__stair_v8` | Usable | 66 / 1 / 0 | Recorded height; only one failure |
 | `tread_width_e342__condo` | Usable | 29 / 1 / 0 | Supplied common-stair assumption |
-| `slab_thickness__mall_v2` | Control | 100 / 0 / 12 | Missing-data and false-positive control, not recall |
-| `staircase_width_v8_full` | Provisional | 26 / 23 / 0 (+6 NA, 4 MANUAL_CHECK) | All 59 stairs; workbook labels cross-checked against IFC widths/spaces; 2 adjudicated; stated width convention |
+| `slab_thickness__mall` | Control | 100 / 0 / 12 | Missing-data and false-positive control, not recall |
+| `staircase_width_v8` | Provisional | 26 / 23 / 0 (+6 NA, 4 MANUAL_CHECK) | All 59 stairs; workbook labels cross-checked against IFC widths/spaces; 2 adjudicated; stated width convention |
 
 The GUI defaults to this shortlist. **Run 8-case health suite** confirms the
 selected mode(s), repeats, total runs and maximum model calls before starting.
@@ -676,13 +768,13 @@ Built by `reference_v2.py`; regenerate or check with `python acc_agent/reference
 
 | Case | PASS / FAIL / NA | Note |
 | --- | --- | --- |
-| `landing_interval_e352__stair_v8_v2` | 20 / 28 / 19 | Per flight; spiral and E.2.1/E.2.4 NA |
-| `landing_interval_e352__mall_v2` | 76 / 0 / 2 | Trap control: flights repeat the 27-riser stair total |
-| `landing_interval_e352__scdf_5_v2` | 73 / 0 / 0 | Trap control: flights repeat the 21-riser stair total |
-| `tread_width_e342__mall_v2` | 40 / 36 / 2 | Every tread measured; tapered at 500 mm |
-| `exit_requirements__scdf_5_v2` | 23 / 3 / 13 | 39 template spaces scored, 84 unscored |
-| `exit_requirements__scdf_3_v2` | 10 / 0 / 2 | Control; 47 unscored |
-| `planter_box_gfa_v2` | 1 / 7 / 0 | PASS = excluded from GFA; eight elements |
+| `landing_interval_e352__stair_v8` | 20 / 28 / 19 | Per flight; spiral and E.2.1/E.2.4 NA |
+| `landing_interval_e352__mall` | 76 / 0 / 2 | Trap control: flights repeat the 27-riser stair total |
+| `landing_interval_e352__scdf_5` | 73 / 0 / 0 | Trap control: flights repeat the 21-riser stair total |
+| `tread_width_e342__mall` | 40 / 36 / 2 | Every tread measured; tapered at 500 mm |
+| `exit_requirements__scdf_5` | 23 / 3 / 13 | 39 template spaces scored, 84 unscored; ~12 rows rest on unstated conventions (Findings 2026-10-04) |
+| `exit_requirements__scdf_3` | 10 / 0 / 2 | Control; 47 unscored |
+| `planter_box_gfa` | 1 / 7 / 0 | PASS = excluded from GFA; eight elements |
 | `headroom_door_c321__mall` | 154 / 3 / 0 | ClearHeight convention stated; 33 lift doors unscored |
 | `space_elevation__mall` | 186 / 19 / 4 | EC3 BIM consistency rule |
 | `space_elevation__scdf_3` | 53 / 1 / 5 | EC3 BIM consistency rule; GFA area objects NA |
@@ -695,39 +787,24 @@ health-suite run.
 
 | case | class | anchors | why |
 | --- | --- | --- | --- |
-| `slab_thickness__mall_v2` | 1 | 112 (100 pass, 12 alert, zero fail) | evidence-backed control; not a violation-recall test |
+| `slab_thickness__mall` | 1 | 112 (100 pass, 12 alert, zero fail) | evidence-backed control; not a violation-recall test |
 | `doors_windows_storey__condo` | 2 | 212 (4 fail, 208 pass) | 2% violation rate; where union accuracy earns its keep |
-| `staircase_width_v8_full` | 3 | 59 stairs (23 fail, 26 pass, 6 NA, 4 manual check) | full population; the older 49-stair subset case is superseded |
+| `staircase_width_v8` | 3 | 59 stairs (23 fail, 26 pass, 6 NA, 4 manual check) | full population; the older 49-stair subset case is deprecated |
 
 ## Open items
 
-- **Kernel runtime is built but not yet used for a paid sweep.** Nothing has been run
-  under `EXECUTION_RUNTIME=kernel` against a real model, even though it is now the
-  default. Before the first sweep:
-  measure worker startup + genuine IFC reload cost separately from model latency (in
-  stateless mode it is paid per block and will dominate), sanity-check `EXEC_TIMEOUT`
-  against the slowest legitimate block seen so far, and keep kernel results in their
-  own comparison group. Not yet handled: no interrupt-then-kill escalation (a timeout
-  goes straight to kill, so a block cannot clean up), no memory/CPU ceiling on the
-  worker, and a killed stateful worker loses the whole run's accumulated state — the
-  agent is told, but recovery quality is unmeasured.
-- **Condition A (single-shot baseline) — deferred, wanted later.** Not implemented as of
-  2026-09-08 by explicit decision; current focus was making B genuinely stateless via the
-  kernel. When picked up: cap iterations at 1, do not replay the transcript, one script
-  that must call `report_labels` once. The kernel makes this cheap — spawn a worker, run
-  one block, discard. **Open design choice that must be settled before running it:**
-  zero repair attempts (strictest, matches exposé §4.2 "single-step code generation")
-  versus N repair attempts on execution error only. Papers differ; pick one and justify
-  it in the methods chapter. Expect A to fail the completion gate often — that is a
-  measurement, not a bug to patch. The historical A/B/C/D goal no longer includes D.
-- Before the next comparison: user review of the 2026-09-28 staircase adjudications
-  and width convention, keep problematic cases and legacy scores out of primary
-  findings, and freeze/log rules, references, completion contract, prompts, budgets
-  and sampling. Cross-run skills remain retired.
-- RQ3 (sub-task decomposition) unimplemented. Pick between deepagents level 4 and the
-  in-house `spawn_subcheck` builtin.
-- RQ4 (IfcJSON, graph representations, geometry libs) unimplemented and framed as
-  exploratory in the exposé.
+- **Kernel limits not handled:** no interrupt-then-kill escalation (a timeout goes
+  straight to kill), no memory/CPU ceiling on the worker, and a killed stateful worker
+  loses the run's state (the agent is told; recovery quality unmeasured). No timeout or
+  restart occurred in the v5 suites. Per-block seconds are recorded from recording v5.
+- **Condition A (single-shot baseline): out of scope** for the final evaluation unless
+  the advisor asks for it. Design if picked up: one block, no transcript replay; settle
+  zero vs N repair attempts first.
+- RQ3 (sub-task decomposition) and RQ4 (IfcJSON, graph representations, geometry libs)
+  are unimplemented; planned as future work, to confirm with the advisor.
+- Exit scdf_5 reference conventions (Findings 2026-10-04): report as is unless decided
+  otherwise.
+- Solibri-derived held-out cases (advisor request, 2026-10-12): planned after the freeze.
 - Verify MiniMax `thinking: {"type": "adaptive"}` passthrough survives if the provider
   layer is ever moved onto LangChain chat models. Not guaranteed.
 - Decide whether to replace hard output truncation with offload-to-file.
@@ -736,6 +813,78 @@ health-suite run.
 
 ## Changelog
 
+- **2026-10-12 - recording v5 and the v5 freeze.** `agent.py` stores `seconds` per
+  model call (`llm_calls`) and per code block (`execution_records`); recording version
+  4 -> 5. No behaviour change. 250 tests and the kernel contract check pass. First
+  frozen MiniMax batch (OpenRouter, 41 finished runs at 21:39): 39 complete, 2
+  abstained, 0 incomplete; accuracy as in the 2-3 Oct suites; model wait dominates
+  (code 14% of time stateful, 28% stateless; median 1.8 s vs 3.1 s per block). Lost
+  runs: 2 OpenRouter `provider_unavailable` (evaluate.py stops the case's remaining
+  repeats) and 1 laptop standby 18:06-20:52. Reruns overlapped the main batch, so
+  their code seconds may be slightly inflated. Published as tag `v5-frozen`.
+
+- **2026-10-04 - suite repeats follow the slider.** The 7-case and usable_2 suite
+  buttons no longer use a fixed 3 repeats; every suite takes the repeat slider value,
+  shown in the confirmation and recorded in the suite index. Selecting a case still
+  moves the slider to that case's recommendation, so check it before starting.
+
+- **2026-10-03 - prompt caching for Claude on OpenRouter.** Claude caches only when the
+  request asks for it; until now no `cache_control` was sent, so a Claude run would have
+  paid full input price on every call. `llm.load_llm` now sends top-level
+  `cache_control: {"type": "ephemeral"}` (5-minute TTL; OpenRouter moves the breakpoint
+  to the latest message) for `anthropic/` models only; MiniMax requests are unchanged.
+  Agent protocol unchanged. Claude 5.x rejects forced tool use outright, with or
+  without reasoning ("tool_choice: type "tool" and "any" are not supported for this
+  model", every OpenRouter upstream). LangChain forces `tool_choice="any"` whenever
+  FinalReport is a structured-output tool, so the first Sonnet 5.5 request failed.
+  `llm.ClaudeOpenRouter` drops `tool_choice` for `anthropic/` models; RunEvents already
+  returns tool-less replies to the model. MiniMax still gets `required`.
+  Verified offline: the serialized request carries `cache_control` and no `tool_choice`
+  for Claude, and neither change for MiniMax; 250 tests pass. One live Sonnet 5.5
+  request through the adapter returned a run_python call ($0.0014).
+
+- **2026-10-02 - agent protocol `langchain-codeact-v5`.** The last model call keeps the
+  same tool list (changing it invalidated the provider's prompt cache). Final-report-only
+  is enforced by rejecting any `run_python` call on the last call before it runs; the
+  last-call message says so. Completion checks stay v4. Do not pool v5 with v4. Watch
+  whether more runs now spend the last call on rejected code. Verified offline: 249 tests
+  pass; the last-call test now asserts an unchanged tool list and that the code is not run.
+- **2026-10-01 - agent protocol `langchain-codeact-v4`, completion checks v4.**
+  Decision (user): stop overloading ALERT/MANUAL_CHECK as placeholders and enforce the
+  final call. (1) New agent-only label `PENDING` (executor `REPORT_LABELS`, scoring alias;
+  not in `scoring.LABELS`, so references never use it and it never matches in union
+  accuracy). COMPLIANT/NON_COMPLIANT are rejected while any PENDING remains; UNKNOWN on
+  the final call is accepted if there are no FAILs. The prompt asks for early
+  provisional labelling with PENDING and keeps ALERT/MANUAL_CHECK to their definitions.
+  (2) The last model call binds only the FinalReport tool, and any `run_python` call on
+  it is rejected without running (providers may ignore the tool list). The wrap-up
+  reminder now says so. A run that still has FAILs plus PENDING on the last call ends
+  incomplete. The recorder stores `pending_labels` per run. Do not pool v4 with v3.
+  Verified offline: 249 tests pass (4 new: last call binds only FinalReport and runs no
+  code, PENDING blocks decided verdicts and allows final UNKNOWN, resolved PENDING
+  completes, completion-level PENDING check); `check_runtime_parity.py` passes.
+- **2026-10-01 - agent protocol `langchain-codeact-v3`.** The system prompt states the
+  model-call budget and asks for a complete provisional labelling as soon as every
+  element can be labelled (ALERT/MANUAL_CHECK where unresolved, refined later; leftovers
+  are scored as submitted). Each `run_python` result ends with `[Model call k of N used;
+  N-k remain.]` (execution records and GUI output keep the raw text). When 4 calls remain
+  (`WRAP_UP_CALLS`) a reminder asks to commit labels so FinalReport fits; the last-call
+  notice is unchanged. A reply with no tool call no longer ends the run: it returns to
+  the model as a protocol error and costs a call; on the last call the run stays
+  incomplete. The worker pre-imports `ifcopenshell.geom` and `ifcopenshell.util.element/
+  unit/shape` into the module cache only (namespace unchanged, about 0.1 s per worker
+  start); the primer shows the explicit import line. Prompt hash and protocol changed:
+  do not pool v3 runs with v2. Caveat: provisional ALERT/MANUAL_CHECK stretches those
+  labels' meaning; watch whether runs finish with unresolved provisional labels.
+  Verified offline: 245 tests pass (4 new: budget text/counter/reminder, text-only reply
+  returned, text on last call stays incomplete, submodules pre-imported but not
+  injected); `check_runtime_parity.py` passes. No paid runs yet.
+- **2026-10-01 - README file map; `inspect_doors.py` archived.** The README's "How it
+  works" list is now a grouped map of every file (programs, agent core, execution,
+  experiments and reports, references, checks and history). `inspect_doors.py` (unused
+  door-width helper) moved unchanged to `archive/` with a 3-line header; the next
+  publication deletes it from the top level. Folder restructure deferred until the
+  thesis experiments are frozen: file moves change recorded code fingerprints.
 - **2026-09-30 - commented-out code moved to `archive/`.** 48 fragments (about 290
   lines) from executor, gui, check_runtime_parity, evaluate, run, experiment_recorder,
   kernel_executor, kernel_worker and two test files now live verbatim in
@@ -743,7 +892,8 @@ health-suite run.
   range at tag `stable-case-names`. Verified: every fragment equals the tagged lines;
   every live file has the same AST as at the tag (only the executor and
   check_runtime_parity docstrings changed to point to the archive). The publishing
-  file list now includes `acc_agent/archive/*.py`.
+  file list now includes `acc_agent/archive/*.py`. Published as `f6c4ba5`; 241 tests
+  pass in both trees (17 skipped in the publishing checkout), kernel checks pass.
 - **2026-09-30 - published to thesis-acc-agent.** Commit `1751f49` (60 paths: 17 added,
   1 renamed, 1 deleted, 40 modified); tags `langchain-v1` (`426377d`, 22 Sep) and
   `stable-case-names` (`1751f49`). Code history: pre-LangChain loop = `tez` commit

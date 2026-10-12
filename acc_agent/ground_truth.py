@@ -18,7 +18,7 @@ the remaining IFC anchors as ``unscored_ids``, never inferred PASS or NA labels.
 The tolerance matters: stored widths carry floating-point noise (a nominal
 900 mm door is exported as 899.999999… mm), so a door only counts as a real
 violation when it is more than ``tolerance_mm`` below the threshold. This mirrors
-``inspect_doors.py`` and keeps borderline doors out of the ground truth, which is
+``archive/inspect_doors.py`` and keeps borderline doors out of the ground truth, which is
 exactly where models tend to over-flag.
 
 Usage (regenerate the default door case):

@@ -73,6 +73,9 @@ MANUAL_CHECK = "MANUAL_CHECK"  # a real answer: no deterministic check is possib
 NA = "NA"  # out of scope / exempt from the rule
 
 LABELS: tuple[str, ...] = (PASS, FAIL, ALERT, MANUAL_CHECK, NA)
+# Agent-only placeholder for an unresolved element; never a reference outcome, so it
+# never matches in union accuracy and blocks a decided FinalReport (completion.py).
+PENDING = "PENDING"
 
 _LABEL_ALIASES = {
     "PASS": PASS,
@@ -98,11 +101,12 @@ _LABEL_ALIASES = {
     "NOT_APPLICABLE": NA,
     "EXEMPT": NA,
     "OUT_OF_SCOPE": NA,
+    "PENDING": PENDING,
 }
 
 
 def normalize_label(value: object) -> str | None:
-    """Map any spelling of an element label onto one of :data:`LABELS`.
+    """Map any spelling of an element label onto one of :data:`LABELS` or :data:`PENDING`.
 
     Returns ``None`` when the text is not a recognisable label, so a malformed
     entry is dropped rather than silently scored as a PASS.

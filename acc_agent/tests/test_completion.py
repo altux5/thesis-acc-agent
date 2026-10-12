@@ -32,6 +32,14 @@ class CompletionTests(unittest.TestCase):
         self.assertIsNone(payload)
         self.assertIn("1 unexpected", " ".join(issues))
 
+    def test_pending_labels_block_decided_verdicts(self):
+        for verdict, violations in (("COMPLIANT", []), ("NON_COMPLIANT", ["one"])):
+            with self.subTest(verdict=verdict):
+                labels = {"one": "FAIL" if violations else "PASS", "two": "PENDING"}
+                payload, issues = self.check(verdict, violations, labels, anchors={"one", "two"})
+                self.assertIsNone(payload)
+                self.assertIn("1 element(s) are still PENDING", " ".join(issues))
+
     def test_contradictory_final_and_failed_execution_rejected(self):
         self.assertIsNone(self.check(labels={"one": "FAIL"}, anchors={"one"})[0])
         self.assertIsNone(self.check(labels={"one": "PASS"}, error=True, anchors={"one"})[0])
