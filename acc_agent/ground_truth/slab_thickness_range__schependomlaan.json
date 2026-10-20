@@ -1,0 +1,1724 @@
+{
+  "case_id": "slab_thickness_range__schependomlaan",
+  "rule": "Every slab must have a thickness between 30 mm and 1000 mm inclusive.\nSource: rule 'Slab Thickness' of the EC3-2026 rule catalogue: This rule checks that slab thickness is not too small or too large.\nBenchmark convention: the thickness of a slab is the thickness of its own construction: the total of its material layers or its recorded thickness, or else the depth of its body. A slab fails when it is thinner than 30 mm or thicker than 1000 mm. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Schependomlaan.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0EHLW2CirCPANVPbmTwDe0",
+    "2LsFs9dmf6Rhv8K9TFseHz",
+    "3R08IZdRr50ufFCp6Ry$pe"
+  ],
+  "labels": {
+    "0$5GRLLgn7I8ZPcI7rOsbG": "PASS",
+    "0$jhLwYyD01Oy9ZGgC6CC8": "PASS",
+    "031QW3IZP55A_T8QKJY9nI": "PASS",
+    "03i6tXqM92pRcyXdK4pHfZ": "PASS",
+    "03t_5XD1v8geHDbzKHx$PA": "PASS",
+    "047hRisLn70Bn_GLMR1G1S": "PASS",
+    "06YbFx9M15FBLOYIMVt2$r": "PASS",
+    "07Mt9VfSXBPhNIIEhg25gT": "PASS",
+    "08Su0zaR5EXQNO6ngU$Nih": "PASS",
+    "08ZXIC9eHDWRVFOlPhj72E": "PASS",
+    "097m$Ifmb1VeHfyhSCj60L": "PASS",
+    "09n_zCJi9B28tPtQw6BxUr": "PASS",
+    "0AWsnDjX10P8BR94gyNj2o": "PASS",
+    "0Afia98bP9KBSQQT1fcIdJ": "PASS",
+    "0BA5pIAPb4QBkmNlgEbu7Z": "PASS",
+    "0Bmn53Z2fFOh7cTWkmLXNQ": "NA",
+    "0DFJCuN8r6WRVW_GxdBvRT": "NA",
+    "0Du7sXlKf9Q9osiRbTp0DB": "PASS",
+    "0EHLW2CirCPANVPbmTwDe0": "FAIL",
+    "0FZ2ZM9d5DIBoZIOWtnXUi": "PASS",
+    "0Fi5splwH1mPAxYGMuuTQ1": "PASS",
+    "0GDbLsPyr8u8sjnEP52zPP": "PASS",
+    "0GZ1cjigvCbhA8smeI2EOl": "PASS",
+    "0HSv6PpbD2BfTJigk5W2Ro": "PASS",
+    "0IjlUMbxXBUhcjfKxT2apw": "PASS",
+    "0K6QmOqO9ATe9WGMwhBHoC": "PASS",
+    "0K9UoAj6n9HvS0pMeXdVOy": "PASS",
+    "0KiQHeBg1E1vCJHKQmVSFE": "PASS",
+    "0Lv4sEWdn9WfY3cCL$tL9r": "PASS",
+    "0M1e2eG$96hwzT4wUV$Q8v": "NA",
+    "0MI_2HZ992Bx$nIp0Ts0HN": "PASS",
+    "0MTjgouej41vc5kR6nZXQG": "PASS",
+    "0NoCl6BDz7XeoXwbToQuxv": "PASS",
+    "0OJWn0JefCv9hzpdii2Imm": "PASS",
+    "0P2TI_R_rCoOkYPRW5xJk8": "NA",
+    "0PqbLmY4j1RPqNOOK2eDc9": "PASS",
+    "0QENsgqy1AHgG_7VgYdbwc": "PASS",
+    "0QGCC$bkn95gfJjhCRK1S$": "PASS",
+    "0QMRbnWY93Av6dpvLwMXTd": "PASS",
+    "0R01g3qJzFSxv4gJ4$3cXG": "PASS",
+    "0R4623l2TDzenWFiIiswM1": "PASS",
+    "0RPHfQWPHBdBX1ccCVEpVD": "PASS",
+    "0SX7yPVRb06hAYFrxAJ8KC": "PASS",
+    "0UG3QiMpzDlg6DLAqExEcS": "NA",
+    "0W2prqqkT7HxP90f8uQS80": "PASS",
+    "0Xrfa1Yov20v9aSa2Qy1KU": "PASS",
+    "0ZzyGbASLD1wvphFCXGJtB": "PASS",
+    "0bRJSA0Oz6NeAWECfwArnR": "PASS",
+    "0bxMIwnGLCbgjsQk43tTK$": "NA",
+    "0cUNscBFPAzvxaou82m7PU": "NA",
+    "0d2YNnUYH3Khfs3ilMqi4T": "PASS",
+    "0e2AmNgkb1Gflqp22P2CPd": "NA",
+    "0gCnprdT1BYw$FV0IhK4K2": "NA",
+    "0jxtYk_DPFmfsr5FLf4yfo": "PASS",
+    "0m0I4KgsXEGRQe2Tq5guRM": "NA",
+    "0mRsPczVDDeB_LBFOgCxdq": "PASS",
+    "0m_7iL50T1pgK3U7zqTZQ9": "NA",
+    "0oWZTX4_z54hp752v_Qa42": "NA",
+    "0oWjkdPRH11hIjsKRnvymk": "PASS",
+    "0rH_wyN7P26e3gGvknLdfN": "PASS",
+    "0tr9H3L4z0bgmFmHrjfIlm": "NA",
+    "0uAZdPNur5UQMtvFbGsfuY": "PASS",
+    "0uDACp5ab5PQznlaOgmnBv": "NA",
+    "0uRa8_$V12fwPAz12OHbBT": "NA",
+    "11b4l8r$L2VO3CaHmD2Nt0": "PASS",
+    "12tm$BD113oAzHX6K_xB_Z": "PASS",
+    "13klpZHlDB8wG49s9DUIV8": "PASS",
+    "14qqjZl7f5_O1QcMnFBPgA": "PASS",
+    "152mZBEq1ABBFkricfATYn": "PASS",
+    "16GzHPPq1BKv2r3QIxB1$6": "PASS",
+    "19E2QmV$L6c8DOIYygVF1N": "PASS",
+    "19cnP4Bm90V9KyCekAFXxu": "PASS",
+    "19ymqVSczESeP2KD$erpa8": "NA",
+    "1A4uhs68j3Suvp_DeIOyYn": "PASS",
+    "1AdGVsRPb4RRWb4qvI7uRy": "PASS",
+    "1BHDU1gL97UfslrSbfRmfy": "PASS",
+    "1C6_0xdun0cQIIHmq4$Tev": "NA",
+    "1CdYrpLtD2wuxJCq5tooJl": "PASS",
+    "1ERFleB4fBBfBOswxk$Xdp": "PASS",
+    "1EU0692GvC8Rre0xYHuYMJ": "PASS",
+    "1FrPU10uj5vRBM$ME6kjwV": "PASS",
+    "1H88Aq3XD3j98yuey8MDDj": "PASS",
+    "1IlNDv2PvF_hqZ997BA_c0": "PASS",
+    "1JLZkkp4vD_Ph$NdsQnOJw": "PASS",
+    "1K_rplvXD0rO3a2dNEYcoq": "NA",
+    "1Kvhfn7iT0lvacFUqniu5y": "PASS",
+    "1OIsB5jXb41PiO2kBNmaM4": "PASS",
+    "1PBBUyIv59YPrzStA9_TH5": "PASS",
+    "1S4kav8FL1RQylSmEgz4YB": "PASS",
+    "1TMPN6ORz3V97VjLq_yYT$": "PASS",
+    "1TcxEYnb1DneRMQvN9jV_3": "PASS",
+    "1TnqA0GVv37hIAk1d8SLxS": "PASS",
+    "1UW7PE1gDERBLJr$nLgoec": "PASS",
+    "1Ubc9b75DETwPSDHK48dhV": "PASS",
+    "1WSrSNLRn7EvqVoTs$M0PF": "NA",
+    "1Y55qRPPPCRhLwNtBw8nIA": "NA",
+    "1YpnSB4hH71g3zKepeErHS": "PASS",
+    "1ZG4DbpJf0lf8Ak2_bQJHW": "PASS",
+    "1ZgBbxSDX0C9d8RHMnr9Bd": "PASS",
+    "1blRjj5854xvDlLga$sV2m": "PASS",
+    "1c7GSzzuj1WO_Gs_23Ca4q": "NA",
+    "1d0MiLLsLCdBSuTHp6ynR7": "PASS",
+    "1dCrpUZmvC4umTbPe7ddOk": "PASS",
+    "1dQx3P9dH7vhwAJwVUYYGE": "PASS",
+    "1ezF2lk9bATPGbDzbqi3lV": "PASS",
+    "1fRPC59i5A$Bo5RZ$znSER": "PASS",
+    "1hLy1Edbj5rgNEl39t96Zu": "PASS",
+    "1hMpM9NJL5ge_OGm0yLfuO": "PASS",
+    "1hiPVVgU11kOxHw3SC63rG": "PASS",
+    "1kXSox_0P3kBFuaJXmZIbM": "PASS",
+    "1kiS27OUHAY8wNtz_qX8bj": "PASS",
+    "1m_qhh$In8cv9sJA57EIx9": "PASS",
+    "1nFD6aK1vEMPoRETGtTcaG": "PASS",
+    "1pRH$qNy55BR7B$JxNXYH$": "PASS",
+    "1pSInisE96t8p52fxSGYjG": "PASS",
+    "1qvBT5n4r5kOSwFD9L8K0o": "PASS",
+    "1s_IKjunz8NgE4RwXYmqYm": "PASS",
+    "1stCMPwc91r80V5f3OShVm": "PASS",
+    "1uDn0xT8LBkP15zQc9MVDW": "PASS",
+    "1ubXcoJq9Fj9FIjV4W5qwB": "PASS",
+    "1vpshNcXb0UeBNhC5kKbgC": "PASS",
+    "1wuh6sjeT00uLlgKuqZKO1": "PASS",
+    "1y_z8K3DLD8P7YJTBHImTW": "PASS",
+    "1z36FH34L0DAymH2KSHwC2": "PASS",
+    "1zSO73pt58WgpU6aeLSlbY": "PASS",
+    "2$65Lm72TCPfpHlSfm4bPo": "NA",
+    "208bKcFObBc8ucwRJqscKk": "NA",
+    "20WcZDP8zBu9vHK_3hpKya": "PASS",
+    "22n$AYXlT6Du$WGeK8$9Iq": "PASS",
+    "22nWq74YPFteCBjUc6JjZ0": "NA",
+    "230CzH9r97RxWhaS7vmI4K": "NA",
+    "23_XwbBRjAB8x$lT1cavmp": "PASS",
+    "23jZ8BYuD3JQAc1sRY1ypr": "PASS",
+    "23kW8A8yPA5wftTGD5UJ8H": "PASS",
+    "24d$bXEtDFMPrak4J5bypx": "PASS",
+    "251Lqt4LjE9Rr$wq4BqN$h": "NA",
+    "25tyzjfSP76hJKtX0Kf9lQ": "PASS",
+    "25wmD99kP49vNjkioNsfxV": "NA",
+    "26QGTgi0r7xhS4C$UZx$YZ": "PASS",
+    "27vIv2l_z50whfg_2wR_Jh": "PASS",
+    "287l_KcXPC0g4vq6mShiRv": "PASS",
+    "2Bau621bX8OR8tXqSleIiB": "PASS",
+    "2DcZS4kev35vv_ejuKPKPl": "PASS",
+    "2DoYNgCXz1jwarhecdsY1w": "PASS",
+    "2EK7acXG14vgx_QU1OeZ7J": "PASS",
+    "2GKCxEc8DCcQXZmul0WfvP": "PASS",
+    "2H6QJz_7XBA9rec338IzRM": "NA",
+    "2HEBa_Npr1jQ8s9obbPF2y": "NA",
+    "2HT1QptlXCmBlOoXE0NFwh": "NA",
+    "2JUSlrYQr1YwP3ayxXu$lj": "PASS",
+    "2KYFELha55M8mkz2cp9hbD": "NA",
+    "2LoDEf2jP0b9CMdtWhwNOO": "PASS",
+    "2LsFs9dmf6Rhv8K9TFseHz": "FAIL",
+    "2M6iV1w3L7VB9hYFPSL_6J": "PASS",
+    "2MGtJUm9nD$Re1_MDIv0g2": "PASS",
+    "2NATeAkvnCxgoLp$zXNJDG": "NA",
+    "2OE9tlHI938fd8O3mI3mRz": "PASS",
+    "2OQCgPiQv7IPpLtWt$dHbD": "PASS",
+    "2OgpDYzvL2QhgeI9VmDEUN": "NA",
+    "2PngXSH2j6u99nI0sIn2o5": "PASS",
+    "2QJ29Th2j3j9j2_UL9ptc3": "NA",
+    "2QwOZORnH1U8$Obabf6tRd": "PASS",
+    "2S1cg7ETr61vJ48aHPK75L": "PASS",
+    "2TidtDbWz2HfSqssh$GYwZ": "PASS",
+    "2UkNEhSU99wxIlgSLDnlY5": "PASS",
+    "2WXOgWSjzCfR4IRJ_Z1gjK": "PASS",
+    "2WhALKJ6HDCBIy$zrtx8Xo": "PASS",
+    "2X0E5JmgP1luFCa0knY3CG": "NA",
+    "2ZCCQn6f5CnA2EvHQZH92C": "PASS",
+    "2ZJwwyMMvB5OA8maPq1bML": "PASS",
+    "2Zh_HSGGPDUAc40uyeUaqQ": "PASS",
+    "2_2cZUZ01FcvMu56$zuMQU": "PASS",
+    "2_qWdodb95chXxayrOIlDh": "PASS",
+    "2aLZDRWLv3kBhXLwCrnxSH": "PASS",
+    "2ah3ltN7nCQ9VF6L1zEK1m": "PASS",
+    "2aob8QCl16Q8N5ZYzE4b9k": "PASS",
+    "2bOVZypgn3veu4GI9jl2pr": "PASS",
+    "2b_eD15mT89x$yAkCYIShc": "PASS",
+    "2bnmrBiIfCoQCmG_dJX3q2": "NA",
+    "2dHfVnv319IQI87h$OrLBS": "PASS",
+    "2dWeqcZXj94QwNPbNEIcDK": "PASS",
+    "2ebzGcSDj2Cf3lvWw81TRa": "PASS",
+    "2ejS5cDxLFQhvzUC_qNbGC": "PASS",
+    "2en633GqrDIwmtA9fYzxWS": "PASS",
+    "2hh9UjWIL2w9WwuMjzqstz": "PASS",
+    "2ip6lMIlb0Awnp24k3KfFY": "PASS",
+    "2jfgBlXC5DqAtt9Imu_ZDa": "PASS",
+    "2kLPA4gDD7KxNUCt_3L$np": "PASS",
+    "2ljbxVY757oh3U28o$Mplw": "NA",
+    "2m5HGNcWT04BL0QSshC4KA": "NA",
+    "2nJAO3UnH0JuhOgnPY7o0D": "NA",
+    "2o7xQ9ZfP3GB2M6B7oQ_P3": "PASS",
+    "2ppWtuzIb52xZcr932qIAx": "PASS",
+    "2q30Qb1_LBxgFSuRvgl_Fw": "PASS",
+    "2qB4dVXdn65uKV2yWsW_6l": "PASS",
+    "2qZf7$0pX6jh2ueXurPaRM": "PASS",
+    "2qj4JD$qL8rwGXap2mJd2_": "PASS",
+    "2r9Rd7wfb74u0H82M9rkNJ": "PASS",
+    "2rJ_D9OD15OxfhleuqX8IK": "NA",
+    "2sQQOHvvn90RraU1PncqLF": "PASS",
+    "2s_5IkW0XAae4X3I5zK7q4": "PASS",
+    "2tmREkUVP0KhkDPItRVwae": "NA",
+    "2vGfAAaCDC$u2rePIbFqLy": "NA",
+    "2vutFlEAD3Ugi_zdTrbWBS": "NA",
+    "2wdkOxZDD4qQGeJ0R9Eu_y": "NA",
+    "2wsdn60pL2PgWkM4Apz3uQ": "NA",
+    "2xJxW3_1LEheyM8N4ef$kW": "PASS",
+    "2xLeotJhnB4e2jMPGUDqwD": "PASS",
+    "2xho8b5LT0bvdcb_$4vT1A": "PASS",
+    "2y77Wo22nAL9U8bQl$_LJJ": "NA",
+    "3$gsVev9X1F8KTRxQi7mEd": "PASS",
+    "30X9aYMbfA3vABGnSJSZLO": "PASS",
+    "34UVZsoiL7SxjW6pAa_Hb9": "PASS",
+    "35N2HpIELEtPD3xssMGgew": "PASS",
+    "36cEtcIur7XxueyFJ22C$U": "PASS",
+    "37Ro54gDf1LB1mTnwX5Aup": "PASS",
+    "37UC2ejVH0mQsQEsti1ePj": "PASS",
+    "38Mg2Gj2T8XwRV2IuUentp": "NA",
+    "39SjBu3a1E$APuKEawG581": "PASS",
+    "3AqFO5i0TDCQqSc0OVWUzc": "PASS",
+    "3BapTVi1vFMBnwVYgcGczp": "PASS",
+    "3C2fvEKUr00BlwuG1or05l": "PASS",
+    "3DoyKCgjn75uJSw08MNRdX": "PASS",
+    "3F1xvX$9TFOQyspn6Ek2Cs": "PASS",
+    "3FNJ$2Wdn2kP$lyqGxZYDn": "PASS",
+    "3GhhN$uvX5igu88pzhiJv8": "NA",
+    "3IbuwYOm5EV9Q6cXmwVWqd": "PASS",
+    "3JRVPh_yrDlwCpdavEA8oD": "NA",
+    "3JnGo5kRD3kv3Rkne47JeJ": "NA",
+    "3KFzTADcbBYg2niuF4VUeU": "PASS",
+    "3LCPmQCcP9UfP49BhFjY_v": "PASS",
+    "3LhtKzwFz6VPKSl6QvG8CQ": "PASS",
+    "3M4fpBwzf4iQ4c3fvQBeRj": "NA",
+    "3MORkgOl16lQy8zTVRCs0O": "PASS",
+    "3PMBte07rF1u4WPaQp467x": "PASS",
+    "3PYbhELXr92BK4WMFmpGVj": "NA",
+    "3R08IZdRr50ufFCp6Ry$pe": "FAIL",
+    "3R1RBkDqD7iBFqSmsKgnyx": "NA",
+    "3RJ4kV2Lr6Ye3XokonTVkI": "PASS",
+    "3RcgO_0A18ORamoBzt$oQ9": "PASS",
+    "3Ri_Iqblr1TOWWvS199ANc": "PASS",
+    "3THh6wol9DE9p0sKC2_JQR": "PASS",
+    "3TMPpMSyn6_xrsGAT9pObK": "NA",
+    "3TpyrZupTCDPuevUhz2MFt": "PASS",
+    "3TyRkCAozEAhemCLbgpc0y": "PASS",
+    "3U5VF90aX4EPY0n0sy5tfn": "PASS",
+    "3UgqfaQcn7kwp58pqnjWYX": "PASS",
+    "3VK06fkLr3MfpgZhk2ZxRI": "PASS",
+    "3X88NCenT88BCur6dUWHN1": "NA",
+    "3XRFYXp0L3jv3w1tgjXD2W": "NA",
+    "3XV8C2cOLDNhkQGD3$xxPe": "PASS",
+    "3XdwbHlMf53wMrtC2PO79d": "NA",
+    "3Yfh_tf2L3dOftkR7mQtLp": "PASS",
+    "3_HjQT0vD1POpnG530wEp7": "PASS",
+    "3bTNRD3VP7Z8V5Qra3JwOp": "PASS",
+    "3ba9sS8vzCi9NHvwEDPExx": "PASS",
+    "3c6u9NZVTBmu7ySb3d4Kyx": "PASS",
+    "3cJFqtukHCAfLVbyFxBs__": "NA",
+    "3cj6_fAyT6kPILoDF$wKMX": "NA",
+    "3ctpV8GSz3JPQfqe2o$oED": "PASS",
+    "3er4Hi5O59lhIte0bi4WUx": "PASS",
+    "3fBmwjfbHClhZFnLmF3vib": "PASS",
+    "3gkzTZGgn9L8ymV7puXSKG": "PASS",
+    "3kQNZLqVfDcRRvBkM1IMS9": "PASS",
+    "3kdu3VxUzF1R6ZJfnANstW": "PASS",
+    "3lhisrBxL8xgLCRdxNG$2v": "PASS",
+    "3n$0aQqvnCVgLMGYDxwc9U": "PASS",
+    "3nz7uS4R5DovP3jeKI_v93": "PASS",
+    "3o6eM88iDBLBW61gt9z35u": "PASS",
+    "3pCtkV8rH5cfLSpwnY7plt": "PASS",
+    "3pG6Qgm9z3BByeQ1OKEmau": "PASS",
+    "3qewII9V1EEubSogUzOIBY": "PASS",
+    "3rT2B46bX7bfYW98$CQ_BF": "NA",
+    "3sruW6UjbAcuugSUfH$cuH": "NA",
+    "3wNwkdwNf7kBh8Eh5_$5AF": "PASS",
+    "3x3aB3jdLDwecrkVRvbpz7": "NA",
+    "3y2ALpG0z8_OFPbRCDWgIT": "PASS",
+    "3ycHvSZkr4dQo86guV5eIK": "PASS",
+    "3z$jhdTIz3KQIVA03ccSlX": "PASS"
+  },
+  "notes": "Slab Thickness on 279 IfcSlab: {'FAIL': 3, 'NA': 62, 'PASS': 214}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_schependomlaan_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 279,
+    "ifc_sha256": "2c3565ca1904f2aa61adab92024cf3755b2c5b21a498144d3094d7cb58cebec7",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slab Thickness",
+      "message": null,
+      "report_file": "ec3_schependomlaan_check.xlsx",
+      "report_sha256": "b954300e9bca700327da74ef5b8e13649d974af6b257bbfe29b884cbdde0708a",
+      "rule_issues": 3,
+      "matching_issues": 3
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element; NA: IfcSlab ROOF (a roof for Solibri).",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$5GRLLgn7I8ZPcI7rOsbG": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0$jhLwYyD01Oy9ZGgC6CC8": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "031QW3IZP55A_T8QKJY9nI": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "03i6tXqM92pRcyXdK4pHfZ": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "03t_5XD1v8geHDbzKHx$PA": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "047hRisLn70Bn_GLMR1G1S": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "06YbFx9M15FBLOYIMVt2$r": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "07Mt9VfSXBPhNIIEhg25gT": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "08Su0zaR5EXQNO6ngU$Nih": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "08ZXIC9eHDWRVFOlPhj72E": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "097m$Ifmb1VeHfyhSCj60L": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "09n_zCJi9B28tPtQw6BxUr": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0AWsnDjX10P8BR94gyNj2o": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Afia98bP9KBSQQT1fcIdJ": {
+      "name": "plat dak",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0BA5pIAPb4QBkmNlgEbu7Z": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Bmn53Z2fFOh7cTWkmLXNQ": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0DFJCuN8r6WRVW_GxdBvRT": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0Du7sXlKf9Q9osiRbTp0DB": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0EHLW2CirCPANVPbmTwDe0": {
+      "name": "dakelement",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 18,00 mm"
+      ]
+    },
+    "0FZ2ZM9d5DIBoZIOWtnXUi": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Fi5splwH1mPAxYGMuuTQ1": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0GDbLsPyr8u8sjnEP52zPP": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0GZ1cjigvCbhA8smeI2EOl": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0HSv6PpbD2BfTJigk5W2Ro": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0IjlUMbxXBUhcjfKxT2apw": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0K6QmOqO9ATe9WGMwhBHoC": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0K9UoAj6n9HvS0pMeXdVOy": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0KiQHeBg1E1vCJHKQmVSFE": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Lv4sEWdn9WfY3cCL$tL9r": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0M1e2eG$96hwzT4wUV$Q8v": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0MI_2HZ992Bx$nIp0Ts0HN": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0MTjgouej41vc5kR6nZXQG": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0NoCl6BDz7XeoXwbToQuxv": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0OJWn0JefCv9hzpdii2Imm": {
+      "name": "prefab balkon",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0P2TI_R_rCoOkYPRW5xJk8": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0PqbLmY4j1RPqNOOK2eDc9": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0QENsgqy1AHgG_7VgYdbwc": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0QGCC$bkn95gfJjhCRK1S$": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0QMRbnWY93Av6dpvLwMXTd": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0R01g3qJzFSxv4gJ4$3cXG": {
+      "name": "lifttop",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0R4623l2TDzenWFiIiswM1": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0RPHfQWPHBdBX1ccCVEpVD": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0SX7yPVRb06hAYFrxAJ8KC": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0UG3QiMpzDlg6DLAqExEcS": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0W2prqqkT7HxP90f8uQS80": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Xrfa1Yov20v9aSa2Qy1KU": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0ZzyGbASLD1wvphFCXGJtB": {
+      "name": "plat dak",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0bRJSA0Oz6NeAWECfwArnR": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0bxMIwnGLCbgjsQk43tTK$": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0cUNscBFPAzvxaou82m7PU": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0d2YNnUYH3Khfs3ilMqi4T": {
+      "name": "plat dak",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0e2AmNgkb1Gflqp22P2CPd": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0gCnprdT1BYw$FV0IhK4K2": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0jxtYk_DPFmfsr5FLf4yfo": {
+      "name": "vloerstort V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0m0I4KgsXEGRQe2Tq5guRM": {
+      "name": "dakisolatie",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0mRsPczVDDeB_LBFOgCxdq": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0m_7iL50T1pgK3U7zqTZQ9": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0oWZTX4_z54hp752v_Qa42": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0oWjkdPRH11hIjsKRnvymk": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0rH_wyN7P26e3gGvknLdfN": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0tr9H3L4z0bgmFmHrjfIlm": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0uAZdPNur5UQMtvFbGsfuY": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0uDACp5ab5PQznlaOgmnBv": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0uRa8_$V12fwPAz12OHbBT": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "11b4l8r$L2VO3CaHmD2Nt0": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "12tm$BD113oAzHX6K_xB_Z": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "13klpZHlDB8wG49s9DUIV8": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "14qqjZl7f5_O1QcMnFBPgA": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "152mZBEq1ABBFkricfATYn": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "16GzHPPq1BKv2r3QIxB1$6": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "19E2QmV$L6c8DOIYygVF1N": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "19cnP4Bm90V9KyCekAFXxu": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "19ymqVSczESeP2KD$erpa8": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1A4uhs68j3Suvp_DeIOyYn": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1AdGVsRPb4RRWb4qvI7uRy": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1BHDU1gL97UfslrSbfRmfy": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1C6_0xdun0cQIIHmq4$Tev": {
+      "name": "plafond",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1CdYrpLtD2wuxJCq5tooJl": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ERFleB4fBBfBOswxk$Xdp": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1EU0692GvC8Rre0xYHuYMJ": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1FrPU10uj5vRBM$ME6kjwV": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1H88Aq3XD3j98yuey8MDDj": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1IlNDv2PvF_hqZ997BA_c0": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1JLZkkp4vD_Ph$NdsQnOJw": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1K_rplvXD0rO3a2dNEYcoq": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1Kvhfn7iT0lvacFUqniu5y": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1OIsB5jXb41PiO2kBNmaM4": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1PBBUyIv59YPrzStA9_TH5": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1S4kav8FL1RQylSmEgz4YB": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1TMPN6ORz3V97VjLq_yYT$": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1TcxEYnb1DneRMQvN9jV_3": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1TnqA0GVv37hIAk1d8SLxS": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1UW7PE1gDERBLJr$nLgoec": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1Ubc9b75DETwPSDHK48dhV": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1WSrSNLRn7EvqVoTs$M0PF": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1Y55qRPPPCRhLwNtBw8nIA": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1YpnSB4hH71g3zKepeErHS": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ZG4DbpJf0lf8Ak2_bQJHW": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ZgBbxSDX0C9d8RHMnr9Bd": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1blRjj5854xvDlLga$sV2m": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1c7GSzzuj1WO_Gs_23Ca4q": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1d0MiLLsLCdBSuTHp6ynR7": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1dCrpUZmvC4umTbPe7ddOk": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1dQx3P9dH7vhwAJwVUYYGE": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ezF2lk9bATPGbDzbqi3lV": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1fRPC59i5A$Bo5RZ$znSER": {
+      "name": "prefab balkon",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1hLy1Edbj5rgNEl39t96Zu": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1hMpM9NJL5ge_OGm0yLfuO": {
+      "name": "plafond",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1hiPVVgU11kOxHw3SC63rG": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1kXSox_0P3kBFuaJXmZIbM": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1kiS27OUHAY8wNtz_qX8bj": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1m_qhh$In8cv9sJA57EIx9": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1nFD6aK1vEMPoRETGtTcaG": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1pRH$qNy55BR7B$JxNXYH$": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1pSInisE96t8p52fxSGYjG": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1qvBT5n4r5kOSwFD9L8K0o": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1s_IKjunz8NgE4RwXYmqYm": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1stCMPwc91r80V5f3OShVm": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1uDn0xT8LBkP15zQc9MVDW": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ubXcoJq9Fj9FIjV4W5qwB": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1vpshNcXb0UeBNhC5kKbgC": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1wuh6sjeT00uLlgKuqZKO1": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1y_z8K3DLD8P7YJTBHImTW": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1z36FH34L0DAymH2KSHwC2": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1zSO73pt58WgpU6aeLSlbY": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2$65Lm72TCPfpHlSfm4bPo": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "208bKcFObBc8ucwRJqscKk": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "20WcZDP8zBu9vHK_3hpKya": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "22n$AYXlT6Du$WGeK8$9Iq": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "22nWq74YPFteCBjUc6JjZ0": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "230CzH9r97RxWhaS7vmI4K": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "23_XwbBRjAB8x$lT1cavmp": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "23jZ8BYuD3JQAc1sRY1ypr": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "23kW8A8yPA5wftTGD5UJ8H": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "24d$bXEtDFMPrak4J5bypx": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "251Lqt4LjE9Rr$wq4BqN$h": {
+      "name": "spouwisolatie",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "25tyzjfSP76hJKtX0Kf9lQ": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "25wmD99kP49vNjkioNsfxV": {
+      "name": "plafond",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "26QGTgi0r7xhS4C$UZx$YZ": {
+      "name": "plat dak",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "27vIv2l_z50whfg_2wR_Jh": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "287l_KcXPC0g4vq6mShiRv": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2Bau621bX8OR8tXqSleIiB": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2DcZS4kev35vv_ejuKPKPl": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2DoYNgCXz1jwarhecdsY1w": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2EK7acXG14vgx_QU1OeZ7J": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2GKCxEc8DCcQXZmul0WfvP": {
+      "name": "plafond",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2H6QJz_7XBA9rec338IzRM": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2HEBa_Npr1jQ8s9obbPF2y": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2HT1QptlXCmBlOoXE0NFwh": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2JUSlrYQr1YwP3ayxXu$lj": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2KYFELha55M8mkz2cp9hbD": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2LoDEf2jP0b9CMdtWhwNOO": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2LsFs9dmf6Rhv8K9TFseHz": {
+      "name": "schoonloopmat",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 8,00 mm"
+      ]
+    },
+    "2M6iV1w3L7VB9hYFPSL_6J": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2MGtJUm9nD$Re1_MDIv0g2": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2NATeAkvnCxgoLp$zXNJDG": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2OE9tlHI938fd8O3mI3mRz": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OQCgPiQv7IPpLtWt$dHbD": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OgpDYzvL2QhgeI9VmDEUN": {
+      "name": "dakelement",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2PngXSH2j6u99nI0sIn2o5": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2QJ29Th2j3j9j2_UL9ptc3": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2QwOZORnH1U8$Obabf6tRd": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2S1cg7ETr61vJ48aHPK75L": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2TidtDbWz2HfSqssh$GYwZ": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2UkNEhSU99wxIlgSLDnlY5": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2WXOgWSjzCfR4IRJ_Z1gjK": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2WhALKJ6HDCBIy$zrtx8Xo": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2X0E5JmgP1luFCa0knY3CG": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2ZCCQn6f5CnA2EvHQZH92C": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ZJwwyMMvB5OA8maPq1bML": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2Zh_HSGGPDUAc40uyeUaqQ": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2_2cZUZ01FcvMu56$zuMQU": {
+      "name": "plat dak",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2_qWdodb95chXxayrOIlDh": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2aLZDRWLv3kBhXLwCrnxSH": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ah3ltN7nCQ9VF6L1zEK1m": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2aob8QCl16Q8N5ZYzE4b9k": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2bOVZypgn3veu4GI9jl2pr": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2b_eD15mT89x$yAkCYIShc": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2bnmrBiIfCoQCmG_dJX3q2": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2dHfVnv319IQI87h$OrLBS": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2dWeqcZXj94QwNPbNEIcDK": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ebzGcSDj2Cf3lvWw81TRa": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ejS5cDxLFQhvzUC_qNbGC": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2en633GqrDIwmtA9fYzxWS": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2hh9UjWIL2w9WwuMjzqstz": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ip6lMIlb0Awnp24k3KfFY": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2jfgBlXC5DqAtt9Imu_ZDa": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2kLPA4gDD7KxNUCt_3L$np": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ljbxVY757oh3U28o$Mplw": {
+      "name": "dakaftimmering",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2m5HGNcWT04BL0QSshC4KA": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2nJAO3UnH0JuhOgnPY7o0D": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2o7xQ9ZfP3GB2M6B7oQ_P3": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ppWtuzIb52xZcr932qIAx": {
+      "name": "plat dak",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2q30Qb1_LBxgFSuRvgl_Fw": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2qB4dVXdn65uKV2yWsW_6l": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2qZf7$0pX6jh2ueXurPaRM": {
+      "name": "prefab balkon",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2qj4JD$qL8rwGXap2mJd2_": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2r9Rd7wfb74u0H82M9rkNJ": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2rJ_D9OD15OxfhleuqX8IK": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2sQQOHvvn90RraU1PncqLF": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2s_5IkW0XAae4X3I5zK7q4": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2tmREkUVP0KhkDPItRVwae": {
+      "name": "dakisolatie",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2vGfAAaCDC$u2rePIbFqLy": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2vutFlEAD3Ugi_zdTrbWBS": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2wdkOxZDD4qQGeJ0R9Eu_y": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2wsdn60pL2PgWkM4Apz3uQ": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2xJxW3_1LEheyM8N4ef$kW": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2xLeotJhnB4e2jMPGUDqwD": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2xho8b5LT0bvdcb_$4vT1A": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2y77Wo22nAL9U8bQl$_LJJ": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3$gsVev9X1F8KTRxQi7mEd": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "30X9aYMbfA3vABGnSJSZLO": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "34UVZsoiL7SxjW6pAa_Hb9": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "35N2HpIELEtPD3xssMGgew": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "36cEtcIur7XxueyFJ22C$U": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "37Ro54gDf1LB1mTnwX5Aup": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "37UC2ejVH0mQsQEsti1ePj": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "38Mg2Gj2T8XwRV2IuUentp": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "39SjBu3a1E$APuKEawG581": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3AqFO5i0TDCQqSc0OVWUzc": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3BapTVi1vFMBnwVYgcGczp": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3C2fvEKUr00BlwuG1or05l": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3DoyKCgjn75uJSw08MNRdX": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3F1xvX$9TFOQyspn6Ek2Cs": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3FNJ$2Wdn2kP$lyqGxZYDn": {
+      "name": "dakvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3GhhN$uvX5igu88pzhiJv8": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3IbuwYOm5EV9Q6cXmwVWqd": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3JRVPh_yrDlwCpdavEA8oD": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3JnGo5kRD3kv3Rkne47JeJ": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3KFzTADcbBYg2niuF4VUeU": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3LCPmQCcP9UfP49BhFjY_v": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3LhtKzwFz6VPKSl6QvG8CQ": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3M4fpBwzf4iQ4c3fvQBeRj": {
+      "name": "dakaftimmering",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3MORkgOl16lQy8zTVRCs0O": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3PMBte07rF1u4WPaQp467x": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3PYbhELXr92BK4WMFmpGVj": {
+      "name": "dak dakkapel",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3R08IZdRr50ufFCp6Ry$pe": {
+      "name": "vloertegels",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 10,00 mm"
+      ]
+    },
+    "3R1RBkDqD7iBFqSmsKgnyx": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3RJ4kV2Lr6Ye3XokonTVkI": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3RcgO_0A18ORamoBzt$oQ9": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3Ri_Iqblr1TOWWvS199ANc": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3THh6wol9DE9p0sKC2_JQR": {
+      "name": "liftputvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3TMPpMSyn6_xrsGAT9pObK": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3TpyrZupTCDPuevUhz2MFt": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3TyRkCAozEAhemCLbgpc0y": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3U5VF90aX4EPY0n0sy5tfn": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3UgqfaQcn7kwp58pqnjWYX": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VK06fkLr3MfpgZhk2ZxRI": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3X88NCenT88BCur6dUWHN1": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3XRFYXp0L3jv3w1tgjXD2W": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3XV8C2cOLDNhkQGD3$xxPe": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3XdwbHlMf53wMrtC2PO79d": {
+      "name": "dakisolatie",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3Yfh_tf2L3dOftkR7mQtLp": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3_HjQT0vD1POpnG530wEp7": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3bTNRD3VP7Z8V5Qra3JwOp": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ba9sS8vzCi9NHvwEDPExx": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3c6u9NZVTBmu7ySb3d4Kyx": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3cJFqtukHCAfLVbyFxBs__": {
+      "name": "spouwisolatie",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3cj6_fAyT6kPILoDF$wKMX": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3ctpV8GSz3JPQfqe2o$oED": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3er4Hi5O59lhIte0bi4WUx": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3fBmwjfbHClhZFnLmF3vib": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3gkzTZGgn9L8ymV7puXSKG": {
+      "name": "dakisolatie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3kQNZLqVfDcRRvBkM1IMS9": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3kdu3VxUzF1R6ZJfnANstW": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3lhisrBxL8xgLCRdxNG$2v": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3n$0aQqvnCVgLMGYDxwc9U": {
+      "name": "vloer_V0",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3nz7uS4R5DovP3jeKI_v93": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3o6eM88iDBLBW61gt9z35u": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3pCtkV8rH5cfLSpwnY7plt": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3pG6Qgm9z3BByeQ1OKEmau": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3qewII9V1EEubSogUzOIBY": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3rT2B46bX7bfYW98$CQ_BF": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3sruW6UjbAcuugSUfH$cuH": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3wNwkdwNf7kBh8Eh5_$5AF": {
+      "name": "gootconstructie",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3x3aB3jdLDwecrkVRvbpz7": {
+      "name": "sporenkap",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3y2ALpG0z8_OFPbRCDWgIT": {
+      "name": "vloerveld",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ycHvSZkr4dQo86guV5eIK": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3z$jhdTIz3KQIVA03ccSlX": {
+      "name": "dekvloer",
+      "class": "IfcSlab",
+      "label": "PASS"
+    }
+  }
+}

@@ -1,0 +1,3580 @@
+{
+  "case_id": "doors_windows_storey__nus",
+  "rule": "Every door and window must be assigned to the same building storey as the wall it is placed in, and must not be an orphan (a door or window with no host element at all).\n\nA door or window fills an opening that voids a host element - its wall. It violates the rule when (a) it has no host element, or (b) the storey containing it differs from the storey containing its host. If either storey cannot be determined the element cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcDoor or IfcWindow) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_068_ARK_NUS_skolebygg.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "07W5fZqRD9xhlcgX8O25ab",
+    "0O6RmI9obEW97tfOGeN2YG",
+    "0O6RmI9obEW97tfOGeN2YK",
+    "0O6RmI9obEW97tfOGeN2YN",
+    "0O6RmI9obEW97tfOGeN2YQ",
+    "0Y$aYBsd95XvxtX1ReaS$W",
+    "0Y$aYBsd95XvxtX1ReaS0t",
+    "0ZijhLwPv7kQtctprOSMND",
+    "0ZvZEiedjEnPrRbtPBAkqA",
+    "0bwPauSUv0mgnNVbqwQYez",
+    "0h40zjViD0LfyivY00KYvw",
+    "0k3NkIJeD9Evv25kd_zz1H",
+    "0kU0O9WIP2WgsQMWFu_Meq",
+    "0m$xqYYAH4$9ONy59vBOMi",
+    "0pVXoN1Hn1UAOvcR4ghE9A",
+    "1I5dUe0h55ghqf$pMj7R4b",
+    "1I5dUe0h55ghqf$pMj7RlC",
+    "1JfMDoTU11$hytNPDaUget",
+    "1KMV$7QbnFCekUjrqwjSFr",
+    "1KMV$7QbnFCekUjrqwjSHr",
+    "1OhBhjREP1lQfzAQKbVrJ6",
+    "1iovOXUJj7fubokCPLgdg9",
+    "1rVINQQNTFFxbVEpGb5ArA",
+    "1rVINQQNTFFxbVEpGb5AyM",
+    "2Aw7V7p7zEOxOpB0cwwXuA",
+    "2gVNCPltfBF8k6EEEVON8h",
+    "3EXLztRbbD8vGivsMF5GSh",
+    "3Vt6mwG5nCKeLkpep2631s",
+    "3ocZLIQYXDOPzNki$8h4zo",
+    "3y7w$rQQ92sPNEVtsgzp$7",
+    "3y7w$rQQ92sPNEVtsgzpwH"
+  ],
+  "labels": {
+    "0$9sMhBzDDYwpIwgd653yk": "PASS",
+    "01Dg_uMi19$gQqahNNr30X": "PASS",
+    "01Dg_uMi19$gQqahNNr31g": "PASS",
+    "01Dg_uMi19$gQqahNNr331": "PASS",
+    "01Dg_uMi19$gQqahNNr3Cy": "PASS",
+    "01Dg_uMi19$gQqahNNr3Dp": "PASS",
+    "01Dg_uMi19$gQqahNNr3E4": "PASS",
+    "01Dg_uMi19$gQqahNNr3FQ": "PASS",
+    "01zXuV$HHAH8AzUWpi8xeT": "PASS",
+    "01zXuV$HHAH8AzUWpi8xry": "PASS",
+    "05REHM4pX8oud$dIi5_3G7": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUeL": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUeh": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUfv": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUg4": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUhF": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUiS": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUj0": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUoF": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUot": "PASS",
+    "06Ht2uLQXBSOSERQ5fbUtn": "PASS",
+    "06eyQR2BLEEQD6_mmcCkR3": "PASS",
+    "07A7hkJSnEIg26U$KLGmCb": "PASS",
+    "07A7hkJSnEIg26U$KLGmDt": "PASS",
+    "07A7hkJSnEIg26U$KLGmFN": "PASS",
+    "07A7hkJSnEIg26U$KLGmNQ": "PASS",
+    "07UrQhYVz9yBaIyQU10drI": "PASS",
+    "07W5fZqRD9xhlcgX8O25ab": "FAIL",
+    "08AK4j5Y12og0xduu4nzGq": "PASS",
+    "08HQ26Z0jBuwCFm0lxXzmm": "PASS",
+    "09SS2eeqP7yvZkt9c0NEHo": "PASS",
+    "09va5PNVrDXxMausX1UUI4": "PASS",
+    "0AGslNGBf0kes_Wzrm7iYj": "PASS",
+    "0AYUYNH318oxyjj9ZmkY6D": "PASS",
+    "0AYUYNH318oxyjj9ZmkYBQ": "PASS",
+    "0AYUYNH318oxyjj9ZmkYSr": "PASS",
+    "0AYUYNH318oxyjj9ZmkZsH": "PASS",
+    "0Atz42jmjAqQb8PQSpPzYn": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHm5g": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHmhR": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHmtO": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHmtP": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHn1k": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHn59": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHn6h": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHn8f": "PASS",
+    "0Bd1dGyrbCtPdUpXMbHn8k": "PASS",
+    "0Csd7NOh17wxQlhz7v4qC6": "PASS",
+    "0Csd7NOh17wxQlhz7v4qTS": "PASS",
+    "0Csd7NOh17wxQlhz7v4qmU": "PASS",
+    "0Csd7NOh17wxQlhz7v4qpV": "PASS",
+    "0Csd7NOh17wxQlhz7v4qvG": "PASS",
+    "0Csd7NOh17wxQlhz7v4qwb": "PASS",
+    "0Csd7NOh17wxQlhz7v4xjk": "PASS",
+    "0Csd7NOh17wxQlhz7v4xkJ": "PASS",
+    "0D1X6HpB90_xBcd56Gp_CF": "PASS",
+    "0GK_DlT2z44eZ3anFtbvfe": "PASS",
+    "0HkcjhLET1q8ce_1Ipx4HO": "PASS",
+    "0L5obUJ515fwEAPUAA9DQE": "PASS",
+    "0L5obUJ515fwEAPUAA9DqJ": "PASS",
+    "0L5obUJ515fwEAPUAA9DrS": "PASS",
+    "0L5obUJ515fwEAPUAA9Dtk": "PASS",
+    "0L5obUJ515fwEAPUAA9EtD": "PASS",
+    "0L7neYhnzFWxC35_hI38Dq": "PASS",
+    "0LflH0w_10MwnWOY41K_Ss": "PASS",
+    "0O6RmI9obEW97tfOGeN2YG": "FAIL",
+    "0O6RmI9obEW97tfOGeN2YI": "PASS",
+    "0O6RmI9obEW97tfOGeN2YK": "FAIL",
+    "0O6RmI9obEW97tfOGeN2YN": "FAIL",
+    "0O6RmI9obEW97tfOGeN2YQ": "FAIL",
+    "0Wn0B2ft14JOZ$xJfGHPwF": "PASS",
+    "0XWhM$nFr3Bgg_GNaK3MDI": "PASS",
+    "0Y$aYBsd95XvxtX1ReaS$W": "FAIL",
+    "0Y$aYBsd95XvxtX1ReaS0t": "FAIL",
+    "0Y$aYBsd95XvxtX1ReaSCV": "PASS",
+    "0Y$aYBsd95XvxtX1ReaUN0": "PASS",
+    "0Y$aYBsd95XvxtX1ReaVfq": "PASS",
+    "0ZijhLwPv7kQtctprOSMND": "FAIL",
+    "0Zn0wx8eH7NfKTR5S_79dm": "PASS",
+    "0Zn0wx8eH7NfKTR5S_79kk": "PASS",
+    "0ZvZEiedjEnPrRbtPBAkqA": "FAIL",
+    "0_btFICcn5Ohf6LjltFq9I": "PASS",
+    "0_btFICcn5Ohf6LjltFrI2": "PASS",
+    "0b5HtbsnPByBQEXM_v_W24": "PASS",
+    "0bwPauSUv0mgnNVbqwQYez": "FAIL",
+    "0bwPauSUv0mgnNVbqwQZDa": "PASS",
+    "0dBPoyVxH3WAYJEgzEC1LP": "PASS",
+    "0fdrvAXWj988M89SYbnSXv": "PASS",
+    "0fgLVDYxL4dwuNOtFnKOkW": "PASS",
+    "0fgLVDYxL4dwuNOtFnKOkd": "PASS",
+    "0fgLVDYxL4dwuNOtFnKOw6": "PASS",
+    "0fgLVDYxL4dwuNOtFnKOwH": "PASS",
+    "0fgLVDYxL4dwuNOtFnKOy4": "PASS",
+    "0gDAwyx1r9Ke_9r7cUH3sh": "PASS",
+    "0h3R3TVIr6xPpSl2K4a4Q3": "PASS",
+    "0h3R3TVIr6xPpSl2K4aBRk": "PASS",
+    "0h40zjViD0LfyivY00KYvw": "FAIL",
+    "0h40zjViD0LfyivY00KfEA": "PASS",
+    "0h40zjViD0LfyivY00Kfr5": "PASS",
+    "0idK5zVYH7sAMTZ8HgG0Mb": "PASS",
+    "0jx2pXIFL8ffhmM$6QBgeQ": "PASS",
+    "0jx2pXIFL8ffhmM$6QBjEL": "PASS",
+    "0jx2pXIFL8ffhmM$6QBjEx": "PASS",
+    "0jx2pXIFL8ffhmM$6QBjGq": "PASS",
+    "0k3NkIJeD9Evv25kd_zz1H": "FAIL",
+    "0kU0O9WIP2WgsQMWFu_JXp": "PASS",
+    "0kU0O9WIP2WgsQMWFu_JYR": "PASS",
+    "0kU0O9WIP2WgsQMWFu_JdK": "PASS",
+    "0kU0O9WIP2WgsQMWFu_Meq": "FAIL",
+    "0l7ozj$M5APBaRjMPOLifw": "PASS",
+    "0l7ozj$M5APBaRjMPOLpAQ": "PASS",
+    "0l7ozj$M5APBaRjMPOLpFJ": "PASS",
+    "0l7ozj$M5APBaRjMPOLpI6": "PASS",
+    "0l7ozj$M5APBaRjMPOLpoR": "PASS",
+    "0l7ozj$M5APBaRjMPOLpp8": "PASS",
+    "0l7ozj$M5APBaRjMPOLptT": "PASS",
+    "0m$xqYYAH4$9ONy59vBO16": "PASS",
+    "0m$xqYYAH4$9ONy59vBO5_": "PASS",
+    "0m$xqYYAH4$9ONy59vBOJb": "PASS",
+    "0m$xqYYAH4$9ONy59vBOMi": "FAIL",
+    "0m$xqYYAH4$9ONy59vBOQZ": "PASS",
+    "0m$xqYYAH4$9ONy59vBObk": "PASS",
+    "0m$xqYYAH4$9ONy59vBOmM": "PASS",
+    "0m$xqYYAH4$9ONy59vBOsj": "PASS",
+    "0m$xqYYAH4$9ONy59vBOtW": "PASS",
+    "0m$xqYYAH4$9ONy59vBVKs": "PASS",
+    "0m$xqYYAH4$9ONy59vBVdm": "PASS",
+    "0mrKAeln95xgpRQFig7SSX": "PASS",
+    "0nJ90Fc4H19QSzXmOKKwQo": "PASS",
+    "0nJ90Fc4H19QSzXmOKKwR9": "PASS",
+    "0nJ90Fc4H19QSzXmOKKwRE": "PASS",
+    "0pQ41JRYrB9gNrn1UnJc2j": "PASS",
+    "0pQ41JRYrB9gNrn1UnJcRu": "PASS",
+    "0pQ41JRYrB9gNrn1UnJcUE": "PASS",
+    "0pVXoN1Hn1UAOvcR4gh85z": "PASS",
+    "0pVXoN1Hn1UAOvcR4gh8E_": "PASS",
+    "0pVXoN1Hn1UAOvcR4gh8FN": "PASS",
+    "0pVXoN1Hn1UAOvcR4gh92V": "PASS",
+    "0pVXoN1Hn1UAOvcR4gh9Ht": "PASS",
+    "0pVXoN1Hn1UAOvcR4gh9UO": "PASS",
+    "0pVXoN1Hn1UAOvcR4ghE9A": "FAIL",
+    "0sHqD3NQr7V9oUNv2B1e9t": "PASS",
+    "0vkVh16tjDqALKxpsLLSLP": "PASS",
+    "10oHomuq94Ofm3v5f5i51o": "PASS",
+    "12JKgdN2bCpfsVosTSpPpn": "PASS",
+    "13DwJoHF554fZOZdsW3jV$": "PASS",
+    "13DwJoHF554fZOZdsW3jo6": "PASS",
+    "13DwJoHF554fZOZdsW3jp6": "PASS",
+    "178Ee3o89FiAha0dMrGGa3": "PASS",
+    "178Ee3o89FiAha0dMrGGbM": "PASS",
+    "178Ee3o89FiAha0dMrGGbQ": "PASS",
+    "178Ee3o89FiAha0dMrGGbR": "PASS",
+    "178Ee3o89FiAha0dMrGGcX": "PASS",
+    "178Ee3o89FiAha0dMrGGcf": "PASS",
+    "178Ee3o89FiAha0dMrGGck": "PASS",
+    "178Ee3o89FiAha0dMrGGcl": "PASS",
+    "178Ee3o89FiAha0dMrGGsG": "PASS",
+    "178Ee3o89FiAha0dMrGGsH": "PASS",
+    "178Ee3o89FiAha0dMrGGsI": "PASS",
+    "178Ee3o89FiAha0dMrGGsJ": "PASS",
+    "178Ee3o89FiAha0dMrGGsL": "PASS",
+    "179JXYmSH1PeR25_V8cC2F": "PASS",
+    "179JXYmSH1PeR25_V8cDED": "PASS",
+    "181JVQRXz3uOoX0fzbYGgy": "PASS",
+    "1BuSw5z3T5lRlLnqKBfkL8": "PASS",
+    "1E6GmdSBr2Ex$UKecRBsNM": "PASS",
+    "1G1MHCN$rFT8Kq0URCkeik": "PASS",
+    "1G1MHCN$rFT8Kq0URCkejH": "PASS",
+    "1G1MHCN$rFT8Kq0URCkelP": "PASS",
+    "1G1MHCN$rFT8Kq0URCkeul": "PASS",
+    "1G1MHCN$rFT8Kq0URCkevc": "PASS",
+    "1GeUl$xnXCQx3FBUWNQR_b": "PASS",
+    "1I1x0QiMH0_A5tEL1zKw2X": "PASS",
+    "1I5dUe0h55ghqf$pMj7R4b": "FAIL",
+    "1I5dUe0h55ghqf$pMj7RlC": "FAIL",
+    "1JfMDoTU11$hytNPDaUget": "FAIL",
+    "1JfMDoTU11$hytNPDaUggm": "PASS",
+    "1KMV$7QbnFCekUjrqwjSFr": "FAIL",
+    "1KMV$7QbnFCekUjrqwjSHr": "FAIL",
+    "1O9GNXP$zBaOPPulmAYi6P": "PASS",
+    "1OII3xZbr4khXP9ANPvUPV": "PASS",
+    "1OhBhjREP1lQfzAQKbVrJ6": "FAIL",
+    "1P5dxZrYTBPxvhgFJ4zgUC": "PASS",
+    "1R0LQhNM9FhBBYQEdU5vjo": "PASS",
+    "1R0LQhNM9FhBBYQEdU5vjp": "PASS",
+    "1R0LQhNM9FhBBYQEdU5vjq": "PASS",
+    "1R0LQhNM9FhBBYQEdU5vjr": "PASS",
+    "1R5tn5PbD9ThhYQGn_w8mg": "PASS",
+    "1RdxPj8jPDouQ8N8iEMJwD": "PASS",
+    "1RwoWuubrFyxE5RoT2pY2$": "PASS",
+    "1RwoWuubrFyxE5RoT2pYNM": "PASS",
+    "1RwoWuubrFyxE5RoT2pYPf": "PASS",
+    "1RwoWuubrFyxE5RoT2pYSN": "PASS",
+    "1S45cNJFj2cOlflPQBpLp2": "PASS",
+    "1SLqOZgg1EDhQRlC_igBS4": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NO0": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NOB": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NOC": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NOE": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NP$": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NPw": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NPx": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRW": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRb": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRc": "PASS",
+    "1SsGPt4o9Afxe9eGF2Wk2N": "PASS",
+    "1SsGPt4o9Afxe9eGF2Wk3C": "PASS",
+    "1SsGPt4o9Afxe9eGF2Wkf6": "PASS",
+    "1SsGPt4o9Afxe9eGF2lJPr": "PASS",
+    "1TNaO9tWPB3PAGYwcanMoV": "PASS",
+    "1TP62uN61FKBNnayjXS590": "PASS",
+    "1TP62uN61FKBNnayjXS6Hn": "PASS",
+    "1UQ$z1V4D0u9NGnICJq078": "PASS",
+    "1W4anoHSvEagzJkF5I2GGW": "PASS",
+    "1W4anoHSvEagzJkF5I2Ic$": "PASS",
+    "1W4anoHSvEagzJkF5I2IcY": "PASS",
+    "1W4anoHSvEagzJkF5I2IcZ": "PASS",
+    "1W4anoHSvEagzJkF5I2Icb": "PASS",
+    "1W4anoHSvEagzJkF5I2Ics": "PASS",
+    "1W4anoHSvEagzJkF5I2Icy": "PASS",
+    "1W4anoHSvEagzJkF5I2Juy": "PASS",
+    "1WotCxN$TB3xrQ01dkhwbM": "PASS",
+    "1WqgR8zMH4FgrL7KA9gSJ5": "PASS",
+    "1YvCpajhfD5PrmXjEvCwiZ": "PASS",
+    "1YvCpajhfD5PrmXjEvCwl9": "PASS",
+    "1ZgwVYPV57ivmFOGY9cKu8": "PASS",
+    "1b4KDh3Ev8XQCDyubImQw0": "PASS",
+    "1b98r3ZLT9UwJz3GVxdn9I": "PASS",
+    "1dkLMjyB532vjwG6WSxSW5": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWg9u": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgPL": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgVy": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgWq": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgXo": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgg8": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgto": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgv5": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgwn": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgxP": "PASS",
+    "1gP2IBOLX0mQ1PWuqZWgxr": "PASS",
+    "1gWEt8T_HBnvvrCjhE6IsU": "PASS",
+    "1hzhZJcfzBdAO_ZxZN67lt": "PASS",
+    "1hzhZJcfzBdAO_ZxZN67ou": "PASS",
+    "1iovOXUJj7fubokCPLgbJP": "PASS",
+    "1iovOXUJj7fubokCPLgdg9": "FAIL",
+    "1jHESomBP98OjLKiZn5jef": "PASS",
+    "1jdastcTX2pwzgGHuRkUZP": "PASS",
+    "1l4jNRZRT2a8RlV4vUeJ8n": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOL1q": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOL7O": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOLJE": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOLUo": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOLd5": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOM_J": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOMuC": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOMwR": "PASS",
+    "1lJPwYDgDAQ8nL4X_wOMye": "PASS",
+    "1ldN7LR3r3ofPoX9x5oLGg": "PASS",
+    "1ldN7LR3r3ofPoX9x5oLHl": "PASS",
+    "1ldN7LR3r3ofPoX9x5oLTf": "PASS",
+    "1ldN7LR3r3ofPoX9x5oLTl": "PASS",
+    "1ldN7LR3r3ofPoX9x5oLTm": "PASS",
+    "1ldN7LR3r3ofPoX9x5oLfW": "PASS",
+    "1ljX6V5JL0PBBxw92e26Mn": "PASS",
+    "1ljX6V5JL0PBBxw92e26NJ": "PASS",
+    "1nWY1FVOb25OtmXstuJsao": "PASS",
+    "1oA2zRS5H9rwGCw_O5EjPF": "PASS",
+    "1rVINQQNTFFxbVEpGb5ArA": "FAIL",
+    "1rVINQQNTFFxbVEpGb5AyM": "FAIL",
+    "1rmcKk_sn8kvG90cyaRLk2": "PASS",
+    "1tWyiJokD0g9OxuDBNkflT": "PASS",
+    "1tzucaMqz0c9pTB4ODLrbR": "PASS",
+    "1tzucaMqz0c9pTB4ODLrfU": "PASS",
+    "1uxIuVLVrB_gwNX$qzDdOp": "PASS",
+    "1wGDdmLln82w1J_3b3FG8v": "PASS",
+    "1wGDdmLln82w1J_3b3FG9N": "PASS",
+    "1xbatIdgn3_w3s2c$p7Lyh": "PASS",
+    "1xmlHp0YXCyeNlKjsriogm": "PASS",
+    "1zVNXibbT0IuOwogp2tcQ4": "PASS",
+    "1zcTPUxz121g68cIZDkHxg": "PASS",
+    "1zdF5GD$17l9Jw7DnWEQzZ": "PASS",
+    "2$vqSUuODE5QTld_x5CZQW": "PASS",
+    "223VDxzbP01Q1$4uieT60W": "PASS",
+    "223VDxzbP01Q1$4uieT61Y": "PASS",
+    "223VDxzbP01Q1$4uieT6Fs": "PASS",
+    "223VDxzbP01Q1$4uieT6KO": "PASS",
+    "223VDxzbP01Q1$4uieT6Ky": "PASS",
+    "223VDxzbP01Q1$4uieT6MS": "PASS",
+    "223VDxzbP01Q1$4uieT6N7": "PASS",
+    "223VDxzbP01Q1$4uieT6Np": "PASS",
+    "223VDxzbP01Q1$4uieT6aB": "PASS",
+    "223VDxzbP01Q1$4uieT6kN": "PASS",
+    "223VDxzbP01Q1$4uieT6x2": "PASS",
+    "223VDxzbP01Q1$4uieT71s": "PASS",
+    "223VDxzbP01Q1$4uieT7Bn": "PASS",
+    "223VDxzbP01Q1$4uieT7H8": "PASS",
+    "223VDxzbP01Q1$4uieT7eB": "PASS",
+    "223VDxzbP01Q1$4uieT7hJ": "PASS",
+    "223VDxzbP01Q1$4uieT7hu": "PASS",
+    "223VDxzbP01Q1$4uieT7qA": "PASS",
+    "223VDxzbP01Q1$4uieT9DY": "PASS",
+    "223VDxzbP01Q1$4uieT9ao": "PASS",
+    "223VDxzbP01Q1$4uieT9my": "PASS",
+    "223VDxzbP01Q1$4uieT9oX": "PASS",
+    "223VDxzbP01Q1$4uieT9pj": "PASS",
+    "23NmF4jUrFXAl2ywZh71kb": "PASS",
+    "24c7K17$nCLhyLFbIc2d4k": "PASS",
+    "24c7K17$nCLhyLFbIc2d5g": "PASS",
+    "24pdOfiGLF$g5cXWHkwlaf": "PASS",
+    "26gtHYBrT6nxlSTHaykFKq": "PASS",
+    "26gtHYBrT6nxlSTHaykFo1": "PASS",
+    "2701roc0LEfva6cMjstwP2": "PASS",
+    "2701roc0LEfva6cMjstwU$": "PASS",
+    "27EWswr059chfXsmp6361y": "PASS",
+    "27EWswr059chfXsmp6367g": "PASS",
+    "27tukwmZXDov7Sju0kO25z": "PASS",
+    "2Aw7V7p7zEOxOpB0cwwXuA": "FAIL",
+    "2CXunUBXnChPxm96GjGaJc": "PASS",
+    "2Cfm5pf4z28w$lCo5EImPa": "PASS",
+    "2D$rKygY5ExwYx5uv3HDBt": "PASS",
+    "2D$rKygY5ExwYx5uv3HDCd": "PASS",
+    "2D3wkkonj3EhrUVlal8cHt": "PASS",
+    "2D3wkkonj3EhrUVlal8cJf": "PASS",
+    "2D_ocRTBD6DQZblQ6BpNjr": "PASS",
+    "2EEI9KLxXBleFw5NTNRaCH": "PASS",
+    "2EEI9KLxXBleFw5NTNRaCI": "PASS",
+    "2FFv4kvW53huZlA6QJ8lvV": "PASS",
+    "2G4e7TRyH1sAhm$XSB_I$e": "PASS",
+    "2G4e7TRyH1sAhm$XSB_I$f": "PASS",
+    "2G4e7TRyH1sAhm$XSB_Iwi": "PASS",
+    "2G4e7TRyH1sAhm$XSB_Iwj": "PASS",
+    "2GJlxnDLHAv9iLrL3cu2Dw": "PASS",
+    "2GJlxnDLHAv9iLrL3cu2EF": "PASS",
+    "2GJlxnDLHAv9iLrL3cu2Mt": "PASS",
+    "2GJlxnDLHAv9iLrL3cu2Nz": "PASS",
+    "2GJlxnDLHAv9iLrL3cu2bJ": "PASS",
+    "2GqeSufAb9sPYSz0u$x6Pg": "PASS",
+    "2H7Rc3R5H8DhwBsMgN2Pjf": "PASS",
+    "2Hc3euPLj8MvN8zGQGcaiv": "PASS",
+    "2J_Nqz0WP1jBwDM4wnzVKt": "PASS",
+    "2KKVUQmnnFQ9E0szGqByIR": "PASS",
+    "2KKVUQmnnFQ9E0szGqByK6": "PASS",
+    "2Lg2_VemrDOAB$zf6_8jeB": "PASS",
+    "2LwnmajvrDQw26CqkWn0Cp": "PASS",
+    "2LwnmajvrDQw26CqkWn12t": "PASS",
+    "2LwnmajvrDQw26CqkWn1fY": "PASS",
+    "2LwnmajvrDQw26CqkWnUmI": "PASS",
+    "2LwnmajvrDQw26CqkWnUmJ": "PASS",
+    "2LwnmajvrDQw26CqkWnUmM": "PASS",
+    "2LwnmajvrDQw26CqkWnUpq": "PASS",
+    "2LwnmajvrDQw26CqkWnUpv": "PASS",
+    "2LwnmajvrDQw26CqkWnUs2": "PASS",
+    "2LwnmajvrDQw26CqkWnUuG": "PASS",
+    "2LwnmajvrDQw26CqkWnUuJ": "PASS",
+    "2LwnmajvrDQw26CqkWnUuY": "PASS",
+    "2LwnmajvrDQw26CqkWnUuZ": "PASS",
+    "2LwnmajvrDQw26CqkWnUua": "PASS",
+    "2LwnmajvrDQw26CqkWnUuc": "PASS",
+    "2LwnmajvrDQw26CqkWnUud": "PASS",
+    "2LwnmajvrDQw26CqkWnUue": "PASS",
+    "2LwnmajvrDQw26CqkWnUuf": "PASS",
+    "2LwnmajvrDQw26CqkWnUuj": "PASS",
+    "2LwnmajvrDQw26CqkWnUzx": "PASS",
+    "2Mk4fTGVn7uRSK9CXQV6AY": "PASS",
+    "2Q7ksae3LAYeu3W49rmJ0T": "PASS",
+    "2Q7ksae3LAYeu3W49rmJ0v": "PASS",
+    "2Q7ksae3LAYeu3W49rmJ1a": "PASS",
+    "2Q7ksae3LAYeu3W49rmJ2p": "PASS",
+    "2Q7ksae3LAYeu3W49rmJ3T": "PASS",
+    "2Q7ksae3LAYeu3W49rmJGk": "PASS",
+    "2Q7ksae3LAYeu3W49rmJI$": "PASS",
+    "2Q7ksae3LAYeu3W49rmJIV": "PASS",
+    "2Q7ksae3LAYeu3W49rmJRp": "PASS",
+    "2Q7ksae3LAYeu3W49rmJSb": "PASS",
+    "2Q7ksae3LAYeu3W49rmJyS": "PASS",
+    "2Q7ksae3LAYeu3W49rmJzz": "PASS",
+    "2Q7ksae3LAYeu3W49rmKWO": "PASS",
+    "2Q7ksae3LAYeu3W49rmKXy": "PASS",
+    "2Q7ksae3LAYeu3W49rmK_Q": "PASS",
+    "2Q7ksae3LAYeu3W49rmK_j": "PASS",
+    "2Q7ksae3LAYeu3W49rmKih": "PASS",
+    "2Q7ksae3LAYeu3W49rmKj1": "PASS",
+    "2Q7ksae3LAYeu3W49rmKl9": "PASS",
+    "2Q7ksae3LAYeu3W49rmKtx": "PASS",
+    "2Q7ksae3LAYeu3W49rmKua": "PASS",
+    "2Q7ksae3LAYeu3W49rmKvt": "PASS",
+    "2QmceMdeT2FxfkNdzVxgpJ": "PASS",
+    "2RBEWrz9fCSPWGB1YCXE41": "PASS",
+    "2RVQS0AeL7uvlAY9$0600p": "PASS",
+    "2RVQS0AeL7uvlAY9$0605x": "PASS",
+    "2RVQS0AeL7uvlAY9$060GM": "PASS",
+    "2RVQS0AeL7uvlAY9$061kS": "PASS",
+    "2RcNEg21r4nANbNNamoEhA": "PASS",
+    "2RcNEg21r4nANbNNamoEj$": "PASS",
+    "2RhoHrFT14wwBbSGrhbTyo": "PASS",
+    "2U9dyID813dQ0_BBCnp1bI": "PASS",
+    "2U9dyID813dQ0_BBCnp1cZ": "PASS",
+    "2V9v$eHJ976hyXp$fOHmZc": "PASS",
+    "2VdJ62kbf6yOW8AfiR2duL": "PASS",
+    "2VdJ62kbf6yOW8AfiR2dwi": "PASS",
+    "2YbMT$DAbC4AjWJLJP7c5m": "PASS",
+    "2ZxXOG0YnAEOLPWZ51kSB_": "PASS",
+    "2_m1taOmz3puvLFJIqkW5e": "PASS",
+    "2_m1taOmz3puvLFJIqkW5f": "PASS",
+    "2_m1taOmz3puvLFJIqkW9G": "PASS",
+    "2_m1taOmz3puvLFJIqkW9H": "PASS",
+    "2_m1taOmz3puvLFJIqkW9i": "PASS",
+    "2_m1taOmz3puvLFJIqkW9j": "PASS",
+    "2_m1taOmz3puvLFJIqkW9k": "PASS",
+    "2_m1taOmz3puvLFJIqkW9l": "PASS",
+    "2_m1taOmz3puvLFJIqkWp6": "PASS",
+    "2_m1taOmz3puvLFJIqkWp9": "PASS",
+    "2aHBhArIv10vru8hilHvBk": "PASS",
+    "2anGbrERb0KeIk6YZkqmKm": "PASS",
+    "2anGbrERb0KeIk6YZkqmMt": "PASS",
+    "2apcUqii12IwqEYuoAjIVm": "PASS",
+    "2azdNg_TPBtPFbDKZn3gw1": "PASS",
+    "2b7F8dUdn9wuQCt4psQPvz": "PASS",
+    "2cQKz3aTXErPZV$jhgi3JC": "PASS",
+    "2eRgnu7L17ZOubCmc00smK": "PASS",
+    "2eRgnu7L17ZOubCmc00snm": "PASS",
+    "2eRgnu7L17ZOubCmc00soj": "PASS",
+    "2eRgnu7L17ZOubCmc00sol": "PASS",
+    "2eRgnu7L17ZOubCmc00spJ": "PASS",
+    "2eRgnu7L17ZOubCmc00spM": "PASS",
+    "2eRgnu7L17ZOubCmc00spO": "PASS",
+    "2eRgnu7L17ZOubCmc00spT": "PASS",
+    "2eRgnu7L17ZOubCmc00spy": "PASS",
+    "2eRgnu7L17ZOubCmc00spz": "PASS",
+    "2fk_1DqMzCKgqnfcFOTSS$": "PASS",
+    "2gBgaMeFn7XBRdMqd_ikbI": "PASS",
+    "2gBgaMeFn7XBRdMqd_ikdz": "PASS",
+    "2gVNCPltfBF8k6EEEVON8h": "FAIL",
+    "2kQ_5f7iHDAeYO_720xknu": "PASS",
+    "2kvhrWDcL18AQNu3F5ie2I": "PASS",
+    "2kvhrWDcL18AQNu3F5ie2Z": "PASS",
+    "2kvhrWDcL18AQNu3F5ieOO": "PASS",
+    "2kvhrWDcL18AQNu3F5iegQ": "PASS",
+    "2kvhrWDcL18AQNu3F5ifBh": "PASS",
+    "2kvhrWDcL18AQNu3F5ifDY": "PASS",
+    "2kvhrWDcL18AQNu3F5ig_B": "PASS",
+    "2kvhrWDcL18AQNu3F5igpx": "PASS",
+    "2kvhrWDcL18AQNu3F5igsk": "PASS",
+    "2kvhrWDcL18AQNu3F5igva": "PASS",
+    "2lhEiSbTT94AcxghoGNKtz": "PASS",
+    "2m9Su8_6DDTvvs3mQjcSS6": "PASS",
+    "2m9Su8_6DDTvvs3mQjcVbV": "PASS",
+    "2n9DbFqOXANRrn9LydtLKX": "PASS",
+    "2nrM4nFUX3WO_mEStGMO8q": "PASS",
+    "2nyIuvN$LFOQ$F8eDpEE$0": "PASS",
+    "2qfnXEq6f9GQ8oiR65bOh0": "PASS",
+    "2qfnXEq6f9GQ8oiR65bOh1": "PASS",
+    "2qfnXEq6f9GQ8oiR65bPIq": "PASS",
+    "2rB0auDSfBluk91QLdbB$c": "PASS",
+    "2rB0auDSfBluk91QLdbBDt": "PASS",
+    "2rB0auDSfBluk91QLdbBgD": "PASS",
+    "2rB0auDSfBluk91QLdbBj0": "PASS",
+    "2sgv8ljCfCR8d7fPoL5KCM": "PASS",
+    "2sgv8ljCfCR8d7fPoL5KD7": "PASS",
+    "2uA7$8Cq95AvALsIoMMjyA": "PASS",
+    "2w2dhboh996Q4VmCqbp4Vc": "PASS",
+    "2yiM$65j55IxLAfll5BUXv": "PASS",
+    "2yiM$65j55IxLAfll5BUdv": "PASS",
+    "2yiM$65j55IxLAfll5BUpj": "PASS",
+    "2zgTiAIQzA4u0hs$1_zcJN": "PASS",
+    "2zgTiAIQzA4u0hs$1_zcLj": "PASS",
+    "2zgTiAIQzA4u0hs$1_zcaM": "PASS",
+    "2zgTiAIQzA4u0hs$1_zci5": "PASS",
+    "2zgZgcT3XAvOJKgMRMHh6I": "PASS",
+    "3$4qWlrsf2R8XgVTqqEaLH": "PASS",
+    "3$4qWlrsf2R8XgVTqqEaRb": "PASS",
+    "3$4qWlrsf2R8XgVTqqEad1": "PASS",
+    "3$4qWlrsf2R8XgVTqqEahn": "PASS",
+    "3$4qWlrsf2R8XgVTqqEaho": "PASS",
+    "3$4qWlrsf2R8XgVTqqEahs": "PASS",
+    "3$Gm$REn19VORcp0h6twUP": "PASS",
+    "31pjT5tlzBAglVfnyL7EQ2": "PASS",
+    "32dKzjYTf8NB7L2JTkWyxi": "PASS",
+    "32dKzjYTf8NB7L2JTkWyy1": "PASS",
+    "32dKzjYTf8NB7L2JTkWz12": "PASS",
+    "32dKzjYTf8NB7L2JTkWz2T": "PASS",
+    "35W$AQRqPEpBlKc7D86PZk": "PASS",
+    "36R5E2q5f2TvXJ1UAvvL5k": "PASS",
+    "36d19o9BnC3vv1B84ZRtfT": "PASS",
+    "37AoX_gkbC_f3B2RrzrGkU": "PASS",
+    "395lAaLE1BUe7I1Z_lFQq_": "PASS",
+    "395lAaLE1BUe7I1Z_lFRQd": "PASS",
+    "395lAaLE1BUe7I1Z_lFRRH": "PASS",
+    "395lAaLE1BUe7I1Z_lFRUY": "PASS",
+    "3Bl3fR9Kj6L80jk4jSC2f_": "PASS",
+    "3Bl3fR9Kj6L80jk4jSC2jh": "PASS",
+    "3CMJLBZmb6BOdaUDpBwuzp": "PASS",
+    "3EXLztRbbD8vGivsMF5GSh": "FAIL",
+    "3Ea42izT5D4fQevf0daCxX": "PASS",
+    "3F_yCDpr549h5tadK22KHe": "PASS",
+    "3F_yCDpr549h5tadK22KJ5": "PASS",
+    "3Fb4Dxdo92M90cDdbfIupG": "PASS",
+    "3Fb4Dxdo92M90cDdbfIupN": "PASS",
+    "3FzicAYN9DEQyhbxJcq32i": "PASS",
+    "3GJx2r9FrFb8U7aTZnljXP": "PASS",
+    "3GJx2r9FrFb8U7aTZnljcH": "PASS",
+    "3Hig3q54D8jvFuotHhGkyH": "PASS",
+    "3HuqBDqOj6H9c2lS071LPV": "PASS",
+    "3HuqBDqOj6H9c2lS071LSI": "PASS",
+    "3IcDidnVj5PPriLyYgD3EH": "PASS",
+    "3Jcp1lunvCFBfwNNcFZBB2": "PASS",
+    "3Kn0pGBY9CXRLmooYC5Y_7": "PASS",
+    "3MXzfgGIz2xPfYspPiWAOI": "PASS",
+    "3MXzfgGIz2xPfYspPiWAe_": "PASS",
+    "3MXzfgGIz2xPfYspPiWBc5": "PASS",
+    "3MXzfgGIz2xPfYspPiWBc9": "PASS",
+    "3MXzfgGIz2xPfYspPiWBcA": "PASS",
+    "3MXzfgGIz2xPfYspPiWBpZ": "PASS",
+    "3Mtdur07H3$wjtCNLkkTMf": "PASS",
+    "3ObdPKQKnADxl0koLMbmvC": "PASS",
+    "3ObdPKQKnADxl0koLMbn0A": "PASS",
+    "3ObdPKQKnADxl0koLMbn0B": "PASS",
+    "3ObdPKQKnADxl0koLMbn2b": "PASS",
+    "3QMa9A_7r8y91m$xOU35Ex": "PASS",
+    "3QPaeiYtfC2xq$5Sp5nFJw": "PASS",
+    "3T0LSRCJr579Hfd5wOgKiJ": "PASS",
+    "3TILYnBqn2LAQMVLVwlOCP": "PASS",
+    "3VUq38thb9gu7wmEuavfq_": "PASS",
+    "3VUq38thb9gu7wmEuavfqz": "PASS",
+    "3Vt6mwG5nCKeLkpep262zT": "PASS",
+    "3Vt6mwG5nCKeLkpep2631s": "FAIL",
+    "3YUrlgXHv4xxpPRnbfYMmg": "PASS",
+    "3bLZS8LdD0tBnDMMaF2KXy": "PASS",
+    "3bLZS8LdD0tBnDMMaF2KYn": "PASS",
+    "3bLZS8LdD0tBnDMMaF2K_v": "PASS",
+    "3c1awkLoXAxBYHBQ4qGhaL": "PASS",
+    "3eVd2GHRP7pBcAD$OfxqwO": "PASS",
+    "3eVd2GHRP7pBcAD$OfxqwP": "PASS",
+    "3ew$d2HdvFMAZRdqq2VrSu": "PASS",
+    "3hS4Uuyp1DtfqTJzauuAej": "PASS",
+    "3hS4Uuyp1DtfqTJzauuAfk": "PASS",
+    "3iccqxdt98$B7HYx716RXD": "PASS",
+    "3m5ew$hhz4W9qYh7MG6wyx": "PASS",
+    "3nAuo2kQ13wfEUh$6rHUyY": "PASS",
+    "3nFVM2YUH9kuAqrrfntjfe": "PASS",
+    "3nFVM2YUH9kuAqrrfntjff": "PASS",
+    "3nZHHyOPz5PP3xNdf5rsl9": "PASS",
+    "3nZHHyOPz5PP3xNdf5rslm": "PASS",
+    "3ocZLIQYXDOPzNki$8h4zo": "FAIL",
+    "3paGAJbAj1URJxhZfktYsm": "PASS",
+    "3paGAJbAj1URJxhZfktYsz": "PASS",
+    "3paGAJbAj1URJxhZfktZC9": "PASS",
+    "3q3SMCPtf2Shc02uXf8iDG": "PASS",
+    "3qo6anXbf5Q9LpoHyAxkpI": "PASS",
+    "3rRfCLd25FVwAurqfmNSeu": "PASS",
+    "3rzgM29Xj0BBMCsAHGIgYv": "PASS",
+    "3rzgM29Xj0BBMCsAHGIhGB": "PASS",
+    "3rzgM29Xj0BBMCsAHGIhK_": "PASS",
+    "3rzgM29Xj0BBMCsAHGIhMN": "PASS",
+    "3rzgM29Xj0BBMCsAHGIhQ8": "PASS",
+    "3s_REImLD8m8oa5_3mxuUv": "PASS",
+    "3s_REImLD8m8oa5_3mxxby": "PASS",
+    "3s_REImLD8m8oa5_3mxxuA": "PASS",
+    "3s_REImLD8m8oa5_3mxxvL": "PASS",
+    "3uqzcHP959wRBAVdwkQTVS": "PASS",
+    "3uqzcHP959wRBAVdwkQTW4": "PASS",
+    "3vd1UdIAvDjRJYlTsnj8bi": "PASS",
+    "3vd1UdIAvDjRJYlTsnj8kh": "PASS",
+    "3vd1UdIAvDjRJYlTsnj8rW": "PASS",
+    "3vmXnyOjrDwuU9c3adEVZl": "PASS",
+    "3y7w$rQQ92sPNEVtsgzp$7": "FAIL",
+    "3y7w$rQQ92sPNEVtsgzpwH": "FAIL",
+    "3z9CHbT8bCO9CcihCY1WeT": "PASS"
+  },
+  "notes": "Doors and Windows on 576 IfcDoor or IfcWindow: {'FAIL': 31, 'PASS': 537}. 8 unscored: Doors and windows that are parts of a curtain wall fill no opening; the calibration text counts them as orphans, Solibri relates them to the curtain wall, so the stated rule does not decide them.",
+  "clause": "BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_nus_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 576,
+    "ifc_sha256": "362f0f5e5ad35557014100a6c4de75ec166f6dbd9197933170dc1423f4af2a76",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Doors and Windows",
+      "message": null,
+      "report_file": "ec3_nus_check.xlsx",
+      "report_sha256": "90c05f08536b3d573876849b4be498f33c8c6e47af3819fd8d28a8b94b675f1f",
+      "rule_issues": 6,
+      "matching_issues": 6
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently. 8 unscored: Doors and windows that are parts of a curtain wall fill no opening; the calibration text counts them as orphans, Solibri relates them to the curtain wall, so the stated rule does not decide them.",
+    "unscored_ids": [
+      "0E5lut9mb58BnCAfA2Oc$s",
+      "2rNj7xqu59GOTxPuORWgC0",
+      "2rNj7xqu59GOTxPuORWgCv",
+      "37b$U5RHHAHQeLX5BAZqEr",
+      "37b$U5RHHAHQeLX5BAZqFm",
+      "37b$U5RHHAHQeLX5BAZqLB",
+      "37b$U5RHHAHQeLX5BAZqQC",
+      "3bLZ4nxXPBCBiOBd2I0g01"
+    ]
+  },
+  "provenance": {
+    "0$9sMhBzDDYwpIwgd653yk": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1886980",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01Dg_uMi19$gQqahNNr30X": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1799883",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01Dg_uMi19$gQqahNNr31g": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1799808",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01Dg_uMi19$gQqahNNr331": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1799723",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01Dg_uMi19$gQqahNNr3Cy": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1799638",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01Dg_uMi19$gQqahNNr3Dp": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1799577",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01Dg_uMi19$gQqahNNr3E4": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1799534",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01Dg_uMi19$gQqahNNr3FQ": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1799472",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01zXuV$HHAH8AzUWpi8xeT": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:IDT 6.2 15x21M 38dB:4452497",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01zXuV$HHAH8AzUWpi8xry": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:4452500",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "05REHM4pX8oud$dIi5_3G7": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1863225",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUeL": {
+      "name": "Vindu-Fast:GF 6.1 8x21 33dB:2532752",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUeh": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2532782",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUfv": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2532860",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUg4": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2532609",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUhF": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2532682",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUiS": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2532505",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUj0": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2532549",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUoF": {
+      "name": "Vindu_2felt:GF 4.3 33dB EI30:2532106",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUot": {
+      "name": "Vindu-Fast:GF 3.4 6x21 33dB E30:2532146",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06Ht2uLQXBSOSERQ5fbUtn": {
+      "name": "Vindu-Fast:GF 3.1 6x21 25dB EI30:2531956",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06eyQR2BLEEQD6_mmcCkR3": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:2136594",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "07A7hkJSnEIg26U$KLGmCb": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2493273",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "07A7hkJSnEIg26U$KLGmDt": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2493195",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "07A7hkJSnEIg26U$KLGmFN": {
+      "name": "Vindu-Fast:GF 3.3 6x21 44dB:2493355",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "07A7hkJSnEIg26U$KLGmNQ": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2493862",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "07UrQhYVz9yBaIyQU10drI": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:1963500",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "07W5fZqRD9xhlcgX8O25ab": {
+      "name": "Vindu-Fast:GF 7.4 15x21 EI60:2552756",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "08AK4j5Y12og0xduu4nzGq": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V17 21x16:5425794",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "08HQ26Z0jBuwCFm0lxXzmm": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:2416707",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "09SS2eeqP7yvZkt9c0NEHo": {
+      "name": "Vindu 3 felt:V6 24x22:5446097",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "09va5PNVrDXxMausX1UUI4": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V18 21x16:5427724",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0AGslNGBf0kes_Wzrm7iYj": {
+      "name": "Vindu 3 felt:V9 30x22:5448169",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0AYUYNH318oxyjj9ZmkY6D": {
+      "name": "Vindu 3 felt:V11 35x22:5464682",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0AYUYNH318oxyjj9ZmkYBQ": {
+      "name": "Vindu 3 felt:V11 35x22:5464381",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0AYUYNH318oxyjj9ZmkYSr": {
+      "name": "Vindu 3 felt:V11 35x22:5465298",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0AYUYNH318oxyjj9ZmkZsH": {
+      "name": "Vindu 3 felt:V12 35x22:5471862",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Atz42jmjAqQb8PQSpPzYn": {
+      "name": "M_Overhead-Sectional:YDP 1.1 2400 x 2100mm:4214299",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHm5g": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:2990848",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHmhR": {
+      "name": "Vindu-Fast:GF 1.4 12x21 44dB:2992305",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHmtO": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2994098",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHmtP": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2994099",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHn1k": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2994692",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHn59": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2994979",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHn6h": {
+      "name": "Vindu-Fast:GF 2.1 9x21 38dB:2995137",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHn8f": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2994243",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Bd1dGyrbCtPdUpXMbHn8k": {
+      "name": "Vindu-Fast:GF 11.1 12x27 33dB:2994244",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4qC6": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:2259432",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4qTS": {
+      "name": "Vindu-Fast:V3 18x22:2260402",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4qmU": {
+      "name": "Vindu-Fast:V4 23x22:2258672",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4qpV": {
+      "name": "Vindu-Fast:V3 18x22:2258481",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4qvG": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:2258110",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4qwb": {
+      "name": "Vindu-Fast:V4 23x22:2257995",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4xjk": {
+      "name": "Vindu-Fast:V4 23x22:2261376",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Csd7NOh17wxQlhz7v4xkJ": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:2261373",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0D1X6HpB90_xBcd56Gp_CF": {
+      "name": "D\u00f8r Enkel:IDA 9.1 12x21M EI60CS:3676346",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0GK_DlT2z44eZ3anFtbvfe": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2140876",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0HkcjhLET1q8ce_1Ipx4HO": {
+      "name": "D\u00f8r Enkel:IDA 10.1 14x21M E30CS:3697547",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0L5obUJ515fwEAPUAA9DQE": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1881840",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0L5obUJ515fwEAPUAA9DqJ": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:1881851",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0L5obUJ515fwEAPUAA9DrS": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:1881850",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0L5obUJ515fwEAPUAA9Dtk": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:1881849",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0L5obUJ515fwEAPUAA9EtD": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:1881980",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0L7neYhnzFWxC35_hI38Dq": {
+      "name": "Vindu 3 felt:V9 30x22:5445253",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0LflH0w_10MwnWOY41K_Ss": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2998549",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2YG": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:1700924",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "0O6RmI9obEW97tfOGeN2YI": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 6.2 12x21M EI 30CS:1700926",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2YK": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:1700920",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 03"
+      ]
+    },
+    "0O6RmI9obEW97tfOGeN2YN": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:1700923",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "0O6RmI9obEW97tfOGeN2YQ": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:1700918",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 03"
+      ]
+    },
+    "0Wn0B2ft14JOZ$xJfGHPwF": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:IDT 6.1 15x21M 33dB:4433797",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0XWhM$nFr3Bgg_GNaK3MDI": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.5 10x21M 38dB EI30S:3433322",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Y$aYBsd95XvxtX1ReaS$W": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 1.1 10x21M:1795541",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0Y$aYBsd95XvxtX1ReaS0t": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:1796610",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0Y$aYBsd95XvxtX1ReaSCV": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:YDA 1.2 16x21M EI 30S:1796394",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Y$aYBsd95XvxtX1ReaUN0": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1789941",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Y$aYBsd95XvxtX1ReaVfq": {
+      "name": "D\u00f8r Dobbel:IDT 5.1 15x21M:1790017",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZijhLwPv7kQtctprOSMND": {
+      "name": "Vindu-Fast:GF 7.4 15x21 EI60:3078166",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "0Zn0wx8eH7NfKTR5S_79dm": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1858179",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Zn0wx8eH7NfKTR5S_79kk": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:1857757",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZvZEiedjEnPrRbtPBAkqA": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDA 3.5 18x21M  33dB EI30S:3705902",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0_btFICcn5Ohf6LjltFq9I": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 1.1 10x21M:1899884",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0_btFICcn5Ohf6LjltFrI2": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1899943",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0b5HtbsnPByBQEXM_v_W24": {
+      "name": "Doors-Sliding_Manusa_Biparting_sliding_fixed_INT:YDA 6.1 Skyved\u00f8rer:4108057",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0bwPauSUv0mgnNVbqwQYez": {
+      "name": "D\u00f8r Enkel:IDT 2.12 10x21M 24dB EI30S:2077177",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0bwPauSUv0mgnNVbqwQZDa": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2074784",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0dBPoyVxH3WAYJEgzEC1LP": {
+      "name": "Vindu 3 felt:V7 24x22:5448050",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0fdrvAXWj988M89SYbnSXv": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:4000707",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0fgLVDYxL4dwuNOtFnKOkW": {
+      "name": "Vindu-Fast:GF 10.1 8x27 33dB:3382692",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0fgLVDYxL4dwuNOtFnKOkd": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:3382691",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0fgLVDYxL4dwuNOtFnKOw6": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:3381378",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0fgLVDYxL4dwuNOtFnKOwH": {
+      "name": "Vindu-Fast:GF 16.1 5x31 38dB:3381397",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0fgLVDYxL4dwuNOtFnKOy4": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3381504",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0gDAwyx1r9Ke_9r7cUH3sh": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1941435",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0h3R3TVIr6xPpSl2K4a4Q3": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1866280",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0h3R3TVIr6xPpSl2K4aBRk": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.1 18x21M 33db EI30S:1870405",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0h40zjViD0LfyivY00KYvw": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:5924061",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0h40zjViD0LfyivY00KfEA": {
+      "name": "D\u00f8r Enkel_ Glassfelt:YDA 4.1 14x21M:5953837",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0h40zjViD0LfyivY00Kfr5": {
+      "name": "D\u00f8r Enkel_ Glassfelt:YDA 4.1 14x21M:5953506",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0idK5zVYH7sAMTZ8HgG0Mb": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V20 19x16:5428885",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0jx2pXIFL8ffhmM$6QBgeQ": {
+      "name": "Vindu-Fast:V2 12x22:2836494",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0jx2pXIFL8ffhmM$6QBjEL": {
+      "name": "Vindu-Fast:GF 3.3 6x21 44dB:2836551",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0jx2pXIFL8ffhmM$6QBjEx": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2836552",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0jx2pXIFL8ffhmM$6QBjGq": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2836550",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0k3NkIJeD9Evv25kd_zz1H": {
+      "name": "D\u00f8r Enkel:IDT 2.8 10x21M EI30S:3988230",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0kU0O9WIP2WgsQMWFu_JXp": {
+      "name": "D\u00f8r Dobbel:IDS 3.1 18x21M 38dB EI60S:2551141",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0kU0O9WIP2WgsQMWFu_JYR": {
+      "name": "D\u00f8r Dobbel:IDS 3.1 18x21M 38dB EI60S:2551181",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0kU0O9WIP2WgsQMWFu_JdK": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2550978",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0kU0O9WIP2WgsQMWFu_Meq": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:2539298",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "0l7ozj$M5APBaRjMPOLifw": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1904040",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0l7ozj$M5APBaRjMPOLpAQ": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904138",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0l7ozj$M5APBaRjMPOLpFJ": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904139",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0l7ozj$M5APBaRjMPOLpI6": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.1 18x21M 33db EI30S:1904044",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0l7ozj$M5APBaRjMPOLpoR": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904145",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0l7ozj$M5APBaRjMPOLpp8": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904144",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0l7ozj$M5APBaRjMPOLptT": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904148",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBO16": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2109711",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBO5_": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2109495",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBOJb": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2110892",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBOMi": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 1.1 10x21M:2110693",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0m$xqYYAH4$9ONy59vBOQZ": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2111466",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBObk": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2111527",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBOmM": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2112863",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBOsj": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2112740",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBOtW": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2112681",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBVKs": {
+      "name": "D\u00f8r Enkel:IDA 10.1 14x21M E30CS:2114687",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBVdm": {
+      "name": "D\u00f8r Enkel:IDT 2.4 10x21M 38dB EI30S:2115769",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0mrKAeln95xgpRQFig7SSX": {
+      "name": "Vindu 3 felt:V6 24x22:5446268",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0nJ90Fc4H19QSzXmOKKwQo": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:4200760",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0nJ90Fc4H19QSzXmOKKwR9": {
+      "name": "Vindu-Fast:GF 4.2 18x21 33dB:4200771",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0nJ90Fc4H19QSzXmOKKwRE": {
+      "name": "Vindu-Fast:GF 1.4 12x21 44dB:4200772",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0pQ41JRYrB9gNrn1UnJc2j": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.1 18x21M 33db EI30S:1915514",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pQ41JRYrB9gNrn1UnJcRu": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.1 18x21M 33db EI30S:1915951",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pQ41JRYrB9gNrn1UnJcUE": {
+      "name": "Side_Stack_Operable_Wall_8000:IDF 2.1 Foldevegg 8000x2800:1916249",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4gh85z": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1824007",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4gh8E_": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:1824708",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4gh8FN": {
+      "name": "D\u00f8r Enkel:IDT 1.3 8x21M EI30S:1824685",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4gh92V": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:1819877",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4gh9Ht": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1818637",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4gh9UO": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1819618",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4ghE9A": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 1.1 10x21M:1816112",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "0sHqD3NQr7V9oUNv2B1e9t": {
+      "name": "Vindu 3 felt:V12 35x22:5471944",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0vkVh16tjDqALKxpsLLSLP": {
+      "name": "Vindu 3 felt:V10 30x22:5449018",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "10oHomuq94Ofm3v5f5i51o": {
+      "name": "Vindu 3 felt:V11 35x22:5444204",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "12JKgdN2bCpfsVosTSpPpn": {
+      "name": "Vindu 3 felt:V10 30x22:5450200",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "13DwJoHF554fZOZdsW3jV$": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2569729",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "13DwJoHF554fZOZdsW3jo6": {
+      "name": "Vindu-Fast:GF 7.1 15x21 25dB:2571640",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "13DwJoHF554fZOZdsW3jp6": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.9 10x21M 28dB:2571576",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGa3": {
+      "name": "Vindu-Fast:GF 16.1 5x31 38dB:2997461",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGbM": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2997376",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGbQ": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2997388",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGbR": {
+      "name": "Vindu-Fast:GF 4.2 18x21 33dB:2997389",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGcX": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2997367",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGcf": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2997375",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGck": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:2997368",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGcl": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:2997369",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGsG": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2996294",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGsH": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2996295",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGsI": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2996292",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGsJ": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2996293",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "178Ee3o89FiAha0dMrGGsL": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2996291",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "179JXYmSH1PeR25_V8cC2F": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1841845",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "179JXYmSH1PeR25_V8cDED": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:IDT 6.1 15x21M 33dB:1837647",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "181JVQRXz3uOoX0fzbYGgy": {
+      "name": "Vindu-Hengslet:V23 14x14:1761672",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1BuSw5z3T5lRlLnqKBfkL8": {
+      "name": "Vindu 3 felt:V12 35x22:5464550",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1E6GmdSBr2Ex$UKecRBsNM": {
+      "name": "Vindu 3 felt:V12 35x22:5463949",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1G1MHCN$rFT8Kq0URCkeik": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1851362",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1G1MHCN$rFT8Kq0URCkejH": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1851363",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1G1MHCN$rFT8Kq0URCkelP": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1851361",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1G1MHCN$rFT8Kq0URCkeul": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.3 18x21M 33dB EI60CS:1851355",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1G1MHCN$rFT8Kq0URCkevc": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.4 18x21M EI30CS:1851357",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1GeUl$xnXCQx3FBUWNQR_b": {
+      "name": "Vindu 3 felt:V6 24x22:5472607",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1I1x0QiMH0_A5tEL1zKw2X": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3217776",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1I5dUe0h55ghqf$pMj7R4b": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDT 7.1 13x21M 38dB:4801842",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "1I5dUe0h55ghqf$pMj7RlC": {
+      "name": "Vindu-Fast:GFA 3 8x27 38dB:4804571",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "1JfMDoTU11$hytNPDaUget": {
+      "name": "D\u00f8r Enkel:IDS 1.2 10x21M EI120CS:2294117",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 00U"
+      ]
+    },
+    "1JfMDoTU11$hytNPDaUggm": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDS 2.1 13x21M EI60S:2294242",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1KMV$7QbnFCekUjrqwjSFr": {
+      "name": "Luke600:IDA 11 10x6:6972584",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 00U"
+      ]
+    },
+    "1KMV$7QbnFCekUjrqwjSHr": {
+      "name": "Luke600:IDA 11 10x6:6972200",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 00U"
+      ]
+    },
+    "1O9GNXP$zBaOPPulmAYi6P": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2157744",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1OII3xZbr4khXP9ANPvUPV": {
+      "name": "Vindu-Fast:V3 18x22:2504128",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1OhBhjREP1lQfzAQKbVrJ6": {
+      "name": "M_Overhead-Rolling:2680 x 1275mm:5883834",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "1P5dxZrYTBPxvhgFJ4zgUC": {
+      "name": "D\u00f8r Enkel:IDT 2.2 10x21M 28dB EI30S:1924849",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1R0LQhNM9FhBBYQEdU5vjo": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:1899682",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1R0LQhNM9FhBBYQEdU5vjp": {
+      "name": "Vindu-Fast:V3 18x22:1899683",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1R0LQhNM9FhBBYQEdU5vjq": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:1899684",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1R0LQhNM9FhBBYQEdU5vjr": {
+      "name": "Vindu-Fast:V4 23x22:1899685",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1R5tn5PbD9ThhYQGn_w8mg": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.1 18x21M 33db EI30S:2069215",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1RdxPj8jPDouQ8N8iEMJwD": {
+      "name": "Vindu 3 felt:V7 24x22:5447751",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1RwoWuubrFyxE5RoT2pY2$": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:3000160",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1RwoWuubrFyxE5RoT2pYNM": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2998793",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1RwoWuubrFyxE5RoT2pYPf": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:2998710",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1RwoWuubrFyxE5RoT2pYSN": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2998472",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1S45cNJFj2cOlflPQBpLp2": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:YDA 5.1 16x21M:4543202",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SLqOZgg1EDhQRlC_igBS4": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:1898690",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NO0": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1785275",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NOB": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1785264",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NOC": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1785271",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NOE": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1785269",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NP$": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:1785284",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NPw": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1785281",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NPx": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1785280",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRW": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1785179",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRb": {
+      "name": "D\u00f8r Enkel:IDT 2.9 10x21M EI60S:1785182",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRc": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1785181",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2Wk2N": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:2099229",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2Wk3C": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2099270",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2Wkf6": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2097868",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2lJPr": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2088703",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1TNaO9tWPB3PAGYwcanMoV": {
+      "name": "Vindu-Fast:V4 23x22:2401275",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1TP62uN61FKBNnayjXS590": {
+      "name": "Vindu_3felt:GF 13.1 36x21 38dB:5149291",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1TP62uN61FKBNnayjXS6Hn": {
+      "name": "Vindu_3felt:GF 13.1 36x21 38dB:5153882",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1UQ$z1V4D0u9NGnICJq078": {
+      "name": "M_Overhead-Rolling:1700 x 2100mm:4451019",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2GGW": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:2105557",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Ic$": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2100554",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2IcY": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2100567",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2IcZ": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2100566",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Icb": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2100560",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Ics": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2100547",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Icy": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2100553",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Juy": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2104009",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1WotCxN$TB3xrQ01dkhwbM": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDT 4.2 13x21M EI 60S:2137996",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1WqgR8zMH4FgrL7KA9gSJ5": {
+      "name": "Vindu-Fast:V5 8x22:4272094",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1YvCpajhfD5PrmXjEvCwiZ": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:5046262",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1YvCpajhfD5PrmXjEvCwl9": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:5046044",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1ZgwVYPV57ivmFOGY9cKu8": {
+      "name": "Vindu-Fast:V3 18x22:1892833",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1b4KDh3Ev8XQCDyubImQw0": {
+      "name": "D\u00f8r Enkel:IDT 2.9 10x21M EI60S:1865778",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1b98r3ZLT9UwJz3GVxdn9I": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V18 21x16:5427464",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1dkLMjyB532vjwG6WSxSW5": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V21 35x16:5430404",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWg9u": {
+      "name": "Vindu-Fast:GF 4.2 18x21 33dB:2501801",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgPL": {
+      "name": "Vindu-Fast:GF 4.1 18x21 38dB:2500740",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgVy": {
+      "name": "Vindu-Fast:GF 10.2 8x27 38dB:2500909",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgWq": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2500325",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgXo": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2500259",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgg8": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:2499673",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgto": {
+      "name": "Vindu-Fast:GF 4.2 18x21 33dB:2499363",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgv5": {
+      "name": "Vindu-Fast:GF 4.2 18x21 33dB:2498708",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgwn": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:2498656",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgxP": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2498568",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gP2IBOLX0mQ1PWuqZWgxr": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:2498596",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1gWEt8T_HBnvvrCjhE6IsU": {
+      "name": "D\u00f8r Enkel:YDT 1.2 10x21M Isolert:4202873",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hzhZJcfzBdAO_ZxZN67lt": {
+      "name": "D\u00f8r Enkel:IDT 2.10 10x21M 38dB EI60S:2135168",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hzhZJcfzBdAO_ZxZN67ou": {
+      "name": "D\u00f8r Enkel:IDT 2.9 10x21M EI60S:2134991",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1iovOXUJj7fubokCPLgbJP": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 6.1 12x21M EI60 CS:5876404",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1iovOXUJj7fubokCPLgdg9": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDA 2.2 15x21M EI60SC:5866724",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "1jHESomBP98OjLKiZn5jef": {
+      "name": "D\u00f8r Enkel_ Glassfelt_glassfelt over:YDA 2.1 12x30 36dB:3974002",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jdastcTX2pwzgGHuRkUZP": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDS 2.1 13x21M EI60S:4093959",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1l4jNRZRT2a8RlV4vUeJ8n": {
+      "name": "Vindu 3 felt:V11 35x22:5465449",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOL1q": {
+      "name": "Vindu 3 felt:V7 24x22:5447942",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOL7O": {
+      "name": "Vindu 3 felt:V6 24x22:5447850",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOLJE": {
+      "name": "Vindu 3 felt:V6 24x22:5449148",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOLUo": {
+      "name": "Vindu 3 felt:V6 24x22:5449408",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOLd5": {
+      "name": "Vindu 3 felt:V6 24x22:5449911",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOM_J": {
+      "name": "Vindu 3 felt:V10 30x22:5447393",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOMuC": {
+      "name": "Vindu 3 felt:V7 24x22:5447550",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOMwR": {
+      "name": "Vindu 3 felt:V7 24x22:5447657",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1lJPwYDgDAQ8nL4X_wOMye": {
+      "name": "Vindu 3 felt:V7 24x22:5447258",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1ldN7LR3r3ofPoX9x5oLGg": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2083380",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ldN7LR3r3ofPoX9x5oLHl": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2083379",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ldN7LR3r3ofPoX9x5oLTf": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2083465",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ldN7LR3r3ofPoX9x5oLTl": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2083471",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ldN7LR3r3ofPoX9x5oLTm": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2083472",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ldN7LR3r3ofPoX9x5oLfW": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2083373",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ljX6V5JL0PBBxw92e26Mn": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:2190610",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ljX6V5JL0PBBxw92e26NJ": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:2190704",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1nWY1FVOb25OtmXstuJsao": {
+      "name": "Vindu 3 felt:V7 24x22:5436093",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1oA2zRS5H9rwGCw_O5EjPF": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V19 21x16:5428378",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1rVINQQNTFFxbVEpGb5ArA": {
+      "name": "D\u00f8r Enkel:IDS 5.1 13x21M EI60CS:6509988",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 00U"
+      ]
+    },
+    "1rVINQQNTFFxbVEpGb5AyM": {
+      "name": "D\u00f8r Enkel:IDS 5.1 13x21M EI60CS:6510584",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 00U"
+      ]
+    },
+    "1rmcKk_sn8kvG90cyaRLk2": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3384739",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1tWyiJokD0g9OxuDBNkflT": {
+      "name": "Vindu-Fast:V22 14x14:3951157",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1tzucaMqz0c9pTB4ODLrbR": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:YDA 1.2 16x21M EI 30S:2980522",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1tzucaMqz0c9pTB4ODLrfU": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:YDA 1.2 16x21M EI 30S:2980271",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1uxIuVLVrB_gwNX$qzDdOp": {
+      "name": "Side_Stack_Operable_Wall_h2500_w9700:IDF 3.1 Foldevegg 9700x2500:2031491",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1wGDdmLln82w1J_3b3FG8v": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:IDT 8.1 18x21M 33dB:6481045",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1wGDdmLln82w1J_3b3FG9N": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:IDT 8.1 18x21M 33dB:6481147",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1xbatIdgn3_w3s2c$p7Lyh": {
+      "name": "M_Overhead-Rolling:1700 x 2100mm:3038740",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1xmlHp0YXCyeNlKjsriogm": {
+      "name": "Vindu 3 felt:V12 35x22:5466633",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1zVNXibbT0IuOwogp2tcQ4": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.4 10x21M 33dB E30CS:2080687",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zcTPUxz121g68cIZDkHxg": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:4202122",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zdF5GD$17l9Jw7DnWEQzZ": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3212641",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2$vqSUuODE5QTld_x5CZQW": {
+      "name": "Vindu 3 felt:V9 30x22:5446585",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT60W": {
+      "name": "Vindu-Fast:GF 3.6 6x21 33dB:2525730",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT61Y": {
+      "name": "Vindu-Fast:GF 3.6 6x21 33dB:2525792",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6Fs": {
+      "name": "Vindu-Fast:GF 3.6 6x21 33dB:2525684",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6KO": {
+      "name": "Vindu-Fast:GF 6.1 8x21 33dB:2527002",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6Ky": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2527038",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6MS": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2527134",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6N7": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2527173",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6Np": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2527217",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6aB": {
+      "name": "Vindu-Fast:GF 3.3 6x21 44dB:2523913",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6kN": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2523541",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT6x2": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2524352",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT71s": {
+      "name": "Vindu-Fast:GF 2.4 9x21 25dB E30:2529908",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT7Bn": {
+      "name": "Vindu-Fast:GF 8.1 7x7 58dB:2529523",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT7H8": {
+      "name": "Vindu-Fast:GF 2.3 9x21 25dB EI30:2530890",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT7eB": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2527241",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT7hJ": {
+      "name": "Vindu-Fast:GF 2.1 9x21 38dB:2527441",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT7hu": {
+      "name": "Vindu-Fast:GF 5.3 5x21 33dB:2527482",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT7qA": {
+      "name": "Vindu-Fast:GF 15.1 36x10 33dB:2529032",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT9DY": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2521440",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT9ao": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:2519856",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT9my": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2520638",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT9oX": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2520739",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "223VDxzbP01Q1$4uieT9pj": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2520815",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "23NmF4jUrFXAl2ywZh71kb": {
+      "name": "D\u00f8r Enkel:IDT 10.1 7x21M:7828245",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "24c7K17$nCLhyLFbIc2d4k": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:3867985",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "24c7K17$nCLhyLFbIc2d5g": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:3867925",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "24pdOfiGLF$g5cXWHkwlaf": {
+      "name": "Vindu 3 felt:V12 35x22:5464775",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "26gtHYBrT6nxlSTHaykFKq": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2222006",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "26gtHYBrT6nxlSTHaykFo1": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2223619",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2701roc0LEfva6cMjstwP2": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:2179356",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2701roc0LEfva6cMjstwU$": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:2179297",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "27EWswr059chfXsmp6361y": {
+      "name": "Vindu-Fast:GF 14.2 12x21 33dB E30:5676778",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "27EWswr059chfXsmp6367g": {
+      "name": "Vindu-Fast:GF 14.2 12x21 33dB E30:5676924",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "27tukwmZXDov7Sju0kO25z": {
+      "name": "Vindu 3 felt:V6 24x22:5446392",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Aw7V7p7zEOxOpB0cwwXuA": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDA 2.2 15x21M EI60SC:1728746",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "2CXunUBXnChPxm96GjGaJc": {
+      "name": "D\u00f8r Enkel:IDT 2.8 10x21M EI30S:2008423",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2Cfm5pf4z28w$lCo5EImPa": {
+      "name": "Vindu-Fast:VA1 12x24:2601155",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2D$rKygY5ExwYx5uv3HDBt": {
+      "name": "Vindu-Fast:V5 8x22:2399390",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2D$rKygY5ExwYx5uv3HDCd": {
+      "name": "Vindu-Fast:V3 18x22:2399566",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2D3wkkonj3EhrUVlal8cHt": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt2:IDA 3.2 18x21M 33dB:2235278",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2D3wkkonj3EhrUVlal8cJf": {
+      "name": "D\u00f8r Enkel:IDT 2.5 10x21M 33dB EI60S:2235152",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2D_ocRTBD6DQZblQ6BpNjr": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V17 21x16:5423978",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2EEI9KLxXBleFw5NTNRaCH": {
+      "name": "Vindu-Fast:V2 12x22:2275275",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2EEI9KLxXBleFw5NTNRaCI": {
+      "name": "Vindu-Fast:V4 23x22:2275272",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2FFv4kvW53huZlA6QJ8lvV": {
+      "name": "Vindu-Fast:V22 14x14:1901278",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2G4e7TRyH1sAhm$XSB_I$e": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:3087981",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2G4e7TRyH1sAhm$XSB_I$f": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:3087980",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2G4e7TRyH1sAhm$XSB_Iwi": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:3088169",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2G4e7TRyH1sAhm$XSB_Iwj": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:3088168",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GJlxnDLHAv9iLrL3cu2Dw": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1909354",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GJlxnDLHAv9iLrL3cu2EF": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1909407",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GJlxnDLHAv9iLrL3cu2Mt": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1909927",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GJlxnDLHAv9iLrL3cu2Nz": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1909997",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GJlxnDLHAv9iLrL3cu2bJ": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1910851",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GqeSufAb9sPYSz0u$x6Pg": {
+      "name": "Vindu 3 felt:V10 30x22:5450454",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2H7Rc3R5H8DhwBsMgN2Pjf": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:1898390",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Hc3euPLj8MvN8zGQGcaiv": {
+      "name": "Vindu 3 felt:V6 24x22:5450076",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2J_Nqz0WP1jBwDM4wnzVKt": {
+      "name": "Vindu 3 felt:V7 24x22:5446860",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2KKVUQmnnFQ9E0szGqByIR": {
+      "name": "Vindu-Hengslet:V13 12x16:1853366",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2KKVUQmnnFQ9E0szGqByK6": {
+      "name": "Vindu-Hengslet:V13 12x16:1852971",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Lg2_VemrDOAB$zf6_8jeB": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 6.2 12x21M EI 30CS:2206635",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWn0Cp": {
+      "name": "Vindu-Fast:V4 23x22:2420097",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWn12t": {
+      "name": "Vindu-Hengslet:V23 14x14:2424325",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWn1fY": {
+      "name": "Vindu-Fast:V22 14x14:2421968",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUmI": {
+      "name": "Vindu-Fast:V22 14x14:2425504",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUmJ": {
+      "name": "Vindu-Fast:V3 18x22:2425505",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUmM": {
+      "name": "Vindu-Fast:V22 14x14:2425508",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUpq": {
+      "name": "Vindu-Fast:V22 14x14:2425414",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUpv": {
+      "name": "Vindu-Fast:V4 23x22:2425419",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUs2": {
+      "name": "Vindu-Hengslet:V13 12x16:2425648",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUuG": {
+      "name": "Vindu-Hengslet:V23 14x14:2424994",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUuJ": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:2424993",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUuY": {
+      "name": "Vindu-Fast:V3 18x22:2424976",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUuZ": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:2424977",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUua": {
+      "name": "Vindu-Fast:V3 18x22:2424982",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUuc": {
+      "name": "Vindu-Fast:V2 12x22:2424980",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUud": {
+      "name": "Vindu-Hengslet_1200 opening:V1 12x22:2424981",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUue": {
+      "name": "Vindu-Fast:V4 23x22:2424986",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUuf": {
+      "name": "Vindu-Hengslet:V23 14x14:2424987",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUuj": {
+      "name": "Vindu-Fast:V4 23x22:2424991",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LwnmajvrDQw26CqkWnUzx": {
+      "name": "Vindu-Fast:V4 23x22:2425289",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Mk4fTGVn7uRSK9CXQV6AY": {
+      "name": "D\u00f8r Enkel:YDT 1.2 10x21M Isolert:2583745",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJ0T": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2504855",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJ0v": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2504883",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJ1a": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2504942",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJ2p": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2504761",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJ3T": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2504791",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJGk": {
+      "name": "Vindu-Fast:GF 11.1 12x27 33dB:2505892",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJI$": {
+      "name": "Vindu-Fast:GF 3.3 6x21 44dB:2505781",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJIV": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2505749",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJRp": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2506361",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJSb": {
+      "name": "Vindu-Fast:GF 6.1 8x21 33dB:2506671",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJyS": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2504598",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmJzz": {
+      "name": "Vindu-Fast:GF 10.2 8x27 38dB:2504695",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKWO": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2506898",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKXy": {
+      "name": "Vindu-Fast:GF 7.2 15x21 38dB:2506998",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmK_Q": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2508560",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmK_j": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2508583",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKih": {
+      "name": "Vindu-Fast:GF 7.2 15x21 38dB:2507681",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKj1": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2507723",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKl9": {
+      "name": "Vindu-Fast:GF 3.6 6x21 33dB:2507587",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKtx": {
+      "name": "Vindu-Fast:GF 4.1 18x21 38dB:2508145",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKua": {
+      "name": "Vindu-Fast:GF 2.2 9x21 33dB:2508462",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q7ksae3LAYeu3W49rmKvt": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2508541",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2QmceMdeT2FxfkNdzVxgpJ": {
+      "name": "Vindu-Hengslet:GF 8.2 58dB:3566352",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RBEWrz9fCSPWGB1YCXE41": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2834668",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2RVQS0AeL7uvlAY9$0600p": {
+      "name": "Vindu-Fast:V4 23x22:1897872",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RVQS0AeL7uvlAY9$0605x": {
+      "name": "Vindu-Fast:V22 14x14:1897688",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RVQS0AeL7uvlAY9$060GM": {
+      "name": "Vindu-Fast:V4 23x22:1896885",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RVQS0AeL7uvlAY9$061kS": {
+      "name": "Vindu-Fast:V3 18x22:1895999",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RcNEg21r4nANbNNamoEhA": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3385633",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RcNEg21r4nANbNNamoEj$": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3385492",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RhoHrFT14wwBbSGrhbTyo": {
+      "name": "Vindu 3 felt:V11 35x22:5465087",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2U9dyID813dQ0_BBCnp1bI": {
+      "name": "Vindu-Fast:V22 14x14:2393061",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2U9dyID813dQ0_BBCnp1cZ": {
+      "name": "Vindu-Hengslet:V23 14x14:2392852",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2V9v$eHJ976hyXp$fOHmZc": {
+      "name": "Vindu 3 felt:V6 24x22:5449245",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2VdJ62kbf6yOW8AfiR2duL": {
+      "name": "Vindu-Fast:V24 20x20:2217110",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2VdJ62kbf6yOW8AfiR2dwi": {
+      "name": "Vindu-Fast:V24 20x20:2217007",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2YbMT$DAbC4AjWJLJP7c5m": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2072049",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2ZxXOG0YnAEOLPWZ51kSB_": {
+      "name": "Vindu-Fast:VA1 12x24:3019389",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW5e": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2988697",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW5f": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2988696",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW9G": {
+      "name": "Vindu-Fast:GF 9.1 11x26.5 33dB:2988449",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW9H": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2988448",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW9i": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2988445",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW9j": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2988444",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW9k": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2988447",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkW9l": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2988446",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkWp6": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2987831",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_m1taOmz3puvLFJIqkWp9": {
+      "name": "Vindu-Fast:GF 1.1 12x21 33dB:2987832",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2aHBhArIv10vru8hilHvBk": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V16 21x16:5422930",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2anGbrERb0KeIk6YZkqmKm": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:4195455",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2anGbrERb0KeIk6YZkqmMt": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.2 10x21M 28dB EI30S:4195576",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2apcUqii12IwqEYuoAjIVm": {
+      "name": "Vindu-Hengslet:V13 12x16:2464631",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2azdNg_TPBtPFbDKZn3gw1": {
+      "name": "Vindu 3 felt:V11 35x22:5464245",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2b7F8dUdn9wuQCt4psQPvz": {
+      "name": "Vindu 3 felt:V6 24x22:5449631",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2cQKz3aTXErPZV$jhgi3JC": {
+      "name": "Vindu 3 felt:V6 24x22:5472792",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00smK": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:1753211",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snm": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:1753119",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00soj": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:1753282",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00sol": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.8 10x21M 28dB E30CS:1753280",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spJ": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1753276",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spM": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.2 10x21M 28dB EI30S:1753273",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spO": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.4 10x21M 33dB E30CS:1753271",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spT": {
+      "name": "D\u00f8r Enkel:IDT 2.4 10x21M 38dB EI30S:1753266",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spy": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1753235",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spz": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:1753234",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2fk_1DqMzCKgqnfcFOTSS$": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1829818",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2gBgaMeFn7XBRdMqd_ikbI": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 1.1 10x21M:4270571",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2gBgaMeFn7XBRdMqd_ikdz": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 1.1 10x21M:4270404",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2gVNCPltfBF8k6EEEVON8h": {
+      "name": "Rullegitter:2680 x 1275mm:7267956",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "2kQ_5f7iHDAeYO_720xknu": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.1 10x21M EI 30S:2118010",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ie2I": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:2182396",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ie2Z": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:2182349",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ieOO": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:2181750",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5iegQ": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:2180852",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ifBh": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2186885",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ifDY": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2187020",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ig_B": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2188261",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5igpx": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:2187413",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5igsk": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2187712",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5igva": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2187786",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2lhEiSbTT94AcxghoGNKtz": {
+      "name": "Doors-Sliding_Manusa_Biparting_sliding_fixed_INT:YDA 6.1 Skyved\u00f8rer:5720315",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2m9Su8_6DDTvvs3mQjcSS6": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2072563",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2m9Su8_6DDTvvs3mQjcVbV": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2073002",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2n9DbFqOXANRrn9LydtLKX": {
+      "name": "D\u00f8r Enkel:IDS 6.1  8x21M:4109271",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2nrM4nFUX3WO_mEStGMO8q": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V19 21x16:5427952",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2nyIuvN$LFOQ$F8eDpEE$0": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:3443650",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bOh0": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1971747",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bOh1": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1971746",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bPIq": {
+      "name": "D\u00f8r Enkel:IDT 2.9 10x21M EI60S:1968215",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2rB0auDSfBluk91QLdbB$c": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2487384",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2rB0auDSfBluk91QLdbBDt": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2488521",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2rB0auDSfBluk91QLdbBgD": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2486579",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2rB0auDSfBluk91QLdbBj0": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:2486526",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2sgv8ljCfCR8d7fPoL5KCM": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2812498",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2sgv8ljCfCR8d7fPoL5KD7": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2812419",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2uA7$8Cq95AvALsIoMMjyA": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V21 35x16:5430662",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2w2dhboh996Q4VmCqbp4Vc": {
+      "name": "Vindu-Fast:V3 18x22:4272092",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2yiM$65j55IxLAfll5BUXv": {
+      "name": "Vindu 3 felt:V8 27x22:5445842",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2yiM$65j55IxLAfll5BUdv": {
+      "name": "Vindu 3 felt:V8 27x22:5445970",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2yiM$65j55IxLAfll5BUpj": {
+      "name": "Vindu 3 felt:V7 24x22:5446726",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2zgTiAIQzA4u0hs$1_zcJN": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:2017476",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zgTiAIQzA4u0hs$1_zcLj": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:2017571",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zgTiAIQzA4u0hs$1_zcaM": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2017464",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zgTiAIQzA4u0hs$1_zci5": {
+      "name": "D\u00f8r Enkel:IDT 2.6 10x21M 38dB:2017473",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zgZgcT3XAvOJKgMRMHh6I": {
+      "name": "Vindu-Fast:GF 9.1 11x26.5 33dB:2996296",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEaLH": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1919504",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEaRb": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1919523",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEad1": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1919231",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEahn": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1919258",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEaho": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1919255",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEahs": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1919259",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$Gm$REn19VORcp0h6twUP": {
+      "name": "D\u00f8r Enkel:IDT 9.1 10x21M:3427527",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "31pjT5tlzBAglVfnyL7EQ2": {
+      "name": "Vindu 3 felt:V7 24x22:5447015",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "32dKzjYTf8NB7L2JTkWyxi": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1937698",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "32dKzjYTf8NB7L2JTkWyy1": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1937615",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "32dKzjYTf8NB7L2JTkWz12": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1937292",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "32dKzjYTf8NB7L2JTkWz2T": {
+      "name": "D\u00f8r Dobbel:IDT 5.2 15x21M EI60S:1937235",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35W$AQRqPEpBlKc7D86PZk": {
+      "name": "Vindu-Fast:V3 18x22:3466359",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "36R5E2q5f2TvXJ1UAvvL5k": {
+      "name": "Luke600:Luke 600:6622567",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "36d19o9BnC3vv1B84ZRtfT": {
+      "name": "D\u00f8r Enkel:IDT 2.9 10x21M EI60S:2379978",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "37AoX_gkbC_f3B2RrzrGkU": {
+      "name": "Vindu-Fast:V25 12x30 36dB:2536143",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "395lAaLE1BUe7I1Z_lFQq_": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:4003185",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "395lAaLE1BUe7I1Z_lFRQd": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:4003197",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "395lAaLE1BUe7I1Z_lFRRH": {
+      "name": "Vindu-Fast:GF 2.1 9x21 38dB:4003198",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "395lAaLE1BUe7I1Z_lFRUY": {
+      "name": "Vindu-Fast:GF 2.1 9x21 38dB:4003205",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Bl3fR9Kj6L80jk4jSC2f_": {
+      "name": "Vindu 3 felt:V9 30x22:5444681",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Bl3fR9Kj6L80jk4jSC2jh": {
+      "name": "Vindu 3 felt:V10 30x22:5444956",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3CMJLBZmb6BOdaUDpBwuzp": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2135766",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3EXLztRbbD8vGivsMF5GSh": {
+      "name": "Enfl\u00f8yet_alud\u00f8r:IDA 7.1 15x21M EI60CS:3690402",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "3Ea42izT5D4fQevf0daCxX": {
+      "name": "Vindu 3 felt:V11 35x22:5472303",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3F_yCDpr549h5tadK22KHe": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 6.2 12x21M EI 30CS:1848774",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3F_yCDpr549h5tadK22KJ5": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 6.2 12x21M EI 30CS:1848683",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIupG": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1825698",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIupN": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1825699",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3FzicAYN9DEQyhbxJcq32i": {
+      "name": "Vindu 3 felt:V11 35x22:5472408",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3GJx2r9FrFb8U7aTZnljXP": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader:YDS 1.1 15x21M:2389269",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3GJx2r9FrFb8U7aTZnljcH": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader:YDS 1.2 15x21M EI 60S:2389213",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Hig3q54D8jvFuotHhGkyH": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V15 24x16:5429707",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3HuqBDqOj6H9c2lS071LPV": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.2 10x21M 28dB EI30S:1830486",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3HuqBDqOj6H9c2lS071LSI": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1830683",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3IcDidnVj5PPriLyYgD3EH": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:YDA 5.2 16x21M EI 30S:1835036",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Jcp1lunvCFBfwNNcFZBB2": {
+      "name": "D\u00f8r Enkel:YDT 1.1 10x21M:4118873",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Kn0pGBY9CXRLmooYC5Y_7": {
+      "name": "Vindu 3 felt:V6 24x22:5448868",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MXzfgGIz2xPfYspPiWAOI": {
+      "name": "Vindu-Fast:V14 14x16:2430034",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MXzfgGIz2xPfYspPiWAe_": {
+      "name": "Vindu-Fast:V14 14x16:2431102",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MXzfgGIz2xPfYspPiWBc5": {
+      "name": "Vindu-Hengslet:V13 12x16:2427845",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MXzfgGIz2xPfYspPiWBc9": {
+      "name": "Vindu-Hengslet:V13 12x16:2427849",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MXzfgGIz2xPfYspPiWBcA": {
+      "name": "Fast vindu+ \u00e5pningsvindu:V15 24x16:2427850",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MXzfgGIz2xPfYspPiWBpZ": {
+      "name": "Vindu-Hengslet:V13 12x16:2428579",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Mtdur07H3$wjtCNLkkTMf": {
+      "name": "Vindu_2felt:GF 14.1:5156029",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3ObdPKQKnADxl0koLMbmvC": {
+      "name": "Luke600:Luke 600:6623186",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ObdPKQKnADxl0koLMbn0A": {
+      "name": "Luke600:Luke 600:6623636",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ObdPKQKnADxl0koLMbn0B": {
+      "name": "Luke600:Luke 600:6623637",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ObdPKQKnADxl0koLMbn2b": {
+      "name": "Luke600:Luke 600:6623547",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3QMa9A_7r8y91m$xOU35Ex": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:2275999",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3QPaeiYtfC2xq$5Sp5nFJw": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:2751635",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3T0LSRCJr579Hfd5wOgKiJ": {
+      "name": "Luke600:Luke 10M:7318563",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3TILYnBqn2LAQMVLVwlOCP": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:1725481",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3VUq38thb9gu7wmEuavfq_": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3380386",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3VUq38thb9gu7wmEuavfqz": {
+      "name": "Vindu-Fast:GF 12.1 6x31 38dB:3380385",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Vt6mwG5nCKeLkpep262zT": {
+      "name": "D\u00f8r Enkel:IDS 1.1 10x21 EI60S:2027286",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Vt6mwG5nCKeLkpep2631s": {
+      "name": "D\u00f8r Dobbel_Ulike_D\u00f8rblader:IDS 2.1 13x21M EI60S:2027581",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 00U"
+      ]
+    },
+    "3YUrlgXHv4xxpPRnbfYMmg": {
+      "name": "Vindu-Fast:V4 23x22:1926043",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3bLZS8LdD0tBnDMMaF2KXy": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1913523",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3bLZS8LdD0tBnDMMaF2KYn": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1913524",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3bLZS8LdD0tBnDMMaF2K_v": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1913525",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3c1awkLoXAxBYHBQ4qGhaL": {
+      "name": "Luke600:Luke 600:6609756",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3eVd2GHRP7pBcAD$OfxqwO": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:2147862",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3eVd2GHRP7pBcAD$OfxqwP": {
+      "name": "D\u00f8r Enkel:IDT 1.1  8x21M:2147861",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ew$d2HdvFMAZRdqq2VrSu": {
+      "name": "Vindu 3 felt:V8 27x22:5449824",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3hS4Uuyp1DtfqTJzauuAej": {
+      "name": "Vindu-Fast:GF 1.3 12x21 38dB:2816373",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3hS4Uuyp1DtfqTJzauuAfk": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:2816310",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3iccqxdt98$B7HYx716RXD": {
+      "name": "Vindu-Fast:GF 3.2 6x21 38dB:2846481",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3m5ew$hhz4W9qYh7MG6wyx": {
+      "name": "D\u00f8r Enkel:IDT 2.1 10x21M:3605652",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3nAuo2kQ13wfEUh$6rHUyY": {
+      "name": "Vindu-Fast:VA1 12x24:2537605",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3nFVM2YUH9kuAqrrfntjfe": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:3382938",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3nFVM2YUH9kuAqrrfntjff": {
+      "name": "Vindu-Fast:GF 10.1 8x27 33dB:3382939",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3nZHHyOPz5PP3xNdf5rsl9": {
+      "name": "D\u00f8r Enkel:IDT 2.5 10x21M 33dB EI60S:2467890",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3nZHHyOPz5PP3xNdf5rslm": {
+      "name": "D\u00f8r Enkel:IDT 2.5 10x21M 33dB EI60S:2467851",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4zo": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDA 5.1 10x21M 33dB:1755293",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "3paGAJbAj1URJxhZfktYsm": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1814536",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3paGAJbAj1URJxhZfktYsz": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.3 10x21M 33dB:1814533",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3paGAJbAj1URJxhZfktZC9": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.5 10x21M 38dB EI30S:1814193",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3q3SMCPtf2Shc02uXf8iDG": {
+      "name": "_D\u00f8r Dobbel_Ulike_D\u00f8rblader_Glassfelt:IDA 3.1 18x21M 33db EI30S:1852022",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qo6anXbf5Q9LpoHyAxkpI": {
+      "name": "Vindu 3 felt:V12 35x22:5472149",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3rRfCLd25FVwAurqfmNSeu": {
+      "name": "D\u00f8r Enkel:YDS 2.1 13x21M:3971723",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rzgM29Xj0BBMCsAHGIgYv": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904875",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rzgM29Xj0BBMCsAHGIhGB": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904154",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rzgM29Xj0BBMCsAHGIhK_": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904159",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rzgM29Xj0BBMCsAHGIhMN": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904160",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rzgM29Xj0BBMCsAHGIhQ8": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1904346",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3s_REImLD8m8oa5_3mxuUv": {
+      "name": "Side_Stack_Operable_Wall_6500:IDF 1.1 Foldevegg 6500x2800:2154531",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3s_REImLD8m8oa5_3mxxby": {
+      "name": "D\u00f8r Enkel:IDT 2.7 10x21M 38dB EI60S:2154214",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3s_REImLD8m8oa5_3mxxuA": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2152848",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3s_REImLD8m8oa5_3mxxvL": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2152911",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3uqzcHP959wRBAVdwkQTVS": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2172983",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3uqzcHP959wRBAVdwkQTW4": {
+      "name": "D\u00f8r Enkel:IDT 1.2 8x21M 33dB:2172911",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3vd1UdIAvDjRJYlTsnj8bi": {
+      "name": "Side_Stack_Operable_Wall_8000:IDF 2.1 Foldevegg 8000x2800:1780830",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3vd1UdIAvDjRJYlTsnj8kh": {
+      "name": "D\u00f8r Enkel_ Glassfelt:IDT 3.6 10x21M 38dB:1781401",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3vd1UdIAvDjRJYlTsnj8rW": {
+      "name": "D\u00f8r Enkel:IDT 2.3 10x21M 33dB:1779794",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3vmXnyOjrDwuU9c3adEVZl": {
+      "name": "Vindu 3 felt:V9 30x22:5447190",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzp$7": {
+      "name": "D\u00f8r Enkel:IDT 2.11 10x21M 33dB EI30S:2067575",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Plan 01"
+      ]
+    },
+    "3y7w$rQQ92sPNEVtsgzpwH": {
+      "name": "Vindu-Fast:GFA 3 8x27 38dB:2067745",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "Plan 02"
+      ]
+    },
+    "3z9CHbT8bCO9CcihCY1WeT": {
+      "name": "Vindu-Fast:V25 12x30 36dB:2535368",
+      "class": "IfcWindow",
+      "label": "PASS"
+    }
+  }
+}

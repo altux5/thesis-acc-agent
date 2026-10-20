@@ -1,0 +1,172 @@
+{
+  "case_id": "slab_fall_protection__duplex",
+  "rule": "No one may be able to fall from the edge of a slab.\nSource: rule 'Slabs must be Guarded against Falling' of the EC3-2026 rule catalogue: This rule checks that it is not possible to fall from slabs. The rule checks that horizontal components are surrounded by vertical components, such as walls or railings. If no vertical component exists on the edge of a horizontal component, another horizontal component or stairs needs to continue and the drop to the other horizontal component must not be more than specified.\nBenchmark convention: check every edge of every slab. An edge is safe when (a) walls, railings, columns, stairs or other objects stand along it as a barrier at least 1.00 m high above the slab top, with gaps of at most 100 mm between barrier parts and between the slab and the barrier, or (b) another slab, a stair, a ramp or the site, at least 200 mm wide, continues within 100 mm of the edge and at most 500 mm below the slab top. A slab fails when part of its edge is neither guarded nor continued: a missing barrier, a barrier lower than 1.00 m, a barrier that does not cover the whole edge, or a continuing surface too far away, too narrow or more than 500 mm below. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/duplex/arc.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "1CZILmCaHETO8tf3SgGEWh",
+    "1CZILmCaHETO8tf3SgGEXu"
+  ],
+  "labels": {
+    "1CZILmCaHETO8tf3SgGEWh": "FAIL",
+    "1CZILmCaHETO8tf3SgGEXu": "FAIL",
+    "1hOSvn6df7F8_7GcBWlRqU": "PASS",
+    "1hOSvn6df7F8_7GcBWlRrM": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FK4F": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKcz": "PASS",
+    "2OBrcmyk58NupXoVOHUt0F": "PASS",
+    "2OBrcmyk58NupXoVOHUt2f": "PASS",
+    "2OBrcmyk58NupXoVOHUt5W": "PASS",
+    "2OBrcmyk58NupXoVOHUt8F": "PASS",
+    "2OBrcmyk58NupXoVOHUt8s": "PASS",
+    "2OBrcmyk58NupXoVOHUtBP": "PASS",
+    "2OBrcmyk58NupXoVOHUtC0": "PASS",
+    "2OBrcmyk58NupXoVOHUtDX": "PASS",
+    "2OBrcmyk58NupXoVOHUten": "PASS",
+    "2OBrcmyk58NupXoVOHUtgP": "PASS",
+    "2OBrcmyk58NupXoVOHUtjR": "PASS",
+    "2OBrcmyk58NupXoVOHUtju": "PASS",
+    "2OBrcmyk58NupXoVOHUtoa": "PASS",
+    "2OBrcmyk58NupXoVOHUtxr": "PASS",
+    "3ThA22djr8AQQ9eQMA5s7I": "NA"
+  },
+  "notes": "Slabs must be Guarded against Falling on 21 IfcSlab: {'FAIL': 2, 'NA': 1, 'PASS': 18}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_duplex_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 21,
+    "ifc_sha256": "707a032566dee8e969a44d95509be46d646440e2443624709f8d3ae2b45f4656",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slabs must be Guarded against Falling",
+      "message": null,
+      "report_file": "ec3_duplex_check.xlsx",
+      "report_sha256": "eb382d9a8558816db6474da78e80318d45ee42d92aa9048be085431a09138c6a",
+      "rule_issues": 2,
+      "matching_issues": 2
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element; NA: IfcSlab ROOF (a roof for Solibri).",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "1CZILmCaHETO8tf3SgGEWh": {
+      "name": "Floor:150mm Exterior Slab on Grade:216507",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.2"
+      ]
+    },
+    "1CZILmCaHETO8tf3SgGEXu": {
+      "name": "Floor:150mm Exterior Slab on Grade:216552",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.1"
+      ]
+    },
+    "1hOSvn6df7F8_7GcBWlRqU": {
+      "name": "Floor:Residential - Wood Joist with Subflooring:144800",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlRrM": {
+      "name": "Floor:Residential - Wood Joist with Subflooring:144872",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FK4F": {
+      "name": "Floor:127mm Slab on Grade:141232",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKcz": {
+      "name": "Floor:127mm Slab on Grade:143106",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUt0F": {
+      "name": "Floor:Finish Floor - Ceramic Tile:169866",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUt2f": {
+      "name": "Floor:Finish Floor - Ceramic Tile:169772",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUt5W": {
+      "name": "Floor:Finish Floor - Wood:169701",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUt8F": {
+      "name": "Floor:Finish Floor - Wood:169354",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUt8s": {
+      "name": "Floor:Finish Floor - Wood:169395",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtBP": {
+      "name": "Floor:Finish Floor - Wood:169308",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtC0": {
+      "name": "Floor:Finish Floor - Wood:169093",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtDX": {
+      "name": "Floor:Finish Floor - Wood:169188",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUten": {
+      "name": "Floor:Finish Floor - Ceramic Tile:171444",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtgP": {
+      "name": "Floor:Finish Floor - Wood:171292",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtjR": {
+      "name": "Floor:Finish Floor - Ceramic Tile:171230",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtju": {
+      "name": "Floor:Finish Floor - Ceramic Tile:171261",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtoa": {
+      "name": "Floor:Finish Floor - Ceramic Tile:170785",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUtxr": {
+      "name": "Floor:Finish Floor - Wood:170352",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ThA22djr8AQQ9eQMA5s7I": {
+      "name": "Basic Roof:Live Roof over Wood Joist Flat Roof:184483",
+      "class": "IfcSlab",
+      "label": "NA"
+    }
+  }
+}

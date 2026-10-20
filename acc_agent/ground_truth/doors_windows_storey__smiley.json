@@ -1,0 +1,1537 @@
+{
+  "case_id": "doors_windows_storey__smiley",
+  "rule": "Every door and window must be assigned to the same building storey as the wall it is placed in, and must not be an orphan (a door or window with no host element at all).\n\nA door or window fills an opening that voids a host element - its wall. It violates the rule when (a) it has no host element, or (b) the storey containing it differs from the storey containing its host. If either storey cannot be determined the element cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcDoor or IfcWindow) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/smiley_west/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0$NG_rsVD5wgdTGNw6D1QL": "PASS",
+    "00Er_IGnj5VOLGxRxiql$2": "PASS",
+    "02R7IR9FnDt9WlRfbEQvBi": "PASS",
+    "062AZa7G9C3x_w$f36WUdo": "PASS",
+    "06QP0zTXvBsQia1ACxdRF1": "PASS",
+    "06_d_5sJD0HBxLmJLGbPWA": "PASS",
+    "08l8r4mavD6wYsCwxHSanp": "PASS",
+    "09b7UCg_b69hBhCu8$B9pl": "PASS",
+    "09mjvhx8HDuRkKHli_8H4G": "PASS",
+    "0AiKM4GYnAtPcV5aJaXK4s": "PASS",
+    "0ArpgM$Pv509jkw4pPPtJZ": "PASS",
+    "0AshmBhwD0hRRSIumelpbV": "PASS",
+    "0C9Ydcv9bAfRjQ5xYCBvUx": "PASS",
+    "0FGh_l7oTE68Up7_9m_nS_": "PASS",
+    "0IQWwY5YT6Dv_3oqF3e2yy": "PASS",
+    "0KfA3C4ozEk98USlq5o0Mh": "PASS",
+    "0KofzpuJn24Baa$9Cao9x$": "PASS",
+    "0LFTeiWiH8M9iZkR2XgSXO": "PASS",
+    "0LG2QCtOX8QhgNUkA1sJwH": "PASS",
+    "0La0w7L7z5jB1GrTIMWiBQ": "PASS",
+    "0Mmn9qZmD8RBgTbBN8wJVw": "PASS",
+    "0MpabxB_z8vw6_$VEQedCd": "PASS",
+    "0OhcZRZYD7zhWaBR5R1LZ3": "PASS",
+    "0PaLyGqRv0IOtUYEx3a$KJ": "PASS",
+    "0SXDciA1H8XA0fwNaKf8wG": "PASS",
+    "0Tmb_7qyP3FxhYZpbpS28R": "PASS",
+    "0UFF_9OWbDF9_Z1_3D4ldf": "PASS",
+    "0UQ4EVaKr9ou43578uaIkY": "PASS",
+    "0XkMv4R5LBewkAfMcaeXV6": "PASS",
+    "0Y6kCv1EL5uvd1HiuXBmIA": "PASS",
+    "0YIqKdEmr4SxW6sPEi3sY8": "PASS",
+    "0YLwIS2srCSOONbsaKxRsg": "PASS",
+    "0ZwL2YY6j0IODBFi9RPFH5": "PASS",
+    "0a4XKR2ln4XeOxkNix2_ng": "PASS",
+    "0b61tQPOb9uuzG_TNxgGxx": "PASS",
+    "0cEwFA6XT1O8WmwQPY$sGB": "PASS",
+    "0cW7xsvD51dvtwlChfchN7": "PASS",
+    "0dOowmPvrB4B2hh1rR8qaA": "PASS",
+    "0djX3pXzHDmwXSu0VwOKLP": "PASS",
+    "0eOPo05n54ZQZuSA1Z5S_Z": "PASS",
+    "0ebsgwLsf4Ph7W3rT8Glad": "PASS",
+    "0ezPRbGJD7MOcZ6okDj7$l": "PASS",
+    "0f7t_GRj1BQx$CUtLhHvwY": "PASS",
+    "0fNvi_Zwf3ghppa45dYqsA": "PASS",
+    "0fuWcRqjPBzhfGTkfc1MEp": "PASS",
+    "0gBwWXCcXCD8y1ciaHIqWm": "PASS",
+    "0gXHOGp9r8PekP8iPYcm5e": "PASS",
+    "0ix0vFG9H1lQwsyQFrVVF3": "PASS",
+    "0lyPX9zsPDO8ToHUACwLFe": "PASS",
+    "0m3eIzI9b3ABpX_h231iqs": "PASS",
+    "0nTnu_pMD7IOn9DeIPUqo9": "PASS",
+    "0rQWh25uP0rOr_TEhHX5wg": "PASS",
+    "0rUVStkdPD5ufCEGkaTYcQ": "PASS",
+    "0teqNjj$v4IgRS6SRbshXe": "PASS",
+    "0vvhkiTsf2gR49y$WFQlUN": "PASS",
+    "0wATuiLe157OHk$v$ODSAR": "PASS",
+    "0xM$QEXef7VQOmv3pVZY10": "PASS",
+    "0xhGFQzDL31QqH9njU4cef": "PASS",
+    "0y9$9bRxvDg8GAa0yN7TYH": "PASS",
+    "10d6QlA4zCuOps5HGt3cT$": "PASS",
+    "11F6ST96nEAe02dx7agB2y": "PASS",
+    "11K8wGQdL1buRHvicQkWsi": "PASS",
+    "11_LljMsPFHBN_aTQlacef": "PASS",
+    "11rRJRhbLBKP0mYeFfRAnN": "PASS",
+    "12pxH55qv96vAXOkVJo3Al": "PASS",
+    "13LeOz5YDBRuWKGn3XV8ny": "PASS",
+    "13RW8trmf9P8u3wldP5JtV": "PASS",
+    "14DEFG6yfFHBg$xRWpZjUt": "PASS",
+    "14O9bm45jB6fELchhZyg_5": "PASS",
+    "17a4HgJ7HFw8TlthCViTkQ": "PASS",
+    "17nXX$Oo52DxlyTePiq6ez": "PASS",
+    "18vF1$7C5BROwmJKsCLtLn": "PASS",
+    "1Awi9GHof9eh5YPnVr33HL": "PASS",
+    "1BiF1BVKbDLgw4ZS_mf7kn": "PASS",
+    "1D4ZaLOR518u_gHOosSjxq": "PASS",
+    "1EdLEUb3rBk8Jj8gejG$jd": "PASS",
+    "1Gy_$vFfv3$hiRtQc0Dk31": "PASS",
+    "1HQvKIahT6vx0SVvpDWV0x": "PASS",
+    "1IJarhVFHD7g8aPkGs5vDt": "PASS",
+    "1IL6KF4EH3oeh_59nylQYC": "PASS",
+    "1JHMWE7rTAyhL635hm40m4": "PASS",
+    "1JRJFNBMvAsxG$a0t66RQI": "PASS",
+    "1JiJD98Rj4h8OxAt7PTe_M": "PASS",
+    "1Js6B1CsDDTB7yF6CxOWEP": "PASS",
+    "1LJuy5LCLE2wZBhz2qm3PB": "PASS",
+    "1Nr7_dNmL7jBD2jm2mp_Or": "PASS",
+    "1Of_uGimzFbwc59UDmGamB": "PASS",
+    "1PwtJ8pnXFKOZL66wyi_lU": "PASS",
+    "1RTrAr3ejAsxrZqLRfwayz": "PASS",
+    "1R_N5LShP40u5dMVlwa3gH": "PASS",
+    "1RnnYbN$n3pQpTUql_KNrp": "PASS",
+    "1SG3H6x9j6wxGhsRuIcuUR": "PASS",
+    "1SsWi7vpz7cBJvV2issu_H": "PASS",
+    "1TZmU2lv57OvMzbIWK6wQc": "PASS",
+    "1Tr3hvRjX1ugE5z2RLgPLy": "PASS",
+    "1VICIhM1DBo9PxPc3PkgpU": "PASS",
+    "1VcyNF6$D0d91nnR8qb19O": "PASS",
+    "1WuLwQ7L95IeyQ9ttQS5Es": "PASS",
+    "1X417iUVX1AQyVGCSb8Ggi": "PASS",
+    "1XefGgz8rEZ8iKn91elwPC": "PASS",
+    "1Zw0IJyUPEAuhQ1OFxzm9P": "PASS",
+    "1_w0XUO3j7GeI4I_AlllN8": "PASS",
+    "1aM_qMkfLAsvRTcDLmM9OA": "PASS",
+    "1aXOwCf6DAWe5MKJNaVB$R": "PASS",
+    "1b7Xe90NzDoxtikW81mJXo": "PASS",
+    "1c9I09RivE$hYgYe_Pr8LV": "PASS",
+    "1ccBjZfQjCJwctxYR_KS9A": "PASS",
+    "1dsDP1zDzE3fYtkFVaBI96": "PASS",
+    "1eZFjMQRn1k8TV$yXW6ipW": "PASS",
+    "1fF4I6XyP8IQPTsCqPwIvk": "PASS",
+    "1fL7wmm85CAffiK1GncHqy": "PASS",
+    "1gX_KChVjCd8OhwS0XD4Ss": "PASS",
+    "1hAVtYHi15WxNEP9PRHWMz": "PASS",
+    "1hccHBsg92g8QQMV5efkn8": "PASS",
+    "1ht_itI21D2xVhA$6zBONP": "PASS",
+    "1j9hhYnN593Pw0_W7Uwjka": "PASS",
+    "1jPJ8T__n37uhagnE51Xpy": "PASS",
+    "1jrcmNHJr3HAQh0etjMIHq": "PASS",
+    "1kBlDbX2P1UPNtZMvF8ZCM": "PASS",
+    "1l4_lfgXrFN9bcxHtno3xs": "PASS",
+    "1mFrq_wz9DufZsGnJEb$PL": "PASS",
+    "1njbt8n_LC2P2hrejNC74Q": "PASS",
+    "1ntjj0BCPB3QyOrpCVOFAz": "PASS",
+    "1pcUaQYWr96uMUe201Ie5L": "PASS",
+    "1q1$zOYvr4gOOGQDe1a1xt": "PASS",
+    "1qA_6Xm0TB3ejii0NvRdE3": "PASS",
+    "1qpKkUkJ96EfA7m6V9UA8q": "PASS",
+    "1r5iVhtsjCQfPmidPVsu_j": "PASS",
+    "1sgqNt1F5CyfNLZTcnrfIh": "PASS",
+    "1tNQjs9GbBWPabmeRGgx1X": "PASS",
+    "1va58tOrnB8ORDKmI9J_rg": "PASS",
+    "1xN2A073D2seHxag2FMVu5": "PASS",
+    "1xYcndjbv64eB3PX_LPhVP": "PASS",
+    "2$29eaXAP37PtPgxEXJUTb": "PASS",
+    "2$sv8HNSv8mQdn2hERfeso": "PASS",
+    "2$zDftp_n6Pw5fJ8PxewPv": "PASS",
+    "20R4wmeQPCTeT8lWN6_8qp": "PASS",
+    "20W2Icg8f7EAW5mGtBEmoM": "PASS",
+    "21WBZx$X9ERuykXayWLfWp": "PASS",
+    "231KKoe0P7TwW6OAyZdPoY": "PASS",
+    "23DdL3udr2P85ZeV0COWMo": "PASS",
+    "24C5qr6SP3Qf$NmDp6tGw$": "PASS",
+    "258x8TPc92hhQfpOAhEuPw": "PASS",
+    "27GIzscSjENBuPYyF2V6aW": "PASS",
+    "27HFBZrp97oRVuSIdXUagw": "PASS",
+    "28RFg$J5f1keL_s9N8qdW0": "PASS",
+    "2BQ5njjFDAYQGlwFNd96UP": "PASS",
+    "2CDxAXb$DFgBF_0C5LC69r": "PASS",
+    "2D08U6oWfAMf5GLyobuPfd": "PASS",
+    "2DJvCRWaX4SeFcNKUW7jiY": "PASS",
+    "2EJVUYxBv8DOZ14coPalce": "PASS",
+    "2EfSxzWN51gvc8AcS_ioZH": "PASS",
+    "2F2376nCTDDQ7eU_R0onGY": "PASS",
+    "2FJ_PUNUv0n9veGtbI0jFL": "PASS",
+    "2FvbESAhn9$PtVc1I3SP0z": "PASS",
+    "2H9Oqw3RbDFf7FvbEfeIvv": "PASS",
+    "2K8zFEPrzBfgkpngTRI6y8": "PASS",
+    "2LBW0CpMT6UusMcTXSTjAe": "PASS",
+    "2MkMjyrxX3$90rK2vfDN_i": "PASS",
+    "2PUn$NA7TCGxP83At9kDkz": "PASS",
+    "2QdNeVY1DFLeEPjdMPEWsu": "PASS",
+    "2SBuZi_b5ECu0TVs4rgY97": "PASS",
+    "2UHOTShfvFIwyna$UHz$jy": "PASS",
+    "2Yo20tjKjD8OGqvW2bc6Jg": "PASS",
+    "2a4NjoGVf6FuulY$QF6Fwx": "PASS",
+    "2cUAje2WTDyxvYox5L65qJ": "PASS",
+    "2clitPzYr69gZ$FUBzqu3t": "PASS",
+    "2fMc8oFQ12NuwOSAwsv_0S": "PASS",
+    "2gvSD2cqj4$Bce4hkIsQWa": "PASS",
+    "2hKCA$MyPCx9GbRj1lC2uE": "PASS",
+    "2hlg8yiTvDsetZm60RBXsW": "PASS",
+    "2joMtvKjrDL97_2Z2o_WoO": "PASS",
+    "2mYXX5Q$n4iwcCCHaJ7cN_": "PASS",
+    "2ndGO42G1BPwXnJ2sgV8ol": "PASS",
+    "2oBbNEnJTA3egCrAPin4uq": "PASS",
+    "2pb5WsyPn6xu8siSWdLY65": "PASS",
+    "2puQc163H1ixxfjYYxCixW": "PASS",
+    "2q7hEE7QH3re1qT8r7j9Hn": "PASS",
+    "2r57RS05P6LRXyuOQLdFon": "PASS",
+    "2rSjVEljXFoukvEyh6dTJb": "PASS",
+    "2vsEKGvZP2ye5ZyzBr5XnP": "PASS",
+    "2wToZTecT3LRQkx7tErj1T": "PASS",
+    "2zQHrZ2Yj6tuvIt4OYclVF": "PASS",
+    "2zV4wd_xTA5RYIAynch3jC": "PASS",
+    "2zVDPb1391RAtcoP83bbfZ": "PASS",
+    "2zdrjIsTH9nh8Dyd9KHhfB": "PASS",
+    "34GiEabTr5c96Hbrr8OzEw": "PASS",
+    "34Mx0IYkv8DPxJyVsgaU$o": "PASS",
+    "35kp2dZaL0$xOuXv7lhpsB": "PASS",
+    "369WrkJz19XgXcPnsGGNgx": "PASS",
+    "37PgXi$i5B6wWv2oQumMjc": "PASS",
+    "37QsqAUsz5yeDcxGz8kZPM": "PASS",
+    "37pDdxPPvANAGzxWQD5Lts": "PASS",
+    "37u9WVyj553uTcNpukwQpQ": "PASS",
+    "38b8JGarLC1wy4YKdqVTPp": "PASS",
+    "39iR0NdS5AtxJAWX5qyAeR": "PASS",
+    "39uNB1JP1AUfe8k58XbMvT": "PASS",
+    "3Bf7NxOJn82RByu5rQ4xtZ": "PASS",
+    "3DQE_ViVrFsRsPnW3b7PwI": "PASS",
+    "3Edmbnp9XDfAmKCgu9b5Ck": "PASS",
+    "3FkU2HCq1F3fmI8fs3uSXQ": "PASS",
+    "3GhEe$$bjFP9LYMvqqrih$": "PASS",
+    "3GonVrlpjBgfWV7nCG1Yk3": "PASS",
+    "3HudM$RIb7_vNO9OSKNBBy": "PASS",
+    "3JZ0ZsdkH79P8Yw$$YRHgR": "PASS",
+    "3N_k_TMWPEbOOUhxDlyjxG": "PASS",
+    "3RCjL5noD7QQYV0uglDfWo": "PASS",
+    "3RRh_spo1EcP26S5_kPXYq": "PASS",
+    "3UZzPg$F17uxYdmaFQJ1HQ": "PASS",
+    "3WAAQEjVr9KOfuD$a3ote$": "PASS",
+    "3WjeHOGub93x2d5WIQ9UWQ": "PASS",
+    "3Y4Dd6fIb8hel8xylMxMt9": "PASS",
+    "3YG$rrZ454$h5hiT23v5Gf": "PASS",
+    "3Yv75k4sLBlwnL8jzksrPw": "PASS",
+    "3Z2cKsECz8tO88JGvj1By7": "PASS",
+    "3_4IAm1r50aBil1u$aSDAy": "PASS",
+    "3awXKZFGT7RwYfvIYeJ7mD": "PASS",
+    "3eKJovGj55pvn9EaGmrBkc": "PASS",
+    "3egveIgUD8V9h69waoe1OM": "PASS",
+    "3fO6qkXBX4QAs5j3o2jd5W": "PASS",
+    "3gmA5tbJvFGA4EuyIQzVF1": "PASS",
+    "3h6cP2bD10wuqyfNnXK_zh": "PASS",
+    "3hbJsms$50dPpYn6uPFBnQ": "PASS",
+    "3jygffyhv4Tg4XwXbPw5xM": "PASS",
+    "3kG5_tns96chzH4dtCO28B": "PASS",
+    "3kg1tQu5XCpgpj6caG2K_5": "PASS",
+    "3nI2yHcnjA19YTBGhIX$t0": "PASS",
+    "3o$eC0fUb4Dfh$UadBcdtD": "PASS",
+    "3pQ4c5Qaf7oAi47gPYsJ_y": "PASS",
+    "3pzrtlhEbD1hUXyG20n6vl": "PASS",
+    "3q0r6TC1XCzPZ66ktbNl6f": "PASS",
+    "3s$n$tvyj2uvCNgjRfNK9J": "PASS",
+    "3s5FvKVQv3YPFzlkhTwfof": "PASS",
+    "3sh7whqTvD$RO_RKpqNHR3": "PASS",
+    "3smcPfpAD3lufKyxieOyI5": "PASS",
+    "3tEADTnLf6Vu$EgODmx67E": "PASS",
+    "3upzQvrJj9uwhNWw1c0MkX": "PASS",
+    "3vpgBJYFvFUvkWdG1z5Iy8": "PASS",
+    "3w81aZbJ5EvwHENy5tK6P3": "PASS",
+    "3xNt7iPwTDH9UtWH0985SR": "PASS",
+    "3xU80BuzD1pOfaWjP15vRI": "PASS",
+    "3xiG40cEz3YAIQNc_mxcTP": "PASS",
+    "3y7T53VW96bvWb18NMYxSm": "PASS",
+    "3yJXrHykz6guMyeT1SI$Cv": "PASS",
+    "3yUm5CJ$b9ZBf889jPYLy6": "PASS",
+    "3ysmOYyW9E2uJ8ee4tqim3": "PASS",
+    "3z4b8sfy90shBd3uf_7e4T": "PASS",
+    "3z8UMupu1DCxkXQAM3VhyX": "PASS",
+    "3zPIO5wGn6eAHQK2NcKlGh": "PASS",
+    "3zaW2mEcr4Aw9T$IyVHTk_": "PASS"
+  },
+  "notes": "Doors and Windows on 250 IfcDoor or IfcWindow: {'PASS': 250}.",
+  "clause": "BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_smiley_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 250,
+    "ifc_sha256": "26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Doors and Windows",
+      "message": null,
+      "report_file": "ec3_smiley_check.xlsx",
+      "report_sha256": "b9e06cc563fb0a24c442a638f668c31ed0349f8f33a05b53918bbbca594794ea",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$NG_rsVD5wgdTGNw6D1QL": {
+      "name": "OG-1-T\u00fcr-07-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "00Er_IGnj5VOLGxRxiql$2": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "02R7IR9FnDt9WlRfbEQvBi": {
+      "name": "EG-T\u00fcr-07-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "062AZa7G9C3x_w$f36WUdo": {
+      "name": "2OG-T\u00fcr-1-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "06QP0zTXvBsQia1ACxdRF1": {
+      "name": "Keller-T\u00fcr-05-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "06_d_5sJD0HBxLmJLGbPWA": {
+      "name": "Keller-Fenster-02-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "08l8r4mavD6wYsCwxHSanp": {
+      "name": "EG-Fenster-10-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "09b7UCg_b69hBhCu8$B9pl": {
+      "name": "OG-1-Balkon-02-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "09mjvhx8HDuRkKHli_8H4G": {
+      "name": "EG-Terrasse-04-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0AiKM4GYnAtPcV5aJaXK4s": {
+      "name": "2OG-T\u00fcr-5-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ArpgM$Pv509jkw4pPPtJZ": {
+      "name": "EG-T\u00fcr-10-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0AshmBhwD0hRRSIumelpbV": {
+      "name": "EG-T\u00fcr-02-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0C9Ydcv9bAfRjQ5xYCBvUx": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0FGh_l7oTE68Up7_9m_nS_": {
+      "name": "1OG-Fenster-1-4",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0IQWwY5YT6Dv_3oqF3e2yy": {
+      "name": "2OG-T\u00fcr-4-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0KfA3C4ozEk98USlq5o0Mh": {
+      "name": "1OG-Fenster-1-5",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0KofzpuJn24Baa$9Cao9x$": {
+      "name": "Keller-T\u00fcr-08-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0LFTeiWiH8M9iZkR2XgSXO": {
+      "name": "Keller-T\u00fcr-10-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0LG2QCtOX8QhgNUkA1sJwH": {
+      "name": "EG-T\u00fcr-05-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0La0w7L7z5jB1GrTIMWiBQ": {
+      "name": "2OG-Balkon-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Mmn9qZmD8RBgTbBN8wJVw": {
+      "name": "EG-T\u00fcr-03-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0MpabxB_z8vw6_$VEQedCd": {
+      "name": "EG-Haustuer-08",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0OhcZRZYD7zhWaBR5R1LZ3": {
+      "name": "OG-1-T\u00fcr-09-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0PaLyGqRv0IOtUYEx3a$KJ": {
+      "name": "Keller-Fenster-04-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0SXDciA1H8XA0fwNaKf8wG": {
+      "name": "OG-1-T\u00fcr-01-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Tmb_7qyP3FxhYZpbpS28R": {
+      "name": "2OG-T\u00fcr-5-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0UFF_9OWbDF9_Z1_3D4ldf": {
+      "name": "EG-Fenster-02-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0UQ4EVaKr9ou43578uaIkY": {
+      "name": "1OG-Balkon-2-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0XkMv4R5LBewkAfMcaeXV6": {
+      "name": "2OG-Balkon-1-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Y6kCv1EL5uvd1HiuXBmIA": {
+      "name": "1OG-Fenster-1-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0YIqKdEmr4SxW6sPEi3sY8": {
+      "name": "EG-Terrasse-02-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0YLwIS2srCSOONbsaKxRsg": {
+      "name": "Keller-Fenster-01-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0ZwL2YY6j0IODBFi9RPFH5": {
+      "name": "Keller-Fenster-07-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0a4XKR2ln4XeOxkNix2_ng": {
+      "name": "EG-T\u00fcr-01-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0b61tQPOb9uuzG_TNxgGxx": {
+      "name": "EG-Fenster-04-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0cEwFA6XT1O8WmwQPY$sGB": {
+      "name": "EG-Terrasse-07-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0cW7xsvD51dvtwlChfchN7": {
+      "name": "2OG-T\u00fcr-1-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0dOowmPvrB4B2hh1rR8qaA": {
+      "name": "2OG-Balkon-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0djX3pXzHDmwXSu0VwOKLP": {
+      "name": "2OG-Balkon-2-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0eOPo05n54ZQZuSA1Z5S_Z": {
+      "name": "EG-Haustuer-09",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ebsgwLsf4Ph7W3rT8Glad": {
+      "name": "2OG-Balkon-3-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ezPRbGJD7MOcZ6okDj7$l": {
+      "name": "OG-1-T\u00fcr-02-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0f7t_GRj1BQx$CUtLhHvwY": {
+      "name": "Keller-T\u00fcr-05-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0fNvi_Zwf3ghppa45dYqsA": {
+      "name": "1OG-Fenster-1-8",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0fuWcRqjPBzhfGTkfc1MEp": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0gBwWXCcXCD8y1ciaHIqWm": {
+      "name": "EG-Haustuer-03",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0gXHOGp9r8PekP8iPYcm5e": {
+      "name": "1OG-Fenster-1-4",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0ix0vFG9H1lQwsyQFrVVF3": {
+      "name": "2OG-T\u00fcr-3-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0lyPX9zsPDO8ToHUACwLFe": {
+      "name": "2OG-T\u00fcr-4-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0m3eIzI9b3ABpX_h231iqs": {
+      "name": "Keller-Fenster-05-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0nTnu_pMD7IOn9DeIPUqo9": {
+      "name": "OG-1-T\u00fcr-09-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0rQWh25uP0rOr_TEhHX5wg": {
+      "name": "Keller-Fenster-06-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0rUVStkdPD5ufCEGkaTYcQ": {
+      "name": "2OG-Balkon-1-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0teqNjj$v4IgRS6SRbshXe": {
+      "name": "Keller-T\u00fcr-04-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0vvhkiTsf2gR49y$WFQlUN": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0wATuiLe157OHk$v$ODSAR": {
+      "name": "Keller-Fenster-01-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0xM$QEXef7VQOmv3pVZY10": {
+      "name": "EG-Fenster-06-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0xhGFQzDL31QqH9njU4cef": {
+      "name": "1OG-Balkon-5-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0y9$9bRxvDg8GAa0yN7TYH": {
+      "name": "1OG-Fenster-1-5",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "10d6QlA4zCuOps5HGt3cT$": {
+      "name": "OG-1-T\u00fcr-05-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "11F6ST96nEAe02dx7agB2y": {
+      "name": "Keller-Fenster-05-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "11K8wGQdL1buRHvicQkWsi": {
+      "name": "EG-T\u00fcr-03-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "11_LljMsPFHBN_aTQlacef": {
+      "name": "Keller-T\u00fcr-01-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "11rRJRhbLBKP0mYeFfRAnN": {
+      "name": "Keller-Fenster-10-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "12pxH55qv96vAXOkVJo3Al": {
+      "name": "1OG-Balkon-5-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "13LeOz5YDBRuWKGn3XV8ny": {
+      "name": "EG-Haustuer-04",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "13RW8trmf9P8u3wldP5JtV": {
+      "name": "EG-T\u00fcr-05-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14DEFG6yfFHBg$xRWpZjUt": {
+      "name": "2OG-T\u00fcr-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14O9bm45jB6fELchhZyg_5": {
+      "name": "EG-Fenster-08-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "17a4HgJ7HFw8TlthCViTkQ": {
+      "name": "2OG-T\u00fcr-2-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "17nXX$Oo52DxlyTePiq6ez": {
+      "name": "1OG-Fenster-1-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "18vF1$7C5BROwmJKsCLtLn": {
+      "name": "OG-1-T\u00fcr-05-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Awi9GHof9eh5YPnVr33HL": {
+      "name": "Keller-T\u00fcr-01-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1BiF1BVKbDLgw4ZS_mf7kn": {
+      "name": "1OG-Balkon-4-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1D4ZaLOR518u_gHOosSjxq": {
+      "name": "Keller-T\u00fcr-08-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1EdLEUb3rBk8Jj8gejG$jd": {
+      "name": "OG-1-T\u00fcr-10-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Gy_$vFfv3$hiRtQc0Dk31": {
+      "name": "OG-1-T\u00fcr-01-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1HQvKIahT6vx0SVvpDWV0x": {
+      "name": "Keller-T\u00fcr-04-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1IJarhVFHD7g8aPkGs5vDt": {
+      "name": "EG-Terrasse-05-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1IL6KF4EH3oeh_59nylQYC": {
+      "name": "EG-Haustuer-05",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1JHMWE7rTAyhL635hm40m4": {
+      "name": "1OG-Fenster-1-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1JRJFNBMvAsxG$a0t66RQI": {
+      "name": "OG-1-Balkon-06-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1JiJD98Rj4h8OxAt7PTe_M": {
+      "name": "1OG-Balkon-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Js6B1CsDDTB7yF6CxOWEP": {
+      "name": "2OG-T\u00fcr-1-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1LJuy5LCLE2wZBhz2qm3PB": {
+      "name": "2OG-Balkon-4-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Nr7_dNmL7jBD2jm2mp_Or": {
+      "name": "1OG-Fenster-1-5",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1Of_uGimzFbwc59UDmGamB": {
+      "name": "OG-1-Balkon-01-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1PwtJ8pnXFKOZL66wyi_lU": {
+      "name": "2OG-T\u00fcr-5-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1RTrAr3ejAsxrZqLRfwayz": {
+      "name": "EG-Terrasse-07-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1R_N5LShP40u5dMVlwa3gH": {
+      "name": "2OG-Balkon-5-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1RnnYbN$n3pQpTUql_KNrp": {
+      "name": "Keller-T\u00fcr-07-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SG3H6x9j6wxGhsRuIcuUR": {
+      "name": "1OG-Fenster-1-9",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1SsWi7vpz7cBJvV2issu_H": {
+      "name": "Keller-Fenster-08-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1TZmU2lv57OvMzbIWK6wQc": {
+      "name": "2OG-T\u00fcr-2-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Tr3hvRjX1ugE5z2RLgPLy": {
+      "name": "EG-T\u00fcr-04-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1VICIhM1DBo9PxPc3PkgpU": {
+      "name": "2OG-T\u00fcr-4-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1VcyNF6$D0d91nnR8qb19O": {
+      "name": "EG-Haustuer-01",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1WuLwQ7L95IeyQ9ttQS5Es": {
+      "name": "1OG-Fenster-1-0",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1X417iUVX1AQyVGCSb8Ggi": {
+      "name": "1OG-Fenster-1-6",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1XefGgz8rEZ8iKn91elwPC": {
+      "name": "2OG-T\u00fcr-3-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Zw0IJyUPEAuhQ1OFxzm9P": {
+      "name": "2OG-Balkon-5-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1_w0XUO3j7GeI4I_AlllN8": {
+      "name": "2OG-Balkon-1-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1aM_qMkfLAsvRTcDLmM9OA": {
+      "name": "EG-T\u00fcr-09-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1aXOwCf6DAWe5MKJNaVB$R": {
+      "name": "1OG-Fenster-1-7",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1b7Xe90NzDoxtikW81mJXo": {
+      "name": "EG-Fenster-02-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1c9I09RivE$hYgYe_Pr8LV": {
+      "name": "OG-1-T\u00fcr-09-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ccBjZfQjCJwctxYR_KS9A": {
+      "name": "2OG-Balkon-1-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1dsDP1zDzE3fYtkFVaBI96": {
+      "name": "2OG-T\u00fcr-3-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1eZFjMQRn1k8TV$yXW6ipW": {
+      "name": "1OG-Balkon-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1fF4I6XyP8IQPTsCqPwIvk": {
+      "name": "EG-Terrasse-01-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1fL7wmm85CAffiK1GncHqy": {
+      "name": "OG-1-T\u00fcr-06-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1gX_KChVjCd8OhwS0XD4Ss": {
+      "name": "EG-Haustuer-06",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hAVtYHi15WxNEP9PRHWMz": {
+      "name": "2OG-T\u00fcr-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hccHBsg92g8QQMV5efkn8": {
+      "name": "1OG-Fenster-1-3",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1ht_itI21D2xVhA$6zBONP": {
+      "name": "EG-Fenster-03-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1j9hhYnN593Pw0_W7Uwjka": {
+      "name": "2OG-T\u00fcr-4-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jPJ8T__n37uhagnE51Xpy": {
+      "name": "2OG-Balkon-5-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jrcmNHJr3HAQh0etjMIHq": {
+      "name": "EG-Fenster-07-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1kBlDbX2P1UPNtZMvF8ZCM": {
+      "name": "2OG-T\u00fcr-1-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1l4_lfgXrFN9bcxHtno3xs": {
+      "name": "OG-1-T\u00fcr-05-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1mFrq_wz9DufZsGnJEb$PL": {
+      "name": "OG-1-T\u00fcr-08-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1njbt8n_LC2P2hrejNC74Q": {
+      "name": "EG-T\u00fcr-01-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ntjj0BCPB3QyOrpCVOFAz": {
+      "name": "Keller-T\u00fcr-02-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1pcUaQYWr96uMUe201Ie5L": {
+      "name": "Keller-Fenster-07-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1q1$zOYvr4gOOGQDe1a1xt": {
+      "name": "EG-Fenster-03-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1qA_6Xm0TB3ejii0NvRdE3": {
+      "name": "2OG-Balkon-4-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1qpKkUkJ96EfA7m6V9UA8q": {
+      "name": "1OG-Fenster-1-3",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1r5iVhtsjCQfPmidPVsu_j": {
+      "name": "OG-1-Balkon-03-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1sgqNt1F5CyfNLZTcnrfIh": {
+      "name": "1OG-Fenster-1-0",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1tNQjs9GbBWPabmeRGgx1X": {
+      "name": "EG-Fenster-09-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1va58tOrnB8ORDKmI9J_rg": {
+      "name": "Keller-T\u00fcr-03-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1xN2A073D2seHxag2FMVu5": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1xYcndjbv64eB3PX_LPhVP": {
+      "name": "EG-Terrasse-09-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2$29eaXAP37PtPgxEXJUTb": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2$sv8HNSv8mQdn2hERfeso": {
+      "name": "OG-1-T\u00fcr-03-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2$zDftp_n6Pw5fJ8PxewPv": {
+      "name": "EG-Fenster-07-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "20R4wmeQPCTeT8lWN6_8qp": {
+      "name": "1OG-Fenster-1-7",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "20W2Icg8f7EAW5mGtBEmoM": {
+      "name": "1OG-Balkon-3-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "21WBZx$X9ERuykXayWLfWp": {
+      "name": "EG-Fenster-01-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "231KKoe0P7TwW6OAyZdPoY": {
+      "name": "EG-T\u00fcr-07-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "23DdL3udr2P85ZeV0COWMo": {
+      "name": "EG-Terrasse-05-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "24C5qr6SP3Qf$NmDp6tGw$": {
+      "name": "EG-T\u00fcr-02-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "258x8TPc92hhQfpOAhEuPw": {
+      "name": "2OG-T\u00fcr-1-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "27GIzscSjENBuPYyF2V6aW": {
+      "name": "OG-1-T\u00fcr-06-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "27HFBZrp97oRVuSIdXUagw": {
+      "name": "OG-1-T\u00fcr-03-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "28RFg$J5f1keL_s9N8qdW0": {
+      "name": "Keller-T\u00fcr-10-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2BQ5njjFDAYQGlwFNd96UP": {
+      "name": "1OG-Fenster-1-3",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2CDxAXb$DFgBF_0C5LC69r": {
+      "name": "EG-T\u00fcr-06-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2D08U6oWfAMf5GLyobuPfd": {
+      "name": "2OG-Balkon-4-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2DJvCRWaX4SeFcNKUW7jiY": {
+      "name": "EG-Haustuer-07",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2EJVUYxBv8DOZ14coPalce": {
+      "name": "EG-Terrasse-10-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2EfSxzWN51gvc8AcS_ioZH": {
+      "name": "1OG-Balkon-5-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2F2376nCTDDQ7eU_R0onGY": {
+      "name": "2OG-T\u00fcr-3-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2FJ_PUNUv0n9veGtbI0jFL": {
+      "name": "1OG-Fenster-1-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2FvbESAhn9$PtVc1I3SP0z": {
+      "name": "OG-1-T\u00fcr-02-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2H9Oqw3RbDFf7FvbEfeIvv": {
+      "name": "OG-1-T\u00fcr-07-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2K8zFEPrzBfgkpngTRI6y8": {
+      "name": "OG-1-T\u00fcr-04-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2LBW0CpMT6UusMcTXSTjAe": {
+      "name": "EG-T\u00fcr-08-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2MkMjyrxX3$90rK2vfDN_i": {
+      "name": "OG-1-T\u00fcr-08-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2PUn$NA7TCGxP83At9kDkz": {
+      "name": "2OG-T\u00fcr-5-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2QdNeVY1DFLeEPjdMPEWsu": {
+      "name": "Keller-Fenster-08-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2SBuZi_b5ECu0TVs4rgY97": {
+      "name": "EG-Terrasse-02-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2UHOTShfvFIwyna$UHz$jy": {
+      "name": "2OG-Balkon-3-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2Yo20tjKjD8OGqvW2bc6Jg": {
+      "name": "1OG-Balkon-3-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2a4NjoGVf6FuulY$QF6Fwx": {
+      "name": "2OG-T\u00fcr-1-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2cUAje2WTDyxvYox5L65qJ": {
+      "name": "OG-1-T\u00fcr-07-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2clitPzYr69gZ$FUBzqu3t": {
+      "name": "2OG-Balkon-5-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2fMc8oFQ12NuwOSAwsv_0S": {
+      "name": "2OG-T\u00fcr-4-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2gvSD2cqj4$Bce4hkIsQWa": {
+      "name": "2OG-Balkon-3-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2hKCA$MyPCx9GbRj1lC2uE": {
+      "name": "EG-Fenster-05-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2hlg8yiTvDsetZm60RBXsW": {
+      "name": "2OG-Balkon-3-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2joMtvKjrDL97_2Z2o_WoO": {
+      "name": "1OG-Balkon-4-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2mYXX5Q$n4iwcCCHaJ7cN_": {
+      "name": "Keller-Fenster-10-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2ndGO42G1BPwXnJ2sgV8ol": {
+      "name": "1OG-Fenster-1-4",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2oBbNEnJTA3egCrAPin4uq": {
+      "name": "EG-T\u00fcr-04-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2pb5WsyPn6xu8siSWdLY65": {
+      "name": "EG-T\u00fcr-09-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2puQc163H1ixxfjYYxCixW": {
+      "name": "OG-1-Balkon-05-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2q7hEE7QH3re1qT8r7j9Hn": {
+      "name": "2OG-T\u00fcr-3-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2r57RS05P6LRXyuOQLdFon": {
+      "name": "1OG-Fenster-1-3",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2rSjVEljXFoukvEyh6dTJb": {
+      "name": "1OG-Balkon-3-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2vsEKGvZP2ye5ZyzBr5XnP": {
+      "name": "EG-T\u00fcr-10-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2wToZTecT3LRQkx7tErj1T": {
+      "name": "OG-1-T\u00fcr-04-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zQHrZ2Yj6tuvIt4OYclVF": {
+      "name": "2OG-T\u00fcr-2-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zV4wd_xTA5RYIAynch3jC": {
+      "name": "1OG-Fenster-1-4",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2zVDPb1391RAtcoP83bbfZ": {
+      "name": "1OG-Fenster-1-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2zdrjIsTH9nh8Dyd9KHhfB": {
+      "name": "2OG-T\u00fcr-3-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "34GiEabTr5c96Hbrr8OzEw": {
+      "name": "EG-Terrasse-06-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "34Mx0IYkv8DPxJyVsgaU$o": {
+      "name": "OG-1-Balkon-04-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35kp2dZaL0$xOuXv7lhpsB": {
+      "name": "2OG-Balkon-2-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "369WrkJz19XgXcPnsGGNgx": {
+      "name": "EG-Terrasse-09-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "37PgXi$i5B6wWv2oQumMjc": {
+      "name": "OG-1-T\u00fcr-08-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "37QsqAUsz5yeDcxGz8kZPM": {
+      "name": "EG-Terrasse-10-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "37pDdxPPvANAGzxWQD5Lts": {
+      "name": "EG-T\u00fcr-08-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "37u9WVyj553uTcNpukwQpQ": {
+      "name": "Keller-T\u00fcr-09-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "38b8JGarLC1wy4YKdqVTPp": {
+      "name": "2OG-T\u00fcr-4-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "39iR0NdS5AtxJAWX5qyAeR": {
+      "name": "1OG-Balkon-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "39uNB1JP1AUfe8k58XbMvT": {
+      "name": "EG-Fenster-10-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Bf7NxOJn82RByu5rQ4xtZ": {
+      "name": "Keller-T\u00fcr-02-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3DQE_ViVrFsRsPnW3b7PwI": {
+      "name": "1OG-Fenster-1-4",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Edmbnp9XDfAmKCgu9b5Ck": {
+      "name": "1OG-Balkon-2-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3FkU2HCq1F3fmI8fs3uSXQ": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3GhEe$$bjFP9LYMvqqrih$": {
+      "name": "EG-Fenster-08-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3GonVrlpjBgfWV7nCG1Yk3": {
+      "name": "1OG-Fenster-1-6",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3HudM$RIb7_vNO9OSKNBBy": {
+      "name": "Keller-Fenster-03-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3JZ0ZsdkH79P8Yw$$YRHgR": {
+      "name": "2OG-T\u00fcr-2-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3N_k_TMWPEbOOUhxDlyjxG": {
+      "name": "EG-Terrasse-03-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3RCjL5noD7QQYV0uglDfWo": {
+      "name": "1OG-Fenster-1-5",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3RRh_spo1EcP26S5_kPXYq": {
+      "name": "EG-Fenster-05-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3UZzPg$F17uxYdmaFQJ1HQ": {
+      "name": "1OG-Balkon-4-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3WAAQEjVr9KOfuD$a3ote$": {
+      "name": "EG-Fenster-09-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3WjeHOGub93x2d5WIQ9UWQ": {
+      "name": "Keller-T\u00fcr-03-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Y4Dd6fIb8hel8xylMxMt9": {
+      "name": "2OG-T\u00fcr-5-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3YG$rrZ454$h5hiT23v5Gf": {
+      "name": "EG-Haustuer-02",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Yv75k4sLBlwnL8jzksrPw": {
+      "name": "Keller-Fenster-02-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Z2cKsECz8tO88JGvj1By7": {
+      "name": "OG-1-T\u00fcr-04-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3_4IAm1r50aBil1u$aSDAy": {
+      "name": "EG-Terrasse-04-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3awXKZFGT7RwYfvIYeJ7mD": {
+      "name": "2OG-T\u00fcr-5-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3eKJovGj55pvn9EaGmrBkc": {
+      "name": "EG-Terrasse-06-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3egveIgUD8V9h69waoe1OM": {
+      "name": "1OG-Fenster-1-8",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3fO6qkXBX4QAs5j3o2jd5W": {
+      "name": "EG-T\u00fcr-06-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3gmA5tbJvFGA4EuyIQzVF1": {
+      "name": "EG-Fenster-06-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3h6cP2bD10wuqyfNnXK_zh": {
+      "name": "Keller-Fenster-09-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3hbJsms$50dPpYn6uPFBnQ": {
+      "name": "OG-1-T\u00fcr-02-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3jygffyhv4Tg4XwXbPw5xM": {
+      "name": "OG-1-T\u00fcr-06-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3kG5_tns96chzH4dtCO28B": {
+      "name": "OG-1-T\u00fcr-01-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3kg1tQu5XCpgpj6caG2K_5": {
+      "name": "Keller-T\u00fcr-06-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3nI2yHcnjA19YTBGhIX$t0": {
+      "name": "1OG-Fenster-1-3",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3o$eC0fUb4Dfh$UadBcdtD": {
+      "name": "2OG-Balkon-4-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3pQ4c5Qaf7oAi47gPYsJ_y": {
+      "name": "1OG-Fenster-1-9",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3pzrtlhEbD1hUXyG20n6vl": {
+      "name": "Keller-T\u00fcr-09-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3q0r6TC1XCzPZ66ktbNl6f": {
+      "name": "Keller-Fenster-03-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3s$n$tvyj2uvCNgjRfNK9J": {
+      "name": "1OG-Fenster-1-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3s5FvKVQv3YPFzlkhTwfof": {
+      "name": "EG-Terrasse-01-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3sh7whqTvD$RO_RKpqNHR3": {
+      "name": "EG-Haustuer-10",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3smcPfpAD3lufKyxieOyI5": {
+      "name": "1OG-Fenster-1-3",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3tEADTnLf6Vu$EgODmx67E": {
+      "name": "EG-Terrasse-08-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3upzQvrJj9uwhNWw1c0MkX": {
+      "name": "Keller-Fenster-09-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3vpgBJYFvFUvkWdG1z5Iy8": {
+      "name": "OG-1-T\u00fcr-10-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3w81aZbJ5EvwHENy5tK6P3": {
+      "name": "EG-Fenster-04-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3xNt7iPwTDH9UtWH0985SR": {
+      "name": "1OG-Fenster-1-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3xU80BuzD1pOfaWjP15vRI": {
+      "name": "1OG-Fenster-1-4",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3xiG40cEz3YAIQNc_mxcTP": {
+      "name": "Keller-T\u00fcr-06-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3y7T53VW96bvWb18NMYxSm": {
+      "name": "Keller-Fenster-06-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3yJXrHykz6guMyeT1SI$Cv": {
+      "name": "Keller-T\u00fcr-07-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3yUm5CJ$b9ZBf889jPYLy6": {
+      "name": "OG-1-T\u00fcr-10-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ysmOYyW9E2uJ8ee4tqim3": {
+      "name": "OG-1-T\u00fcr-03-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3z4b8sfy90shBd3uf_7e4T": {
+      "name": "EG-Fenster-01-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3z8UMupu1DCxkXQAM3VhyX": {
+      "name": "Keller-Fenster-04-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3zPIO5wGn6eAHQK2NcKlGh": {
+      "name": "EG-Terrasse-08-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3zaW2mEcr4Aw9T$IyVHTk_": {
+      "name": "EG-Terrasse-03-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    }
+  }
+}

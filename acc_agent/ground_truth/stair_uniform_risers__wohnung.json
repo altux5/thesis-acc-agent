@@ -1,0 +1,49 @@
+{
+  "case_id": "stair_uniform_risers__wohnung",
+  "rule": "All steps of a stair must have uniform riser heights.\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nADA and ABA Accessibility Guidelines (2004), 504.2 Treads and Risers: All steps on a flight of stairs shall have uniform riser heights and uniform tread depths. Risers shall be 4 inches (100 mm) high minimum and 7 inches (180 mm) high maximum. Treads shall be 11 inches (280 mm) deep minimum.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. Only riser heights are compared. The first riser is measured from the floor the stair starts on, the last riser up to the floor it arrives at. A stair fails when the riser of its first step or of its last step differs from the riser height of its other steps by more than 0.5 mm. The riser and tread limits are covered by separate checks.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_159_kleine_Wohnung_R22.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "2aBI49OA13OeRUBJCl2pQP": "PASS",
+    "2aBI49OA13OeRUBJCl2yzI": "PASS"
+  },
+  "notes": "504.2 Treads and Risers on 2 IfcStair: {'PASS': 2}.",
+  "clause": "ADA 504.2",
+  "source": "solibri_reference.py::build_ec3 (ec3_wohnung_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 2,
+    "ifc_sha256": "6e4160d669c4873a1b1765ad121e2b192ca7cb050549b4930177de19bbbe5222",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "has steps at the (beginning|end) that are non-uniform",
+      "report_file": "ec3_wohnung_check.xlsx",
+      "report_sha256": "8a56b56c3b32b045b4bc11aeebce8dfb6bbc7f141662f574ee957257ac6f78eb",
+      "rule_issues": 2,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "2aBI49OA13OeRUBJCl2pQP": {
+      "name": "Ortbetontreppe:Treppe:489642",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2aBI49OA13OeRUBJCl2yzI": {
+      "name": "Ortbetontreppe:Treppe:491873",
+      "class": "IfcStair",
+      "label": "PASS"
+    }
+  }
+}

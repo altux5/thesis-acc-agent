@@ -1,0 +1,318 @@
+{
+  "case_id": "space_contains_components__wohnung",
+  "rule": "No walls, curtain walls, columns, slabs or roofs may lie inside a space.\nSource: rule 'Space Validation' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct. It also checks intersections (inside only) with other components. This template focuses only on the 'inside' check: components that are inside the space.\nBenchmark convention: spaces are bounded by walls, curtain walls, columns, slabs and roofs, not filled with them. A space fails when one or more of these components lies inside its volume. Components that only cut through the space boundary are covered by a separate intersection check; doors, windows, furniture and other spaces are ignored.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_159_kleine_Wohnung_R22.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "169Vh53uD828q6mbPVLNay",
+    "1X1A_$r5H1$uHFUkmLedmW",
+    "1X1A_$r5H1$uHFUkmLedmY",
+    "1X1A_$r5H1$uHFUkmLedme",
+    "1X1A_$r5H1$uHFUkmLedmg",
+    "1X1A_$r5H1$uHFUkmLedmi",
+    "1X1A_$r5H1$uHFUkmLedmk",
+    "1X1A_$r5H1$uHFUkmLedn0",
+    "1X1A_$r5H1$uHFUkmLedn2",
+    "1X1A_$r5H1$uHFUkmLedn4",
+    "1X1A_$r5H1$uHFUkmLedn6",
+    "1X1A_$r5H1$uHFUkmLedn8",
+    "1X1A_$r5H1$uHFUkmLednA",
+    "1X1A_$r5H1$uHFUkmLednC",
+    "1X1A_$r5H1$uHFUkmLednE",
+    "1X1A_$r5H1$uHFUkmLednG",
+    "1X1A_$r5H1$uHFUkmLednI",
+    "1X1A_$r5H1$uHFUkmLednK",
+    "1X1A_$r5H1$uHFUkmLednM",
+    "1X1A_$r5H1$uHFUkmLednO",
+    "1X1A_$r5H1$uHFUkmLednQ",
+    "1X1A_$r5H1$uHFUkmLednS",
+    "1X1A_$r5H1$uHFUkmLednU",
+    "1X1A_$r5H1$uHFUkmLednm",
+    "1X1A_$r5H1$uHFUkmLedno",
+    "1X1A_$r5H1$uHFUkmLednq",
+    "1X1A_$r5H1$uHFUkmLedns",
+    "1sAVPUvkT8L94pCPEjVvgQ"
+  ],
+  "labels": {
+    "169Vh53uD828q6mbPVLNay": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedmW": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedmY": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedme": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedmg": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedmi": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedmk": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedn0": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedn2": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedn4": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedn6": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedn8": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednA": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednC": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednE": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednG": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednI": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednK": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednM": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednO": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednQ": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednS": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednU": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednm": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedno": "FAIL",
+    "1X1A_$r5H1$uHFUkmLednq": "FAIL",
+    "1X1A_$r5H1$uHFUkmLedns": "FAIL",
+    "1sAVPUvkT8L94pCPEjVvgQ": "FAIL"
+  },
+  "notes": "Space Validation on 28 IfcSpace: {'FAIL': 28}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_wohnung_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 28,
+    "ifc_sha256": "6e4160d669c4873a1b1765ad121e2b192ca7cb050549b4930177de19bbbe5222",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Space Validation",
+      "message": "are inside the space",
+      "report_file": "ec3_wohnung_check.xlsx",
+      "report_sha256": "8a56b56c3b32b045b4bc11aeebce8dfb6bbc7f141662f574ee957257ac6f78eb",
+      "rule_issues": 29,
+      "matching_issues": 28
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "169Vh53uD828q6mbPVLNay": {
+      "name": "30",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.1 : Balkon[30]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedmW": {
+      "name": "28",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.8 : AR[28]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedmY": {
+      "name": "29",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.6 : VR[29]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedme": {
+      "name": "24",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.10 : Wohnk\u00fcche[24]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedmg": {
+      "name": "25",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.15 : Wohnk\u00fcche[25]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedmi": {
+      "name": "26",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.13 : Zimmer[26]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedmk": {
+      "name": "27",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.18 : Bad/WC[27]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedn0": {
+      "name": "12",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.3 : Bad[12]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedn2": {
+      "name": "13",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.2 : WC[13]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedn4": {
+      "name": "14",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.5 : VR[14]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedn6": {
+      "name": "15",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.4 : Zimmer[15]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedn8": {
+      "name": "8",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.7 : VR[8]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednA": {
+      "name": "9",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.9 : Wohnk\u00fcche[9]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednC": {
+      "name": "10",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.12 : AR[10]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednE": {
+      "name": "11",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.11 : Gang[11]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednG": {
+      "name": "20",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.16 : VR[20]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednI": {
+      "name": "21",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.14 : WC[21]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednK": {
+      "name": "22",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.19 : Bad[22]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednM": {
+      "name": "23",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.17 : AR[23]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednO": {
+      "name": "16",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.21 : Zimmer[16]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednQ": {
+      "name": "17",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.20 : Zimmer[17]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednS": {
+      "name": "18",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.23 : Zimmer[18]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednU": {
+      "name": "19",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.22 : Gang[19]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednm": {
+      "name": "4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.24 : Zimmer[4]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedno": {
+      "name": "5",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.26 : Wohnk\u00fcche[5]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLednq": {
+      "name": "6",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.25 : Bad/WC[6]"
+      ]
+    },
+    "1X1A_$r5H1$uHFUkmLedns": {
+      "name": "7",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.27 : AR[7]"
+      ]
+    },
+    "1sAVPUvkT8L94pCPEjVvgQ": {
+      "name": "31",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.28 : Loggia[31]"
+      ]
+    }
+  }
+}

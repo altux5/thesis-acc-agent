@@ -1,0 +1,365 @@
+{
+  "case_id": "slab_fall_protection__wohnung",
+  "rule": "No one may be able to fall from the edge of a slab.\nSource: rule 'Slabs must be Guarded against Falling' of the EC3-2026 rule catalogue: This rule checks that it is not possible to fall from slabs. The rule checks that horizontal components are surrounded by vertical components, such as walls or railings. If no vertical component exists on the edge of a horizontal component, another horizontal component or stairs needs to continue and the drop to the other horizontal component must not be more than specified.\nBenchmark convention: check every edge of every slab. An edge is safe when (a) walls, railings, columns, stairs or other objects stand along it as a barrier at least 1.00 m high above the slab top, with gaps of at most 100 mm between barrier parts and between the slab and the barrier, or (b) another slab, a stair, a ramp or the site, at least 200 mm wide, continues within 100 mm of the edge and at most 500 mm below the slab top. A slab fails when part of its edge is neither guarded nor continued: a missing barrier, a barrier lower than 1.00 m, a barrier that does not cover the whole edge, or a continuing surface too far away, too narrow or more than 500 mm below. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_159_kleine_Wohnung_R22.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "1F19i5Een0SAcxZdUls3MB",
+    "1MCzJggrb7zRdoy7aMKVhY",
+    "2hEcTxsUb4uweF13zBng86"
+  ],
+  "labels": {
+    "0$FG2iNr1DoO99Ip41StG5": "PASS",
+    "0$FG2iNr1DoO99Ip41StHn": "PASS",
+    "0$FG2iNr1DoO99Ip41StHt": "PASS",
+    "0$FG2iNr1DoO99Ip41StHx": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qMx": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOJ": "PASS",
+    "0xcbFQ19vEHggRniDrGKwp": "PASS",
+    "13r2DB9a17cBv_AmP68bXY": "PASS",
+    "1F19i5Een0SAcxZdUls3MB": "FAIL",
+    "1MCzJggrb7zRdoy7aMKUH5": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHa": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHn": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIw": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKB": "PASS",
+    "1MCzJggrb7zRdoy7aMKVhY": "FAIL",
+    "1MCzJggrb7zRdoy7aMKVi1": "PASS",
+    "1MCzJggrb7zRdoy7aMKViO": "PASS",
+    "1MCzJggrb7zRdoy7aMKVk6": "PASS",
+    "1rmiPmr3r27BAAf37fkLf6": "PASS",
+    "2287KmkhP52xj3wnZyStOH": "PASS",
+    "2hEcTxsUb4uweF13zBng86": "FAIL",
+    "2hEcTxsUb4uweF13zBng9B": "PASS",
+    "2hEcTxsUb4uweF13zBngNL": "PASS",
+    "309cZh6qP0ExOGCKINu_nQ": "NA",
+    "309cZh6qP0ExOGCKINu_rN": "NA",
+    "309cZh6qP0ExOGCKINu_w6": "NA",
+    "3VIvICirT8CR3GVg8p8VJU": "PASS",
+    "3VIvICirT8CR3GVg8p8VJh": "PASS",
+    "3VIvICirT8CR3GVg8p8VJq": "PASS",
+    "3VIvICirT8CR3GVg8p8VK3": "PASS",
+    "3VIvICirT8CR3GVg8p8VKA": "PASS",
+    "3VIvICirT8CR3GVg8p8VKV": "PASS",
+    "3VIvICirT8CR3GVg8p8VKg": "PASS",
+    "3VIvICirT8CR3GVg8p8VKv": "PASS",
+    "3VIvICirT8CR3GVg8p8VL2": "PASS",
+    "3VIvICirT8CR3GVg8p8VLD": "PASS",
+    "3VIvICirT8CR3GVg8p8VLK": "PASS",
+    "3VIvICirT8CR3GVg8p8VLr": "PASS",
+    "3VIvICirT8CR3GVg8p8VLy": "PASS",
+    "3VIvICirT8CR3GVg8p8VM7": "PASS",
+    "3VIvICirT8CR3GVg8p8VME": "PASS",
+    "3VIvICirT8CR3GVg8p8VMP": "PASS",
+    "3VIvICirT8CR3GVg8p8VMW": "PASS",
+    "3VIvICirT8CR3GVg8p8VMh": "PASS",
+    "3VIvICirT8CR3GVg8p8VMq": "PASS",
+    "3VIvICirT8CR3GVg8p8VNL": "PASS",
+    "3VIvICirT8CR3GVg8p8VNW": "PASS",
+    "3VIvICirT8CR3GVg8p8VNl": "PASS",
+    "3VIvICirT8CR3GVg8p8VNu": "PASS",
+    "3VIvICirT8CR3GVg8p8Ve5": "PASS",
+    "3VIvICirT8CR3GVg8p8VeG": "PASS",
+    "3VIvICirT8CR3GVg8p8Veb": "PASS"
+  },
+  "notes": "Slabs must be Guarded against Falling on 53 IfcSlab: {'FAIL': 3, 'NA': 3, 'PASS': 46}. 1 elements appear only in issues naming several of them, so the failing one is not identified; they are unscored.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_wohnung_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 53,
+    "ifc_sha256": "6e4160d669c4873a1b1765ad121e2b192ca7cb050549b4930177de19bbbe5222",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slabs must be Guarded against Falling",
+      "message": null,
+      "report_file": "ec3_wohnung_check.xlsx",
+      "report_sha256": "8a56b56c3b32b045b4bc11aeebce8dfb6bbc7f141662f574ee957257ac6f78eb",
+      "rule_issues": 4,
+      "matching_issues": 4
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element; NA: IfcSlab ROOF (a roof for Solibri).",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently. 1 elements appear only in issues naming several of them, so the failing one is not identified; they are unscored.",
+    "unscored_ids": [
+      "2hEcTxsUb4uweF13zBngNA"
+    ]
+  },
+  "provenance": {
+    "0$FG2iNr1DoO99Ip41StG5": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:357699",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41StHn": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:357687",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41StHt": {
+      "name": "Geschossdecke:STB 20.0:357681",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41StHx": {
+      "name": "Geschossdecke:STB 20.0:357693",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMx": {
+      "name": "Geschossdecke:STB 20.0:334242",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOJ": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:334346",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0xcbFQ19vEHggRniDrGKwp": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:318360",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68bXY": {
+      "name": "Geschossdecke:STB 20.0:299200",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1F19i5Een0SAcxZdUls3MB": {
+      "name": "Geschossdecke:STB 20.0:337198",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.2"
+      ]
+    },
+    "1MCzJggrb7zRdoy7aMKUH5": {
+      "name": "Geschossdecke:STB 20.0:339953",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHa": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:339920",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHn": {
+      "name": "Geschossdecke:STB 20.0:339909",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIw": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:339726",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKB": {
+      "name": "Geschossdecke:STB 20.0:339647",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVhY": {
+      "name": "Geschossdecke:STB 20.0:340310",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.8"
+      ]
+    },
+    "1MCzJggrb7zRdoy7aMKVi1": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:340149",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKViO": {
+      "name": "Geschossdecke:STB 20.0:340140",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVk6": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:340018",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLf6": {
+      "name": "Geschossdecke:STB 20.0:353846",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2287KmkhP52xj3wnZyStOH": {
+      "name": "Geschossdecke:STB 20.0:526455",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2hEcTxsUb4uweF13zBng86": {
+      "name": "Geschossdecke:STB 20.0:355315",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.4"
+      ]
+    },
+    "2hEcTxsUb4uweF13zBng9B": {
+      "name": "Geschossdecke:STB 20.0:355262",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2hEcTxsUb4uweF13zBngNL": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 25 x 25:355360",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "309cZh6qP0ExOGCKINu_nQ": {
+      "name": "Basisdach:Titanzink - Eindeckung:361598",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "309cZh6qP0ExOGCKINu_rN": {
+      "name": "Basisdach:Titanzink - Eindeckung:361843",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "309cZh6qP0ExOGCKINu_w6": {
+      "name": "Basisdach:Titanzink - Eindeckung:362146",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3VIvICirT8CR3GVg8p8VJU": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395552",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VJh": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395541",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VJq": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 15 x 15:395530",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VK3": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395517",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VKA": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395508",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VKV": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395489",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VKg": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395476",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VKv": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 15 x 15:395463",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VL2": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 15 x 15:395452",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VLD": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395443",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VLK": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395434",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VLr": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395403",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VLy": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395394",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VM7": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395385",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VME": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395376",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VMP": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395367",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VMW": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 15 x 15:395358",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VMh": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 15 x 15:395349",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VMq": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395338",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VNL": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395307",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VNW": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395294",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VNl": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395281",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VNu": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395270",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8Ve5": {
+      "name": "Geschossdecke:FB 10.0 - Fliesen 15 x 15:395259",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8VeG": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395246",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VIvICirT8CR3GVg8p8Veb": {
+      "name": "Geschossdecke:FB 10.0 - Parkett:395227",
+      "class": "IfcSlab",
+      "label": "PASS"
+    }
+  }
+}

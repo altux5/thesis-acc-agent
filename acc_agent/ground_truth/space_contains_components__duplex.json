@@ -1,0 +1,176 @@
+{
+  "case_id": "space_contains_components__duplex",
+  "rule": "No walls, curtain walls, columns, slabs or roofs may lie inside a space.\nSource: rule 'Space Validation' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct. It also checks intersections (inside only) with other components. This template focuses only on the 'inside' check: components that are inside the space.\nBenchmark convention: spaces are bounded by walls, curtain walls, columns, slabs and roofs, not filled with them. A space fails when one or more of these components lies inside its volume. Components that only cut through the space boundary are covered by a separate intersection check; doors, windows, furniture and other spaces are ignored.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/duplex/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0BTBFw6f90Nfh9rP1dlXri",
+    "0BTBFw6f90Nfh9rP1dl_3G",
+    "0pNy6pOyf7JPmXRLgxs3sW"
+  ],
+  "labels": {
+    "0BTBFw6f90Nfh9rP1dlXr$": "PASS",
+    "0BTBFw6f90Nfh9rP1dlXr2": "PASS",
+    "0BTBFw6f90Nfh9rP1dlXrb": "PASS",
+    "0BTBFw6f90Nfh9rP1dlXrc": "PASS",
+    "0BTBFw6f90Nfh9rP1dlXre": "PASS",
+    "0BTBFw6f90Nfh9rP1dlXri": "FAIL",
+    "0BTBFw6f90Nfh9rP1dlXrr": "PASS",
+    "0BTBFw6f90Nfh9rP1dlXru": "PASS",
+    "0BTBFw6f90Nfh9rP1dl_39": "PASS",
+    "0BTBFw6f90Nfh9rP1dl_3A": "PASS",
+    "0BTBFw6f90Nfh9rP1dl_3C": "PASS",
+    "0BTBFw6f90Nfh9rP1dl_3G": "FAIL",
+    "0BTBFw6f90Nfh9rP1dl_3P": "PASS",
+    "0BTBFw6f90Nfh9rP1dl_3Q": "PASS",
+    "0BTBFw6f90Nfh9rP1dl_3S": "PASS",
+    "0BTBFw6f90Nfh9rP1dl_CZ": "PASS",
+    "0pNy6pOyf7JPmXRLgxs3sW": "FAIL",
+    "10mjSDZJj9gPS2PrQaxa3z": "PASS",
+    "10mjSDZJj9gPS2PrQaxa4o": "PASS",
+    "2gRXFgjRn2HPE$YoDLX3FC": "PASS",
+    "2gRXFgjRn2HPE$YoDLX3FV": "PASS"
+  },
+  "notes": "Space Validation on 21 IfcSpace: {'FAIL': 3, 'PASS': 18}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_duplex_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 21,
+    "ifc_sha256": "707a032566dee8e969a44d95509be46d646440e2443624709f8d3ae2b45f4656",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Space Validation",
+      "message": "are inside the space",
+      "report_file": "ec3_duplex_check.xlsx",
+      "report_sha256": "eb382d9a8558816db6474da78e80318d45ee42d92aa9048be085431a09138c6a",
+      "rule_issues": 7,
+      "matching_issues": 3
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0BTBFw6f90Nfh9rP1dlXr$": {
+      "name": "A103",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dlXr2": {
+      "name": "A102",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dlXrb": {
+      "name": "A203",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dlXrc": {
+      "name": "A202",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dlXre": {
+      "name": "A204",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dlXri": {
+      "name": "A201",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.4 : Hallway[A201]"
+      ]
+    },
+    "0BTBFw6f90Nfh9rP1dlXrr": {
+      "name": "A101",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dlXru": {
+      "name": "A104",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dl_39": {
+      "name": "B203",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dl_3A": {
+      "name": "B202",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dl_3C": {
+      "name": "B204",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dl_3G": {
+      "name": "B201",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.10 : Hallway[B201]"
+      ]
+    },
+    "0BTBFw6f90Nfh9rP1dl_3P": {
+      "name": "B104",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dl_3Q": {
+      "name": "B101",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dl_3S": {
+      "name": "B103",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BTBFw6f90Nfh9rP1dl_CZ": {
+      "name": "B102",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0pNy6pOyf7JPmXRLgxs3sW": {
+      "name": "R301",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.2.1 : Roof[R301]"
+      ]
+    },
+    "10mjSDZJj9gPS2PrQaxa3z": {
+      "name": "A105",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "10mjSDZJj9gPS2PrQaxa4o": {
+      "name": "B105",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2gRXFgjRn2HPE$YoDLX3FC": {
+      "name": "B205",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2gRXFgjRn2HPE$YoDLX3FV": {
+      "name": "A205",
+      "class": "IfcSpace",
+      "label": "PASS"
+    }
+  }
+}

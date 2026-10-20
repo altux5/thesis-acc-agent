@@ -1,0 +1,1308 @@
+{
+  "case_id": "door_front_clearance__esplanades",
+  "rule": "The area in front of every door must be free of building components.\nSource: rule 'Clearance in Front of Doors' of the EC3-2026 rule catalogue: This rule checks there is enough clearance in front of doors.\nBenchmark convention: the free area is a box directly in front of the door opening, on the side to which the door opens. It is as wide and as high as the door and as deep as the door is wide, shrunk by 50 mm on each side so that components merely touching it do not count. A door fails when any building component other than a space (walls, curtain walls, slabs, floor finishes and other coverings, columns, doors, windows, stairs, railings, furniture, building services or other objects) intersects its free area.\n\nLabel every door.\nReport the GlobalId of every element (modelled as IfcDoor) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Esplanades_1807_EP_AR_v18.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "3Z0LniWg2KrPAx$bJQIbx5"
+  ],
+  "labels": {
+    "0$zhCFSw6ZytmZ$bno$SA1": "PASS",
+    "01XsWS1zvjeDKl$9PZal95": "PASS",
+    "026RYbwYmFN3334u$0AlET": "PASS",
+    "03S_Imyqp6QChBXTfhBGCu": "PASS",
+    "04ZbcsqtO6Zb5Swl52LqRs": "PASS",
+    "0651gemSsFD$J1nTzBg7gK": "PASS",
+    "07qsguT_E0_$JeXlG_VlaJ": "PASS",
+    "09ZU3dWHhX78ay376ROZsX": "PASS",
+    "0AlyDR3nAsxFRIf7SaYnga": "PASS",
+    "0B1YWaGpzo7w63kdWCW4RK": "PASS",
+    "0BMFGgNHp0caZNL_bvFw5b": "PASS",
+    "0C47Jbby_QUNwZ3GYhQc8j": "PASS",
+    "0IIz3mwamvmrDNbPcmjrF3": "PASS",
+    "0IYZI7hWKsmru9I5Y0gsnu": "PASS",
+    "0MTWm3WQENDZEiuFJSVQr7": "PASS",
+    "0O335L$iEAZvSDTMyUJQ4Y": "PASS",
+    "0OtWjrGh1R9QWXVSOd8nJ1": "PASS",
+    "0Rr9GX2jjgFaOGzTFVDm2C": "PASS",
+    "0TNjP4zxc2dmbg8Gp0bUqo": "PASS",
+    "0Tz$ZLpodX3w8FnSlGqEFI": "PASS",
+    "0UFl9l1USZWtSg0b36q4d7": "PASS",
+    "0W_RNUvwN_uukSkGBDjxQz": "PASS",
+    "0XLBA3DViWDbrddlEMn$1E": "PASS",
+    "0aYjWsaAZMWNGd7jYJ6RQ$": "PASS",
+    "0dsUUTTNzsj6Wo9uow4nA2": "PASS",
+    "0efjjijBL6kKZ02LUKkCPZ": "PASS",
+    "0egLHXa__bOCbI0xhrpZGj": "PASS",
+    "0erFjvt$faWXoaL_oPtzNe": "PASS",
+    "0k86Xp5xQVlLheEFz6mqNu": "PASS",
+    "0kikOAXX0SrYeuD7tAHDMt": "PASS",
+    "0myYwsFtGxE8ATaQtZNYwR": "PASS",
+    "0oU3Ssu0lg6n3KJ0dRQhKT": "PASS",
+    "0oW9N4PZly7DKc$pUNOhYk": "PASS",
+    "0ofJ_3WN_5oiyi4Y_GIbPD": "PASS",
+    "0r92bj8RTLXsEP_HOUqQSv": "PASS",
+    "0rdhm0PGmsgOUPcOIsdL6B": "PASS",
+    "0roVlhvnNz0HMFDYwDtXOP": "PASS",
+    "0teWYnLq$LgsX1orPsD6lq": "PASS",
+    "0vbiZTmB0TyGIZb_ASPmyy": "PASS",
+    "0znqbzm9IqIUU$lRv9nCQp": "PASS",
+    "113Zu3u9eHvTcNJj8RkemQ": "PASS",
+    "119LgHDwyqjnI8qgVOw6pK": "PASS",
+    "12s74hya9irS457S7GpdhY": "PASS",
+    "13oHBA$mefSIaBOolnBb5d": "PASS",
+    "14$HZrBKozInkrULJkGZWz": "PASS",
+    "14V58t44KrHeu$sdtCz6up": "PASS",
+    "15YzZ2iuR$vktpHCsqJcwV": "PASS",
+    "1AF_flG8WlEYdMHtMMXHCG": "PASS",
+    "1C0tyHWJJfB684FpU9IFj4": "PASS",
+    "1CdufDxFllc9lXPt0iwdej": "PASS",
+    "1ESVhgDrSdH7QlEA3JKzXb": "PASS",
+    "1G7IB6oZPK$BocKXq39arI": "PASS",
+    "1HfzM2TPPQajbINaHMIdrb": "PASS",
+    "1HuZqwqC1JRo7bO$1hnKPa": "PASS",
+    "1JgUCF4wgPSJ84Vek1nFX6": "PASS",
+    "1MNmc__c7SzSYccIIutK77": "PASS",
+    "1MYgdDPMeY3ogYT3ciSjoT": "PASS",
+    "1NQ1NKlvCTD18wqUtu5orN": "PASS",
+    "1Oz_wnwPQGN$96oJV0DnxM": "PASS",
+    "1PbIWDZLO6hL5GR$UwH4V3": "PASS",
+    "1SKU8wqJ8Abdh$JEi4NS1O": "PASS",
+    "1T9hDUY4S3KjsLppo6AjB7": "PASS",
+    "1UobiwPyx$YwsduZKXbAna": "PASS",
+    "1V1GRdA1bo$Qt1ppknXx7X": "PASS",
+    "1VybaBivlQtBUj_KX4pms3": "PASS",
+    "1W4DJlmVSWPAJuKrJ_gxKw": "PASS",
+    "1WLo2zmyaH76ffNyU$hJbG": "PASS",
+    "1WMgkcv0WkTgGICpZULfgO": "PASS",
+    "1XCzI3$wbGqKvtbuGdEI6q": "PASS",
+    "1XWIrBxTmreGqW9VETa_D5": "PASS",
+    "1ZyiK4KOvonOtn$5Bsitrq": "PASS",
+    "1_tpU8prPjGgB0lUIsykwO": "PASS",
+    "1a_E8_aobu$qLiuSnhiVI3": "PASS",
+    "1bX3b3xjG6sI_1m5nzYp_W": "PASS",
+    "1boduwbz89_Lz$mzO6oCoC": "PASS",
+    "1fXVRcMCWZgkOuv7rSsMS0": "PASS",
+    "1iV99mb3078NwrNbzrBVYX": "PASS",
+    "1ijsss_Bcwjqz15$vtSibh": "PASS",
+    "1iuKTbT7D84k0MwOmiDqnv": "PASS",
+    "1j854WfUVJXCES9HaOpvas": "PASS",
+    "1jvYzdj1$Oxuq0wJrXpcbP": "PASS",
+    "1jw2RXpdA1MCVwq0eff5ZL": "PASS",
+    "1kZc3VPP51tKAZyvNHJqMb": "PASS",
+    "1pVs5Mx5KApKZO$Pb6_YNJ": "PASS",
+    "1pa5jmquDTs18KXN1APaMa": "PASS",
+    "1rMvBWagM16ttgUHKIGkha": "PASS",
+    "1tEqK9lNZl99OQlaCdJuDU": "PASS",
+    "1tWOvenmxcjmerlqi0_Tu9": "PASS",
+    "1ti4nQjtiker1z61oKwRE6": "PASS",
+    "1tuw7ZKNK69Y1K_Setmt$T": "PASS",
+    "1x7Sic5Nh2IT78CYC3Vi8W": "PASS",
+    "1yNX11hAOi2Hk0nLBF6hLS": "PASS",
+    "1zAe9KOirKzTqiYK_vTPSy": "PASS",
+    "2$7_PO5hWLD8$ALYDRrrMo": "PASS",
+    "2$zYcuf322dRvXg7opIied": "PASS",
+    "209RhfLv$4BtzazUFYOC$K": "PASS",
+    "21Hswu_XPdAAlyOgGt8qKV": "PASS",
+    "22HR7Ygbgr05L0bmovh5r4": "PASS",
+    "22NGrm53PNP7zXsX_XJihZ": "PASS",
+    "22tGbVqqBSKqlC3sOBWiy$": "PASS",
+    "239aA5GNzXdk2opL0JyB_V": "PASS",
+    "23mh_Haqi7no6hmP1_ZMIn": "PASS",
+    "24b$raxk2rQNuwVPW_sWF3": "PASS",
+    "25cov2_5kBrbAhg6WAl5WH": "PASS",
+    "28PCzbmvvl91jBwlolqXI8": "PASS",
+    "29Q4GDyt6fKfqd0bTh6DWf": "PASS",
+    "2CAN7FJAQd4b4XWCVyFlod": "PASS",
+    "2CFeYgkZVou9XCtU8ajjGe": "PASS",
+    "2CqUPnvbsqMNuV$zZQ9AqH": "PASS",
+    "2FxeDoLjlesFgX1zgMIDgw": "PASS",
+    "2GL1VsgFpDsg1Lr0axkfcd": "PASS",
+    "2I5IuUT6CGJgARshpW5Byy": "PASS",
+    "2IL40BsfzZ7LKo9jGhbJ53": "PASS",
+    "2JwK9k_bVb1HCkeTFs_ulq": "PASS",
+    "2KiF52tFm9RhEC82Q_hPHB": "PASS",
+    "2MoYuNtcVNvABjlSzQrjuF": "PASS",
+    "2NM2rQhAKpeJZvLMolnF93": "PASS",
+    "2OwgnooYHo2R6IQYN2PaSC": "PASS",
+    "2PcxFY6dsh0i4g2neEY1Ol": "PASS",
+    "2QLqROGAVTdovjrkEvI8Zu": "PASS",
+    "2Rj9B59IoSOObOGyQwKwP8": "PASS",
+    "2SwvrW3bkeUImV_DDmzud7": "PASS",
+    "2TYQlMR$ZjqhqvLPIn3WUm": "PASS",
+    "2TjD19x0Tc6zqJOOaD2cU6": "PASS",
+    "2TytrZJ44w38_Isy4Tbkcg": "PASS",
+    "2Uh1P0oHcgFlVB3xF5HbIw": "PASS",
+    "2UsMzcvdMJpMCi1uniOqFD": "PASS",
+    "2VU_YiTWLn_efrPDCVSs2X": "PASS",
+    "2WXJ26xsfFGaO1yi1nLt1B": "PASS",
+    "2X8cIN_9Y0iL16S_Nc1E9v": "PASS",
+    "2XpqQP2F0lpEL9ukM86JtB": "PASS",
+    "2YTHyxHuENTTjHWpJTwCOO": "PASS",
+    "2_5Oovi2yFYGhQs$YNO3eA": "PASS",
+    "2_KgDNkMYrwEcyOAvCLkNm": "PASS",
+    "2_LsQ0vPvT7tiRn8CtVNbp": "PASS",
+    "2_wjtxmWiH6uqvEttRGqYS": "PASS",
+    "2aN4mc22klqPNk7HzTZHal": "PASS",
+    "2auFlRE$FCzNMLlWrw0qRu": "PASS",
+    "2dU9nKpvut9$D$dh8culc5": "PASS",
+    "2dkCnyGQdjPe3owvl8WI0A": "PASS",
+    "2fMlzbCqxHKUCKoBWlddYd": "PASS",
+    "2iFkh9BRebQuWyZ9p5lV4M": "PASS",
+    "2ibF9c$o$9ZzgidO2V3HIm": "PASS",
+    "2iwe4T4N7O1Blpw5E57z_x": "PASS",
+    "2j1zfhFAesed3m5oDFrIoD": "PASS",
+    "2jbjr1e0N$T4rP1J_YQ$X4": "PASS",
+    "2l3oqu1qLkzCJ2yhIb984R": "PASS",
+    "2oqUYjli9EHQL8Y32I8AOW": "PASS",
+    "2qatwr5L4f04G4A7Wpakj6": "PASS",
+    "2qdRRIUQLt8svBIK8wowyQ": "PASS",
+    "2ukpGaiV2kxSELYJpYAtD2": "PASS",
+    "2ulEaHDBBPzER9cc$aTT38": "PASS",
+    "2xw0ZuEzgWKnu7DKsaJtug": "PASS",
+    "2yL8YzMDvPDW4gqndyO5Cf": "PASS",
+    "2yv34AexuSNI7MBHIevU4k": "PASS",
+    "2zu9oZ3TMdRKyrIlGrZN3F": "PASS",
+    "3$ePWtxSJNTMzLx0ZD2_8z": "PASS",
+    "3$nSEM0sP$4OekeZ6gDkwl": "PASS",
+    "30syzUN4C703pJbZvqQoJO": "PASS",
+    "31NKc27jfy1$ap0R9EjknH": "PASS",
+    "3200JynTmAFDsHE5QE4qRB": "PASS",
+    "33jA25Fkt7P8SfkAcB0rkJ": "PASS",
+    "3665K6mRvPBuHztQHrsXkS": "PASS",
+    "36MjCAKbtIkccudGHdSrOI": "PASS",
+    "37l8Dmzeb$Eo1nIFzA8SAC": "PASS",
+    "3AmmmMGom4nnKe1XEnIBfc": "PASS",
+    "3C1XHIJT$83_75Dwxn9fZB": "PASS",
+    "3E38eze8aKmEY0T7pMVUJt": "PASS",
+    "3Ez4WDeJzdGYvolunwnhUE": "PASS",
+    "3Fq$ZLJn_K34Vpk9vdQ6bj": "PASS",
+    "3FxEsmg7kYi8lwtrBtGaep": "PASS",
+    "3Ge5BSiZww6NGxM1pHvv4z": "PASS",
+    "3H3ZS8zC_qgdRfJQRNyfaP": "PASS",
+    "3H9LLMyAu$TRlRZOtBpdQi": "PASS",
+    "3HtcDV0UzgW3kqfVbCKi_X": "PASS",
+    "3JZD1QC4vNBJD$zOPpXBEA": "PASS",
+    "3KLBIMuqypeOoZNVi7IBki": "PASS",
+    "3KXBSstlehA_owbjkD3RJL": "PASS",
+    "3LYMKNl1cy6eY1q4xQ6klM": "PASS",
+    "3PcU8jXuFWTKKU8UKMtb6t": "PASS",
+    "3RjKE18SPB1R7L_ae362yh": "PASS",
+    "3Ts_ULyyJQbaQ7a6U1ko7j": "PASS",
+    "3VT2OxR76iYouXSfwrYxYc": "PASS",
+    "3Yavr$dL5D3uHFpmQ_QLs_": "PASS",
+    "3Z0LniWg2KrPAx$bJQIbx5": "FAIL",
+    "3_5Dw8JfbaOEQBUQvgLFzt": "PASS",
+    "3_crOfIzrthCNsE0BeYMvV": "PASS",
+    "3aypXJtuu7pNZQIdzsNGdB": "PASS",
+    "3bw2JqrwW4G8EIvy1D3G39": "PASS",
+    "3dVZ_RsM1sRQWGc9vqzrpj": "PASS",
+    "3daJ4kyj1nSx3R4YtpZ$1W": "PASS",
+    "3dkrYbmLYn1pNRg4zY4dYz": "PASS",
+    "3e8OL3ZrJbHdYuVkeB0uJz": "PASS",
+    "3ek36IDfW$QNFsDooZ1XL_": "PASS",
+    "3fxQeGZf$ZczPXCfUZPsop": "PASS",
+    "3fzbRbVF6QmRtfNY5Nbuo8": "PASS",
+    "3g13QxGnl6fgpzfpiyIzcU": "PASS",
+    "3jUnO1DXGfXUsGXJxlPiGq": "PASS",
+    "3l$RDV932aoERaJT6db5WA": "PASS",
+    "3nKY1I0JFdn7SlgI2biQWl": "PASS",
+    "3oDCgkBMNVU_2g1lPC23eX": "PASS",
+    "3po$SZjXI3aF7HzkTih_yZ": "PASS",
+    "3rrINjQVpuO7IMSNwddKyW": "PASS",
+    "3sy9qKBZRJdJh4SMTZ4rND": "PASS",
+    "3wMHy7A7w3QNinWskkAP9X": "PASS",
+    "3x15KKi1YokPuJJ1BKSFVe": "PASS",
+    "3xE_CEQVrvSWMBaTtsqWbn": "PASS",
+    "3xG4u1RHWiVP4lHkrK9wCQ": "PASS",
+    "3x_rEEFRidjT9HNTMlPN7g": "PASS",
+    "3zCkZbq3Ozj0aHpHCkSLX$": "PASS",
+    "3zRfHvzSIR$VT0mrPPeM58": "PASS"
+  },
+  "notes": "Clearance in Front of Doors on 211 IfcDoor: {'FAIL': 1, 'PASS': 210}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_esplanades_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 211,
+    "ifc_sha256": "b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Clearance in Front of Doors",
+      "message": null,
+      "report_file": "ec3_esplanades_check.xlsx",
+      "report_sha256": "d2a9842276bb8f8c33bec9136bbf172c86758e661f1f0efa7dfe594b80911fd6",
+      "rule_issues": 1,
+      "matching_issues": 1
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$zhCFSw6ZytmZ$bno$SA1": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01XsWS1zvjeDKl$9PZal95": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "026RYbwYmFN3334u$0AlET": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "03S_Imyqp6QChBXTfhBGCu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "04ZbcsqtO6Zb5Swl52LqRs": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0651gemSsFD$J1nTzBg7gK": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "07qsguT_E0_$JeXlG_VlaJ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "09ZU3dWHhX78ay376ROZsX": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0AlyDR3nAsxFRIf7SaYnga": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0B1YWaGpzo7w63kdWCW4RK": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0BMFGgNHp0caZNL_bvFw5b": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0C47Jbby_QUNwZ3GYhQc8j": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0IIz3mwamvmrDNbPcmjrF3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0IYZI7hWKsmru9I5Y0gsnu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0MTWm3WQENDZEiuFJSVQr7": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0O335L$iEAZvSDTMyUJQ4Y": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0OtWjrGh1R9QWXVSOd8nJ1": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Rr9GX2jjgFaOGzTFVDm2C": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0TNjP4zxc2dmbg8Gp0bUqo": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Tz$ZLpodX3w8FnSlGqEFI": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0UFl9l1USZWtSg0b36q4d7": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0W_RNUvwN_uukSkGBDjxQz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0XLBA3DViWDbrddlEMn$1E": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0aYjWsaAZMWNGd7jYJ6RQ$": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0dsUUTTNzsj6Wo9uow4nA2": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0efjjijBL6kKZ02LUKkCPZ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0egLHXa__bOCbI0xhrpZGj": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0erFjvt$faWXoaL_oPtzNe": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0k86Xp5xQVlLheEFz6mqNu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0kikOAXX0SrYeuD7tAHDMt": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0myYwsFtGxE8ATaQtZNYwR": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0oU3Ssu0lg6n3KJ0dRQhKT": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0oW9N4PZly7DKc$pUNOhYk": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ofJ_3WN_5oiyi4Y_GIbPD": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0r92bj8RTLXsEP_HOUqQSv": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0rdhm0PGmsgOUPcOIsdL6B": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0roVlhvnNz0HMFDYwDtXOP": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0teWYnLq$LgsX1orPsD6lq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0vbiZTmB0TyGIZb_ASPmyy": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0znqbzm9IqIUU$lRv9nCQp": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "113Zu3u9eHvTcNJj8RkemQ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "119LgHDwyqjnI8qgVOw6pK": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "12s74hya9irS457S7GpdhY": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "13oHBA$mefSIaBOolnBb5d": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14$HZrBKozInkrULJkGZWz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14V58t44KrHeu$sdtCz6up": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "15YzZ2iuR$vktpHCsqJcwV": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1AF_flG8WlEYdMHtMMXHCG": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1C0tyHWJJfB684FpU9IFj4": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1CdufDxFllc9lXPt0iwdej": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ESVhgDrSdH7QlEA3JKzXb": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1G7IB6oZPK$BocKXq39arI": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1HfzM2TPPQajbINaHMIdrb": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1HuZqwqC1JRo7bO$1hnKPa": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1JgUCF4wgPSJ84Vek1nFX6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MNmc__c7SzSYccIIutK77": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MYgdDPMeY3ogYT3ciSjoT": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1NQ1NKlvCTD18wqUtu5orN": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Oz_wnwPQGN$96oJV0DnxM": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1PbIWDZLO6hL5GR$UwH4V3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SKU8wqJ8Abdh$JEi4NS1O": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1T9hDUY4S3KjsLppo6AjB7": {
+      "name": "ARUKS - 012",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1UobiwPyx$YwsduZKXbAna": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1V1GRdA1bo$Qt1ppknXx7X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1VybaBivlQtBUj_KX4pms3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4DJlmVSWPAJuKrJ_gxKw": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1WLo2zmyaH76ffNyU$hJbG": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1WMgkcv0WkTgGICpZULfgO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1XCzI3$wbGqKvtbuGdEI6q": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1XWIrBxTmreGqW9VETa_D5": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ZyiK4KOvonOtn$5Bsitrq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1_tpU8prPjGgB0lUIsykwO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1a_E8_aobu$qLiuSnhiVI3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1bX3b3xjG6sI_1m5nzYp_W": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1boduwbz89_Lz$mzO6oCoC": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1fXVRcMCWZgkOuv7rSsMS0": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1iV99mb3078NwrNbzrBVYX": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ijsss_Bcwjqz15$vtSibh": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1iuKTbT7D84k0MwOmiDqnv": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1j854WfUVJXCES9HaOpvas": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jvYzdj1$Oxuq0wJrXpcbP": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jw2RXpdA1MCVwq0eff5ZL": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1kZc3VPP51tKAZyvNHJqMb": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1pVs5Mx5KApKZO$Pb6_YNJ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1pa5jmquDTs18KXN1APaMa": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rMvBWagM16ttgUHKIGkha": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1tEqK9lNZl99OQlaCdJuDU": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1tWOvenmxcjmerlqi0_Tu9": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ti4nQjtiker1z61oKwRE6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1tuw7ZKNK69Y1K_Setmt$T": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1x7Sic5Nh2IT78CYC3Vi8W": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1yNX11hAOi2Hk0nLBF6hLS": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zAe9KOirKzTqiYK_vTPSy": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2$7_PO5hWLD8$ALYDRrrMo": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2$zYcuf322dRvXg7opIied": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "209RhfLv$4BtzazUFYOC$K": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "21Hswu_XPdAAlyOgGt8qKV": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "22HR7Ygbgr05L0bmovh5r4": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "22NGrm53PNP7zXsX_XJihZ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "22tGbVqqBSKqlC3sOBWiy$": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "239aA5GNzXdk2opL0JyB_V": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "23mh_Haqi7no6hmP1_ZMIn": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "24b$raxk2rQNuwVPW_sWF3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "25cov2_5kBrbAhg6WAl5WH": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "28PCzbmvvl91jBwlolqXI8": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "29Q4GDyt6fKfqd0bTh6DWf": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2CAN7FJAQd4b4XWCVyFlod": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2CFeYgkZVou9XCtU8ajjGe": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2CqUPnvbsqMNuV$zZQ9AqH": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2FxeDoLjlesFgX1zgMIDgw": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GL1VsgFpDsg1Lr0axkfcd": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2I5IuUT6CGJgARshpW5Byy": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2IL40BsfzZ7LKo9jGhbJ53": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2JwK9k_bVb1HCkeTFs_ulq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2KiF52tFm9RhEC82Q_hPHB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2MoYuNtcVNvABjlSzQrjuF": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2NM2rQhAKpeJZvLMolnF93": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OwgnooYHo2R6IQYN2PaSC": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2PcxFY6dsh0i4g2neEY1Ol": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2QLqROGAVTdovjrkEvI8Zu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2Rj9B59IoSOObOGyQwKwP8": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2SwvrW3bkeUImV_DDmzud7": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2TYQlMR$ZjqhqvLPIn3WUm": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2TjD19x0Tc6zqJOOaD2cU6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2TytrZJ44w38_Isy4Tbkcg": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2Uh1P0oHcgFlVB3xF5HbIw": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2UsMzcvdMJpMCi1uniOqFD": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2VU_YiTWLn_efrPDCVSs2X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2WXJ26xsfFGaO1yi1nLt1B": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2X8cIN_9Y0iL16S_Nc1E9v": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2XpqQP2F0lpEL9ukM86JtB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2YTHyxHuENTTjHWpJTwCOO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_5Oovi2yFYGhQs$YNO3eA": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_KgDNkMYrwEcyOAvCLkNm": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_LsQ0vPvT7tiRn8CtVNbp": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_wjtxmWiH6uqvEttRGqYS": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2aN4mc22klqPNk7HzTZHal": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2auFlRE$FCzNMLlWrw0qRu": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2dU9nKpvut9$D$dh8culc5": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2dkCnyGQdjPe3owvl8WI0A": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2fMlzbCqxHKUCKoBWlddYd": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2iFkh9BRebQuWyZ9p5lV4M": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2ibF9c$o$9ZzgidO2V3HIm": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2iwe4T4N7O1Blpw5E57z_x": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2j1zfhFAesed3m5oDFrIoD": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2jbjr1e0N$T4rP1J_YQ$X4": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2l3oqu1qLkzCJ2yhIb984R": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2oqUYjli9EHQL8Y32I8AOW": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qatwr5L4f04G4A7Wpakj6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qdRRIUQLt8svBIK8wowyQ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2ukpGaiV2kxSELYJpYAtD2": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2ulEaHDBBPzER9cc$aTT38": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2xw0ZuEzgWKnu7DKsaJtug": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2yL8YzMDvPDW4gqndyO5Cf": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2yv34AexuSNI7MBHIevU4k": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zu9oZ3TMdRKyrIlGrZN3F": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$ePWtxSJNTMzLx0ZD2_8z": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$nSEM0sP$4OekeZ6gDkwl": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "30syzUN4C703pJbZvqQoJO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "31NKc27jfy1$ap0R9EjknH": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3200JynTmAFDsHE5QE4qRB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "33jA25Fkt7P8SfkAcB0rkJ": {
+      "name": "ARUKS - 012",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3665K6mRvPBuHztQHrsXkS": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "36MjCAKbtIkccudGHdSrOI": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "37l8Dmzeb$Eo1nIFzA8SAC": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3AmmmMGom4nnKe1XEnIBfc": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3C1XHIJT$83_75Dwxn9fZB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3E38eze8aKmEY0T7pMVUJt": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Ez4WDeJzdGYvolunwnhUE": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Fq$ZLJn_K34Vpk9vdQ6bj": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3FxEsmg7kYi8lwtrBtGaep": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Ge5BSiZww6NGxM1pHvv4z": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3H3ZS8zC_qgdRfJQRNyfaP": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3H9LLMyAu$TRlRZOtBpdQi": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3HtcDV0UzgW3kqfVbCKi_X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3JZD1QC4vNBJD$zOPpXBEA": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3KLBIMuqypeOoZNVi7IBki": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3KXBSstlehA_owbjkD3RJL": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3LYMKNl1cy6eY1q4xQ6klM": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3PcU8jXuFWTKKU8UKMtb6t": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3RjKE18SPB1R7L_ae362yh": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Ts_ULyyJQbaQ7a6U1ko7j": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3VT2OxR76iYouXSfwrYxYc": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Yavr$dL5D3uHFpmQ_QLs_": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Z0LniWg2KrPAx$bJQIbx5": {
+      "name": "ARUKS - 012",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Transport Element.0.1 too close to Door.0.32 component"
+      ]
+    },
+    "3_5Dw8JfbaOEQBUQvgLFzt": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3_crOfIzrthCNsE0BeYMvV": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3aypXJtuu7pNZQIdzsNGdB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3bw2JqrwW4G8EIvy1D3G39": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3dVZ_RsM1sRQWGc9vqzrpj": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3daJ4kyj1nSx3R4YtpZ$1W": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3dkrYbmLYn1pNRg4zY4dYz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3e8OL3ZrJbHdYuVkeB0uJz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ek36IDfW$QNFsDooZ1XL_": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3fxQeGZf$ZczPXCfUZPsop": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3fzbRbVF6QmRtfNY5Nbuo8": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3g13QxGnl6fgpzfpiyIzcU": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3jUnO1DXGfXUsGXJxlPiGq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3l$RDV932aoERaJT6db5WA": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3nKY1I0JFdn7SlgI2biQWl": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3oDCgkBMNVU_2g1lPC23eX": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3po$SZjXI3aF7HzkTih_yZ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rrINjQVpuO7IMSNwddKyW": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3sy9qKBZRJdJh4SMTZ4rND": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3wMHy7A7w3QNinWskkAP9X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3x15KKi1YokPuJJ1BKSFVe": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3xE_CEQVrvSWMBaTtsqWbn": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3xG4u1RHWiVP4lHkrK9wCQ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3x_rEEFRidjT9HNTMlPN7g": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3zCkZbq3Ozj0aHpHCkSLX$": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3zRfHvzSIR$VT0mrPPeM58": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    }
+  }
+}

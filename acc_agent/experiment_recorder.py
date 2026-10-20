@@ -114,7 +114,7 @@ class SweepRecorder:
             if not isinstance(max_tokens, int):
                 max_tokens = None
             self.base = {
-                "recording_version": 5, "entrypoint": entrypoint, "agent_protocol": AGENT_PROTOCOL,
+                "recording_version": 6, "entrypoint": entrypoint, "agent_protocol": AGENT_PROTOCOL,
                 "code_identity_scope": "imported module code, not mutable runtime state; config uses effective settings below",
                 "config_file_disk_hash": file_hash(PROJECT_DIR / "config.py"),
                 "case_id": case.case_id if case else "custom",

@@ -177,6 +177,30 @@ variable; preloading in both modes would be a separate, labelled experiment.
 
 ## Findings
 
+- **2026-10-13 - final evaluation, frozen v5/v5.1 (OpenRouter, reasoning off, H1, 20
+  calls; usable_2 + staircase width).** MiniMax M3: 66 runs, 3 per case and mode
+  (recording v5, plus 4 exit scdf_5 reruns on v5.1); Sonnet 5.5: 44 runs, 2 per case
+  and mode (v5.1). The 4 crashed v5 runs (malformed tool calls) are excluded and were
+  rerun; the fix did not trigger in any v5.1 run.
+
+  | model / mode | finished | complete | abst. | incompl. | mean acc | calls | input | cache | cost | min/run | s/block |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | MiniMax stateful | 33 | 29 | 2 | 2 | 0.894 | 13.9 | 184k | 81% | $1.00 | 4.6 | 1.8 |
+  | MiniMax stateless | 33 | 31 | 0 | 2 | 0.900 | 14.1 | 222k | 83% | $1.29 | 8.3 | 5.7 |
+  | Sonnet stateful | 22 | 22 | 0 | 0 | 0.920 | 10.8 | 158k | 87% | $2.88 | 2.3 | 1.7 |
+  | Sonnet stateless | 22 | 22 | 0 | 0 | 0.946 | 10.9 | 180k | 85% | $3.99 | 3.5 | 7.4 |
+
+  - Stateful vs stateless: no accuracy difference for either model (within run-to-run
+    spread). Stateless costs more: 13-20% more input tokens, longer runs, and 3-4x the
+    code time per block (worker restart and IFC reload: 1.7-1.8 s vs 5.7-7.4 s median).
+    Call counts are the same.
+  - Model: Sonnet completes 44/44 (MiniMax 60/66) with fewer calls and resolves what
+    MiniMax does not: landing mall trap 0.99 vs 0.77-0.78, staircase width 0.85-0.95 vs
+    0.61-0.78, planter 1.00 vs 0.88, landing scdf_5 trap 1.00 in 3 of 4 runs vs 0.92 in
+    all 6. MiniMax is better on exit scdf_3 (mostly 1.00 vs Sonnet 0.75-0.92). Exit
+    scdf_5 stays low for both (0.56-0.82). Easy cases are 1.00 for both.
+  - MiniMax: 16 output-limit cutoffs (reasoning loops, OpenRouter); Sonnet: none.
+
 - **2026-10-04 - Sonnet 5.5 on staircase_width_v8 (2 stateful v5 runs).** Both complete,
   0.95 and 0.97 (MiniMax: 0 of 6 v1/v2 runs completed; no v3+ runs). 18 and 20 calls
   (r1 finished on its last call), 543k/714k input at 91-92% cache, $0.45/$0.54, 12-13
@@ -193,8 +217,10 @@ variable; preloading in both modes would be a separate, labelled experiment.
   exemption, which the rule text does not state; three receptions are PASS although
   the prompt says common areas "may" be NA; the two tenant-internal corridor FAILs
   (...LH9, ...LK5) are the interpretation the reference itself lists as a limitation.
-  A run that reads these consistently scores at most 27/39 = 0.69, so scdf_5 does not
-  separate the models. Needs a decision on the case text or reference, not an agent fix.
+  A run that reads these the way 7 of 8 runs did scores at most 27/39 = 0.69, so scdf_5
+  does not separate the models. (2026-10-13: runs that read some of these rows
+  differently reached 0.74 and 0.82, so 0.69 is not a hard ceiling.) Needs a decision
+  on the case text or reference, not an agent fix.
 
 - **2026-10-03 - v5 usable_2 suites on OpenRouter (30 stateful runs on 2 Oct, 30
   stateless on 3 Oct).** Both 29/30 complete (v3: 74%); exit cases 5/6 complete in each.
@@ -227,7 +253,8 @@ variable; preloading in both modes would be a separate, labelled experiment.
   (58 labels; e.g. landing mall's 16 trap flights). Exit cases still fail. Two suites
   were interrupted: OpenRouter returned `provider_unavailable` without `choices`
   (the SDK raised ResponseValidationError; retries are off, suites stop on errors),
-  then a local connection loss.
+  then a local connection loss. (Corrected 2026-10-13: the first interruption was a
+  malformed tool call sent back to the provider, not an outage; see Changelog.)
 - **2026-10-01 - why the hard cases fail (141 LangChain runs analysed).** Eleven cases
   complete about 95% of runs in 4-15 calls; seven (staircase width, exit scdf_5/scdf_3,
   landing mall/v8, space elevation mall, planter) need 14-20 of 20 calls and 136-332k
@@ -520,6 +547,432 @@ variable; preloading in both modes would be a separate, labelled experiment.
 
 ## Decisions
 
+- **2026-10-20 - second Windows machine for the OpenRouter lane (user).** The tez remote
+  is the old public repo and is not pushed. Transfer package, local and not synced:
+  `C:\Users\Cogalgil\acc_transfer\` with `tez.bundle` (git bundle of `main`, including this
+  entry, verified) and `gitignore/` holding the 8 held-out IFC models (+ SOURCES_AND_CITATIONS),
+  all SHA-256 equal to the frozen references. The recorded runtime packages are all
+  pinned in `acc_agent/requirements.txt`; use Python 3.13.7. Own `acc_agent/.env` on that
+  machine; its experiment database is separate and is merged afterwards. Record per suite
+  which machine ran it.
+
+- **2026-10-20 - parallel-run timing test (user request).** Laptop: i5-1145G7, 4 cores /
+  8 threads, 15.7 GB RAM. Fixed benchmark (open NUS IFC + 120 slab shapes, no API): alone
+  10.9-15.9 s (median about 12.5 s, first run cold 17.5 s); two copies at once 13.0-17.1 s
+  (median about 14.7 s), about 15-20 % slower. Real runs: two `evaluate.py` runs started
+  together, M3 via MiniMax API and M3 via OpenRouter, slab_thickness_range__nus, stateless
+  (every block reloads the NUS model, so near worst case): code block median 13.1 / 12.9 s
+  against 9.2-10.6 s in the three solo runs of the same case and mode (17-18 Oct), about
+  25-30 % slower; model time unchanged (0.5-0.8 min). Both runs complete (0.98 / 0.99).
+  These two test runs are outside any suite. Consequence: parallel suites inflate code
+  time noticeably when both do heavy geometry; keep both arms of any timing comparison
+  under the same conditions, and run timing-critical experiments (file system) alone or
+  on the second computer's lane split.
+
+- **2026-10-20 - advisor meeting: experiment plan extended (advisor and user).** Nothing
+  built yet; each new arm needs its own written design and freeze before held-out runs.
+  - Experiments of the thesis: (1) stateful vs stateless; (2) model comparison;
+    (3) extra planning step (advisor: do not call it "harness level" or "H2" in slides or
+    text); (4) virtual file system; plus (5) a larger budget for the hard cases.
+  - (4) File system: the advisor's reference is the Deep Agents example in
+    `03_agents.ipynb` (TUM Hands-On 4, appendix A.2): LangChain `deepagents` with
+    `write_todos`, file tools `ls`, `read_file`, `write_file`, `edit_file`, `glob`, `grep`
+    and subagents (`task`); files are virtual and live in the agent state by default.
+    Advisor expects better efficiency, especially on 3D geometry runs, and a better
+    stateful/stateless comparison. Candidate mechanisms: reusable code written once and
+    edited instead of resent (stateless resends full scripts), intermediate results
+    saved instead of recomputed, large outputs kept out of the context, and possibly a
+    labels file instead of restating long FAIL lists (that changes the submission
+    protocol). Possible third execution arm: stateless execution with persistent files.
+    Open: Deep Agents framework or file tools on the existing agent; whether the
+    FinalReport may reference a file; whether the existing working folder persists
+    across stateless blocks.
+  - (5) Larger budget (user proposal, advisor agreed): rerun the hard cases with 30-40
+    model calls instead of 20 and observe completion and correctness. Select the hard
+    cases by a pre-defined criterion (e.g. complexity class 3, or class 2-3), not by
+    agent outcomes, to keep the comparison clean.
+  - (2) One more LLM (advisor): a GLM model or GPT "Luna". The notebook uses
+    `z-ai/glm-5.3-flash` and `openai/gpt-6-luna` via OpenRouter (USD 0.05/0.20 and
+    0.10/0.50 per M input/output tokens, Oct 2026); the exact model id is still to be
+    chosen. A GLM model also links to the EC3 paper, which used GLM-4.7.
+
+- **2026-10-13 - held-out Solibri test set is the main experiment (user).** The 11 frozen
+  v5 cases become design/calibration; results on them are reported as such. Test set:
+  4 Solibri-derived rules on 3 new public models, about 10-12 cases. Models in
+  `gitignore/heldout_models/` (sources, licences, SHA-256 in SOURCES_AND_CITATIONS.txt):
+  Clinic (Revit 2011, IFC2x3), Schependomlaan (ArchiCAD, IFC2x3, mm, Dutch psets),
+  Smiley West (ArchiCAD 20, IFC4); KIT Institute is reserve/practice, Duplex pipeline
+  pilot only. Rules, each reduced to one stated requirement: (1) door clear width
+  >= 900 mm (DIN 18040-1; SOL/208), class 1-2; (2) free area in front of doors
+  (SOL/226), class 3; (3) stair riser/tread (DIN 18065; SOL/210), class 2; (4) room
+  clear height >= 2.40 m (SOL/202), class 2, cut first if time runs out. Optional
+  SOL/236. Protocol: thresholds from the standard, not tuned to outcomes; at most 1-2
+  zero-violation controls; case selection may use reference outcomes, never agent
+  outputs; rule texts, references, `.cset`, Solibri exports and model hashes are
+  committed before the first agent run; no agent change afterwards. Matrix as frozen:
+  both modes, MiniMax M3 x3, Sonnet 5.5 x2 (about $0.16/Sonnet run, $0.04/MiniMax run).
+  Solibri Office 26.9.0.123; working files and settings log in `gitignore/solibri_work/`.
+  - SOL/208 finding (KIT Institute practice run): with default frame and panel
+    thickness 0 and "Use spaces" off, Solibri reported 900 mm for doors with
+    OverallWidth 1000 and type `IfcDoorLiningProperties.LiningThickness` 50, i.e.
+    clear width = OverallWidth - 2 x LiningThickness. 67/67 expected issues at a
+    1100 mm test limit. Double-door behaviour not yet verified.
+  - SOL/208 on Schependomlaan (900 mm, threshold disabled at 99999): 50 issues, report
+    `solibri_work/door_width__schependomlaan.xlsx` (has GUIDs). All 104 doors with
+    OverallWidth agree with "OverallWidth - 2 x LiningThickness, else OverallWidth"
+    (incl. 1034 - 2 x 67 = 900 PASS). Without lining data Solibri measures the door
+    geometry incl. frame (680 -> 795), same labels here. The 101 width-less objects are
+    36 `liftdeur` panel parts (28 flagged at 150/332/500 mm from geometry, 8 passed)
+    and 65 `stelkozijn` sub-frames (none flagged, even 30 mm wide), so Solibri's
+    outcome there is not a statable convention. Decided (user, 2026-10-13): score the
+    104 real doors, leave the 101 width-less objects in scope but unscored
+    (annotated_subset), as for the headroom lift doors. Mention in the thesis.
+  - Role for all reference runs: Get Started (loads no classifications). The
+    Schependomlaan export made under Example Rules stands (user, 2026-10-15): SOL/208
+    uses no classification here and all 104 scored doors match the IFC convention.
+  - SOL/208 Smiley West: 170/170 doors agree with the convention (90 FAIL, 80 PASS).
+    Clinic: 252/254 agree (8 FAIL = toilet-partition doors 865 mm). The 2 curtain-wall
+    doors (no host wall) are measured from geometry at 899.55 mm and flagged; within
+    the 0.5 mm protocol tolerance, so adjudicate PASS. Solibri also reported 3 empty
+    `IfcOpeningElement`s as doors (outside the IfcDoor scope, ignored).
+  - 2026-10-15: same 0.5 mm tolerance as every calibration reference (user), so the 2
+    curtain-wall doors (OverallWidth 899.55) are PASS, adjudicated in
+    [solibri_reference.py](solibri_reference.py). Cases `door_clear_width__{clinic,
+    schependomlaan,smiley}` written (8/246, 22/82 +101 unscored, 90/80 FAIL/PASS),
+    tier `heldout` in the GUI ("Held-out" filter and suite button) and benchmark audit;
+    `--check` regenerates them from the Solibri reports, whose SHA-256 and the `.cset`
+    hash are recorded in each case. Evidence files stay in `gitignore/solibri_work/`.
+    DIN 18040-1 clause verified 2026-10-15: 4.3.3.2 "Maßliche Anforderungen", Table 1
+    row 1, all doors clear width >= 90 cm (full text: Nds. MBl. Nr. 37 q/2012, p. 10,
+    https://www.niedersachsen.de/download/127059/Nds._MBl._Nr._37_2012_vom_30.10.2012_Anlagenband_37q.pdf).
+    Applicability to housing is not stated in the rule text (user: the study tests
+    agent capability, not legal applicability).
+- **2026-10-16 - EC3 held-out cases: labels from Solibri issues, one source (user-approved
+  plan, implemented in [solibri_reference.py](solibri_reference.py) `build_ec3`).**
+  12 rules x 5 models (Clinic, Duplex, FZK House, Smiley West from the EC3 package;
+  Schependomlaan) plus 3 new models still to find (target 4 EC3 + 4 new). Clinic and
+  Smiley use the EC3 IFC copies (`ACC-function-generation/acc/bim_models/<m>/arc.ifc`);
+  door clear-width cases regenerated on them with identical labels.
+  - Source: our own Excel export (template Issue and Components) of the EC3 `.smc`
+    rule sets for every model, not their BCF `topics.json`: 7 Clinic Space Validation
+    topics there have an empty message, so message-based labels would miss them. A
+    rule name occurring twice in a report is not read.
+  - Labels: FAIL = a scope element listed by an issue of the Solibri rule whose text
+    matches the rule's message; PASS = every other scope element. Not their first-match
+    GT: it drops "non-uniform at beginning", "not connected to slab at the beginning"
+    and lets "inside" hide "intersect". Differences from EC3 GT are by design.
+  - Single-subject issues (stairs, door clearance, space validation, guarded slabs): an
+    issue listing several scope elements does not say which one fails (component order
+    in the report is alphabetical by type; Solibri names like Door.-1.142 are not in
+    the IFC). Those elements are unscored unless another issue fails them. Schependomlaan:
+    62 of 205 doors (clearance), 15 slabs (guarded "adjacent landing" issues).
+  - Roof slabs: Solibri classifies IfcSlab ROOF as Roof (its Roof Thickness rule flags
+    them, Slab Thickness never does). Slab thickness and guarded cases label them NA,
+    stated in the rule text.
+  - Thresholds stated as Solibri applies them: ADA 504.2 in inches (177.8 / 101.6 /
+    279.4 mm, seen in its messages); slab thickness 30-1000 mm; elevation: when a storey's
+    spaces differ at all (6 mm on Duplex flagged), every space of that storey fails
+    (Clinic first floor 153 + 1, Duplex all 20 checked against geometry).
+  - Known rules on new models: `doors_windows_storey` reuses the calibration text
+    verbatim (Schependomlaan: 390 orphans and 74 hosted, incl. 14 proxy hosts, match the
+    calibration semantics exactly); `slab_thickness_range` and `space_storey_elevation`
+    keep the requirement but state Solibri's parameters, so they are the same rule
+    family, not identical prompts.
+  - Spot checks against the IFC: Schependomlaan slab thickness 3 FAIL = the 3 floor slabs
+    under 30 mm (8/10/18 mm), roof slab 8 mm excluded; elevation PASS on Schependomlaan
+    and Smiley (one bottom per storey); Smiley stairs rise 347.5 mm per step in the
+    geometry (Solibri 347-348), treads 250 mm.
+  - Excluded: the four stair rules on Schependomlaan. Solibri reads every flight with
+    1313 mm risers (geometry: about 188 mm) and flags non-uniform steps on 3 of 6
+    identical flights, so its issues are no reference there.
+  - Adjudicated: 10 Smiley stairs flagged only "beginning 348 mm, elsewhere 347 mm" are
+    PASS for uniform risers; the geometry rises 347.5 mm at every step (display rounding).
+  - Geometric class-3 judgements (clearance, guarded, unallocated, space validation) are
+    Solibri's and not recomputed, as in the EC3 paper. Smiley riser/tread cases are all
+    FAIL (30 stairs), uniform 20/10. Many Smiley/Schependomlaan cases are all PASS.
+  - ifcopenshell on Schependomlaan: 94 of 100 spaces have only a footprint curve set and
+    bounding box (no solid), so geometry-based space rules must use the bounding box.
+  - GUI: every generated case of `solibri_reference.BUILDERS` is Held-out; the suite
+    holds the cases whose JSON exists.
+  - 2026-10-16 (user): slab thickness stays at Solibri's 0.03 m; the user tells the
+    advisor that EC3's template and paper state 0.30 m. Unscored ambiguous elements and
+    the Smiley/Schependomlaan stair decisions stay, recorded here with reasons.
+  - Clinic, Duplex, FZK exports added (their `arc.smc`, 2026-10-16). Parser now counts
+    report component rows without a GUID (the model itself, rule Required Components).
+    Stair readings agree with geometry: Clinic risers 176 mm, treads 280 mm (PASS), all 3
+    stairs unconnected at both ends; Duplex 194 mm / 252 mm (FAIL); FZK spiral tread
+    136 mm, last riser 50 mm. Solibri measures the first and last riser to the floor
+    slabs (Duplex 0.17 / 0.19 / 0.21 m while the flight is a uniform 194 mm), now stated
+    in the uniformity rule text.
+  - Agreement with the EC3 published ground truth on the 4 EC3 models: 46 of 48 rule x
+    model FAIL sets identical. Differences by design: Clinic clearance (EC3 fails both
+    doors of the 5 door-door issues, we leave the 5 unidentified doors unscored) and
+    Clinic intersection (14 spaces EC3 assigns only to "inside" by first match). EC3's
+    extraction takes every element of the extraction class listed by a matching issue,
+    so it counts both doors; ours does not guess. Mapping Solibri names (Door.-1.452.1)
+    to GUIDs through unambiguous issues resolves only 3 of 39 Schependomlaan and 0 of 5
+    Clinic door-door issues, so not used.
+  - Composition after 5 models: 59 cases; 24 without FAIL, 8 without PASS, 27 with both
+    (user: all-PASS cases are fine as false-positive tests, but not a majority). Several
+    stair cases have 1-3 stairs (FZK 1, Duplex 2, Clinic 3).
+  - Pending: 3 new models (their exports plus stair sanity check), then freeze.
+  - 2026-10-16 (user, option A): known rules are reported in two groups.
+    `doors_windows_storey` = same prompt, new model (calibration text verbatim, Solibri
+    semantics identical). `slab_thickness_range` and `space_storey_elevation` = same
+    check, new parameters: the prompts state Solibri's conventions (30-1000 mm,
+    geometry when unrecorded, roof slabs NA; every space of a storey with any
+    difference fails) instead of the calibration ones (100-1000 mm recorded property,
+    ALERT; >10 mm from the storey majority). They test whether the agent follows the
+    stated convention rather than its calibration behaviour. Rejected: B (calibration
+    texts with our own labels, no longer Solibri-derived) and C (treat as new rules).
+  - 2026-10-16: three new models selected after a survey of 20 public models
+    (survey script and downloads in `gitignore/heldout_candidates/`, sources, licences
+    and SHA-256 in `heldout_models/SOURCES_AND_CITATIONS.txt`). Checked: element GUID
+    overlap with all 12 EC3 models and Schependomlaan, entity classes and names,
+    doors/windows hosted and in the host's storey, door widths and lining, stair
+    structure and geometry, space and slab naming, ifcopenshell geometry.
+    - Esplanades (Estonian apartment block, ArchiCAD 22, IFC2x3, CC BY 4.0): 211 doors,
+      297 windows, 15 slabs + 80 IfcRoof, 4 stairs (flights 160 / 300 mm), 285 spaces,
+      846 walls, 37 columns; all doors/windows hosted, no storey mismatch. Handrails
+      partly as proxies; 2 roof windows hosted by IfcRoof.
+    - kleine Wohnung (German apartment house, Revit re-saved by BlenderBIM, IFC4): 47
+      doors, 52 windows, 53 slabs (36 floor finishes "FB 10.0" + structural), 2 stairs
+      (200 mm per step), 28 rooms, 211 walls. Clean. Source: web-ifc public test files,
+      no model licence.
+    - NUS school (Norwegian school, Revit 2019, IFC2x3): 310 doors, 266 windows, 126 slabs
+      (landings typed LANDING), 13 IfcStair, 307 spaces, 1057 walls, 34 curtain walls,
+      ceilings correctly as IfcCovering. Caveats: 25 IfcSpace "Area" objects are
+      whole-floor GFA zones overlapping the rooms; 2 amphitheatre stairs are nested
+      IfcStair-in-IfcStair; folding partitions (6.5-9.7 m) are IfcDoor. Same licence
+      status as kleine Wohnung.
+    - Rejected: Samuel Macalister = Revit rac_basic_sample_project (2122 shared GUIDs, an
+      EC3 test model); 4351 is from opensourceBIM TestFiles (EC3); HITOS (about 190
+      ceilings modelled as IfcSlab); Molio (579 IfcStair, one per riser); Holter Tower
+      (3572 consoles as IfcSlab); Janesville restaurant (stairs nested and outside
+      storeys, 4 without geometry); LTU A-House, S_Office, advanced_model, Jesse,
+      ISSUE_126 (no IfcSpace); HouseZ (no names, doors not hosted); Mini Project
+      (structural only); KIT Haus G-H, Jasmin-Sun, niedriha (clean but small, kept as
+      fallback). Sixty5 (SDK S1) needs a Trimble browser download (hundreds of MB).
+  - 2026-10-16 (user): Esplanades, kleine Wohnung and NUS accepted; licensing fine; no door
+    clear-width cases for them. Exports `ec3_{esplanades,wohnung,nus}_check.xlsx`. Model
+    ids `esplanades`, `wohnung`, `nus` in `solibri_reference.MODELS`.
+  - Unscored by stated policy (`solibri_reference.UNSCORED`, reasons stored per case):
+    - NUS: the 25 IfcSpace "Area" GFA zones in every rule (user). They share the storey
+      floor elevations, so they do not cause the NUS elevation flags (Plan 01 fails for
+      one room at 131001.5 vs 131200). They do fill floor area, so Solibri reports no
+      unallocated area on NUS; with the rule text ("occupied by no space") an agent
+      treating them as spaces gets the same answer.
+    - Doors/windows that are parts of an IfcCurtainWall (no opening): Clinic 5, NUS 8.
+      Solibri relates them to the curtain wall (PASS); the verbatim calibration text
+      makes them orphans (FAIL). Found by recomputing the calibration semantics on all
+      7 models: every other door/window agrees with Solibri. So the "same prompt" claim
+      holds for all scored elements.
+    - IfcStair nested in another IfcStair (NUS amphitheatre, 2): Solibri reports the parent.
+  - Adjudicated (geometry vs Solibri display rounding, stair_uniform_risers): Esplanades
+    4 stairs ("160 vs 159 mm"; first riser from the storey floor 159.5 mm like the rest)
+    and NUS Assembled Stair 4960365 ("168 vs 167 mm"; all risers 166.6-166.7 mm) -> PASS.
+    Not adjudicated: NUS Assembled Stair 4959975 measures 118.7 mm from the storey level
+    to its first tread (typical 168.8) but the floor finish under it is unknown and
+    Solibri reports no difference, so its PASS stands.
+  - Stair sanity (Solibri vs geometry): NUS cast-in-place treads 272 mm FAIL, amphitheatre
+    riser 333 mm FAIL; kleine Wohnung risers 200 mm FAIL; Esplanades 159.5 / 300 mm PASS.
+  - kleine Wohnung: every room contains its 100 mm floor-finish slab ("FB 10.0") inside
+    the room volume, so space_contains_components is 28/28 FAIL (consistent with the rule).
+  - NUS slab thickness: 25 stair tiles (5 mm) and 7 doormats (25 mm) modelled as IfcSlab
+    fail, as the Schependomlaan mats do.
+  - Esplanades export lacks the "BIM Validation - Architectural" rule set (41 rules vs 83),
+    so its 5 BIM Validation cases (clearance, doors/windows, slab thickness, guarded,
+    unallocated) need a re-export with all four rule sets checked.
+  - State after the new models: 90 held-out cases (3 door clear width + 87 EC3), audit clean,
+    all regenerate identically. 40 without FAIL, 10 without PASS, 40 with both.
+  - 2026-10-17: Esplanades re-exported with all four rule sets (81 rules). The user's
+    separate `esplanades_BIM Validation - Architectural.xlsx` gives identical issues for
+    the 5 BIM Validation rules; kept as a record, not used. New Esplanades cases:
+    clearance 1/210, doors/windows 0/508 (the 2 roof windows are hosted by IfcRoof and
+    pass in both Solibri and the calibration semantics), slab thickness 0/15, guarded
+    10/5, unallocated 138/745 (FAIL/PASS). All 12 Esplanades cases audit clean.
+  - Complete held-out set: 95 cases (3 door clear width + 12 rules x 8 models - 4 excluded
+    Schependomlaan stair cases). `solibri_reference.py --check` regenerates all identically.
+    42 without FAIL, 10 without PASS, 43 with both. Next: freeze.
+  - Pre-freeze review 2026-10-17: the 8 core agent files and the runtime package set are
+    identical to the last frozen v5.1 run (2026-10-13); 95/95 cases parse to the intended
+    scope classes, use only scoring labels, carry the builder's rule text and tier;
+    REVIEW_DATE set to 2026-10-17 and all cases regenerated. IFC open times: NUS 12.8 s,
+    Schependomlaan 11.3 s, others 0.5-3.3 s (stateless reloads each block); multi-core
+    geometry for 1800 NUS walls/slabs/spaces/doors takes 31 s, serial about 2 min, inside
+    the 600 s block limit. Scored populations range from 1 stair (FZK) to 1124 walls
+    (NUS unallocated).
+  - Protocol amendment (user, 2026-10-16): the 2026-10-13 plan allowed at most 1-2
+    zero-violation controls among about 10-12 cases. With 12 EC3 rules on 8 models,
+    all-PASS cases are accepted as false-positive tests as long as they are not the
+    majority (42 of 95). Report results per case and per group (EC3 models vs new models,
+    known rules, rule complexity class), with all-PASS cases separate from mixed ones.
+  - **Frozen 2026-10-17** in local commit `2da536d` (not pushed: the remote is the old
+    public repository). Model files and Solibri reports stay in `gitignore/`; every case
+    records their SHA-256. Office lock files (`~$*`) are now git-ignored.
+  - First pass (user, 2026-10-17): MiniMax M3 via OpenRouter, stateful, 1 repeat, H1,
+    reasoning off: 95 runs (estimated about 7-11 h, about $3-6). GUI button "Held-out
+    pilot" fixes these settings, writes suite indexes of kind `heldout_pilot` and offers
+    to resume with the cases not yet finished in earlier pilot sessions. Decide further
+    repeats, stateless mode and Sonnet after this pass.
+  - Pilot result 2026-10-17 (suite `20261017-012814-102231`, settings as planned, reasoning
+    off): 95/95 finished, no errors, 5.6 h (median 2.6 min/run), 18.7M input tokens (87 %
+    cache reads), 1.6M output. 61 complete, 23 incomplete, 11 abstained; mean union
+    accuracy of complete runs 0.92. Class-1/2 rules mostly complete and correct (slab
+    thickness 8/8, doors/windows 7/8, risers 7/7, treads 7/7); the geometric class-3 rules
+    mostly do not complete (clearance 1/8, space intersection 0/8, guarded 3/8,
+    unallocated 3/8, space inside 5/8).
+  - The 5 complete runs below 0.8 are agent errors, re-checked against the IFC: Esplanades
+    treads (agent divides flight length by tread count, geometry 300 mm) and uniform
+    risers (agent measures from the flight bottom 14200, the floor slab top is 14300, so
+    the first riser is 159.5 mm as adjudicated); FZK slab connection (top tread 2650
+    arrives at the Dachgeschoss slab top 2700; the agent took the 3500 mm surface above);
+    kleine Wohnung inside (the 100 mm floor finish 503.0-503.1 lies inside rooms
+    503.0-505.75, the agent treated it as bounding); Esplanades inside (agent over-flags
+    170 of 285 by ray casting).
+  - New MiniMax behaviour on the held-out tasks: 9 runs ended at the 20 run_python cap after
+    1-11 model calls because single responses contained many code blocks (up to 46),
+    written without seeing outputs; they run sequentially as designed, so these are valid
+    incomplete runs. Output-limit cutoffs 59 of 1395 calls (4.2 %, calibration 1.6 %),
+    malformed tool calls in 11 calls (calibration 0).
+  - Second pass (user, 2026-10-17): same 95 x 1, stateless, via the direct MiniMax API
+    (`provider=minimax`, model `MiniMax-M3`, Anthropic-compatible endpoint, thinking
+    disabled by REASONING=0) to see whether it runs faster; provider differences accepted.
+    Smoke test: plain reply in 1.8 s with no thinking block, one run_python tool call in
+    1.6 s, automatic prompt-cache reads. GUI: `HELDOUT_PILOTS` defines both passes, one
+    button each, resume per suite index kind (`heldout_pilot_stateless_minimax`).
+  - Second pass result 2026-10-17 (suite `20261017-102839-754344`): 95/95 finished, no
+    errors, 6.8 h summed (median 3.1 min/run), 18.5M input (89 % cache), 1.15M output.
+    63 complete, 20 incomplete, 12 abstained; mean union accuracy of complete runs 0.88.
+    Not faster: model time is equal (2.56 h both; 6.0 vs 6.6 s per call, but 16.1 vs 14.7
+    calls per run), while code execution rose from 2.9 h to 4.1 h (stateless reload,
+    median block 2.7 vs 1.2 s); 45 runs reached the 20-call cap (pass 1: 28). The direct
+    API changed reply shape: always exactly one tool call per reply, no output-limit
+    cutoffs (pass 1: 49), no invalid tool calls (pass 1: 5), no run_python-cap endings.
+    Provider and mode changed together, so these differences are not attributable to one.
+  - The 10 complete runs below 0.8 are agent errors, re-checked against the IFC:
+    kleine Wohnung risers (agent reads 170 mm, flights rise 15 x 200 mm from 503.0 to the
+    506.0 slab top) and uniform risers (agent takes the 506.17 stair-part top as the
+    arrival floor); Clinic uniform risers (floor 4.570 = 26 x 175.8 mm, agent uses 4.52);
+    Smiley uniform risers (agent's last riser of about 1 m up to the stair-part top; the
+    10 adjudicated PASS stairs flagged too); FZK treads (agent measures the 750 mm outer
+    going of the spiral stair); FZK slab connection (same 3500 mm surface error as pass 1);
+    FZK unallocated (the 1.39 m2 strip is exactly Wand-Int-ERDG-3); Schependomlaan
+    intersection (bounding boxes); Smiley intersection (agent finds none; reference equals
+    EC3 published ground truth); Esplanades guarded (convex-hull footprints).
+  - **Main held-out run plan (user, 2026-10-17), fixed before any run:** MiniMax M3 via
+    the direct MiniMax API (`provider=minimax`, `MiniMax-M3`), H1, reasoning off, frozen
+    budget (20 calls), 95 cases x 2 modes (stateful, stateless) x 2 repeats = 380 runs.
+    Each case runs both modes back to back, so provider load and time of day are spread
+    evenly. GUI button "Held-out main" writes suite indexes of kind
+    `heldout_main_minimax`; resume repeats only cases not finished as a whole. Primary
+    analysis: these balanced 2 x 2 runs, case as unit (mean over repeats), paired
+    stateful vs stateless comparison on the same 95 cases. The two pilots are reported
+    separately: pilot 1 as a provider check (OpenRouter vs direct API), pilot 2 as an extra
+    stateless run. If a third repeat is added later, it is a new stateful run on the
+    direct API, and pilot 2 becomes the third stateless repeat. Agent and references
+    stay unchanged; only documented reference errors may be corrected.
+  - Main run result 2026-10-18 (suite `20261017-213604-456415`, one session, 22.7 h wall
+    clock): 380/380 runs, every case has exactly stateful r1-r2 and stateless r1-r2, no run
+    or sweep errors, no integrity errors, runtime code verified and token usage complete in
+    all runs, no context changes. Recorded configuration identical across all 380 runs
+    apart from the IFC hash; against pilot 2 only `gui.py` differs (the new button). Each
+    case keeps one reference hash across pilot 2 and the main run.
+    Stateful: 116 complete, 52 incomplete, 22 abstained, mean union accuracy of complete
+    runs 0.874, median 1.7 min/run, 9.8 h. Stateless: 124 / 46 / 20, 0.883, median
+    2.9 min/run, 12.3 h. Both about 16 calls per run, 89 % cache reads; direct API again one
+    tool call per reply, 1 output-limit cutoff, no invalid tool calls. 9 code blocks hit the
+    600 s timeout (7 stateful, 2 stateless). Repeat status agreed in 65/95 (stateful) and
+    57/95 (stateless) cases.
+  - Low complete runs (38 below 0.8 in 24 cases) were triaged for reference errors by
+    comparing all complete runs of each case across both pilots and the main run; none
+    found. Elements wrong in every complete run were the already verified FZK slab
+    connection and the adjudicated Esplanades/Smiley uniform risers, or method
+    approximations that vary between runs. Re-checked against the IFC: Duplex R301 (two
+    runs flag the roof slab 6.000-6.457 in the attic space 6.000-9.000; the slab lies
+    entirely inside, so it belongs to the inside rule, where R301 fails); kleine Wohnung
+    door clearance (16 doors flagged in both complete runs for the roof; with the real roof
+    meshes no roof point enters even a two-sided clearance box, roof underside about 509.35
+    above door tops 508.22; the agents used bounding boxes or counted opening elements).
+  - **Sonnet held-out run plan (user, 2026-10-18), fixed before any run:** Sonnet 5.5 via
+    OpenRouter (`anthropic/claude-sonnet-5.5`, as in calibration), stateful, 1 repeat, all
+    95 cases, H1, reasoning off, frozen budget. Purpose: model comparison on the same
+    held-out set; the mode question is answered by the MiniMax main run. Estimated
+    $12-30. Cases are not selected by MiniMax outcomes (selection on agent outputs is
+    excluded by the protocol). Suite index kind `heldout_sonnet_stateful`. Further Sonnet
+    runs depend on the advisor's budget decision.
+  - Sonnet result 2026-10-19 (suite `20261018-215712-011319`): 95/95 runs, no errors or
+    integrity errors, runtime verified, usage complete; configuration identical to the
+    main run except `gui.py` and model/provider; reference hashes equal. 93 complete,
+    2 incomplete, 0 abstained; mean union accuracy of complete runs 0.924, 62 runs exactly
+    correct (MiniMax stateful: 88 of 190); 8.3 calls/run, median 0.9 min/run, 2.0 h,
+    7.7M input (84 % cache), 0.55M output; 13 output-limit cutoffs, 11 of them in one run.
+  - Both incomplete runs are Schependomlaan cases that need a long FINAL violation list.
+    doors_windows_storey (390 FAIL): labels exactly correct, but the FinalReport must
+    restate all 390 GlobalIds; 11 replies stopped at the 8000-token output limit and the
+    other attempts did not match the label set. No run of any model has completed this
+    case (MiniMax 0/6 incl. pilots, all with correct labels), so it measures the
+    finalization protocol (restating a list of several hundred GlobalIds within 8000 output
+    tokens), not the check. unallocated_floor_area (498 FAIL submitted, reference 77):
+    13 invalid label submissions, then the last 2 calls hit the output limit while
+    writing the list. Across the MiniMax main run, 23 incomplete runs had full-scope
+    labels but a FINAL list that did not match, mostly with large FAIL sets. Not changed:
+    the agent is frozen; report as a limitation and show label-level scores of these
+    runs as a sensitivity analysis.
+  - Low complete Sonnet runs (11 below 0.8) triaged against all MiniMax runs. Duplex
+    uniform risers: Sonnet measures to the structural floors (0.0, 3.1); the first and
+    last riser to the 19 mm wood finish floors differ by about 19 mm, as recorded at the
+    freeze (reference FAIL holds). kleine Wohnung intersection: the floor finish lies
+    entirely inside the rooms, so it belongs to the inside rule. Schependomlaan space
+    validation is a representation ambiguity: 94 of 100 spaces have only a footprint
+    curve set and an IfcBoundingBox. Solibri evaluates the box: in space 9.00 the 5 walls
+    it reports inside lie within the box (x 8.70-10.60, y 7.27-11.72) but outside the
+    footprint polygon. Sonnet and MiniMax's only complete run used footprints and agree
+    with each other against the reference on 40 of 42 inside FAILs (23 shared errors on
+    intersection). The reference stays (box = the only 3D representation, as decided
+    before the freeze); report it as a limitation and run a sensitivity analysis without
+    the two Schependomlaan space-validation cases.
+  - H2 live smoke test 2026-10-19 (first H2 runs on v5; until now only unit tests with
+    fake models): `evaluate.py --harness 2`, slab_thickness_range__fzk, stateful, frozen
+    code (agent.py hash matches). MiniMax M3 direct API: plan call without tools
+    (`end_turn`, 957-char plan), then tool calls; complete, union accuracy 1.0, 7 calls.
+    Sonnet 5.5 OpenRouter: plan (`stop`), complete, 1.0, 4 calls. The plan is stored in
+    run details (`plan`) and counts as model call 1 of 20. These smoke runs are outside
+    any suite index and are not part of the analysis.
+  - **H2 held-out run plan (user, 2026-10-19), fixed before any run:** MiniMax M3 via the
+    direct MiniMax API, H2 (planning), stateful, 2 repeats, all 95 cases, reasoning off,
+    frozen code and budget (20 model calls including the plan call; planning text and
+    wiring unchanged). Suite index kind `heldout_h2_minimax`. Primary comparison: per
+    case against the 2 H1 stateful runs of the main run (same provider, model, mode and
+    repeats); completion, exact correctness and union accuracy, sign test / Wilcoxon on
+    case means. Secondary: whether the saved plans name the correct method in the known
+    failure cases (floor surface, outline vs box, inside vs intersect). Sonnet H2 is
+    optional and depends on the advisor's budget decision.
+  - H2 session 1 (suite `20261019-232632-456392`) stopped after 37 of 95 cases: on
+    door_front_clearance__nus repeat 2 the MiniMax API returned 529 `overloaded_error` on
+    the plan call (provider-side; frozen `max_retries=0`, so the run is an infrastructure
+    error and the suite ends). The 74 runs of the 37 finished cases are healthy (plan
+    recorded in all, runtime verified, no errors). Resume reruns the unfinished case as a
+    whole; its earlier repeat 1 (abstained) is excluded with the error run, as planned.
+  - Interim look 2026-10-20 (37 finished cases: door width, stairs, door clearance; not a
+    random subset): H2 vs H1 stateful on the same cases, 74 runs each: complete 48 vs 54,
+    exactly correct 33 vs 39, abstained 16 vs 6; per case complete better/worse 6/11
+    (sign test p=0.33), exact 6/10 (p=0.45). No significant difference yet. Re-checked
+    kleine Wohnung treads (H2 both runs FAIL, reference PASS): modelled treads step
+    0.300 m in plan (x 6.285, 6.585, 6.885, ...), so PASS holds; the agent used
+    Pset_StairCommon.TreadLength / "Tatsaechliche Auftrittsbreite" 0.2 m (Revit design
+    minimum), while the flight Pset records 0.3048.
+  - **Naming (advisor, 2026-10-20):** call H2 the "extra planning step" in slides and
+    thesis text, not "harness level" or "H2". Code identifiers and recorded settings stay.
+  - Planning-step session 2 (suite `20261020-101628-818678`) finished 5 cases
+    (door_front_clearance nus/wohnung, doors_windows_storey clinic/duplex/fzk) and stopped
+    on doors_windows_storey__schependomlaan repeat 2: the MiniMax API returned a message
+    without content (langchain_anthropic `TypeError: 'NoneType' object is not iterable`),
+    again a provider-side failure. 42 of 95 cases done. Vol. 8 gained one slide on the
+    planning step (`slides/add_planning_slide_vol8.py`, edits the hand-edited deck in
+    place): completed 64 % vs 73 % without, all labels right 46 % vs 54 %, abstained
+    23 % vs 10 %; per case p = 0.24 / 0.45.
+
 - **2026-10-12 - freeze `langchain-codeact-v5` for the final evaluation (user).** No
   further agent behaviour changes: prompts, budget (20 calls, 8000 output tokens),
   completion checks v4, kernel settings and label protocol stay as they are. Only
@@ -530,6 +983,8 @@ variable; preloading in both modes would be a separate, labelled experiment.
   width, both modes, 3 repeats, MiniMax M3 and Sonnet 5.5; later the Solibri cases;
   optional third model stateful only. Pre-freeze v5 runs (recording v4) stay as a
   replication. Paid runs other than MiniMax need the user's approval.
+  Amended 2026-10-13 (user): the crash fix for malformed tool calls (Changelog) is the
+  only post-freeze change; Sonnet runs use 2 repeats per mode.
 
 - **2026-09-29 - context between model calls (user-approved), `langchain-codeact-v2`.**
   History stays append-only: every call resends system prompt, rule, all code, all
@@ -805,13 +1260,155 @@ health-suite run.
 - Exit scdf_5 reference conventions (Findings 2026-10-04): report as is unless decided
   otherwise.
 - Solibri-derived held-out cases (advisor request, 2026-10-12): planned after the freeze.
+  2026-10-15: the advisors' EC3 package publishes Solibri ground truth for 16 rules on
+  12 free models, including Dental Clinic, Smiley West, Duplex and FZK House; ask the
+  advisor whether these are the intended held-out cases.
+  User 2026-10-15: combine. Use the EC3 models Clinic, Duplex, FZK House and Smiley West
+  with their Solibri labels, plus new models with our own Solibri runs. EC3 package
+  cloned to `gitignore/ACC-function-generation` (commit 7e8b949, 5 May 2026): 16 rules,
+  per model `acc/res/<model>/ground_truth.json` (violations only, grouped per Solibri
+  issue, `required_guids`), rule texts and Solibri parameters in
+  `acc/config/rule_templates.json`, space-usage classifications per model as CSV,
+  Solibri `.smc` per model (embedded rulesets). Smiley and AC20 IFCs are byte-identical
+  to ours; their Clinic and Duplex went through Solibri IFC Optimizer (same GUIDs,
+  different bytes). Caveats: no PASS/NA population, so the judged scope must come from
+  the rule text; 304.3.1, 305.3, 404.2.5 and large-spaces depend on Solibri space
+  classifications; doors/windows storey, same-storey elevation and slab thickness are
+  rules we already calibrated on.
+  Selection (user): the 12 rules without space-usage classification (drop 304.3.1,
+  305.3, 404.2.5, large spaces). Consistency check 2026-10-15: our Solibri 26.9 on their
+  `smiley_west/arc.smc` (export `solibri_work/ec3_smiley_check.xlsx`), extracted with
+  their own description-pattern matching and extraction_element filter, reproduces
+  their ground truth exactly for 15/16 rules (all 12 selected); only 305.3 differs
+  (36 vs 13, a dropped rule). The `.smc` holds four full rulesets (ADA/ABA, Advanced
+  Space Check, BIM Validation - Architectural, General Space Check); the 16 rules are
+  filtered from all issues afterwards. Note AC20 (our KIT Institute practice model) is
+  in their training split, so it is not a new model.
+  - New-model workflow: open their `smiley_west/arc.smc`, Save As
+    `solibri_work/ec3_template.smc`, Model Tree > Update Models with the new IFC (keeps
+    all four rulesets incl. ADA and the classifications; removing the only model resets
+    the project). ADA cannot be exported as `.cset`; `ec3_rulesets.cset` holds the other
+    three as a record.
+  - Schependomlaan (export `solibri_work/ec3_schependomlaan_check.xlsx`), elements per
+    rule with EC3's first-match patterns (superseded by the message-based labels in
+    Decisions 2026-10-16): riser 6, tread 6, stair-slab connection 3, non-uniform 0,
+    clearance front of doors 51, doors and windows 390 (all orphans: no
+    IfcRelFillsElement), slab thickness 3, guarded 53, space inside 42, intersect 14,
+    same-storey elevation 0, unallocated areas 77 walls/columns.
+  - Excel issue text differs from BCF topic text for slab thickness ("1 component(s)"
+    vs "Slab component(s)"), so the pattern needs a rule-name fallback there.
+  - Slab thickness limit actually applied by Solibri is >= 0.03 m (issue text in their
+    duplex/digital_hub topics.json and our run), not 0.30 m as in their
+    rule_templates.json and EC3 Table 2. Tell the advisor; rule texts must say 30 mm.
 - Verify MiniMax `thinking: {"type": "adaptive"}` passthrough survives if the provider
   layer is ever moved onto LangChain chat models. Not guaranteed.
 - Decide whether to replace hard output truncation with offload-to-file.
 
+## Literature (thesis writing)
+
+- **2026-10-15 - regulatory and data citations (verified against the sources).**
+  - BCA (2025). *Approved Document: Acceptable Solutions*, Version 7.08, October 2025.
+    Issued by the Commissioner of Building Control under Regulation 27 of the Building
+    Control Regulations, Building and Construction Authority, Singapore. Local copy:
+    `gitignore/bca_tests-*/BCATestCases/Headroom/Codes/approved-document-v7-08.pdf`
+    (PDF pages: C.3.2.1 with Notes p. 37; E.2.1, E.2.2, E.2.4 p. 40; E.3.2.1, E.3.3.1
+    with Note p. 41; E.3.4.1 p. 42; E.3.4.2, E.3.4.3, E.3.5.1, E.3.5.2 p. 43; E.3.5.4
+    p. 44).
+  - SCDF (2023). *Code of Practice for Fire Precautions in Buildings 2023* (Fire Code
+    2023), clause 2.2.12 "Location of exits & access to exits", PDF p. 80 of the full
+    annotated edition updated 7 Jul 2026:
+    https://www.scdf.gov.sg/docs/default-source/firecode-whole-document-with-annotations/firecode_full_latest_07jul2026.pdf
+    Clause page: https://www.scdf.gov.sg/fire-safety-services-listing/fire-code-2023/table-of-content/chapter-2-means-of-escape/clause-2.2-determinations-of-exit-requirements
+  - URA. *Development Control Handbooks: Gross Floor Area, Planter Boxes* (last updated
+    6 June 2026): https://www.ura.gov.sg/guidelines/development-control/development-control-handbooks/gross-floor-area/planter-boxes/
+  - DIN 18040-1:2010-10. *Barrierefreies Bauen - Planungsgrundlagen - Teil 1: Öffentlich
+    zugängliche Gebäude*. Berlin: Beuth. Clause 4.3.3.2, Table 1 row 1. Full text
+    reproduced in Nds. MBl. Nr. 37 q/2012 (link in Decisions 2026-10-13). Cite DIN.
+  - Solibri Inc. (2026). Solibri Office 26.9.0.123; rule template SOL/208 Accessible
+    Door Rule: https://help.solibri.com/hc/en-us/articles/1500004738282-208-Accessible-Door-Rule
+  - Fuchs, Hellin and Borrmann (2026), EC3; reproduction package (MIT):
+    https://github.com/stefan-1992/ACC-function-generation . Uses 12 models with
+    Solibri ground truth for 16 rules; models from IFCBench (Hellin et al., 2025,
+    https://github.com/sylvainHellin/ifc-bench) and the GNI BIM Dataset (Wang, Fuchs,
+    Wu, Esser, Wrabel and Borrmann, 2026, Zenodo, https://doi.org/10.5281/zenodo.19722012).
+    IFCBench and GNI cited as given in that README, not yet opened.
+  - Held-out IFC models: sources, licences and required attributions in
+    `gitignore/heldout_models/SOURCES_AND_CITATIONS.txt`.
+- **2026-10-15 - clause audit of the calibration rule texts.** Every BCA clause number
+  and quotation in the health-suite and usable_2 rules matches V7.08 (list above);
+  E.2.4(c) skipping (i) is as printed in V7.08. SCDF 2.2.12b is the right clause, but
+  the quote ends after conditions (1)-(2); the current edition also has (3) signage
+  "Exit Access Door - Keep Clear" and (4) demarcated egress paths, neither readable
+  from IFC. URA planter criteria match the current page. Rule texts are frozen with
+  the calibration runs, so nothing was changed; mention the SCDF truncation in the
+  thesis. Non-regulatory rules: doors/windows storey and same-storey elevation match
+  EC3 Table 2; our slab range 100-1000 mm differs from EC3's 0.30-1.0 m, so do not
+  cite EC3 for it. `door_width_planterbox` is a warm-up rule without a source.
+- **2026-10-13 - EC3 paper published and citable:** Fuchs, Hellin and Borrmann (2026),
+  "Assessing the Viability of LLM Agents for Generating Reusable Compliance Checking
+  Functions", EC3 2026 (note in `studies/literature_2026-10/`). Cite it for the
+  Solihin and Eastman class wording and the same-storey elevation rule. Its numbers
+  differ from the confidential draft in `studies/studies_txt_1.txt` (training F1agg
+  0.47 -> 0.55, Table 2 counts); cite only the published version.
+- **2026-10-12 - 32 papers read and noted** in `studies/literature_2026-10/`: PDFs named
+  by title, one `.md` per paper (summary, link to our research, verbatim key quote
+  with PDF page, all quotes checked against the text). Classic ACC background is
+  deliberately not expanded (user). Literature review chapter resumes later.
+- **Gap:** no code-agent paper isolates interpreter persistence. CodeAct, TaskWeaver,
+  Data Interpreter and OpenHands keep state but never compare against a restarted
+  interpreter; TaskWeaver argues in-memory state lowers error rates without a
+  stateless ablation.
+- **Closest BIM work:** Koh et al. 2026 (AutCon, ARCBIM) never executes code in its
+  loop, generates once per query, and names missing interaction with the execution
+  environment as its main limitation. Only Koh reports tokens and cost; none of the
+  AEC papers repeats runs. Kapoor et al. 2024 and Zhu et al. 2025 support our
+  repeats, cost reporting and validity checks.
+- **Support for our observations:** CodeAct notes the model may "imagine the content
+  of a variable without actually printing it out" (p. 9), close to labelling in
+  reasoning; SWE-agent supports bounded output; Lost in the Middle bears on the
+  growing append-only transcript.
+- **Cite table values:** internal contradictions in Koh (80% vs Table 6 76.25%),
+  Madireddy (conclusion vs Table 4), PAL (GSM-HARD text vs Table 1), TaskWeaver
+  (0.85 vs 0.87), Kang 2026 (time limit, metric count, missing Graph-RAG row) and
+  Wang 2026 (180 vs 163 competency questions).
+- **Verify before citing:** LLM-FuncMapper journal version (EAAI 2026,
+  doi:10.1016/j.engappai.2025.112823, taken from the arXiv page); Yang et al. online
+  2026, issue 2027; preprint PDFs without printed venue (Toolformer, Reflexion, Lost
+  in the Middle, Self-Debug). Design-science sources (Hevner 2004, Peffers 2007) are
+  not downloaded but needed if the thesis keeps the DSR framing.
+
 ---
 
 ## Changelog
+
+- **2026-10-13 - v5.1 crash fix: malformed tool calls (recording v6).** Protocol name
+  stays `langchain-codeact-v5`; patch tag `v5.1-frozen` when published.
+  - **Bug.** Occasionally MiniMax returns a tool call whose arguments are not valid
+    JSON; LangChain stores it in `AIMessage.invalid_tool_calls`. `after_model` treated
+    that reply as "no tool call" and asked for one, but the broken call stayed in the
+    history unanswered. The OpenRouter adapter serializes invalid calls into
+    `tool_calls` of the next request (checked offline on the crashed message: 1 call,
+    arguments not parseable), so the upstream rejected the whole request and OpenRouter
+    returned an error body without `choices` (`provider_unavailable` or
+    `invalid_request`); the run ended as `error`.
+  - **Evidence.** Every LangChain-era run whose transcript contains an invalid tool
+    call ended in `error` (3 frozen-v5 runs on 12 Oct: space elevation mall stateless,
+    tread mall stateless, exit scdf_5 stateful; 1 v3 run on 1 Oct, exit scdf_3), and no
+    `complete`, `abstained` or `incomplete` run contains one. The earlier notes blamed
+    OpenRouter `provider_unavailable` for these; that was wrong (corrected here).
+  - **Fix.** When a reply has invalid tool calls, they are removed from that message
+    (same message id, content and reasoning kept, so the history stays valid) and the
+    model is told the call could not be parsed and no code ran. If the reply also had
+    valid calls, those run normally. `llm_calls[i].malformed_tool_calls` counts them.
+    Test: `test_malformed_tool_call_is_removed_and_the_model_asked_to_resend`.
+  - **Why earlier finished runs stay valid.** The patch only adds a branch that runs
+    when a reply contains an invalid tool call. No finished run (complete, abstained or
+    incomplete) ever reached that state, so for every one of them v5 and v5.1 execute
+    the same code path with the same prompts, budget, messages and checks: given the
+    same model replies, v5.1 would have produced exactly the same run. Only the runs
+    that crashed differ; they were never scored (status `error`) and are rerun under
+    v5.1. Finished v5 runs and v5.1 runs can therefore be pooled; recording v6 marks
+    which code produced each run.
 
 - **2026-10-12 - recording v5 and the v5 freeze.** `agent.py` stores `seconds` per
   model call (`llm_calls`) and per code block (`execution_records`); recording version
@@ -819,8 +1416,9 @@ health-suite run.
   frozen MiniMax batch (OpenRouter, 41 finished runs at 21:39): 39 complete, 2
   abstained, 0 incomplete; accuracy as in the 2-3 Oct suites; model wait dominates
   (code 14% of time stateful, 28% stateless; median 1.8 s vs 3.1 s per block). Lost
-  runs: 2 OpenRouter `provider_unavailable` (evaluate.py stops the case's remaining
-  repeats) and 1 laptop standby 18:06-20:52. Reruns overlapped the main batch, so
+  runs: 2 provider errors (evaluate.py stops the case's remaining repeats; cause
+  corrected 2026-10-13: malformed tool calls, see above) and 1 laptop standby
+  18:06-20:52. Reruns overlapped the main batch, so
   their code seconds may be slightly inflated. Published as tag `v5-frozen`.
 
 - **2026-10-04 - suite repeats follow the slider.** The 7-case and usable_2 suite

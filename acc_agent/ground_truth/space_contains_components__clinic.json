@@ -1,0 +1,1708 @@
+{
+  "case_id": "space_contains_components__clinic",
+  "rule": "No walls, curtain walls, columns, slabs or roofs may lie inside a space.\nSource: rule 'Space Validation' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct. It also checks intersections (inside only) with other components. This template focuses only on the 'inside' check: components that are inside the space.\nBenchmark convention: spaces are bounded by walls, curtain walls, columns, slabs and roofs, not filled with them. A space fails when one or more of these components lies inside its volume. Components that only cut through the space boundary are covered by a separate intersection check; doors, windows, furniture and other spaces are ignored.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/dental_clinic/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0ClPCUC7jCQRnj1dhupHnn",
+    "0ClPCUC7jCQRnj1dhupHny",
+    "0ClPCUC7jCQRnj1dhupMRO",
+    "0_IXpwL5b29BZ7C0XgKBd4",
+    "0_IXpwL5b29BZ7C0XgKBdO",
+    "0_IXpwL5b29BZ7C0XgKBf4",
+    "0ztdC3L1HAzhbhMHypqbH5",
+    "0ztdC3L1HAzhbhMHypqc0q",
+    "0ztdC3L1HAzhbhMHypqcTW",
+    "0ztdC3L1HAzhbhMHypqcY6",
+    "0ztdC3L1HAzhbhMHypqcY9",
+    "0ztdC3L1HAzhbhMHypqcYH",
+    "0ztdC3L1HAzhbhMHypqdeT",
+    "1KgZQG_2r6VuMR28$3QMLM"
+  ],
+  "labels": {
+    "0ClPCUC7jCQRnj1dhupHX0": "PASS",
+    "0ClPCUC7jCQRnj1dhupHX9": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXA": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXF": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXJ": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXK": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXP": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXT": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXU": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXZ": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXa": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXe": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXj": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXk": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXn": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXo": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXt": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXx": "PASS",
+    "0ClPCUC7jCQRnj1dhupHXy": "PASS",
+    "0ClPCUC7jCQRnj1dhupHZb": "PASS",
+    "0ClPCUC7jCQRnj1dhupHc2": "PASS",
+    "0ClPCUC7jCQRnj1dhupHcN": "PASS",
+    "0ClPCUC7jCQRnj1dhupHdZ": "PASS",
+    "0ClPCUC7jCQRnj1dhupHdj": "PASS",
+    "0ClPCUC7jCQRnj1dhupHdk": "PASS",
+    "0ClPCUC7jCQRnj1dhupHnn": "FAIL",
+    "0ClPCUC7jCQRnj1dhupHny": "FAIL",
+    "0ClPCUC7jCQRnj1dhupHs1": "PASS",
+    "0ClPCUC7jCQRnj1dhupHs2": "PASS",
+    "0ClPCUC7jCQRnj1dhupHs7": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsB": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsC": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsG": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsL": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsM": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsP": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsQ": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsV": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsZ": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsa": "PASS",
+    "0ClPCUC7jCQRnj1dhupHse": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsj": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsk": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsn": "PASS",
+    "0ClPCUC7jCQRnj1dhupHso": "PASS",
+    "0ClPCUC7jCQRnj1dhupHst": "PASS",
+    "0ClPCUC7jCQRnj1dhupHsu": "PASS",
+    "0ClPCUC7jCQRnj1dhupMDM": "PASS",
+    "0ClPCUC7jCQRnj1dhupMDV": "PASS",
+    "0ClPCUC7jCQRnj1dhupMO2": "PASS",
+    "0ClPCUC7jCQRnj1dhupMO7": "PASS",
+    "0ClPCUC7jCQRnj1dhupMOD": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQD": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQE": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQK": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQP": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQQ": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQV": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQZ": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQa": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQe": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQj": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQk": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQn": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQo": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQt": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQx": "PASS",
+    "0ClPCUC7jCQRnj1dhupMQy": "PASS",
+    "0ClPCUC7jCQRnj1dhupMR0": "PASS",
+    "0ClPCUC7jCQRnj1dhupMR5": "PASS",
+    "0ClPCUC7jCQRnj1dhupMR6": "PASS",
+    "0ClPCUC7jCQRnj1dhupMR9": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRA": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRF": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRJ": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRK": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRO": "FAIL",
+    "0ClPCUC7jCQRnj1dhupMRT": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRU": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRd": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRe": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRk": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRn": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRo": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRt": "PASS",
+    "0ClPCUC7jCQRnj1dhupMRy": "PASS",
+    "0_IXpwL5b29BZ7C0XgKBd3": "PASS",
+    "0_IXpwL5b29BZ7C0XgKBd4": "FAIL",
+    "0_IXpwL5b29BZ7C0XgKBdO": "FAIL",
+    "0_IXpwL5b29BZ7C0XgKBf4": "FAIL",
+    "0_IXpwL5b29BZ7C0XgKBsG": "PASS",
+    "0_IXpwL5b29BZ7C0XgKBsS": "PASS",
+    "0uLn6BSvvEB8kgChiujNG3": "PASS",
+    "0uLn6BSvvEB8kgChiujNG6": "PASS",
+    "0uLn6BSvvEB8kgChiujNGA": "PASS",
+    "0uLn6BSvvEB8kgChiujNGP": "PASS",
+    "0uLn6BSvvEB8kgChiujNHI": "PASS",
+    "0uLn6BSvvEB8kgChiujNHL": "PASS",
+    "0uLn6BSvvEB8kgChiujNHV": "PASS",
+    "0uLn6BSvvEB8kgChiujNHX": "PASS",
+    "0uLn6BSvvEB8kgChiujNHa": "PASS",
+    "0uLn6BSvvEB8kgChiujNHd": "PASS",
+    "0uLn6BSvvEB8kgChiujNHe": "PASS",
+    "0uLn6BSvvEB8kgChiujNHh": "PASS",
+    "0uLn6BSvvEB8kgChiujNHk": "PASS",
+    "0uLn6BSvvEB8kgChiujNHm": "PASS",
+    "0uLn6BSvvEB8kgChiujNHp": "PASS",
+    "0uLn6BSvvEB8kgChiujNHw": "PASS",
+    "0uLn6BSvvEB8kgChiujNHz": "PASS",
+    "0uLn6BSvvEB8kgChiujNI6": "PASS",
+    "0uLn6BSvvEB8kgChiujNr0": "PASS",
+    "0uLn6BSvvEB8kgChiujNr3": "PASS",
+    "0ztdC3L1HAzhbhMHypqbH5": "FAIL",
+    "0ztdC3L1HAzhbhMHypqc0$": "PASS",
+    "0ztdC3L1HAzhbhMHypqc03": "PASS",
+    "0ztdC3L1HAzhbhMHypqc04": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0D": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0G": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0L": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0P": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0Q": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0V": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0X": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0Y": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0d": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0h": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0i": "PASS",
+    "0ztdC3L1HAzhbhMHypqc0q": "FAIL",
+    "0ztdC3L1HAzhbhMHypqc1W": "PASS",
+    "0ztdC3L1HAzhbhMHypqc1b": "PASS",
+    "0ztdC3L1HAzhbhMHypqc1c": "PASS",
+    "0ztdC3L1HAzhbhMHypqc1g": "PASS",
+    "0ztdC3L1HAzhbhMHypqc6G": "PASS",
+    "0ztdC3L1HAzhbhMHypqc6L": "PASS",
+    "0ztdC3L1HAzhbhMHypqc6M": "PASS",
+    "0ztdC3L1HAzhbhMHypqc6V": "PASS",
+    "0ztdC3L1HAzhbhMHypqc74": "PASS",
+    "0ztdC3L1HAzhbhMHypqc79": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7A": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7F": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7G": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7L": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7M": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7P": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7Q": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7V": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7X": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7Y": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7_": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7d": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7h": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7i": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7p": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7q": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7u": "PASS",
+    "0ztdC3L1HAzhbhMHypqc7z": "PASS",
+    "0ztdC3L1HAzhbhMHypqc8Z": "PASS",
+    "0ztdC3L1HAzhbhMHypqc8a": "PASS",
+    "0ztdC3L1HAzhbhMHypqc8e": "PASS",
+    "0ztdC3L1HAzhbhMHypqc8k": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9$": "PASS",
+    "0ztdC3L1HAzhbhMHypqc93": "PASS",
+    "0ztdC3L1HAzhbhMHypqc94": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9B": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9G": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9L": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9M": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9P": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9Q": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9V": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9m": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9r": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9s": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9v": "PASS",
+    "0ztdC3L1HAzhbhMHypqc9w": "PASS",
+    "0ztdC3L1HAzhbhMHypqcA1": "PASS",
+    "0ztdC3L1HAzhbhMHypqcA2": "PASS",
+    "0ztdC3L1HAzhbhMHypqcA7": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAC": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAJ": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAK": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAO": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAT": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAU": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAX": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAY": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAd": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAh": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAi": "PASS",
+    "0ztdC3L1HAzhbhMHypqcAu": "PASS",
+    "0ztdC3L1HAzhbhMHypqcB0": "PASS",
+    "0ztdC3L1HAzhbhMHypqcB5": "PASS",
+    "0ztdC3L1HAzhbhMHypqcB6": "PASS",
+    "0ztdC3L1HAzhbhMHypqcB9": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBA": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBF": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBJ": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBK": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBR": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBW": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBb": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBf": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBg": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBl": "PASS",
+    "0ztdC3L1HAzhbhMHypqcBw": "PASS",
+    "0ztdC3L1HAzhbhMHypqcOd": "PASS",
+    "0ztdC3L1HAzhbhMHypqcOe": "PASS",
+    "0ztdC3L1HAzhbhMHypqcOj": "PASS",
+    "0ztdC3L1HAzhbhMHypqcOk": "PASS",
+    "0ztdC3L1HAzhbhMHypqcPH": "PASS",
+    "0ztdC3L1HAzhbhMHypqcPI": "PASS",
+    "0ztdC3L1HAzhbhMHypqcPS": "PASS",
+    "0ztdC3L1HAzhbhMHypqcQh": "PASS",
+    "0ztdC3L1HAzhbhMHypqcT1": "PASS",
+    "0ztdC3L1HAzhbhMHypqcT2": "PASS",
+    "0ztdC3L1HAzhbhMHypqcTB": "PASS",
+    "0ztdC3L1HAzhbhMHypqcTC": "PASS",
+    "0ztdC3L1HAzhbhMHypqcTW": "FAIL",
+    "0ztdC3L1HAzhbhMHypqcT_": "PASS",
+    "0ztdC3L1HAzhbhMHypqcTs": "PASS",
+    "0ztdC3L1HAzhbhMHypqcTv": "PASS",
+    "0ztdC3L1HAzhbhMHypqcV$": "PASS",
+    "0ztdC3L1HAzhbhMHypqcV1": "PASS",
+    "0ztdC3L1HAzhbhMHypqcV2": "PASS",
+    "0ztdC3L1HAzhbhMHypqcV7": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVB": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVC": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVI": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVO": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVT": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVm": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVr": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVs": "PASS",
+    "0ztdC3L1HAzhbhMHypqcVw": "PASS",
+    "0ztdC3L1HAzhbhMHypqcY0": "PASS",
+    "0ztdC3L1HAzhbhMHypqcY5": "PASS",
+    "0ztdC3L1HAzhbhMHypqcY6": "FAIL",
+    "0ztdC3L1HAzhbhMHypqcY9": "FAIL",
+    "0ztdC3L1HAzhbhMHypqcYF": "PASS",
+    "0ztdC3L1HAzhbhMHypqcYH": "FAIL",
+    "0ztdC3L1HAzhbhMHypqcYI": "PASS",
+    "0ztdC3L1HAzhbhMHypqcYN": "PASS",
+    "0ztdC3L1HAzhbhMHypqcYR": "PASS",
+    "0ztdC3L1HAzhbhMHypqcYS": "PASS",
+    "0ztdC3L1HAzhbhMHypqcZZ": "PASS",
+    "0ztdC3L1HAzhbhMHypqcZa": "PASS",
+    "0ztdC3L1HAzhbhMHypqcZe": "PASS",
+    "0ztdC3L1HAzhbhMHypqcZj": "PASS",
+    "0ztdC3L1HAzhbhMHypqcZk": "PASS",
+    "0ztdC3L1HAzhbhMHypqcZz": "PASS",
+    "0ztdC3L1HAzhbhMHypqcaZ": "PASS",
+    "0ztdC3L1HAzhbhMHypqcaa": "PASS",
+    "0ztdC3L1HAzhbhMHypqcak": "PASS",
+    "0ztdC3L1HAzhbhMHypqchZ": "PASS",
+    "0ztdC3L1HAzhbhMHypqcha": "PASS",
+    "0ztdC3L1HAzhbhMHypqchj": "PASS",
+    "0ztdC3L1HAzhbhMHypqchk": "PASS",
+    "0ztdC3L1HAzhbhMHypqcqZ": "PASS",
+    "0ztdC3L1HAzhbhMHypqcqj": "PASS",
+    "0ztdC3L1HAzhbhMHypqcqk": "PASS",
+    "0ztdC3L1HAzhbhMHypqcqu": "PASS",
+    "0ztdC3L1HAzhbhMHypqdeT": "FAIL",
+    "0ztdC3L1HAzhbhMHypqdhw": "PASS",
+    "0ztdC3L1HAzhbhMHypqdiM": "PASS",
+    "0ztdC3L1HAzhbhMHypqdl$": "PASS",
+    "1KgZQG_2r6VuMR28$3QMLM": "FAIL",
+    "1NvbzFDrT8ePCfWUZHOCVS": "PASS",
+    "1gvYwVnFXA491$ELl$CPOU": "PASS",
+    "1gvYwVnFXA491$ELl$CPR0": "PASS"
+  },
+  "notes": "Space Validation on 269 IfcSpace: {'FAIL': 14, 'PASS': 255}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_clinic_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 269,
+    "ifc_sha256": "b90fe57b8aa9329d762a564770e697d4f7357677484e3a78ede4ab6d2163c0c0",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Space Validation",
+      "message": "are inside the space",
+      "report_file": "ec3_clinic_check.xlsx",
+      "report_sha256": "468252d117d8be28b1ed065902f7667f5521c9a3803d631b281341518ed798e7",
+      "rule_issues": 269,
+      "matching_issues": 14
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0ClPCUC7jCQRnj1dhupHX0": {
+      "name": "2D20",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHX9": {
+      "name": "2D17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXA": {
+      "name": "2D18",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXF": {
+      "name": "2D19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXJ": {
+      "name": "2D15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXK": {
+      "name": "2D16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXP": {
+      "name": "2D12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXT": {
+      "name": "2D13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXU": {
+      "name": "2D14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXZ": {
+      "name": "2D10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXa": {
+      "name": "2D11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXe": {
+      "name": "2D07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXj": {
+      "name": "2D08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXk": {
+      "name": "2D09",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXn": {
+      "name": "2D04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXo": {
+      "name": "2D05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXt": {
+      "name": "2D06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXx": {
+      "name": "2D02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHXy": {
+      "name": "2D03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHZb": {
+      "name": "2D04A",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHc2": {
+      "name": "2D01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHcN": {
+      "name": "2CC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHdZ": {
+      "name": "2CC4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHdj": {
+      "name": "2CC1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHdk": {
+      "name": "2CC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHnn": {
+      "name": "2C24",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.4 : W. TOILET[2C24]"
+      ]
+    },
+    "0ClPCUC7jCQRnj1dhupHny": {
+      "name": "2C23",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.5 : M. TOILET[2C23]"
+      ]
+    },
+    "0ClPCUC7jCQRnj1dhupHs1": {
+      "name": "2C18",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHs2": {
+      "name": "2C19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHs7": {
+      "name": "2C22",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsB": {
+      "name": "2C16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsC": {
+      "name": "2C17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsG": {
+      "name": "2C13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsL": {
+      "name": "2C14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsM": {
+      "name": "2C15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsP": {
+      "name": "2C10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsQ": {
+      "name": "2C11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsV": {
+      "name": "2C12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsZ": {
+      "name": "2C08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsa": {
+      "name": "2C09",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHse": {
+      "name": "2C05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsj": {
+      "name": "2C06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsk": {
+      "name": "2C07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsn": {
+      "name": "2C02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHso": {
+      "name": "2C03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHst": {
+      "name": "2C04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupHsu": {
+      "name": "2C01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMDM": {
+      "name": "3AC1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMDV": {
+      "name": "3D01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMO2": {
+      "name": "2DC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMO7": {
+      "name": "2BC1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMOD": {
+      "name": "2DC1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQD": {
+      "name": "2AC1-A",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQE": {
+      "name": "2AC1-B",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQK": {
+      "name": "2CS3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQP": {
+      "name": "2B24",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQQ": {
+      "name": "2B25",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQV": {
+      "name": "2BS2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQZ": {
+      "name": "2B22",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQa": {
+      "name": "2B23",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQe": {
+      "name": "2B19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQj": {
+      "name": "2B20",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQk": {
+      "name": "2B21",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQn": {
+      "name": "2B16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQo": {
+      "name": "2B17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQt": {
+      "name": "2B18",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQx": {
+      "name": "2B14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMQy": {
+      "name": "2B15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMR0": {
+      "name": "2B11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMR5": {
+      "name": "2B12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMR6": {
+      "name": "2B13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMR9": {
+      "name": "2B8",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRA": {
+      "name": "2B9",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRF": {
+      "name": "2B10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRJ": {
+      "name": "2B6",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRK": {
+      "name": "2B7",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRO": {
+      "name": "2B3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.57 : CONF. / GROUP THERAPY[2B3]"
+      ]
+    },
+    "0ClPCUC7jCQRnj1dhupMRT": {
+      "name": "2B4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRU": {
+      "name": "2B5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRd": {
+      "name": "2B2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRe": {
+      "name": "2BC6",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRk": {
+      "name": "2B01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRn": {
+      "name": "2BC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRo": {
+      "name": "2BC4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRt": {
+      "name": "2BC5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ClPCUC7jCQRnj1dhupMRy": {
+      "name": "2BC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0_IXpwL5b29BZ7C0XgKBd3": {
+      "name": "3R01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0_IXpwL5b29BZ7C0XgKBd4": {
+      "name": "3R02",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.6 : ROOF[3R02]"
+      ]
+    },
+    "0_IXpwL5b29BZ7C0XgKBdO": {
+      "name": "3R04",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.4 : ROOF[3R04]"
+      ]
+    },
+    "0_IXpwL5b29BZ7C0XgKBf4": {
+      "name": "3R03",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.3 : ROOF[3R03]"
+      ]
+    },
+    "0_IXpwL5b29BZ7C0XgKBsG": {
+      "name": "2R01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0_IXpwL5b29BZ7C0XgKBsS": {
+      "name": "2R02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNG3": {
+      "name": "2AS1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNG6": {
+      "name": "2AC5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNGA": {
+      "name": "2A01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNGP": {
+      "name": "2AC4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHI": {
+      "name": "2A13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHL": {
+      "name": "2A12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHV": {
+      "name": "2A12-A",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHX": {
+      "name": "2A08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHa": {
+      "name": "2A07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHd": {
+      "name": "2A06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHe": {
+      "name": "2A11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHh": {
+      "name": "2A10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHk": {
+      "name": "2A09",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHm": {
+      "name": "2A03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHp": {
+      "name": "2A02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHw": {
+      "name": "2A05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNHz": {
+      "name": "2A04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNI6": {
+      "name": "2A14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNr0": {
+      "name": "2AC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uLn6BSvvEB8kgChiujNr3": {
+      "name": "2AC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqbH5": {
+      "name": "1AC1",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.2 : CENTRAL WAITING[1AC1]"
+      ]
+    },
+    "0ztdC3L1HAzhbhMHypqc0$": {
+      "name": "1E01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc03": {
+      "name": "1C19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc04": {
+      "name": "1C18",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0D": {
+      "name": "1C11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0G": {
+      "name": "1C14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0L": {
+      "name": "1C13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0P": {
+      "name": "1C17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0Q": {
+      "name": "1C16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0V": {
+      "name": "1C15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0X": {
+      "name": "1E04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0Y": {
+      "name": "1E03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0d": {
+      "name": "1E02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0h": {
+      "name": "1E06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0i": {
+      "name": "1E05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc0q": {
+      "name": "1CS3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.104 : STAIR[1CS3]"
+      ]
+    },
+    "0ztdC3L1HAzhbhMHypqc1W": {
+      "name": "1DC8",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc1b": {
+      "name": "1DC7",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc1c": {
+      "name": "1DC6",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc1g": {
+      "name": "1C12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc6G": {
+      "name": "1E30",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc6L": {
+      "name": "1E29",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc6M": {
+      "name": "1E28",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc6V": {
+      "name": "1E33",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc74": {
+      "name": "1E14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc79": {
+      "name": "1E17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7A": {
+      "name": "1E16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7F": {
+      "name": "1E15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7G": {
+      "name": "1E09",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7L": {
+      "name": "1E08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7M": {
+      "name": "1E07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7P": {
+      "name": "1E12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7Q": {
+      "name": "1E11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7V": {
+      "name": "1E10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7X": {
+      "name": "1E25",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7Y": {
+      "name": "1E24",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7_": {
+      "name": "1E20",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7d": {
+      "name": "1E23",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7h": {
+      "name": "1E27",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7i": {
+      "name": "1E26",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7p": {
+      "name": "1E19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7q": {
+      "name": "1E18",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7u": {
+      "name": "1E22",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc7z": {
+      "name": "1E21",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc8Z": {
+      "name": "1D39",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc8a": {
+      "name": "1D38",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc8e": {
+      "name": "1DC5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc8k": {
+      "name": "1D40",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9$": {
+      "name": "1D35",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc93": {
+      "name": "1D30",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc94": {
+      "name": "1D28",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9B": {
+      "name": "1D31",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9G": {
+      "name": "1D24",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9L": {
+      "name": "1D23",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9M": {
+      "name": "1D22",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9P": {
+      "name": "1D27",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9Q": {
+      "name": "1D26",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9V": {
+      "name": "1D25",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9m": {
+      "name": "1D34",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9r": {
+      "name": "1D33",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9s": {
+      "name": "1D32",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9v": {
+      "name": "1D37",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqc9w": {
+      "name": "1D36",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcA1": {
+      "name": "1D14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcA2": {
+      "name": "1D13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcA7": {
+      "name": "1D12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAC": {
+      "name": "1D15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAJ": {
+      "name": "1D08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAK": {
+      "name": "1D07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAO": {
+      "name": "1D11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAT": {
+      "name": "1D10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAU": {
+      "name": "1D09",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAX": {
+      "name": "1D19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAY": {
+      "name": "1D18",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAd": {
+      "name": "1D17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAh": {
+      "name": "1D21",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAi": {
+      "name": "1D20",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcAu": {
+      "name": "1D16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcB0": {
+      "name": "1C07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcB5": {
+      "name": "1C06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcB6": {
+      "name": "1C05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcB9": {
+      "name": "1C10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBA": {
+      "name": "1C09",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBF": {
+      "name": "1C08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBJ": {
+      "name": "1C03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBK": {
+      "name": "1C02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBR": {
+      "name": "1C04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBW": {
+      "name": "1D03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBb": {
+      "name": "1D02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBf": {
+      "name": "1D06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBg": {
+      "name": "1D05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBl": {
+      "name": "1D04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcBw": {
+      "name": "1D01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcOd": {
+      "name": "1BC1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcOe": {
+      "name": "1BC4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcOj": {
+      "name": "1BC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcOk": {
+      "name": "1BC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcPH": {
+      "name": "1EC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcPI": {
+      "name": "1EC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcPS": {
+      "name": "1EC4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcQh": {
+      "name": "1EC1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcT1": {
+      "name": "1B15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcT2": {
+      "name": "1B14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcTB": {
+      "name": "1B17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcTC": {
+      "name": "1B16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcTW": {
+      "name": "1BS2",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.19 : STAIR[1BS2]"
+      ]
+    },
+    "0ztdC3L1HAzhbhMHypqcT_": {
+      "name": "1B21",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcTs": {
+      "name": "1B19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcTv": {
+      "name": "1B23",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcV$": {
+      "name": "1B12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcV1": {
+      "name": "1B06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcV2": {
+      "name": "1B05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcV7": {
+      "name": "1B04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVB": {
+      "name": "1B08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVC": {
+      "name": "1B07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVI": {
+      "name": "1B01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVO": {
+      "name": "1B03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVT": {
+      "name": "1B02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVm": {
+      "name": "1B11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVr": {
+      "name": "1B10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVs": {
+      "name": "1B09",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcVw": {
+      "name": "1B13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcY0": {
+      "name": "1A14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcY5": {
+      "name": "1A13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcY6": {
+      "name": "1A12",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.12 : M. TOILET[1A12]"
+      ]
+    },
+    "0ztdC3L1HAzhbhMHypqcY9": {
+      "name": "1DC1",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.3 : WAITING / ACTIVITY AREA[1DC1]"
+      ]
+    },
+    "0ztdC3L1HAzhbhMHypqcYF": {
+      "name": "1A15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcYH": {
+      "name": "1A09",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.4 : W. TOILET[1A09]"
+      ]
+    },
+    "0ztdC3L1HAzhbhMHypqcYI": {
+      "name": "1A08",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcYN": {
+      "name": "1A07",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcYR": {
+      "name": "1A11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcYS": {
+      "name": "1A10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcZZ": {
+      "name": "1A03",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcZa": {
+      "name": "1A02",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcZe": {
+      "name": "1A06",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcZj": {
+      "name": "1A05",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcZk": {
+      "name": "1A04",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcZz": {
+      "name": "1A01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcaZ": {
+      "name": "1DC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcaa": {
+      "name": "1DC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcak": {
+      "name": "1DC4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqchZ": {
+      "name": "1AC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcha": {
+      "name": "1AC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqchj": {
+      "name": "1AC5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqchk": {
+      "name": "1AC4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcqZ": {
+      "name": "1CC2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcqj": {
+      "name": "1C01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcqk": {
+      "name": "1CC3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcqu": {
+      "name": "1CC1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqdeT": {
+      "name": "1AS1",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.154 : STAIR[1AS1]"
+      ]
+    },
+    "0ztdC3L1HAzhbhMHypqdhw": {
+      "name": "1A16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqdiM": {
+      "name": "E1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqdl$": {
+      "name": "1E15-A",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1KgZQG_2r6VuMR28$3QMLM": {
+      "name": "2AC1",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.3 : CORRIDOR[2AC1]"
+      ]
+    },
+    "1NvbzFDrT8ePCfWUZHOCVS": {
+      "name": "1F01",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1gvYwVnFXA491$ELl$CPOU": {
+      "name": "2CC5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1gvYwVnFXA491$ELl$CPR0": {
+      "name": "2D21",
+      "class": "IfcSpace",
+      "label": "PASS"
+    }
+  }
+}

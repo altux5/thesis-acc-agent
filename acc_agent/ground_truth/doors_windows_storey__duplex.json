@@ -1,0 +1,274 @@
+{
+  "case_id": "doors_windows_storey__duplex",
+  "rule": "Every door and window must be assigned to the same building storey as the wall it is placed in, and must not be an orphan (a door or window with no host element at all).\n\nA door or window fills an opening that voids a host element - its wall. It violates the rule when (a) it has no host element, or (b) the storey containing it differs from the storey containing its host. If either storey cannot be determined the element cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcDoor or IfcWindow) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/duplex/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "1hOSvn6df7F8_7GcBWlSDm",
+    "1hOSvn6df7F8_7GcBWlSFK"
+  ],
+  "labels": {
+    "1Eo2$BaHX42AEkDvQQDocD": "PASS",
+    "1Eo2$BaHX42AEkDvQQDoy2": "PASS",
+    "1aj$VJZFn2TxepZUBcKp$i": "PASS",
+    "1aj$VJZFn2TxepZUBcKpac": "PASS",
+    "1hOSvn6df7F8_7GcBWlR72": "PASS",
+    "1hOSvn6df7F8_7GcBWlRBU": "PASS",
+    "1hOSvn6df7F8_7GcBWlRGQ": "PASS",
+    "1hOSvn6df7F8_7GcBWlRH8": "PASS",
+    "1hOSvn6df7F8_7GcBWlRLx": "PASS",
+    "1hOSvn6df7F8_7GcBWlRRL": "PASS",
+    "1hOSvn6df7F8_7GcBWlS1M": "PASS",
+    "1hOSvn6df7F8_7GcBWlS2V": "PASS",
+    "1hOSvn6df7F8_7GcBWlS4Q": "PASS",
+    "1hOSvn6df7F8_7GcBWlS8Z": "PASS",
+    "1hOSvn6df7F8_7GcBWlS9F": "PASS",
+    "1hOSvn6df7F8_7GcBWlSDm": "FAIL",
+    "1hOSvn6df7F8_7GcBWlSFK": "FAIL",
+    "1hOSvn6df7F8_7GcBWlSXO": "PASS",
+    "1hOSvn6df7F8_7GcBWlS_W": "PASS",
+    "1hOSvn6df7F8_7GcBWlSga": "PASS",
+    "1hOSvn6df7F8_7GcBWlSnC": "PASS",
+    "1hOSvn6df7F8_7GcBWlSp1": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4$e": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4ZZ": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4aS": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4gQ": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4hv": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4kJ": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4oq": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4pU": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4qs": "PASS",
+    "1l0GAJtRTFv8$zmKJOH4u1": "PASS",
+    "1s1jVhK8z0pgKYcr9jt781": "PASS",
+    "1s1jVhK8z0pgKYcr9jt7AB": "PASS",
+    "2OBrcmyk58NupXoVOHUuXp": "PASS",
+    "2OBrcmyk58NupXoVOHUvPL": "PASS",
+    "2OBrcmyk58NupXoVOHUvR4": "PASS",
+    "2OBrcmyk58NupXoVOHUvVV": "PASS"
+  },
+  "notes": "Doors and Windows on 38 IfcDoor or IfcWindow: {'FAIL': 2, 'PASS': 36}.",
+  "clause": "BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_duplex_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 38,
+    "ifc_sha256": "707a032566dee8e969a44d95509be46d646440e2443624709f8d3ae2b45f4656",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Doors and Windows",
+      "message": null,
+      "report_file": "ec3_duplex_check.xlsx",
+      "report_sha256": "eb382d9a8558816db6474da78e80318d45ee42d92aa9048be085431a09138c6a",
+      "rule_issues": 2,
+      "matching_issues": 2
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "1Eo2$BaHX42AEkDvQQDocD": {
+      "name": "M_Skylight:1180 x 1170mm:1180 x 1170mm:185337",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1Eo2$BaHX42AEkDvQQDoy2": {
+      "name": "M_Skylight:1180 x 1170mm:1180 x 1170mm:185718",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1aj$VJZFn2TxepZUBcKp$i": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:203720",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1aj$VJZFn2TxepZUBcKpac": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:204034",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlR72": {
+      "name": "M_Fixed:4835mm x 2420mm:4835mm x 2420mm:145788",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlRBU": {
+      "name": "M_Fixed:4835mm x 2420mm:4835mm x 2420mm:146016",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlRGQ": {
+      "name": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146596",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlRH8": {
+      "name": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146678",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlRLx": {
+      "name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:146885",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlRRL": {
+      "name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:147051",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlS1M": {
+      "name": "M_Casement:819mm x 759mm:819mm x 759mm:149736",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlS2V": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:149537",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlS4Q": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:149924",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlS8Z": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150173",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlS9F": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150257",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlSDm": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150478",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Door.1.8 and Wall.0.13"
+      ]
+    },
+    "1hOSvn6df7F8_7GcBWlSFK": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150378",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Door.1.7 and Wall.0.10"
+      ]
+    },
+    "1hOSvn6df7F8_7GcBWlSXO": {
+      "name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:147686",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlS_W": {
+      "name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:149278",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlSga": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:147994",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlSnC": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:148722",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlSp1": {
+      "name": "M_Casement:819mm x 759mm:819mm x 759mm:148607",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4$e": {
+      "name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:180318",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4ZZ": {
+      "name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:182101",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4aS": {
+      "name": "M_Fixed:750mm x 2200mm:750mm x 2200mm:181930",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4gQ": {
+      "name": "M_Casement:819mm x 759mm:819mm x 759mm:181548",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4hv": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:181583",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4kJ": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:181285",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4oq": {
+      "name": "M_Casement:819mm x 759mm:819mm x 759mm:180994",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4pU": {
+      "name": "M_Fixed:2800mm x 2410mm:2800mm x 2410mm:181096",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4qs": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:180864",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1l0GAJtRTFv8$zmKJOH4u1": {
+      "name": "M_Fixed:819mm x 759mm:819mm x 759mm:180663",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1s1jVhK8z0pgKYcr9jt781": {
+      "name": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1s1jVhK8z0pgKYcr9jt7AB": {
+      "name": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171975",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUuXp": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159734",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUvPL": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160208",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUvR4": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160065",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUvVV": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159834",
+      "class": "IfcDoor",
+      "label": "PASS"
+    }
+  }
+}

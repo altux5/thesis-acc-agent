@@ -1,0 +1,757 @@
+{
+  "case_id": "slab_thickness_range__smiley",
+  "rule": "Every slab must have a thickness between 30 mm and 1000 mm inclusive.\nSource: rule 'Slab Thickness' of the EC3-2026 rule catalogue: This rule checks that slab thickness is not too small or too large.\nBenchmark convention: the thickness of a slab is the thickness of its own construction: the total of its material layers or its recorded thickness, or else the depth of its body. A slab fails when it is thinner than 30 mm or thicker than 1000 mm. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/smiley_west/arc.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "00qKMwdcT6SOf_PQ0dL7jj": "PASS",
+    "02oR18XuP2Eu$PjTIphspE": "PASS",
+    "04ZFWWRab21xHi0aVt9nwF": "PASS",
+    "05svSimUn8jeEpGwd_Vg8Y": "PASS",
+    "061uoB$LH0ag1L6KqLFPT_": "PASS",
+    "06bJpkwMj9dApX5mCoeI0j": "PASS",
+    "08lR7heP97KenKmAu1KjBH": "PASS",
+    "0DOKeP6Rb0SfiAb4_gXtGE": "PASS",
+    "0Eih2J3xn6Bv7Qeo9iRSGt": "PASS",
+    "0EwxF4nBz6rQtu719baEc0": "PASS",
+    "0FBI2$5JX9hhy3aAQb9p26": "PASS",
+    "0G5zYbNCTC7upfw0w0ERHj": "PASS",
+    "0GJvSj0jnCaefe7DGyDSfw": "PASS",
+    "0HvxAVJj1FhBcl$zq4a623": "PASS",
+    "0Kiyh1LsHEmReQaFcBwFew": "PASS",
+    "0Mk2Lvhxz9Bef8LpqdbSN6": "PASS",
+    "0NrCNXgeL40u6QgekcUSSE": "PASS",
+    "0PtpGNuW53bAS7927rrG6S": "PASS",
+    "0Q1JjEBNLFj89xd_TdjhRl": "PASS",
+    "0QF19AVT5FtwbUNxVuQlTH": "NA",
+    "0T8rd1pNT5vB6Ep9oGemhw": "PASS",
+    "0W0FNg40v8SvnAHqNGch_B": "PASS",
+    "0XjBEMX$v2ZAebz1DZa19E": "NA",
+    "0bAnlxgnn7$QfrkDN0StNG": "PASS",
+    "0cIdrOFCP8BfpBJsJvzuT$": "PASS",
+    "0cggic8xT0hgsmR4RhAz8g": "PASS",
+    "0dN4R_i7n1HxfqCV6azM25": "PASS",
+    "0eiot5uOX9pwYpVvGE7Wc0": "PASS",
+    "0ffWphY4n0ygnxYnVxzZyY": "PASS",
+    "0jtwrgS_v8tBez$ygcBSCe": "PASS",
+    "0m0KqUhmvAkhKTqnLWckSD": "PASS",
+    "0nTgP6BOD5owDWeiGPnNTg": "PASS",
+    "0ocgy14eb81xftNXL79upm": "PASS",
+    "0sDyX7XNDBUvgoShlPZH6M": "PASS",
+    "0upNfmnlzAFfOC916ycGAJ": "PASS",
+    "0zzT6GPozFewRsfhaQb1yq": "PASS",
+    "1$U$qGevz8vhjYdFvvy8JN": "PASS",
+    "10wiO6_XL49QsHGLhBYZ8c": "PASS",
+    "1272aEGlH5lPgwLAoMQwMl": "PASS",
+    "13gl_N7wT0EeW7BqhvNZK6": "PASS",
+    "18Ioq6JXD7vP8N4Hp_b$bD": "PASS",
+    "1AzIoU5STAiwimFC_xxhfF": "NA",
+    "1Bc0_i_tn3DPexWTpXxWsw": "PASS",
+    "1CQ2RBMBL5_hxIUaOqz2$k": "PASS",
+    "1Cu5dhu8nF7eLoZJfFE6T5": "PASS",
+    "1DgRq2uHj0tw7CL6H2nqlL": "PASS",
+    "1Fb3SPcoLACAjr0RZZrydq": "PASS",
+    "1I0Sj0K1v549rPkKPuCzAy": "PASS",
+    "1JebZOe05EMxxFQbePv1lE": "PASS",
+    "1MJxgvzSjFo8MN2zaZkxgY": "PASS",
+    "1PluCqsrDCkhAcCadMoap2": "PASS",
+    "1PqHNNyXTA3weWfTD$$k3P": "PASS",
+    "1S1nDx3w1Fr9ecZlxfuv8x": "NA",
+    "1Xa2ajLUHCzvyjwKRxZ6uf": "PASS",
+    "1Xam6QOrLBywjXcZLhKouY": "PASS",
+    "1ZvwokbbjD$un2ykCrLO0K": "PASS",
+    "1ay5U6yLv1897v2WcPg0Ga": "PASS",
+    "1eEkuiFsL4cPPqcOzsY2SB": "PASS",
+    "1fldrJn0f5PvVg1cQyaK1E": "PASS",
+    "1k2K6_J6L73hIYVxvCswuU": "PASS",
+    "1kZnWobdf18AvDeVUfGRJg": "PASS",
+    "1n9fRdtqT2MuvvBRBwWLI3": "PASS",
+    "1nhfKoMtfAWfiXlDlwLg2K": "NA",
+    "1rMMIrrL9Ea9ZUAC10CZ22": "NA",
+    "1tRfGMH6D1GvUWD3YHHSLH": "PASS",
+    "1ufZMi2Pb1yx0ZgHo$wpm4": "PASS",
+    "1x7$gzvVf5Z8aqgznLIOfe": "PASS",
+    "1zGvwH4i96N8_XFmfPvU8S": "PASS",
+    "1zW9iyiwH88whEi2k14quR": "PASS",
+    "2$ekgy3GX8FApWQRYYwU_t": "NA",
+    "22gZP6rxP7RPw4OE82$8xv": "PASS",
+    "244ue3rtD9UQz5nr1r8tUH": "PASS",
+    "24tQ3Jtaf459HFIh9dwQeM": "PASS",
+    "25Rz19ZxzDsgT4BxbORMPR": "PASS",
+    "26Y1_qxkX5KAimXe7$KDIU": "PASS",
+    "28C$JPd1r6GxITPZzW3vEi": "PASS",
+    "2DRIP5_2PCTPYUshewKg4w": "NA",
+    "2GHcfUS55Dau7AqJvZ6bPJ": "PASS",
+    "2GlvzXHc9FQuvZMq6ig4MR": "PASS",
+    "2I2SrhyTf5G8A2EQnUV0zm": "PASS",
+    "2KUoD$mlv6YxsYGmmwKFui": "PASS",
+    "2NwhXG2_nBOBgGMa9p0Wjg": "PASS",
+    "2PrcZqKtbFu9TRbDwNopFW": "NA",
+    "2R1qYwa$zC9f7Ycv2g988Q": "PASS",
+    "2ZAA1IdTD7ORQz8mSsbusm": "PASS",
+    "2_b0WO4F9CExWWJmNhYCC2": "NA",
+    "2_z2l8U4zBpQvgOxFNBVD7": "PASS",
+    "2aegG$LMf5mB4Pxh_xspzL": "PASS",
+    "2hHXPdxBT1uRJPoJPgykKo": "PASS",
+    "2mW5yxQM9DsOIDhgEWN_Kf": "PASS",
+    "2r8pKCvdD7ixXzB1e5t9IL": "PASS",
+    "2tUY_n9Ov6jBX5FbirpoD0": "PASS",
+    "2wAXUuqiH0JPiAvmXQ2z1M": "NA",
+    "2wMaYuAFHCVufF32G$ci5V": "NA",
+    "2wP9ls9Rr0suWK7k1zrMXq": "PASS",
+    "2xKIMEAX90f9Xae_W1$7LA": "PASS",
+    "30ZXiOcMb5genQip_0pTMX": "PASS",
+    "33PetR4nX5RP61eoxdbs5T": "NA",
+    "34a7ezr_X8M9v$Ux70lj48": "PASS",
+    "37mTu3EhT0S8aSh_jkFqVV": "PASS",
+    "3IFGH_f0v45fiaG8u$OWgY": "PASS",
+    "3L3ZHD9W11ce0IBV1YEols": "NA",
+    "3OohOTMh91Ze59QOMhrkSt": "PASS",
+    "3P3dCSfcT519WqbVi1yNgJ": "NA",
+    "3W79ayr4LFMf3sWp8MUyK2": "PASS",
+    "3bEEUyaGL2o8dKqgzsowWR": "PASS",
+    "3ciEcCQNX55vZIyp7aJqx_": "NA",
+    "3gFDYl4dz1yALMsToQouj5": "PASS",
+    "3leGSW3W91i96NfKGjz0WI": "PASS",
+    "3nRAKiMJ5B2hQDXqSHgcBi": "PASS",
+    "3ril$qXEHCixxhN1YBUWcl": "PASS",
+    "3rsyfUGmr4aeQpEV__CZGc": "NA",
+    "3s_bfQKwv0LwVw_86zxonD": "PASS",
+    "3u$LTT4IP8HhVPN6af4IEW": "PASS",
+    "3uQXfLRwD39hn$ztGVdzE5": "PASS",
+    "3vTTnPsif7uu_RkHsjw3ZY": "PASS",
+    "3vdsoOLm125vvtS4nROY5J": "NA",
+    "3w69W2OpL8wA_o8w6J_nNJ": "NA",
+    "3wvfXo7l52pv7VgvyIR_HQ": "PASS",
+    "3xFgSIIrjA4h8mxhztiehS": "NA"
+  },
+  "notes": "Slab Thickness on 120 IfcSlab: {'NA': 20, 'PASS': 100}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_smiley_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 120,
+    "ifc_sha256": "26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slab Thickness",
+      "message": null,
+      "report_file": "ec3_smiley_check.xlsx",
+      "report_sha256": "b9e06cc563fb0a24c442a638f668c31ed0349f8f33a05b53918bbbca594794ea",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element; NA: IfcSlab ROOF (a roof for Solibri).",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "00qKMwdcT6SOf_PQ0dL7jj": {
+      "name": "1OG-Balkon-4-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "02oR18XuP2Eu$PjTIphspE": {
+      "name": "OG-1-Boden-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "04ZFWWRab21xHi0aVt9nwF": {
+      "name": "EG-Eingang-05",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "05svSimUn8jeEpGwd_Vg8Y": {
+      "name": "1OG-Balkon-4-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "061uoB$LH0ag1L6KqLFPT_": {
+      "name": "Boden-2OG-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "06bJpkwMj9dApX5mCoeI0j": {
+      "name": "1OG-Balkon-5-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "08lR7heP97KenKmAu1KjBH": {
+      "name": "1OG-Balkon-2-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0DOKeP6Rb0SfiAb4_gXtGE": {
+      "name": "Boden-2OG-3",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Eih2J3xn6Bv7Qeo9iRSGt": {
+      "name": "EG-Eingang-02",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0EwxF4nBz6rQtu719baEc0": {
+      "name": "EG-Boden-08",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0FBI2$5JX9hhy3aAQb9p26": {
+      "name": "1OG-Balkon-2-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0G5zYbNCTC7upfw0w0ERHj": {
+      "name": "Keller-Boden-04",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0GJvSj0jnCaefe7DGyDSfw": {
+      "name": "EG-Boden-09",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0HvxAVJj1FhBcl$zq4a623": {
+      "name": "EG-Eingang-03",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Kiyh1LsHEmReQaFcBwFew": {
+      "name": "EG-Eingang-07",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Mk2Lvhxz9Bef8LpqdbSN6": {
+      "name": "OG-1-Boden-08",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0NrCNXgeL40u6QgekcUSSE": {
+      "name": "OG-1-Boden-10",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0PtpGNuW53bAS7927rrG6S": {
+      "name": "2OG-Balkon-1-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0Q1JjEBNLFj89xd_TdjhRl": {
+      "name": "Keller-Boden-05",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0QF19AVT5FtwbUNxVuQlTH": {
+      "name": "Dach-3",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0T8rd1pNT5vB6Ep9oGemhw": {
+      "name": "1OG-Balkon-3-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0W0FNg40v8SvnAHqNGch_B": {
+      "name": "2OG-Balkon-5-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0XjBEMX$v2ZAebz1DZa19E": {
+      "name": "EG-Vordach-10",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0bAnlxgnn7$QfrkDN0StNG": {
+      "name": "EG-Eingang-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0cIdrOFCP8BfpBJsJvzuT$": {
+      "name": "OG-1-Boden-05",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0cggic8xT0hgsmR4RhAz8g": {
+      "name": "Boden-2OG-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0dN4R_i7n1HxfqCV6azM25": {
+      "name": "OG-1-Boden-06",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0eiot5uOX9pwYpVvGE7Wc0": {
+      "name": "Boden-2OG-4",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0ffWphY4n0ygnxYnVxzZyY": {
+      "name": "EG-Terrasse-02",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0jtwrgS_v8tBez$ygcBSCe": {
+      "name": "EG-Terrasse-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0m0KqUhmvAkhKTqnLWckSD": {
+      "name": "EG-Terrasse-04",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0nTgP6BOD5owDWeiGPnNTg": {
+      "name": "OG-1-Boden-09",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0ocgy14eb81xftNXL79upm": {
+      "name": "EG-Terrasse-05",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0sDyX7XNDBUvgoShlPZH6M": {
+      "name": "2OG-Balkon-4-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0upNfmnlzAFfOC916ycGAJ": {
+      "name": "2OG-Balkon-2-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0zzT6GPozFewRsfhaQb1yq": {
+      "name": "EG-Eingang-04",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1$U$qGevz8vhjYdFvvy8JN": {
+      "name": "1OG-Balkon-2-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "10wiO6_XL49QsHGLhBYZ8c": {
+      "name": "OG-1-Boden-07",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1272aEGlH5lPgwLAoMQwMl": {
+      "name": "2OG-Balkon-3-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "13gl_N7wT0EeW7BqhvNZK6": {
+      "name": "EG-Eingang-08",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "18Ioq6JXD7vP8N4Hp_b$bD": {
+      "name": "1OG-Balkon-1-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1AzIoU5STAiwimFC_xxhfF": {
+      "name": "Dach-4",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1Bc0_i_tn3DPexWTpXxWsw": {
+      "name": "Boden-2OG-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1CQ2RBMBL5_hxIUaOqz2$k": {
+      "name": "EG-Eingang-09",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1Cu5dhu8nF7eLoZJfFE6T5": {
+      "name": "Keller-Boden-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1DgRq2uHj0tw7CL6H2nqlL": {
+      "name": "EG-Terrasse-09",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1Fb3SPcoLACAjr0RZZrydq": {
+      "name": "1OG-Balkon-4-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1I0Sj0K1v549rPkKPuCzAy": {
+      "name": "EG-Boden-10",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1JebZOe05EMxxFQbePv1lE": {
+      "name": "1OG-Balkon-1-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1MJxgvzSjFo8MN2zaZkxgY": {
+      "name": "EG-Terrasse-03",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1PluCqsrDCkhAcCadMoap2": {
+      "name": "EG-Terrasse-06",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1PqHNNyXTA3weWfTD$$k3P": {
+      "name": "Boden-2OG-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1S1nDx3w1Fr9ecZlxfuv8x": {
+      "name": "Dach-5",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1Xa2ajLUHCzvyjwKRxZ6uf": {
+      "name": "Keller-Boden-03",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1Xam6QOrLBywjXcZLhKouY": {
+      "name": "2OG-Balkon-1-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ZvwokbbjD$un2ykCrLO0K": {
+      "name": "2OG-Balkon-1-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ay5U6yLv1897v2WcPg0Ga": {
+      "name": "Keller-Boden-09",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1eEkuiFsL4cPPqcOzsY2SB": {
+      "name": "2OG-Balkon-5-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1fldrJn0f5PvVg1cQyaK1E": {
+      "name": "2OG-Balkon-4-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1k2K6_J6L73hIYVxvCswuU": {
+      "name": "EG-Eingang-06",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1kZnWobdf18AvDeVUfGRJg": {
+      "name": "2OG-Balkon-5-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1n9fRdtqT2MuvvBRBwWLI3": {
+      "name": "2OG-Balkon-3-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1nhfKoMtfAWfiXlDlwLg2K": {
+      "name": "Dach-2",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1rMMIrrL9Ea9ZUAC10CZ22": {
+      "name": "Dach-1",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1tRfGMH6D1GvUWD3YHHSLH": {
+      "name": "1OG-Balkon-4-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1ufZMi2Pb1yx0ZgHo$wpm4": {
+      "name": "1OG-Balkon-1-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1x7$gzvVf5Z8aqgznLIOfe": {
+      "name": "EG-Eingang-10",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1zGvwH4i96N8_XFmfPvU8S": {
+      "name": "OG-1-Boden-03",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1zW9iyiwH88whEi2k14quR": {
+      "name": "1OG-Balkon-3-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2$ekgy3GX8FApWQRYYwU_t": {
+      "name": "Dach-4",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "22gZP6rxP7RPw4OE82$8xv": {
+      "name": "EG-Terrasse-08",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "244ue3rtD9UQz5nr1r8tUH": {
+      "name": "EG-Boden-04",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "24tQ3Jtaf459HFIh9dwQeM": {
+      "name": "2OG-Balkon-2-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "25Rz19ZxzDsgT4BxbORMPR": {
+      "name": "2OG-Balkon-2-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "26Y1_qxkX5KAimXe7$KDIU": {
+      "name": "Keller-Boden-08",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "28C$JPd1r6GxITPZzW3vEi": {
+      "name": "1OG-Balkon-5-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2DRIP5_2PCTPYUshewKg4w": {
+      "name": "Dach-3",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2GHcfUS55Dau7AqJvZ6bPJ": {
+      "name": "Boden-2OG-5",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2GlvzXHc9FQuvZMq6ig4MR": {
+      "name": "EG-Boden-02",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2I2SrhyTf5G8A2EQnUV0zm": {
+      "name": "Keller-Boden-06",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2KUoD$mlv6YxsYGmmwKFui": {
+      "name": "2OG-Balkon-3-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2NwhXG2_nBOBgGMa9p0Wjg": {
+      "name": "Keller-Boden-07",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2PrcZqKtbFu9TRbDwNopFW": {
+      "name": "EG-Vordach-06",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2R1qYwa$zC9f7Ycv2g988Q": {
+      "name": "EG-Boden-05",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2ZAA1IdTD7ORQz8mSsbusm": {
+      "name": "1OG-Balkon-5-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2_b0WO4F9CExWWJmNhYCC2": {
+      "name": "Dach-4",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2_z2l8U4zBpQvgOxFNBVD7": {
+      "name": "2OG-Balkon-4-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2aegG$LMf5mB4Pxh_xspzL": {
+      "name": "1OG-Balkon-3-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2hHXPdxBT1uRJPoJPgykKo": {
+      "name": "1OG-Balkon-3-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2mW5yxQM9DsOIDhgEWN_Kf": {
+      "name": "EG-Terrasse-07",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2r8pKCvdD7ixXzB1e5t9IL": {
+      "name": "2OG-Balkon-5-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2tUY_n9Ov6jBX5FbirpoD0": {
+      "name": "Boden-2OG-4",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2wAXUuqiH0JPiAvmXQ2z1M": {
+      "name": "EG-Vordach-05",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2wMaYuAFHCVufF32G$ci5V": {
+      "name": "EG-Vordach-09",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2wP9ls9Rr0suWK7k1zrMXq": {
+      "name": "2OG-Balkon-3-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2xKIMEAX90f9Xae_W1$7LA": {
+      "name": "EG-Terrasse-10",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "30ZXiOcMb5genQip_0pTMX": {
+      "name": "EG-Boden-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "33PetR4nX5RP61eoxdbs5T": {
+      "name": "EG-Vordach-04",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "34a7ezr_X8M9v$Ux70lj48": {
+      "name": "EG-Boden-03",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "37mTu3EhT0S8aSh_jkFqVV": {
+      "name": "2OG-Balkon-4-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3IFGH_f0v45fiaG8u$OWgY": {
+      "name": "Boden-2OG-5",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3L3ZHD9W11ce0IBV1YEols": {
+      "name": "EG-Vordach-02",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3OohOTMh91Ze59QOMhrkSt": {
+      "name": "Keller-Boden-02",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3P3dCSfcT519WqbVi1yNgJ": {
+      "name": "EG-Vordach-07",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3W79ayr4LFMf3sWp8MUyK2": {
+      "name": "1OG-Balkon-2-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3bEEUyaGL2o8dKqgzsowWR": {
+      "name": "Boden-2OG-3",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ciEcCQNX55vZIyp7aJqx_": {
+      "name": "EG-Vordach-03",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3gFDYl4dz1yALMsToQouj5": {
+      "name": "1OG-Balkon-5-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3leGSW3W91i96NfKGjz0WI": {
+      "name": "OG-1-Boden-02",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3nRAKiMJ5B2hQDXqSHgcBi": {
+      "name": "OG-1-Boden-04",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ril$qXEHCixxhN1YBUWcl": {
+      "name": "2OG-Balkon-1-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3rsyfUGmr4aeQpEV__CZGc": {
+      "name": "Dach-3",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3s_bfQKwv0LwVw_86zxonD": {
+      "name": "2OG-Balkon-2-1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3u$LTT4IP8HhVPN6af4IEW": {
+      "name": "EG-Boden-07",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3uQXfLRwD39hn$ztGVdzE5": {
+      "name": "EG-Boden-06",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3vTTnPsif7uu_RkHsjw3ZY": {
+      "name": "1OG-Balkon-1-2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3vdsoOLm125vvtS4nROY5J": {
+      "name": "EG-Vordach-01",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3w69W2OpL8wA_o8w6J_nNJ": {
+      "name": "EG-Vordach-08",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3wvfXo7l52pv7VgvyIR_HQ": {
+      "name": "Keller-Boden-10",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3xFgSIIrjA4h8mxhztiehS": {
+      "name": "Dach-2",
+      "class": "IfcSlab",
+      "label": "NA"
+    }
+  }
+}

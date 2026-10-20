@@ -1,0 +1,79 @@
+{
+  "case_id": "space_contains_components__fzk",
+  "rule": "No walls, curtain walls, columns, slabs or roofs may lie inside a space.\nSource: rule 'Space Validation' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct. It also checks intersections (inside only) with other components. This template focuses only on the 'inside' check: components that are inside the space.\nBenchmark convention: spaces are bounded by walls, curtain walls, columns, slabs and roofs, not filled with them. A space fails when one or more of these components lies inside its volume. Components that only cut through the space boundary are covered by a separate intersection check; doors, windows, furniture and other spaces are ignored.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/fzk_house/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0Lt8gR_E9ESeGH5uY_g9e9": "PASS",
+    "0e_hbkIQ5DMQlIJ$2V3j_m": "PASS",
+    "17JZcMFrf5tOftUTidA0d3": "PASS",
+    "2RSCzLOBz4FAK$_wE8VckM": "PASS",
+    "2dQFggKBb1fOc1CqZDIDlx": "PASS",
+    "3$f2p7VyLB7eox67SA_zKE": "PASS",
+    "347jFE2yX7IhCEIALmupEH": "PASS"
+  },
+  "notes": "Space Validation on 7 IfcSpace: {'PASS': 7}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_fzk_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 7,
+    "ifc_sha256": "70cc8ff245fc0894201d96496c031005a5cbd7a96b22d8a1b87c5a883fb77994",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Space Validation",
+      "message": "are inside the space",
+      "report_file": "ec3_fzk_check.xlsx",
+      "report_sha256": "052c173bc79ae0d31073c5829f122757ec0f6b162fcaf01f192db302f3dd4201",
+      "rule_issues": 1,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0Lt8gR_E9ESeGH5uY_g9e9": {
+      "name": "5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0e_hbkIQ5DMQlIJ$2V3j_m": {
+      "name": "3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "17JZcMFrf5tOftUTidA0d3": {
+      "name": "6",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2RSCzLOBz4FAK$_wE8VckM": {
+      "name": "2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2dQFggKBb1fOc1CqZDIDlx": {
+      "name": "7",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3$f2p7VyLB7eox67SA_zKE": {
+      "name": "1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "347jFE2yX7IhCEIALmupEH": {
+      "name": "4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    }
+  }
+}

@@ -1,0 +1,1184 @@
+{
+  "case_id": "door_front_clearance__schependomlaan",
+  "rule": "The area in front of every door must be free of building components.\nSource: rule 'Clearance in Front of Doors' of the EC3-2026 rule catalogue: This rule checks there is enough clearance in front of doors.\nBenchmark convention: the free area is a box directly in front of the door opening, on the side to which the door opens. It is as wide and as high as the door and as deep as the door is wide, shrunk by 50 mm on each side so that components merely touching it do not count. A door fails when any building component other than a space (walls, curtain walls, slabs, floor finishes and other coverings, columns, doors, windows, stairs, railings, furniture, building services or other objects) intersects its free area.\n\nLabel every door.\nReport the GlobalId of every element (modelled as IfcDoor) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Schependomlaan.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0$vj6GrA15b852nxv8ecYB",
+    "02v5nA3u16Nh8SnTLbZVnM",
+    "03KwpgDxXCQBYi7KkY7sYB",
+    "06_o2t73nBXvUfWV0NnaRj",
+    "08IQ8vQ6n73vV7LBrwxuZu",
+    "09NbJFNdj9fxN2xh$EA6wX",
+    "0B9hE_gGb05uoY$Fs9k827",
+    "0IzB0Fhx1E3e$Sm$$GKqe7",
+    "0K1kgDm1jFHfoPfMpxkAe5",
+    "0NWv8IgP5Ch9a8sHZoyivA",
+    "0OL2bP1B5Ezfgv8L13MayF",
+    "0REpZXGX116vUWlC_COT3l",
+    "0WcADPJA571PyQI1eSlkC4",
+    "0WwnDCcYLFJx3r5wMCkNbs",
+    "0_AyfC57H5ZhnJFKbaFPKq",
+    "0etZemLbbAog_wCl27YohR",
+    "0paFAbnyj3DQz4eYs1LQRb",
+    "0wAyj9PWL7guJFQHdw7ccc",
+    "0xrZguOJ55xx5lucOklTa9",
+    "0yy1u9ooTD5vShTp5wGvUE",
+    "1$7$AzEPH8hxqREDEXC9Ab",
+    "12pKvnM8rEghVj2eehBckA",
+    "14tZx$UMb8cBHoti0zk1Nr",
+    "15D5L0A5L99eNxZZrhk3Pa",
+    "1AjHEuqyLASxbhLNVsGq0u",
+    "1FtRH1k0bE4fyu_U9mJBmf",
+    "1LZHcsRev6lhsez4LMDFr$",
+    "1MMTbq1t93CfhQ63Tyks8n",
+    "1X$gsMt2nFuv_fouZFh5_Z",
+    "1cjDN$L7j3xQ6006KWGjlJ",
+    "2$GgreKs5Auv1nDBFIDDQQ",
+    "26_$0XSjr4qx6Hsbp36s4D",
+    "275N_u7Z9EtgoRNFproXEn",
+    "27b7kJ2C50Wxcp8woudHRw",
+    "27bh8yZhL8hPRD0H6aMxEY",
+    "2AH9fQqwXE9O9QvwUR77zF",
+    "2Gq0QN14T6$e3J8hk70VQH",
+    "2IW6IWMcn9p9GSb$1bcM9y",
+    "2Jqop0uBb9AxYtqSXLjzrD",
+    "2XH6N5hOT3yAuGpef5XEDg",
+    "2i$ImWrU5CrPuyb0cxLRsY",
+    "2lVoJcfoDAWB0KDozjmBha",
+    "2mNENoxwD4MQMQY_gKi$v7",
+    "2wNrfbWo5F3AXCQjcATu9n",
+    "2zIan9UMbEDv$MtEuXRGaI",
+    "36MmH3zZH16QTwC46Vbk$D",
+    "3FUHlAm49BC88X$DRC3IqI",
+    "3G$_TtmoH0i97AYiv2eBBu",
+    "3OgInA0dD3qBERzneS1WG0",
+    "3WXd7RsH9CT9CRRwuhBxrU",
+    "3XlDiPbzT5wuWLtvoN9ad0",
+    "3b$SMEeUf10eNHEHoPH0ta",
+    "3nUiG96vjAwPUR6jFmv$ZI",
+    "3rLHaGT8f4ffCX220B$XUw",
+    "3sicsb7Rv7vOSpwjkHwdXP",
+    "3wks5cHiv9puC78stid7dq"
+  ],
+  "labels": {
+    "0$bCLIu6XFZvKNAS5U2$M5": "PASS",
+    "0$vj6GrA15b852nxv8ecYB": "FAIL",
+    "02v5nA3u16Nh8SnTLbZVnM": "FAIL",
+    "03KwpgDxXCQBYi7KkY7sYB": "FAIL",
+    "06_o2t73nBXvUfWV0NnaRj": "FAIL",
+    "06lQ_SRDbDyuiUF0YIGOKi": "PASS",
+    "073$0OxmvEMu0iJzPT4cfg": "PASS",
+    "08IQ8vQ6n73vV7LBrwxuZu": "FAIL",
+    "09NbJFNdj9fxN2xh$EA6wX": "FAIL",
+    "0B9KdcSuf3jh8POLbkPzQ4": "PASS",
+    "0B9hE_gGb05uoY$Fs9k827": "FAIL",
+    "0EWFPIrsv7_9lhqHOpPwsU": "PASS",
+    "0FjOoBbcP2FxJiAEY$_Ky$": "PASS",
+    "0IzB0Fhx1E3e$Sm$$GKqe7": "FAIL",
+    "0JzQ9ARmz4J9VOnJDh2nWI": "PASS",
+    "0K1kgDm1jFHfoPfMpxkAe5": "FAIL",
+    "0LbBET9Yz9egUjXX_5FIas": "PASS",
+    "0MO3NBPw1FofnfwKUa2odt": "PASS",
+    "0NWv8IgP5Ch9a8sHZoyivA": "FAIL",
+    "0NZRpUHUn8f9KjPRtTRauP": "PASS",
+    "0O3slHyAT0WgNB1xnKYnaE": "PASS",
+    "0OL2bP1B5Ezfgv8L13MayF": "FAIL",
+    "0REpZXGX116vUWlC_COT3l": "FAIL",
+    "0WcADPJA571PyQI1eSlkC4": "FAIL",
+    "0WwnDCcYLFJx3r5wMCkNbs": "FAIL",
+    "0X248I49P2ruJd$STte42p": "PASS",
+    "0YHiCuhWH8Qh_HTW9vOiHy": "PASS",
+    "0ZNb2THTz00eu1RAEsgAJm": "PASS",
+    "0_AyfC57H5ZhnJFKbaFPKq": "FAIL",
+    "0ci9nEgpD5hOOJ58LmeO5E": "PASS",
+    "0etZemLbbAog_wCl27YohR": "FAIL",
+    "0ghxYtUBn0pv_pxPdAfhme": "PASS",
+    "0oXb8$CCzDygbz5_8Oxzxv": "PASS",
+    "0paFAbnyj3DQz4eYs1LQRb": "FAIL",
+    "0rEPlH2fP8YQ_q3GiazsFo": "PASS",
+    "0wAyj9PWL7guJFQHdw7ccc": "FAIL",
+    "0xrZguOJ55xx5lucOklTa9": "FAIL",
+    "0yy1u9ooTD5vShTp5wGvUE": "FAIL",
+    "0zCkMWkdv5GfPfhUIwPa9J": "PASS",
+    "0zzou4R_11kPXaS0hC0pre": "PASS",
+    "1$7$AzEPH8hxqREDEXC9Ab": "FAIL",
+    "12pKvnM8rEghVj2eehBckA": "FAIL",
+    "13kU2WeeX43AmAN7yJpj7M": "PASS",
+    "140c7DVn1Fdgh5_iO2DSKg": "PASS",
+    "14tZx$UMb8cBHoti0zk1Nr": "FAIL",
+    "15D5L0A5L99eNxZZrhk3Pa": "FAIL",
+    "1AjHEuqyLASxbhLNVsGq0u": "FAIL",
+    "1FtRH1k0bE4fyu_U9mJBmf": "FAIL",
+    "1LZHcsRev6lhsez4LMDFr$": "FAIL",
+    "1MMTbq1t93CfhQ63Tyks8n": "FAIL",
+    "1N$Oi2JN18FvfRlqLXpxqx": "PASS",
+    "1UCnFJQ7nDgAX31ppgw6Pa": "PASS",
+    "1Uv0j9g_TDo9SZvipUwvCd": "PASS",
+    "1V8Tq0OFj91OWiIb7OgssW": "PASS",
+    "1X$gsMt2nFuv_fouZFh5_Z": "FAIL",
+    "1YmJTz8Sn4SxVWF6uxPIi6": "PASS",
+    "1ZFLyNI$fDRgE2KgYahsry": "PASS",
+    "1_5gcKSrbEWfNgi3h_qdnx": "PASS",
+    "1aJ$Qkat1AFgC0aRnCKwoP": "PASS",
+    "1btohEUvb9RxFSreiwC9NA": "PASS",
+    "1cjDN$L7j3xQ6006KWGjlJ": "FAIL",
+    "1dnueTAkL0h8RlVLQtwd3w": "PASS",
+    "1h4sXeQ3fCCQTfDg40kePC": "PASS",
+    "1jm08JDI1AxPr7MMlr69d8": "PASS",
+    "1k3S_FTjr5YgVNsOxgXfqg": "PASS",
+    "1ktZHnXqP81AONft3VUKlo": "PASS",
+    "1lOvmnURjBcPf07ELTOqCT": "PASS",
+    "1oUU4liMH32hV5EvVPxQjH": "PASS",
+    "1s39gsbh161QnI10muM$N9": "PASS",
+    "1soUbpz7v1zxTj9qXJhloc": "PASS",
+    "1weVzahvb12Qj14QP5JtRt": "PASS",
+    "1zulTwZuvE8uDQG8i0rPWu": "PASS",
+    "2$GgreKs5Auv1nDBFIDDQQ": "FAIL",
+    "2$o2jRMbz4Ug6JAhiXdSr5": "PASS",
+    "2152K7A7j0Xhs5JOT$GaL4": "PASS",
+    "25jGa8wIHFKepyW_M4Ngs7": "PASS",
+    "26_$0XSjr4qx6Hsbp36s4D": "FAIL",
+    "275N_u7Z9EtgoRNFproXEn": "FAIL",
+    "27b7kJ2C50Wxcp8woudHRw": "FAIL",
+    "27bh8yZhL8hPRD0H6aMxEY": "FAIL",
+    "28KVDgny54GgQmudzivmSF": "PASS",
+    "2AH9fQqwXE9O9QvwUR77zF": "FAIL",
+    "2ANGxgZInBiOwD5Faih5nH": "PASS",
+    "2BidPHSyjAeQnxVo9HGHwm": "PASS",
+    "2DaLEnOpD71xPKiE7SoDTP": "PASS",
+    "2Gq0QN14T6$e3J8hk70VQH": "FAIL",
+    "2IW6IWMcn9p9GSb$1bcM9y": "FAIL",
+    "2Jqop0uBb9AxYtqSXLjzrD": "FAIL",
+    "2KQzcnl4P108p1xYLp2BcG": "PASS",
+    "2O5ano1e1EJeQxf8IVwahY": "PASS",
+    "2PEMzkDK9Dxum8sPRjDtq_": "PASS",
+    "2VKgopOMr4PQnzIHA$Zbht": "PASS",
+    "2VN0ufVPXBz91XSIqSEA4N": "PASS",
+    "2Vb0PGtxLAoxa0tjC07GCC": "PASS",
+    "2VhjvgnFDDXBW8fTsJGXX_": "PASS",
+    "2WU8Fxger4FOI4ySi472UL": "PASS",
+    "2XH6N5hOT3yAuGpef5XEDg": "FAIL",
+    "2_vRJL86PBTQqE3ySM6YFm": "PASS",
+    "2b6PFyVHj5AwfHVP2cSS7T": "PASS",
+    "2cb8c3os963f5n9Wjr4O99": "PASS",
+    "2hVrKM8Vv2Xxs7m9ITda8L": "PASS",
+    "2i$ImWrU5CrPuyb0cxLRsY": "FAIL",
+    "2lIYJtavL8Qgz5F0uXNHL_": "PASS",
+    "2lRzoejMfDL9Jj8LLmEFKf": "PASS",
+    "2lVoJcfoDAWB0KDozjmBha": "FAIL",
+    "2mNENoxwD4MQMQY_gKi$v7": "FAIL",
+    "2qY72vI$D0SenCZx1z6HDK": "PASS",
+    "2qunupXbPCmxdwcf_gKob5": "PASS",
+    "2wNrfbWo5F3AXCQjcATu9n": "FAIL",
+    "2zIan9UMbEDv$MtEuXRGaI": "FAIL",
+    "2zilQ_m$j83PfsTQ$4$xs$": "PASS",
+    "2zx7EWNY98lOv3r2x2yc76": "PASS",
+    "36MmH3zZH16QTwC46Vbk$D": "FAIL",
+    "38X2u$b_51PQbXrbF3UXq0": "PASS",
+    "3Ch3PayTPB6BbnIbMg0VDz": "PASS",
+    "3FUHlAm49BC88X$DRC3IqI": "FAIL",
+    "3G$_TtmoH0i97AYiv2eBBu": "FAIL",
+    "3IAsrlzln2x9CGCwGk5aBc": "PASS",
+    "3J3WcMT$r8Zhg8fsSyC9$A": "PASS",
+    "3KMMm8oqPDGRsQcfPPC6kS": "PASS",
+    "3N5xNVjr9Ehhxk6BUdGUAs": "PASS",
+    "3OgInA0dD3qBERzneS1WG0": "FAIL",
+    "3Qw1ZJI6n0$OYdAwY3sPY0": "PASS",
+    "3UPz4qnhz6dR_hTWbylJYM": "PASS",
+    "3V_oBYi792a9_YZErx8HIx": "PASS",
+    "3WXd7RsH9CT9CRRwuhBxrU": "FAIL",
+    "3XlDiPbzT5wuWLtvoN9ad0": "FAIL",
+    "3YCmX8dc506hVi08zLmpbh": "PASS",
+    "3b$SMEeUf10eNHEHoPH0ta": "FAIL",
+    "3cjGEZBqP9GQh7eyumO1LZ": "PASS",
+    "3lVtU7tjD3YOCLUfqajZ2A": "PASS",
+    "3lsMx$fx16hhyCY_qE6IRh": "PASS",
+    "3nUiG96vjAwPUR6jFmv$ZI": "FAIL",
+    "3qU0EkhG9CDeH0fDWtriF3": "PASS",
+    "3qYGwE1BDBbP2FWtfJUDNa": "PASS",
+    "3rLHaGT8f4ffCX220B$XUw": "FAIL",
+    "3sicsb7Rv7vOSpwjkHwdXP": "FAIL",
+    "3topRXa9T1svryvk0HDA1V": "PASS",
+    "3v$Jw_gpr6OOS8FFzqFDOt": "PASS",
+    "3vqhA9V$zD8Ri_tijsQ9Uy": "PASS",
+    "3wks5cHiv9puC78stid7dq": "FAIL",
+    "3xkLH3xAf9Qvv7jXLTD0bw": "PASS",
+    "3ztvEc4nv0AQG9DRef3G4g": "PASS"
+  },
+  "notes": "Clearance in Front of Doors on 205 IfcDoor: {'FAIL': 56, 'PASS': 87}. 62 elements appear only in issues naming several of them, so the failing one is not identified; they are unscored.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_schependomlaan_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 205,
+    "ifc_sha256": "2c3565ca1904f2aa61adab92024cf3755b2c5b21a498144d3094d7cb58cebec7",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Clearance in Front of Doors",
+      "message": null,
+      "report_file": "ec3_schependomlaan_check.xlsx",
+      "report_sha256": "b954300e9bca700327da74ef5b8e13649d974af6b257bbfe29b884cbdde0708a",
+      "rule_issues": 95,
+      "matching_issues": 95
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently. 62 elements appear only in issues naming several of them, so the failing one is not identified; they are unscored.",
+    "unscored_ids": [
+      "012S6Z0qLCRuoYXSZ2tygw",
+      "04E1PaUW1Fze4qITB_nFaa",
+      "0DE9eeknn1UwV6HdBQLtSn",
+      "0ETp$wstn6uO7g6ZydQW6K",
+      "0HKXdsxQDBXehvvnIH9Bj2",
+      "0HTjC8kFv6W9Fd4e3r5fjg",
+      "0Hdk5PAnP3pwtj9xXKmFBe",
+      "0h4oGef9T1PgTelA09ZLn2",
+      "0hLbfgnI116fYrSi5yltYv",
+      "0m7Z8$vfnDLxF9ZlRdjI6b",
+      "0mLDe0vvD7lQPHmwh__YTZ",
+      "0w3wabzRLAz99bhnECWj79",
+      "0yGGfH85nFPvINarcAfBNX",
+      "12kDL1eWzET9Qm2diwFxeL",
+      "13lQ7MfpP9YQNh0Z31qoMP",
+      "14rAyAJ$L5nPK$yo6WYX5X",
+      "1DMKLKe45CzO6gemze$ha$",
+      "1EgBW0IB95EeR9l7z9ma4W",
+      "1HDfKcH0v4VRSVJicriZF4",
+      "1Le1BurSf8iQTApHN20xGM",
+      "1a0yXwaPr6bQS$tJIhLQr1",
+      "1ct3PC$Rf39OYRwaCfR2gz",
+      "1donuLXK125fRkeWlAA8Cq",
+      "1f8696ukP6ngAHgpRZz3ju",
+      "1fXWFMY$T5VwEu43MZumk6",
+      "1jTFg_BbD2_gRGTcr0jnVr",
+      "1uxuNhGl5C28Agr6eD5Bmj",
+      "1xjGgwmzP23uthLfXurB67",
+      "1zWpVk7Az3eeFDJEw36Ky9",
+      "2$y_vPdK50rvRCnxRgbax0",
+      "262iH081180RfRZcryzr7v",
+      "26wG__yAf4jhBihTArGrfi",
+      "29ln2Cp8P9jBBVLpq36yJx",
+      "2EKQPtlE15r9nj5or9E3v0",
+      "2K7avqptP0rAzb1886J2AI",
+      "2RuuzaH1vFUwKXpU33GTyt",
+      "2i1Z9kKWv4ie2N0CBoZWie",
+      "2nEtJExy5EkR8dxB8J7WF8",
+      "2pAvanoIzEV8kE6N3CBDLL",
+      "2qQEfBo11B5RTiiCq7k79L",
+      "2tt4s65cb2fgd3alKSa46a",
+      "2u5XGmt4D2bRNIEXQ9IBsW",
+      "2uTeXyy8XDYvkI0uWy38WP",
+      "2vFhUBbYLDEuToK036Hl$0",
+      "31CBV10iDANhFbENO3uY2l",
+      "31JhVzvWf3EhVtVaBbU7f1",
+      "36DzLjnuL9XA2dudd2r92m",
+      "36ovl7bSP7_8ZDfLgjHA1Q",
+      "39Lqndo0HD0PPTIv$0QRef",
+      "3BDarYIf1EXRuu7o6glIV$",
+      "3D1M31qn1D9eCfALMUlAC6",
+      "3Elkb_Klj4kOU0Qc6PaizN",
+      "3G7ktHYG96gQbiZjzEbR8N",
+      "3I96DDOZX58xC3RmUZssQx",
+      "3LHBKM1sPCkOXvRtwp$pev",
+      "3MkalSSaPB_h_tTcRHxH9A",
+      "3V4FbFEIL7Texif7yDL7jp",
+      "3VeGPWRHL5QfWdPbnVK9h3",
+      "3lE1SkMIbDaBDRbQV9PuSz",
+      "3p9J1sHcf4ju8QNF1IhRNV",
+      "3tB9bs0jH8kvDCXNaFXLU4",
+      "3vVPMVKpv8WR4t1AhJIyPH"
+    ]
+  },
+  "provenance": {
+    "0$bCLIu6XFZvKNAS5U2$M5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0$vj6GrA15b852nxv8ecYB": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.33, Slab.2.24 too close to Door.2.11 component"
+      ]
+    },
+    "02v5nA3u16Nh8SnTLbZVnM": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.45, Slab.0.23 too close to Door.0.35 component"
+      ]
+    },
+    "03KwpgDxXCQBYi7KkY7sYB": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.8 too close to Door.0.4 component"
+      ]
+    },
+    "06_o2t73nBXvUfWV0NnaRj": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.37, Slab.2.22 too close to Door.2.34 component"
+      ]
+    },
+    "06lQ_SRDbDyuiUF0YIGOKi": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "073$0OxmvEMu0iJzPT4cfg": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "08IQ8vQ6n73vV7LBrwxuZu": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Covering.1.345, Wall.1.231, Wall.1.162, Wall.0.151, Wall.0.20 too close to Door.1.45 component"
+      ]
+    },
+    "09NbJFNdj9fxN2xh$EA6wX": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.35, Slab.1.2 too close to Door.1.47 component"
+      ]
+    },
+    "0B9KdcSuf3jh8POLbkPzQ4": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0B9hE_gGb05uoY$Fs9k827": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Distribution Element.0.8 too close to Door.0.3 component"
+      ]
+    },
+    "0EWFPIrsv7_9lhqHOpPwsU": {
+      "name": "merk E5-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0FjOoBbcP2FxJiAEY$_Ky$": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0IzB0Fhx1E3e$Sm$$GKqe7": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.29, Slab.3.26 too close to Door.3.8 component"
+      ]
+    },
+    "0JzQ9ARmz4J9VOnJDh2nWI": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0K1kgDm1jFHfoPfMpxkAe5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Covering.1.121, Wall.1.244, Wall.1.57, Wall.0.146, Wall.0.150 too close to Door.1.44 component"
+      ]
+    },
+    "0LbBET9Yz9egUjXX_5FIas": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0MO3NBPw1FofnfwKUa2odt": {
+      "name": "merk A5",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0NWv8IgP5Ch9a8sHZoyivA": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.61, Slab.0.24 too close to Door.0.27 component"
+      ]
+    },
+    "0NZRpUHUn8f9KjPRtTRauP": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0O3slHyAT0WgNB1xnKYnaE": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0OL2bP1B5Ezfgv8L13MayF": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.26, Slab.3.14 too close to Door.3.21 component"
+      ]
+    },
+    "0REpZXGX116vUWlC_COT3l": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.15, Slab.1.7 too close to Door.1.22 component"
+      ]
+    },
+    "0WcADPJA571PyQI1eSlkC4": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.27, Slab.1.26 too close to Door.1.12 component"
+      ]
+    },
+    "0WwnDCcYLFJx3r5wMCkNbs": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.7, Slab.3.26 too close to Door.3.25 component"
+      ]
+    },
+    "0X248I49P2ruJd$STte42p": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0YHiCuhWH8Qh_HTW9vOiHy": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZNb2THTz00eu1RAEsgAJm": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0_AyfC57H5ZhnJFKbaFPKq": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.23, Slab.3.37 too close to Door.3.10 component"
+      ]
+    },
+    "0ci9nEgpD5hOOJ58LmeO5E": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0etZemLbbAog_wCl27YohR": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.21, Slab.2.22 too close to Door.2.28 component"
+      ]
+    },
+    "0ghxYtUBn0pv_pxPdAfhme": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0oXb8$CCzDygbz5_8Oxzxv": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0paFAbnyj3DQz4eYs1LQRb": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.44, Slab.1.7 too close to Door.1.4 component"
+      ]
+    },
+    "0rEPlH2fP8YQ_q3GiazsFo": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0wAyj9PWL7guJFQHdw7ccc": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Wall.0.207, Wall.0.80 too close to Door.0.23 component"
+      ]
+    },
+    "0xrZguOJ55xx5lucOklTa9": {
+      "name": "D7L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.22 too close to Door.2.44 component"
+      ]
+    },
+    "0yy1u9ooTD5vShTp5wGvUE": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.43 too close to Door.0.49 component"
+      ]
+    },
+    "0zCkMWkdv5GfPfhUIwPa9J": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0zzou4R_11kPXaS0hC0pre": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1$7$AzEPH8hxqREDEXC9Ab": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Distribution Element.0.18 too close to Door.0.50 component"
+      ]
+    },
+    "12pKvnM8rEghVj2eehBckA": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Wall.3.40 too close to Door.3.7 component"
+      ]
+    },
+    "13kU2WeeX43AmAN7yJpj7M": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "140c7DVn1Fdgh5_iO2DSKg": {
+      "name": "merk E5-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14tZx$UMb8cBHoti0zk1Nr": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.34, Slab.1.45 too close to Door.1.10 component"
+      ]
+    },
+    "15D5L0A5L99eNxZZrhk3Pa": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.9, Slab.0.23 too close to Door.0.30 component"
+      ]
+    },
+    "1AjHEuqyLASxbhLNVsGq0u": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.10, Slab.3.14 too close to Door.3.1 component"
+      ]
+    },
+    "1FtRH1k0bE4fyu_U9mJBmf": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.24 too close to Door.2.26 component"
+      ]
+    },
+    "1LZHcsRev6lhsez4LMDFr$": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.42, Slab.0.61 too close to Door.0.34 component"
+      ]
+    },
+    "1MMTbq1t93CfhQ63Tyks8n": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.18, Slab.2.34 too close to Door.2.6 component"
+      ]
+    },
+    "1N$Oi2JN18FvfRlqLXpxqx": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1UCnFJQ7nDgAX31ppgw6Pa": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Uv0j9g_TDo9SZvipUwvCd": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1V8Tq0OFj91OWiIb7OgssW": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1X$gsMt2nFuv_fouZFh5_Z": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.34, Slab.1.7 too close to Door.1.37 component"
+      ]
+    },
+    "1YmJTz8Sn4SxVWF6uxPIi6": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ZFLyNI$fDRgE2KgYahsry": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1_5gcKSrbEWfNgi3h_qdnx": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1aJ$Qkat1AFgC0aRnCKwoP": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1btohEUvb9RxFSreiwC9NA": {
+      "name": "merk A2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1cjDN$L7j3xQ6006KWGjlJ": {
+      "name": "D2L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.21, Slab.0.12 too close to Door.0.11 component"
+      ]
+    },
+    "1dnueTAkL0h8RlVLQtwd3w": {
+      "name": "merk A1sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1h4sXeQ3fCCQTfDg40kePC": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jm08JDI1AxPr7MMlr69d8": {
+      "name": "merk E3-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1k3S_FTjr5YgVNsOxgXfqg": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ktZHnXqP81AONft3VUKlo": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1lOvmnURjBcPf07ELTOqCT": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1oUU4liMH32hV5EvVPxQjH": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1s39gsbh161QnI10muM$N9": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1soUbpz7v1zxTj9qXJhloc": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1weVzahvb12Qj14QP5JtRt": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zulTwZuvE8uDQG8i0rPWu": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2$GgreKs5Auv1nDBFIDDQQ": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.10, Slab.0.24 too close to Door.0.76 component"
+      ]
+    },
+    "2$o2jRMbz4Ug6JAhiXdSr5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2152K7A7j0Xhs5JOT$GaL4": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "25jGa8wIHFKepyW_M4Ngs7": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "26_$0XSjr4qx6Hsbp36s4D": {
+      "name": "D8R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.27 too close to Door.1.16 component"
+      ]
+    },
+    "275N_u7Z9EtgoRNFproXEn": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.21, Slab.1.7 too close to Door.1.20 component"
+      ]
+    },
+    "27b7kJ2C50Wxcp8woudHRw": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Distribution Element.0.14 too close to Door.0.70 component"
+      ]
+    },
+    "27bh8yZhL8hPRD0H6aMxEY": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.24 too close to Door.2.23 component"
+      ]
+    },
+    "28KVDgny54GgQmudzivmSF": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2AH9fQqwXE9O9QvwUR77zF": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.37, Slab.0.23 too close to Door.0.74 component"
+      ]
+    },
+    "2ANGxgZInBiOwD5Faih5nH": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2BidPHSyjAeQnxVo9HGHwm": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2DaLEnOpD71xPKiE7SoDTP": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2Gq0QN14T6$e3J8hk70VQH": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Wall.2.78 too close to Door.2.15 component"
+      ]
+    },
+    "2IW6IWMcn9p9GSb$1bcM9y": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Distribution Element.0.11 too close to Door.0.43 component"
+      ]
+    },
+    "2Jqop0uBb9AxYtqSXLjzrD": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.3, Slab.3.26 too close to Door.3.14 component"
+      ]
+    },
+    "2KQzcnl4P108p1xYLp2BcG": {
+      "name": "merk A2sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2O5ano1e1EJeQxf8IVwahY": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2PEMzkDK9Dxum8sPRjDtq_": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2VKgopOMr4PQnzIHA$Zbht": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2VN0ufVPXBz91XSIqSEA4N": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2Vb0PGtxLAoxa0tjC07GCC": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2VhjvgnFDDXBW8fTsJGXX_": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2WU8Fxger4FOI4ySi472UL": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2XH6N5hOT3yAuGpef5XEDg": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.27, Slab.1.12 too close to Door.1.32 component"
+      ]
+    },
+    "2_vRJL86PBTQqE3ySM6YFm": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2b6PFyVHj5AwfHVP2cSS7T": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2cb8c3os963f5n9Wjr4O99": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2hVrKM8Vv2Xxs7m9ITda8L": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2i$ImWrU5CrPuyb0cxLRsY": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.6, Slab.1.2 too close to Door.1.36 component"
+      ]
+    },
+    "2lIYJtavL8Qgz5F0uXNHL_": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2lRzoejMfDL9Jj8LLmEFKf": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2lVoJcfoDAWB0KDozjmBha": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.15 too close to Door.0.73 component"
+      ]
+    },
+    "2mNENoxwD4MQMQY_gKi$v7": {
+      "name": "D7L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.7 too close to Door.1.40 component"
+      ]
+    },
+    "2qY72vI$D0SenCZx1z6HDK": {
+      "name": "merk E4-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qunupXbPCmxdwcf_gKob5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2wNrfbWo5F3AXCQjcATu9n": {
+      "name": "D8R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.7, Wall.1.28 too close to Door.1.24 component"
+      ]
+    },
+    "2zIan9UMbEDv$MtEuXRGaI": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Wall.1.157 too close to Door.1.6 component"
+      ]
+    },
+    "2zilQ_m$j83PfsTQ$4$xs$": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2zx7EWNY98lOv3r2x2yc76": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "36MmH3zZH16QTwC46Vbk$D": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.24, Slab.2.22 too close to Door.2.45 component"
+      ]
+    },
+    "38X2u$b_51PQbXrbF3UXq0": {
+      "name": "merk A6",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Ch3PayTPB6BbnIbMg0VDz": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3FUHlAm49BC88X$DRC3IqI": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.1.47, Slab.1.27 too close to Door.1.7 component"
+      ]
+    },
+    "3G$_TtmoH0i97AYiv2eBBu": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.19 too close to Door.2.40 component"
+      ]
+    },
+    "3IAsrlzln2x9CGCwGk5aBc": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3J3WcMT$r8Zhg8fsSyC9$A": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3KMMm8oqPDGRsQcfPPC6kS": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3N5xNVjr9Ehhxk6BUdGUAs": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3OgInA0dD3qBERzneS1WG0": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.43, Slab.0.12 too close to Door.0.37 component"
+      ]
+    },
+    "3Qw1ZJI6n0$OYdAwY3sPY0": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3UPz4qnhz6dR_hTWbylJYM": {
+      "name": "merk A3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3V_oBYi792a9_YZErx8HIx": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3WXd7RsH9CT9CRRwuhBxrU": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.19 too close to Door.2.46 component"
+      ]
+    },
+    "3XlDiPbzT5wuWLtvoN9ad0": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.2, Slab.3.37 too close to Door.3.27 component"
+      ]
+    },
+    "3YCmX8dc506hVi08zLmpbh": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3b$SMEeUf10eNHEHoPH0ta": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.52, Slab.0.15 too close to Door.0.65 component"
+      ]
+    },
+    "3cjGEZBqP9GQh7eyumO1LZ": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3lVtU7tjD3YOCLUfqajZ2A": {
+      "name": "merk A4",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3lsMx$fx16hhyCY_qE6IRh": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3nUiG96vjAwPUR6jFmv$ZI": {
+      "name": "D8R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.22, Wall.2.119 too close to Door.2.16 component"
+      ]
+    },
+    "3qU0EkhG9CDeH0fDWtriF3": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qYGwE1BDBbP2FWtfJUDNa": {
+      "name": "merk A3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rLHaGT8f4ffCX220B$XUw": {
+      "name": "D9L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.3.26, Wall.3.7 too close to Door.3.3 component"
+      ]
+    },
+    "3sicsb7Rv7vOSpwjkHwdXP": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.18, Slab.2.19 too close to Door.2.39 component"
+      ]
+    },
+    "3topRXa9T1svryvk0HDA1V": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3v$Jw_gpr6OOS8FFzqFDOt": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3vqhA9V$zD8Ri_tijsQ9Uy": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3wks5cHiv9puC78stid7dq": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Slab.2.22, Slab.2.8 too close to Door.2.21 component"
+      ]
+    },
+    "3xkLH3xAf9Qvv7jXLTD0bw": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3ztvEc4nv0AQG9DRef3G4g": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "PASS"
+    }
+  }
+}

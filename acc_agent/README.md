@@ -427,11 +427,13 @@ the API timeout is 180 seconds, and automatic provider retries are disabled. Exi
 kernel execution/startup timeouts and output caps remain unchanged. There is no
 cumulative token/cost cap. `finalization_attempts` now counts FinalReport submissions.
 
-New runs carry `agent_protocol=langchain-codeact-v5` and recording version 5; do not
+New runs carry `agent_protocol=langchain-codeact-v5` and recording version 6; do not
 pool them with historical protocols or budgets as if they were identical settings.
 v5 is frozen for the final evaluation (2026-10-12). Recording v5 adds wall-clock
 `seconds` per model call and per code block (stateless blocks include the worker
-restart and IFC reload); agent behaviour is unchanged from recording v4.
+restart and IFC reload); agent behaviour is unchanged from recording v4. Recording v6
+(v5.1 patch) removes malformed tool calls, which used to crash the run, and asks the
+model to resend; runs that never produced one are unaffected (see NOTES.md).
 Since v2 the model receives execution output as plain text (traceback once); status
 metadata is kept as the tool message artifact. v1 sent a JSON wrapper instead.
 v3 states the call budget in the prompt, ends every tool result with

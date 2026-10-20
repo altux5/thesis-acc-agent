@@ -1,0 +1,217 @@
+{
+  "case_id": "stair_slab_connection__smiley",
+  "rule": "Every stair must be connected to slabs at its beginning and at its end.\nSource: rule '504.2 Treads and Risers' of the EC3-2026 rule catalogue: All stairs shall be connected to slabs.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. A stair is connected at its beginning when its bottom step starts on a slab (a floor or landing slab), and at its end when its top step arrives at a slab. A stair fails when it is not connected at its beginning, at its end, or at both.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/smiley_west/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "00g$7A$xj1Yw7$pz0Gu5Jl": "PASS",
+    "0GpcF2R9n4MQJi2Z0vVVYD": "PASS",
+    "0KmzPuWR16OeBClGLrbNUM": "PASS",
+    "0QL6xmUc54YQTL8_HTe$PR": "PASS",
+    "0j2BPntubCLvFyPyFS3XrS": "PASS",
+    "0oroRk3ur3MfFxCiMbvU8Z": "PASS",
+    "0uwvn0rsH3TwwO9ofSpG$Z": "PASS",
+    "1HA569_750YQ6p1wDgzt4W": "PASS",
+    "1KW$AVfrjEkB34OWNk8Cdy": "PASS",
+    "1TvHaVzJ9Adeff_bvNBb2u": "PASS",
+    "1j$7ZnItf9w8NhsmNAVsUC": "PASS",
+    "1jrsHyC71DBgnw9PDYFtiF": "PASS",
+    "1wkrvIms59MRradq0vI9vQ": "PASS",
+    "1y22KIc6T1yAtqFqylhpTs": "PASS",
+    "26BDoJJR1FHePpGVh8cUT3": "PASS",
+    "26kJT26ej3NPFaeOpFPyS6": "PASS",
+    "2QdKt0EeDDihduxfDG8NT8": "PASS",
+    "2RUFxCtH97MPVZRusJ3kSL": "PASS",
+    "2WCholb_92w9VGgEQcoe8M": "PASS",
+    "2poy0Rs_PAA8_MxNpUfhKp": "PASS",
+    "2sCZlN66z3VRHFYWiRyds2": "PASS",
+    "35ekX5Yo1Dfukg3nu72L7e": "PASS",
+    "3IOQCxw_X6Ke2y0YTPcDfs": "PASS",
+    "3Ohp$OuUb3IhgebzR81n9X": "PASS",
+    "3Q2l6$dVb38gEzYyvoCq8n": "PASS",
+    "3QuFvRNNbDWRsEhil9DPsO": "PASS",
+    "3nW4x$Jg16U96R9aDX4eIB": "PASS",
+    "3pVBj07CXCfOzKgRPWMAW4": "PASS",
+    "3suS2IjjTFFQ$LB$aFEe0H": "PASS",
+    "3ueKRIyo1EFxA71NCIUXnt": "PASS"
+  },
+  "notes": "504.2 Treads and Risers on 30 IfcStair: {'PASS': 30}.",
+  "clause": "EC3 504.2 stair-slab connection",
+  "source": "solibri_reference.py::build_ec3 (ec3_smiley_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 30,
+    "ifc_sha256": "26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "is not connected to slabs? at the (beginning|end)",
+      "report_file": "ec3_smiley_check.xlsx",
+      "report_sha256": "b9e06cc563fb0a24c442a638f668c31ed0349f8f33a05b53918bbbca594794ea",
+      "rule_issues": 110,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "00g$7A$xj1Yw7$pz0Gu5Jl": {
+      "name": "EG-Treppe-10",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0GpcF2R9n4MQJi2Z0vVVYD": {
+      "name": "OG-1-Treppe-10",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0KmzPuWR16OeBClGLrbNUM": {
+      "name": "OG-1-Treppe-01",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0QL6xmUc54YQTL8_HTe$PR": {
+      "name": "EG-Treppe-02",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0j2BPntubCLvFyPyFS3XrS": {
+      "name": "EG-Treppe-06",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0oroRk3ur3MfFxCiMbvU8Z": {
+      "name": "Keller-Treppe-05",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0uwvn0rsH3TwwO9ofSpG$Z": {
+      "name": "Kellertreppe-09",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "1HA569_750YQ6p1wDgzt4W": {
+      "name": "EG-Treppe-07",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "1KW$AVfrjEkB34OWNk8Cdy": {
+      "name": "EG-Treppe-05",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "1TvHaVzJ9Adeff_bvNBb2u": {
+      "name": "OG-1-Treppe-02",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "1j$7ZnItf9w8NhsmNAVsUC": {
+      "name": "Kellertreppe-08",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "1jrsHyC71DBgnw9PDYFtiF": {
+      "name": "OG-1-Treppe-07",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "1wkrvIms59MRradq0vI9vQ": {
+      "name": "EG-Treppe-03",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "1y22KIc6T1yAtqFqylhpTs": {
+      "name": "Keller-Treppe-04",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "26BDoJJR1FHePpGVh8cUT3": {
+      "name": "Kellertreppe-02",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "26kJT26ej3NPFaeOpFPyS6": {
+      "name": "Kellertreppe-01",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2QdKt0EeDDihduxfDG8NT8": {
+      "name": "EG-Treppe-01",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2RUFxCtH97MPVZRusJ3kSL": {
+      "name": "OG-1-Treppe-09",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2WCholb_92w9VGgEQcoe8M": {
+      "name": "EG-Treppe-08",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2poy0Rs_PAA8_MxNpUfhKp": {
+      "name": "Kellertreppe-07",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2sCZlN66z3VRHFYWiRyds2": {
+      "name": "Kellertreppe-10",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "35ekX5Yo1Dfukg3nu72L7e": {
+      "name": "OG-1-Treppe-06",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3IOQCxw_X6Ke2y0YTPcDfs": {
+      "name": "OG-1-Treppe-04",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3Ohp$OuUb3IhgebzR81n9X": {
+      "name": "EG-Treppe-09",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3Q2l6$dVb38gEzYyvoCq8n": {
+      "name": "OG-1-Treppe-05",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3QuFvRNNbDWRsEhil9DPsO": {
+      "name": "EG-Treppe-04",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3nW4x$Jg16U96R9aDX4eIB": {
+      "name": "OG-1-Treppe-08",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3pVBj07CXCfOzKgRPWMAW4": {
+      "name": "OG-1-Treppe-03",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3suS2IjjTFFQ$LB$aFEe0H": {
+      "name": "Kellertreppe-03",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3ueKRIyo1EFxA71NCIUXnt": {
+      "name": "Kellertreppe-06",
+      "class": "IfcStair",
+      "label": "PASS"
+    }
+  }
+}

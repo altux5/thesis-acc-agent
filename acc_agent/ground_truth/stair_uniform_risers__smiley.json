@@ -1,0 +1,358 @@
+{
+  "case_id": "stair_uniform_risers__smiley",
+  "rule": "All steps of a stair must have uniform riser heights.\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nADA and ABA Accessibility Guidelines (2004), 504.2 Treads and Risers: All steps on a flight of stairs shall have uniform riser heights and uniform tread depths. Risers shall be 4 inches (100 mm) high minimum and 7 inches (180 mm) high maximum. Treads shall be 11 inches (280 mm) deep minimum.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. Only riser heights are compared. The first riser is measured from the floor the stair starts on, the last riser up to the floor it arrives at. A stair fails when the riser of its first step or of its last step differs from the riser height of its other steps by more than 0.5 mm. The riser and tread limits are covered by separate checks.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/smiley_west/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0GpcF2R9n4MQJi2Z0vVVYD",
+    "0KmzPuWR16OeBClGLrbNUM",
+    "0oroRk3ur3MfFxCiMbvU8Z",
+    "0uwvn0rsH3TwwO9ofSpG$Z",
+    "1TvHaVzJ9Adeff_bvNBb2u",
+    "1j$7ZnItf9w8NhsmNAVsUC",
+    "1jrsHyC71DBgnw9PDYFtiF",
+    "1y22KIc6T1yAtqFqylhpTs",
+    "26BDoJJR1FHePpGVh8cUT3",
+    "26kJT26ej3NPFaeOpFPyS6",
+    "2RUFxCtH97MPVZRusJ3kSL",
+    "2poy0Rs_PAA8_MxNpUfhKp",
+    "2sCZlN66z3VRHFYWiRyds2",
+    "35ekX5Yo1Dfukg3nu72L7e",
+    "3IOQCxw_X6Ke2y0YTPcDfs",
+    "3Q2l6$dVb38gEzYyvoCq8n",
+    "3nW4x$Jg16U96R9aDX4eIB",
+    "3pVBj07CXCfOzKgRPWMAW4",
+    "3suS2IjjTFFQ$LB$aFEe0H",
+    "3ueKRIyo1EFxA71NCIUXnt"
+  ],
+  "labels": {
+    "00g$7A$xj1Yw7$pz0Gu5Jl": "PASS",
+    "0GpcF2R9n4MQJi2Z0vVVYD": "FAIL",
+    "0KmzPuWR16OeBClGLrbNUM": "FAIL",
+    "0QL6xmUc54YQTL8_HTe$PR": "PASS",
+    "0j2BPntubCLvFyPyFS3XrS": "PASS",
+    "0oroRk3ur3MfFxCiMbvU8Z": "FAIL",
+    "0uwvn0rsH3TwwO9ofSpG$Z": "FAIL",
+    "1HA569_750YQ6p1wDgzt4W": "PASS",
+    "1KW$AVfrjEkB34OWNk8Cdy": "PASS",
+    "1TvHaVzJ9Adeff_bvNBb2u": "FAIL",
+    "1j$7ZnItf9w8NhsmNAVsUC": "FAIL",
+    "1jrsHyC71DBgnw9PDYFtiF": "FAIL",
+    "1wkrvIms59MRradq0vI9vQ": "PASS",
+    "1y22KIc6T1yAtqFqylhpTs": "FAIL",
+    "26BDoJJR1FHePpGVh8cUT3": "FAIL",
+    "26kJT26ej3NPFaeOpFPyS6": "FAIL",
+    "2QdKt0EeDDihduxfDG8NT8": "PASS",
+    "2RUFxCtH97MPVZRusJ3kSL": "FAIL",
+    "2WCholb_92w9VGgEQcoe8M": "PASS",
+    "2poy0Rs_PAA8_MxNpUfhKp": "FAIL",
+    "2sCZlN66z3VRHFYWiRyds2": "FAIL",
+    "35ekX5Yo1Dfukg3nu72L7e": "FAIL",
+    "3IOQCxw_X6Ke2y0YTPcDfs": "FAIL",
+    "3Ohp$OuUb3IhgebzR81n9X": "PASS",
+    "3Q2l6$dVb38gEzYyvoCq8n": "FAIL",
+    "3QuFvRNNbDWRsEhil9DPsO": "PASS",
+    "3nW4x$Jg16U96R9aDX4eIB": "FAIL",
+    "3pVBj07CXCfOzKgRPWMAW4": "FAIL",
+    "3suS2IjjTFFQ$LB$aFEe0H": "FAIL",
+    "3ueKRIyo1EFxA71NCIUXnt": "FAIL"
+  },
+  "notes": "504.2 Treads and Risers on 30 IfcStair: {'FAIL': 20, 'PASS': 10}.",
+  "clause": "ADA 504.2",
+  "source": "solibri_reference.py::build_ec3 (ec3_smiley_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 30,
+    "ifc_sha256": "26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "has steps at the (beginning|end) that are non-uniform",
+      "report_file": "ec3_smiley_check.xlsx",
+      "report_sha256": "b9e06cc563fb0a24c442a638f668c31ed0349f8f33a05b53918bbbca594794ea",
+      "rule_issues": 110,
+      "matching_issues": 50
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element; 10 recorded adjudications override Solibri with reasons.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "00g$7A$xj1Yw7$pz0Gu5Jl": {
+      "name": "EG-Treppe-10",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.4: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "0GpcF2R9n4MQJi2Z0vVVYD": {
+      "name": "OG-1-Treppe-10",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.7: 347 mm",
+        "Stair.0.7: 80 mm"
+      ]
+    },
+    "0KmzPuWR16OeBClGLrbNUM": {
+      "name": "OG-1-Treppe-01",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.6: 347 mm",
+        "Stair.0.6: 80 mm"
+      ]
+    },
+    "0QL6xmUc54YQTL8_HTe$PR": {
+      "name": "EG-Treppe-02",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.5: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "0j2BPntubCLvFyPyFS3XrS": {
+      "name": "EG-Treppe-06",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.10: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "0oroRk3ur3MfFxCiMbvU8Z": {
+      "name": "Keller-Treppe-05",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.1: 220 mm",
+        "Stair.-2.1: 348 mm"
+      ]
+    },
+    "0uwvn0rsH3TwwO9ofSpG$Z": {
+      "name": "Kellertreppe-09",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.8: 220 mm",
+        "Stair.-2.8: 348 mm"
+      ]
+    },
+    "1HA569_750YQ6p1wDgzt4W": {
+      "name": "EG-Treppe-07",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.1: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "1KW$AVfrjEkB34OWNk8Cdy": {
+      "name": "EG-Treppe-05",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.3: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "1TvHaVzJ9Adeff_bvNBb2u": {
+      "name": "OG-1-Treppe-02",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.8: 347 mm",
+        "Stair.0.8: 80 mm"
+      ]
+    },
+    "1j$7ZnItf9w8NhsmNAVsUC": {
+      "name": "Kellertreppe-08",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.10: 220 mm",
+        "Stair.-2.10: 348 mm"
+      ]
+    },
+    "1jrsHyC71DBgnw9PDYFtiF": {
+      "name": "OG-1-Treppe-07",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.1: 347 mm",
+        "Stair.0.1: 80 mm"
+      ]
+    },
+    "1wkrvIms59MRradq0vI9vQ": {
+      "name": "EG-Treppe-03",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.9: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "1y22KIc6T1yAtqFqylhpTs": {
+      "name": "Keller-Treppe-04",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.7: 220 mm",
+        "Stair.-2.7: 348 mm"
+      ]
+    },
+    "26BDoJJR1FHePpGVh8cUT3": {
+      "name": "Kellertreppe-02",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.5: 220 mm",
+        "Stair.-2.5: 348 mm"
+      ]
+    },
+    "26kJT26ej3NPFaeOpFPyS6": {
+      "name": "Kellertreppe-01",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.6: 220 mm",
+        "Stair.-2.6: 348 mm"
+      ]
+    },
+    "2QdKt0EeDDihduxfDG8NT8": {
+      "name": "EG-Treppe-01",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.6: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "2RUFxCtH97MPVZRusJ3kSL": {
+      "name": "OG-1-Treppe-09",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.9: 347 mm",
+        "Stair.0.9: 80 mm"
+      ]
+    },
+    "2WCholb_92w9VGgEQcoe8M": {
+      "name": "EG-Treppe-08",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.7: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "2poy0Rs_PAA8_MxNpUfhKp": {
+      "name": "Kellertreppe-07",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.3: 220 mm",
+        "Stair.-2.3: 348 mm"
+      ]
+    },
+    "2sCZlN66z3VRHFYWiRyds2": {
+      "name": "Kellertreppe-10",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.2: 220 mm",
+        "Stair.-2.2: 348 mm"
+      ]
+    },
+    "35ekX5Yo1Dfukg3nu72L7e": {
+      "name": "OG-1-Treppe-06",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.3: 347 mm",
+        "Stair.0.3: 80 mm"
+      ]
+    },
+    "3IOQCxw_X6Ke2y0YTPcDfs": {
+      "name": "OG-1-Treppe-04",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.2: 347 mm",
+        "Stair.0.2: 80 mm"
+      ]
+    },
+    "3Ohp$OuUb3IhgebzR81n9X": {
+      "name": "EG-Treppe-09",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.2: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "3Q2l6$dVb38gEzYyvoCq8n": {
+      "name": "OG-1-Treppe-05",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.4: 347 mm",
+        "Stair.0.4: 80 mm"
+      ]
+    },
+    "3QuFvRNNbDWRsEhil9DPsO": {
+      "name": "EG-Treppe-04",
+      "class": "IfcStair",
+      "label": "PASS",
+      "issues": [
+        "Stair.-1.8: 348 mm"
+      ],
+      "conflict": "Solibri reports beginning 348 mm and elsewhere 347 mm; the stair geometry rises 347.5 mm at every step, so the difference is display rounding, not a difference above the 0.5 mm stated in the rule."
+    },
+    "3nW4x$Jg16U96R9aDX4eIB": {
+      "name": "OG-1-Treppe-08",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.10: 347 mm",
+        "Stair.0.10: 80 mm"
+      ]
+    },
+    "3pVBj07CXCfOzKgRPWMAW4": {
+      "name": "OG-1-Treppe-03",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.5: 347 mm",
+        "Stair.0.5: 80 mm"
+      ]
+    },
+    "3suS2IjjTFFQ$LB$aFEe0H": {
+      "name": "Kellertreppe-03",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.4: 220 mm",
+        "Stair.-2.4: 348 mm"
+      ]
+    },
+    "3ueKRIyo1EFxA71NCIUXnt": {
+      "name": "Kellertreppe-06",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.9: 220 mm",
+        "Stair.-2.9: 348 mm"
+      ]
+    }
+  }
+}

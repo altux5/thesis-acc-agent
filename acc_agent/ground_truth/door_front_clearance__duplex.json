@@ -1,0 +1,134 @@
+{
+  "case_id": "door_front_clearance__duplex",
+  "rule": "The area in front of every door must be free of building components.\nSource: rule 'Clearance in Front of Doors' of the EC3-2026 rule catalogue: This rule checks there is enough clearance in front of doors.\nBenchmark convention: the free area is a box directly in front of the door opening, on the side to which the door opens. It is as wide and as high as the door and as deep as the door is wide, shrunk by 50 mm on each side so that components merely touching it do not count. A door fails when any building component other than a space (walls, curtain walls, slabs, floor finishes and other coverings, columns, doors, windows, stairs, railings, furniture, building services or other objects) intersects its free area.\n\nLabel every door.\nReport the GlobalId of every element (modelled as IfcDoor) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/duplex/arc.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "1aj$VJZFn2TxepZUBcKp$i",
+    "1aj$VJZFn2TxepZUBcKpac",
+    "1hOSvn6df7F8_7GcBWlS8Z"
+  ],
+  "labels": {
+    "1aj$VJZFn2TxepZUBcKp$i": "FAIL",
+    "1aj$VJZFn2TxepZUBcKpac": "FAIL",
+    "1hOSvn6df7F8_7GcBWlRGQ": "PASS",
+    "1hOSvn6df7F8_7GcBWlRH8": "PASS",
+    "1hOSvn6df7F8_7GcBWlS8Z": "FAIL",
+    "1hOSvn6df7F8_7GcBWlS9F": "PASS",
+    "1hOSvn6df7F8_7GcBWlSDm": "PASS",
+    "1hOSvn6df7F8_7GcBWlSFK": "PASS",
+    "1s1jVhK8z0pgKYcr9jt781": "PASS",
+    "1s1jVhK8z0pgKYcr9jt7AB": "PASS",
+    "2OBrcmyk58NupXoVOHUuXp": "PASS",
+    "2OBrcmyk58NupXoVOHUvPL": "PASS",
+    "2OBrcmyk58NupXoVOHUvR4": "PASS",
+    "2OBrcmyk58NupXoVOHUvVV": "PASS"
+  },
+  "notes": "Clearance in Front of Doors on 14 IfcDoor: {'FAIL': 3, 'PASS': 11}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_duplex_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 14,
+    "ifc_sha256": "707a032566dee8e969a44d95509be46d646440e2443624709f8d3ae2b45f4656",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Clearance in Front of Doors",
+      "message": null,
+      "report_file": "ec3_duplex_check.xlsx",
+      "report_sha256": "eb382d9a8558816db6474da78e80318d45ee42d92aa9048be085431a09138c6a",
+      "rule_issues": 3,
+      "matching_issues": 3
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "1aj$VJZFn2TxepZUBcKp$i": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:203720",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Wall.1.23 too close to Door.1.4 component"
+      ]
+    },
+    "1aj$VJZFn2TxepZUBcKpac": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:204034",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Wall.1.20 too close to Door.1.5 component"
+      ]
+    },
+    "1hOSvn6df7F8_7GcBWlRGQ": {
+      "name": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146596",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlRH8": {
+      "name": "M_Single-Flush:1250mm x 2010mm:1250mm x 2010mm:146678",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlS8Z": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150173",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "Furniture.0.1.1 too close to Door.0.4 component"
+      ]
+    },
+    "1hOSvn6df7F8_7GcBWlS9F": {
+      "name": "M_Single-Flush:0762 x 2032mm:0762 x 2032mm:150257",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlSDm": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150478",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1hOSvn6df7F8_7GcBWlSFK": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:150378",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1s1jVhK8z0pgKYcr9jt781": {
+      "name": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1s1jVhK8z0pgKYcr9jt7AB": {
+      "name": "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171975",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUuXp": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159734",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUvPL": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160208",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUvR4": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:160065",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OBrcmyk58NupXoVOHUvVV": {
+      "name": "M_Single-Flush:0864 x 2032mm:0864 x 2032mm:159834",
+      "class": "IfcDoor",
+      "label": "PASS"
+    }
+  }
+}

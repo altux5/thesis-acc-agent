@@ -1,0 +1,4382 @@
+{
+  "case_id": "doors_windows_storey__schependomlaan",
+  "rule": "Every door and window must be assigned to the same building storey as the wall it is placed in, and must not be an orphan (a door or window with no host element at all).\n\nA door or window fills an opening that voids a host element - its wall. It violates the rule when (a) it has no host element, or (b) the storey containing it differs from the storey containing its host. If either storey cannot be determined the element cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcDoor or IfcWindow) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Schependomlaan.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0$CHzFOKD96AwIJnRtjmCz",
+    "0$bCLIu6XFZvKNAS5U2$M5",
+    "0$vj6GrA15b852nxv8ecYB",
+    "01z1iheQT4$8X5aY0_r4QJ",
+    "02VFt8mFjD7RYPk4wtj6oc",
+    "02v5nA3u16Nh8SnTLbZVnM",
+    "03KwpgDxXCQBYi7KkY7sYB",
+    "03aP3tMUjC5voZmp9koxhs",
+    "04E1PaUW1Fze4qITB_nFaa",
+    "05CYtgzRz4DxcXy88RuGvo",
+    "05Whcg$392JeMCX54BugRl",
+    "06_o2t73nBXvUfWV0NnaRj",
+    "06lQ_SRDbDyuiUF0YIGOKi",
+    "073$0OxmvEMu0iJzPT4cfg",
+    "08IQ8vQ6n73vV7LBrwxuZu",
+    "09NbJFNdj9fxN2xh$EA6wX",
+    "09bCBGNx5F8xAq8JjO37a4",
+    "09l8RUnHH77g7h7SXJ62Iv",
+    "0B9KdcSuf3jh8POLbkPzQ4",
+    "0B9hE_gGb05uoY$Fs9k827",
+    "0Cx5eRd2fAe9wmZ82jh8FB",
+    "0DE9eeknn1UwV6HdBQLtSn",
+    "0EHGvEFwz0_OPzoNWThJC6",
+    "0ETp$wstn6uO7g6ZydQW6K",
+    "0Fcj$qK_jDIx0Clu51aeRJ",
+    "0FjOoBbcP2FxJiAEY$_Ky$",
+    "0G1Gjz4oHDNe$dN2BBokLe",
+    "0GSlUrIePDQRL93MVCRQ89",
+    "0HTjC8kFv6W9Fd4e3r5fjg",
+    "0Hdk5PAnP3pwtj9xXKmFBe",
+    "0HiNZtHwPCJuXK3YsKm49z",
+    "0If$3rc9P57xz4jVBVFnR1",
+    "0IzB0Fhx1E3e$Sm$$GKqe7",
+    "0JzQ9ARmz4J9VOnJDh2nWI",
+    "0K1kgDm1jFHfoPfMpxkAe5",
+    "0KGCtyQFv4av1Wdj6buj7k",
+    "0KhPVJu4P3A9E4zoWFJz0w",
+    "0LbBET9Yz9egUjXX_5FIas",
+    "0MV6oKxM90DANOdrZ1T$9f",
+    "0MXxM0JgP2KuGUWBtQY80N",
+    "0NDCKOxXf8aw$lz$AzvqxX",
+    "0NWv8IgP5Ch9a8sHZoyivA",
+    "0NZRpUHUn8f9KjPRtTRauP",
+    "0O3slHyAT0WgNB1xnKYnaE",
+    "0OL2bP1B5Ezfgv8L13MayF",
+    "0REpZXGX116vUWlC_COT3l",
+    "0U9_x2D65DmwQy5m_Q35Ne",
+    "0Ud441PPT0DRsLxYPFfaWG",
+    "0WcADPJA571PyQI1eSlkC4",
+    "0WwnDCcYLFJx3r5wMCkNbs",
+    "0X248I49P2ruJd$STte42p",
+    "0XEOt5SHT7euOAUEqbQw0S",
+    "0YHiCuhWH8Qh_HTW9vOiHy",
+    "0YMesrJsv8ZAfgcOQkjCTb",
+    "0Yp5qy$a5C1OAOYHZOB8II",
+    "0ZNb2THTz00eu1RAEsgAJm",
+    "0ZU09EWLf0fQUCDcc5uEu_",
+    "0_$NSu2evBVeFZQgjiEuAx",
+    "0_AyfC57H5ZhnJFKbaFPKq",
+    "0_Jo1N31L7z9swemKCMYlB",
+    "0_f7yvHAD4nwZoIARNjl1v",
+    "0_nanN5VH5eARTiW6lUQd3",
+    "0ci9nEgpD5hOOJ58LmeO5E",
+    "0co_SMokj9s9Ux6ep1NuBV",
+    "0d06TNXPD9kQ6kfDgFvSX4",
+    "0e582X10f8qQO1eTOH2xCn",
+    "0eUeiTKgL8z9I4w$AnfEgY",
+    "0etZemLbbAog_wCl27YohR",
+    "0fKwIjRKL2ThQh97F1hsVV",
+    "0fQEU5rGPBq9vOpiEoyBBR",
+    "0ghxYtUBn0pv_pxPdAfhme",
+    "0h4oGef9T1PgTelA09ZLn2",
+    "0hLbfgnI116fYrSi5yltYv",
+    "0ijouLVuz4qOaWI8eCDmYZ",
+    "0k6mb7kcX8yedFIwED8qcY",
+    "0l79Hol6v6XBNPQpgDR__D",
+    "0m7Z8$vfnDLxF9ZlRdjI6b",
+    "0mLDe0vvD7lQPHmwh__YTZ",
+    "0mPuDc5FT2YhFju_2TJR5L",
+    "0mtRbwfO1BTwxiSzggSc8I",
+    "0oXb8$CCzDygbz5_8Oxzxv",
+    "0paFAbnyj3DQz4eYs1LQRb",
+    "0qOSzz4qrCIO8I0BFBBwg9",
+    "0r1tRl0qv5G9URrsYopY0P",
+    "0r4F5aYpjDjepmJs0NROFT",
+    "0rgvpCJSX1cOzYjSKRiBzu",
+    "0sS$ynhr12VfVoUHJgHL8n",
+    "0tvRrpQa9Brgk0PO3rZ7pS",
+    "0w3wabzRLAz99bhnECWj79",
+    "0w67SppZj5MvHkxZnft01E",
+    "0wAyj9PWL7guJFQHdw7ccc",
+    "0xlRUG5ID5LhgTY4CombXh",
+    "0y9v8B7Jz8XQeHm3h61$Xt",
+    "0yy1u9ooTD5vShTp5wGvUE",
+    "0zCkMWkdv5GfPfhUIwPa9J",
+    "0zufCFef19dhrSAn7n7kDY",
+    "0zzou4R_11kPXaS0hC0pre",
+    "1$7$AzEPH8hxqREDEXC9Ab",
+    "10Z6sfVZn3GfZCDuDGVlAZ",
+    "10rQERlhDCbxXJCT$_92RE",
+    "11$JW3xLX2xA3HAKDO$V4x",
+    "11RySdoR58kP5miKc_WA6F",
+    "11ycc28Dr4oepXoXW_NnL6",
+    "12TtYnsRH7R8kq19$bZFwV",
+    "12kDL1eWzET9Qm2diwFxeL",
+    "12pKvnM8rEghVj2eehBckA",
+    "13kU2WeeX43AmAN7yJpj7M",
+    "14rAyAJ$L5nPK$yo6WYX5X",
+    "14tZx$UMb8cBHoti0zk1Nr",
+    "15D5L0A5L99eNxZZrhk3Pa",
+    "15m0CeBGfECerYsUDbEOge",
+    "16TvrQb8bFTPpj$qS6T5ri",
+    "171wovydf4b8htV6pg$TFJ",
+    "176JSQqvPCR9mZPbZYohue",
+    "17GhR_gATFhuBAeAn9fPma",
+    "187USFh2r5cOPBWBpNJgHJ",
+    "19iI2eJ35DvhstxdCyQr3B",
+    "1AjHEuqyLASxbhLNVsGq0u",
+    "1BecTfmYnDMvo6swvRkssx",
+    "1CNomnrdb3CeKqRVaml6Zj",
+    "1D3QrwQQnDpBzpUuSTr$BU",
+    "1D6XPjH$jCMBVPpXzrBrBh",
+    "1DGTGmOMj8AvihClKJPKCD",
+    "1DMKLKe45CzO6gemze$ha$",
+    "1DsH2dtvb1EQXXq4tfBtYg",
+    "1EL9JU43nABBdNk_W52fqh",
+    "1EgBW0IB95EeR9l7z9ma4W",
+    "1GOpmZWFHFPu8qESPn3F3y",
+    "1HDfKcH0v4VRSVJicriZF4",
+    "1HMWw8mcr1KOvkIr0tFQMU",
+    "1Hjs_P2aXCOPI7_$2kdF6v",
+    "1IYBmrd2H8ihMtKIvfnjz0",
+    "1Jl$pXjvz5zg9fEBTGRb9s",
+    "1LZHcsRev6lhsez4LMDFr$",
+    "1Le1BurSf8iQTApHN20xGM",
+    "1MAxgv_XP6ZQ97AQrkDyrt",
+    "1MMTbq1t93CfhQ63Tyks8n",
+    "1N$Oi2JN18FvfRlqLXpxqx",
+    "1O6tmJybvFcAq4a7J9rLAN",
+    "1PmQ6CQbzAMgXxD2pXWt3a",
+    "1QutPMQ5z6MggQuGh8QPeo",
+    "1RJVF591z4bOy_pjsU4XRe",
+    "1SPXkEO_f5xPavTXTLbPI$",
+    "1T2P9SD_v7pusuMZ3NUpjC",
+    "1ToOMg6mH3uPQ6JhObMAbP",
+    "1UCnFJQ7nDgAX31ppgw6Pa",
+    "1Uv0j9g_TDo9SZvipUwvCd",
+    "1V8Tq0OFj91OWiIb7OgssW",
+    "1WF0f7xan32xUC_zu0m2Yd",
+    "1X$gsMt2nFuv_fouZFh5_Z",
+    "1YZgYVVw9F0Qg_cyVJnVhp",
+    "1YmJTz8Sn4SxVWF6uxPIi6",
+    "1YokH0mfn7782tC$kkBV9N",
+    "1ZvjfnAcr7VueX4qTg5Ajj",
+    "1_5gcKSrbEWfNgi3h_qdnx",
+    "1_nRsWg_f0XubfZfIIRP3k",
+    "1a0yXwaPr6bQS$tJIhLQr1",
+    "1aJ$Qkat1AFgC0aRnCKwoP",
+    "1bd$IrGA53LQPvMq9gVcx0",
+    "1btohEUvb9RxFSreiwC9NA",
+    "1cApy3tf55$ewMiOVVXpAY",
+    "1cjDN$L7j3xQ6006KWGjlJ",
+    "1ct3PC$Rf39OYRwaCfR2gz",
+    "1czSEvfOzE4Oi_LLlJxhyd",
+    "1d9kUW3zP0ggxxYmG2vPQM",
+    "1donuLXK125fRkeWlAA8Cq",
+    "1drJr9gifENhdb9tpZx1m6",
+    "1e$Zm7EmzAgRS0uBDNJlVg",
+    "1f7zMqweP0kuzgAoVzEWut",
+    "1f8696ukP6ngAHgpRZz3ju",
+    "1fI1NXTpj7BxFTmw5$kjhb",
+    "1fXWFMY$T5VwEu43MZumk6",
+    "1h4sXeQ3fCCQTfDg40kePC",
+    "1jTFg_BbD2_gRGTcr0jnVr",
+    "1lOvmnURjBcPf07ELTOqCT",
+    "1m4nE1pPr2b8wIfR9a_VVL",
+    "1nalLUQ2z9_wBIkbXwMz6_",
+    "1nwCQp6CL4h9AJo0EXhJBj",
+    "1oUU4liMH32hV5EvVPxQjH",
+    "1oUqZKaXTFE9XEtTIlzoKi",
+    "1pPLUmJvHBYO$OdiNX3HUz",
+    "1q3tRNJXP28AT4_Y9XviYV",
+    "1qR9Yh4uT2M8QYv5il00VU",
+    "1rAoTfcZXDceLlFXNEmX1C",
+    "1rC9mTrqD7nRVVhL$0K1bF",
+    "1rfLYazSH8GBcQryKstIs3",
+    "1s39gsbh161QnI10muM$N9",
+    "1soUbpz7v1zxTj9qXJhloc",
+    "1teUYP1Rv0ZhB_2gzRilQR",
+    "1ty_8KokP6mQYlN4DZkOfx",
+    "1uxuNhGl5C28Agr6eD5Bmj",
+    "1wEE7IMAj3ZewoallFdW$w",
+    "1weVzahvb12Qj14QP5JtRt",
+    "1wlI6JqsLEOhCsZqoJuwxZ",
+    "1xfcxY2sf3LB1ysF5_X4I$",
+    "1zulTwZuvE8uDQG8i0rPWu",
+    "2$GgreKs5Auv1nDBFIDDQQ",
+    "2$V3GlXWDFa9ozTMOGOymq",
+    "2$o2jRMbz4Ug6JAhiXdSr5",
+    "2$y_vPdK50rvRCnxRgbax0",
+    "207c7$G7HAOg5y2_1xjv$F",
+    "20drR2J4r4bPUTTBVjW_Vz",
+    "2152K7A7j0Xhs5JOT$GaL4",
+    "21DYv1qCP5FOPMzDf2BdGU",
+    "21v6Lxsl1BCPpmriUOgAsP",
+    "23hLVZfJz6LAZH1fYDmUwS",
+    "251rxV64H62xIQNojyGRwU",
+    "25P1FLrhb43ONVrD2L840O",
+    "25iCNH$Vb5quMnNN$zdiEg",
+    "25jGa8wIHFKepyW_M4Ngs7",
+    "262iH081180RfRZcryzr7v",
+    "26wG__yAf4jhBihTArGrfi",
+    "275N_u7Z9EtgoRNFproXEn",
+    "27b7kJ2C50Wxcp8woudHRw",
+    "28KVDgny54GgQmudzivmSF",
+    "29ln2Cp8P9jBBVLpq36yJx",
+    "2AH9fQqwXE9O9QvwUR77zF",
+    "2ANGxgZInBiOwD5Faih5nH",
+    "2Ap4dwiajE799Gm9tGiJx1",
+    "2AtqXLL8bAsei5_CKwpj0y",
+    "2BAFeLAfrFmRqNR9mOZjZA",
+    "2BeulVMFHFJum3B9E9M$fY",
+    "2BidPHSyjAeQnxVo9HGHwm",
+    "2C60pqTzP8BR1K24Yag_n6",
+    "2CT4vuDHz80BzUCFoJ0LTI",
+    "2EKQPtlE15r9nj5or9E3v0",
+    "2Fr_G_D5z2SQ4zYSECOkbO",
+    "2GfFhoq6r37vCpbSN6CZTL",
+    "2Gq0QN14T6$e3J8hk70VQH",
+    "2IW6IWMcn9p9GSb$1bcM9y",
+    "2If2Aad390NwFBO7uQvqMr",
+    "2JBh8Xn6DDFfR$iL4REVIO",
+    "2Jqop0uBb9AxYtqSXLjzrD",
+    "2K7avqptP0rAzb1886J2AI",
+    "2KZzNKvwr9uRVfzB5TmmYh",
+    "2M$dfAAj90C9cPQZXqCaMP",
+    "2NlbpQJhX57A98fAICSHEw",
+    "2O5ano1e1EJeQxf8IVwahY",
+    "2OeOjUpaH1bxNaxIEYZAXQ",
+    "2OraOVIKPAOg8rJoQjQczk",
+    "2Ot4pojY5A_AuSDtpUwI4i",
+    "2PEMzkDK9Dxum8sPRjDtq_",
+    "2PKnB$Yrb4QPj4dii4Mh9J",
+    "2R58Jw87jDCevbnOC3rmac",
+    "2RuuzaH1vFUwKXpU33GTyt",
+    "2ThtpyjZn4q8nYD1vikjMG",
+    "2VKgopOMr4PQnzIHA$Zbht",
+    "2VN0ufVPXBz91XSIqSEA4N",
+    "2VRR1TrGT6eBTc8nAX0QwP",
+    "2VSPey61T9RB_q$osXbLMV",
+    "2Vb0PGtxLAoxa0tjC07GCC",
+    "2VhjvgnFDDXBW8fTsJGXX_",
+    "2ViuBjcVj8z9LMZmOsdtUZ",
+    "2WU8Fxger4FOI4ySi472UL",
+    "2XH6N5hOT3yAuGpef5XEDg",
+    "2YIkXYWk12Ruf2QsE9cXTp",
+    "2_US9yS$f6xgGifWmRr3ce",
+    "2_cZuNiRL9_POUhd7yFcwr",
+    "2_vRJL86PBTQqE3ySM6YFm",
+    "2aI12utMz8aQ3peDg2uVuG",
+    "2b6PFyVHj5AwfHVP2cSS7T",
+    "2bJ1Gv3yL6nf$qJdsuPO4A",
+    "2blRi3iY12ng6i9rcsih4e",
+    "2cb8c3os963f5n9Wjr4O99",
+    "2dnwTIzFTAD9hapAlqsr5S",
+    "2dyqlxLyzFvQOjQrGkU4$r",
+    "2ft6HbZKD5ePF2WR3Q2yMt",
+    "2heiRUoHL5xvP8RwhYL$bG",
+    "2i$ImWrU5CrPuyb0cxLRsY",
+    "2i1Z9kKWv4ie2N0CBoZWie",
+    "2jJseFS1L1B8boC45FrAL7",
+    "2kU5XJFAf4Xe01xgsDZElh",
+    "2lIYJtavL8Qgz5F0uXNHL_",
+    "2lRzoejMfDL9Jj8LLmEFKf",
+    "2lVoJcfoDAWB0KDozjmBha",
+    "2lkytCG9rD3O3IXV5k3j5H",
+    "2lt7ZnqNjDs9E2NE_fHF_4",
+    "2m0Oxn1sr74ODbW_x3jNoG",
+    "2nEtJExy5EkR8dxB8J7WF8",
+    "2nrdDYGJ9BhvAHtSOD2bVI",
+    "2oDI2uiQHDBf119Ffbq8pl",
+    "2oT9F5t_D3r81DfUpoY23W",
+    "2okwPp_551sf2xuZcfRIdG",
+    "2pAvanoIzEV8kE6N3CBDLL",
+    "2pFYENFv91ygvyAeZOYi93",
+    "2qQEfBo11B5RTiiCq7k79L",
+    "2qunupXbPCmxdwcf_gKob5",
+    "2swgU59GXB_xDlq7OzgSpv",
+    "2tt4s65cb2fgd3alKSa46a",
+    "2tzwPzboDCgRcvSj$vm6HZ",
+    "2u4Y9RrS9E7e46nkx$KtkD",
+    "2u5XGmt4D2bRNIEXQ9IBsW",
+    "2uTeXyy8XDYvkI0uWy38WP",
+    "2vFhUBbYLDEuToK036Hl$0",
+    "2zIan9UMbEDv$MtEuXRGaI",
+    "2zVo1VURr81P4zGfpGNjd9",
+    "2zilQ_m$j83PfsTQ$4$xs$",
+    "2zx7EWNY98lOv3r2x2yc76",
+    "305UsCgOr5d9qsncJ$8RVN",
+    "31CBV10iDANhFbENO3uY2l",
+    "31JhVzvWf3EhVtVaBbU7f1",
+    "32FFCa8B198P$NJwP8hwgu",
+    "32SyG2XEDDDhMCQmPD9LrL",
+    "33HuU010bEdBTNffikwk7C",
+    "359iTTnTv3NfCfWlSW9JFd",
+    "35s4FHAyjB4RwDF8g0$JwM",
+    "36DzLjnuL9XA2dudd2r92m",
+    "36MmH3zZH16QTwC46Vbk$D",
+    "36ovl7bSP7_8ZDfLgjHA1Q",
+    "37gZNsSDL4iu1S6Wor3ZPj",
+    "382pcuNAr1tep31IH5fMSU",
+    "39Lqndo0HD0PPTIv$0QRef",
+    "39mUraBw56_gD25yTzysZW",
+    "3BDarYIf1EXRuu7o6glIV$",
+    "3BOPbUZ1T5Ug2zkGHwafoi",
+    "3BudmayvDEg9diXrrDKJ0K",
+    "3Ch3PayTPB6BbnIbMg0VDz",
+    "3D1M31qn1D9eCfALMUlAC6",
+    "3Elkb_Klj4kOU0Qc6PaizN",
+    "3FUHlAm49BC88X$DRC3IqI",
+    "3G7ktHYG96gQbiZjzEbR8N",
+    "3H7pBT9U13kuEq2qj2wzQk",
+    "3I96DDOZX58xC3RmUZssQx",
+    "3IAsrlzln2x9CGCwGk5aBc",
+    "3IRXQx1CX8oxFXhqXHMp_E",
+    "3IkJ5kYzHBoxsDRsZeWtto",
+    "3IqSuYSFHADuKaAsofIt9x",
+    "3J3WcMT$r8Zhg8fsSyC9$A",
+    "3KMMm8oqPDGRsQcfPPC6kS",
+    "3LHBKM1sPCkOXvRtwp$pev",
+    "3MkalSSaPB_h_tTcRHxH9A",
+    "3MrGY57rjE4Owj5UJO3Umk",
+    "3N5xNVjr9Ehhxk6BUdGUAs",
+    "3NI6Sp$yf87eKCx0T$FWj3",
+    "3OOESiHE9Cng4Bb4pE0UY6",
+    "3OgInA0dD3qBERzneS1WG0",
+    "3QJnmlRqz5_fVrar74KrOo",
+    "3Qds1Ttm57nPXC1iJ$aE$M",
+    "3Qw1ZJI6n0$OYdAwY3sPY0",
+    "3RrFw8EAf1GRoBD_pVEc41",
+    "3SgAlyy0D4NQuzsMpXqOUR",
+    "3SinmO3Pj0_fGoIba5Tpbf",
+    "3TvWm44N9F5RIa$fhkiYVg",
+    "3UNWn7XCf1hwvlPusg1icu",
+    "3V4FbFEIL7Texif7yDL7jp",
+    "3V_oBYi792a9_YZErx8HIx",
+    "3VeGPWRHL5QfWdPbnVK9h3",
+    "3W9VqGRgr09fcNbT79krnR",
+    "3Wp4aZh5H6qPRVFtOem3_A",
+    "3XlDiPbzT5wuWLtvoN9ad0",
+    "3YCmX8dc506hVi08zLmpbh",
+    "3YghERoAfAiunwtuKsXi69",
+    "3YkS_khHDAjAeJXiOfwXwm",
+    "3ZVnVKy4D1jBZcLcCGVgY2",
+    "3b$SMEeUf10eNHEHoPH0ta",
+    "3bpb$MQq50M8aknXg_9Fdp",
+    "3cLBPtEz1A0uWp58VoUCJm",
+    "3chKGarqH0KuFJTVdW349F",
+    "3cjGEZBqP9GQh7eyumO1LZ",
+    "3dRgtW3QbEsQYyv9xoJ71y",
+    "3dxXVt7mz5yQHgR4nKqxCm",
+    "3fcHQBt3H23QcTv6yhJwzo",
+    "3fi85$zLn2ghOSoxhxMJYO",
+    "3h8HoOyCv3LAYN5dc$49X5",
+    "3hlYOSdNT3hRiePew15h4T",
+    "3iKlrwnUHCxxRo4aLgJC8B",
+    "3jpBco5Of4g9v0dMt1k4Gs",
+    "3kikpo5Zf9XQWnNfyl$b3h",
+    "3lE1SkMIbDaBDRbQV9PuSz",
+    "3la5L9LMH0juxb_CD9s6XA",
+    "3lsMx$fx16hhyCY_qE6IRh",
+    "3mgONbLNL2DxrM$kkxuZbY",
+    "3oAFxBcTz9oeraTpYdYjN5",
+    "3oJTPYwxj7P9M9aWsDpJCD",
+    "3p9J1sHcf4ju8QNF1IhRNV",
+    "3qU0EkhG9CDeH0fDWtriF3",
+    "3rLHaGT8f4ffCX220B$XUw",
+    "3rQ8vxEjf7ChTPNEIHZubP",
+    "3sicsb7Rv7vOSpwjkHwdXP",
+    "3tB9bs0jH8kvDCXNaFXLU4",
+    "3to0Qbzn57AgGEPgcKjSko",
+    "3v$Jw_gpr6OOS8FFzqFDOt",
+    "3vVPMVKpv8WR4t1AhJIyPH",
+    "3vvdwTEwn8XfzKTKW82ej4",
+    "3wi$IxEnzE7PY_Fz$GwcQX",
+    "3wks5cHiv9puC78stid7dq",
+    "3xZl0Z8zH6Few7zjaPUgW9",
+    "3xkLH3xAf9Qvv7jXLTD0bw",
+    "3zP$yy82X1zQpQLI8ob4xL",
+    "3ztvEc4nv0AQG9DRef3G4g"
+  ],
+  "labels": {
+    "0$CHzFOKD96AwIJnRtjmCz": "FAIL",
+    "0$bCLIu6XFZvKNAS5U2$M5": "FAIL",
+    "0$vj6GrA15b852nxv8ecYB": "FAIL",
+    "012S6Z0qLCRuoYXSZ2tygw": "PASS",
+    "01z1iheQT4$8X5aY0_r4QJ": "FAIL",
+    "02VFt8mFjD7RYPk4wtj6oc": "FAIL",
+    "02v5nA3u16Nh8SnTLbZVnM": "FAIL",
+    "03KwpgDxXCQBYi7KkY7sYB": "FAIL",
+    "03aP3tMUjC5voZmp9koxhs": "FAIL",
+    "03lGFt1VjBDe6syvgmNFAy": "PASS",
+    "04E1PaUW1Fze4qITB_nFaa": "FAIL",
+    "05CYtgzRz4DxcXy88RuGvo": "FAIL",
+    "05Whcg$392JeMCX54BugRl": "FAIL",
+    "06_o2t73nBXvUfWV0NnaRj": "FAIL",
+    "06lQ_SRDbDyuiUF0YIGOKi": "FAIL",
+    "073$0OxmvEMu0iJzPT4cfg": "FAIL",
+    "08IQ8vQ6n73vV7LBrwxuZu": "FAIL",
+    "09NbJFNdj9fxN2xh$EA6wX": "FAIL",
+    "09bCBGNx5F8xAq8JjO37a4": "FAIL",
+    "09l8RUnHH77g7h7SXJ62Iv": "FAIL",
+    "0B9KdcSuf3jh8POLbkPzQ4": "FAIL",
+    "0B9hE_gGb05uoY$Fs9k827": "FAIL",
+    "0Cx5eRd2fAe9wmZ82jh8FB": "FAIL",
+    "0DE9eeknn1UwV6HdBQLtSn": "FAIL",
+    "0EHGvEFwz0_OPzoNWThJC6": "FAIL",
+    "0ETp$wstn6uO7g6ZydQW6K": "FAIL",
+    "0EWFPIrsv7_9lhqHOpPwsU": "PASS",
+    "0FcHfq3eXDUvB1x$PxjHW5": "PASS",
+    "0Fcj$qK_jDIx0Clu51aeRJ": "FAIL",
+    "0FjOoBbcP2FxJiAEY$_Ky$": "FAIL",
+    "0G1Gjz4oHDNe$dN2BBokLe": "FAIL",
+    "0GSlUrIePDQRL93MVCRQ89": "FAIL",
+    "0HKXdsxQDBXehvvnIH9Bj2": "PASS",
+    "0HTjC8kFv6W9Fd4e3r5fjg": "FAIL",
+    "0Hdk5PAnP3pwtj9xXKmFBe": "FAIL",
+    "0HiNZtHwPCJuXK3YsKm49z": "FAIL",
+    "0If$3rc9P57xz4jVBVFnR1": "FAIL",
+    "0IzB0Fhx1E3e$Sm$$GKqe7": "FAIL",
+    "0JzQ9ARmz4J9VOnJDh2nWI": "FAIL",
+    "0K1kgDm1jFHfoPfMpxkAe5": "FAIL",
+    "0KGCtyQFv4av1Wdj6buj7k": "FAIL",
+    "0KhPVJu4P3A9E4zoWFJz0w": "FAIL",
+    "0LbBET9Yz9egUjXX_5FIas": "FAIL",
+    "0MO3NBPw1FofnfwKUa2odt": "PASS",
+    "0MV6oKxM90DANOdrZ1T$9f": "FAIL",
+    "0MXxM0JgP2KuGUWBtQY80N": "FAIL",
+    "0NDCKOxXf8aw$lz$AzvqxX": "FAIL",
+    "0NWv8IgP5Ch9a8sHZoyivA": "FAIL",
+    "0NZRpUHUn8f9KjPRtTRauP": "FAIL",
+    "0Nx0E1OHf1DuxTjjuUm2Ac": "PASS",
+    "0O3slHyAT0WgNB1xnKYnaE": "FAIL",
+    "0OL2bP1B5Ezfgv8L13MayF": "FAIL",
+    "0REpZXGX116vUWlC_COT3l": "FAIL",
+    "0U9_x2D65DmwQy5m_Q35Ne": "FAIL",
+    "0Ud441PPT0DRsLxYPFfaWG": "FAIL",
+    "0WcADPJA571PyQI1eSlkC4": "FAIL",
+    "0WtDl5Fx1CGO$F0RJCi8b$": "PASS",
+    "0WwnDCcYLFJx3r5wMCkNbs": "FAIL",
+    "0X248I49P2ruJd$STte42p": "FAIL",
+    "0XEOt5SHT7euOAUEqbQw0S": "FAIL",
+    "0YHiCuhWH8Qh_HTW9vOiHy": "FAIL",
+    "0YMesrJsv8ZAfgcOQkjCTb": "FAIL",
+    "0Yp5qy$a5C1OAOYHZOB8II": "FAIL",
+    "0ZNb2THTz00eu1RAEsgAJm": "FAIL",
+    "0ZU09EWLf0fQUCDcc5uEu_": "FAIL",
+    "0_$NSu2evBVeFZQgjiEuAx": "FAIL",
+    "0_AyfC57H5ZhnJFKbaFPKq": "FAIL",
+    "0_Jo1N31L7z9swemKCMYlB": "FAIL",
+    "0_f7yvHAD4nwZoIARNjl1v": "FAIL",
+    "0_nanN5VH5eARTiW6lUQd3": "FAIL",
+    "0ci9nEgpD5hOOJ58LmeO5E": "FAIL",
+    "0co_SMokj9s9Ux6ep1NuBV": "FAIL",
+    "0d06TNXPD9kQ6kfDgFvSX4": "FAIL",
+    "0e582X10f8qQO1eTOH2xCn": "FAIL",
+    "0eASoFkCvD_OTC_ct3cBps": "PASS",
+    "0eUeiTKgL8z9I4w$AnfEgY": "FAIL",
+    "0etZemLbbAog_wCl27YohR": "FAIL",
+    "0fKwIjRKL2ThQh97F1hsVV": "FAIL",
+    "0fQEU5rGPBq9vOpiEoyBBR": "FAIL",
+    "0ghxYtUBn0pv_pxPdAfhme": "FAIL",
+    "0h4oGef9T1PgTelA09ZLn2": "FAIL",
+    "0hLbfgnI116fYrSi5yltYv": "FAIL",
+    "0ijouLVuz4qOaWI8eCDmYZ": "FAIL",
+    "0k6mb7kcX8yedFIwED8qcY": "FAIL",
+    "0l79Hol6v6XBNPQpgDR__D": "FAIL",
+    "0m7Z8$vfnDLxF9ZlRdjI6b": "FAIL",
+    "0mLDe0vvD7lQPHmwh__YTZ": "FAIL",
+    "0mPuDc5FT2YhFju_2TJR5L": "FAIL",
+    "0mtRbwfO1BTwxiSzggSc8I": "FAIL",
+    "0oXb8$CCzDygbz5_8Oxzxv": "FAIL",
+    "0pZslPSAb8jBEsesxVZzu0": "PASS",
+    "0paFAbnyj3DQz4eYs1LQRb": "FAIL",
+    "0qOSzz4qrCIO8I0BFBBwg9": "FAIL",
+    "0r1tRl0qv5G9URrsYopY0P": "FAIL",
+    "0r4F5aYpjDjepmJs0NROFT": "FAIL",
+    "0rEPlH2fP8YQ_q3GiazsFo": "PASS",
+    "0rOlpuy6fEpfuuqvscj$PW": "PASS",
+    "0rgvpCJSX1cOzYjSKRiBzu": "FAIL",
+    "0sS$ynhr12VfVoUHJgHL8n": "FAIL",
+    "0tvRrpQa9Brgk0PO3rZ7pS": "FAIL",
+    "0w3wabzRLAz99bhnECWj79": "FAIL",
+    "0w67SppZj5MvHkxZnft01E": "FAIL",
+    "0wAyj9PWL7guJFQHdw7ccc": "FAIL",
+    "0xlRUG5ID5LhgTY4CombXh": "FAIL",
+    "0xmEoRha9E$xhaP7dhI3oe": "PASS",
+    "0xrZguOJ55xx5lucOklTa9": "PASS",
+    "0y9v8B7Jz8XQeHm3h61$Xt": "FAIL",
+    "0yGGfH85nFPvINarcAfBNX": "PASS",
+    "0yy1u9ooTD5vShTp5wGvUE": "FAIL",
+    "0zCkMWkdv5GfPfhUIwPa9J": "FAIL",
+    "0zufCFef19dhrSAn7n7kDY": "FAIL",
+    "0zzou4R_11kPXaS0hC0pre": "FAIL",
+    "1$7$AzEPH8hxqREDEXC9Ab": "FAIL",
+    "10Z6sfVZn3GfZCDuDGVlAZ": "FAIL",
+    "10rQERlhDCbxXJCT$_92RE": "FAIL",
+    "11$JW3xLX2xA3HAKDO$V4x": "FAIL",
+    "11RySdoR58kP5miKc_WA6F": "FAIL",
+    "11ycc28Dr4oepXoXW_NnL6": "FAIL",
+    "12TtYnsRH7R8kq19$bZFwV": "FAIL",
+    "12kDL1eWzET9Qm2diwFxeL": "FAIL",
+    "12pKvnM8rEghVj2eehBckA": "FAIL",
+    "13kU2WeeX43AmAN7yJpj7M": "FAIL",
+    "13lQ7MfpP9YQNh0Z31qoMP": "PASS",
+    "140c7DVn1Fdgh5_iO2DSKg": "PASS",
+    "14rAyAJ$L5nPK$yo6WYX5X": "FAIL",
+    "14tZx$UMb8cBHoti0zk1Nr": "FAIL",
+    "15D5L0A5L99eNxZZrhk3Pa": "FAIL",
+    "15m0CeBGfECerYsUDbEOge": "FAIL",
+    "16TvrQb8bFTPpj$qS6T5ri": "FAIL",
+    "171wovydf4b8htV6pg$TFJ": "FAIL",
+    "176JSQqvPCR9mZPbZYohue": "FAIL",
+    "178Zovd$P9MeTHI2jV$s2n": "PASS",
+    "17GhR_gATFhuBAeAn9fPma": "FAIL",
+    "187USFh2r5cOPBWBpNJgHJ": "FAIL",
+    "19iI2eJ35DvhstxdCyQr3B": "FAIL",
+    "1AjHEuqyLASxbhLNVsGq0u": "FAIL",
+    "1BecTfmYnDMvo6swvRkssx": "FAIL",
+    "1CNomnrdb3CeKqRVaml6Zj": "FAIL",
+    "1D3QrwQQnDpBzpUuSTr$BU": "FAIL",
+    "1D6XPjH$jCMBVPpXzrBrBh": "FAIL",
+    "1DGTGmOMj8AvihClKJPKCD": "FAIL",
+    "1DMKLKe45CzO6gemze$ha$": "FAIL",
+    "1DmcUaFzzFFhg92TJQnxyJ": "PASS",
+    "1DsH2dtvb1EQXXq4tfBtYg": "FAIL",
+    "1EL9JU43nABBdNk_W52fqh": "FAIL",
+    "1EgBW0IB95EeR9l7z9ma4W": "FAIL",
+    "1FtRH1k0bE4fyu_U9mJBmf": "PASS",
+    "1GOpmZWFHFPu8qESPn3F3y": "FAIL",
+    "1HDfKcH0v4VRSVJicriZF4": "FAIL",
+    "1HMWw8mcr1KOvkIr0tFQMU": "FAIL",
+    "1Hjs_P2aXCOPI7_$2kdF6v": "FAIL",
+    "1IYBmrd2H8ihMtKIvfnjz0": "FAIL",
+    "1Jl$pXjvz5zg9fEBTGRb9s": "FAIL",
+    "1KInL01tD6DQPBVoxre2dQ": "PASS",
+    "1LZHcsRev6lhsez4LMDFr$": "FAIL",
+    "1Le1BurSf8iQTApHN20xGM": "FAIL",
+    "1MAxgv_XP6ZQ97AQrkDyrt": "FAIL",
+    "1MMTbq1t93CfhQ63Tyks8n": "FAIL",
+    "1N$Oi2JN18FvfRlqLXpxqx": "FAIL",
+    "1O6tmJybvFcAq4a7J9rLAN": "FAIL",
+    "1PAxaJRu13gfudq_tpVBm7": "PASS",
+    "1PmQ6CQbzAMgXxD2pXWt3a": "FAIL",
+    "1QutPMQ5z6MggQuGh8QPeo": "FAIL",
+    "1RJVF591z4bOy_pjsU4XRe": "FAIL",
+    "1SPXkEO_f5xPavTXTLbPI$": "FAIL",
+    "1T2P9SD_v7pusuMZ3NUpjC": "FAIL",
+    "1ToOMg6mH3uPQ6JhObMAbP": "FAIL",
+    "1UCnFJQ7nDgAX31ppgw6Pa": "FAIL",
+    "1Uv0j9g_TDo9SZvipUwvCd": "FAIL",
+    "1V8Tq0OFj91OWiIb7OgssW": "FAIL",
+    "1WF0f7xan32xUC_zu0m2Yd": "FAIL",
+    "1WI7CxHKj8vQB6ZX1aG6wQ": "PASS",
+    "1X$gsMt2nFuv_fouZFh5_Z": "FAIL",
+    "1YZgYVVw9F0Qg_cyVJnVhp": "FAIL",
+    "1YmJTz8Sn4SxVWF6uxPIi6": "FAIL",
+    "1YokH0mfn7782tC$kkBV9N": "FAIL",
+    "1ZFLyNI$fDRgE2KgYahsry": "PASS",
+    "1ZvjfnAcr7VueX4qTg5Ajj": "FAIL",
+    "1_5gcKSrbEWfNgi3h_qdnx": "FAIL",
+    "1_nRsWg_f0XubfZfIIRP3k": "FAIL",
+    "1a0yXwaPr6bQS$tJIhLQr1": "FAIL",
+    "1aJ$Qkat1AFgC0aRnCKwoP": "FAIL",
+    "1bd$IrGA53LQPvMq9gVcx0": "FAIL",
+    "1btohEUvb9RxFSreiwC9NA": "FAIL",
+    "1cApy3tf55$ewMiOVVXpAY": "FAIL",
+    "1cjDN$L7j3xQ6006KWGjlJ": "FAIL",
+    "1ct3PC$Rf39OYRwaCfR2gz": "FAIL",
+    "1czSEvfOzE4Oi_LLlJxhyd": "FAIL",
+    "1d9kUW3zP0ggxxYmG2vPQM": "FAIL",
+    "1dnueTAkL0h8RlVLQtwd3w": "PASS",
+    "1donuLXK125fRkeWlAA8Cq": "FAIL",
+    "1drJr9gifENhdb9tpZx1m6": "FAIL",
+    "1dvN3gzSD4L9Bv2$zoJRLk": "PASS",
+    "1e$Zm7EmzAgRS0uBDNJlVg": "FAIL",
+    "1f7zMqweP0kuzgAoVzEWut": "FAIL",
+    "1f8696ukP6ngAHgpRZz3ju": "FAIL",
+    "1fI1NXTpj7BxFTmw5$kjhb": "FAIL",
+    "1fXWFMY$T5VwEu43MZumk6": "FAIL",
+    "1h4sXeQ3fCCQTfDg40kePC": "FAIL",
+    "1jTFg_BbD2_gRGTcr0jnVr": "FAIL",
+    "1jm08JDI1AxPr7MMlr69d8": "PASS",
+    "1k3S_FTjr5YgVNsOxgXfqg": "PASS",
+    "1ktZHnXqP81AONft3VUKlo": "PASS",
+    "1lOvmnURjBcPf07ELTOqCT": "FAIL",
+    "1m4nE1pPr2b8wIfR9a_VVL": "FAIL",
+    "1nalLUQ2z9_wBIkbXwMz6_": "FAIL",
+    "1nwCQp6CL4h9AJo0EXhJBj": "FAIL",
+    "1oUU4liMH32hV5EvVPxQjH": "FAIL",
+    "1oUqZKaXTFE9XEtTIlzoKi": "FAIL",
+    "1pPLUmJvHBYO$OdiNX3HUz": "FAIL",
+    "1q3tRNJXP28AT4_Y9XviYV": "FAIL",
+    "1qR9Yh4uT2M8QYv5il00VU": "FAIL",
+    "1rAoTfcZXDceLlFXNEmX1C": "FAIL",
+    "1rC9mTrqD7nRVVhL$0K1bF": "FAIL",
+    "1rfLYazSH8GBcQryKstIs3": "FAIL",
+    "1s39gsbh161QnI10muM$N9": "FAIL",
+    "1soUbpz7v1zxTj9qXJhloc": "FAIL",
+    "1teUYP1Rv0ZhB_2gzRilQR": "FAIL",
+    "1ty_8KokP6mQYlN4DZkOfx": "FAIL",
+    "1uxuNhGl5C28Agr6eD5Bmj": "FAIL",
+    "1vWdN2kyHCyOFb8jrE1QwS": "PASS",
+    "1wEE7IMAj3ZewoallFdW$w": "FAIL",
+    "1weVzahvb12Qj14QP5JtRt": "FAIL",
+    "1wlI6JqsLEOhCsZqoJuwxZ": "FAIL",
+    "1xfcxY2sf3LB1ysF5_X4I$": "FAIL",
+    "1xjGgwmzP23uthLfXurB67": "PASS",
+    "1zWpVk7Az3eeFDJEw36Ky9": "PASS",
+    "1zulTwZuvE8uDQG8i0rPWu": "FAIL",
+    "2$5nWI0fL8zwtrwndfa9MN": "PASS",
+    "2$G2$L_ZfD2xyYJh6wxmZd": "PASS",
+    "2$GgreKs5Auv1nDBFIDDQQ": "FAIL",
+    "2$V3GlXWDFa9ozTMOGOymq": "FAIL",
+    "2$o2jRMbz4Ug6JAhiXdSr5": "FAIL",
+    "2$y_vPdK50rvRCnxRgbax0": "FAIL",
+    "207c7$G7HAOg5y2_1xjv$F": "FAIL",
+    "20drR2J4r4bPUTTBVjW_Vz": "FAIL",
+    "2152K7A7j0Xhs5JOT$GaL4": "FAIL",
+    "21DYv1qCP5FOPMzDf2BdGU": "FAIL",
+    "21v6Lxsl1BCPpmriUOgAsP": "FAIL",
+    "23hLVZfJz6LAZH1fYDmUwS": "FAIL",
+    "251rxV64H62xIQNojyGRwU": "FAIL",
+    "25P1FLrhb43ONVrD2L840O": "FAIL",
+    "25iCNH$Vb5quMnNN$zdiEg": "FAIL",
+    "25jGa8wIHFKepyW_M4Ngs7": "FAIL",
+    "262iH081180RfRZcryzr7v": "FAIL",
+    "266hPy3$L5vfMXcAOOFF6p": "PASS",
+    "26_$0XSjr4qx6Hsbp36s4D": "PASS",
+    "26iMI7lnj4Rukyjg89OAF3": "PASS",
+    "26wG__yAf4jhBihTArGrfi": "FAIL",
+    "275N_u7Z9EtgoRNFproXEn": "FAIL",
+    "27b7kJ2C50Wxcp8woudHRw": "FAIL",
+    "27bh8yZhL8hPRD0H6aMxEY": "PASS",
+    "28KVDgny54GgQmudzivmSF": "FAIL",
+    "29ln2Cp8P9jBBVLpq36yJx": "FAIL",
+    "2AH9fQqwXE9O9QvwUR77zF": "FAIL",
+    "2ANGxgZInBiOwD5Faih5nH": "FAIL",
+    "2Ap4dwiajE799Gm9tGiJx1": "FAIL",
+    "2AtqXLL8bAsei5_CKwpj0y": "FAIL",
+    "2BAFeLAfrFmRqNR9mOZjZA": "FAIL",
+    "2BeulVMFHFJum3B9E9M$fY": "FAIL",
+    "2BidPHSyjAeQnxVo9HGHwm": "FAIL",
+    "2C60pqTzP8BR1K24Yag_n6": "FAIL",
+    "2CT4vuDHz80BzUCFoJ0LTI": "FAIL",
+    "2DaLEnOpD71xPKiE7SoDTP": "PASS",
+    "2EKQPtlE15r9nj5or9E3v0": "FAIL",
+    "2EqkVNVRnBUvQjRlN4tm$r": "PASS",
+    "2Fr_G_D5z2SQ4zYSECOkbO": "FAIL",
+    "2GfFhoq6r37vCpbSN6CZTL": "FAIL",
+    "2GoKiXXxrC7g4IPoyQPZ2t": "PASS",
+    "2Gq0QN14T6$e3J8hk70VQH": "FAIL",
+    "2IW6IWMcn9p9GSb$1bcM9y": "FAIL",
+    "2If2Aad390NwFBO7uQvqMr": "FAIL",
+    "2JBh8Xn6DDFfR$iL4REVIO": "FAIL",
+    "2Jqop0uBb9AxYtqSXLjzrD": "FAIL",
+    "2K7avqptP0rAzb1886J2AI": "FAIL",
+    "2KQzcnl4P108p1xYLp2BcG": "PASS",
+    "2KZzNKvwr9uRVfzB5TmmYh": "FAIL",
+    "2KiBBLKs133RJOEnn$kg25": "PASS",
+    "2M$dfAAj90C9cPQZXqCaMP": "FAIL",
+    "2NlbpQJhX57A98fAICSHEw": "FAIL",
+    "2O5ano1e1EJeQxf8IVwahY": "FAIL",
+    "2OeOjUpaH1bxNaxIEYZAXQ": "FAIL",
+    "2OraOVIKPAOg8rJoQjQczk": "FAIL",
+    "2Ot4pojY5A_AuSDtpUwI4i": "FAIL",
+    "2PEMzkDK9Dxum8sPRjDtq_": "FAIL",
+    "2PKnB$Yrb4QPj4dii4Mh9J": "FAIL",
+    "2Qc0XfkND1d86$Q97dSDkt": "PASS",
+    "2R58Jw87jDCevbnOC3rmac": "FAIL",
+    "2RXwC8nPLBKOSiamyBX0qt": "PASS",
+    "2RuuzaH1vFUwKXpU33GTyt": "FAIL",
+    "2ThtpyjZn4q8nYD1vikjMG": "FAIL",
+    "2VKgopOMr4PQnzIHA$Zbht": "FAIL",
+    "2VN0ufVPXBz91XSIqSEA4N": "FAIL",
+    "2VRR1TrGT6eBTc8nAX0QwP": "FAIL",
+    "2VSPey61T9RB_q$osXbLMV": "FAIL",
+    "2Vb0PGtxLAoxa0tjC07GCC": "FAIL",
+    "2VhjvgnFDDXBW8fTsJGXX_": "FAIL",
+    "2ViuBjcVj8z9LMZmOsdtUZ": "FAIL",
+    "2WU8Fxger4FOI4ySi472UL": "FAIL",
+    "2XH6N5hOT3yAuGpef5XEDg": "FAIL",
+    "2YIkXYWk12Ruf2QsE9cXTp": "FAIL",
+    "2YXmX7u6r4yOOh$kIa$Gd6": "PASS",
+    "2_US9yS$f6xgGifWmRr3ce": "FAIL",
+    "2_cZuNiRL9_POUhd7yFcwr": "FAIL",
+    "2_vRJL86PBTQqE3ySM6YFm": "FAIL",
+    "2aI12utMz8aQ3peDg2uVuG": "FAIL",
+    "2aVhmg2N92hhv4rjQpPXmo": "PASS",
+    "2b6PFyVHj5AwfHVP2cSS7T": "FAIL",
+    "2bJ1Gv3yL6nf$qJdsuPO4A": "FAIL",
+    "2blRi3iY12ng6i9rcsih4e": "FAIL",
+    "2boqH8yCb7me06TlnJm870": "PASS",
+    "2cb8c3os963f5n9Wjr4O99": "FAIL",
+    "2dnwTIzFTAD9hapAlqsr5S": "FAIL",
+    "2dyqlxLyzFvQOjQrGkU4$r": "FAIL",
+    "2ft6HbZKD5ePF2WR3Q2yMt": "FAIL",
+    "2hVrKM8Vv2Xxs7m9ITda8L": "PASS",
+    "2heiRUoHL5xvP8RwhYL$bG": "FAIL",
+    "2i$ImWrU5CrPuyb0cxLRsY": "FAIL",
+    "2i1Z9kKWv4ie2N0CBoZWie": "FAIL",
+    "2jJseFS1L1B8boC45FrAL7": "FAIL",
+    "2kU5XJFAf4Xe01xgsDZElh": "FAIL",
+    "2lIYJtavL8Qgz5F0uXNHL_": "FAIL",
+    "2lRzoejMfDL9Jj8LLmEFKf": "FAIL",
+    "2lVoJcfoDAWB0KDozjmBha": "FAIL",
+    "2lkytCG9rD3O3IXV5k3j5H": "FAIL",
+    "2lt7ZnqNjDs9E2NE_fHF_4": "FAIL",
+    "2m0Oxn1sr74ODbW_x3jNoG": "FAIL",
+    "2mNENoxwD4MQMQY_gKi$v7": "PASS",
+    "2nEtJExy5EkR8dxB8J7WF8": "FAIL",
+    "2nrdDYGJ9BhvAHtSOD2bVI": "FAIL",
+    "2oDI2uiQHDBf119Ffbq8pl": "FAIL",
+    "2oT9F5t_D3r81DfUpoY23W": "FAIL",
+    "2okwPp_551sf2xuZcfRIdG": "FAIL",
+    "2pAvanoIzEV8kE6N3CBDLL": "FAIL",
+    "2pFYENFv91ygvyAeZOYi93": "FAIL",
+    "2qQEfBo11B5RTiiCq7k79L": "FAIL",
+    "2qY72vI$D0SenCZx1z6HDK": "PASS",
+    "2qunupXbPCmxdwcf_gKob5": "FAIL",
+    "2ri5H4RCf2ZuCMpo1Ccl52": "PASS",
+    "2swgU59GXB_xDlq7OzgSpv": "FAIL",
+    "2tncJiXU52xOIwnI4dHkq$": "PASS",
+    "2tt4s65cb2fgd3alKSa46a": "FAIL",
+    "2tzwPzboDCgRcvSj$vm6HZ": "FAIL",
+    "2u4Y9RrS9E7e46nkx$KtkD": "FAIL",
+    "2u5XGmt4D2bRNIEXQ9IBsW": "FAIL",
+    "2uTeXyy8XDYvkI0uWy38WP": "FAIL",
+    "2vFhUBbYLDEuToK036Hl$0": "FAIL",
+    "2vImyoNwX9iBXoTp4G3gAg": "PASS",
+    "2wNrfbWo5F3AXCQjcATu9n": "PASS",
+    "2xD3QGjx90oAGyybkEra8b": "PASS",
+    "2zIan9UMbEDv$MtEuXRGaI": "FAIL",
+    "2zVo1VURr81P4zGfpGNjd9": "FAIL",
+    "2zilQ_m$j83PfsTQ$4$xs$": "FAIL",
+    "2zx7EWNY98lOv3r2x2yc76": "FAIL",
+    "305UsCgOr5d9qsncJ$8RVN": "FAIL",
+    "30Awpp2EX78eiSUY7FvQt3": "PASS",
+    "31CBV10iDANhFbENO3uY2l": "FAIL",
+    "31JhVzvWf3EhVtVaBbU7f1": "FAIL",
+    "32FFCa8B198P$NJwP8hwgu": "FAIL",
+    "32SyG2XEDDDhMCQmPD9LrL": "FAIL",
+    "33HuU010bEdBTNffikwk7C": "FAIL",
+    "359iTTnTv3NfCfWlSW9JFd": "FAIL",
+    "35s4FHAyjB4RwDF8g0$JwM": "FAIL",
+    "36DzLjnuL9XA2dudd2r92m": "FAIL",
+    "36MmH3zZH16QTwC46Vbk$D": "FAIL",
+    "36ovl7bSP7_8ZDfLgjHA1Q": "FAIL",
+    "37gZNsSDL4iu1S6Wor3ZPj": "FAIL",
+    "382pcuNAr1tep31IH5fMSU": "FAIL",
+    "38X2u$b_51PQbXrbF3UXq0": "PASS",
+    "39Lqndo0HD0PPTIv$0QRef": "FAIL",
+    "39e5HG9Mz5bhpeErZLhRP4": "PASS",
+    "39mUraBw56_gD25yTzysZW": "FAIL",
+    "3BDarYIf1EXRuu7o6glIV$": "FAIL",
+    "3BOPbUZ1T5Ug2zkGHwafoi": "FAIL",
+    "3BudmayvDEg9diXrrDKJ0K": "FAIL",
+    "3Ch3PayTPB6BbnIbMg0VDz": "FAIL",
+    "3D1M31qn1D9eCfALMUlAC6": "FAIL",
+    "3Elkb_Klj4kOU0Qc6PaizN": "FAIL",
+    "3FUHlAm49BC88X$DRC3IqI": "FAIL",
+    "3G$_TtmoH0i97AYiv2eBBu": "PASS",
+    "3G7ktHYG96gQbiZjzEbR8N": "FAIL",
+    "3H7pBT9U13kuEq2qj2wzQk": "FAIL",
+    "3I96DDOZX58xC3RmUZssQx": "FAIL",
+    "3IAsrlzln2x9CGCwGk5aBc": "FAIL",
+    "3IRXQx1CX8oxFXhqXHMp_E": "FAIL",
+    "3IkJ5kYzHBoxsDRsZeWtto": "FAIL",
+    "3IqSuYSFHADuKaAsofIt9x": "FAIL",
+    "3J3WcMT$r8Zhg8fsSyC9$A": "FAIL",
+    "3KMMm8oqPDGRsQcfPPC6kS": "FAIL",
+    "3LHBKM1sPCkOXvRtwp$pev": "FAIL",
+    "3LppQIb2j30xblkm5GtTTV": "PASS",
+    "3MkalSSaPB_h_tTcRHxH9A": "FAIL",
+    "3MrGY57rjE4Owj5UJO3Umk": "FAIL",
+    "3N5xNVjr9Ehhxk6BUdGUAs": "FAIL",
+    "3NI6Sp$yf87eKCx0T$FWj3": "FAIL",
+    "3OOESiHE9Cng4Bb4pE0UY6": "FAIL",
+    "3OgInA0dD3qBERzneS1WG0": "FAIL",
+    "3QJnmlRqz5_fVrar74KrOo": "FAIL",
+    "3Qds1Ttm57nPXC1iJ$aE$M": "FAIL",
+    "3Qw1ZJI6n0$OYdAwY3sPY0": "FAIL",
+    "3RaVPvaOf64eZBU6WKpwMU": "PASS",
+    "3RrFw8EAf1GRoBD_pVEc41": "FAIL",
+    "3SgAlyy0D4NQuzsMpXqOUR": "FAIL",
+    "3SinmO3Pj0_fGoIba5Tpbf": "FAIL",
+    "3TvWm44N9F5RIa$fhkiYVg": "FAIL",
+    "3UNWn7XCf1hwvlPusg1icu": "FAIL",
+    "3UPz4qnhz6dR_hTWbylJYM": "PASS",
+    "3V4FbFEIL7Texif7yDL7jp": "FAIL",
+    "3V_oBYi792a9_YZErx8HIx": "FAIL",
+    "3VeGPWRHL5QfWdPbnVK9h3": "FAIL",
+    "3W9VqGRgr09fcNbT79krnR": "FAIL",
+    "3WXd7RsH9CT9CRRwuhBxrU": "PASS",
+    "3Wp4aZh5H6qPRVFtOem3_A": "FAIL",
+    "3XlDiPbzT5wuWLtvoN9ad0": "FAIL",
+    "3Y6cgtY0rEBQUJPUx_aPRF": "PASS",
+    "3YCmX8dc506hVi08zLmpbh": "FAIL",
+    "3YghERoAfAiunwtuKsXi69": "FAIL",
+    "3YkS_khHDAjAeJXiOfwXwm": "FAIL",
+    "3ZKKU$3lPCq8PEyTGjaGdU": "PASS",
+    "3ZVnVKy4D1jBZcLcCGVgY2": "FAIL",
+    "3b$SMEeUf10eNHEHoPH0ta": "FAIL",
+    "3bpb$MQq50M8aknXg_9Fdp": "FAIL",
+    "3cLBPtEz1A0uWp58VoUCJm": "FAIL",
+    "3chKGarqH0KuFJTVdW349F": "FAIL",
+    "3cjGEZBqP9GQh7eyumO1LZ": "FAIL",
+    "3dRgtW3QbEsQYyv9xoJ71y": "FAIL",
+    "3dxXVt7mz5yQHgR4nKqxCm": "FAIL",
+    "3fcHQBt3H23QcTv6yhJwzo": "FAIL",
+    "3fi85$zLn2ghOSoxhxMJYO": "FAIL",
+    "3h8HoOyCv3LAYN5dc$49X5": "FAIL",
+    "3hlYOSdNT3hRiePew15h4T": "FAIL",
+    "3iKlrwnUHCxxRo4aLgJC8B": "FAIL",
+    "3jpBco5Of4g9v0dMt1k4Gs": "FAIL",
+    "3kTNDXm3L6jgBFZ2taLcKJ": "PASS",
+    "3kikpo5Zf9XQWnNfyl$b3h": "FAIL",
+    "3lE1SkMIbDaBDRbQV9PuSz": "FAIL",
+    "3lVtU7tjD3YOCLUfqajZ2A": "PASS",
+    "3la5L9LMH0juxb_CD9s6XA": "FAIL",
+    "3lsMx$fx16hhyCY_qE6IRh": "FAIL",
+    "3mgONbLNL2DxrM$kkxuZbY": "FAIL",
+    "3nUiG96vjAwPUR6jFmv$ZI": "PASS",
+    "3oAFxBcTz9oeraTpYdYjN5": "FAIL",
+    "3oJTPYwxj7P9M9aWsDpJCD": "FAIL",
+    "3p9J1sHcf4ju8QNF1IhRNV": "FAIL",
+    "3qU0EkhG9CDeH0fDWtriF3": "FAIL",
+    "3qYGwE1BDBbP2FWtfJUDNa": "PASS",
+    "3rLHaGT8f4ffCX220B$XUw": "FAIL",
+    "3rQ8vxEjf7ChTPNEIHZubP": "FAIL",
+    "3sicsb7Rv7vOSpwjkHwdXP": "FAIL",
+    "3tB9bs0jH8kvDCXNaFXLU4": "FAIL",
+    "3to0Qbzn57AgGEPgcKjSko": "FAIL",
+    "3topRXa9T1svryvk0HDA1V": "PASS",
+    "3upcShrCbFfh0jm4mYUUdu": "PASS",
+    "3v$Jw_gpr6OOS8FFzqFDOt": "FAIL",
+    "3vBRjYZSX1a8J6d0CTn4Yh": "PASS",
+    "3vVPMVKpv8WR4t1AhJIyPH": "FAIL",
+    "3vqhA9V$zD8Ri_tijsQ9Uy": "PASS",
+    "3vvdwTEwn8XfzKTKW82ej4": "FAIL",
+    "3wi$IxEnzE7PY_Fz$GwcQX": "FAIL",
+    "3wks5cHiv9puC78stid7dq": "FAIL",
+    "3xZl0Z8zH6Few7zjaPUgW9": "FAIL",
+    "3xkLH3xAf9Qvv7jXLTD0bw": "FAIL",
+    "3zP$yy82X1zQpQLI8ob4xL": "FAIL",
+    "3ztvEc4nv0AQG9DRef3G4g": "FAIL"
+  },
+  "notes": "Doors and Windows on 464 IfcDoor or IfcWindow: {'FAIL': 390, 'PASS': 74}.",
+  "clause": "BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_schependomlaan_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 464,
+    "ifc_sha256": "2c3565ca1904f2aa61adab92024cf3755b2c5b21a498144d3094d7cb58cebec7",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Doors and Windows",
+      "message": null,
+      "report_file": "ec3_schependomlaan_check.xlsx",
+      "report_sha256": "b954300e9bca700327da74ef5b8e13649d974af6b257bbfe29b884cbdde0708a",
+      "rule_issues": 9,
+      "matching_issues": 9
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$CHzFOKD96AwIJnRtjmCz": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0$bCLIu6XFZvKNAS5U2$M5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0$vj6GrA15b852nxv8ecYB": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "012S6Z0qLCRuoYXSZ2tygw": {
+      "name": "merk A3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01z1iheQT4$8X5aY0_r4QJ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "02VFt8mFjD7RYPk4wtj6oc": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "02v5nA3u16Nh8SnTLbZVnM": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "03KwpgDxXCQBYi7KkY7sYB": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "03aP3tMUjC5voZmp9koxhs": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "03lGFt1VjBDe6syvgmNFAy": {
+      "name": "merk B1sp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "04E1PaUW1Fze4qITB_nFaa": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "05CYtgzRz4DxcXy88RuGvo": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "05Whcg$392JeMCX54BugRl": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "06_o2t73nBXvUfWV0NnaRj": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "06lQ_SRDbDyuiUF0YIGOKi": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "073$0OxmvEMu0iJzPT4cfg": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "08IQ8vQ6n73vV7LBrwxuZu": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "09NbJFNdj9fxN2xh$EA6wX": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "09bCBGNx5F8xAq8JjO37a4": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "09l8RUnHH77g7h7SXJ62Iv": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0B9KdcSuf3jh8POLbkPzQ4": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0B9hE_gGb05uoY$Fs9k827": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0Cx5eRd2fAe9wmZ82jh8FB": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0DE9eeknn1UwV6HdBQLtSn": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0EHGvEFwz0_OPzoNWThJC6": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0ETp$wstn6uO7g6ZydQW6K": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0EWFPIrsv7_9lhqHOpPwsU": {
+      "name": "merk E5-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0FcHfq3eXDUvB1x$PxjHW5": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Fcj$qK_jDIx0Clu51aeRJ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0FjOoBbcP2FxJiAEY$_Ky$": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0G1Gjz4oHDNe$dN2BBokLe": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0GSlUrIePDQRL93MVCRQ89": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0HKXdsxQDBXehvvnIH9Bj2": {
+      "name": "merk E2-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0HTjC8kFv6W9Fd4e3r5fjg": {
+      "name": "D2L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0Hdk5PAnP3pwtj9xXKmFBe": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "0HiNZtHwPCJuXK3YsKm49z": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0If$3rc9P57xz4jVBVFnR1": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0IzB0Fhx1E3e$Sm$$GKqe7": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "0JzQ9ARmz4J9VOnJDh2nWI": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0K1kgDm1jFHfoPfMpxkAe5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0KGCtyQFv4av1Wdj6buj7k": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0KhPVJu4P3A9E4zoWFJz0w": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0LbBET9Yz9egUjXX_5FIas": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0MO3NBPw1FofnfwKUa2odt": {
+      "name": "merk A5",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0MV6oKxM90DANOdrZ1T$9f": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0MXxM0JgP2KuGUWBtQY80N": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0NDCKOxXf8aw$lz$AzvqxX": {
+      "name": "merk Csp-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0NWv8IgP5Ch9a8sHZoyivA": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0NZRpUHUn8f9KjPRtTRauP": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0Nx0E1OHf1DuxTjjuUm2Ac": {
+      "name": "merk B1sp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0O3slHyAT0WgNB1xnKYnaE": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0OL2bP1B5Ezfgv8L13MayF": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "0REpZXGX116vUWlC_COT3l": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0U9_x2D65DmwQy5m_Q35Ne": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0Ud441PPT0DRsLxYPFfaWG": {
+      "name": "merk N",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0WcADPJA571PyQI1eSlkC4": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0WtDl5Fx1CGO$F0RJCi8b$": {
+      "name": "merk B1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0WwnDCcYLFJx3r5wMCkNbs": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "0X248I49P2ruJd$STte42p": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0XEOt5SHT7euOAUEqbQw0S": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0YHiCuhWH8Qh_HTW9vOiHy": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0YMesrJsv8ZAfgcOQkjCTb": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0Yp5qy$a5C1OAOYHZOB8II": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0ZNb2THTz00eu1RAEsgAJm": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0ZU09EWLf0fQUCDcc5uEu_": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0_$NSu2evBVeFZQgjiEuAx": {
+      "name": "merk C-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0_AyfC57H5ZhnJFKbaFPKq": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "0_Jo1N31L7z9swemKCMYlB": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0_f7yvHAD4nwZoIARNjl1v": {
+      "name": "dakkoepel 1000x",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "04 dak"
+      ]
+    },
+    "0_nanN5VH5eARTiW6lUQd3": {
+      "name": "merk G",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0ci9nEgpD5hOOJ58LmeO5E": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0co_SMokj9s9Ux6ep1NuBV": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0d06TNXPD9kQ6kfDgFvSX4": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0e582X10f8qQO1eTOH2xCn": {
+      "name": "dakkoepel 1000x",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0eASoFkCvD_OTC_ct3cBps": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0eUeiTKgL8z9I4w$AnfEgY": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0etZemLbbAog_wCl27YohR": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0fKwIjRKL2ThQh97F1hsVV": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0fQEU5rGPBq9vOpiEoyBBR": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0ghxYtUBn0pv_pxPdAfhme": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0h4oGef9T1PgTelA09ZLn2": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0hLbfgnI116fYrSi5yltYv": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0ijouLVuz4qOaWI8eCDmYZ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0k6mb7kcX8yedFIwED8qcY": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0l79Hol6v6XBNPQpgDR__D": {
+      "name": "merk L-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0m7Z8$vfnDLxF9ZlRdjI6b": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0mLDe0vvD7lQPHmwh__YTZ": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0mPuDc5FT2YhFju_2TJR5L": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0mtRbwfO1BTwxiSzggSc8I": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0oXb8$CCzDygbz5_8Oxzxv": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0pZslPSAb8jBEsesxVZzu0": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0paFAbnyj3DQz4eYs1LQRb": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0qOSzz4qrCIO8I0BFBBwg9": {
+      "name": "velux K08",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "0r1tRl0qv5G9URrsYopY0P": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0r4F5aYpjDjepmJs0NROFT": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0rEPlH2fP8YQ_q3GiazsFo": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0rOlpuy6fEpfuuqvscj$PW": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0rgvpCJSX1cOzYjSKRiBzu": {
+      "name": "merk G",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0sS$ynhr12VfVoUHJgHL8n": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0tvRrpQa9Brgk0PO3rZ7pS": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0w3wabzRLAz99bhnECWj79": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "0w67SppZj5MvHkxZnft01E": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "0wAyj9PWL7guJFQHdw7ccc": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0xlRUG5ID5LhgTY4CombXh": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0xmEoRha9E$xhaP7dhI3oe": {
+      "name": "merk K",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0xrZguOJ55xx5lucOklTa9": {
+      "name": "D7L",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0y9v8B7Jz8XQeHm3h61$Xt": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0yGGfH85nFPvINarcAfBNX": {
+      "name": "merk E1-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0yy1u9ooTD5vShTp5wGvUE": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0zCkMWkdv5GfPfhUIwPa9J": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "0zufCFef19dhrSAn7n7kDY": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "0zzou4R_11kPXaS0hC0pre": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1$7$AzEPH8hxqREDEXC9Ab": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "10Z6sfVZn3GfZCDuDGVlAZ": {
+      "name": "merk N",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "10rQERlhDCbxXJCT$_92RE": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "11$JW3xLX2xA3HAKDO$V4x": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "11RySdoR58kP5miKc_WA6F": {
+      "name": "velux K08",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "11ycc28Dr4oepXoXW_NnL6": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "12TtYnsRH7R8kq19$bZFwV": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "12kDL1eWzET9Qm2diwFxeL": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "12pKvnM8rEghVj2eehBckA": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "13kU2WeeX43AmAN7yJpj7M": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "13lQ7MfpP9YQNh0Z31qoMP": {
+      "name": "merk E2-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "140c7DVn1Fdgh5_iO2DSKg": {
+      "name": "merk E5-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14rAyAJ$L5nPK$yo6WYX5X": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "14tZx$UMb8cBHoti0zk1Nr": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "15D5L0A5L99eNxZZrhk3Pa": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "15m0CeBGfECerYsUDbEOge": {
+      "name": "velux K08",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "16TvrQb8bFTPpj$qS6T5ri": {
+      "name": "merk G",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "171wovydf4b8htV6pg$TFJ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "176JSQqvPCR9mZPbZYohue": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "178Zovd$P9MeTHI2jV$s2n": {
+      "name": "merk Dsp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "17GhR_gATFhuBAeAn9fPma": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "187USFh2r5cOPBWBpNJgHJ": {
+      "name": "dakkoepel 1000x",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "04 dak"
+      ]
+    },
+    "19iI2eJ35DvhstxdCyQr3B": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1AjHEuqyLASxbhLNVsGq0u": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "1BecTfmYnDMvo6swvRkssx": {
+      "name": "merk Csp",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1CNomnrdb3CeKqRVaml6Zj": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1D3QrwQQnDpBzpUuSTr$BU": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1D6XPjH$jCMBVPpXzrBrBh": {
+      "name": "merk Csp-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1DGTGmOMj8AvihClKJPKCD": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1DMKLKe45CzO6gemze$ha$": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1DmcUaFzzFFhg92TJQnxyJ": {
+      "name": "merk B1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1DsH2dtvb1EQXXq4tfBtYg": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1EL9JU43nABBdNk_W52fqh": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1EgBW0IB95EeR9l7z9ma4W": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1FtRH1k0bE4fyu_U9mJBmf": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1GOpmZWFHFPu8qESPn3F3y": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1HDfKcH0v4VRSVJicriZF4": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1HMWw8mcr1KOvkIr0tFQMU": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1Hjs_P2aXCOPI7_$2kdF6v": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1IYBmrd2H8ihMtKIvfnjz0": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1Jl$pXjvz5zg9fEBTGRb9s": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1KInL01tD6DQPBVoxre2dQ": {
+      "name": "merk B1-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1LZHcsRev6lhsez4LMDFr$": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1Le1BurSf8iQTApHN20xGM": {
+      "name": "D2L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1MAxgv_XP6ZQ97AQrkDyrt": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1MMTbq1t93CfhQ63Tyks8n": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1N$Oi2JN18FvfRlqLXpxqx": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1O6tmJybvFcAq4a7J9rLAN": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1PAxaJRu13gfudq_tpVBm7": {
+      "name": "merk M",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1PmQ6CQbzAMgXxD2pXWt3a": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1QutPMQ5z6MggQuGh8QPeo": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1RJVF591z4bOy_pjsU4XRe": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1SPXkEO_f5xPavTXTLbPI$": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1T2P9SD_v7pusuMZ3NUpjC": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1ToOMg6mH3uPQ6JhObMAbP": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1UCnFJQ7nDgAX31ppgw6Pa": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1Uv0j9g_TDo9SZvipUwvCd": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1V8Tq0OFj91OWiIb7OgssW": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1WF0f7xan32xUC_zu0m2Yd": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1WI7CxHKj8vQB6ZX1aG6wQ": {
+      "name": "merk B1sp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1X$gsMt2nFuv_fouZFh5_Z": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1YZgYVVw9F0Qg_cyVJnVhp": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1YmJTz8Sn4SxVWF6uxPIi6": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1YokH0mfn7782tC$kkBV9N": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1ZFLyNI$fDRgE2KgYahsry": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ZvjfnAcr7VueX4qTg5Ajj": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1_5gcKSrbEWfNgi3h_qdnx": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1_nRsWg_f0XubfZfIIRP3k": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1a0yXwaPr6bQS$tJIhLQr1": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1aJ$Qkat1AFgC0aRnCKwoP": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1bd$IrGA53LQPvMq9gVcx0": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1btohEUvb9RxFSreiwC9NA": {
+      "name": "merk A2",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1cApy3tf55$ewMiOVVXpAY": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1cjDN$L7j3xQ6006KWGjlJ": {
+      "name": "D2L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1ct3PC$Rf39OYRwaCfR2gz": {
+      "name": "D2L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "1czSEvfOzE4Oi_LLlJxhyd": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1d9kUW3zP0ggxxYmG2vPQM": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1dnueTAkL0h8RlVLQtwd3w": {
+      "name": "merk A1sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1donuLXK125fRkeWlAA8Cq": {
+      "name": "D4R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1drJr9gifENhdb9tpZx1m6": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1dvN3gzSD4L9Bv2$zoJRLk": {
+      "name": "merk B1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1e$Zm7EmzAgRS0uBDNJlVg": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1f7zMqweP0kuzgAoVzEWut": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1f8696ukP6ngAHgpRZz3ju": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "1fI1NXTpj7BxFTmw5$kjhb": {
+      "name": "merk C",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1fXWFMY$T5VwEu43MZumk6": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1h4sXeQ3fCCQTfDg40kePC": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1jTFg_BbD2_gRGTcr0jnVr": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1jm08JDI1AxPr7MMlr69d8": {
+      "name": "merk E3-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1k3S_FTjr5YgVNsOxgXfqg": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ktZHnXqP81AONft3VUKlo": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1lOvmnURjBcPf07ELTOqCT": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1m4nE1pPr2b8wIfR9a_VVL": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1nalLUQ2z9_wBIkbXwMz6_": {
+      "name": "merk Lsp-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1nwCQp6CL4h9AJo0EXhJBj": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1oUU4liMH32hV5EvVPxQjH": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1oUqZKaXTFE9XEtTIlzoKi": {
+      "name": "dakkoepel 1000x",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "04 dak"
+      ]
+    },
+    "1pPLUmJvHBYO$OdiNX3HUz": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1q3tRNJXP28AT4_Y9XviYV": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1qR9Yh4uT2M8QYv5il00VU": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1rAoTfcZXDceLlFXNEmX1C": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1rC9mTrqD7nRVVhL$0K1bF": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1rfLYazSH8GBcQryKstIs3": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1s39gsbh161QnI10muM$N9": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1soUbpz7v1zxTj9qXJhloc": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1teUYP1Rv0ZhB_2gzRilQR": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1ty_8KokP6mQYlN4DZkOfx": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1uxuNhGl5C28Agr6eD5Bmj": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "1vWdN2kyHCyOFb8jrE1QwS": {
+      "name": "merk Jsp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1wEE7IMAj3ZewoallFdW$w": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1weVzahvb12Qj14QP5JtRt": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1wlI6JqsLEOhCsZqoJuwxZ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "1xfcxY2sf3LB1ysF5_X4I$": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "1xjGgwmzP23uthLfXurB67": {
+      "name": "merk A",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zWpVk7Az3eeFDJEw36Ky9": {
+      "name": "merk E1-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zulTwZuvE8uDQG8i0rPWu": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2$5nWI0fL8zwtrwndfa9MN": {
+      "name": "merk B2-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2$G2$L_ZfD2xyYJh6wxmZd": {
+      "name": "merk B2sp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2$GgreKs5Auv1nDBFIDDQQ": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2$V3GlXWDFa9ozTMOGOymq": {
+      "name": "merk C-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2$o2jRMbz4Ug6JAhiXdSr5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2$y_vPdK50rvRCnxRgbax0": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "207c7$G7HAOg5y2_1xjv$F": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "20drR2J4r4bPUTTBVjW_Vz": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2152K7A7j0Xhs5JOT$GaL4": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "21DYv1qCP5FOPMzDf2BdGU": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "21v6Lxsl1BCPpmriUOgAsP": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "23hLVZfJz6LAZH1fYDmUwS": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "251rxV64H62xIQNojyGRwU": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "25P1FLrhb43ONVrD2L840O": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "25iCNH$Vb5quMnNN$zdiEg": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "25jGa8wIHFKepyW_M4Ngs7": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "262iH081180RfRZcryzr7v": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "266hPy3$L5vfMXcAOOFF6p": {
+      "name": "merk Jsp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "26_$0XSjr4qx6Hsbp36s4D": {
+      "name": "D8R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "26iMI7lnj4Rukyjg89OAF3": {
+      "name": "merk B1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "26wG__yAf4jhBihTArGrfi": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "275N_u7Z9EtgoRNFproXEn": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "27b7kJ2C50Wxcp8woudHRw": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "27bh8yZhL8hPRD0H6aMxEY": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "28KVDgny54GgQmudzivmSF": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "29ln2Cp8P9jBBVLpq36yJx": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2AH9fQqwXE9O9QvwUR77zF": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2ANGxgZInBiOwD5Faih5nH": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2Ap4dwiajE799Gm9tGiJx1": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2AtqXLL8bAsei5_CKwpj0y": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2BAFeLAfrFmRqNR9mOZjZA": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2BeulVMFHFJum3B9E9M$fY": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2BidPHSyjAeQnxVo9HGHwm": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2C60pqTzP8BR1K24Yag_n6": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2CT4vuDHz80BzUCFoJ0LTI": {
+      "name": "merk C-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2DaLEnOpD71xPKiE7SoDTP": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2EKQPtlE15r9nj5or9E3v0": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2EqkVNVRnBUvQjRlN4tm$r": {
+      "name": "merk J",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Fr_G_D5z2SQ4zYSECOkbO": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2GfFhoq6r37vCpbSN6CZTL": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2GoKiXXxrC7g4IPoyQPZ2t": {
+      "name": "merk J",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Gq0QN14T6$e3J8hk70VQH": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2IW6IWMcn9p9GSb$1bcM9y": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2If2Aad390NwFBO7uQvqMr": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2JBh8Xn6DDFfR$iL4REVIO": {
+      "name": "merk Csp",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2Jqop0uBb9AxYtqSXLjzrD": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "2K7avqptP0rAzb1886J2AI": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2KQzcnl4P108p1xYLp2BcG": {
+      "name": "merk A2sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2KZzNKvwr9uRVfzB5TmmYh": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2KiBBLKs133RJOEnn$kg25": {
+      "name": "merk Dsp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2M$dfAAj90C9cPQZXqCaMP": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2NlbpQJhX57A98fAICSHEw": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2O5ano1e1EJeQxf8IVwahY": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2OeOjUpaH1bxNaxIEYZAXQ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2OraOVIKPAOg8rJoQjQczk": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2Ot4pojY5A_AuSDtpUwI4i": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2PEMzkDK9Dxum8sPRjDtq_": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "2PKnB$Yrb4QPj4dii4Mh9J": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2Qc0XfkND1d86$Q97dSDkt": {
+      "name": "merk B2-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2R58Jw87jDCevbnOC3rmac": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2RXwC8nPLBKOSiamyBX0qt": {
+      "name": "merk B1-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2RuuzaH1vFUwKXpU33GTyt": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2ThtpyjZn4q8nYD1vikjMG": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2VKgopOMr4PQnzIHA$Zbht": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2VN0ufVPXBz91XSIqSEA4N": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2VRR1TrGT6eBTc8nAX0QwP": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2VSPey61T9RB_q$osXbLMV": {
+      "name": "merk C",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2Vb0PGtxLAoxa0tjC07GCC": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2VhjvgnFDDXBW8fTsJGXX_": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2ViuBjcVj8z9LMZmOsdtUZ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2WU8Fxger4FOI4ySi472UL": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2XH6N5hOT3yAuGpef5XEDg": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2YIkXYWk12Ruf2QsE9cXTp": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2YXmX7u6r4yOOh$kIa$Gd6": {
+      "name": "merk M",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_US9yS$f6xgGifWmRr3ce": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2_cZuNiRL9_POUhd7yFcwr": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2_vRJL86PBTQqE3ySM6YFm": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2aI12utMz8aQ3peDg2uVuG": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2aVhmg2N92hhv4rjQpPXmo": {
+      "name": "merk B1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2b6PFyVHj5AwfHVP2cSS7T": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2bJ1Gv3yL6nf$qJdsuPO4A": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2blRi3iY12ng6i9rcsih4e": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2boqH8yCb7me06TlnJm870": {
+      "name": "merk D",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2cb8c3os963f5n9Wjr4O99": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2dnwTIzFTAD9hapAlqsr5S": {
+      "name": "merk N",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2dyqlxLyzFvQOjQrGkU4$r": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2ft6HbZKD5ePF2WR3Q2yMt": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2hVrKM8Vv2Xxs7m9ITda8L": {
+      "name": "merk F-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2heiRUoHL5xvP8RwhYL$bG": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2i$ImWrU5CrPuyb0cxLRsY": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2i1Z9kKWv4ie2N0CBoZWie": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2jJseFS1L1B8boC45FrAL7": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2kU5XJFAf4Xe01xgsDZElh": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2lIYJtavL8Qgz5F0uXNHL_": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2lRzoejMfDL9Jj8LLmEFKf": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2lVoJcfoDAWB0KDozjmBha": {
+      "name": "D6L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2lkytCG9rD3O3IXV5k3j5H": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2lt7ZnqNjDs9E2NE_fHF_4": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2m0Oxn1sr74ODbW_x3jNoG": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2mNENoxwD4MQMQY_gKi$v7": {
+      "name": "D7L",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2nEtJExy5EkR8dxB8J7WF8": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2nrdDYGJ9BhvAHtSOD2bVI": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2oDI2uiQHDBf119Ffbq8pl": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2oT9F5t_D3r81DfUpoY23W": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2okwPp_551sf2xuZcfRIdG": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2pAvanoIzEV8kE6N3CBDLL": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2pFYENFv91ygvyAeZOYi93": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2qQEfBo11B5RTiiCq7k79L": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2qY72vI$D0SenCZx1z6HDK": {
+      "name": "merk E4-R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qunupXbPCmxdwcf_gKob5": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2ri5H4RCf2ZuCMpo1Ccl52": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2swgU59GXB_xDlq7OzgSpv": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2tncJiXU52xOIwnI4dHkq$": {
+      "name": "merk B1-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2tt4s65cb2fgd3alKSa46a": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2tzwPzboDCgRcvSj$vm6HZ": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2u4Y9RrS9E7e46nkx$KtkD": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2u5XGmt4D2bRNIEXQ9IBsW": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2uTeXyy8XDYvkI0uWy38WP": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "2vFhUBbYLDEuToK036Hl$0": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "2vImyoNwX9iBXoTp4G3gAg": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2wNrfbWo5F3AXCQjcATu9n": {
+      "name": "D8R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2xD3QGjx90oAGyybkEra8b": {
+      "name": "merk B1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2zIan9UMbEDv$MtEuXRGaI": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "2zVo1VURr81P4zGfpGNjd9": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2zilQ_m$j83PfsTQ$4$xs$": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "2zx7EWNY98lOv3r2x2yc76": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "305UsCgOr5d9qsncJ$8RVN": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "30Awpp2EX78eiSUY7FvQt3": {
+      "name": "merk Ksp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "31CBV10iDANhFbENO3uY2l": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "31JhVzvWf3EhVtVaBbU7f1": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "32FFCa8B198P$NJwP8hwgu": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "32SyG2XEDDDhMCQmPD9LrL": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "33HuU010bEdBTNffikwk7C": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "359iTTnTv3NfCfWlSW9JFd": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "35s4FHAyjB4RwDF8g0$JwM": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "36DzLjnuL9XA2dudd2r92m": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "36MmH3zZH16QTwC46Vbk$D": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "36ovl7bSP7_8ZDfLgjHA1Q": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "37gZNsSDL4iu1S6Wor3ZPj": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "382pcuNAr1tep31IH5fMSU": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "38X2u$b_51PQbXrbF3UXq0": {
+      "name": "merk A6",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "39Lqndo0HD0PPTIv$0QRef": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "39e5HG9Mz5bhpeErZLhRP4": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "39mUraBw56_gD25yTzysZW": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3BDarYIf1EXRuu7o6glIV$": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3BOPbUZ1T5Ug2zkGHwafoi": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3BudmayvDEg9diXrrDKJ0K": {
+      "name": "merk Lsp-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3Ch3PayTPB6BbnIbMg0VDz": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3D1M31qn1D9eCfALMUlAC6": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3Elkb_Klj4kOU0Qc6PaizN": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3FUHlAm49BC88X$DRC3IqI": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3G$_TtmoH0i97AYiv2eBBu": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3G7ktHYG96gQbiZjzEbR8N": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3H7pBT9U13kuEq2qj2wzQk": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3I96DDOZX58xC3RmUZssQx": {
+      "name": "D2R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3IAsrlzln2x9CGCwGk5aBc": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3IRXQx1CX8oxFXhqXHMp_E": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3IkJ5kYzHBoxsDRsZeWtto": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3IqSuYSFHADuKaAsofIt9x": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3J3WcMT$r8Zhg8fsSyC9$A": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3KMMm8oqPDGRsQcfPPC6kS": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3LHBKM1sPCkOXvRtwp$pev": {
+      "name": "D4R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3LppQIb2j30xblkm5GtTTV": {
+      "name": "merk B1-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MkalSSaPB_h_tTcRHxH9A": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "3MrGY57rjE4Owj5UJO3Umk": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3N5xNVjr9Ehhxk6BUdGUAs": {
+      "name": "D5R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3NI6Sp$yf87eKCx0T$FWj3": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3OOESiHE9Cng4Bb4pE0UY6": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3OgInA0dD3qBERzneS1WG0": {
+      "name": "D3L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3QJnmlRqz5_fVrar74KrOo": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3Qds1Ttm57nPXC1iJ$aE$M": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3Qw1ZJI6n0$OYdAwY3sPY0": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "3RaVPvaOf64eZBU6WKpwMU": {
+      "name": "merk B1-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3RrFw8EAf1GRoBD_pVEc41": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3SgAlyy0D4NQuzsMpXqOUR": {
+      "name": "merk B1",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3SinmO3Pj0_fGoIba5Tpbf": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3TvWm44N9F5RIa$fhkiYVg": {
+      "name": "merk B1sp",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3UNWn7XCf1hwvlPusg1icu": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3UPz4qnhz6dR_hTWbylJYM": {
+      "name": "merk A3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3V4FbFEIL7Texif7yDL7jp": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3V_oBYi792a9_YZErx8HIx": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3VeGPWRHL5QfWdPbnVK9h3": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3W9VqGRgr09fcNbT79krnR": {
+      "name": "merk Csp-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3WXd7RsH9CT9CRRwuhBxrU": {
+      "name": "merk H",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Wp4aZh5H6qPRVFtOem3_A": {
+      "name": "velux K08",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "3XlDiPbzT5wuWLtvoN9ad0": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "3Y6cgtY0rEBQUJPUx_aPRF": {
+      "name": "merk M",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3YCmX8dc506hVi08zLmpbh": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3YghERoAfAiunwtuKsXi69": {
+      "name": "merk Csp",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3YkS_khHDAjAeJXiOfwXwm": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3ZKKU$3lPCq8PEyTGjaGdU": {
+      "name": "merk K",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3ZVnVKy4D1jBZcLcCGVgY2": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3b$SMEeUf10eNHEHoPH0ta": {
+      "name": "D1R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3bpb$MQq50M8aknXg_9Fdp": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3cLBPtEz1A0uWp58VoUCJm": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3chKGarqH0KuFJTVdW349F": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3cjGEZBqP9GQh7eyumO1LZ": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3dRgtW3QbEsQYyv9xoJ71y": {
+      "name": "merk N",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3dxXVt7mz5yQHgR4nKqxCm": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3fcHQBt3H23QcTv6yhJwzo": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3fi85$zLn2ghOSoxhxMJYO": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3h8HoOyCv3LAYN5dc$49X5": {
+      "name": "merk Csp-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3hlYOSdNT3hRiePew15h4T": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3iKlrwnUHCxxRo4aLgJC8B": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3jpBco5Of4g9v0dMt1k4Gs": {
+      "name": "merk C",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3kTNDXm3L6jgBFZ2taLcKJ": {
+      "name": "merk Ksp",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3kikpo5Zf9XQWnNfyl$b3h": {
+      "name": "dakkoepel 1000x",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "04 dak"
+      ]
+    },
+    "3lE1SkMIbDaBDRbQV9PuSz": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3lVtU7tjD3YOCLUfqajZ2A": {
+      "name": "merk A4",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3la5L9LMH0juxb_CD9s6XA": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3lsMx$fx16hhyCY_qE6IRh": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3mgONbLNL2DxrM$kkxuZbY": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3nUiG96vjAwPUR6jFmv$ZI": {
+      "name": "D8R",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3oAFxBcTz9oeraTpYdYjN5": {
+      "name": "merk L-R",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3oJTPYwxj7P9M9aWsDpJCD": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3p9J1sHcf4ju8QNF1IhRNV": {
+      "name": "D5L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "3qU0EkhG9CDeH0fDWtriF3": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3qYGwE1BDBbP2FWtfJUDNa": {
+      "name": "merk A3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rLHaGT8f4ffCX220B$XUw": {
+      "name": "D9L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "3rQ8vxEjf7ChTPNEIHZubP": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3sicsb7Rv7vOSpwjkHwdXP": {
+      "name": "D1L",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3tB9bs0jH8kvDCXNaFXLU4": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "03 derde verdieping"
+      ]
+    },
+    "3to0Qbzn57AgGEPgcKjSko": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3topRXa9T1svryvk0HDA1V": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3upcShrCbFfh0jm4mYUUdu": {
+      "name": "merk B1sp-R",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3v$Jw_gpr6OOS8FFzqFDOt": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3vBRjYZSX1a8J6d0CTn4Yh": {
+      "name": "merk K",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3vVPMVKpv8WR4t1AhJIyPH": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3vqhA9V$zD8Ri_tijsQ9Uy": {
+      "name": "merk A3sp",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3vvdwTEwn8XfzKTKW82ej4": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3wi$IxEnzE7PY_Fz$GwcQX": {
+      "name": "dakkoepel 1000x",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "04 dak"
+      ]
+    },
+    "3wks5cHiv9puC78stid7dq": {
+      "name": "D3R",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3xZl0Z8zH6Few7zjaPUgW9": {
+      "name": "stelkozijn",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    },
+    "3xkLH3xAf9Qvv7jXLTD0bw": {
+      "name": "liftdeur",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "02 tweede verdieping"
+      ]
+    },
+    "3zP$yy82X1zQpQLI8ob4xL": {
+      "name": "merk G",
+      "class": "IfcWindow",
+      "label": "FAIL",
+      "issues": [
+        "01 eerste verdieping"
+      ]
+    },
+    "3ztvEc4nv0AQG9DRef3G4g": {
+      "name": "stelkozijn",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "00 begane grond"
+      ]
+    }
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "case_id": "space_storey_elevation__wohnung",
+  "rule": "Spaces in the same building storey must share the same bottom elevation.\nSource: rule 'Spaces in Same Building Storey Must Have Same Bottom Elevation' of the EC3-2026 rule catalogue.\nBenchmark convention: the bottom elevation of a space is the lowest point of its modelled volume. When the spaces of a building storey do not all share one bottom elevation (differences of more than 0.5 mm count), every space of that storey fails, including those at the most common elevation. The spaces of a storey that all share one bottom elevation pass.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_159_kleine_Wohnung_R22.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "169Vh53uD828q6mbPVLNay": "PASS",
+    "1X1A_$r5H1$uHFUkmLedmW": "PASS",
+    "1X1A_$r5H1$uHFUkmLedmY": "PASS",
+    "1X1A_$r5H1$uHFUkmLedme": "PASS",
+    "1X1A_$r5H1$uHFUkmLedmg": "PASS",
+    "1X1A_$r5H1$uHFUkmLedmi": "PASS",
+    "1X1A_$r5H1$uHFUkmLedmk": "PASS",
+    "1X1A_$r5H1$uHFUkmLedn0": "PASS",
+    "1X1A_$r5H1$uHFUkmLedn2": "PASS",
+    "1X1A_$r5H1$uHFUkmLedn4": "PASS",
+    "1X1A_$r5H1$uHFUkmLedn6": "PASS",
+    "1X1A_$r5H1$uHFUkmLedn8": "PASS",
+    "1X1A_$r5H1$uHFUkmLednA": "PASS",
+    "1X1A_$r5H1$uHFUkmLednC": "PASS",
+    "1X1A_$r5H1$uHFUkmLednE": "PASS",
+    "1X1A_$r5H1$uHFUkmLednG": "PASS",
+    "1X1A_$r5H1$uHFUkmLednI": "PASS",
+    "1X1A_$r5H1$uHFUkmLednK": "PASS",
+    "1X1A_$r5H1$uHFUkmLednM": "PASS",
+    "1X1A_$r5H1$uHFUkmLednO": "PASS",
+    "1X1A_$r5H1$uHFUkmLednQ": "PASS",
+    "1X1A_$r5H1$uHFUkmLednS": "PASS",
+    "1X1A_$r5H1$uHFUkmLednU": "PASS",
+    "1X1A_$r5H1$uHFUkmLednm": "PASS",
+    "1X1A_$r5H1$uHFUkmLedno": "PASS",
+    "1X1A_$r5H1$uHFUkmLednq": "PASS",
+    "1X1A_$r5H1$uHFUkmLedns": "PASS",
+    "1sAVPUvkT8L94pCPEjVvgQ": "PASS"
+  },
+  "notes": "Spaces in Same Building Storey Must Have Same Bottom Elevation on 28 IfcSpace: {'PASS': 28}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_wohnung_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 28,
+    "ifc_sha256": "6e4160d669c4873a1b1765ad121e2b192ca7cb050549b4930177de19bbbe5222",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Spaces in Same Building Storey Must Have Same Bottom Elevation",
+      "message": null,
+      "report_file": "ec3_wohnung_check.xlsx",
+      "report_sha256": "8a56b56c3b32b045b4bc11aeebce8dfb6bbc7f141662f574ee957257ac6f78eb",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "169Vh53uD828q6mbPVLNay": {
+      "name": "30",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedmW": {
+      "name": "28",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedmY": {
+      "name": "29",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedme": {
+      "name": "24",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedmg": {
+      "name": "25",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedmi": {
+      "name": "26",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedmk": {
+      "name": "27",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedn0": {
+      "name": "12",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedn2": {
+      "name": "13",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedn4": {
+      "name": "14",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedn6": {
+      "name": "15",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedn8": {
+      "name": "8",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednA": {
+      "name": "9",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednC": {
+      "name": "10",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednE": {
+      "name": "11",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednG": {
+      "name": "20",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednI": {
+      "name": "21",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednK": {
+      "name": "22",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednM": {
+      "name": "23",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednO": {
+      "name": "16",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednQ": {
+      "name": "17",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednS": {
+      "name": "18",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednU": {
+      "name": "19",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednm": {
+      "name": "4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedno": {
+      "name": "5",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLednq": {
+      "name": "6",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1X1A_$r5H1$uHFUkmLedns": {
+      "name": "7",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1sAVPUvkT8L94pCPEjVvgQ": {
+      "name": "31",
+      "class": "IfcSpace",
+      "label": "PASS"
+    }
+  }
+}

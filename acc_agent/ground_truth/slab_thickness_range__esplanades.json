@@ -1,0 +1,127 @@
+{
+  "case_id": "slab_thickness_range__esplanades",
+  "rule": "Every slab must have a thickness between 30 mm and 1000 mm inclusive.\nSource: rule 'Slab Thickness' of the EC3-2026 rule catalogue: This rule checks that slab thickness is not too small or too large.\nBenchmark convention: the thickness of a slab is the thickness of its own construction: the total of its material layers or its recorded thickness, or else the depth of its body. A slab fails when it is thinner than 30 mm or thicker than 1000 mm. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Esplanades_1807_EP_AR_v18.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0jslk0yobDUaFNTV0$VWIx": "PASS",
+    "0yAEwlU8wCSwlZbMFNDBMf": "PASS",
+    "16QgOMx1qOpe5CaV_QjSol": "PASS",
+    "17Dk$t8KUTwywuE6O0fesL": "PASS",
+    "1JjHh0I48iusPJEW3mOLJj": "PASS",
+    "1_RDzuVZ27jmhZCPb76v4I": "PASS",
+    "1dYoMCfidjomMoSLsHhv29": "PASS",
+    "1t7cRInv0dTcqfhYXi1$mk": "PASS",
+    "2XpnttYDb5_62vmSMJUbQ4": "PASS",
+    "2YeE_yZoMId99EkBLmj2kJ": "PASS",
+    "2zpWk3aGYpwKQUNQoMGVL_": "PASS",
+    "3VsPUw9otvTiNTT06xSacc": "PASS",
+    "3X2bUSqFyULct2wlsnoWZG": "PASS",
+    "3n2guh6e0ZZ$YNwV7xAlOk": "PASS",
+    "3ujmHxicUlHki2vgPRUBFj": "PASS"
+  },
+  "notes": "Slab Thickness on 15 IfcSlab: {'PASS': 15}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_esplanades_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 15,
+    "ifc_sha256": "b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slab Thickness",
+      "message": null,
+      "report_file": "ec3_esplanades_check.xlsx",
+      "report_sha256": "d2a9842276bb8f8c33bec9136bbf172c86758e661f1f0efa7dfe594b80911fd6",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0jslk0yobDUaFNTV0$VWIx": {
+      "name": "ARPP-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0yAEwlU8wCSwlZbMFNDBMf": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "16QgOMx1qOpe5CaV_QjSol": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "17Dk$t8KUTwywuE6O0fesL": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1JjHh0I48iusPJEW3mOLJj": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1_RDzuVZ27jmhZCPb76v4I": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1dYoMCfidjomMoSLsHhv29": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1t7cRInv0dTcqfhYXi1$mk": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2XpnttYDb5_62vmSMJUbQ4": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2YeE_yZoMId99EkBLmj2kJ": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2zpWk3aGYpwKQUNQoMGVL_": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3VsPUw9otvTiNTT06xSacc": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3X2bUSqFyULct2wlsnoWZG": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3n2guh6e0ZZ$YNwV7xAlOk": {
+      "name": "ARPP-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ujmHxicUlHki2vgPRUBFj": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "PASS"
+    }
+  }
+}

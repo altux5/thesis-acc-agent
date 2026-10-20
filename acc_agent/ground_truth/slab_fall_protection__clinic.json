@@ -1,0 +1,55 @@
+{
+  "case_id": "slab_fall_protection__clinic",
+  "rule": "No one may be able to fall from the edge of a slab.\nSource: rule 'Slabs must be Guarded against Falling' of the EC3-2026 rule catalogue: This rule checks that it is not possible to fall from slabs. The rule checks that horizontal components are surrounded by vertical components, such as walls or railings. If no vertical component exists on the edge of a horizontal component, another horizontal component or stairs needs to continue and the drop to the other horizontal component must not be more than specified.\nBenchmark convention: check every edge of every slab. An edge is safe when (a) walls, railings, columns, stairs or other objects stand along it as a barrier at least 1.00 m high above the slab top, with gaps of at most 100 mm between barrier parts and between the slab and the barrier, or (b) another slab, a stair, a ramp or the site, at least 200 mm wide, continues within 100 mm of the edge and at most 500 mm below the slab top. A slab fails when part of its edge is neither guarded nor continued: a missing barrier, a barrier lower than 1.00 m, a barrier that does not cover the whole edge, or a continuing surface too far away, too narrow or more than 500 mm below. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/dental_clinic/arc.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "04RQcjHB5Dgx411vE8P8XP": "PASS",
+    "0ZGcf06TjCI8_1ZVSPB0fu": "PASS",
+    "1Yhb_CCZzDzP4tYbACeeSH": "PASS"
+  },
+  "notes": "Slabs must be Guarded against Falling on 3 IfcSlab: {'PASS': 3}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_clinic_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 3,
+    "ifc_sha256": "b90fe57b8aa9329d762a564770e697d4f7357677484e3a78ede4ab6d2163c0c0",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slabs must be Guarded against Falling",
+      "message": null,
+      "report_file": "ec3_clinic_check.xlsx",
+      "report_sha256": "468252d117d8be28b1ed065902f7667f5521c9a3803d631b281341518ed798e7",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "04RQcjHB5Dgx411vE8P8XP": {
+      "name": "Stair:Concrete Pan - 180mm Max Riser 280mm Tread:251180:1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0ZGcf06TjCI8_1ZVSPB0fu": {
+      "name": "Stair:Concrete Pan - 180mm Max Riser 280mm Tread:250693:1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1Yhb_CCZzDzP4tYbACeeSH": {
+      "name": "Stair:Concrete Pan - 180mm Max Riser 280mm Tread:221039:1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    }
+  }
+}

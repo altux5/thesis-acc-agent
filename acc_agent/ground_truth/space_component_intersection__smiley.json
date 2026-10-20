@@ -1,0 +1,1018 @@
+{
+  "case_id": "space_component_intersection__smiley",
+  "rule": "A space must not intersect walls, curtain walls, columns, slabs or roofs.\nSource: rule 'Space Validation' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct. It checks that space does not incorrectly intersect with slabs, walls or other components. This template focuses only on the 'intersect' check.\nBenchmark convention: a space fails when its volume overlaps a wall, curtain wall, column, slab or roof by more than 30 mm; smaller overlaps at the space boundary are tolerated. Components lying entirely inside the space are covered by a separate check; doors, windows, furniture and other spaces are ignored.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/smiley_west/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0Bcix2yknD4QQ4NucZ2LZ3",
+    "0V95TNYbX1PfwH1RlgqMqt",
+    "0XuK1zyDLBLfW3sPJOAJdq",
+    "0ZdLQ0aRb7$RxLLRWu7nQb",
+    "0_NR7mqGTDv8K9xdVwLtaV",
+    "0bJ1uLaIzFOvpvhkN$XOpn",
+    "0fwchbH1r5zR_O89iZ8ddS",
+    "0pvRnLEFnDlgJwhVZiBzzI",
+    "0qf1mmZjTBMRMW8ttJqleG",
+    "0rWfxolgP4lea5bh97P$8m",
+    "0wX3Bl_XTAJ8lER5kq87y0",
+    "16WPXvPav859E6mauX8ifr",
+    "19AFpizAX06gIjmlbRQDfk",
+    "19_wX24lz2HgsjUlrtrRuT",
+    "1LaBUYUR53Pxq$OuwxUsod",
+    "1V0NY3m$XFIulBQ7rRUBma",
+    "1WN11damb5TPUsdK4_GYif",
+    "1dFkzi10v3yRLoKy5ClqDV",
+    "1kXAW24bT8ehxAhZCgepH3",
+    "25gp_VVyD9lvFvbEG2imfd",
+    "2ElUjenkj6rPeXtjB4anPa",
+    "2Uh4jhm8f4_vL1M3gaiGgj",
+    "2WnMPs5Xb17QiiJ0MF9q51",
+    "2ksjHtO5DDGhKmT4AUwUI0",
+    "2m3q9noR993uEdVygJK11m",
+    "2n8EbY$rj1RQ$ya9rrqSXX",
+    "2tQbNfNw5ErBlIFlcWbE2S",
+    "33_o3qLuT6R813gZk2l2TJ",
+    "35yKaUayr2LPWpST3GOIZw",
+    "3B4IVY1mL1OB855TfGPpKl",
+    "3Iwj2SKh1EY9eya8U_IOJh",
+    "3PTZNBmtHBhvoBsTI2RxL_",
+    "3Up9T7OpvA4weoaf2xxqnk",
+    "3sjLk6T$b3_OpDigmhkMCw",
+    "3uSBpk4gb47fDgxC$BrK2I"
+  ],
+  "labels": {
+    "01KxDcOyH0SeY37Iug96Ad": "PASS",
+    "03W07_Rff9HAdbckCRLIfj": "PASS",
+    "05ZnuSGOD1Mf9W1inU9YZo": "PASS",
+    "05hRmziBT62v3jOhnxFT6Y": "PASS",
+    "07DA0wYQfBeAEb4qwJTSTs": "PASS",
+    "099dzJedbEgfA_jVJvvgiJ": "PASS",
+    "0BKK6G5NT2fRAT989kGONH": "PASS",
+    "0Bcix2yknD4QQ4NucZ2LZ3": "FAIL",
+    "0EZhvaDun6GBGfyb_I7eyU": "PASS",
+    "0GE4N5HQLFzgffVCVrWaUY": "PASS",
+    "0Ik$LeSlf5WRqyA$1Zjk8r": "PASS",
+    "0JepDr0cr6uOyUDL1uH8R3": "PASS",
+    "0KZp_xspX8Wv5YWXqKI0MP": "PASS",
+    "0O_UfCn_z8ewRPH$8f29Gb": "PASS",
+    "0QycqvFiTDUxZBTB$GNUm3": "PASS",
+    "0Tgpt8vVDCegvVMhCoCQxa": "PASS",
+    "0V95TNYbX1PfwH1RlgqMqt": "FAIL",
+    "0W5B3PGT5Bx9sdEnCfiwmY": "PASS",
+    "0XuK1zyDLBLfW3sPJOAJdq": "FAIL",
+    "0ZdLQ0aRb7$RxLLRWu7nQb": "FAIL",
+    "0_NR7mqGTDv8K9xdVwLtaV": "FAIL",
+    "0_PtgAO3f3LfUgjAn6Hu6c": "PASS",
+    "0bJ1uLaIzFOvpvhkN$XOpn": "FAIL",
+    "0fwchbH1r5zR_O89iZ8ddS": "FAIL",
+    "0gGr2m0qP3JRljPKs7gpvI": "PASS",
+    "0h9eWIZszAPxlmsGb$uui1": "PASS",
+    "0jt6xzLS16APu2df6TC4F0": "PASS",
+    "0lIAUK79v1Qgtpm$NL4pX8": "PASS",
+    "0nWWP7D5f7POlX5wW_1VbQ": "PASS",
+    "0nb88XKz97ReFHUu5KDaxt": "PASS",
+    "0o9e6L43H3rgDeWFz6tuEz": "PASS",
+    "0oATbNEJL0kuCUdYJTyTBK": "PASS",
+    "0p4XV31XH4nRP_0sGMByIc": "PASS",
+    "0pvRnLEFnDlgJwhVZiBzzI": "FAIL",
+    "0qf1mmZjTBMRMW8ttJqleG": "FAIL",
+    "0qklr2fUL5CuAK2ZmNrggQ": "PASS",
+    "0rWfxolgP4lea5bh97P$8m": "FAIL",
+    "0seeBsvzbCsA2V7uLIcyKb": "PASS",
+    "0v_Ukvk3H8$ft080mz_3pK": "PASS",
+    "0wX3Bl_XTAJ8lER5kq87y0": "FAIL",
+    "0x37H8kND80QKgLN3tT4s6": "PASS",
+    "0xHZGfJ3z7CRlJWmfVRBik": "PASS",
+    "0zDs7RmCL8ZQTVHkltRv6w": "PASS",
+    "12mU_wKK5E_egTxH2C$KdI": "PASS",
+    "14Xi6zQ5H4k9E6QQ0Mf9my": "PASS",
+    "16BKatYNb0095YK2zxt57p": "PASS",
+    "16WPXvPav859E6mauX8ifr": "FAIL",
+    "17VA86q0D8URCFrbTcEx6A": "PASS",
+    "196SywVbz0lxaUbAB86s5P": "PASS",
+    "19AFpizAX06gIjmlbRQDfk": "FAIL",
+    "19_wX24lz2HgsjUlrtrRuT": "FAIL",
+    "1D5qDEDY5FURL6B66DMR_2": "PASS",
+    "1KKIXTWdT8heHZ3hsSZwZA": "PASS",
+    "1LaBUYUR53Pxq$OuwxUsod": "FAIL",
+    "1V0NY3m$XFIulBQ7rRUBma": "FAIL",
+    "1WK8MVm8X8L94RfnV1m1V6": "PASS",
+    "1WL_Ozt0f7KA1AZe_oBVDF": "PASS",
+    "1WN11damb5TPUsdK4_GYif": "FAIL",
+    "1Y6vtQKwbB$gq_wQBBgZaZ": "PASS",
+    "1_ZKmiyxb9bAvCYPaI8fyX": "PASS",
+    "1dFkzi10v3yRLoKy5ClqDV": "FAIL",
+    "1eFIAClp166Pj4rxKt9bST": "PASS",
+    "1guNLf$yP4XxVnvjjALBk5": "PASS",
+    "1k4fS51mTETxzU0_YTXBbS": "PASS",
+    "1kOEi4kK189wDDX8d5mZWh": "PASS",
+    "1kXAW24bT8ehxAhZCgepH3": "FAIL",
+    "1q4aYvpOb4ofO8dYjuyzP1": "PASS",
+    "1s0C_q361D_ufLaGCTU9nJ": "PASS",
+    "1uDNScR458nQb2Uji7vhOQ": "PASS",
+    "1xZCHUKgnDcuUGz1Sf6bw0": "PASS",
+    "20fUy5xgL1K9KGDfrpf3OU": "PASS",
+    "25gp_VVyD9lvFvbEG2imfd": "FAIL",
+    "2ElUjenkj6rPeXtjB4anPa": "FAIL",
+    "2JCJQULNz4I9OTEuogyg7J": "PASS",
+    "2JhWAiemz8$vWCNCZRQ$7v": "PASS",
+    "2LKK3EMPj9C9JwbMLN98ag": "PASS",
+    "2LmSEbvmjFfhqJ2_Wm1laO": "PASS",
+    "2LnJPUTQX18AYhtI5UzJk9": "PASS",
+    "2MUluHIS19hxl5xyeFBL$q": "PASS",
+    "2NENjR9A50iR7mhZi9QIky": "PASS",
+    "2T_M6_XR187OavaBkY$qZE": "PASS",
+    "2Uh4jhm8f4_vL1M3gaiGgj": "FAIL",
+    "2WnMPs5Xb17QiiJ0MF9q51": "FAIL",
+    "2Xs6QlytPFWAeqZLKKOezP": "PASS",
+    "2_yslftrLCugVObUTlP2hg": "PASS",
+    "2axTLszwDBKh8IaEyVc95W": "PASS",
+    "2f3yFnZ7L1NvOHbRVc5cJV": "PASS",
+    "2ffyspcUv4rxHDbLRlYw2u": "PASS",
+    "2g9hM95gn7BAHEFC0y1yUa": "PASS",
+    "2k$JIFVGf7Ixx06X27j0Te": "PASS",
+    "2ksjHtO5DDGhKmT4AUwUI0": "FAIL",
+    "2m3q9noR993uEdVygJK11m": "FAIL",
+    "2n8EbY$rj1RQ$ya9rrqSXX": "FAIL",
+    "2o06MMfBT6K9zjyA90D4Xe": "PASS",
+    "2qRIAnL2jBQQwrIkxhBMur": "PASS",
+    "2qU65BXOjDMRghSnvl1$15": "PASS",
+    "2qWO03rLv6Ix3eFbAYbYRa": "PASS",
+    "2tQbNfNw5ErBlIFlcWbE2S": "FAIL",
+    "2wq30flQf78hZ21neDLFBq": "PASS",
+    "3$dO2Cqtf2ghjaWR_i7emg": "PASS",
+    "32B38ytG18mxkajvn7tsMk": "PASS",
+    "32Z942e9n2APjrpXe6Araw": "PASS",
+    "33Uz3FAUrDrgPUbkgYR3Vf": "PASS",
+    "33_o3qLuT6R813gZk2l2TJ": "FAIL",
+    "357OJ48xr4Bx6pAj7ukDyU": "PASS",
+    "35yKaUayr2LPWpST3GOIZw": "FAIL",
+    "37jI6CAIz8UOw$qo$BQNpy": "PASS",
+    "38c71qPSjCxOubBVqqU3ON": "PASS",
+    "3B4IVY1mL1OB855TfGPpKl": "FAIL",
+    "3BjGZwRYz4NPEGeGbaFcBg": "PASS",
+    "3Ewf5HxH5BcxhnQnPdmSKA": "PASS",
+    "3FJYPzGsbFqOVwD6pSdemL": "PASS",
+    "3FzDDNoyP6eu6K83qp90ZI": "PASS",
+    "3Iwj2SKh1EY9eya8U_IOJh": "FAIL",
+    "3J6Xtu8ADFswR9Oak1jINL": "PASS",
+    "3JujP4PZb8ERUPExZc3LQp": "PASS",
+    "3KV1JRspz8ouWexgf2wg7u": "PASS",
+    "3NyFDkHqTEhRMsJhmd0GFV": "PASS",
+    "3PSyXEkf5E88ZNzHR8bi6k": "PASS",
+    "3PTZNBmtHBhvoBsTI2RxL_": "FAIL",
+    "3QF1zC91j7OBHP83s_syz0": "PASS",
+    "3SkZZMPuT7$89jqYZqSHf1": "PASS",
+    "3T9X0t5i5CZwKzfxPnEmuw": "PASS",
+    "3TzBuD$8DFx9Eo3XTZ8DFj": "PASS",
+    "3UBvRQaabE3QS_tex4rt0f": "PASS",
+    "3U_MvK4Hn5v9qQ4x1xKj$X": "PASS",
+    "3Up9T7OpvA4weoaf2xxqnk": "FAIL",
+    "3VBv$6FjvFe8HwNEPUIZ$m": "PASS",
+    "3WfI2idZDBtfNIEwkbXu8M": "PASS",
+    "3YQAkO3i541gbaBZyjgVtE": "PASS",
+    "3ag6dIWSn53eKSpQdeBvW1": "PASS",
+    "3dN_UoiuPEoua6PhT2axsT": "PASS",
+    "3fSw$_mWL9WeVHk5cPTM86": "PASS",
+    "3hKTsopdvFF9O0PBtGakdR": "PASS",
+    "3jZHtXj$X1wuktH$jfGS2_": "PASS",
+    "3ksiAynETBF9oMFT_0a8w4": "PASS",
+    "3qQXrsDED4KwaYVxjd2ShY": "PASS",
+    "3sjLk6T$b3_OpDigmhkMCw": "FAIL",
+    "3uGi1h07PDxghqdhyj_CmA": "PASS",
+    "3uSBpk4gb47fDgxC$BrK2I": "FAIL"
+  },
+  "notes": "Space Validation on 140 IfcSpace: {'FAIL': 35, 'PASS': 105}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_smiley_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 140,
+    "ifc_sha256": "26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Space Validation",
+      "message": "Space intersects with",
+      "report_file": "ec3_smiley_check.xlsx",
+      "report_sha256": "b9e06cc563fb0a24c442a638f668c31ed0349f8f33a05b53918bbbca594794ea",
+      "rule_issues": 37,
+      "matching_issues": 35
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "01KxDcOyH0SeY37Iug96Ad": {
+      "name": "4.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "03W07_Rff9HAdbckCRLIfj": {
+      "name": "10.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "05ZnuSGOD1Mf9W1inU9YZo": {
+      "name": "5.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "05hRmziBT62v3jOhnxFT6Y": {
+      "name": "06.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07DA0wYQfBeAEb4qwJTSTs": {
+      "name": "09.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "099dzJedbEgfA_jVJvvgiJ": {
+      "name": "4.2.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0BKK6G5NT2fRAT989kGONH": {
+      "name": "2.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Bcix2yknD4QQ4NucZ2LZ3": {
+      "name": "10.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.3 : FLUR-10-2[10.1.3]"
+      ]
+    },
+    "0EZhvaDun6GBGfyb_I7eyU": {
+      "name": "5.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0GE4N5HQLFzgffVCVrWaUY": {
+      "name": "06.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Ik$LeSlf5WRqyA$1Zjk8r": {
+      "name": "04.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0JepDr0cr6uOyUDL1uH8R3": {
+      "name": "03.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0KZp_xspX8Wv5YWXqKI0MP": {
+      "name": "5.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O_UfCn_z8ewRPH$8f29Gb": {
+      "name": "07.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0QycqvFiTDUxZBTB$GNUm3": {
+      "name": "05.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Tgpt8vVDCegvVMhCoCQxa": {
+      "name": "3.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0V95TNYbX1PfwH1RlgqMqt": {
+      "name": "5.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.14 : FLUR-5-3[5.2.4]"
+      ]
+    },
+    "0W5B3PGT5Bx9sdEnCfiwmY": {
+      "name": "03.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0XuK1zyDLBLfW3sPJOAJdq": {
+      "name": "5.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.27 : FLUR-5-4[5.3.4]"
+      ]
+    },
+    "0ZdLQ0aRb7$RxLLRWu7nQb": {
+      "name": "5.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.14 : FLUR-5-4[5.3.4]"
+      ]
+    },
+    "0_NR7mqGTDv8K9xdVwLtaV": {
+      "name": "4.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.35 : FLUR-4-3[4.2.4]"
+      ]
+    },
+    "0_PtgAO3f3LfUgjAn6Hu6c": {
+      "name": "5.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0bJ1uLaIzFOvpvhkN$XOpn": {
+      "name": "1.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.12 : FLUR-1-3[1.2.4]"
+      ]
+    },
+    "0fwchbH1r5zR_O89iZ8ddS": {
+      "name": "04.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.10 : FLUR-04-2[04.1.3]"
+      ]
+    },
+    "0gGr2m0qP3JRljPKs7gpvI": {
+      "name": "08.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0h9eWIZszAPxlmsGb$uui1": {
+      "name": "4.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0jt6xzLS16APu2df6TC4F0": {
+      "name": "09.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0lIAUK79v1Qgtpm$NL4pX8": {
+      "name": "04.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0nWWP7D5f7POlX5wW_1VbQ": {
+      "name": "3.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0nb88XKz97ReFHUu5KDaxt": {
+      "name": "3.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0o9e6L43H3rgDeWFz6tuEz": {
+      "name": "4.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0oATbNEJL0kuCUdYJTyTBK": {
+      "name": "2.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0p4XV31XH4nRP_0sGMByIc": {
+      "name": "2.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0pvRnLEFnDlgJwhVZiBzzI": {
+      "name": "1.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.6 : FLUR-1-4[1.3.4]"
+      ]
+    },
+    "0qf1mmZjTBMRMW8ttJqleG": {
+      "name": "1.2.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.5 : BAD / WC-1-1[1.2.3]"
+      ]
+    },
+    "0qklr2fUL5CuAK2ZmNrggQ": {
+      "name": "08.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0rWfxolgP4lea5bh97P$8m": {
+      "name": "4.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.33 : FLUR-4-4[4.3.4]"
+      ]
+    },
+    "0seeBsvzbCsA2V7uLIcyKb": {
+      "name": "2.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0v_Ukvk3H8$ft080mz_3pK": {
+      "name": "02.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0wX3Bl_XTAJ8lER5kq87y0": {
+      "name": "3.2.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.39 : BAD / WC-3-1[3.2.3]"
+      ]
+    },
+    "0x37H8kND80QKgLN3tT4s6": {
+      "name": "5.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0xHZGfJ3z7CRlJWmfVRBik": {
+      "name": "4.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0zDs7RmCL8ZQTVHkltRv6w": {
+      "name": "5.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "12mU_wKK5E_egTxH2C$KdI": {
+      "name": "4.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "14Xi6zQ5H4k9E6QQ0Mf9my": {
+      "name": "02.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "16BKatYNb0095YK2zxt57p": {
+      "name": "01.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "16WPXvPav859E6mauX8ifr": {
+      "name": "06.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.24 : Flur-06-2[06.1.3]"
+      ]
+    },
+    "17VA86q0D8URCFrbTcEx6A": {
+      "name": "09.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "196SywVbz0lxaUbAB86s5P": {
+      "name": "03.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "19AFpizAX06gIjmlbRQDfk": {
+      "name": "5.2.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.22 : BAD / WC-5-1[5.2.3]"
+      ]
+    },
+    "19_wX24lz2HgsjUlrtrRuT": {
+      "name": "3.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.25 : FLUR-3-4[3.3.4]"
+      ]
+    },
+    "1D5qDEDY5FURL6B66DMR_2": {
+      "name": "01.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1KKIXTWdT8heHZ3hsSZwZA": {
+      "name": "07.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1LaBUYUR53Pxq$OuwxUsod": {
+      "name": "05.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.22 : FLUR-05-2[05.1.3]"
+      ]
+    },
+    "1V0NY3m$XFIulBQ7rRUBma": {
+      "name": "5.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.3 : FLUR-5-3[5.2.4]"
+      ]
+    },
+    "1WK8MVm8X8L94RfnV1m1V6": {
+      "name": "067.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1WL_Ozt0f7KA1AZe_oBVDF": {
+      "name": "3.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1WN11damb5TPUsdK4_GYif": {
+      "name": "2.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.26 : FLUR-2-4[2.3.4]"
+      ]
+    },
+    "1Y6vtQKwbB$gq_wQBBgZaZ": {
+      "name": "4.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1_ZKmiyxb9bAvCYPaI8fyX": {
+      "name": "4.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1dFkzi10v3yRLoKy5ClqDV": {
+      "name": "3.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.6 : FLUR-3-3[3.2.4]"
+      ]
+    },
+    "1eFIAClp166Pj4rxKt9bST": {
+      "name": "1.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1guNLf$yP4XxVnvjjALBk5": {
+      "name": "05.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1k4fS51mTETxzU0_YTXBbS": {
+      "name": "5.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1kOEi4kK189wDDX8d5mZWh": {
+      "name": "03.1.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1kXAW24bT8ehxAhZCgepH3": {
+      "name": "4.2.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.26 : BAD / WC-4-1[4.2.3]"
+      ]
+    },
+    "1q4aYvpOb4ofO8dYjuyzP1": {
+      "name": "3.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1s0C_q361D_ufLaGCTU9nJ": {
+      "name": "2.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1uDNScR458nQb2Uji7vhOQ": {
+      "name": "1.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1xZCHUKgnDcuUGz1Sf6bw0": {
+      "name": "2.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "20fUy5xgL1K9KGDfrpf3OU": {
+      "name": "09.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "25gp_VVyD9lvFvbEG2imfd": {
+      "name": "01.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.2 : Flur-01-2[01.1.3]"
+      ]
+    },
+    "2ElUjenkj6rPeXtjB4anPa": {
+      "name": "3.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.31 : FLUR-3-4[3.3.4]"
+      ]
+    },
+    "2JCJQULNz4I9OTEuogyg7J": {
+      "name": "5.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2JhWAiemz8$vWCNCZRQ$7v": {
+      "name": "1.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2LKK3EMPj9C9JwbMLN98ag": {
+      "name": "1.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2LmSEbvmjFfhqJ2_Wm1laO": {
+      "name": "02.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2LnJPUTQX18AYhtI5UzJk9": {
+      "name": "01.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2MUluHIS19hxl5xyeFBL$q": {
+      "name": "10.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2NENjR9A50iR7mhZi9QIky": {
+      "name": "1.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2T_M6_XR187OavaBkY$qZE": {
+      "name": "02.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Uh4jhm8f4_vL1M3gaiGgj": {
+      "name": "2.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.21 : FLUR-2-3[2.2.4]"
+      ]
+    },
+    "2WnMPs5Xb17QiiJ0MF9q51": {
+      "name": "10.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.30 : FLUR-10-2[10.1.3]"
+      ]
+    },
+    "2Xs6QlytPFWAeqZLKKOezP": {
+      "name": "5.2.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2_yslftrLCugVObUTlP2hg": {
+      "name": "2.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2axTLszwDBKh8IaEyVc95W": {
+      "name": "1.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2f3yFnZ7L1NvOHbRVc5cJV": {
+      "name": "06.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2ffyspcUv4rxHDbLRlYw2u": {
+      "name": "3.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2g9hM95gn7BAHEFC0y1yUa": {
+      "name": "08.1.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2k$JIFVGf7Ixx06X27j0Te": {
+      "name": "08.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2ksjHtO5DDGhKmT4AUwUI0": {
+      "name": "2.2.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.19 : BAD / WC-2-1[2.2.3]"
+      ]
+    },
+    "2m3q9noR993uEdVygJK11m": {
+      "name": "02.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.27 : FLUR-02-2[02.1.3]"
+      ]
+    },
+    "2n8EbY$rj1RQ$ya9rrqSXX": {
+      "name": "4.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.40 : FLUR-4-3[4.2.4]"
+      ]
+    },
+    "2o06MMfBT6K9zjyA90D4Xe": {
+      "name": "04.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qRIAnL2jBQQwrIkxhBMur": {
+      "name": "5.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qU65BXOjDMRghSnvl1$15": {
+      "name": "2.2.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qWO03rLv6Ix3eFbAYbYRa": {
+      "name": "03.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2tQbNfNw5ErBlIFlcWbE2S": {
+      "name": "3.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.23 : FLUR-3-3[3.2.4]"
+      ]
+    },
+    "2wq30flQf78hZ21neDLFBq": {
+      "name": "01.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3$dO2Cqtf2ghjaWR_i7emg": {
+      "name": "3.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "32B38ytG18mxkajvn7tsMk": {
+      "name": "08.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "32Z942e9n2APjrpXe6Araw": {
+      "name": "5.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "33Uz3FAUrDrgPUbkgYR3Vf": {
+      "name": "1.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "33_o3qLuT6R813gZk2l2TJ": {
+      "name": "4.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.20 : FLUR-4-4[4.3.4]"
+      ]
+    },
+    "357OJ48xr4Bx6pAj7ukDyU": {
+      "name": "1.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "35yKaUayr2LPWpST3GOIZw": {
+      "name": "3.2.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.1 : BAD / WC-3-1[3.2.3]"
+      ]
+    },
+    "37jI6CAIz8UOw$qo$BQNpy": {
+      "name": "3.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "38c71qPSjCxOubBVqqU3ON": {
+      "name": "4.3.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3B4IVY1mL1OB855TfGPpKl": {
+      "name": "2.2.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.25 : BAD / WC-2-1[2.2.3]"
+      ]
+    },
+    "3BjGZwRYz4NPEGeGbaFcBg": {
+      "name": "08.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Ewf5HxH5BcxhnQnPdmSKA": {
+      "name": "2.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3FJYPzGsbFqOVwD6pSdemL": {
+      "name": "2.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3FzDDNoyP6eu6K83qp90ZI": {
+      "name": "04.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Iwj2SKh1EY9eya8U_IOJh": {
+      "name": "2.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.34 : FLUR-2-4[2.3.4]"
+      ]
+    },
+    "3J6Xtu8ADFswR9Oak1jINL": {
+      "name": "05.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3JujP4PZb8ERUPExZc3LQp": {
+      "name": "5.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3KV1JRspz8ouWexgf2wg7u": {
+      "name": "1.2.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3NyFDkHqTEhRMsJhmd0GFV": {
+      "name": "4.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3PSyXEkf5E88ZNzHR8bi6k": {
+      "name": "01.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3PTZNBmtHBhvoBsTI2RxL_": {
+      "name": "1.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.33 : FLUR-1-3[1.2.4]"
+      ]
+    },
+    "3QF1zC91j7OBHP83s_syz0": {
+      "name": "07.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3SkZZMPuT7$89jqYZqSHf1": {
+      "name": "09.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3T9X0t5i5CZwKzfxPnEmuw": {
+      "name": "02.0.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3TzBuD$8DFx9Eo3XTZ8DFj": {
+      "name": "03.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3UBvRQaabE3QS_tex4rt0f": {
+      "name": "06.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3U_MvK4Hn5v9qQ4x1xKj$X": {
+      "name": "04.0.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Up9T7OpvA4weoaf2xxqnk": {
+      "name": "07.1.3",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.9 : FLUR-07-2[07.1.3]"
+      ]
+    },
+    "3VBv$6FjvFe8HwNEPUIZ$m": {
+      "name": "10.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3WfI2idZDBtfNIEwkbXu8M": {
+      "name": "05.1.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3YQAkO3i541gbaBZyjgVtE": {
+      "name": "10.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ag6dIWSn53eKSpQdeBvW1": {
+      "name": "4.3.3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3dN_UoiuPEoua6PhT2axsT": {
+      "name": "05.1.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3fSw$_mWL9WeVHk5cPTM86": {
+      "name": "06.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3hKTsopdvFF9O0PBtGakdR": {
+      "name": "3.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3jZHtXj$X1wuktH$jfGS2_": {
+      "name": "3.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ksiAynETBF9oMFT_0a8w4": {
+      "name": "1.3.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3qQXrsDED4KwaYVxjd2ShY": {
+      "name": "07.0.2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3sjLk6T$b3_OpDigmhkMCw": {
+      "name": "2.2.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.7 : FLUR-2-3[2.2.4]"
+      ]
+    },
+    "3uGi1h07PDxghqdhyj_CmA": {
+      "name": "1.2.1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3uSBpk4gb47fDgxC$BrK2I": {
+      "name": "1.3.4",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.12 : FLUR-1-4[1.3.4]"
+      ]
+    }
+  }
+}

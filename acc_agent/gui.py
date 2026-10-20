@@ -43,6 +43,7 @@ import factual_report
 import ground_truth
 import llm
 import simple_rules
+import solibri_reference
 import tracing
 from agent import AGENT_PROTOCOL, AgentResult, CodeActAgent
 from completion import COMPLETION_CHECKS_VERSION
@@ -168,6 +169,32 @@ USABLE_2_CASES = {
     "space_elevation__scdf_3": "EC3 same-storey elevation rule: 1 FAIL / 53 PASS / 5 NA. BIM consistency, not a regulation.",
 }
 USABLE_2_SUITE_CASES = tuple(USABLE_2_CASES)
+# Main experiment (decision 2026-10-13): Solibri-derived references on models never used in development.
+HELDOUT_CASES = {
+    "door_clear_width__clinic": "DIN 18040-1 clear width from Solibri SOL/208: 8 FAIL / 246 PASS; 2 curtain-wall doors adjudicated PASS (0.5 mm tolerance).",
+    "door_clear_width__schependomlaan": "DIN 18040-1 clear width from Solibri SOL/208: 22 FAIL / 82 PASS; 101 width-less objects unscored.",
+    "door_clear_width__smiley": "DIN 18040-1 clear width from Solibri SOL/208: 90 FAIL / 80 PASS.",
+}
+for _case_id in solibri_reference.BUILDERS:
+    _rule_id = _case_id.split("__")[0]
+    if _rule_id in solibri_reference.EC3_BY_ID:
+        HELDOUT_CASES[_case_id] = (f"EC3 '{solibri_reference.EC3_BY_ID[_rule_id].solibri_rule}' labelled from Solibri issues"
+                                   + ("; known rule, new model." if _rule_id in solibri_reference.KNOWN_RULES else "."))
+HELDOUT_SUITE_CASES = tuple(c for c in HELDOUT_CASES if (ground_truth.GT_DIR / f"{c}.json").exists())
+# Held-out passes (user, 2026-10-17): one run per case, then decide further runs. Key = suite index kind.
+HELDOUT_PILOTS = {
+    "heldout_pilot": {"label": "Held-out pilot: MiniMax M3 (OpenRouter), stateful", "provider": "openrouter",
+                      "model": "minimax/minimax-m3", "mode": "stateful", "repeats": 1, "harness": 1},
+    "heldout_pilot_stateless_minimax": {"label": "Held-out pilot: MiniMax M3 (MiniMax API), stateless",
+                                        "provider": "minimax", "model": "MiniMax-M3", "mode": "stateless",
+                                        "repeats": 1, "harness": 1},
+    "heldout_main_minimax": {"label": "Held-out main: MiniMax M3 (MiniMax API), stateful + stateless",
+                             "provider": "minimax", "model": "MiniMax-M3", "mode": "both", "repeats": 2, "harness": 1},
+    "heldout_sonnet_stateful": {"label": "Held-out: Sonnet 5.5 (OpenRouter), stateful", "provider": "openrouter",
+                                "model": "anthropic/claude-sonnet-5.5", "mode": "stateful", "repeats": 1, "harness": 1},
+    "heldout_h2_minimax": {"label": "Held-out H2: MiniMax M3 (MiniMax API), stateful, planning", "provider": "minimax",
+                           "model": "MiniMax-M3", "mode": "stateful", "repeats": 2, "harness": 2},
+}
 CONTROL_CASES = {
     "doors_windows_storey__planterbox", "doors_windows_storey__scdf_3", "doors_windows_storey__scdf_5",
     "landing_interval_e352__condo", "landing_interval_e352__planterbox", "landing_interval_e352__scdf_3",
@@ -186,6 +213,8 @@ def case_assessment(case_id: str) -> tuple[str, str]:
         return "Usable", "Supported for the stated recorded-IFC task; not general physical compliance certification."
     if case_id in USABLE_2_CASES:
         return "usable_2", USABLE_2_CASES[case_id]
+    if case_id in HELDOUT_CASES:
+        return "Held-out", HELDOUT_CASES[case_id]
     if case_id in RETIRED_CASES:
         return "Retired", RETIRED_CASES[case_id]
     if ground_truth.is_deprecated(case_id):
@@ -292,7 +321,7 @@ class App(ctk.CTk):
         first = next((name for name, metadata in self.case_labels.items() if metadata["case_id"] == USABLE_CASES[0]), first)
         self.case_filter = tk.StringVar(value="Health suite")
         self.case_group_menu = ctk.CTkOptionMenu(
-            bar, values=["Health suite", "Usable", "usable_2", "Controls", "Provisional", "Retired", "Pilots", "All cases", "Class 1", "Class 2", "Class 3", "Custom"],
+            bar, values=["Health suite", "Usable", "usable_2", "Held-out", "Controls", "Provisional", "Retired", "Pilots", "All cases", "Class 1", "Class 2", "Class 3", "Custom"],
             variable=self.case_filter, command=self._filter_cases, height=30, corner_radius=4,
             fg_color=SURFACE, button_color=SURFACE, button_hover_color=HOVER,
             text_color=MUTED, dropdown_fg_color=SURFACE, dropdown_text_color=TEXT,
@@ -406,6 +435,19 @@ class App(ctk.CTk):
             command=lambda: self._on_suite(USABLE_2_SUITE_CASES),
             fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.usable_2_suite_btn.pack(fill="x", pady=(6, 0))
+        self.heldout_suite_btn = ctk.CTkButton(
+            footer, text=f"Run {len(HELDOUT_SUITE_CASES)}-case held-out suite", height=34,
+            command=lambda: self._on_suite(HELDOUT_SUITE_CASES),
+            fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
+        self.heldout_suite_btn.pack(fill="x", pady=(6, 0))
+        self.heldout_pilot_btns = {}
+        for kind, pilot in HELDOUT_PILOTS.items():
+            button = ctk.CTkButton(
+                footer, text=f"{pilot['label']}, {pilot['repeats']} run(s) x {len(HELDOUT_SUITE_CASES)} cases", height=34,
+                command=lambda kind=kind: self._on_heldout_pilot(kind),
+                fg_color=PRIMARY, hover_color=HOVER, text_color=TEXT, corner_radius=4)
+            button.pack(fill="x", pady=(6, 0))
+            self.heldout_pilot_btns[kind] = button
         self.stop_btn = ctk.CTkButton(footer, text="Stop after current run", height=28,
             command=self._on_stop, state="disabled", fg_color=SURFACE, hover_color=HOVER,
             text_color=ORANGE, corner_radius=4)
@@ -605,6 +647,10 @@ class App(ctk.CTk):
         clause = (gt.clause or "").strip()
         if source.startswith("slab_reference.py::"):
             return "BIM", "Project reference v2: recorded property evidence and documented conflict decisions; not expert regulatory certification"
+        if source.startswith("solibri_reference.py::build_door_width"):
+            return "DIN", f"{clause} \u00b7 held-out reference: Solibri Office 26.9 issues reproduced from the IFC with recorded adjudications; not expert certification"
+        if source.startswith("solibri_reference.py::"):
+            return ("ADA" if clause.startswith("ADA") else "EC3"), f"{clause} \u00b7 held-out reference: Solibri Office 26.9 issues of the EC3-2026 rule sets, with recorded adjudications; not expert certification"
         if source.startswith("reference_v2.py::"):
             origin = "usable_2 reference (reference_v2.py): IFC evidence, workbook rows and recorded adjudications; not expert certification"
             if clause.startswith("fc:"):
@@ -774,7 +820,7 @@ class App(ctk.CTk):
             )
         self.case_info.configure(text="\n".join(lines))
         summary = f"{assessment} | Class {gt.complexity or '?'} | {gt.anchor_count} reference elements\n{len(gt.violation_set)} FAIL / {gt.label_counts.get('ALERT', 0)} ALERT\n{review_note}"
-        colors = {"Usable": GREEN, "usable_2": GREEN, "Control": BLUE, "Deprecated": RED, "Provisional": ORANGE, "Retired": GREY}
+        colors = {"Usable": GREEN, "usable_2": GREEN, "Held-out": GREEN, "Control": BLUE, "Deprecated": RED, "Provisional": ORANGE, "Retired": GREY}
         self.case_summary.configure(text=summary, text_color=colors.get(assessment, MUTED))
         if apply_recommended:
             self._apply_recommended(class_group, pilot)
@@ -846,10 +892,48 @@ class App(ctk.CTk):
 
     # ---- run lifecycle -----------------------------------------------------
     def _set_suite_buttons(self, state: str) -> None:
-        for button in (self.suite_btn, self.quick_suite_btn, self.usable_2_suite_btn):
+        for button in (self.suite_btn, self.quick_suite_btn, self.usable_2_suite_btn, self.heldout_suite_btn,
+                       *self.heldout_pilot_btns.values()):
             button.configure(state=state)
 
-    def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES) -> None:
+    def _pilot_finished_cases(self, kind: str) -> set[str]:
+        """Held-out cases whose pilot run finished in an earlier session of this pilot (from the suite indexes)."""
+        finished = set()
+        for path in LOG_DIR.glob("*_health_suite.json"):
+            try:
+                suite = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            if suite.get("kind") == kind:
+                finished.update(entry["case_id"] for entry in suite.get("cases", []) if entry.get("status") == "finished")
+        return finished
+
+    def _on_heldout_pilot(self, kind: str = "heldout_pilot") -> None:
+        if self._suite is not None or (self.worker and self.worker.is_alive()):
+            return
+        pilot = HELDOUT_PILOTS[kind]
+        self.provider_var.set(pilot["provider"])
+        self.model_var.set(pilot["model"])
+        self.mode_var.set(pilot["mode"])
+        self.harness_choice.set(HARNESS_LABELS[pilot["harness"]])
+        self._on_harness(HARNESS_LABELS[pilot["harness"]])
+        self.repeats_var.set(pilot["repeats"])
+        self._on_repeats(pilot["repeats"])
+        done = self._pilot_finished_cases(kind) & set(HELDOUT_SUITE_CASES)
+        cases = HELDOUT_SUITE_CASES
+        if done:
+            remaining = tuple(case for case in HELDOUT_SUITE_CASES if case not in done)
+            choice = messagebox.askyesnocancel(
+                "Resume held-out pilot",
+                f"{len(done)} of {len(HELDOUT_SUITE_CASES)} cases already finished in earlier pilot sessions.\n\n"
+                f"Yes: run the remaining {len(remaining)} cases.\nNo: run all {len(HELDOUT_SUITE_CASES)} cases again.\n"
+                "Cancel: do nothing.", parent=self)
+            if choice is None or (choice and not remaining):
+                return
+            cases = remaining if choice else HELDOUT_SUITE_CASES
+        self._on_suite(cases, kind=kind)
+
+    def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES, kind: str = "suite") -> None:
         if self._suite is not None or (self.worker and self.worker.is_alive()):
             return
         try:
@@ -865,14 +949,16 @@ class App(ctk.CTk):
         modes = ["stateful", "stateless"] if mode == "both" else [mode]
         repeats = int(self.repeats_var.get())
         budget = MAX_MODEL_CALLS
+        reasoning = os.environ.get("REASONING", "1").lower() not in ("0", "false", "no")
         runs = len(case_ids) * len(modes) * repeats
         tiers = ", ".join(f"{sum(case_assessment(c)[0] == tier for c in case_ids)} {tier.lower()}"
-                          for tier in ("Usable", "usable_2", "Control", "Provisional") if any(case_assessment(c)[0] == tier for c in case_ids))
+                          for tier in ("Usable", "usable_2", "Held-out", "Control", "Provisional") if any(case_assessment(c)[0] == tier for c in case_ids))
         staircase = "Staircase width is scored on all 59 stairs.\n" if "staircase_width_v8" in case_ids else ""
         if not messagebox.askyesno(
             "Confirm paid health suite",
             f"{len(case_ids)} cases: {tiers}\n\n"
             f"Provider: {self.provider_var.get()}\nModel: {self.model_var.get()}\nModes: {', '.join(modes)}\n"
+            f"Harness: H{int(self.harness_var.get())} | Reasoning: {'on' if reasoning else 'off'}\n"
             f"{repeats} repeat(s) per mode: {runs} runs\n"
             f"Fixed {budget} model calls per run: at most {runs * budget} model calls\n\n"
             "Each case uses its stored rule and IFC, not the edited input fields.\n"
@@ -890,11 +976,11 @@ class App(ctk.CTk):
         stamp = _dt.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
         self._suite_path = LOG_DIR / f"{stamp}_health_suite.json"
         self._suite = {
-            "suite_id": f"health-{stamp}", "status": "running",
+            "suite_id": f"health-{stamp}", "kind": kind, "status": "running",
             "case_ids": list(case_ids), "cases": [],
             "settings": {**llm.model_identity(self._suite_client), "modes": modes, "repeats": repeats,
                          "max_model_calls": budget, "harness": int(self.harness_var.get()),
-                         "reasoning": os.environ.get("REASONING", "1").lower() not in ("0", "false", "no"),
+                         "reasoning": reasoning,
                          "env_primer": os.environ.get("ENV_PRIMER", "1").lower() not in ("0", "false", "no")},
             "requested_runs": runs, "finished_runs": 0, "complete_runs": 0,
             "known_input_tokens": 0, "known_output_tokens": 0, "usage_complete": True,

@@ -207,6 +207,22 @@ class AgentRegressionTests(unittest.TestCase):
         self.assertEqual(result.iterations, 3)
         self.assertTrue(any("No tool call received" in str(entry["content"]) for entry in result.transcript))
 
+    def test_malformed_tool_call_is_removed_and_the_model_asked_to_resend(self):
+        broken = AIMessage(content="", invalid_tool_calls=[{"name": "run_python", "args": '{"code": "print(', "id": "bad",
+                                                            "error": "invalid JSON", "type": "invalid_tool_call"}],
+                           usage_metadata={"input_tokens": 100, "output_tokens": 20, "total_tokens": 120})
+        model = ScriptedClient([broken, reply(python_call('report_labels({"anchor":"PASS"})')), reply(final_call())])
+        executor = KernelCodeExecutor(timeout=30)
+        self.addCleanup(executor.close)
+        with patch("agent.discover_scope", return_value=({"anchor"}, "public test scope")):
+            result = CodeActAgent(model, executor, max_iterations=3, env_primer=False).check("Judge anchor", "not-opened.ifc")
+        self.assertEqual(result.completion_status, "complete")
+        self.assertEqual(result.llm_calls[0]["malformed_tool_calls"], 1)
+        resent = model.requests[1]
+        self.assertFalse(any(getattr(message, "invalid_tool_calls", None) for message in resent))
+        self.assertIn("could not be parsed", str(resent[-1].content))
+        self.assertNotIn("No tool call received", " ".join(str(message.content) for message in resent))
+
     def test_text_on_the_last_call_leaves_the_run_incomplete(self):
         result = self.run_script([reply(python_call('report_labels({"anchor":"PASS"})')), reply(text="Done: compliant.")])
         self.assertEqual(result.completion_status, "incomplete")

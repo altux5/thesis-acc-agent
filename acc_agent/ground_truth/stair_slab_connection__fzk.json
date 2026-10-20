@@ -1,0 +1,43 @@
+{
+  "case_id": "stair_slab_connection__fzk",
+  "rule": "Every stair must be connected to slabs at its beginning and at its end.\nSource: rule '504.2 Treads and Risers' of the EC3-2026 rule catalogue: All stairs shall be connected to slabs.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. A stair is connected at its beginning when its bottom step starts on a slab (a floor or landing slab), and at its end when its top step arrives at a slab. A stair fails when it is not connected at its beginning, at its end, or at both.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/fzk_house/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "38a9vdh9bF5Qg28GWyHhlr": "PASS"
+  },
+  "notes": "504.2 Treads and Risers on 1 IfcStair: {'PASS': 1}.",
+  "clause": "EC3 504.2 stair-slab connection",
+  "source": "solibri_reference.py::build_ec3 (ec3_fzk_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 1,
+    "ifc_sha256": "70cc8ff245fc0894201d96496c031005a5cbd7a96b22d8a1b87c5a883fb77994",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "is not connected to slabs? at the (beginning|end)",
+      "report_file": "ec3_fzk_check.xlsx",
+      "report_sha256": "052c173bc79ae0d31073c5829f122757ec0f6b162fcaf01f192db302f3dd4201",
+      "rule_issues": 2,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "38a9vdh9bF5Qg28GWyHhlr": {
+      "name": "Wendeltreppe",
+      "class": "IfcStair",
+      "label": "PASS"
+    }
+  }
+}

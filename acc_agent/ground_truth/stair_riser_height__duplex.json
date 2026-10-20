@@ -1,0 +1,58 @@
+{
+  "case_id": "stair_riser_height__duplex",
+  "rule": "Every stair must have risers between 100 mm and 180 mm high.\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nADA and ABA Accessibility Guidelines (2004), 504.2 Treads and Risers: All steps on a flight of stairs shall have uniform riser heights and uniform tread depths. Risers shall be 4 inches (100 mm) high minimum and 7 inches (180 mm) high maximum. Treads shall be 11 inches (280 mm) deep minimum.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. The limits apply in inches as written: 4 in = 101.6 mm and 7 in = 177.8 mm. A stair fails when its typical riser height (the height shared by its regular steps) is below 101.6 mm or above 177.8 mm. A first or last step that differs from the others is covered by a separate uniformity check, and tread depth by a separate tread check.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/duplex/arc.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0wkEuT1wr1kOyafLY4v_O1",
+    "21ldoMpbP4VfsJ0XGY_34d"
+  ],
+  "labels": {
+    "0wkEuT1wr1kOyafLY4v_O1": "FAIL",
+    "21ldoMpbP4VfsJ0XGY_34d": "FAIL"
+  },
+  "notes": "504.2 Treads and Risers on 2 IfcStair: {'FAIL': 2}.",
+  "clause": "ADA 504.2",
+  "source": "solibri_reference.py::build_ec3 (ec3_duplex_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 2,
+    "ifc_sha256": "707a032566dee8e969a44d95509be46d646440e2443624709f8d3ae2b45f4656",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "riser height is .* height for the risers is",
+      "report_file": "ec3_duplex_check.xlsx",
+      "report_sha256": "eb382d9a8558816db6474da78e80318d45ee42d92aa9048be085431a09138c6a",
+      "rule_issues": 8,
+      "matching_issues": 2
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0wkEuT1wr1kOyafLY4v_O1": {
+      "name": "Stair:Residential - 200mm Max Riser 250mm Tread:151086",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.1: 0.19 m"
+      ]
+    },
+    "21ldoMpbP4VfsJ0XGY_34d": {
+      "name": "Stair:Residential - 200mm Max Riser 250mm Tread:198878",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.2: 0.19 m"
+      ]
+    }
+  }
+}

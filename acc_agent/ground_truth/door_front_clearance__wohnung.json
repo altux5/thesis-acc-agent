@@ -1,0 +1,319 @@
+{
+  "case_id": "door_front_clearance__wohnung",
+  "rule": "The area in front of every door must be free of building components.\nSource: rule 'Clearance in Front of Doors' of the EC3-2026 rule catalogue: This rule checks there is enough clearance in front of doors.\nBenchmark convention: the free area is a box directly in front of the door opening, on the side to which the door opens. It is as wide and as high as the door and as deep as the door is wide, shrunk by 50 mm on each side so that components merely touching it do not count. A door fails when any building component other than a space (walls, curtain walls, slabs, floor finishes and other coverings, columns, doors, windows, stairs, railings, furniture, building services or other objects) intersects its free area.\n\nLabel every door.\nReport the GlobalId of every element (modelled as IfcDoor) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_159_kleine_Wohnung_R22.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0J4OFRDm95f8DC_4snU595": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hG2": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hIk": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hKU": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hNS": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hO8": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qMo": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qMp": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qMr": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOW": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOX": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOZ": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOk": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOl": "PASS",
+    "13r2DB9a17cBv_AmP68WKd": "PASS",
+    "13r2DB9a17cBv_AmP68WLD": "PASS",
+    "13r2DB9a17cBv_AmP68WN$": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHC": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHD": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHE": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI8": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI9": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIA": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIB": "PASS",
+    "1MCzJggrb7zRdoy7aMKUJq": "PASS",
+    "1MCzJggrb7zRdoy7aMKULp": "PASS",
+    "1MCzJggrb7zRdoy7aMKULy": "PASS",
+    "1MCzJggrb7zRdoy7aMKULz": "PASS",
+    "1MCzJggrb7zRdoy7aMKVle": "PASS",
+    "1MCzJggrb7zRdoy7aMKVli": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlj": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlk": "PASS",
+    "1MCzJggrb7zRdoy7aMKVll": "PASS",
+    "1rmiPmr3r27BAAf37fkLWb": "PASS",
+    "1rmiPmr3r27BAAf37fkLZP": "PASS",
+    "1rmiPmr3r27BAAf37fkLZQ": "PASS",
+    "1rmiPmr3r27BAAf37fkLZR": "PASS",
+    "1rmiPmr3r27BAAf37fkLZS": "PASS",
+    "1rmiPmr3r27BAAf37fkLZT": "PASS",
+    "1rmiPmr3r27BAAf37fkLau": "PASS",
+    "1rmiPmr3r27BAAf37fkLav": "PASS",
+    "1rmiPmr3r27BAAf37fkLaw": "PASS",
+    "1rmiPmr3r27BAAf37fkLd$": "PASS",
+    "1rmiPmr3r27BAAf37fkLdW": "PASS",
+    "1rmiPmr3r27BAAf37fkLdX": "PASS",
+    "1rmiPmr3r27BAAf37fkLdY": "PASS",
+    "1rmiPmr3r27BAAf37fkLd_": "PASS"
+  },
+  "notes": "Clearance in Front of Doors on 47 IfcDoor: {'PASS': 47}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_wohnung_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 47,
+    "ifc_sha256": "6e4160d669c4873a1b1765ad121e2b192ca7cb050549b4930177de19bbbe5222",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Clearance in Front of Doors",
+      "message": null,
+      "report_file": "ec3_wohnung_check.xlsx",
+      "report_sha256": "8a56b56c3b32b045b4bc11aeebce8dfb6bbc7f141662f574ee957257ac6f78eb",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0J4OFRDm95f8DC_4snU595": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:522460",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hG2": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:321563",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hIk": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:321719",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hKU": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:321799",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hNS": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:321989",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hO8": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:322065",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMo": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:334251",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMp": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:334250",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMr": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:334252",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOW": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:334393",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOX": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:334392",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOZ": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:334394",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOk": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:334391",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOl": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:334390",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68WKd": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:314757",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68WLD": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:314863",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68WN$": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:314717",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHC": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:339960",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHD": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:339961",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHE": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:339962",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI8": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:339772",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI9": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:339773",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIA": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:339774",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIB": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:339775",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUJq": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:339776",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKULp": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:339655",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKULy": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:339656",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKULz": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:339657",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVle": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:340060",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVli": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:340056",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlj": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:340057",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlk": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:340058",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVll": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:340059",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLWb": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:353365",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZP": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:353449",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZQ": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:353450",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZR": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:353451",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZS": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:353452",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZT": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:353453",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLau": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:353608",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLav": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:353609",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLaw": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:353610",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLd$": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:353679",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdW": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 200:353680",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdX": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:353681",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdY": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:85 x 200:353682",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLd_": {
+      "name": "Drehfl\u00fcgel 1-flg - Umfassungszarge:90 x 201:353678",
+      "class": "IfcDoor",
+      "label": "PASS"
+    }
+  }
+}

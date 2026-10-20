@@ -1,0 +1,1756 @@
+{
+  "case_id": "space_component_intersection__esplanades",
+  "rule": "A space must not intersect walls, curtain walls, columns, slabs or roofs.\nSource: rule 'Space Validation' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct. It checks that space does not incorrectly intersect with slabs, walls or other components. This template focuses only on the 'intersect' check.\nBenchmark convention: a space fails when its volume overlaps a wall, curtain wall, column, slab or roof by more than 30 mm; smaller overlaps at the space boundary are tolerated. Components lying entirely inside the space are covered by a separate check; doors, windows, furniture and other spaces are ignored.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Esplanades_1807_EP_AR_v18.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "1EXm7jUmVu$lME5AIOa1$l",
+    "33pqb7zoJGsDu_FYQYyqjJ"
+  ],
+  "labels": {
+    "0$KDh2GJdTRLgYTIel9uxp": "PASS",
+    "01OzbFNYT3fU68kyTnjchR": "PASS",
+    "01_uIXErhSdY8XQ1mRdu2c": "PASS",
+    "01xr9lgt0NLa3srAcTx0n7": "PASS",
+    "02UGY6ZNc5uMhRu2QNBj2N": "PASS",
+    "04oYTlgXej$dnAEh5O$Xe5": "PASS",
+    "06z$dfp3HBgI_Xs_IHPCr5": "PASS",
+    "08oicQQH8fT6mh0Xzn_cfz": "PASS",
+    "0956UnmpRzHjjtvlgFuqxJ": "PASS",
+    "09WWuZqFurjKXvYY3tirUt": "PASS",
+    "09XR90b8_Ao2_SalcKhlxv": "PASS",
+    "0AXFzSY_J5Q1EYxHoguqlK": "PASS",
+    "0D4rdYjnwIRIpW2Dl$j_k_": "PASS",
+    "0DZrYnGRYctwGbrsm$W9WM": "PASS",
+    "0Gf5TDknyyYaE31PajCGjK": "PASS",
+    "0Gnw86bvp$LvDRPnhqzcUo": "PASS",
+    "0JjwCpTQsXjSBNZyaPPdVT": "PASS",
+    "0K5c2X1P7717NjMUdRUI9B": "PASS",
+    "0Ls4yMQ9snWUPbqZ3n53QP": "PASS",
+    "0Mz$WUV_QKN7rh5$XvV0W$": "PASS",
+    "0QemXbSMapF$_dFU92V7VA": "PASS",
+    "0RBTTvWd24AtxexQJ5ph2U": "PASS",
+    "0SBsuhNDmhnVO6TLjWQ0nW": "PASS",
+    "0SUuHRnLDT3RpBtkyCCqaP": "PASS",
+    "0TBGE6HGD4bxspuPLl8ynB": "PASS",
+    "0UYNubkWje3k3Q6aQlnW7Z": "PASS",
+    "0UrxTqCWFM9qYYHbuDW8Z0": "PASS",
+    "0V6o5ZtLP$kjDgAARNykxW": "PASS",
+    "0VgQqRpT99ap2PXuSzc0EG": "PASS",
+    "0Zpa8XHfx1vClgunURbAoF": "PASS",
+    "0_S4sjqnDh8aX4G1iQ2Tv3": "PASS",
+    "0azUdCLRjg3tFJPjZ7TzJg": "PASS",
+    "0caOQ_68NohKdHo3gOH7LA": "PASS",
+    "0crv0_JJBfj2unOTK23v_K": "PASS",
+    "0eM6Sxgo__MisKbswOohjc": "PASS",
+    "0eNyvxr4KJr0XdAv_OzGfd": "PASS",
+    "0f$1t9fAgwfG9bxlm_UkXm": "PASS",
+    "0fYrxr5PdUr$d_KJgB13rc": "PASS",
+    "0gdbg2o7k5SrKP7oxv_kND": "PASS",
+    "0geKCQZA8CzNN1CI1MMjdy": "PASS",
+    "0gu9qqW$EHc_o7HpMdM3eC": "PASS",
+    "0hT5WHgZbYrCgoykH5g2HZ": "PASS",
+    "0iVPJXAsAX8XfUjRA0Ai2L": "PASS",
+    "0iWN16yYyejQ36gs2U48XZ": "PASS",
+    "0jYqB_7IkQCLkVu8Ohkvje": "PASS",
+    "0lm9jJ6tejlu56UNO_43ZI": "PASS",
+    "0mZJ1w8KtWcle2o3urX_SR": "PASS",
+    "0nSjtMjjunnlOOLb_FK25J": "PASS",
+    "0ntbHAGCixhsv4$o4WiMNi": "PASS",
+    "0oMqFjGnrRjcOMoZFS1fhJ": "PASS",
+    "0ousjnY_5TSFitI8QwJ_Jo": "PASS",
+    "0psuNzkO_xBywaNks76hVO": "PASS",
+    "0q3za4$c9822IY6xLLKVXG": "PASS",
+    "0r0UAtLBAnKVU_QTV40_i5": "PASS",
+    "0rg_tz9wW5QRIAMal9VtKB": "PASS",
+    "0s$2_dDJG0ciz1MDA8gekd": "PASS",
+    "0uk5vsUyFhD18wsgPZkjaI": "PASS",
+    "0umGL8cjXIGVbD$7Ye7Vq5": "PASS",
+    "0vatncJGGFnMUmeh5EFteK": "PASS",
+    "0vcYtuv2mpkMdBTtEdxy9i": "PASS",
+    "0wmBBhsJutigkEudvt1O0f": "PASS",
+    "0xi8Th3cGg$bG5tH6AC26l": "PASS",
+    "0xs0KEyAFSIJ_mtBQUvlim": "PASS",
+    "0yiEgmhRIJpIL62qtwvCkd": "PASS",
+    "0zdDdgEjHsNKeBHSmjF3qw": "PASS",
+    "0zlm4ndS5pWjofY4omhUO2": "PASS",
+    "1$434n0FTlscinwcK_$JvR": "PASS",
+    "1$SJC4fTGbf7zWMWKXNvsf": "PASS",
+    "11R_M9cdAQCzoFp9gYyw$f": "PASS",
+    "11z6kv3bv9KMoKmWejjxfl": "PASS",
+    "12fXv9SfYATE51fjrgfJKb": "PASS",
+    "12xMdqyJ4LDYwpWQb7WR70": "PASS",
+    "16RBUVb49Oe__fiBdWYhPh": "PASS",
+    "16_Xxi9JefxGuZkfMwGWMN": "PASS",
+    "16lpBHJVsuyVac19_NS8DV": "PASS",
+    "17s6mzkmh14x1Hhp87Z328": "PASS",
+    "17vrTjvmfO$rsg_OQapPWB": "PASS",
+    "196h0AaornzzUnsTJxxIxF": "PASS",
+    "1A4vN_sfQ2ceZWbd3wVBsc": "PASS",
+    "1BdpzNBUcC5XcBKpxMQxiM": "PASS",
+    "1CHG2XvzpNVuPlaZ$57V0O": "PASS",
+    "1DOr7tSNaa1AsGdak0pm0e": "PASS",
+    "1E$PHav6zcGAvvxo2$M78w": "PASS",
+    "1EXm7jUmVu$lME5AIOa1$l": "FAIL",
+    "1FhRPBf2UB_megJsIm$kOV": "PASS",
+    "1JGIItLks8DpIlJ9kvU_mX": "PASS",
+    "1Jq1HzVzMw2n2Ip0NkqdZD": "PASS",
+    "1Jru0XF$pbecqerXV3KPn1": "PASS",
+    "1MUyCq3Oa1WXEksrhItFJX": "PASS",
+    "1P5RwHkD7SgGz_QBa4BdYc": "PASS",
+    "1PR0J7jjZLe0FFHZhNWX3v": "PASS",
+    "1QZXDFkD$uPuiBdma1fZjA": "PASS",
+    "1QkdwL6Rbm5WdHy$ddqaNs": "PASS",
+    "1R2BPJxIA4IpcUWzenjW9x": "PASS",
+    "1SQ53k1h8JqCsrAjJHA8hH": "PASS",
+    "1TzPBTcPKcbaLo4FUjAybX": "PASS",
+    "1VK2E00G8$UtKfIgWHIAJa": "PASS",
+    "1VNBwafOH7a3SkEd_KTaRZ": "PASS",
+    "1VdP6drdsPJPBlqmlkZzhQ": "PASS",
+    "1Vh7tQtdribJI7Rcnlnsxv": "PASS",
+    "1Vr91kgA25Dul0rPRmZvsd": "PASS",
+    "1W_QQHVDOtHT0qltGXyrTB": "PASS",
+    "1XWnlKWFDilIAr$HfNLkWr": "PASS",
+    "1Z1$9s9mgQ8kIEcpLw$Pd$": "PASS",
+    "1_H2Xu2uJfwbKy7KlUIBgs": "PASS",
+    "1a3lpzX19qqJECoVSSsj9H": "PASS",
+    "1dz0kKZA$qZFsTsX1C8CLz": "PASS",
+    "1e_GJDvRWngapKt0wg4S6B": "PASS",
+    "1fEjflW1j5T06dttP6Gn0l": "PASS",
+    "1fTBzIKrhbH1XkSOh86$L6": "PASS",
+    "1gWJwrN0xV04Cp_28so635": "PASS",
+    "1h3w5TLp5mfouwYENiFBhN": "PASS",
+    "1hRdD63Mo$FJyGECMZH6V_": "PASS",
+    "1i_EXhT4yW_uloM8c3$KZC": "PASS",
+    "1jgWa$u$285hlpjZdU21Ra": "PASS",
+    "1jpazi3VUlmbVsur_j_cyO": "PASS",
+    "1k7_SLgf8nXyIJF$5FOqln": "PASS",
+    "1mz8vdH3SNWu6rQ3uwkLXL": "PASS",
+    "1nF6vyYCHDw6i78KJLlcqz": "PASS",
+    "1oTFE7yLkKdyjHin6BYt1N": "PASS",
+    "1puxtnhbw3nIvxEHM2fGGh": "PASS",
+    "1pzLUKgG1uOURMGL1WGlBr": "PASS",
+    "1qeHvUoAGOQbSHLxYE5CG3": "PASS",
+    "1qpql5B6opcQTzw36tNmcN": "PASS",
+    "1rOicpTjwwO9tVHdKUsa1W": "PASS",
+    "1rngIp6DPNVvZUa$koXS_f": "PASS",
+    "1sQtNPK3gs00J3ZDp27JVu": "PASS",
+    "1sn5TnftOmYQQ_ExriWlOZ": "PASS",
+    "1sp6ljfY1Ffrx8m2K_dQxe": "PASS",
+    "1tDM69cX2QpLDQcwdfH4Lj": "PASS",
+    "1u_NQnkuCoaXYprNjuod5q": "PASS",
+    "1ufAEJMG93hDMvKmvtRhAy": "PASS",
+    "1v2uHm9FO$L9cdHwhB9NHP": "PASS",
+    "1wJEXZRLIx2mdZedQLY04v": "PASS",
+    "1zUH8Ho6ne3olBgUjzHpdp": "PASS",
+    "2$Nm$_rsyq2v3HsQH8FXRG": "PASS",
+    "202DL8_WUFJLJ$fMSMezuM": "PASS",
+    "210QOsf29EB69oabpI4MH8": "PASS",
+    "217rX8QDUtdStyz1UVzmsd": "PASS",
+    "21L35xZSNerjfhuY7ja_yC": "PASS",
+    "21UQJPnk1n6LXGx5pPDXyb": "PASS",
+    "21mQF1HrAyHzPk_GV9o5d8": "PASS",
+    "23V9iWQ7UTGmYnwHiBbOX1": "PASS",
+    "24igtZhr6K3Qt12yz4Ap_4": "PASS",
+    "27QBJsyRX9$tyYfR257kJs": "PASS",
+    "28V3yqgy2jF6g9$3aaeUde": "PASS",
+    "29PvI3OUh$w0uCYg9tOfXM": "PASS",
+    "29ugtf4uCJzapYxATLMj7r": "PASS",
+    "2Am5w8jWdsSa6Hbo47vvG1": "PASS",
+    "2BOEw6Sl3GUnHd0hKdP$7_": "PASS",
+    "2BcfLoBM$ONHFe7paZYEHr": "PASS",
+    "2Bru0Y1LGto0SHClqzBx3m": "PASS",
+    "2EriUfog8FU_CfbAzF4Wn2": "PASS",
+    "2G52cSbGr3y7Ca2JtMOobT": "PASS",
+    "2Ga8bhOr26WqfbvJT4_vn0": "PASS",
+    "2JfpCYt0AhU70GykhO1A$0": "PASS",
+    "2JpAIB$N8CxM8hoDwu_6XV": "PASS",
+    "2KkcRc$k_54_WO85VrL$4o": "PASS",
+    "2LH0EgJwfx$Swbgu7X5zuo": "PASS",
+    "2LRZAaGwqJS4ZEx5luqvVv": "PASS",
+    "2MsXMs2I3PyG_V4woAv3lA": "PASS",
+    "2MtidUzIMdfkE4Dx8_Nuha": "PASS",
+    "2Pvl$LG_f5LPLTd1lyx3vI": "PASS",
+    "2Q4I0xz47Xn86fHUP2gpJU": "PASS",
+    "2QYdVaL57$sCRBWlEnCSad": "PASS",
+    "2QjcJuFuoOyEewoCIGhBcj": "PASS",
+    "2S3uo$v_atQAdPP5CoZySO": "PASS",
+    "2SAdsRkj0FtQkVOTORODsB": "PASS",
+    "2SMpltA$9nPEryiz2aIetY": "PASS",
+    "2Sd1W5z9ZTnkwKFv23b7SJ": "PASS",
+    "2TVUjYens4fHADvdq4cLFs": "PASS",
+    "2ThX5DONxvUWD0vNtBcE$E": "PASS",
+    "2Ukw4JFiCfRAjeuSiUQ35s": "PASS",
+    "2VX8mO3iIfI_CX8VuDtmse": "PASS",
+    "2W0toH2c_LxWs$TWA5$WrQ": "PASS",
+    "2X0$DCX3HQ2Naw$Jry$vga": "PASS",
+    "2X6Yxdej4MnWXsSKZ4kW0x": "PASS",
+    "2YHw1W3Hzx6Nu$FNhE1Q_M": "PASS",
+    "2YVLg947IsUrYuNvE7oIo9": "PASS",
+    "2YdpjkPDVDTjA_F7j9R_X8": "PASS",
+    "2YnSA0CURG2QOzzBzJZKYk": "PASS",
+    "2_L9p7EIbxUJAWmoDCYcju": "PASS",
+    "2bKwzgs2_gV_vMaZBTHXf0": "PASS",
+    "2cCFVgyztUNHVBIbAQkfYh": "PASS",
+    "2cY6qQiIoafBNov5i4$Fjq": "PASS",
+    "2ca_7fVdg1tnEoP7lRg$Lz": "PASS",
+    "2dzoyz7Y9Hey1vxyN$8KPg": "PASS",
+    "2faj8LRqh8x3fbPWClptyN": "PASS",
+    "2idlR9fNlwtL4C2b3fCUK1": "PASS",
+    "2k11jkLm7PePCeEh$bM9IH": "PASS",
+    "2lAm9$j60l9ZZK1PHEJfgB": "PASS",
+    "2mSshAwSWhDn2nDqVuwYDK": "PASS",
+    "2mUMmE0V7MH0tDLcnqgUVW": "PASS",
+    "2oL7W$4zf0GA__uzAkjm7w": "PASS",
+    "2pL0buXujcCVUGqXgEizML": "PASS",
+    "2pgqzyyMGZNLJO$nLYp2G6": "PASS",
+    "2qyQsc2EtS89DMf5iQIlxh": "PASS",
+    "2rykEZm3Kho4nSzolC__oA": "PASS",
+    "2sfMLMSZ3HCA_guRFw4zM3": "PASS",
+    "2sp8woGa5nNhtFKzSFRfsM": "PASS",
+    "2trRmvibutPUZR5MBBnpK$": "PASS",
+    "2uNnQitS726N8ZETauiZgp": "PASS",
+    "2vJNrF_5yRHzsUwPwQkv1s": "PASS",
+    "2vOwlY50b$htpGLHZQdzCV": "PASS",
+    "2vjewZ9Woxrtfgt8a6XGwT": "PASS",
+    "2wrOkOsArNH1lkgwCma7Kv": "PASS",
+    "2yu9t5gFecDw4PK0F5sh2s": "PASS",
+    "2zTITW9onW_SypT$GM1q2c": "PASS",
+    "3$aY9AYDBVolSxa6NSMxKg": "PASS",
+    "30OsoacG9siwX2N80ssUXg": "PASS",
+    "30PdsR1gaUPkzqkdVg8yvM": "PASS",
+    "30it6Xej$0na8LTq5Uoeam": "PASS",
+    "30psg3kAG8f1w9OJ_m$DXc": "PASS",
+    "32jKCFqgensAch1VkrGxEh": "PASS",
+    "32vwAGiSeLfZUdeVI_UhyN": "PASS",
+    "3393uAydapC1RRy5hf5qlT": "PASS",
+    "33pqb7zoJGsDu_FYQYyqjJ": "FAIL",
+    "34X7QE4h_o40deTp2HTB$D": "PASS",
+    "35$DZi6$HNxGiPHFa4U3TT": "PASS",
+    "36DxgQX2sTuVZT$IUHU9fq": "PASS",
+    "39Kqoj8Xpx7VFSKJTMuCR7": "PASS",
+    "3Agp0n2asRIIeJ9F4SNXRl": "PASS",
+    "3Ai3oCrtIMREL$Vough$GM": "PASS",
+    "3GTaRbKKSyc9CwCiBeTz$N": "PASS",
+    "3JxZG5Cgrprg2Nno$0tjWT": "PASS",
+    "3KfdtYG6cn9wNnrAsRO7W6": "PASS",
+    "3Kk5O7HuIdEBgFQ21I6CyV": "PASS",
+    "3L3g9qRB$Ig9LhUnK3q_K8": "PASS",
+    "3LR2GrW6Ibz9INNZkHOGiy": "PASS",
+    "3LS0qqEkyhKuraqW0VP8aP": "PASS",
+    "3My1eLfO3uTzw90onRct6J": "PASS",
+    "3Nz9En3evY$emLCi$n0Cv1": "PASS",
+    "3OAF$dJ6oNqahJfywzV1Os": "PASS",
+    "3P8eztNpw7auxQ4SupKsIg": "PASS",
+    "3PLRqxpb_vIflv$0OvWJnm": "PASS",
+    "3PWZ83hcQGyckUX2s1v9FA": "PASS",
+    "3PtUzVVxFpiu9S45vAZexr": "PASS",
+    "3QQgIyV0v6brgosV40AyM8": "PASS",
+    "3QkvwUk5sH6r$sgJ3V4SUq": "PASS",
+    "3SMPN_i1zEe_NVYLv4Mq9f": "PASS",
+    "3SNTuSj4XtI9y1ckK5TRYA": "PASS",
+    "3STWoQOMglWJNjLvjZSh8L": "PASS",
+    "3TOgqFPxYLIDqTGX0SOzjF": "PASS",
+    "3TOoVRg2OpqWMnf5omCzcG": "PASS",
+    "3UKFjmvkGfGkEt$ecQhgkG": "PASS",
+    "3W0g8YfyqcoEcShvT9zVKy": "PASS",
+    "3WdT3yP2snAg9M7t6kibmX": "PASS",
+    "3XKGQmHzV8LbYd8xIMknan": "PASS",
+    "3XktkPYj7rXcY3teB$AUrb": "PASS",
+    "3Y2jk6fpQI4vbA_GtJa0mm": "PASS",
+    "3YOMU$lUQRbDPNJzGwvj3v": "PASS",
+    "3atkXW$UjUvLLXB5cuA4vP": "PASS",
+    "3dDB$9GJW0s3RPy9BGURvA": "PASS",
+    "3eSyD1fIgEm3eX_q5LeCS0": "PASS",
+    "3eURrZdOaBWa96_8W5aedV": "PASS",
+    "3exyM4lNEyym6aqqaPbjWf": "PASS",
+    "3fS7ac36BVGWDcexdgU_O1": "PASS",
+    "3fno_TagY_vgFAc898lzzm": "PASS",
+    "3fs849jNSUjww2ylwsLEvC": "PASS",
+    "3i1g9FZ$3_LeakCo4$gfrr": "PASS",
+    "3iJUHe6HbSvw6muNbmf0nw": "PASS",
+    "3iWdUEJ1qNHqgsxkvGy7Zw": "PASS",
+    "3iv2g0TCKo_5tGgy_nrBvb": "PASS",
+    "3kenPb9fK2lHyNPagbiy5B": "PASS",
+    "3lQVQt7rIS8Nn_Nr5H$L6C": "PASS",
+    "3lic7wFHhbtum0lAL1jGFt": "PASS",
+    "3mAMK_JezQdRDpbxL$pEM6": "PASS",
+    "3mVDfa08SERzuexTM1ZK_l": "PASS",
+    "3nG1zttMFSWZvOfEKgs72R": "PASS",
+    "3nHyamCmqe0cleF4cS6wWg": "PASS",
+    "3nTs0f73qOWiHBMSn50gTj": "PASS",
+    "3nzbtvC0UUFkkrjEvNjcXt": "PASS",
+    "3orrddqXXwKHar$xiL7ek9": "PASS",
+    "3pMjLp9Q5oH9jYTHl5MEr9": "PASS",
+    "3pYr8OUI8r6iAX9R5bd3rb": "PASS",
+    "3py1AYV$DoRbFtPuEChsJ4": "PASS",
+    "3sD7GEwYP$rp0kKaw8AFvc": "PASS",
+    "3sMw4nfCalIdLHMaPLXnwq": "PASS",
+    "3sZPDaAnuupUBmKOQg6tYP": "PASS",
+    "3toZvOjYbVyjvhHRbog0_r": "PASS",
+    "3tq$7PFkfu9XPKAifZSCtr": "PASS",
+    "3wNKCxV0AsYAydn5b6V4pa": "PASS",
+    "3yM6rPJqF7VOnNVGWUZZWQ": "PASS",
+    "3yx5vaYNeTwyNTd3YFoHQG": "PASS",
+    "3zgNgmnV9hJ_Gq6ZG$7Ylr": "PASS"
+  },
+  "notes": "Space Validation on 285 IfcSpace: {'FAIL': 2, 'PASS': 283}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_esplanades_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 285,
+    "ifc_sha256": "b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Space Validation",
+      "message": "Space intersects with",
+      "report_file": "ec3_esplanades_check.xlsx",
+      "report_sha256": "d2a9842276bb8f8c33bec9136bbf172c86758e661f1f0efa7dfe594b80911fd6",
+      "rule_issues": 46,
+      "matching_issues": 2
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$KDh2GJdTRLgYTIel9uxp": {
+      "name": "1-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "01OzbFNYT3fU68kyTnjchR": {
+      "name": "112",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "01_uIXErhSdY8XQ1mRdu2c": {
+      "name": "111",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "01xr9lgt0NLa3srAcTx0n7": {
+      "name": "66-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "02UGY6ZNc5uMhRu2QNBj2N": {
+      "name": "50-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "04oYTlgXej$dnAEh5O$Xe5": {
+      "name": "70-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "06z$dfp3HBgI_Xs_IHPCr5": {
+      "name": "71-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "08oicQQH8fT6mh0Xzn_cfz": {
+      "name": "109",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0956UnmpRzHjjtvlgFuqxJ": {
+      "name": "47-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "09WWuZqFurjKXvYY3tirUt": {
+      "name": "73-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "09XR90b8_Ao2_SalcKhlxv": {
+      "name": "503",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0AXFzSY_J5Q1EYxHoguqlK": {
+      "name": "303",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0D4rdYjnwIRIpW2Dl$j_k_": {
+      "name": "505",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0DZrYnGRYctwGbrsm$W9WM": {
+      "name": "3-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Gf5TDknyyYaE31PajCGjK": {
+      "name": "2-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Gnw86bvp$LvDRPnhqzcUo": {
+      "name": "64-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0JjwCpTQsXjSBNZyaPPdVT": {
+      "name": "68-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0K5c2X1P7717NjMUdRUI9B": {
+      "name": "24-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Ls4yMQ9snWUPbqZ3n53QP": {
+      "name": "71-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Mz$WUV_QKN7rh5$XvV0W$": {
+      "name": "28-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0QemXbSMapF$_dFU92V7VA": {
+      "name": "80-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0RBTTvWd24AtxexQJ5ph2U": {
+      "name": "23-4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0SBsuhNDmhnVO6TLjWQ0nW": {
+      "name": "29-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0SUuHRnLDT3RpBtkyCCqaP": {
+      "name": "1-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0TBGE6HGD4bxspuPLl8ynB": {
+      "name": "53-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0UYNubkWje3k3Q6aQlnW7Z": {
+      "name": "11-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0UrxTqCWFM9qYYHbuDW8Z0": {
+      "name": "77-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0V6o5ZtLP$kjDgAARNykxW": {
+      "name": "64-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0VgQqRpT99ap2PXuSzc0EG": {
+      "name": "20-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Zpa8XHfx1vClgunURbAoF": {
+      "name": "58-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0_S4sjqnDh8aX4G1iQ2Tv3": {
+      "name": "76-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0azUdCLRjg3tFJPjZ7TzJg": {
+      "name": "60-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0caOQ_68NohKdHo3gOH7LA": {
+      "name": "68-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0crv0_JJBfj2unOTK23v_K": {
+      "name": "49-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0eM6Sxgo__MisKbswOohjc": {
+      "name": "102",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0eNyvxr4KJr0XdAv_OzGfd": {
+      "name": "10-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0f$1t9fAgwfG9bxlm_UkXm": {
+      "name": "32-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0fYrxr5PdUr$d_KJgB13rc": {
+      "name": "75-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0gdbg2o7k5SrKP7oxv_kND": {
+      "name": "23-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0geKCQZA8CzNN1CI1MMjdy": {
+      "name": "20-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0gu9qqW$EHc_o7HpMdM3eC": {
+      "name": "38-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0hT5WHgZbYrCgoykH5g2HZ": {
+      "name": "67-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0iVPJXAsAX8XfUjRA0Ai2L": {
+      "name": "20-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0iWN16yYyejQ36gs2U48XZ": {
+      "name": "44-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0jYqB_7IkQCLkVu8Ohkvje": {
+      "name": "62-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0lm9jJ6tejlu56UNO_43ZI": {
+      "name": "36-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mZJ1w8KtWcle2o3urX_SR": {
+      "name": "6-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0nSjtMjjunnlOOLb_FK25J": {
+      "name": "401",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ntbHAGCixhsv4$o4WiMNi": {
+      "name": "4-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0oMqFjGnrRjcOMoZFS1fhJ": {
+      "name": "404",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0ousjnY_5TSFitI8QwJ_Jo": {
+      "name": "40-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0psuNzkO_xBywaNks76hVO": {
+      "name": "121",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0q3za4$c9822IY6xLLKVXG": {
+      "name": "47-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0r0UAtLBAnKVU_QTV40_i5": {
+      "name": "50-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0rg_tz9wW5QRIAMal9VtKB": {
+      "name": "68-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0s$2_dDJG0ciz1MDA8gekd": {
+      "name": "75-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0uk5vsUyFhD18wsgPZkjaI": {
+      "name": "42-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0umGL8cjXIGVbD$7Ye7Vq5": {
+      "name": "39-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0vatncJGGFnMUmeh5EFteK": {
+      "name": "50-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0vcYtuv2mpkMdBTtEdxy9i": {
+      "name": "48-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0wmBBhsJutigkEudvt1O0f": {
+      "name": "53-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0xi8Th3cGg$bG5tH6AC26l": {
+      "name": "35-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0xs0KEyAFSIJ_mtBQUvlim": {
+      "name": "75-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0yiEgmhRIJpIL62qtwvCkd": {
+      "name": "506",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0zdDdgEjHsNKeBHSmjF3qw": {
+      "name": "10-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0zlm4ndS5pWjofY4omhUO2": {
+      "name": "51-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1$434n0FTlscinwcK_$JvR": {
+      "name": "78-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1$SJC4fTGbf7zWMWKXNvsf": {
+      "name": "42-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "11R_M9cdAQCzoFp9gYyw$f": {
+      "name": "43-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "11z6kv3bv9KMoKmWejjxfl": {
+      "name": "76-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "12fXv9SfYATE51fjrgfJKb": {
+      "name": "55-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "12xMdqyJ4LDYwpWQb7WR70": {
+      "name": "5-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "16RBUVb49Oe__fiBdWYhPh": {
+      "name": "12-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "16_Xxi9JefxGuZkfMwGWMN": {
+      "name": "1-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "16lpBHJVsuyVac19_NS8DV": {
+      "name": "47-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "17s6mzkmh14x1Hhp87Z328": {
+      "name": "27-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "17vrTjvmfO$rsg_OQapPWB": {
+      "name": "10-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "196h0AaornzzUnsTJxxIxF": {
+      "name": "11-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1A4vN_sfQ2ceZWbd3wVBsc": {
+      "name": "41-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1BdpzNBUcC5XcBKpxMQxiM": {
+      "name": "12-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1CHG2XvzpNVuPlaZ$57V0O": {
+      "name": "33-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1DOr7tSNaa1AsGdak0pm0e": {
+      "name": "7-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1E$PHav6zcGAvvxo2$M78w": {
+      "name": "69-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1EXm7jUmVu$lME5AIOa1$l": {
+      "name": "114",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.43 : \u00dcHISTEGEVUSE RUUM[114]"
+      ]
+    },
+    "1FhRPBf2UB_megJsIm$kOV": {
+      "name": "21-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1JGIItLks8DpIlJ9kvU_mX": {
+      "name": "116",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Jq1HzVzMw2n2Ip0NkqdZD": {
+      "name": "61-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Jru0XF$pbecqerXV3KPn1": {
+      "name": "77-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1MUyCq3Oa1WXEksrhItFJX": {
+      "name": "13-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1P5RwHkD7SgGz_QBa4BdYc": {
+      "name": "63-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1PR0J7jjZLe0FFHZhNWX3v": {
+      "name": "32-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1QZXDFkD$uPuiBdma1fZjA": {
+      "name": "28-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1QkdwL6Rbm5WdHy$ddqaNs": {
+      "name": "22-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1R2BPJxIA4IpcUWzenjW9x": {
+      "name": "9-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SQ53k1h8JqCsrAjJHA8hH": {
+      "name": "38-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1TzPBTcPKcbaLo4FUjAybX": {
+      "name": "80-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VK2E00G8$UtKfIgWHIAJa": {
+      "name": "63-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VNBwafOH7a3SkEd_KTaRZ": {
+      "name": "45-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VdP6drdsPJPBlqmlkZzhQ": {
+      "name": "48-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Vh7tQtdribJI7Rcnlnsxv": {
+      "name": "75-4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Vr91kgA25Dul0rPRmZvsd": {
+      "name": "15-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1W_QQHVDOtHT0qltGXyrTB": {
+      "name": "118",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1XWnlKWFDilIAr$HfNLkWr": {
+      "name": "13-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Z1$9s9mgQ8kIEcpLw$Pd$": {
+      "name": "37-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1_H2Xu2uJfwbKy7KlUIBgs": {
+      "name": "52-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1a3lpzX19qqJECoVSSsj9H": {
+      "name": "62-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1dz0kKZA$qZFsTsX1C8CLz": {
+      "name": "77-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1e_GJDvRWngapKt0wg4S6B": {
+      "name": "72-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1fEjflW1j5T06dttP6Gn0l": {
+      "name": "8-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1fTBzIKrhbH1XkSOh86$L6": {
+      "name": "33-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1gWJwrN0xV04Cp_28so635": {
+      "name": "44-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1h3w5TLp5mfouwYENiFBhN": {
+      "name": "65-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1hRdD63Mo$FJyGECMZH6V_": {
+      "name": "57-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1i_EXhT4yW_uloM8c3$KZC": {
+      "name": "65-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1jgWa$u$285hlpjZdU21Ra": {
+      "name": "45-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1jpazi3VUlmbVsur_j_cyO": {
+      "name": "38-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1k7_SLgf8nXyIJF$5FOqln": {
+      "name": "56-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1mz8vdH3SNWu6rQ3uwkLXL": {
+      "name": "57-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1nF6vyYCHDw6i78KJLlcqz": {
+      "name": "65-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1oTFE7yLkKdyjHin6BYt1N": {
+      "name": "26-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1puxtnhbw3nIvxEHM2fGGh": {
+      "name": "3-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1pzLUKgG1uOURMGL1WGlBr": {
+      "name": "8-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1qeHvUoAGOQbSHLxYE5CG3": {
+      "name": "7-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1qpql5B6opcQTzw36tNmcN": {
+      "name": "73-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1rOicpTjwwO9tVHdKUsa1W": {
+      "name": "46-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1rngIp6DPNVvZUa$koXS_f": {
+      "name": "54-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1sQtNPK3gs00J3ZDp27JVu": {
+      "name": "37-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1sn5TnftOmYQQ_ExriWlOZ": {
+      "name": "19-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1sp6ljfY1Ffrx8m2K_dQxe": {
+      "name": "59-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1tDM69cX2QpLDQcwdfH4Lj": {
+      "name": "59-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1u_NQnkuCoaXYprNjuod5q": {
+      "name": "73-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1ufAEJMG93hDMvKmvtRhAy": {
+      "name": "72-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1v2uHm9FO$L9cdHwhB9NHP": {
+      "name": "5-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1wJEXZRLIx2mdZedQLY04v": {
+      "name": "39-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1zUH8Ho6ne3olBgUjzHpdp": {
+      "name": "202",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2$Nm$_rsyq2v3HsQH8FXRG": {
+      "name": "23-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "202DL8_WUFJLJ$fMSMezuM": {
+      "name": "104",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "210QOsf29EB69oabpI4MH8": {
+      "name": "72-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "217rX8QDUtdStyz1UVzmsd": {
+      "name": "4-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "21L35xZSNerjfhuY7ja_yC": {
+      "name": "49-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "21UQJPnk1n6LXGx5pPDXyb": {
+      "name": "79-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "21mQF1HrAyHzPk_GV9o5d8": {
+      "name": "7-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "23V9iWQ7UTGmYnwHiBbOX1": {
+      "name": "62-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "24igtZhr6K3Qt12yz4Ap_4": {
+      "name": "70-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "27QBJsyRX9$tyYfR257kJs": {
+      "name": "52-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "28V3yqgy2jF6g9$3aaeUde": {
+      "name": "71-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "29PvI3OUh$w0uCYg9tOfXM": {
+      "name": "61-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "29ugtf4uCJzapYxATLMj7r": {
+      "name": "402",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Am5w8jWdsSa6Hbo47vvG1": {
+      "name": "9-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2BOEw6Sl3GUnHd0hKdP$7_": {
+      "name": "56-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2BcfLoBM$ONHFe7paZYEHr": {
+      "name": "302",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Bru0Y1LGto0SHClqzBx3m": {
+      "name": "61-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2EriUfog8FU_CfbAzF4Wn2": {
+      "name": "42-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2G52cSbGr3y7Ca2JtMOobT": {
+      "name": "35-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Ga8bhOr26WqfbvJT4_vn0": {
+      "name": "301",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2JfpCYt0AhU70GykhO1A$0": {
+      "name": "31-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2JpAIB$N8CxM8hoDwu_6XV": {
+      "name": "502",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2KkcRc$k_54_WO85VrL$4o": {
+      "name": "26-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2LH0EgJwfx$Swbgu7X5zuo": {
+      "name": "504",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2LRZAaGwqJS4ZEx5luqvVv": {
+      "name": "39-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2MsXMs2I3PyG_V4woAv3lA": {
+      "name": "59-4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2MtidUzIMdfkE4Dx8_Nuha": {
+      "name": "5-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Pvl$LG_f5LPLTd1lyx3vI": {
+      "name": "76-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Q4I0xz47Xn86fHUP2gpJU": {
+      "name": "205",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2QYdVaL57$sCRBWlEnCSad": {
+      "name": "78-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2QjcJuFuoOyEewoCIGhBcj": {
+      "name": "69-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2S3uo$v_atQAdPP5CoZySO": {
+      "name": "49-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2SAdsRkj0FtQkVOTORODsB": {
+      "name": "14-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2SMpltA$9nPEryiz2aIetY": {
+      "name": "25-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Sd1W5z9ZTnkwKFv23b7SJ": {
+      "name": "110",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2TVUjYens4fHADvdq4cLFs": {
+      "name": "501",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2ThX5DONxvUWD0vNtBcE$E": {
+      "name": "18-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Ukw4JFiCfRAjeuSiUQ35s": {
+      "name": "30-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2VX8mO3iIfI_CX8VuDtmse": {
+      "name": "41-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2W0toH2c_LxWs$TWA5$WrQ": {
+      "name": "66-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2X0$DCX3HQ2Naw$Jry$vga": {
+      "name": "55-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2X6Yxdej4MnWXsSKZ4kW0x": {
+      "name": "22-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2YHw1W3Hzx6Nu$FNhE1Q_M": {
+      "name": "58-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2YVLg947IsUrYuNvE7oIo9": {
+      "name": "6-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2YdpjkPDVDTjA_F7j9R_X8": {
+      "name": "36-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2YnSA0CURG2QOzzBzJZKYk": {
+      "name": "405",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2_L9p7EIbxUJAWmoDCYcju": {
+      "name": "29-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2bKwzgs2_gV_vMaZBTHXf0": {
+      "name": "60-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2cCFVgyztUNHVBIbAQkfYh": {
+      "name": "51-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2cY6qQiIoafBNov5i4$Fjq": {
+      "name": "14-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2ca_7fVdg1tnEoP7lRg$Lz": {
+      "name": "3-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2dzoyz7Y9Hey1vxyN$8KPg": {
+      "name": "60-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2faj8LRqh8x3fbPWClptyN": {
+      "name": "46-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2idlR9fNlwtL4C2b3fCUK1": {
+      "name": "18-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2k11jkLm7PePCeEh$bM9IH": {
+      "name": "41-4",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2lAm9$j60l9ZZK1PHEJfgB": {
+      "name": "74-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2mSshAwSWhDn2nDqVuwYDK": {
+      "name": "115",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2mUMmE0V7MH0tDLcnqgUVW": {
+      "name": "33-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2oL7W$4zf0GA__uzAkjm7w": {
+      "name": "6-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2pL0buXujcCVUGqXgEizML": {
+      "name": "24-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2pgqzyyMGZNLJO$nLYp2G6": {
+      "name": "58-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qyQsc2EtS89DMf5iQIlxh": {
+      "name": "108",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2rykEZm3Kho4nSzolC__oA": {
+      "name": "21-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2sfMLMSZ3HCA_guRFw4zM3": {
+      "name": "69-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2sp8woGa5nNhtFKzSFRfsM": {
+      "name": "41-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2trRmvibutPUZR5MBBnpK$": {
+      "name": "15-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2uNnQitS726N8ZETauiZgp": {
+      "name": "54-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2vJNrF_5yRHzsUwPwQkv1s": {
+      "name": "25-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2vOwlY50b$htpGLHZQdzCV": {
+      "name": "25-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2vjewZ9Woxrtfgt8a6XGwT": {
+      "name": "79-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2wrOkOsArNH1lkgwCma7Kv": {
+      "name": "19-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2yu9t5gFecDw4PK0F5sh2s": {
+      "name": "119",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2zTITW9onW_SypT$GM1q2c": {
+      "name": "31-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3$aY9AYDBVolSxa6NSMxKg": {
+      "name": "18-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "30OsoacG9siwX2N80ssUXg": {
+      "name": "70-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "30PdsR1gaUPkzqkdVg8yvM": {
+      "name": "16-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "30it6Xej$0na8LTq5Uoeam": {
+      "name": "36-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "30psg3kAG8f1w9OJ_m$DXc": {
+      "name": "16-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "32jKCFqgensAch1VkrGxEh": {
+      "name": "21-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "32vwAGiSeLfZUdeVI_UhyN": {
+      "name": "67-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3393uAydapC1RRy5hf5qlT": {
+      "name": "13-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "33pqb7zoJGsDu_FYQYyqjJ": {
+      "name": "101",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.41 : FUAJEE-TREPIKODA[101]"
+      ]
+    },
+    "34X7QE4h_o40deTp2HTB$D": {
+      "name": "2-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "35$DZi6$HNxGiPHFa4U3TT": {
+      "name": "16-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "36DxgQX2sTuVZT$IUHU9fq": {
+      "name": "64-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "39Kqoj8Xpx7VFSKJTMuCR7": {
+      "name": "28-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Agp0n2asRIIeJ9F4SNXRl": {
+      "name": "105",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Ai3oCrtIMREL$Vough$GM": {
+      "name": "78-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3GTaRbKKSyc9CwCiBeTz$N": {
+      "name": "26-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3JxZG5Cgrprg2Nno$0tjWT": {
+      "name": "103",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3KfdtYG6cn9wNnrAsRO7W6": {
+      "name": "35-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Kk5O7HuIdEBgFQ21I6CyV": {
+      "name": "53-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3L3g9qRB$Ig9LhUnK3q_K8": {
+      "name": "12-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3LR2GrW6Ibz9INNZkHOGiy": {
+      "name": "74-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3LS0qqEkyhKuraqW0VP8aP": {
+      "name": "201",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3My1eLfO3uTzw90onRct6J": {
+      "name": "30-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Nz9En3evY$emLCi$n0Cv1": {
+      "name": "15-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3OAF$dJ6oNqahJfywzV1Os": {
+      "name": "66-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3P8eztNpw7auxQ4SupKsIg": {
+      "name": "74-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3PLRqxpb_vIflv$0OvWJnm": {
+      "name": "45-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3PWZ83hcQGyckUX2s1v9FA": {
+      "name": "32-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3PtUzVVxFpiu9S45vAZexr": {
+      "name": "17-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3QQgIyV0v6brgosV40AyM8": {
+      "name": "34-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3QkvwUk5sH6r$sgJ3V4SUq": {
+      "name": "43-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3SMPN_i1zEe_NVYLv4Mq9f": {
+      "name": "48-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3SNTuSj4XtI9y1ckK5TRYA": {
+      "name": "4-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3STWoQOMglWJNjLvjZSh8L": {
+      "name": "27-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3TOgqFPxYLIDqTGX0SOzjF": {
+      "name": "34-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3TOoVRg2OpqWMnf5omCzcG": {
+      "name": "113",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3UKFjmvkGfGkEt$ecQhgkG": {
+      "name": "80-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3W0g8YfyqcoEcShvT9zVKy": {
+      "name": "51-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3WdT3yP2snAg9M7t6kibmX": {
+      "name": "403",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3XKGQmHzV8LbYd8xIMknan": {
+      "name": "40-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3XktkPYj7rXcY3teB$AUrb": {
+      "name": "304",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Y2jk6fpQI4vbA_GtJa0mm": {
+      "name": "120",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3YOMU$lUQRbDPNJzGwvj3v": {
+      "name": "44-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3atkXW$UjUvLLXB5cuA4vP": {
+      "name": "55-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3dDB$9GJW0s3RPy9BGURvA": {
+      "name": "46-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3eSyD1fIgEm3eX_q5LeCS0": {
+      "name": "31-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3eURrZdOaBWa96_8W5aedV": {
+      "name": "24-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3exyM4lNEyym6aqqaPbjWf": {
+      "name": "204",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3fS7ac36BVGWDcexdgU_O1": {
+      "name": "56-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3fno_TagY_vgFAc898lzzm": {
+      "name": "43-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3fs849jNSUjww2ylwsLEvC": {
+      "name": "2-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3i1g9FZ$3_LeakCo4$gfrr": {
+      "name": "27-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3iJUHe6HbSvw6muNbmf0nw": {
+      "name": "9-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3iWdUEJ1qNHqgsxkvGy7Zw": {
+      "name": "19-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3iv2g0TCKo_5tGgy_nrBvb": {
+      "name": "54-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3kenPb9fK2lHyNPagbiy5B": {
+      "name": "23-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3lQVQt7rIS8Nn_Nr5H$L6C": {
+      "name": "30-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3lic7wFHhbtum0lAL1jGFt": {
+      "name": "305",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3mAMK_JezQdRDpbxL$pEM6": {
+      "name": "11-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3mVDfa08SERzuexTM1ZK_l": {
+      "name": "29-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3nG1zttMFSWZvOfEKgs72R": {
+      "name": "14-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3nHyamCmqe0cleF4cS6wWg": {
+      "name": "107",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3nTs0f73qOWiHBMSn50gTj": {
+      "name": "40-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3nzbtvC0UUFkkrjEvNjcXt": {
+      "name": "57-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3orrddqXXwKHar$xiL7ek9": {
+      "name": "17-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3pMjLp9Q5oH9jYTHl5MEr9": {
+      "name": "8-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3pYr8OUI8r6iAX9R5bd3rb": {
+      "name": "22-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3py1AYV$DoRbFtPuEChsJ4": {
+      "name": "63-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3sD7GEwYP$rp0kKaw8AFvc": {
+      "name": "52-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3sMw4nfCalIdLHMaPLXnwq": {
+      "name": "79-3",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3sZPDaAnuupUBmKOQg6tYP": {
+      "name": "67-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3toZvOjYbVyjvhHRbog0_r": {
+      "name": "34-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3tq$7PFkfu9XPKAifZSCtr": {
+      "name": "203",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3wNKCxV0AsYAydn5b6V4pa": {
+      "name": "17-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3yM6rPJqF7VOnNVGWUZZWQ": {
+      "name": "59-1",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3yx5vaYNeTwyNTd3YFoHQG": {
+      "name": "37-2",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3zgNgmnV9hJ_Gq6ZG$7Ylr": {
+      "name": "117",
+      "class": "IfcSpace",
+      "label": "PASS"
+    }
+  }
+}

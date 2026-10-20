@@ -1,0 +1,3085 @@
+{
+  "case_id": "doors_windows_storey__esplanades",
+  "rule": "Every door and window must be assigned to the same building storey as the wall it is placed in, and must not be an orphan (a door or window with no host element at all).\n\nA door or window fills an opening that voids a host element - its wall. It violates the rule when (a) it has no host element, or (b) the storey containing it differs from the storey containing its host. If either storey cannot be determined the element cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcDoor or IfcWindow) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Esplanades_1807_EP_AR_v18.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0$zhCFSw6ZytmZ$bno$SA1": "PASS",
+    "01XsWS1zvjeDKl$9PZal95": "PASS",
+    "01zu3OIeA4IE9O3SEMybnK": "PASS",
+    "024fZc0TM_6yPlkzpfVbkP": "PASS",
+    "026RYbwYmFN3334u$0AlET": "PASS",
+    "03S_Imyqp6QChBXTfhBGCu": "PASS",
+    "03p$c9HZA$HPCwE7V6_LRX": "PASS",
+    "04ZbcsqtO6Zb5Swl52LqRs": "PASS",
+    "04buG5lJ$oUgpSc1Q9kjhp": "PASS",
+    "0651gemSsFD$J1nTzBg7gK": "PASS",
+    "06CbKVJsWAeby0S1F9AMUq": "PASS",
+    "06i$P3acZ3PSyNPsvZBbKh": "PASS",
+    "07Trpp5xksfMTTJRRVYTmb": "PASS",
+    "07qsguT_E0_$JeXlG_VlaJ": "PASS",
+    "08AKDrDAW92yOAZgTqbhUM": "PASS",
+    "08BsSLH3G9XkLOMebOcP0d": "PASS",
+    "09ZU3dWHhX78ay376ROZsX": "PASS",
+    "0A9jXleikgAWesg12sd7GA": "PASS",
+    "0AlyDR3nAsxFRIf7SaYnga": "PASS",
+    "0B1YWaGpzo7w63kdWCW4RK": "PASS",
+    "0BB9jOMndTQrYsxOlUEl1L": "PASS",
+    "0BHRwbjxMi0MAezeZSYqm5": "PASS",
+    "0BHsbZLWKswp5z1_$kyk59": "PASS",
+    "0BMFGgNHp0caZNL_bvFw5b": "PASS",
+    "0BcZfN9M6aBPda$68cudgD": "PASS",
+    "0BgJw48yG6jsOhSsotqQNU": "PASS",
+    "0C47Jbby_QUNwZ3GYhQc8j": "PASS",
+    "0CBu2Bd5pOPjh9RqFhW$Vp": "PASS",
+    "0CCRGa_FK4fd6w6$mA0nJz": "PASS",
+    "0DGRLjW5TgElmf7wypjAhx": "PASS",
+    "0Edh5FRLARei$NbDflpjyI": "PASS",
+    "0FNa$lJNmzdAOACQUqn6QC": "PASS",
+    "0FcOXr3n3M2WQe$7RBSadM": "PASS",
+    "0FqJ08lPyAK2$JXAVtHDAw": "PASS",
+    "0GmAm$7ykXsKvtr2OcoaAG": "PASS",
+    "0GuPvOlG8Hia6li_TX5r8S": "PASS",
+    "0IIz3mwamvmrDNbPcmjrF3": "PASS",
+    "0IYZI7hWKsmru9I5Y0gsnu": "PASS",
+    "0KUcrP6qj_SMEq18T8c9so": "PASS",
+    "0KgL7eIuRGHYS_H9bPupp2": "PASS",
+    "0Khdfju9vlWvDA$1H8Uu$L": "PASS",
+    "0MCLH9yFuhhREO3rMMQvY1": "PASS",
+    "0MMXg29Zey0AtBwZfvSc2k": "PASS",
+    "0MTWm3WQENDZEiuFJSVQr7": "PASS",
+    "0MavgqaU8usLdue_IXiNOo": "PASS",
+    "0O335L$iEAZvSDTMyUJQ4Y": "PASS",
+    "0OoepNeCmCEjoGiTwxUlJR": "PASS",
+    "0OtWjrGh1R9QWXVSOd8nJ1": "PASS",
+    "0PeFrzK6EchWsp8ffULEJo": "PASS",
+    "0PtK9IFxUmMANVxXXS0MdI": "PASS",
+    "0Q3Nh9PyOA_IEsXLkZDdRQ": "PASS",
+    "0QCZ2rONVObQNqoVTKZzVg": "PASS",
+    "0Qlsc5n3ib9AqVub0OiSDZ": "PASS",
+    "0RQV9MwWHp9AyiKJO$QK1u": "PASS",
+    "0RnZ65LEryyn5yoruj7zcC": "PASS",
+    "0Rr9GX2jjgFaOGzTFVDm2C": "PASS",
+    "0SrOcYVSAfaNqeRiHM5NiM": "PASS",
+    "0TNjP4zxc2dmbg8Gp0bUqo": "PASS",
+    "0Tz$ZLpodX3w8FnSlGqEFI": "PASS",
+    "0UFl9l1USZWtSg0b36q4d7": "PASS",
+    "0VCodj5jN9Re8ILuG0xzJJ": "PASS",
+    "0W_RNUvwN_uukSkGBDjxQz": "PASS",
+    "0WbNVROCoPOVPfMz5AJOFO": "PASS",
+    "0XLBA3DViWDbrddlEMn$1E": "PASS",
+    "0XZ48EbNBzkxBfEXz$oXJ0": "PASS",
+    "0Y7rpp_sjpYztJm4bU_taH": "PASS",
+    "0Yg5eITYD_cN$7J8Qa4bOJ": "PASS",
+    "0_B0CkYT2S$m_hHk5VuZ_$": "PASS",
+    "0_LnwzSF$hRcNHDpoUAzZP": "PASS",
+    "0_iexbOxyfXhz0A9oH9$EO": "PASS",
+    "0_jKLV$I080wCpien50W6t": "PASS",
+    "0_ja$RfUIzL4h3kkBei2FA": "PASS",
+    "0aNvNc9r63DUoLE3i4nWsh": "PASS",
+    "0aYjWsaAZMWNGd7jYJ6RQ$": "PASS",
+    "0bZUrmNTAIp71aqNDnIPE_": "PASS",
+    "0btEuDWVU1uL0xLVj5or1h": "PASS",
+    "0c_SmXuCLaRlFC8uXEEbXT": "PASS",
+    "0dK9_EKroBY7_3kyz03t4x": "PASS",
+    "0dsUUTTNzsj6Wo9uow4nA2": "PASS",
+    "0efjjijBL6kKZ02LUKkCPZ": "PASS",
+    "0egLHXa__bOCbI0xhrpZGj": "PASS",
+    "0erFjvt$faWXoaL_oPtzNe": "PASS",
+    "0f3ElkFswrv6JPUfUiACRV": "PASS",
+    "0fjkTYdqTuvPXYtCNiauh9": "PASS",
+    "0k86Xp5xQVlLheEFz6mqNu": "PASS",
+    "0kikOAXX0SrYeuD7tAHDMt": "PASS",
+    "0ksAHCOCS$RjDNTsfD9Y31": "PASS",
+    "0m5cuEIpUUb2Qq7rO0ZsLn": "PASS",
+    "0myYwsFtGxE8ATaQtZNYwR": "PASS",
+    "0nM1bLCGF3sRYrHuIJZtCD": "PASS",
+    "0nUukEZ2KGW3ey56RSZkTX": "PASS",
+    "0noLuBpS0xQBKVhLdlqklb": "PASS",
+    "0nreaCf9Z33dHmuGPMlE8t": "PASS",
+    "0oGTQSTX80VXraP7lqy$co": "PASS",
+    "0oU3Ssu0lg6n3KJ0dRQhKT": "PASS",
+    "0oW9N4PZly7DKc$pUNOhYk": "PASS",
+    "0oXozxUO1gcwc6kMsfq5EV": "PASS",
+    "0ofJ_3WN_5oiyi4Y_GIbPD": "PASS",
+    "0qTAH_wcXqA1yKLK8XoLwE": "PASS",
+    "0r92bj8RTLXsEP_HOUqQSv": "PASS",
+    "0rdhm0PGmsgOUPcOIsdL6B": "PASS",
+    "0roVlhvnNz0HMFDYwDtXOP": "PASS",
+    "0sEbh87xJGcevTVUWpMhuS": "PASS",
+    "0teWYnLq$LgsX1orPsD6lq": "PASS",
+    "0thhGDrdUanwNc138I5Blh": "PASS",
+    "0ttCm34jxonC65NRR$fqtE": "PASS",
+    "0vbiZTmB0TyGIZb_ASPmyy": "PASS",
+    "0vopWAVv3EMba6qUtuDhsy": "PASS",
+    "0x4wzBWvfmgN13ZDcKEgW6": "PASS",
+    "0yIa_lUavkhpS$X_cdHr82": "PASS",
+    "0ykvOLt_Hip54KiOQnds5t": "PASS",
+    "0yrDKCE4EGgzxmKIB1Q7NU": "PASS",
+    "0znqbzm9IqIUU$lRv9nCQp": "PASS",
+    "1$R9UxGA715fz4zPHa8JG8": "PASS",
+    "10CiSHjnlErBxsdqH5G_ME": "PASS",
+    "113Zu3u9eHvTcNJj8RkemQ": "PASS",
+    "119LgHDwyqjnI8qgVOw6pK": "PASS",
+    "11DpnfiIJvr$Wkb4p1tpWV": "PASS",
+    "11akksvjo1Z$g61LJzZRZX": "PASS",
+    "12s74hya9irS457S7GpdhY": "PASS",
+    "138LUDy2E29colj0Mgqh05": "PASS",
+    "13aYESp5hhXpsVxF14Di6F": "PASS",
+    "13o3EN6V0VxCmfKcbwLs3i": "PASS",
+    "13oHBA$mefSIaBOolnBb5d": "PASS",
+    "14$HZrBKozInkrULJkGZWz": "PASS",
+    "14$aSpZF7RiyUtvtKJABul": "PASS",
+    "149KTse15MxrDmS_eOe1lg": "PASS",
+    "14V58t44KrHeu$sdtCz6up": "PASS",
+    "15$nGEeMSeVjNd3$5TUHRG": "PASS",
+    "15YzZ2iuR$vktpHCsqJcwV": "PASS",
+    "162ctR$huDBOZ61ygC334i": "PASS",
+    "16T6SEZccCWiB0nsKI8bp4": "PASS",
+    "177TQkxWeZUTEkHdyFVYEN": "PASS",
+    "17Ev8DhRuJ9ODBUO6Oropt": "PASS",
+    "17KmuNf8itt1W4W4NUvegL": "PASS",
+    "17chTFWi46ujog5nmTgxKy": "PASS",
+    "18H3RTm5RfQOu4XfTlypGV": "PASS",
+    "18M03WHX0fBLddl8WlJFld": "PASS",
+    "1AD7IJoBAO8eewk_dAXInj": "PASS",
+    "1AF_flG8WlEYdMHtMMXHCG": "PASS",
+    "1C0tyHWJJfB684FpU9IFj4": "PASS",
+    "1CdufDxFllc9lXPt0iwdej": "PASS",
+    "1ESVhgDrSdH7QlEA3JKzXb": "PASS",
+    "1Ea45FLBzakb7HFyHPrOsQ": "PASS",
+    "1FBILwq35b6lOMzqd_E4u_": "PASS",
+    "1FRIWBjg8EzKvF595QV8VX": "PASS",
+    "1G7IB6oZPK$BocKXq39arI": "PASS",
+    "1Gpl4uLGJP2WQY6VB8_N6Q": "PASS",
+    "1HfzM2TPPQajbINaHMIdrb": "PASS",
+    "1Ho76$BipPgTAcYamNWJKQ": "PASS",
+    "1HqPbE1a78E4bOsywCLh1v": "PASS",
+    "1HuZqwqC1JRo7bO$1hnKPa": "PASS",
+    "1IVNfI$2tf2BbOg0TKIyBA": "PASS",
+    "1IspgnGuEMvyICM5UFeHpZ": "PASS",
+    "1JgUCF4wgPSJ84Vek1nFX6": "PASS",
+    "1LOPwufmQx5LNRcp0kAmUK": "PASS",
+    "1L_Wwija6lEUP_gZFW6X9n": "PASS",
+    "1MExu0AeJ1Rnpje3W$6xA0": "PASS",
+    "1MHW5IlKY21GYP5wNPRl3Q": "PASS",
+    "1MNmc__c7SzSYccIIutK77": "PASS",
+    "1MYgdDPMeY3ogYT3ciSjoT": "PASS",
+    "1MzJND785SJ671boxwkHxe": "PASS",
+    "1NQ1NKlvCTD18wqUtu5orN": "PASS",
+    "1Od84v9Yi715UPb2ZJa$oI": "PASS",
+    "1Oz_wnwPQGN$96oJV0DnxM": "PASS",
+    "1PbIWDZLO6hL5GR$UwH4V3": "PASS",
+    "1Q_nymBm5vMGkroULbOp6v": "PASS",
+    "1RlDdt_lMVnPxBoWX5P4$x": "PASS",
+    "1SKU8wqJ8Abdh$JEi4NS1O": "PASS",
+    "1SaYYxHAE5IL8_UHk$U75_": "PASS",
+    "1Sx3$c20rqpAxe2QlcneJ9": "PASS",
+    "1T9hDUY4S3KjsLppo6AjB7": "PASS",
+    "1Tss92ZZ4$HQE_9lIiVcYA": "PASS",
+    "1UHSzr9OShvGjmflPLTdXQ": "PASS",
+    "1UobiwPyx$YwsduZKXbAna": "PASS",
+    "1V1GRdA1bo$Qt1ppknXx7X": "PASS",
+    "1VQ8WXdB376ty5Uhb9xTvR": "PASS",
+    "1ViilCyj7uaVau3MTMvSZq": "PASS",
+    "1VybaBivlQtBUj_KX4pms3": "PASS",
+    "1W4DJlmVSWPAJuKrJ_gxKw": "PASS",
+    "1WLo2zmyaH76ffNyU$hJbG": "PASS",
+    "1WMgkcv0WkTgGICpZULfgO": "PASS",
+    "1XAg4PIYHZpJDtxfzG8fwG": "PASS",
+    "1XCzI3$wbGqKvtbuGdEI6q": "PASS",
+    "1XWIrBxTmreGqW9VETa_D5": "PASS",
+    "1XlWzK0$9NOgHwCo$2NOKd": "PASS",
+    "1YE4f3oM0asFERFGp4nGYN": "PASS",
+    "1ZyiK4KOvonOtn$5Bsitrq": "PASS",
+    "1_MTgsE7CBZpwrpapuRvw8": "PASS",
+    "1_tpU8prPjGgB0lUIsykwO": "PASS",
+    "1aLnlKHZWk1QYXu99sOwON": "PASS",
+    "1a_E8_aobu$qLiuSnhiVI3": "PASS",
+    "1bAx0PPFNuM8dyfvcIF4$_": "PASS",
+    "1bQRDo9ihW3Z2jIFQZ3gZi": "PASS",
+    "1bX3b3xjG6sI_1m5nzYp_W": "PASS",
+    "1boduwbz89_Lz$mzO6oCoC": "PASS",
+    "1d9rSoUBJtfGXVPDR5fftE": "PASS",
+    "1eMhDLBcZrYeP34zpk_uYj": "PASS",
+    "1eefJtwzdrITFstsqBSMLL": "PASS",
+    "1exswSqA37$uIQrcw9opSY": "PASS",
+    "1f7fcDAjL2NyR5RgNuf8HG": "PASS",
+    "1fXVRcMCWZgkOuv7rSsMS0": "PASS",
+    "1flQTPnPE1Ec6l3RMSXNAI": "PASS",
+    "1h4z913U0yLDBG0IwX8LYT": "PASS",
+    "1h5BG43XnZeO4yIfu0b6Aa": "PASS",
+    "1hO94ToTCNY6DvxAXtKORF": "PASS",
+    "1hskr3jKrlRjoMjKuq6VvX": "PASS",
+    "1iV99mb3078NwrNbzrBVYX": "PASS",
+    "1ijsss_Bcwjqz15$vtSibh": "PASS",
+    "1iuKTbT7D84k0MwOmiDqnv": "PASS",
+    "1j854WfUVJXCES9HaOpvas": "PASS",
+    "1jvYzdj1$Oxuq0wJrXpcbP": "PASS",
+    "1jw2RXpdA1MCVwq0eff5ZL": "PASS",
+    "1jxyWHkzAdi6j2$RpGWwKU": "PASS",
+    "1kZc3VPP51tKAZyvNHJqMb": "PASS",
+    "1kaaOeQq5bWRojKxbV32u6": "PASS",
+    "1mSlUyAFkKwWl$2Q4caeb_": "PASS",
+    "1nrhWNYWhp3fmncLJW6oyT": "PASS",
+    "1oNy1JwPkArbQ87xsZ5B6S": "PASS",
+    "1ophwoaj1jPL9Kg5s_eb$g": "PASS",
+    "1pIb$eTvnw43LYyywU9igS": "PASS",
+    "1pVs5Mx5KApKZO$Pb6_YNJ": "PASS",
+    "1pa5jmquDTs18KXN1APaMa": "PASS",
+    "1pfFEqHrRK_ervtKlthUZ1": "PASS",
+    "1pojXjIroM4780azn10cx3": "PASS",
+    "1qQD$ylmDJRZ7zobtINy6O": "PASS",
+    "1rMvBWagM16ttgUHKIGkha": "PASS",
+    "1rtP$YEt_0UWq3Rso7LBDo": "PASS",
+    "1s$vNfF_Js8zYtn$1knUFm": "PASS",
+    "1t8df7ZiKwI27rFvA0ka8P": "PASS",
+    "1tEqK9lNZl99OQlaCdJuDU": "PASS",
+    "1tWOvenmxcjmerlqi0_Tu9": "PASS",
+    "1tgBT3uDIHUh5BREum0U8n": "PASS",
+    "1ti4nQjtiker1z61oKwRE6": "PASS",
+    "1tuw7ZKNK69Y1K_Setmt$T": "PASS",
+    "1wgzo5pXBKgVjlIte4hj5m": "PASS",
+    "1x7Sic5Nh2IT78CYC3Vi8W": "PASS",
+    "1yKdAmTcAqIyf3UXA5OfFE": "PASS",
+    "1yNX11hAOi2Hk0nLBF6hLS": "PASS",
+    "1zAe9KOirKzTqiYK_vTPSy": "PASS",
+    "1zG_YrR4A4CKvokndd6KHc": "PASS",
+    "2$7_PO5hWLD8$ALYDRrrMo": "PASS",
+    "2$nzIJAjWjCoU2zna7Za20": "PASS",
+    "2$zYcuf322dRvXg7opIied": "PASS",
+    "209RhfLv$4BtzazUFYOC$K": "PASS",
+    "20JUezgBaTwWW3NhfRHPX0": "PASS",
+    "21Hswu_XPdAAlyOgGt8qKV": "PASS",
+    "21IhrGaOwhFSIWOLkaC3hb": "PASS",
+    "228ZTwUG1Izpx7YgQcLQsG": "PASS",
+    "22HR7Ygbgr05L0bmovh5r4": "PASS",
+    "22NGrm53PNP7zXsX_XJihZ": "PASS",
+    "22tGbVqqBSKqlC3sOBWiy$": "PASS",
+    "238m1wi5xdwBP91rzljIxw": "PASS",
+    "239aA5GNzXdk2opL0JyB_V": "PASS",
+    "23mh_Haqi7no6hmP1_ZMIn": "PASS",
+    "24b$raxk2rQNuwVPW_sWF3": "PASS",
+    "25DDjNwrpZO_1ivoGgsAct": "PASS",
+    "25cov2_5kBrbAhg6WAl5WH": "PASS",
+    "26EPtwhlYaC_sNZyiQJIxW": "PASS",
+    "27A7bi$3wujsNl3Q6bRoEf": "PASS",
+    "28PCzbmvvl91jBwlolqXI8": "PASS",
+    "29Q4GDyt6fKfqd0bTh6DWf": "PASS",
+    "2A5HScWzlCMFs03XFeNlvt": "PASS",
+    "2BOzd3SEKu19EABrS8gjSe": "PASS",
+    "2Bg64doB1xl71IFMW07XIa": "PASS",
+    "2CAN7FJAQd4b4XWCVyFlod": "PASS",
+    "2CFeYgkZVou9XCtU8ajjGe": "PASS",
+    "2CbgPVrK81iuI_qa1p6zVY": "PASS",
+    "2CqUPnvbsqMNuV$zZQ9AqH": "PASS",
+    "2D9HMZ2tyLt_3cwb4Y227x": "PASS",
+    "2FY4CrmOzU3F81M5MVsrW6": "PASS",
+    "2FxeDoLjlesFgX1zgMIDgw": "PASS",
+    "2GL1VsgFpDsg1Lr0axkfcd": "PASS",
+    "2GlfQVmVP4tu1GRk9BU23T": "PASS",
+    "2GqMEXo1REehlHcIn1XA_L": "PASS",
+    "2I5IuUT6CGJgARshpW5Byy": "PASS",
+    "2I9EUxxFcp5H8V9_1jv6lm": "PASS",
+    "2IL40BsfzZ7LKo9jGhbJ53": "PASS",
+    "2IOfxAf1OGgbTNQlGpnugs": "PASS",
+    "2Id$PRjXzUOEgAJEDYUkVM": "PASS",
+    "2JwK9k_bVb1HCkeTFs_ulq": "PASS",
+    "2KiF52tFm9RhEC82Q_hPHB": "PASS",
+    "2LC5dw3sqaLuPV3CQGhYtZ": "PASS",
+    "2LK1tjTOT369mAGMTjlKgT": "PASS",
+    "2LaccdVFmqDxu0mPBXTwCK": "PASS",
+    "2MdKkHlLbxfOxQgseXiM0I": "PASS",
+    "2MoYuNtcVNvABjlSzQrjuF": "PASS",
+    "2NM2rQhAKpeJZvLMolnF93": "PASS",
+    "2OMgcKSEhM0xOdkjKVQJak": "PASS",
+    "2OwgnooYHo2R6IQYN2PaSC": "PASS",
+    "2PRWYJAG7ReMLCq19pXQPM": "PASS",
+    "2PcxFY6dsh0i4g2neEY1Ol": "PASS",
+    "2QLqROGAVTdovjrkEvI8Zu": "PASS",
+    "2QbQo2VTB_Z0D7hJWG832j": "PASS",
+    "2Rj9B59IoSOObOGyQwKwP8": "PASS",
+    "2SVTHsS0$VjH8$Zd97lv4B": "PASS",
+    "2SwvrW3bkeUImV_DDmzud7": "PASS",
+    "2TAvx2XkCuLy2rpPb7Sse4": "PASS",
+    "2TYQlMR$ZjqhqvLPIn3WUm": "PASS",
+    "2TjD19x0Tc6zqJOOaD2cU6": "PASS",
+    "2TytrZJ44w38_Isy4Tbkcg": "PASS",
+    "2UHewuBmrwa8wEGLpDurX2": "PASS",
+    "2USpEZ2wA2bdKsR4VrTWlu": "PASS",
+    "2Uh1P0oHcgFlVB3xF5HbIw": "PASS",
+    "2UsMzcvdMJpMCi1uniOqFD": "PASS",
+    "2VU_YiTWLn_efrPDCVSs2X": "PASS",
+    "2WINotVHxOpDSMkv1_x8ao": "PASS",
+    "2WXJ26xsfFGaO1yi1nLt1B": "PASS",
+    "2X8cIN_9Y0iL16S_Nc1E9v": "PASS",
+    "2XO1vKtWJwY7D_$7FYr0dk": "PASS",
+    "2XpqQP2F0lpEL9ukM86JtB": "PASS",
+    "2XqefOgPKrX7b3z1DnNU1u": "PASS",
+    "2YCM7H7AGIFrtfkNp_D9ip": "PASS",
+    "2YTHyxHuENTTjHWpJTwCOO": "PASS",
+    "2ZCxR_QIO9eTG8J_SpujTI": "PASS",
+    "2ZQAcvCwbkdT3ujEMPL8yl": "PASS",
+    "2_5Oovi2yFYGhQs$YNO3eA": "PASS",
+    "2_KgDNkMYrwEcyOAvCLkNm": "PASS",
+    "2_LsQ0vPvT7tiRn8CtVNbp": "PASS",
+    "2_o1NC8cHUcmDofmqaIuRI": "PASS",
+    "2_wjtxmWiH6uqvEttRGqYS": "PASS",
+    "2aN4mc22klqPNk7HzTZHal": "PASS",
+    "2auFlRE$FCzNMLlWrw0qRu": "PASS",
+    "2bGgb6IEy$BhZ1_EqVMz03": "PASS",
+    "2c4vcI4Odct9BXSPdhmbcO": "PASS",
+    "2dU9nKpvut9$D$dh8culc5": "PASS",
+    "2dkCnyGQdjPe3owvl8WI0A": "PASS",
+    "2dtvZbCsXVhC5r55L2L5BK": "PASS",
+    "2dzFcShU$EL6k5hO_bF0yY": "PASS",
+    "2e6FUoXBA7pG5taX55fGcb": "PASS",
+    "2fMlzbCqxHKUCKoBWlddYd": "PASS",
+    "2gle_AcT8gwZ$YPLydE2pA": "PASS",
+    "2gr_oYVtl2oJaHYU1J5CwF": "PASS",
+    "2gwlDZ4JjKM$nH3FdViMXW": "PASS",
+    "2h0kI0Jj2juJzb1CeoxIpJ": "PASS",
+    "2hd5vve0Qly4PoNMPTI7do": "PASS",
+    "2iFkh9BRebQuWyZ9p5lV4M": "PASS",
+    "2iXW6fXjzlm_IHBvTgBUuc": "PASS",
+    "2ibF9c$o$9ZzgidO2V3HIm": "PASS",
+    "2iiJx1iMzK7$sVlhv5WmVj": "PASS",
+    "2iwe4T4N7O1Blpw5E57z_x": "PASS",
+    "2j1zfhFAesed3m5oDFrIoD": "PASS",
+    "2jbjr1e0N$T4rP1J_YQ$X4": "PASS",
+    "2jpwk_EJeyhgN0dvbLVB8Z": "PASS",
+    "2kThKA9YR4mp$f2siPyUnB": "PASS",
+    "2l3oqu1qLkzCJ2yhIb984R": "PASS",
+    "2lCH2YqNXDEWCLt1yOfZDa": "PASS",
+    "2m3dODN$zcymBjSMBWLd5j": "PASS",
+    "2mNRY8nExYRaWO8U9TUsCt": "PASS",
+    "2nJY1rfOY9$gkK0PhbN_vq": "PASS",
+    "2oTiTTNRKL$8VQUuUMeDDv": "PASS",
+    "2oqUYjli9EHQL8Y32I8AOW": "PASS",
+    "2qQBV$PQgJjxn2ule0WjId": "PASS",
+    "2qatwr5L4f04G4A7Wpakj6": "PASS",
+    "2qdRRIUQLt8svBIK8wowyQ": "PASS",
+    "2rj8ZmNR$MSSCvuaedeeUx": "PASS",
+    "2sDmOmRk$HrnH9S1xltQzR": "PASS",
+    "2tZYmJ9XUws4c2qpjxZu2j": "PASS",
+    "2tfCHBkLTAYx6k2OHN8woT": "PASS",
+    "2uYkqMBWOULAl4ByW7y_bk": "PASS",
+    "2ukpGaiV2kxSELYJpYAtD2": "PASS",
+    "2ulEaHDBBPzER9cc$aTT38": "PASS",
+    "2v1682RAzoraq4mcBdKCtC": "PASS",
+    "2w45J5Kw9o3jqVO5Ardh84": "PASS",
+    "2xh7YXmB8A9lKiZ5da5ZLO": "PASS",
+    "2xw0ZuEzgWKnu7DKsaJtug": "PASS",
+    "2yIR8wa6VUxbHSt2R43Hod": "PASS",
+    "2yL8YzMDvPDW4gqndyO5Cf": "PASS",
+    "2ybrewPZKq_NEPDLnoXuNu": "PASS",
+    "2yv34AexuSNI7MBHIevU4k": "PASS",
+    "2z26$9HHFAk07OiKMmfyV3": "PASS",
+    "2zu9oZ3TMdRKyrIlGrZN3F": "PASS",
+    "3$ePWtxSJNTMzLx0ZD2_8z": "PASS",
+    "3$iE$_PO0qnLHyNSb5T0Dd": "PASS",
+    "3$nSEM0sP$4OekeZ6gDkwl": "PASS",
+    "308scD$B6yxXVycF0n6vdc": "PASS",
+    "30aPjaILx6XQJyT$_Qnwvq": "PASS",
+    "30syzUN4C703pJbZvqQoJO": "PASS",
+    "31NKc27jfy1$ap0R9EjknH": "PASS",
+    "3200JynTmAFDsHE5QE4qRB": "PASS",
+    "32y7ag16SYpM0GkDixjoqV": "PASS",
+    "33jA25Fkt7P8SfkAcB0rkJ": "PASS",
+    "33rDWxDJkPzGGiTNMSQUcS": "PASS",
+    "35qREw14yreJredsCpydK6": "PASS",
+    "3665K6mRvPBuHztQHrsXkS": "PASS",
+    "36MjCAKbtIkccudGHdSrOI": "PASS",
+    "36Y81uZTvlzGfS2S80oO5U": "PASS",
+    "374wxAwjVS5JUpOMQZhZWl": "PASS",
+    "37DNVSGmlDMGgOobg30ny1": "PASS",
+    "37fbdcgeTUB7tckZ0Edywa": "PASS",
+    "37l8Dmzeb$Eo1nIFzA8SAC": "PASS",
+    "385sPE_hcWKIl1LO7ESrwy": "PASS",
+    "387lgl1ejFzWPN6R3UYYvo": "PASS",
+    "39ZHU9muuV2SRYXEygDcEA": "PASS",
+    "39_vYCD6FiUGgXMJOIErNN": "PASS",
+    "3A3E67vTfKhhjQHrMb7yC4": "PASS",
+    "3AmmmMGom4nnKe1XEnIBfc": "PASS",
+    "3C1XHIJT$83_75Dwxn9fZB": "PASS",
+    "3DmtIkBcxmoo6WR42dcoqQ": "PASS",
+    "3Dulxb5Xc6M14KZvRpGCHl": "PASS",
+    "3E38eze8aKmEY0T7pMVUJt": "PASS",
+    "3Eh52A1OtBW1GXFlsG2Mn9": "PASS",
+    "3EqbDJOeZ46IOow6hN7y46": "PASS",
+    "3Ez4WDeJzdGYvolunwnhUE": "PASS",
+    "3F25Bpuxvtq3zb$EXhdINk": "PASS",
+    "3FBBb9DGGKkNM$5ulHb$yF": "PASS",
+    "3Fcb9I_XJQDWhDz$p86MZX": "PASS",
+    "3Fjk6ZF51R7xpAcmfe0eLJ": "PASS",
+    "3Fq$ZLJn_K34Vpk9vdQ6bj": "PASS",
+    "3FxEsmg7kYi8lwtrBtGaep": "PASS",
+    "3Ge5BSiZww6NGxM1pHvv4z": "PASS",
+    "3H3ZS8zC_qgdRfJQRNyfaP": "PASS",
+    "3H9LLMyAu$TRlRZOtBpdQi": "PASS",
+    "3HCS4hOgn5TmMuNewSjWrd": "PASS",
+    "3HH_krzsuCyZfHvf4DpcOt": "PASS",
+    "3HtcDV0UzgW3kqfVbCKi_X": "PASS",
+    "3HzVD4YeJJ9KOGai38I27v": "PASS",
+    "3IHL7myNM58CgxxRIj9aod": "PASS",
+    "3IpBelQFuiKcDLs6EiZ3in": "PASS",
+    "3JBQdp2Iur80tZxDAlFd6H": "PASS",
+    "3JZD1QC4vNBJD$zOPpXBEA": "PASS",
+    "3Je$O5kEVmpmdPx7fCcdLj": "PASS",
+    "3K7KQ1KyumyNXb7Maxfcri": "PASS",
+    "3KG6aJB1F7mO6y8luzk9P0": "PASS",
+    "3KLBIMuqypeOoZNVi7IBki": "PASS",
+    "3KXBSstlehA_owbjkD3RJL": "PASS",
+    "3LS9$9SBAN7GNNXZWpf4rk": "PASS",
+    "3LYMKNl1cy6eY1q4xQ6klM": "PASS",
+    "3LcD2m31IVlbUrMBRLw_QC": "PASS",
+    "3MfYzrcKzfxgdCjrHNLIYn": "PASS",
+    "3MvHuH637uJdV380v32KGx": "PASS",
+    "3N6Ft6dq0otDYXxpg9P3Mg": "PASS",
+    "3NQe3SUgnkW_nNsFxFSbrg": "PASS",
+    "3P54ceW2yIB0DKKKgdvhWP": "PASS",
+    "3PSwuxXI$2Zm5TQdtIrpIW": "PASS",
+    "3PcU8jXuFWTKKU8UKMtb6t": "PASS",
+    "3QUM9ZPXKJGdymPOWxL93U": "PASS",
+    "3RfDuOorymxtew1R_NcPC6": "PASS",
+    "3RjKE18SPB1R7L_ae362yh": "PASS",
+    "3Rz1QIxUo0YS8t2HdSDYt1": "PASS",
+    "3S8xLlrCVl$JYRpHm3DDDY": "PASS",
+    "3SSqwQ4x121FdgZuzVa$fV": "PASS",
+    "3TCHWytHJ6ljjozBkpzWoV": "PASS",
+    "3Ts_ULyyJQbaQ7a6U1ko7j": "PASS",
+    "3Tz95ngJGViSbzQCxa8YJf": "PASS",
+    "3VT2OxR76iYouXSfwrYxYc": "PASS",
+    "3W8db3XnGsAtg9H0ufT_Je": "PASS",
+    "3Yavr$dL5D3uHFpmQ_QLs_": "PASS",
+    "3Z0LniWg2KrPAx$bJQIbx5": "PASS",
+    "3Zp940W4eQ5yx_5Do9GRO2": "PASS",
+    "3_5Dw8JfbaOEQBUQvgLFzt": "PASS",
+    "3_crOfIzrthCNsE0BeYMvV": "PASS",
+    "3aEhQqhw92liuqmyq16hjU": "PASS",
+    "3agB1d2Nkpm2kvWxG5tsm7": "PASS",
+    "3amajdVTm$Ry$imTb_NeNI": "PASS",
+    "3aypXJtuu7pNZQIdzsNGdB": "PASS",
+    "3bw2JqrwW4G8EIvy1D3G39": "PASS",
+    "3dCQFgVnzO6s9gGYxdjKdR": "PASS",
+    "3dVZ_RsM1sRQWGc9vqzrpj": "PASS",
+    "3daJ4kyj1nSx3R4YtpZ$1W": "PASS",
+    "3dkrYbmLYn1pNRg4zY4dYz": "PASS",
+    "3dlYPX3tIBMONsaE89rFk6": "PASS",
+    "3e8OL3ZrJbHdYuVkeB0uJz": "PASS",
+    "3edZRQ3Ibbb6XpgCB6Z05b": "PASS",
+    "3ek36IDfW$QNFsDooZ1XL_": "PASS",
+    "3fxQeGZf$ZczPXCfUZPsop": "PASS",
+    "3fzbRbVF6QmRtfNY5Nbuo8": "PASS",
+    "3g13QxGnl6fgpzfpiyIzcU": "PASS",
+    "3gIvOe44kby$50rDFSfizQ": "PASS",
+    "3gxH1Ih5r9hbAwQhlJ8iqf": "PASS",
+    "3h7QlODJyPjf7mTq6Yu$x_": "PASS",
+    "3irEyo938aPn2YX1tDVuDf": "PASS",
+    "3jUnO1DXGfXUsGXJxlPiGq": "PASS",
+    "3jxRa$FYOYQCixq$UjyJJp": "PASS",
+    "3keUI3P_cxmPo$WGGVZ0vN": "PASS",
+    "3ki4wrD_Pgq_MS3igqDtA8": "PASS",
+    "3kzree84XT1oA5s9OO6ssr": "PASS",
+    "3l$RDV932aoERaJT6db5WA": "PASS",
+    "3lIclGdbM0rlSe46Mg5WfF": "PASS",
+    "3lKYPfsoroDa6y1$ojXRgn": "PASS",
+    "3mvqkoMSVO$wy$1hzm1wHz": "PASS",
+    "3n4KJMwVXSqIdAjll4VuUZ": "PASS",
+    "3nJ8sUEkvr5Tz_ZmiroaJB": "PASS",
+    "3nKY1I0JFdn7SlgI2biQWl": "PASS",
+    "3oDCgkBMNVU_2g1lPC23eX": "PASS",
+    "3pMKFsg4Q$x$YLAPb_EXDz": "PASS",
+    "3po$SZjXI3aF7HzkTih_yZ": "PASS",
+    "3rHqivw0PtaL6vO7TeSQrg": "PASS",
+    "3rr1qPlK7x4jk96t$oZnLd": "PASS",
+    "3rrINjQVpuO7IMSNwddKyW": "PASS",
+    "3saEk6PklpcyXP049qXRCX": "PASS",
+    "3sy9qKBZRJdJh4SMTZ4rND": "PASS",
+    "3tLBtrEUZtvb7UJTXsUi5T": "PASS",
+    "3vIGNx_Ejx8krRUpFtOmVK": "PASS",
+    "3w6TbiQ_B9VgnoZ$F7krnO": "PASS",
+    "3wMHy7A7w3QNinWskkAP9X": "PASS",
+    "3waR$PoPa8lztGnghMfNHK": "PASS",
+    "3x15KKi1YokPuJJ1BKSFVe": "PASS",
+    "3xE_CEQVrvSWMBaTtsqWbn": "PASS",
+    "3xG4u1RHWiVP4lHkrK9wCQ": "PASS",
+    "3xJ0P67hizSPDr$5g3qzaL": "PASS",
+    "3x_rEEFRidjT9HNTMlPN7g": "PASS",
+    "3zCkZbq3Ozj0aHpHCkSLX$": "PASS",
+    "3zJOyEyHAOzsNj_IuZPJHq": "PASS",
+    "3zRfHvzSIR$VT0mrPPeM58": "PASS",
+    "3zmJy1xaChG__Y4c32vXyv": "PASS",
+    "3zrKOHCc2Faj0MJ69TVm9u": "PASS",
+    "3zzSCWlkGoquAdLGdprabn": "PASS"
+  },
+  "notes": "Doors and Windows on 508 IfcDoor or IfcWindow: {'PASS': 508}.",
+  "clause": "BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_esplanades_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 508,
+    "ifc_sha256": "b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Doors and Windows",
+      "message": null,
+      "report_file": "ec3_esplanades_check.xlsx",
+      "report_sha256": "d2a9842276bb8f8c33bec9136bbf172c86758e661f1f0efa7dfe594b80911fd6",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$zhCFSw6ZytmZ$bno$SA1": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01XsWS1zvjeDKl$9PZal95": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "01zu3OIeA4IE9O3SEMybnK": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "024fZc0TM_6yPlkzpfVbkP": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "026RYbwYmFN3334u$0AlET": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "03S_Imyqp6QChBXTfhBGCu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "03p$c9HZA$HPCwE7V6_LRX": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "04ZbcsqtO6Zb5Swl52LqRs": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "04buG5lJ$oUgpSc1Q9kjhp": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0651gemSsFD$J1nTzBg7gK": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "06CbKVJsWAeby0S1F9AMUq": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "06i$P3acZ3PSyNPsvZBbKh": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "07Trpp5xksfMTTJRRVYTmb": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "07qsguT_E0_$JeXlG_VlaJ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "08AKDrDAW92yOAZgTqbhUM": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "08BsSLH3G9XkLOMebOcP0d": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "09ZU3dWHhX78ay376ROZsX": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0A9jXleikgAWesg12sd7GA": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0AlyDR3nAsxFRIf7SaYnga": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0B1YWaGpzo7w63kdWCW4RK": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0BB9jOMndTQrYsxOlUEl1L": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0BHRwbjxMi0MAezeZSYqm5": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0BHsbZLWKswp5z1_$kyk59": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0BMFGgNHp0caZNL_bvFw5b": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0BcZfN9M6aBPda$68cudgD": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0BgJw48yG6jsOhSsotqQNU": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0C47Jbby_QUNwZ3GYhQc8j": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0CBu2Bd5pOPjh9RqFhW$Vp": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0CCRGa_FK4fd6w6$mA0nJz": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0DGRLjW5TgElmf7wypjAhx": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Edh5FRLARei$NbDflpjyI": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0FNa$lJNmzdAOACQUqn6QC": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0FcOXr3n3M2WQe$7RBSadM": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0FqJ08lPyAK2$JXAVtHDAw": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0GmAm$7ykXsKvtr2OcoaAG": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0GuPvOlG8Hia6li_TX5r8S": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0IIz3mwamvmrDNbPcmjrF3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0IYZI7hWKsmru9I5Y0gsnu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0KUcrP6qj_SMEq18T8c9so": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0KgL7eIuRGHYS_H9bPupp2": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Khdfju9vlWvDA$1H8Uu$L": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0MCLH9yFuhhREO3rMMQvY1": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0MMXg29Zey0AtBwZfvSc2k": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0MTWm3WQENDZEiuFJSVQr7": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0MavgqaU8usLdue_IXiNOo": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0O335L$iEAZvSDTMyUJQ4Y": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0OoepNeCmCEjoGiTwxUlJR": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0OtWjrGh1R9QWXVSOd8nJ1": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0PeFrzK6EchWsp8ffULEJo": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0PtK9IFxUmMANVxXXS0MdI": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Q3Nh9PyOA_IEsXLkZDdRQ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0QCZ2rONVObQNqoVTKZzVg": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Qlsc5n3ib9AqVub0OiSDZ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0RQV9MwWHp9AyiKJO$QK1u": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0RnZ65LEryyn5yoruj7zcC": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Rr9GX2jjgFaOGzTFVDm2C": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0SrOcYVSAfaNqeRiHM5NiM": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0TNjP4zxc2dmbg8Gp0bUqo": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0Tz$ZLpodX3w8FnSlGqEFI": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0UFl9l1USZWtSg0b36q4d7": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0VCodj5jN9Re8ILuG0xzJJ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0W_RNUvwN_uukSkGBDjxQz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0WbNVROCoPOVPfMz5AJOFO": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0XLBA3DViWDbrddlEMn$1E": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0XZ48EbNBzkxBfEXz$oXJ0": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Y7rpp_sjpYztJm4bU_taH": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0Yg5eITYD_cN$7J8Qa4bOJ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0_B0CkYT2S$m_hHk5VuZ_$": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0_LnwzSF$hRcNHDpoUAzZP": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0_iexbOxyfXhz0A9oH9$EO": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0_jKLV$I080wCpien50W6t": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0_ja$RfUIzL4h3kkBei2FA": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0aNvNc9r63DUoLE3i4nWsh": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0aYjWsaAZMWNGd7jYJ6RQ$": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0bZUrmNTAIp71aqNDnIPE_": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0btEuDWVU1uL0xLVj5or1h": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0c_SmXuCLaRlFC8uXEEbXT": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0dK9_EKroBY7_3kyz03t4x": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0dsUUTTNzsj6Wo9uow4nA2": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0efjjijBL6kKZ02LUKkCPZ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0egLHXa__bOCbI0xhrpZGj": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0erFjvt$faWXoaL_oPtzNe": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0f3ElkFswrv6JPUfUiACRV": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0fjkTYdqTuvPXYtCNiauh9": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0k86Xp5xQVlLheEFz6mqNu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0kikOAXX0SrYeuD7tAHDMt": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ksAHCOCS$RjDNTsfD9Y31": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0m5cuEIpUUb2Qq7rO0ZsLn": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0myYwsFtGxE8ATaQtZNYwR": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0nM1bLCGF3sRYrHuIJZtCD": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0nUukEZ2KGW3ey56RSZkTX": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0noLuBpS0xQBKVhLdlqklb": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0nreaCf9Z33dHmuGPMlE8t": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0oGTQSTX80VXraP7lqy$co": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0oU3Ssu0lg6n3KJ0dRQhKT": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0oW9N4PZly7DKc$pUNOhYk": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0oXozxUO1gcwc6kMsfq5EV": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0ofJ_3WN_5oiyi4Y_GIbPD": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0qTAH_wcXqA1yKLK8XoLwE": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0r92bj8RTLXsEP_HOUqQSv": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0rdhm0PGmsgOUPcOIsdL6B": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0roVlhvnNz0HMFDYwDtXOP": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0sEbh87xJGcevTVUWpMhuS": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0teWYnLq$LgsX1orPsD6lq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0thhGDrdUanwNc138I5Blh": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0ttCm34jxonC65NRR$fqtE": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0vbiZTmB0TyGIZb_ASPmyy": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0vopWAVv3EMba6qUtuDhsy": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0x4wzBWvfmgN13ZDcKEgW6": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0yIa_lUavkhpS$X_cdHr82": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0ykvOLt_Hip54KiOQnds5t": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0yrDKCE4EGgzxmKIB1Q7NU": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0znqbzm9IqIUU$lRv9nCQp": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1$R9UxGA715fz4zPHa8JG8": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "10CiSHjnlErBxsdqH5G_ME": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "113Zu3u9eHvTcNJj8RkemQ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "119LgHDwyqjnI8qgVOw6pK": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "11DpnfiIJvr$Wkb4p1tpWV": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "11akksvjo1Z$g61LJzZRZX": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "12s74hya9irS457S7GpdhY": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "138LUDy2E29colj0Mgqh05": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "13aYESp5hhXpsVxF14Di6F": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "13o3EN6V0VxCmfKcbwLs3i": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "13oHBA$mefSIaBOolnBb5d": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14$HZrBKozInkrULJkGZWz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "14$aSpZF7RiyUtvtKJABul": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "149KTse15MxrDmS_eOe1lg": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "14V58t44KrHeu$sdtCz6up": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "15$nGEeMSeVjNd3$5TUHRG": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "15YzZ2iuR$vktpHCsqJcwV": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "162ctR$huDBOZ61ygC334i": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "16T6SEZccCWiB0nsKI8bp4": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "177TQkxWeZUTEkHdyFVYEN": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "17Ev8DhRuJ9ODBUO6Oropt": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "17KmuNf8itt1W4W4NUvegL": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "17chTFWi46ujog5nmTgxKy": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "18H3RTm5RfQOu4XfTlypGV": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "18M03WHX0fBLddl8WlJFld": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1AD7IJoBAO8eewk_dAXInj": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1AF_flG8WlEYdMHtMMXHCG": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1C0tyHWJJfB684FpU9IFj4": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1CdufDxFllc9lXPt0iwdej": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ESVhgDrSdH7QlEA3JKzXb": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Ea45FLBzakb7HFyHPrOsQ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1FBILwq35b6lOMzqd_E4u_": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1FRIWBjg8EzKvF595QV8VX": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1G7IB6oZPK$BocKXq39arI": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Gpl4uLGJP2WQY6VB8_N6Q": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1HfzM2TPPQajbINaHMIdrb": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Ho76$BipPgTAcYamNWJKQ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1HqPbE1a78E4bOsywCLh1v": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1HuZqwqC1JRo7bO$1hnKPa": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1IVNfI$2tf2BbOg0TKIyBA": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1IspgnGuEMvyICM5UFeHpZ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1JgUCF4wgPSJ84Vek1nFX6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1LOPwufmQx5LNRcp0kAmUK": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1L_Wwija6lEUP_gZFW6X9n": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1MExu0AeJ1Rnpje3W$6xA0": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1MHW5IlKY21GYP5wNPRl3Q": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1MNmc__c7SzSYccIIutK77": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MYgdDPMeY3ogYT3ciSjoT": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1MzJND785SJ671boxwkHxe": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1NQ1NKlvCTD18wqUtu5orN": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Od84v9Yi715UPb2ZJa$oI": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1Oz_wnwPQGN$96oJV0DnxM": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1PbIWDZLO6hL5GR$UwH4V3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Q_nymBm5vMGkroULbOp6v": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1RlDdt_lMVnPxBoWX5P4$x": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1SKU8wqJ8Abdh$JEi4NS1O": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1SaYYxHAE5IL8_UHk$U75_": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1Sx3$c20rqpAxe2QlcneJ9": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1T9hDUY4S3KjsLppo6AjB7": {
+      "name": "ARUKS - 012",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Tss92ZZ4$HQE_9lIiVcYA": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1UHSzr9OShvGjmflPLTdXQ": {
+      "name": "ARVR",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1UobiwPyx$YwsduZKXbAna": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1V1GRdA1bo$Qt1ppknXx7X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1VQ8WXdB376ty5Uhb9xTvR": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1ViilCyj7uaVau3MTMvSZq": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1VybaBivlQtBUj_KX4pms3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1W4DJlmVSWPAJuKrJ_gxKw": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1WLo2zmyaH76ffNyU$hJbG": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1WMgkcv0WkTgGICpZULfgO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1XAg4PIYHZpJDtxfzG8fwG": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1XCzI3$wbGqKvtbuGdEI6q": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1XWIrBxTmreGqW9VETa_D5": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1XlWzK0$9NOgHwCo$2NOKd": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1YE4f3oM0asFERFGp4nGYN": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1ZyiK4KOvonOtn$5Bsitrq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1_MTgsE7CBZpwrpapuRvw8": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1_tpU8prPjGgB0lUIsykwO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1aLnlKHZWk1QYXu99sOwON": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1a_E8_aobu$qLiuSnhiVI3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1bAx0PPFNuM8dyfvcIF4$_": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1bQRDo9ihW3Z2jIFQZ3gZi": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1bX3b3xjG6sI_1m5nzYp_W": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1boduwbz89_Lz$mzO6oCoC": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1d9rSoUBJtfGXVPDR5fftE": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1eMhDLBcZrYeP34zpk_uYj": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1eefJtwzdrITFstsqBSMLL": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1exswSqA37$uIQrcw9opSY": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1f7fcDAjL2NyR5RgNuf8HG": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1fXVRcMCWZgkOuv7rSsMS0": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1flQTPnPE1Ec6l3RMSXNAI": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1h4z913U0yLDBG0IwX8LYT": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1h5BG43XnZeO4yIfu0b6Aa": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hO94ToTCNY6DvxAXtKORF": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1hskr3jKrlRjoMjKuq6VvX": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1iV99mb3078NwrNbzrBVYX": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1ijsss_Bcwjqz15$vtSibh": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1iuKTbT7D84k0MwOmiDqnv": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1j854WfUVJXCES9HaOpvas": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jvYzdj1$Oxuq0wJrXpcbP": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jw2RXpdA1MCVwq0eff5ZL": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1jxyWHkzAdi6j2$RpGWwKU": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1kZc3VPP51tKAZyvNHJqMb": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1kaaOeQq5bWRojKxbV32u6": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1mSlUyAFkKwWl$2Q4caeb_": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1nrhWNYWhp3fmncLJW6oyT": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1oNy1JwPkArbQ87xsZ5B6S": {
+      "name": "ARSL",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1ophwoaj1jPL9Kg5s_eb$g": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1pIb$eTvnw43LYyywU9igS": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1pVs5Mx5KApKZO$Pb6_YNJ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1pa5jmquDTs18KXN1APaMa": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1pfFEqHrRK_ervtKlthUZ1": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1pojXjIroM4780azn10cx3": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1qQD$ylmDJRZ7zobtINy6O": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1rMvBWagM16ttgUHKIGkha": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1rtP$YEt_0UWq3Rso7LBDo": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1s$vNfF_Js8zYtn$1knUFm": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1t8df7ZiKwI27rFvA0ka8P": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1tEqK9lNZl99OQlaCdJuDU": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1tWOvenmxcjmerlqi0_Tu9": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1tgBT3uDIHUh5BREum0U8n": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1ti4nQjtiker1z61oKwRE6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1tuw7ZKNK69Y1K_Setmt$T": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1wgzo5pXBKgVjlIte4hj5m": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1x7Sic5Nh2IT78CYC3Vi8W": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1yKdAmTcAqIyf3UXA5OfFE": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1yNX11hAOi2Hk0nLBF6hLS": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zAe9KOirKzTqiYK_vTPSy": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1zG_YrR4A4CKvokndd6KHc": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2$7_PO5hWLD8$ALYDRrrMo": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2$nzIJAjWjCoU2zna7Za20": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2$zYcuf322dRvXg7opIied": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "209RhfLv$4BtzazUFYOC$K": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "20JUezgBaTwWW3NhfRHPX0": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "21Hswu_XPdAAlyOgGt8qKV": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "21IhrGaOwhFSIWOLkaC3hb": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "228ZTwUG1Izpx7YgQcLQsG": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "22HR7Ygbgr05L0bmovh5r4": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "22NGrm53PNP7zXsX_XJihZ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "22tGbVqqBSKqlC3sOBWiy$": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "238m1wi5xdwBP91rzljIxw": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "239aA5GNzXdk2opL0JyB_V": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "23mh_Haqi7no6hmP1_ZMIn": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "24b$raxk2rQNuwVPW_sWF3": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "25DDjNwrpZO_1ivoGgsAct": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "25cov2_5kBrbAhg6WAl5WH": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "26EPtwhlYaC_sNZyiQJIxW": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "27A7bi$3wujsNl3Q6bRoEf": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "28PCzbmvvl91jBwlolqXI8": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "29Q4GDyt6fKfqd0bTh6DWf": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2A5HScWzlCMFs03XFeNlvt": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2BOzd3SEKu19EABrS8gjSe": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Bg64doB1xl71IFMW07XIa": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2CAN7FJAQd4b4XWCVyFlod": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2CFeYgkZVou9XCtU8ajjGe": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2CbgPVrK81iuI_qa1p6zVY": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2CqUPnvbsqMNuV$zZQ9AqH": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2D9HMZ2tyLt_3cwb4Y227x": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2FY4CrmOzU3F81M5MVsrW6": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2FxeDoLjlesFgX1zgMIDgw": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GL1VsgFpDsg1Lr0axkfcd": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2GlfQVmVP4tu1GRk9BU23T": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2GqMEXo1REehlHcIn1XA_L": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2I5IuUT6CGJgARshpW5Byy": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2I9EUxxFcp5H8V9_1jv6lm": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2IL40BsfzZ7LKo9jGhbJ53": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2IOfxAf1OGgbTNQlGpnugs": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Id$PRjXzUOEgAJEDYUkVM": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2JwK9k_bVb1HCkeTFs_ulq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2KiF52tFm9RhEC82Q_hPHB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2LC5dw3sqaLuPV3CQGhYtZ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LK1tjTOT369mAGMTjlKgT": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2LaccdVFmqDxu0mPBXTwCK": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2MdKkHlLbxfOxQgseXiM0I": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2MoYuNtcVNvABjlSzQrjuF": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2NM2rQhAKpeJZvLMolnF93": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2OMgcKSEhM0xOdkjKVQJak": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2OwgnooYHo2R6IQYN2PaSC": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2PRWYJAG7ReMLCq19pXQPM": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2PcxFY6dsh0i4g2neEY1Ol": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2QLqROGAVTdovjrkEvI8Zu": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2QbQo2VTB_Z0D7hJWG832j": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Rj9B59IoSOObOGyQwKwP8": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2SVTHsS0$VjH8$Zd97lv4B": {
+      "name": "ARSA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2SwvrW3bkeUImV_DDmzud7": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2TAvx2XkCuLy2rpPb7Sse4": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2TYQlMR$ZjqhqvLPIn3WUm": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2TjD19x0Tc6zqJOOaD2cU6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2TytrZJ44w38_Isy4Tbkcg": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2UHewuBmrwa8wEGLpDurX2": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2USpEZ2wA2bdKsR4VrTWlu": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Uh1P0oHcgFlVB3xF5HbIw": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2UsMzcvdMJpMCi1uniOqFD": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2VU_YiTWLn_efrPDCVSs2X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2WINotVHxOpDSMkv1_x8ao": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2WXJ26xsfFGaO1yi1nLt1B": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2X8cIN_9Y0iL16S_Nc1E9v": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2XO1vKtWJwY7D_$7FYr0dk": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2XpqQP2F0lpEL9ukM86JtB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2XqefOgPKrX7b3z1DnNU1u": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2YCM7H7AGIFrtfkNp_D9ip": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2YTHyxHuENTTjHWpJTwCOO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2ZCxR_QIO9eTG8J_SpujTI": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2ZQAcvCwbkdT3ujEMPL8yl": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_5Oovi2yFYGhQs$YNO3eA": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_KgDNkMYrwEcyOAvCLkNm": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_LsQ0vPvT7tiRn8CtVNbp": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2_o1NC8cHUcmDofmqaIuRI": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2_wjtxmWiH6uqvEttRGqYS": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2aN4mc22klqPNk7HzTZHal": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2auFlRE$FCzNMLlWrw0qRu": {
+      "name": "ARVU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2bGgb6IEy$BhZ1_EqVMz03": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2c4vcI4Odct9BXSPdhmbcO": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2dU9nKpvut9$D$dh8culc5": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2dkCnyGQdjPe3owvl8WI0A": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2dtvZbCsXVhC5r55L2L5BK": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2dzFcShU$EL6k5hO_bF0yY": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2e6FUoXBA7pG5taX55fGcb": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2fMlzbCqxHKUCKoBWlddYd": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2gle_AcT8gwZ$YPLydE2pA": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2gr_oYVtl2oJaHYU1J5CwF": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2gwlDZ4JjKM$nH3FdViMXW": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2h0kI0Jj2juJzb1CeoxIpJ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2hd5vve0Qly4PoNMPTI7do": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2iFkh9BRebQuWyZ9p5lV4M": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2iXW6fXjzlm_IHBvTgBUuc": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2ibF9c$o$9ZzgidO2V3HIm": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2iiJx1iMzK7$sVlhv5WmVj": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2iwe4T4N7O1Blpw5E57z_x": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2j1zfhFAesed3m5oDFrIoD": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2jbjr1e0N$T4rP1J_YQ$X4": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2jpwk_EJeyhgN0dvbLVB8Z": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2kThKA9YR4mp$f2siPyUnB": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2l3oqu1qLkzCJ2yhIb984R": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2lCH2YqNXDEWCLt1yOfZDa": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2m3dODN$zcymBjSMBWLd5j": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2mNRY8nExYRaWO8U9TUsCt": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2nJY1rfOY9$gkK0PhbN_vq": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2oTiTTNRKL$8VQUuUMeDDv": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2oqUYjli9EHQL8Y32I8AOW": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qQBV$PQgJjxn2ule0WjId": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2qatwr5L4f04G4A7Wpakj6": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qdRRIUQLt8svBIK8wowyQ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2rj8ZmNR$MSSCvuaedeeUx": {
+      "name": "ARVR",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2sDmOmRk$HrnH9S1xltQzR": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2tZYmJ9XUws4c2qpjxZu2j": {
+      "name": "ARKL",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2tfCHBkLTAYx6k2OHN8woT": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2uYkqMBWOULAl4ByW7y_bk": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2ukpGaiV2kxSELYJpYAtD2": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2ulEaHDBBPzER9cc$aTT38": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2v1682RAzoraq4mcBdKCtC": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2w45J5Kw9o3jqVO5Ardh84": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2xh7YXmB8A9lKiZ5da5ZLO": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2xw0ZuEzgWKnu7DKsaJtug": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2yIR8wa6VUxbHSt2R43Hod": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2yL8YzMDvPDW4gqndyO5Cf": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2ybrewPZKq_NEPDLnoXuNu": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2yv34AexuSNI7MBHIevU4k": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2z26$9HHFAk07OiKMmfyV3": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2zu9oZ3TMdRKyrIlGrZN3F": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$ePWtxSJNTMzLx0ZD2_8z": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3$iE$_PO0qnLHyNSb5T0Dd": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3$nSEM0sP$4OekeZ6gDkwl": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "308scD$B6yxXVycF0n6vdc": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "30aPjaILx6XQJyT$_Qnwvq": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "30syzUN4C703pJbZvqQoJO": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "31NKc27jfy1$ap0R9EjknH": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3200JynTmAFDsHE5QE4qRB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "32y7ag16SYpM0GkDixjoqV": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "33jA25Fkt7P8SfkAcB0rkJ": {
+      "name": "ARUKS - 012",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "33rDWxDJkPzGGiTNMSQUcS": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "35qREw14yreJredsCpydK6": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3665K6mRvPBuHztQHrsXkS": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "36MjCAKbtIkccudGHdSrOI": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "36Y81uZTvlzGfS2S80oO5U": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "374wxAwjVS5JUpOMQZhZWl": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "37DNVSGmlDMGgOobg30ny1": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "37fbdcgeTUB7tckZ0Edywa": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "37l8Dmzeb$Eo1nIFzA8SAC": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "385sPE_hcWKIl1LO7ESrwy": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "387lgl1ejFzWPN6R3UYYvo": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "39ZHU9muuV2SRYXEygDcEA": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "39_vYCD6FiUGgXMJOIErNN": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3A3E67vTfKhhjQHrMb7yC4": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3AmmmMGom4nnKe1XEnIBfc": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3C1XHIJT$83_75Dwxn9fZB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3DmtIkBcxmoo6WR42dcoqQ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Dulxb5Xc6M14KZvRpGCHl": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3E38eze8aKmEY0T7pMVUJt": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Eh52A1OtBW1GXFlsG2Mn9": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3EqbDJOeZ46IOow6hN7y46": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Ez4WDeJzdGYvolunwnhUE": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3F25Bpuxvtq3zb$EXhdINk": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3FBBb9DGGKkNM$5ulHb$yF": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Fcb9I_XJQDWhDz$p86MZX": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Fjk6ZF51R7xpAcmfe0eLJ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Fq$ZLJn_K34Vpk9vdQ6bj": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3FxEsmg7kYi8lwtrBtGaep": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Ge5BSiZww6NGxM1pHvv4z": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3H3ZS8zC_qgdRfJQRNyfaP": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3H9LLMyAu$TRlRZOtBpdQi": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3HCS4hOgn5TmMuNewSjWrd": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3HH_krzsuCyZfHvf4DpcOt": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3HtcDV0UzgW3kqfVbCKi_X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3HzVD4YeJJ9KOGai38I27v": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3IHL7myNM58CgxxRIj9aod": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3IpBelQFuiKcDLs6EiZ3in": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3JBQdp2Iur80tZxDAlFd6H": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3JZD1QC4vNBJD$zOPpXBEA": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Je$O5kEVmpmdPx7fCcdLj": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3K7KQ1KyumyNXb7Maxfcri": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3KG6aJB1F7mO6y8luzk9P0": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3KLBIMuqypeOoZNVi7IBki": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3KXBSstlehA_owbjkD3RJL": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3LS9$9SBAN7GNNXZWpf4rk": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3LYMKNl1cy6eY1q4xQ6klM": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3LcD2m31IVlbUrMBRLw_QC": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MfYzrcKzfxgdCjrHNLIYn": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3MvHuH637uJdV380v32KGx": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3N6Ft6dq0otDYXxpg9P3Mg": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3NQe3SUgnkW_nNsFxFSbrg": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3P54ceW2yIB0DKKKgdvhWP": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3PSwuxXI$2Zm5TQdtIrpIW": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3PcU8jXuFWTKKU8UKMtb6t": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3QUM9ZPXKJGdymPOWxL93U": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3RfDuOorymxtew1R_NcPC6": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3RjKE18SPB1R7L_ae362yh": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Rz1QIxUo0YS8t2HdSDYt1": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3S8xLlrCVl$JYRpHm3DDDY": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3SSqwQ4x121FdgZuzVa$fV": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3TCHWytHJ6ljjozBkpzWoV": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Ts_ULyyJQbaQ7a6U1ko7j": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Tz95ngJGViSbzQCxa8YJf": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3VT2OxR76iYouXSfwrYxYc": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3W8db3XnGsAtg9H0ufT_Je": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3Yavr$dL5D3uHFpmQ_QLs_": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Z0LniWg2KrPAx$bJQIbx5": {
+      "name": "ARUKS - 012",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3Zp940W4eQ5yx_5Do9GRO2": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3_5Dw8JfbaOEQBUQvgLFzt": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3_crOfIzrthCNsE0BeYMvV": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3aEhQqhw92liuqmyq16hjU": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3agB1d2Nkpm2kvWxG5tsm7": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3amajdVTm$Ry$imTb_NeNI": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3aypXJtuu7pNZQIdzsNGdB": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3bw2JqrwW4G8EIvy1D3G39": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3dCQFgVnzO6s9gGYxdjKdR": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3dVZ_RsM1sRQWGc9vqzrpj": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3daJ4kyj1nSx3R4YtpZ$1W": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3dkrYbmLYn1pNRg4zY4dYz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3dlYPX3tIBMONsaE89rFk6": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3e8OL3ZrJbHdYuVkeB0uJz": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3edZRQ3Ibbb6XpgCB6Z05b": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3ek36IDfW$QNFsDooZ1XL_": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3fxQeGZf$ZczPXCfUZPsop": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3fzbRbVF6QmRtfNY5Nbuo8": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3g13QxGnl6fgpzfpiyIzcU": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3gIvOe44kby$50rDFSfizQ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3gxH1Ih5r9hbAwQhlJ8iqf": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3h7QlODJyPjf7mTq6Yu$x_": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3irEyo938aPn2YX1tDVuDf": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3jUnO1DXGfXUsGXJxlPiGq": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3jxRa$FYOYQCixq$UjyJJp": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3keUI3P_cxmPo$WGGVZ0vN": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3ki4wrD_Pgq_MS3igqDtA8": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3kzree84XT1oA5s9OO6ssr": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3l$RDV932aoERaJT6db5WA": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3lIclGdbM0rlSe46Mg5WfF": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3lKYPfsoroDa6y1$ojXRgn": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3mvqkoMSVO$wy$1hzm1wHz": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3n4KJMwVXSqIdAjll4VuUZ": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3nJ8sUEkvr5Tz_ZmiroaJB": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3nKY1I0JFdn7SlgI2biQWl": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3oDCgkBMNVU_2g1lPC23eX": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3pMKFsg4Q$x$YLAPb_EXDz": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3po$SZjXI3aF7HzkTih_yZ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3rHqivw0PtaL6vO7TeSQrg": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3rr1qPlK7x4jk96t$oZnLd": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3rrINjQVpuO7IMSNwddKyW": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3saEk6PklpcyXP049qXRCX": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3sy9qKBZRJdJh4SMTZ4rND": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3tLBtrEUZtvb7UJTXsUi5T": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3vIGNx_Ejx8krRUpFtOmVK": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3w6TbiQ_B9VgnoZ$F7krnO": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3wMHy7A7w3QNinWskkAP9X": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3waR$PoPa8lztGnghMfNHK": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3x15KKi1YokPuJJ1BKSFVe": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3xE_CEQVrvSWMBaTtsqWbn": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3xG4u1RHWiVP4lHkrK9wCQ": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3xJ0P67hizSPDr$5g3qzaL": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3x_rEEFRidjT9HNTMlPN7g": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3zCkZbq3Ozj0aHpHCkSLX$": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3zJOyEyHAOzsNj_IuZPJHq": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3zRfHvzSIR$VT0mrPPeM58": {
+      "name": "ARSU",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3zmJy1xaChG__Y4c32vXyv": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3zrKOHCc2Faj0MJ69TVm9u": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "3zzSCWlkGoquAdLGdprabn": {
+      "name": "ARA",
+      "class": "IfcWindow",
+      "label": "PASS"
+    }
+  }
+}

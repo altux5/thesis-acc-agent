@@ -1,0 +1,133 @@
+{
+  "case_id": "doors_windows_storey__fzk",
+  "rule": "Every door and window must be assigned to the same building storey as the wall it is placed in, and must not be an orphan (a door or window with no host element at all).\n\nA door or window fills an opening that voids a host element - its wall. It violates the rule when (a) it has no host element, or (b) the storey containing it differs from the storey containing its host. If either storey cannot be determined the element cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcDoor or IfcWindow) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/fzk_house/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0B1RwEzzP3CfME5NR$Vqh5": "PASS",
+    "0pGAjlJMP3ifYPATVF5xAR": "PASS",
+    "13aSY79zb8fP4HApEJ0z_e": "PASS",
+    "1DiYqhfzH9xxuJdVHwXCNa": "PASS",
+    "1M$gxUrX1Fiwe3P64ww7U5": "PASS",
+    "1Oms875aH3Wg$9l65H2ZGw": "PASS",
+    "1TAI4ouKX4Xx4lBDZIu5qM": "PASS",
+    "1srAI$R4T8ihLXSNHmUSET": "PASS",
+    "1zOBw0Gej5Wf0QAJfHnOc0": "PASS",
+    "25nJxEpYf8LRDJNkMUVO0m": "PASS",
+    "2ACmFFQhT1Ouf0x4YRUh9m": "PASS",
+    "2EQh_jhP1B_A_AMuSJc5E0": "PASS",
+    "2Q9w7oRXP249jBobEMVqlZ": "PASS",
+    "2jTRqchjf7oB0yhQ6462T0": "PASS",
+    "2qiPPF3FrF8OIqfrKiSUqm": "PASS",
+    "3BFcylCsX74PQAoRAe5fNv": "PASS"
+  },
+  "notes": "Doors and Windows on 16 IfcDoor or IfcWindow: {'PASS': 16}.",
+  "clause": "BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_fzk_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 16,
+    "ifc_sha256": "70cc8ff245fc0894201d96496c031005a5cbd7a96b22d8a1b87c5a883fb77994",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Doors and Windows",
+      "message": null,
+      "report_file": "ec3_fzk_check.xlsx",
+      "report_sha256": "052c173bc79ae0d31073c5829f122757ec0f6b162fcaf01f192db302f3dd4201",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0B1RwEzzP3CfME5NR$Vqh5": {
+      "name": "EG-Fenster-7",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0pGAjlJMP3ifYPATVF5xAR": {
+      "name": "Innentuer-2",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "13aSY79zb8fP4HApEJ0z_e": {
+      "name": "EG-Fenster-8",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1DiYqhfzH9xxuJdVHwXCNa": {
+      "name": "EG-Fenster-3",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1M$gxUrX1Fiwe3P64ww7U5": {
+      "name": "Terrassentuer",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1Oms875aH3Wg$9l65H2ZGw": {
+      "name": "Innentuer-1",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1TAI4ouKX4Xx4lBDZIu5qM": {
+      "name": "EG-Fenster-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1srAI$R4T8ihLXSNHmUSET": {
+      "name": "EG-Fenster-6",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "1zOBw0Gej5Wf0QAJfHnOc0": {
+      "name": "OG-Fenster-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "25nJxEpYf8LRDJNkMUVO0m": {
+      "name": "EG-Fenster-4",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2ACmFFQhT1Ouf0x4YRUh9m": {
+      "name": "OG-Fenster-1",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2EQh_jhP1B_A_AMuSJc5E0": {
+      "name": "EG-Fenster-9",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2Q9w7oRXP249jBobEMVqlZ": {
+      "name": "EG-Fenster-2",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2jTRqchjf7oB0yhQ6462T0": {
+      "name": "Haustuer",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2qiPPF3FrF8OIqfrKiSUqm": {
+      "name": "Innentuer-3",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3BFcylCsX74PQAoRAe5fNv": {
+      "name": "EG-Fenster-5",
+      "class": "IfcWindow",
+      "label": "PASS"
+    }
+  }
+}
