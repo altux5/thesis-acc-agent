@@ -1,0 +1,107 @@
+{
+  "case_id": "stair_slab_connection__nus",
+  "rule": "Every stair must be connected to slabs at its beginning and at its end.\nSource: rule '504.2 Treads and Risers' of the EC3-2026 rule catalogue: All stairs shall be connected to slabs.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. A stair is connected at its beginning when its bottom step starts on a slab (a floor or landing slab), and at its end when its top step arrives at a slab. A stair fails when it is not connected at its beginning, at its end, or at both.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_068_ARK_NUS_skolebygg.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "09MpxVkC91pwQ$SiU097gn": "PASS",
+    "09MpxVkC91pwQ$SiU097qP": "PASS",
+    "0AlmywTfj8vhbhDiI1W4Fx": "PASS",
+    "0AlmywTfj8vhbhDiI1W4Sn": "PASS",
+    "0kuFisJAD14eVj$fTo9Ppn": "PASS",
+    "0kuFisJAD14eVj$fTo9Q46": "PASS",
+    "0kuFisJAD14eVj$fTo9Q5d": "PASS",
+    "2SIAfht1TEl8lQwY5FCMu3": "PASS",
+    "3iPInG7tz8TQ8k$JBnn$fn": "PASS",
+    "3y7w$rQQ92sPNEVtsgzp_O": "PASS",
+    "3y7w$rQQ92sPNEVtsgzp_Z": "PASS"
+  },
+  "notes": "504.2 Treads and Risers on 13 IfcStair: {'PASS': 11}. 2 unscored: An IfcStair that is a part of another IfcStair duplicates its parent stair; Solibri reports the parent.",
+  "clause": "EC3 504.2 stair-slab connection",
+  "source": "solibri_reference.py::build_ec3 (ec3_nus_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 13,
+    "ifc_sha256": "362f0f5e5ad35557014100a6c4de75ec166f6dbd9197933170dc1423f4af2a76",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "is not connected to slabs? at the (beginning|end)",
+      "report_file": "ec3_nus_check.xlsx",
+      "report_sha256": "90c05f08536b3d573876849b4be498f33c8c6e47af3819fd8d28a8b94b675f1f",
+      "rule_issues": 14,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently. 2 unscored: An IfcStair that is a part of another IfcStair duplicates its parent stair; Solibri reports the parent.",
+    "unscored_ids": [
+      "3y7w$rQQ92sPNEVt_gzp_O",
+      "3y7w$rQQ92sPNEVt_gzp_Z"
+    ]
+  },
+  "provenance": {
+    "09MpxVkC91pwQ$SiU097gn": {
+      "name": "Cast-In-Place Stair:Stair:4428775",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "09MpxVkC91pwQ$SiU097qP": {
+      "name": "Cast-In-Place Stair:Stair:4428879",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0AlmywTfj8vhbhDiI1W4Fx": {
+      "name": "Cast-In-Place Stair:Stair:4251515",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0AlmywTfj8vhbhDiI1W4Sn": {
+      "name": "Cast-In-Place Stair:Stair:4250545",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9Ppn": {
+      "name": "Cast-In-Place Stair:Stair:4430332",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9Q46": {
+      "name": "Cast-In-Place Stair:Stair:4432907",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9Q5d": {
+      "name": "Cast-In-Place Stair:Stair:4433002",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2SIAfht1TEl8lQwY5FCMu3": {
+      "name": "Assembled Stair:Stair:4959975",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3iPInG7tz8TQ8k$JBnn$fn": {
+      "name": "Assembled Stair:Stair:4960365",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzp_O": {
+      "name": "Stair:Trapp amfi:2067496",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzp_Z": {
+      "name": "Stair:amfi:2067475",
+      "class": "IfcStair",
+      "label": "PASS"
+    }
+  }
+}

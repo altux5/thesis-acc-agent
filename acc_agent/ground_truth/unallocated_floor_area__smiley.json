@@ -1,0 +1,1843 @@
+{
+  "case_id": "unallocated_floor_area__smiley",
+  "rule": "Every enclosed floor area of a building storey must be allocated to a space.\nSource: rule 'Unallocated Areas' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct.\nBenchmark convention: on each building storey, find floor areas enclosed by walls, curtain walls and columns that are occupied by no space, wall or column. Every such unallocated area larger than 0.50 m2 is a violation, reported through the walls, curtain walls and columns that surround it: each of them fails. All other walls, curtain walls and columns pass.\n\nLabel every wall, curtain wall and column.\nReport the GlobalId of every element (modelled as IfcWall or IfcCurtainWall or IfcColumn) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/smiley_west/arc.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0$Mn$WycfFQe8kBFeGJ1Zd": "PASS",
+    "0$gQuAVrT6DveZGoTjLqlW": "PASS",
+    "0$hBkuhEPFm81JrKzxmoiS": "PASS",
+    "00$ax1d6PEiAAdgD7ExTVQ": "PASS",
+    "00$xCwIL11lAUmAPM4gMxk": "PASS",
+    "00edHZvET1HxjPJ3dhH$cb": "PASS",
+    "02kNomHefBm8gLC0TLit83": "PASS",
+    "038X7VYTD5K88Kl7kXysTv": "PASS",
+    "04F$WYaoL54gpTsfNTQEUs": "PASS",
+    "05kC3tUxf2NgyluG2Lb30m": "PASS",
+    "06$jwnwYzB2xtme_3oKazV": "PASS",
+    "06xvaW2qPBlOo7wUyqUHHX": "PASS",
+    "07sh$jVn9Cb8b$MGF_G9Ff": "PASS",
+    "09Lvh$fsD2ZuXfVgxcU3vD": "PASS",
+    "09t8qPusn0$vOb7CbfoAEV": "PASS",
+    "0AAd0rFhXFdQJSElR6sGP0": "PASS",
+    "0BuxB_Yoz2bxinyZI$3Ehs": "PASS",
+    "0C0oo2MPP7$PiiYcnEKt5v": "PASS",
+    "0Cc5Ixrr1C4PSsN4K4Y7Hf": "PASS",
+    "0Cxs2bbhv6hvfh7lFtjXXp": "PASS",
+    "0EIMrhkFX2zvT6tawsn2qW": "PASS",
+    "0Ed4ARU7P4KeU6kP1uIKBr": "PASS",
+    "0F_ADUTlXCHOAF5nICwk2x": "PASS",
+    "0Fy_XN4cP5wRkN$oNOO$FK": "PASS",
+    "0K0_rBHwzFcvVm4TfkJFJZ": "PASS",
+    "0L$0VMju57ReUTif39x$Fr": "PASS",
+    "0LUbY6uMj20h9$NcV3hc2r": "PASS",
+    "0MizeTCp19xgDv3HU$wyS5": "PASS",
+    "0NJuvIQND4heQzolrkfryF": "PASS",
+    "0NQVcwUgj2fup5UuFaDTfC": "PASS",
+    "0NhIQKkNr2Vwp0sL8Gz6NX": "PASS",
+    "0NjeXzbKLCshYtWWAZQa6a": "PASS",
+    "0OpziBxCT9Ig3F8ub8rphn": "PASS",
+    "0OsvamfsHFNhvlw9DDjzlH": "PASS",
+    "0S2gRn2gb1FQt9ZThjw2Ou": "PASS",
+    "0THvsYtDfEMP3AXWWuG7Jh": "PASS",
+    "0TQkmcTzL0ZfxeqP2F29Ye": "PASS",
+    "0TUNS5AVv3F87ZbmXc$UYA": "PASS",
+    "0TxAYc_5v1i8_KiwL3jxv7": "PASS",
+    "0VRA3GmLzEUP9uulwvG2us": "PASS",
+    "0VaJrC2sb4tQLYEJGXqo6p": "PASS",
+    "0VtN4UyZTAyBFay9rYlcbp": "PASS",
+    "0VzkbPjXf7s9gniZplBYo1": "PASS",
+    "0WzeAna3nCuA2PL734yn7L": "PASS",
+    "0YugRUhJH2G8hKOGUABmJh": "PASS",
+    "0Zj0JnUDvBBetlJkqI2svJ": "PASS",
+    "0ZzZbjV6v1SBa4cH04l8YG": "PASS",
+    "0dITJAjpzDRw6Tqws8ccIO": "PASS",
+    "0efW25yT15UvXDo0tArwHK": "PASS",
+    "0jsIow8vTBzwrkSTIPptEG": "PASS",
+    "0kJTj6gKD1CuDWYMqO2Qnq": "PASS",
+    "0kWi7sheXAh8Hk8xqbR9Ea": "PASS",
+    "0kn8XFWGn1ovx3axPfhGtk": "PASS",
+    "0l94Qy92fCY9j$Su5rcGDr": "PASS",
+    "0mlkvTDcb889X1BEHSlUSt": "PASS",
+    "0ph9UIbnDFpfTMD7OzouEK": "PASS",
+    "0q9XnEUyL4vQPpZsmw9U0v": "PASS",
+    "0qxSE1G7j9TgnyZZYgKduA": "PASS",
+    "0rDyuSDov1ivtIh_Kja1VF": "PASS",
+    "0sLxcFwsfCuQE2oZIFHguB": "PASS",
+    "0uW92y4cPDjvGXfUp703GD": "PASS",
+    "0vfZTOs9bE3uFkEhh4H4bf": "PASS",
+    "0vs4eSTZP2WfZyrLyQcV4a": "PASS",
+    "0wjflNfwX6Zv6qZCdRZCf1": "PASS",
+    "0wpHdKxwLBC9sjEtqqvxbe": "PASS",
+    "0xKv5VqX9Bkxna3rXLzGso": "PASS",
+    "0xXSbLVZXBiQ_VigTVWI9d": "PASS",
+    "1$dwm1Hof3twio2SbRyafA": "PASS",
+    "10lPCH2oT7mgRFNXw$XC2o": "PASS",
+    "111K32PabEKu1rIfxbAEPD": "PASS",
+    "11O5ZOsa56zRpbLrj$INWL": "PASS",
+    "12yz0YD_H5Wu2CDwmyeg1F": "PASS",
+    "13hBs4PZXFzA6GpSS7JJQN": "PASS",
+    "13lPAyHKL7t8C8ytcRb2EL": "PASS",
+    "14Jy$ZQZ53Dv4umnjUkJjd": "PASS",
+    "15ML2EtvX2PvLxIw37pdEq": "PASS",
+    "15fWlafVHCUPAj_neFFViv": "PASS",
+    "16FljoWD104eSud1GYjb8d": "PASS",
+    "16_jQJDFf88RMg5oYNRe9p": "PASS",
+    "16wg83TOb8I9EelKii4GcX": "PASS",
+    "17o7VIFuz6AwDfnxc3Cqme": "PASS",
+    "18h7IaVp5EoADgz2ed8NIn": "PASS",
+    "18mcpothr2ev3zg1HsROd1": "PASS",
+    "1At9t9jgr5dx1I3He_h0QX": "PASS",
+    "1BJLpU$Mf3jPvUMzfOlLQs": "PASS",
+    "1BLJyeYRfErx3CSrpb7xJP": "PASS",
+    "1Bhq4PxYb0RRwxNry00aqC": "PASS",
+    "1BrP9AHlPEtgybu83cA2rC": "PASS",
+    "1CJeccdVf0kOJDc2YVjhf2": "PASS",
+    "1CMVrEKUz4XRe7bwLlHQt2": "PASS",
+    "1DCVq9KID6n9LSbfWl6b8A": "PASS",
+    "1DKZbDYSTFHeY6CpzemJ7F": "PASS",
+    "1DNMBax5L7o8W2$sW2wjOV": "PASS",
+    "1DXX1hfiL0mPmZHa2juVor": "PASS",
+    "1D_x$VZfz3BgYXWu36mzRE": "PASS",
+    "1DgY17yDL92whWKvnLeUK6": "PASS",
+    "1EROMMECT46eRaX3670D63": "PASS",
+    "1F9gMOuYLAmApGAEj_zA6P": "PASS",
+    "1GJzhFq1zAVuRlQQEDvjS6": "PASS",
+    "1I6XcdPmXEGxd5pxg7UtJJ": "PASS",
+    "1JsCIdSKvFOvMtPSbAMULI": "PASS",
+    "1K9lNsP3b9bh5Zn4n2Ve$k": "PASS",
+    "1Ke8q4jpn8Sx41MC$XzerJ": "PASS",
+    "1LaDLhlXT1SfpE6m4AGlnb": "PASS",
+    "1N3bcp6aT5E9y5dZ6j$pWy": "PASS",
+    "1NG8tMVIDEVfzkXVvwZm5m": "PASS",
+    "1NXOfLbKv4DQHZAEOh5SHt": "PASS",
+    "1NqgPg9e196urml9a8Nimm": "PASS",
+    "1Nvv$MCGr4ige2BbFOz6hJ": "PASS",
+    "1OaEkz4s12k8hIjE36K0d0": "PASS",
+    "1QJW0EW_H4Vwf8W_jP6RTh": "PASS",
+    "1RRq$esvX0afTeGKYTnhz6": "PASS",
+    "1RUVSCj1f6H9qaB6AH53tM": "PASS",
+    "1S1kSdIYXFFANA4WKJkyBL": "PASS",
+    "1TOrntnBD0NuLOGojgDewo": "PASS",
+    "1UP9yIqQD1tPB3BC5hmzej": "PASS",
+    "1VOAFaxl1DlQWuTxcJFyQ8": "PASS",
+    "1VpLcwluf5ExGBYq299A_s": "PASS",
+    "1W1uT4KcD2A82HzI8xRc7k": "PASS",
+    "1WlSSD89TEV9jGF0SS8Sn7": "PASS",
+    "1Wt8VfJwzEUA7S5a5F5pHz": "PASS",
+    "1XaA5$O45DKQ9RoZVD5HbP": "PASS",
+    "1XhM3y3MrB9Rc$U9NJXUMq": "PASS",
+    "1Y4NDO4Nj1Yfkl2FWdX4uH": "PASS",
+    "1__0cts3z3Tu933U7nXsyt": "PASS",
+    "1_gfrMctjDpuBuZmoBwxPb": "PASS",
+    "1_x$CWpVr7cQ8Wz2yCv5SX": "PASS",
+    "1bin5B9Pf9xwU2EDbuxgVx": "PASS",
+    "1dIuVWh_90APlNBSdZ7AN2": "PASS",
+    "1dp4w1f6nBkAGYM$3pSHfL": "PASS",
+    "1etFtRm8bAXABiyIjaXy6H": "PASS",
+    "1exFPXOV57V86JLcD_HwbC": "PASS",
+    "1f514frcH9ivBcb5fpOqUM": "PASS",
+    "1fHbKmBSn4D93uF0jV0JhB": "PASS",
+    "1fsPOLJA95AA53Wx89cSm4": "PASS",
+    "1g2L6IHXP7cgvhTQkZ908W": "PASS",
+    "1iIyNrRAH94ezU_utQ$TfV": "PASS",
+    "1idcgmhj5FbulfpWIQ2mjX": "PASS",
+    "1k6fMBa2n8KwzqJB0Y42tK": "PASS",
+    "1k8iISLXn9nREfHhjAYpoB": "PASS",
+    "1kqzWvtin6ERqVIgLT6FEZ": "PASS",
+    "1krxQcVgbDlBZ2q1DFXvwC": "PASS",
+    "1lIv2PNbb08QfVwNw0gKc2": "PASS",
+    "1mgduxWcP5S9d06XOmf7NU": "PASS",
+    "1n2sqKAEr8AQkM19GPgdCM": "PASS",
+    "1nZXtbi0TBZf2uZX9$HIcx": "PASS",
+    "1ooVUsz1L8Bfr4DBbqlQhO": "PASS",
+    "1pe4n1m091h8oQmW8wrNba": "PASS",
+    "1qfnvAxy17owngs1t6iqLA": "PASS",
+    "1sTHgHjQ56NReQvNxxzhJo": "PASS",
+    "1tNBfHDUX4Ex40aLQ57AqT": "PASS",
+    "1vNayonG15vRMiK9H4aytk": "PASS",
+    "1vyBOVVqz2ZAfCUm1naA6j": "PASS",
+    "1wEH1BGOj2v9xl5E5hVDSD": "PASS",
+    "1x4DQmckr0y8_IqiTJPVav": "PASS",
+    "1xA9r1Klf93Qf_DsHFgXda": "PASS",
+    "1xFIvmjgn5vQHxnpVcwOlh": "PASS",
+    "1yPxa_pLrA_wq4dDHgxR7n": "PASS",
+    "1ylfIyJ$j5DeKBpFYF0Any": "PASS",
+    "2$IgDKawD4xu_AeaBIVthf": "PASS",
+    "2$o_dX_1rD8f5LXdr3gNif": "PASS",
+    "2$tUAYl0jAUwvguhTmRqK0": "PASS",
+    "20yJe0ynPCPe6$KrRcRlQJ": "PASS",
+    "21jvrVG_X2Y9oMd7cigE6C": "PASS",
+    "22dSWqC2z71eYK3lY4dF42": "PASS",
+    "23tCU1zhz6jxMxOIp18$ox": "PASS",
+    "25Nn9fHUjCKvJiGSlDZi$H": "PASS",
+    "25j2tBV89BjwBmiyzqYBU3": "PASS",
+    "28FL$9lPz4681nWm6Cd0ur": "PASS",
+    "29SV9RzXbBxei8G6PvbPsx": "PASS",
+    "29tQLsQET5_RZ9DNASgqoH": "PASS",
+    "2AMBip_C58GwsWGbRUs40y": "PASS",
+    "2AdkkU7Af2Fe4LcmRK0haX": "PASS",
+    "2AlgoAEhD08Pc9zNFXF2Ew": "PASS",
+    "2BVf3sEJDCI8uSYNS3mMwL": "PASS",
+    "2BZN62dmvCoRvJbyLW1FqV": "PASS",
+    "2C4wIXsKn0kBLNQNhEkqHO": "PASS",
+    "2CcUXsUgr8nujrQlX6Os6W": "PASS",
+    "2Erbqw4_r4fPhLsFYGy9XC": "PASS",
+    "2EzglhTb1Eeei0KS_kDUnZ": "PASS",
+    "2GFP_MQZf57gYvLYMxE8T_": "PASS",
+    "2Gmos7YT5AufQRmOXkUZ8R": "PASS",
+    "2KsmoW_kvD88gId1jurAra": "PASS",
+    "2Kx5Okz1T37ernt6HauxFt": "PASS",
+    "2L25SwDKvA5egcg9Fo9JfH": "PASS",
+    "2NDpdQ2qD738ZJxxMYOFpV": "PASS",
+    "2NGi5I7oj43xQrt7hK3ndQ": "PASS",
+    "2NZ0$F9pfD8AoczgJY3eKI": "PASS",
+    "2O3I3LrAr03fAUzOLFmr93": "PASS",
+    "2O8dI8KNT6VwFS2gujcZGT": "PASS",
+    "2PQK6gyXrFU8__BgdjG28L": "PASS",
+    "2RAQWZ$0bB3gBeYSCNDQQH": "PASS",
+    "2SL8RZF6j1z8O05r99yKT4": "PASS",
+    "2THxrBQQb9pfKoB5YG_T_R": "PASS",
+    "2TWpinccnFZQ5GH3BS6cN_": "PASS",
+    "2UFg1l_YH17RaAV7gnYqXu": "PASS",
+    "2VTEcqN8H6aQh9ZUZo5oNr": "PASS",
+    "2W4V$eQxX4hepPSBSawh9n": "PASS",
+    "2WlxW2dyz6tvDjrfG8ESIt": "PASS",
+    "2XnaqDuYn3_vGH5fcYa6ow": "PASS",
+    "2YeobIMwf2cuJYkO5M8djE": "PASS",
+    "2ZLRjQ2HH8JBozV4j33yMU": "PASS",
+    "2ZTEvUo_H5sQdPh0$IeS_v": "PASS",
+    "2_$ZX3X6f3S81V7wMOO0o_": "PASS",
+    "2_9dFJps91081yx2D9WgjS": "PASS",
+    "2_WDFjTCD2CuAlueDrkf0z": "PASS",
+    "2b8bLJs0b53R2GuvTFC7i9": "PASS",
+    "2bDHFVTO55gwgRJXoeIMCP": "PASS",
+    "2bGFZmGyf7awtvk0MxsCrc": "PASS",
+    "2bslFHVO14XBc451VQxpeD": "PASS",
+    "2dHKPOgq5E49cYRxY$gLL1": "PASS",
+    "2eDe_9iUTEEBJSXLUSDcwX": "PASS",
+    "2egmAL0Ej70Q0QFJHWuWqd": "PASS",
+    "2elNtMVof84veuQ29fZHtN": "PASS",
+    "2foM2Lm7r4re8KW99NC90o": "PASS",
+    "2gU84kgtv6sPOha3c5L0kK": "PASS",
+    "2h9VKTbEPDDB2babkYA51Z": "PASS",
+    "2hSdyvm3L94OkrReQmgjfk": "PASS",
+    "2hcZ08vCL7hQJQ1VZaUeYK": "PASS",
+    "2he0kf8IbAhvp5RsTSHN10": "PASS",
+    "2hlwI3EO5ENBN03FwfN2y4": "PASS",
+    "2jYo1O0Kj4gP$WHLkmonPV": "PASS",
+    "2jky7s7onCMw4Z1v317UnJ": "PASS",
+    "2kQA47ZTnA8RyGe58D8wHA": "PASS",
+    "2kuNE79Zr0QvLszwH9XB5A": "PASS",
+    "2mrwieyY9CCwIppBpJO9qh": "PASS",
+    "2n0q1MJoz4IuX59ohrYWPp": "PASS",
+    "2oWgdxxp51he3VxoaZAQlo": "PASS",
+    "2q5l7YwknAZwhZ5uDFA7Qs": "PASS",
+    "2rXCbl4N1A4e$zen8aAVwn": "PASS",
+    "2s4148sIr0m91B5JLpVUam": "PASS",
+    "2srX9qvCn8m9oOZOuYVae9": "PASS",
+    "2svh3ow7D4QOeKNjgwQ9sE": "PASS",
+    "2sz6EQj25F2QHA5V54Q7sC": "PASS",
+    "2to1ekR$910RnDHxdH$Qkl": "PASS",
+    "2tvE4Qit91$vJzWrkEp91E": "PASS",
+    "2ui19KjVL6EuxbJF9dq_mV": "PASS",
+    "2ygjoP5vD7b8Zw0jWJs3i5": "PASS",
+    "3$NkQdXef3ohFShSSDJUQW": "PASS",
+    "3$hd_swpz1P8cbiX5X2iax": "PASS",
+    "31nzyJ$216Wfswracfz$u2": "PASS",
+    "33Pw7cupb8rOJx8K_Ed8g4": "PASS",
+    "37aLECbQ9BmxwujkzVfRgo": "PASS",
+    "3891jGVvrDdRzqeJhEyvAM": "PASS",
+    "38mJsG3b56cAa6Ei1gOnp0": "PASS",
+    "39HPcunJvADfKBEvIxZvAX": "PASS",
+    "39kvRA4un63vxpbZndvX5O": "PASS",
+    "3C37B7k$r8nBAxIag6xauB": "PASS",
+    "3CdN53p2v3MAlwCPCvQUFz": "PASS",
+    "3DFtCo2snBNfoePeIeQC3Q": "PASS",
+    "3EufY04sT8Sh8teqJHzag9": "PASS",
+    "3GEpY0qmTBiglFc_ox9rcv": "PASS",
+    "3GFpm$$bb8TBO1pW5Z51C9": "PASS",
+    "3GfmaUPmX9beuOiGy5NsMN": "PASS",
+    "3HO6_10xv4ufE$hy2CDlrG": "PASS",
+    "3Icc5TrXr2_AxH2jvMBPOO": "PASS",
+    "3JIt9wdlj4h8bCdw2nsEjT": "PASS",
+    "3JnWTNT7n2gvImSIz$kHOE": "PASS",
+    "3KBJ4YZM51uPpvvBFzTbDE": "PASS",
+    "3L_jHx3m9718Gs$5wCFDTa": "PASS",
+    "3LxnxwJ891SO743iWoxBMd": "PASS",
+    "3O3qG5KcT6sRjJWtGSNkUj": "PASS",
+    "3Pjxq$G8f9Mx9krjC1ZA4Z": "PASS",
+    "3Pq3Mp6kbDFvrSkLVORUXs": "PASS",
+    "3Qz2RKyJr1XQ8WcPp7OU6o": "PASS",
+    "3R0B7A4JX0792NQZVruCFJ": "PASS",
+    "3SS6$nhgL8Iv1KBJMCYSrW": "PASS",
+    "3V5nLgjnr67xm0jfu44RLr": "PASS",
+    "3XEfWrJeT4wAroizvc528f": "PASS",
+    "3XvQQHam50_u$RF0oNlgpi": "PASS",
+    "3Y7nzG53nEb8vwBiygfw6u": "PASS",
+    "3YlKiebDXAdunJte662t3N": "PASS",
+    "3ZJptmPU1AFBE7U5Sa4eat": "PASS",
+    "3_OGjDkvr93hDjlUbjW5To": "PASS",
+    "3dNEtYpyH0WPUKGdJjZqXi": "PASS",
+    "3dnMNUqgT2veqoMuJUHsfQ": "PASS",
+    "3fG_Yv4SjFIgCgKCfUU4Dy": "PASS",
+    "3ffjuKw45AIBH$ztJvBRsY": "PASS",
+    "3gVLWUGEfAMgEMy5xUzBli": "PASS",
+    "3hxUJW$mD9mBlHltL$zzyF": "PASS",
+    "3ic8DaqWz9B8JuoyDx9V4Z": "PASS",
+    "3iomqEEIr9Cwh0fq7xhEZv": "PASS",
+    "3nF6PIgMf0dPUNq52y_dmh": "PASS",
+    "3nuqC4m5T94ujLO_vFz2hG": "PASS",
+    "3oMwzsw6T3zQ7o3dkAConQ": "PASS",
+    "3oQQ_$sLL4UOpT72dSWm3G": "PASS",
+    "3ozmqoOwLCQQi32mx_RP1q": "PASS",
+    "3qRVwfH4X6oADMU$mEEpBL": "PASS",
+    "3qduFwvHXBoegjgyS0ypqX": "PASS",
+    "3rHToqfXXBX8XST6cFLzjf": "PASS",
+    "3rneJruuHA7Rhngf$NyAeW": "PASS",
+    "3t64EORJzEcPzciJueEwr2": "PASS",
+    "3u1vdqEQD5HfJ6vz72AnVO": "PASS",
+    "3unKlhycr0rgAkzu_m1NqF": "PASS",
+    "3vaTurxZPFj9DHHeSKQHus": "PASS",
+    "3w0Hzip0bCywcQNk9ZbG4J": "PASS",
+    "3w8rXJFS51YRpxLjrNdcIZ": "PASS",
+    "3wFJKTD698YPFAruMsPCGu": "PASS",
+    "3xxvLKAp17IvSghhx1MSYJ": "PASS",
+    "3zQiR8Ry9AS9YLM5WkgmAG": "PASS",
+    "3zv3iCozT5mxk3dVXXyK_i": "PASS"
+  },
+  "notes": "Unallocated Areas on 301 IfcWall or IfcCurtainWall or IfcColumn: {'PASS': 301}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_smiley_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 301,
+    "ifc_sha256": "26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Unallocated Areas",
+      "message": null,
+      "report_file": "ec3_smiley_check.xlsx",
+      "report_sha256": "b9e06cc563fb0a24c442a638f668c31ed0349f8f33a05b53918bbbca594794ea",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$Mn$WycfFQe8kBFeGJ1Zd": {
+      "name": "EG-Stuetze-04-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0$gQuAVrT6DveZGoTjLqlW": {
+      "name": "Keller-A-10-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0$hBkuhEPFm81JrKzxmoiS": {
+      "name": "EG-I-07-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "00$ax1d6PEiAAdgD7ExTVQ": {
+      "name": "EG-I-01-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "00$xCwIL11lAUmAPM4gMxk": {
+      "name": "1OG-A-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "00edHZvET1HxjPJ3dhH$cb": {
+      "name": "1OG-A-2-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "02kNomHefBm8gLC0TLit83": {
+      "name": "Keller-I-06-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "038X7VYTD5K88Kl7kXysTv": {
+      "name": "1OG-I-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "04F$WYaoL54gpTsfNTQEUs": {
+      "name": "EG-Stuetze-07-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "05kC3tUxf2NgyluG2Lb30m": {
+      "name": "1OG-I-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "06$jwnwYzB2xtme_3oKazV": {
+      "name": "1OG-I-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "06xvaW2qPBlOo7wUyqUHHX": {
+      "name": "EG-Stuetze-02-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "07sh$jVn9Cb8b$MGF_G9Ff": {
+      "name": "EG-A-09-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "09Lvh$fsD2ZuXfVgxcU3vD": {
+      "name": "EG-I-08-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "09t8qPusn0$vOb7CbfoAEV": {
+      "name": "EG-Stuetze-08-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0AAd0rFhXFdQJSElR6sGP0": {
+      "name": "EG-A-02-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0BuxB_Yoz2bxinyZI$3Ehs": {
+      "name": "1OG-I-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0C0oo2MPP7$PiiYcnEKt5v": {
+      "name": "2OG-A-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Cc5Ixrr1C4PSsN4K4Y7Hf": {
+      "name": "EG-A-04-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Cxs2bbhv6hvfh7lFtjXXp": {
+      "name": "1OG-A-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0EIMrhkFX2zvT6tawsn2qW": {
+      "name": "EG-Trennwand-11",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Ed4ARU7P4KeU6kP1uIKBr": {
+      "name": "1OG-A-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0F_ADUTlXCHOAF5nICwk2x": {
+      "name": "Keller-A-07-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Fy_XN4cP5wRkN$oNOO$FK": {
+      "name": "Keller-I-01-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0K0_rBHwzFcvVm4TfkJFJZ": {
+      "name": "1OG-I-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0L$0VMju57ReUTif39x$Fr": {
+      "name": "2OG-A-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0LUbY6uMj20h9$NcV3hc2r": {
+      "name": "2OG-I-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0MizeTCp19xgDv3HU$wyS5": {
+      "name": "2OG-I-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0NJuvIQND4heQzolrkfryF": {
+      "name": "EG-A-05-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0NQVcwUgj2fup5UuFaDTfC": {
+      "name": "2OG-A-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0NhIQKkNr2Vwp0sL8Gz6NX": {
+      "name": "1OG-A-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0NjeXzbKLCshYtWWAZQa6a": {
+      "name": "2OG-A-2-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0OpziBxCT9Ig3F8ub8rphn": {
+      "name": "1OG-A-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0OsvamfsHFNhvlw9DDjzlH": {
+      "name": "EG-Trennwand-10",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0S2gRn2gb1FQt9ZThjw2Ou": {
+      "name": "1OG-I-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0THvsYtDfEMP3AXWWuG7Jh": {
+      "name": "EG-A-04-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0TQkmcTzL0ZfxeqP2F29Ye": {
+      "name": "1OG-I-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0TUNS5AVv3F87ZbmXc$UYA": {
+      "name": "EG-A-09-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0TxAYc_5v1i8_KiwL3jxv7": {
+      "name": "Keller-A-01-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0VRA3GmLzEUP9uulwvG2us": {
+      "name": "EG-Trennwand-05",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0VaJrC2sb4tQLYEJGXqo6p": {
+      "name": "2OG-A-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0VtN4UyZTAyBFay9rYlcbp": {
+      "name": "EG-Stuetze-03-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0VzkbPjXf7s9gniZplBYo1": {
+      "name": "Keller-A-08-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0WzeAna3nCuA2PL734yn7L": {
+      "name": "Keller-A-06-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0YugRUhJH2G8hKOGUABmJh": {
+      "name": "2OG-I-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Zj0JnUDvBBetlJkqI2svJ": {
+      "name": "EG-A-02-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ZzZbjV6v1SBa4cH04l8YG": {
+      "name": "2OG-A-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0dITJAjpzDRw6Tqws8ccIO": {
+      "name": "Keller-A-05-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0efW25yT15UvXDo0tArwHK": {
+      "name": "EG-Trennwand-02",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0jsIow8vTBzwrkSTIPptEG": {
+      "name": "EG-A-01-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0kJTj6gKD1CuDWYMqO2Qnq": {
+      "name": "Keller-I-05-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0kWi7sheXAh8Hk8xqbR9Ea": {
+      "name": "EG-A-10-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0kn8XFWGn1ovx3axPfhGtk": {
+      "name": "EG-A-03-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0l94Qy92fCY9j$Su5rcGDr": {
+      "name": "Keller-A-01-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0mlkvTDcb889X1BEHSlUSt": {
+      "name": "2OG-I-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ph9UIbnDFpfTMD7OzouEK": {
+      "name": "2OG-I-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0q9XnEUyL4vQPpZsmw9U0v": {
+      "name": "1OG-I-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0qxSE1G7j9TgnyZZYgKduA": {
+      "name": "Keller-A-08-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0rDyuSDov1ivtIh_Kja1VF": {
+      "name": "Keller-A-04-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0sLxcFwsfCuQE2oZIFHguB": {
+      "name": "EG-A-08-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0uW92y4cPDjvGXfUp703GD": {
+      "name": "1OG-A-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0vfZTOs9bE3uFkEhh4H4bf": {
+      "name": "Keller-A-01-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0vs4eSTZP2WfZyrLyQcV4a": {
+      "name": "EG-I-03-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0wjflNfwX6Zv6qZCdRZCf1": {
+      "name": "2OG-I-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0wpHdKxwLBC9sjEtqqvxbe": {
+      "name": "Keller-A-06-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0xKv5VqX9Bkxna3rXLzGso": {
+      "name": "EG-Stuetze-10-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0xXSbLVZXBiQ_VigTVWI9d": {
+      "name": "2OG-I-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1$dwm1Hof3twio2SbRyafA": {
+      "name": "2OG-I-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "10lPCH2oT7mgRFNXw$XC2o": {
+      "name": "EG-I-03-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "111K32PabEKu1rIfxbAEPD": {
+      "name": "1OG-I-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "11O5ZOsa56zRpbLrj$INWL": {
+      "name": "Keller-A-07-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "12yz0YD_H5Wu2CDwmyeg1F": {
+      "name": "Keller-A-10-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "13hBs4PZXFzA6GpSS7JJQN": {
+      "name": "Keller-I-05-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "13lPAyHKL7t8C8ytcRb2EL": {
+      "name": "Keller-I-04-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "14Jy$ZQZ53Dv4umnjUkJjd": {
+      "name": "1OG-A-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "15ML2EtvX2PvLxIw37pdEq": {
+      "name": "2OG-I-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "15fWlafVHCUPAj_neFFViv": {
+      "name": "EG-A-02-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "16FljoWD104eSud1GYjb8d": {
+      "name": "Keller-I-02-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "16_jQJDFf88RMg5oYNRe9p": {
+      "name": "1OG-I-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "16wg83TOb8I9EelKii4GcX": {
+      "name": "1OG-A-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "17o7VIFuz6AwDfnxc3Cqme": {
+      "name": "2OG-A-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "18h7IaVp5EoADgz2ed8NIn": {
+      "name": "2OG-A-3-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "18mcpothr2ev3zg1HsROd1": {
+      "name": "1OG-I-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1At9t9jgr5dx1I3He_h0QX": {
+      "name": "EG-I-09-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1BJLpU$Mf3jPvUMzfOlLQs": {
+      "name": "2OG-I-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1BLJyeYRfErx3CSrpb7xJP": {
+      "name": "EG-A-01-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Bhq4PxYb0RRwxNry00aqC": {
+      "name": "EG-I-01-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1BrP9AHlPEtgybu83cA2rC": {
+      "name": "2OG-I-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1CJeccdVf0kOJDc2YVjhf2": {
+      "name": "EG-A-08-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1CMVrEKUz4XRe7bwLlHQt2": {
+      "name": "2OG-A-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1DCVq9KID6n9LSbfWl6b8A": {
+      "name": "1OG-I-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1DKZbDYSTFHeY6CpzemJ7F": {
+      "name": "1OG-A-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1DNMBax5L7o8W2$sW2wjOV": {
+      "name": "1OG-A-1-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1DXX1hfiL0mPmZHa2juVor": {
+      "name": "2OG-A-5-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1D_x$VZfz3BgYXWu36mzRE": {
+      "name": "Keller-I-03-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1DgY17yDL92whWKvnLeUK6": {
+      "name": "EG-I-05-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1EROMMECT46eRaX3670D63": {
+      "name": "EG-Stuetze-08-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1F9gMOuYLAmApGAEj_zA6P": {
+      "name": "EG-I-10-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1GJzhFq1zAVuRlQQEDvjS6": {
+      "name": "Keller-A-06-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1I6XcdPmXEGxd5pxg7UtJJ": {
+      "name": "1OG-A-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1JsCIdSKvFOvMtPSbAMULI": {
+      "name": "2OG-A-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1K9lNsP3b9bh5Zn4n2Ve$k": {
+      "name": "EG-Stuetze-02-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1Ke8q4jpn8Sx41MC$XzerJ": {
+      "name": "EG-Trennwand-06",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1LaDLhlXT1SfpE6m4AGlnb": {
+      "name": "1OG-I-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1N3bcp6aT5E9y5dZ6j$pWy": {
+      "name": "EG-I-05-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1NG8tMVIDEVfzkXVvwZm5m": {
+      "name": "EG-A-08-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1NXOfLbKv4DQHZAEOh5SHt": {
+      "name": "1OG-A-1-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1NqgPg9e196urml9a8Nimm": {
+      "name": "Keller-A-09-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Nvv$MCGr4ige2BbFOz6hJ": {
+      "name": "Keller-A-07-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1OaEkz4s12k8hIjE36K0d0": {
+      "name": "EG-I-09-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1QJW0EW_H4Vwf8W_jP6RTh": {
+      "name": "EG-I-02-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1RRq$esvX0afTeGKYTnhz6": {
+      "name": "EG-A-05-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1RUVSCj1f6H9qaB6AH53tM": {
+      "name": "1OG-I-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1S1kSdIYXFFANA4WKJkyBL": {
+      "name": "1OG-A-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1TOrntnBD0NuLOGojgDewo": {
+      "name": "Keller-A-09-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1UP9yIqQD1tPB3BC5hmzej": {
+      "name": "EG-I-06-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1VOAFaxl1DlQWuTxcJFyQ8": {
+      "name": "EG-A-10-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1VpLcwluf5ExGBYq299A_s": {
+      "name": "2OG-A-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1W1uT4KcD2A82HzI8xRc7k": {
+      "name": "Keller-A-01-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1WlSSD89TEV9jGF0SS8Sn7": {
+      "name": "EG-I-07-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Wt8VfJwzEUA7S5a5F5pHz": {
+      "name": "2OG-I-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1XaA5$O45DKQ9RoZVD5HbP": {
+      "name": "Keller-A-02-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1XhM3y3MrB9Rc$U9NJXUMq": {
+      "name": "1OG-A-3-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Y4NDO4Nj1Yfkl2FWdX4uH": {
+      "name": "1OG-A-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1__0cts3z3Tu933U7nXsyt": {
+      "name": "EG-A-03-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1_gfrMctjDpuBuZmoBwxPb": {
+      "name": "1OG-A-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1_x$CWpVr7cQ8Wz2yCv5SX": {
+      "name": "2OG-A-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1bin5B9Pf9xwU2EDbuxgVx": {
+      "name": "Keller-A-03-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1dIuVWh_90APlNBSdZ7AN2": {
+      "name": "2OG-I-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1dp4w1f6nBkAGYM$3pSHfL": {
+      "name": "2OG-I-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1etFtRm8bAXABiyIjaXy6H": {
+      "name": "2OG-I-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1exFPXOV57V86JLcD_HwbC": {
+      "name": "2OG-A-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1f514frcH9ivBcb5fpOqUM": {
+      "name": "1OG-A-4-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1fHbKmBSn4D93uF0jV0JhB": {
+      "name": "2OG-I-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1fsPOLJA95AA53Wx89cSm4": {
+      "name": "EG-Stuetze-01-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1g2L6IHXP7cgvhTQkZ908W": {
+      "name": "2OG-I-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1iIyNrRAH94ezU_utQ$TfV": {
+      "name": "2OG-A-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1idcgmhj5FbulfpWIQ2mjX": {
+      "name": "EG-A-07-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1k6fMBa2n8KwzqJB0Y42tK": {
+      "name": "EG-Trennwand-09",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1k8iISLXn9nREfHhjAYpoB": {
+      "name": "EG-I-09-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1kqzWvtin6ERqVIgLT6FEZ": {
+      "name": "EG-A-09-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1krxQcVgbDlBZ2q1DFXvwC": {
+      "name": "2OG-A-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1lIv2PNbb08QfVwNw0gKc2": {
+      "name": "EG-I-03-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1mgduxWcP5S9d06XOmf7NU": {
+      "name": "2OG-A-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1n2sqKAEr8AQkM19GPgdCM": {
+      "name": "2OG-A-3-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1nZXtbi0TBZf2uZX9$HIcx": {
+      "name": "EG-A-01-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ooVUsz1L8Bfr4DBbqlQhO": {
+      "name": "2OG-A-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1pe4n1m091h8oQmW8wrNba": {
+      "name": "1OG-I-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1qfnvAxy17owngs1t6iqLA": {
+      "name": "Keller-I-03-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1sTHgHjQ56NReQvNxxzhJo": {
+      "name": "EG-I-06-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1tNBfHDUX4Ex40aLQ57AqT": {
+      "name": "Keller-A-05-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1vNayonG15vRMiK9H4aytk": {
+      "name": "2OG-A-5-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1vyBOVVqz2ZAfCUm1naA6j": {
+      "name": "EG-A-05-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1wEH1BGOj2v9xl5E5hVDSD": {
+      "name": "Keller-I-04-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1x4DQmckr0y8_IqiTJPVav": {
+      "name": "EG-I-10-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1xA9r1Klf93Qf_DsHFgXda": {
+      "name": "Keller-A-07-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1xFIvmjgn5vQHxnpVcwOlh": {
+      "name": "2OG-A-2-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1yPxa_pLrA_wq4dDHgxR7n": {
+      "name": "EG-Stuetze-04-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1ylfIyJ$j5DeKBpFYF0Any": {
+      "name": "EG-Trennwand-08",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2$IgDKawD4xu_AeaBIVthf": {
+      "name": "EG-I-07-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2$o_dX_1rD8f5LXdr3gNif": {
+      "name": "Keller-I-01-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2$tUAYl0jAUwvguhTmRqK0": {
+      "name": "1OG-A-5-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "20yJe0ynPCPe6$KrRcRlQJ": {
+      "name": "2OG-I-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "21jvrVG_X2Y9oMd7cigE6C": {
+      "name": "2OG-I-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "22dSWqC2z71eYK3lY4dF42": {
+      "name": "2OG-A-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "23tCU1zhz6jxMxOIp18$ox": {
+      "name": "EG-A-08-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "25Nn9fHUjCKvJiGSlDZi$H": {
+      "name": "2OG-A-1-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "25j2tBV89BjwBmiyzqYBU3": {
+      "name": "EG-I-10-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "28FL$9lPz4681nWm6Cd0ur": {
+      "name": "1OG-A-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "29SV9RzXbBxei8G6PvbPsx": {
+      "name": "1OG-I-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "29tQLsQET5_RZ9DNASgqoH": {
+      "name": "2OG-I-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2AMBip_C58GwsWGbRUs40y": {
+      "name": "EG-I-08-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2AdkkU7Af2Fe4LcmRK0haX": {
+      "name": "EG-A-09-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2AlgoAEhD08Pc9zNFXF2Ew": {
+      "name": "EG-I-04-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2BVf3sEJDCI8uSYNS3mMwL": {
+      "name": "EG-Stuetze-10-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2BZN62dmvCoRvJbyLW1FqV": {
+      "name": "2OG-A-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2C4wIXsKn0kBLNQNhEkqHO": {
+      "name": "1OG-A-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2CcUXsUgr8nujrQlX6Os6W": {
+      "name": "EG-Stuetze-01-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2Erbqw4_r4fPhLsFYGy9XC": {
+      "name": "1OG-A-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2EzglhTb1Eeei0KS_kDUnZ": {
+      "name": "2OG-I-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2GFP_MQZf57gYvLYMxE8T_": {
+      "name": "1OG-I-2-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Gmos7YT5AufQRmOXkUZ8R": {
+      "name": "Keller-A-02-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2KsmoW_kvD88gId1jurAra": {
+      "name": "EG-I-02-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Kx5Okz1T37ernt6HauxFt": {
+      "name": "1OG-I-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2L25SwDKvA5egcg9Fo9JfH": {
+      "name": "2OG-A-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2NDpdQ2qD738ZJxxMYOFpV": {
+      "name": "2OG-I-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2NGi5I7oj43xQrt7hK3ndQ": {
+      "name": "1OG-I-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2NZ0$F9pfD8AoczgJY3eKI": {
+      "name": "1OG-A-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O3I3LrAr03fAUzOLFmr93": {
+      "name": "EG-A-06-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O8dI8KNT6VwFS2gujcZGT": {
+      "name": "Keller-I-09-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2PQK6gyXrFU8__BgdjG28L": {
+      "name": "Keller-A-09-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2RAQWZ$0bB3gBeYSCNDQQH": {
+      "name": "1OG-A-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2SL8RZF6j1z8O05r99yKT4": {
+      "name": "Keller-A-08-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2THxrBQQb9pfKoB5YG_T_R": {
+      "name": "1OG-A-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2TWpinccnFZQ5GH3BS6cN_": {
+      "name": "2OG-I-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2UFg1l_YH17RaAV7gnYqXu": {
+      "name": "2OG-A-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2VTEcqN8H6aQh9ZUZo5oNr": {
+      "name": "Keller-I-07-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2W4V$eQxX4hepPSBSawh9n": {
+      "name": "1OG-A-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2WlxW2dyz6tvDjrfG8ESIt": {
+      "name": "Keller-A-08-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2XnaqDuYn3_vGH5fcYa6ow": {
+      "name": "EG-Stuetze-05-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2YeobIMwf2cuJYkO5M8djE": {
+      "name": "EG-A-07-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ZLRjQ2HH8JBozV4j33yMU": {
+      "name": "EG-Trennwand-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2ZTEvUo_H5sQdPh0$IeS_v": {
+      "name": "2OG-A-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2_$ZX3X6f3S81V7wMOO0o_": {
+      "name": "1OG-I-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2_9dFJps91081yx2D9WgjS": {
+      "name": "2OG-A-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2_WDFjTCD2CuAlueDrkf0z": {
+      "name": "EG-A-10-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2b8bLJs0b53R2GuvTFC7i9": {
+      "name": "Keller-A-03-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2bDHFVTO55gwgRJXoeIMCP": {
+      "name": "2OG-A-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2bGFZmGyf7awtvk0MxsCrc": {
+      "name": "1OG-A-5-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2bslFHVO14XBc451VQxpeD": {
+      "name": "EG-I-02-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2dHKPOgq5E49cYRxY$gLL1": {
+      "name": "Keller-I-10-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2eDe_9iUTEEBJSXLUSDcwX": {
+      "name": "2OG-A-1-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2egmAL0Ej70Q0QFJHWuWqd": {
+      "name": "EG-Stuetze-07-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2elNtMVof84veuQ29fZHtN": {
+      "name": "1OG-A-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2foM2Lm7r4re8KW99NC90o": {
+      "name": "Keller-A-02-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2gU84kgtv6sPOha3c5L0kK": {
+      "name": "1OG-I-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2h9VKTbEPDDB2babkYA51Z": {
+      "name": "1OG-A-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2hSdyvm3L94OkrReQmgjfk": {
+      "name": "1OG-A-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2hcZ08vCL7hQJQ1VZaUeYK": {
+      "name": "Keller-A-05-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2he0kf8IbAhvp5RsTSHN10": {
+      "name": "EG-Trennwand-04",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2hlwI3EO5ENBN03FwfN2y4": {
+      "name": "1OG-I-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2jYo1O0Kj4gP$WHLkmonPV": {
+      "name": "1OG-I-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2jky7s7onCMw4Z1v317UnJ": {
+      "name": "Keller-I-07-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2kQA47ZTnA8RyGe58D8wHA": {
+      "name": "Keller-A-04-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2kuNE79Zr0QvLszwH9XB5A": {
+      "name": "Keller-I-08-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2mrwieyY9CCwIppBpJO9qh": {
+      "name": "Keller-A-04-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2n0q1MJoz4IuX59ohrYWPp": {
+      "name": "EG-Trennwand-07",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2oWgdxxp51he3VxoaZAQlo": {
+      "name": "2OG-I-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2q5l7YwknAZwhZ5uDFA7Qs": {
+      "name": "EG-Stuetze-06-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2rXCbl4N1A4e$zen8aAVwn": {
+      "name": "EG-Stuetze-06-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2s4148sIr0m91B5JLpVUam": {
+      "name": "1OG-I-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2srX9qvCn8m9oOZOuYVae9": {
+      "name": "1OG-A-2-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2svh3ow7D4QOeKNjgwQ9sE": {
+      "name": "1OG-I-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2sz6EQj25F2QHA5V54Q7sC": {
+      "name": "EG-A-10-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2to1ekR$910RnDHxdH$Qkl": {
+      "name": "EG-A-04-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2tvE4Qit91$vJzWrkEp91E": {
+      "name": "EG-I-08-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ui19KjVL6EuxbJF9dq_mV": {
+      "name": "EG-A-03-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ygjoP5vD7b8Zw0jWJs3i5": {
+      "name": "EG-A-07-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3$NkQdXef3ohFShSSDJUQW": {
+      "name": "Keller-A-09-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3$hd_swpz1P8cbiX5X2iax": {
+      "name": "1OG-I-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "31nzyJ$216Wfswracfz$u2": {
+      "name": "EG-A-04-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "33Pw7cupb8rOJx8K_Ed8g4": {
+      "name": "EG-I-06-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "37aLECbQ9BmxwujkzVfRgo": {
+      "name": "EG-I-04-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3891jGVvrDdRzqeJhEyvAM": {
+      "name": "Keller-A-04-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "38mJsG3b56cAa6Ei1gOnp0": {
+      "name": "1OG-I-3-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "39HPcunJvADfKBEvIxZvAX": {
+      "name": "2OG-A-3-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "39kvRA4un63vxpbZndvX5O": {
+      "name": "EG-Stuetze-03-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3C37B7k$r8nBAxIag6xauB": {
+      "name": "Keller-A-10-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3CdN53p2v3MAlwCPCvQUFz": {
+      "name": "2OG-A-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3DFtCo2snBNfoePeIeQC3Q": {
+      "name": "1OG-A-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3EufY04sT8Sh8teqJHzag9": {
+      "name": "1OG-A-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3GEpY0qmTBiglFc_ox9rcv": {
+      "name": "Keller-I-06-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3GFpm$$bb8TBO1pW5Z51C9": {
+      "name": "Keller-A-02-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3GfmaUPmX9beuOiGy5NsMN": {
+      "name": "EG-Stuetze-09-2",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3HO6_10xv4ufE$hy2CDlrG": {
+      "name": "EG-A-02-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Icc5TrXr2_AxH2jvMBPOO": {
+      "name": "2OG-I-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3JIt9wdlj4h8bCdw2nsEjT": {
+      "name": "Keller-I-08-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3JnWTNT7n2gvImSIz$kHOE": {
+      "name": "EG-A-06-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3KBJ4YZM51uPpvvBFzTbDE": {
+      "name": "2OG-A-4-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3L_jHx3m9718Gs$5wCFDTa": {
+      "name": "2OG-I-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3LxnxwJ891SO743iWoxBMd": {
+      "name": "Keller-A-06-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3O3qG5KcT6sRjJWtGSNkUj": {
+      "name": "1OG-A-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Pjxq$G8f9Mx9krjC1ZA4Z": {
+      "name": "EG-A-06-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Pq3Mp6kbDFvrSkLVORUXs": {
+      "name": "2OG-A-3-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Qz2RKyJr1XQ8WcPp7OU6o": {
+      "name": "EG-A-01-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3R0B7A4JX0792NQZVruCFJ": {
+      "name": "2OG-A-1-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3SS6$nhgL8Iv1KBJMCYSrW": {
+      "name": "1OG-A-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3V5nLgjnr67xm0jfu44RLr": {
+      "name": "1OG-I-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3XEfWrJeT4wAroizvc528f": {
+      "name": "EG-Trennwand-03",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3XvQQHam50_u$RF0oNlgpi": {
+      "name": "EG-I-01-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y7nzG53nEb8vwBiygfw6u": {
+      "name": "1OG-A-4-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3YlKiebDXAdunJte662t3N": {
+      "name": "2OG-I-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ZJptmPU1AFBE7U5Sa4eat": {
+      "name": "Keller-A-10-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3_OGjDkvr93hDjlUbjW5To": {
+      "name": "Keller-A-03-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3dNEtYpyH0WPUKGdJjZqXi": {
+      "name": "1OG-A-3-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3dnMNUqgT2veqoMuJUHsfQ": {
+      "name": "EG-I-05-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3fG_Yv4SjFIgCgKCfUU4Dy": {
+      "name": "EG-I-04-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ffjuKw45AIBH$ztJvBRsY": {
+      "name": "2OG-A-2-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3gVLWUGEfAMgEMy5xUzBli": {
+      "name": "2OG-I-5-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3hxUJW$mD9mBlHltL$zzyF": {
+      "name": "Keller-A-03-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ic8DaqWz9B8JuoyDx9V4Z": {
+      "name": "EG-Stuetze-09-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3iomqEEIr9Cwh0fq7xhEZv": {
+      "name": "Keller-I-09-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3nF6PIgMf0dPUNq52y_dmh": {
+      "name": "EG-A-05-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3nuqC4m5T94ujLO_vFz2hG": {
+      "name": "1OG-A-4-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3oMwzsw6T3zQ7o3dkAConQ": {
+      "name": "2OG-A-2-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3oQQ_$sLL4UOpT72dSWm3G": {
+      "name": "EG-A-07-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ozmqoOwLCQQi32mx_RP1q": {
+      "name": "2OG-A-4-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3qRVwfH4X6oADMU$mEEpBL": {
+      "name": "EG-A-06-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3qduFwvHXBoegjgyS0ypqX": {
+      "name": "Keller-A-05-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3rHToqfXXBX8XST6cFLzjf": {
+      "name": "2OG-A-4-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3rneJruuHA7Rhngf$NyAeW": {
+      "name": "2OG-I-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3t64EORJzEcPzciJueEwr2": {
+      "name": "Keller-I-02-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3u1vdqEQD5HfJ6vz72AnVO": {
+      "name": "EG-A-03-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3unKlhycr0rgAkzu_m1NqF": {
+      "name": "1OG-I-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3vaTurxZPFj9DHHeSKQHus": {
+      "name": "2OG-A-1-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3w0Hzip0bCywcQNk9ZbG4J": {
+      "name": "2OG-I-5-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3w8rXJFS51YRpxLjrNdcIZ": {
+      "name": "EG-Stuetze-05-1",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3wFJKTD698YPFAruMsPCGu": {
+      "name": "1OG-I-4-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3xxvLKAp17IvSghhx1MSYJ": {
+      "name": "1OG-A-1-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3zQiR8Ry9AS9YLM5WkgmAG": {
+      "name": "Keller-I-10-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3zv3iCozT5mxk3dVXXyK_i": {
+      "name": "1OG-A-5-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    }
+  }
+}

@@ -1,0 +1,1907 @@
+{
+  "case_id": "doors_windows_storey__clinic",
+  "rule": "Every door and window must be assigned to the same building storey as the wall it is placed in, and must not be an orphan (a door or window with no host element at all).\n\nA door or window fills an opening that voids a host element - its wall. It violates the rule when (a) it has no host element, or (b) the storey containing it differs from the storey containing its host. If either storey cannot be determined the element cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nReport the GlobalId of every element (modelled as IfcDoor or IfcWindow) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/dental_clinic/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "1oCmeD_UH0NAQ13DTKAKXn",
+    "2NHD_$8fb3ZexljM$wSStT",
+    "3LjuaIy0TB9BYwqsSadrQS",
+    "3eIXtbz01CQuZOCQ8qhuxf",
+    "3o5ntlA212uQCF0q6eQsZI"
+  ],
+  "labels": {
+    "0ClPCUC7jCQRnj1dhupHk0": "PASS",
+    "0mxk1RW8H5mvX1dNnpRqn4": "PASS",
+    "0mxk1RW8H5mvX1dNnpRqso": "PASS",
+    "0mxk1RW8H5mvX1dNnpRqtX": "PASS",
+    "0mxk1RW8H5mvX1dNnpRqwu": "PASS",
+    "0mxk1RW8H5mvX1dNnpRqy_": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg0_": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg1N": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg2W": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg3B": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg4K": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg5J": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg6e": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg7t": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg87": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg8s": "PASS",
+    "0otfaO0qPDAhynjJ6Dmg94": "PASS",
+    "0otfaO0qPDAhynjJ6DmgB1": "PASS",
+    "0otfaO0qPDAhynjJ6DmgC_": "PASS",
+    "0otfaO0qPDAhynjJ6DmgDl": "PASS",
+    "0otfaO0qPDAhynjJ6DmgEk": "PASS",
+    "0otfaO0qPDAhynjJ6DmgFZ": "PASS",
+    "0otfaO0qPDAhynjJ6DmgGp": "PASS",
+    "0otfaO0qPDAhynjJ6DmgH8": "PASS",
+    "0otfaO0qPDAhynjJ6DmgIr": "PASS",
+    "0otfaO0qPDAhynjJ6DmgKt": "PASS",
+    "0otfaO0qPDAhynjJ6DmgMW": "PASS",
+    "0otfaO0qPDAhynjJ6DmgOb": "PASS",
+    "0otfaO0qPDAhynjJ6DmgQg": "PASS",
+    "0otfaO0qPDAhynjJ6DmgSS": "PASS",
+    "0otfaO0qPDAhynjJ6DmgTb": "PASS",
+    "0otfaO0qPDAhynjJ6DmgUg": "PASS",
+    "0otfaO0qPDAhynjJ6DmgWH": "PASS",
+    "0otfaO0qPDAhynjJ6DmgaJ": "PASS",
+    "0otfaO0qPDAhynjJ6DmgdG": "PASS",
+    "0otfaO0qPDAhynjJ6Dmgfp": "PASS",
+    "0otfaO0qPDAhynjJ6DmghI": "PASS",
+    "0otfaO0qPDAhynjJ6Dmgjh": "PASS",
+    "0otfaO0qPDAhynjJ6DmgkM": "PASS",
+    "0otfaO0qPDAhynjJ6DnLqt": "PASS",
+    "0otfaO0qPDAhynjJ6DnLrq": "PASS",
+    "0otfaO0qPDAhynjJ6DnLsa": "PASS",
+    "0tIhQ6hmz02e5gznEed4FD": "PASS",
+    "0tIhQ6hmz02e5gznEed7$9": "PASS",
+    "0ztdC3L1HAzhbhMHypqcDa": "PASS",
+    "0ztdC3L1HAzhbhMHypqcYf": "PASS",
+    "1byTDaqS91rBnWJlv$n$0$": "PASS",
+    "1byTDaqS91rBnWJlv$n$0M": "PASS",
+    "1byTDaqS91rBnWJlv$n$5v": "PASS",
+    "1byTDaqS91rBnWJlv$n$7g": "PASS",
+    "1byTDaqS91rBnWJlv$n$9Q": "PASS",
+    "1byTDaqS91rBnWJlv$n$CQ": "PASS",
+    "1byTDaqS91rBnWJlv$n$Db": "PASS",
+    "1byTDaqS91rBnWJlv$n$Ex": "PASS",
+    "1byTDaqS91rBnWJlv$n$GX": "PASS",
+    "1byTDaqS91rBnWJlv$n$H4": "PASS",
+    "1byTDaqS91rBnWJlv$n$Kj": "PASS",
+    "1byTDaqS91rBnWJlv$n$Ls": "PASS",
+    "1byTDaqS91rBnWJlv$n$M9": "PASS",
+    "1byTDaqS91rBnWJlv$n$Mi": "PASS",
+    "1byTDaqS91rBnWJlv$n$OE": "PASS",
+    "1byTDaqS91rBnWJlv$n$P5": "PASS",
+    "1byTDaqS91rBnWJlv$n$Qk": "PASS",
+    "1byTDaqS91rBnWJlv$n$Rv": "PASS",
+    "1byTDaqS91rBnWJlv$n$TS": "PASS",
+    "1byTDaqS91rBnWJlv$n$Um": "PASS",
+    "1byTDaqS91rBnWJlv$n$Vz": "PASS",
+    "1byTDaqS91rBnWJlv$n$WN": "PASS",
+    "1byTDaqS91rBnWJlv$n$Wu": "PASS",
+    "1byTDaqS91rBnWJlv$n$Zq": "PASS",
+    "1byTDaqS91rBnWJlv$n$_5": "PASS",
+    "1byTDaqS91rBnWJlv$n$cb": "PASS",
+    "1byTDaqS91rBnWJlv$n$ds": "PASS",
+    "1byTDaqS91rBnWJlv$n$e0": "PASS",
+    "1byTDaqS91rBnWJlv$n$f7": "PASS",
+    "1byTDaqS91rBnWJlv$n$fc": "PASS",
+    "1byTDaqS91rBnWJlv$n$gx": "PASS",
+    "1byTDaqS91rBnWJlv$n$iu": "PASS",
+    "1byTDaqS91rBnWJlv$n$jF": "PASS",
+    "1byTDaqS91rBnWJlv$n$lh": "PASS",
+    "1byTDaqS91rBnWJlv$n$m2": "PASS",
+    "1byTDaqS91rBnWJlv$n$nD": "PASS",
+    "1byTDaqS91rBnWJlv$n$pH": "PASS",
+    "1byTDaqS91rBnWJlv$n$qC": "PASS",
+    "1byTDaqS91rBnWJlv$n$rP": "PASS",
+    "1byTDaqS91rBnWJlv$n$sW": "PASS",
+    "1byTDaqS91rBnWJlv$n$t9": "PASS",
+    "1byTDaqS91rBnWJlv$n$uh": "PASS",
+    "1byTDaqS91rBnWJlv$n$wG": "PASS",
+    "1byTDaqS91rBnWJlv$n__m": "PASS",
+    "1byTDaqS91rBnWJlv$n_q6": "PASS",
+    "1byTDaqS91rBnWJlv$n_s5": "PASS",
+    "1byTDaqS91rBnWJlv$n_yt": "PASS",
+    "1byTDaqS91rBnWJlv$nm$e": "PASS",
+    "1byTDaqS91rBnWJlv$nm10": "PASS",
+    "1byTDaqS91rBnWJlv$nm5e": "PASS",
+    "1byTDaqS91rBnWJlv$nm6r": "PASS",
+    "1byTDaqS91rBnWJlv$nm7E": "PASS",
+    "1byTDaqS91rBnWJlv$nm9F": "PASS",
+    "1byTDaqS91rBnWJlv$nm9g": "PASS",
+    "1byTDaqS91rBnWJlv$nmA0": "PASS",
+    "1byTDaqS91rBnWJlv$nmAj": "PASS",
+    "1byTDaqS91rBnWJlv$nmCV": "PASS",
+    "1byTDaqS91rBnWJlv$nmCW": "PASS",
+    "1byTDaqS91rBnWJlv$nmDB": "PASS",
+    "1byTDaqS91rBnWJlv$nmGk": "PASS",
+    "1byTDaqS91rBnWJlv$nmHr": "PASS",
+    "1byTDaqS91rBnWJlv$nmIS": "PASS",
+    "1byTDaqS91rBnWJlv$nmJJ": "PASS",
+    "1byTDaqS91rBnWJlv$nmKL": "PASS",
+    "1byTDaqS91rBnWJlv$nmLC": "PASS",
+    "1byTDaqS91rBnWJlv$nmMw": "PASS",
+    "1byTDaqS91rBnWJlv$nmQZ": "PASS",
+    "1byTDaqS91rBnWJlv$nmSy": "PASS",
+    "1byTDaqS91rBnWJlv$nmTD": "PASS",
+    "1byTDaqS91rBnWJlv$nmW0": "PASS",
+    "1byTDaqS91rBnWJlv$nmWh": "PASS",
+    "1byTDaqS91rBnWJlv$nmXk": "PASS",
+    "1byTDaqS91rBnWJlv$nmZR": "PASS",
+    "1byTDaqS91rBnWJlv$nmaW": "PASS",
+    "1byTDaqS91rBnWJlv$nmdJ": "PASS",
+    "1byTDaqS91rBnWJlv$nmeL": "PASS",
+    "1byTDaqS91rBnWJlv$nmeg": "PASS",
+    "1byTDaqS91rBnWJlv$nmfx": "PASS",
+    "1byTDaqS91rBnWJlv$nmg3": "PASS",
+    "1byTDaqS91rBnWJlv$nmhs": "PASS",
+    "1byTDaqS91rBnWJlv$nmj8": "PASS",
+    "1byTDaqS91rBnWJlv$nmku": "PASS",
+    "1byTDaqS91rBnWJlv$nmlz": "PASS",
+    "1byTDaqS91rBnWJlv$nmmF": "PASS",
+    "1byTDaqS91rBnWJlv$nmnC": "PASS",
+    "1byTDaqS91rBnWJlv$nmoB": "PASS",
+    "1byTDaqS91rBnWJlv$nmpw": "PASS",
+    "1byTDaqS91rBnWJlv$nmrp": "PASS",
+    "1byTDaqS91rBnWJlv$nms7": "PASS",
+    "1byTDaqS91rBnWJlv$nmsg": "PASS",
+    "1byTDaqS91rBnWJlv$nmuz": "PASS",
+    "1byTDaqS91rBnWJlv$nmwJ": "PASS",
+    "1byTDaqS91rBnWJlv$nmxs": "PASS",
+    "1byTDaqS91rBnWJlv$nmyn": "PASS",
+    "1byTDaqS91rBnWJlv$nmzE": "PASS",
+    "1byTDaqS91rBnWJlv$nn0o": "PASS",
+    "1byTDaqS91rBnWJlv$nn1R": "PASS",
+    "1byTDaqS91rBnWJlv$nn3d": "PASS",
+    "1byTDaqS91rBnWJlv$nn4z": "PASS",
+    "1byTDaqS91rBnWJlv$nn54": "PASS",
+    "1byTDaqS91rBnWJlv$nn6$": "PASS",
+    "1byTDaqS91rBnWJlv$nn72": "PASS",
+    "1byTDaqS91rBnWJlv$nn82": "PASS",
+    "1byTDaqS91rBnWJlv$nn9n": "PASS",
+    "1byTDaqS91rBnWJlv$nnC3": "PASS",
+    "1byTDaqS91rBnWJlv$nnE_": "PASS",
+    "1byTDaqS91rBnWJlv$nnHw": "PASS",
+    "1byTDaqS91rBnWJlv$nnIo": "PASS",
+    "1byTDaqS91rBnWJlv$nnJP": "PASS",
+    "1byTDaqS91rBnWJlv$nnKl": "PASS",
+    "1byTDaqS91rBnWJlv$nnMB": "PASS",
+    "1byTDaqS91rBnWJlv$nnMl": "PASS",
+    "1byTDaqS91rBnWJlv$nnNu": "PASS",
+    "1byTDaqS91rBnWJlv$nnOd": "PASS",
+    "1byTDaqS91rBnWJlv$nnPu": "PASS",
+    "1byTDaqS91rBnWJlv$nnQb": "PASS",
+    "1byTDaqS91rBnWJlv$nnRu": "PASS",
+    "1byTDaqS91rBnWJlv$nnSA": "PASS",
+    "1byTDaqS91rBnWJlv$nnTt": "PASS",
+    "1byTDaqS91rBnWJlv$nnU$": "PASS",
+    "1byTDaqS91rBnWJlv$nnW1": "PASS",
+    "1byTDaqS91rBnWJlv$nn_r": "PASS",
+    "1byTDaqS91rBnWJlv$nncb": "PASS",
+    "1byTDaqS91rBnWJlv$nndY": "PASS",
+    "1byTDaqS91rBnWJlv$nnfS": "PASS",
+    "1byTDaqS91rBnWJlv$nng6": "PASS",
+    "1byTDaqS91rBnWJlv$nnhB": "PASS",
+    "1byTDaqS91rBnWJlv$nnj_": "PASS",
+    "1byTDaqS91rBnWJlv$nnkx": "PASS",
+    "1byTDaqS91rBnWJlv$nnu8": "PASS",
+    "1byTDaqS91rBnWJlv$nnv2": "PASS",
+    "1byTDaqS91rBnWJlv$nnxF": "PASS",
+    "1eHJakbVPEdf9cGdMXVBAY": "PASS",
+    "1oCmeD_UH0NAQ13DTKAKXn": "FAIL",
+    "1qc5HjZvrCsga38tqxQ3VC": "PASS",
+    "1uDBQ9y7vCyxXlpVEuen9f": "PASS",
+    "2H9Xpd9Nf1Uu7_jFnBZWSx": "PASS",
+    "2NHD_$8fb3ZexljM$wSStT": "FAIL",
+    "2g$QZpOGbBUxSNx_ZgxG1w": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxG25": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxG7q": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxG8P": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxGCP": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJ$f": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJk0": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJl5": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJnH": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJoj": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJps": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJqZ": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJrM": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJs2": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJsp": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJtw": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJu4": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJvL": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJw0": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJxR": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJyK": "PASS",
+    "2g$QZpOGbBUxSNx_ZgxJz3": "PASS",
+    "35QeWibpT4DfyH3NIf2mGD": "PASS",
+    "35QeWibpT4DfyH3NIf2mHI": "PASS",
+    "35QeWibpT4DfyH3NIf2mJK": "PASS",
+    "35QeWibpT4DfyH3NIf2mOF": "PASS",
+    "35QeWibpT4DfyH3NIf2mOc": "PASS",
+    "35QeWibpT4DfyH3NIf2mPA": "PASS",
+    "35QeWibpT4DfyH3NIf2mQM": "PASS",
+    "35QeWibpT4DfyH3NIf2mR5": "PASS",
+    "35QeWibpT4DfyH3NIf2mS8": "PASS",
+    "35QeWibpT4DfyH3NIf2mTr": "PASS",
+    "35QeWibpT4DfyH3NIf2mVx": "PASS",
+    "35QeWibpT4DfyH3NIf2n$O": "PASS",
+    "35QeWibpT4DfyH3NIf2n09": "PASS",
+    "35QeWibpT4DfyH3NIf2n1I": "PASS",
+    "35QeWibpT4DfyH3NIf2n25": "PASS",
+    "35QeWibpT4DfyH3NIf2n3I": "PASS",
+    "35QeWibpT4DfyH3NIf2n4J": "PASS",
+    "35QeWibpT4DfyH3NIf2n5C": "PASS",
+    "35QeWibpT4DfyH3NIf2n6z": "PASS",
+    "35QeWibpT4DfyH3NIf2n7C": "PASS",
+    "35QeWibpT4DfyH3NIf2n92": "PASS",
+    "35QeWibpT4DfyH3NIf2nA4": "PASS",
+    "35QeWibpT4DfyH3NIf2nB7": "PASS",
+    "35QeWibpT4DfyH3NIf2nCI": "PASS",
+    "35QeWibpT4DfyH3NIf2nDz": "PASS",
+    "35QeWibpT4DfyH3NIf2nG0": "PASS",
+    "35QeWibpT4DfyH3NIf2nHB": "PASS",
+    "35QeWibpT4DfyH3NIf2nIt": "PASS",
+    "35QeWibpT4DfyH3NIf2nKz": "PASS",
+    "35QeWibpT4DfyH3NIf2nLm": "PASS",
+    "35QeWibpT4DfyH3NIf2nMH": "PASS",
+    "35QeWibpT4DfyH3NIf2nNu": "PASS",
+    "35QeWibpT4DfyH3NIf2nOv": "PASS",
+    "35QeWibpT4DfyH3NIf2nRq": "PASS",
+    "35QeWibpT4DfyH3NIf2nSp": "PASS",
+    "35QeWibpT4DfyH3NIf2nTY": "PASS",
+    "35QeWibpT4DfyH3NIf2nVW": "PASS",
+    "35QeWibpT4DfyH3NIf2nWf": "PASS",
+    "35QeWibpT4DfyH3NIf2nXy": "PASS",
+    "35QeWibpT4DfyH3NIf2nYS": "PASS",
+    "35QeWibpT4DfyH3NIf2nbp": "PASS",
+    "35QeWibpT4DfyH3NIf2ncB": "PASS",
+    "35QeWibpT4DfyH3NIf2nds": "PASS",
+    "35QeWibpT4DfyH3NIf2nez": "PASS",
+    "35QeWibpT4DfyH3NIf2nf$": "PASS",
+    "35QeWibpT4DfyH3NIf2ngM": "PASS",
+    "35QeWibpT4DfyH3NIf2njx": "PASS",
+    "35QeWibpT4DfyH3NIf2nk$": "PASS",
+    "35QeWibpT4DfyH3NIf2nl2": "PASS",
+    "35QeWibpT4DfyH3NIf2no0": "PASS",
+    "35QeWibpT4DfyH3NIf2npj": "PASS",
+    "35QeWibpT4DfyH3NIf2nqk": "PASS",
+    "35QeWibpT4DfyH3NIf2nrl": "PASS",
+    "35QeWibpT4DfyH3NIf2nsN": "PASS",
+    "35QeWibpT4DfyH3NIf2nuL": "PASS",
+    "35QeWibpT4DfyH3NIf2nvC": "PASS",
+    "35QeWibpT4DfyH3NIf2nxi": "PASS",
+    "35QeWibpT4DfyH3NIf2nzB": "PASS",
+    "35QeWibpT4DfyH3NIf2o03": "PASS",
+    "35QeWibpT4DfyH3NIf2o1m": "PASS",
+    "35QeWibpT4DfyH3NIf2o3Q": "PASS",
+    "35QeWibpT4DfyH3NIf2o3X": "PASS",
+    "35QeWibpT4DfyH3NIf2o5b": "PASS",
+    "35QeWibpT4DfyH3NIf2o7O": "PASS",
+    "35QeWibpT4DfyH3NIf2o7X": "PASS",
+    "35QeWibpT4DfyH3NIf2oAY": "PASS",
+    "35QeWibpT4DfyH3NIf2oBp": "PASS",
+    "35QeWibpT4DfyH3NIf2oC0": "PASS",
+    "35QeWibpT4DfyH3NIf2oDt": "PASS",
+    "35QeWibpT4DfyH3NIf2oEe": "PASS",
+    "35QeWibpT4DfyH3NIf2oFr": "PASS",
+    "35QeWibpT4DfyH3NIf2oNE": "PASS",
+    "35QeWibpT4DfyH3NIf2oNd": "PASS",
+    "35QeWibpT4DfyH3NIf2oWQ": "PASS",
+    "35QeWibpT4DfyH3NIf2oXS": "PASS",
+    "35QeWibpT4DfyH3NIf2oXr": "PASS",
+    "35QeWibpT4DfyH3NIf2obk": "PASS",
+    "35QeWibpT4DfyH3NIf2odN": "PASS",
+    "35QeWibpT4DfyH3NIf2ogt": "PASS",
+    "35QeWibpT4DfyH3NIf2ohQ": "PASS",
+    "35QeWibpT4DfyH3NIf2oil": "PASS",
+    "35QeWibpT4DfyH3NIf2oj8": "PASS",
+    "35QeWibpT4DfyH3NIf2ojX": "PASS",
+    "35QeWibpT4DfyH3NIf2olL": "PASS",
+    "35QeWibpT4DfyH3NIf2olz": "PASS",
+    "35QeWibpT4DfyH3NIf2ouF": "PASS",
+    "35QeWibpT4DfyH3NIf2ovI": "PASS",
+    "35QeWibpT4DfyH3NIf2sGN": "PASS",
+    "35QeWibpT4DfyH3NIf2sIn": "PASS",
+    "35QeWibpT4DfyH3NIf2sJ8": "PASS",
+    "35QeWibpT4DfyH3NIf2sUZ": "PASS",
+    "3LjuaIy0TB9BYwqsSadrQS": "FAIL",
+    "3eIXtbz01CQuZOCQ8qhuxf": "FAIL",
+    "3o5ntlA212uQCF0q6eQsZI": "FAIL",
+    "3pms57Ad5AVAb74jf4yKZb": "PASS",
+    "3qpE7fVkr8dRZ2wfCc6tWA": "PASS",
+    "3qpE7fVkr8dRZ2wfCc6tjC": "PASS",
+    "3qpE7fVkr8dRZ2wfCc6tpH": "PASS",
+    "3qpE7fVkr8dRZ2wfCc6tsf": "PASS",
+    "3qpE7fVkr8dRZ2wfCc6tut": "PASS",
+    "3qpE7fVkr8dRZ2wfCc6tw0": "PASS"
+  },
+  "notes": "Doors and Windows on 312 IfcDoor or IfcWindow: {'FAIL': 5, 'PASS': 302}. 5 unscored: Doors and windows that are parts of a curtain wall fill no opening; the calibration text counts them as orphans, Solibri relates them to the curtain wall, so the stated rule does not decide them.",
+  "clause": "BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_clinic_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 312,
+    "ifc_sha256": "b90fe57b8aa9329d762a564770e697d4f7357677484e3a78ede4ab6d2163c0c0",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Doors and Windows",
+      "message": null,
+      "report_file": "ec3_clinic_check.xlsx",
+      "report_sha256": "468252d117d8be28b1ed065902f7667f5521c9a3803d631b281341518ed798e7",
+      "rule_issues": 2,
+      "matching_issues": 2
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently. 5 unscored: Doors and windows that are parts of a curtain wall fill no opening; the calibration text counts them as orphans, Solibri relates them to the curtain wall, so the stated rule does not decide them.",
+    "unscored_ids": [
+      "0bpfxAz3XBrAx$RjFuHv4q",
+      "0bpfxAz3XBrAx$RjFuHvgA",
+      "0otfaO0qPDAhynjJ6DnLXx",
+      "1I_Rp6d3j27fE7zFUMgaqf",
+      "1I_Rp6d3j27fE7zFUMgaqj"
+    ]
+  },
+  "provenance": {
+    "0ClPCUC7jCQRnj1dhupHk0": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:408825",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0mxk1RW8H5mvX1dNnpRqn4": {
+      "name": "M_Double-Flush:1830 x 2134mm Exterior:1830 x 2134mm Exterior:252860",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0mxk1RW8H5mvX1dNnpRqso": {
+      "name": "M_Single-Flush:0915 x 2134mm Exterior:0915 x 2134mm Exterior:252490",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0mxk1RW8H5mvX1dNnpRqtX": {
+      "name": "M_Single-Flush:0915 x 2134mm Exterior:0915 x 2134mm Exterior:252441",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0mxk1RW8H5mvX1dNnpRqwu": {
+      "name": "M_Double-Flush:1830 x 2134mm Exterior:1830 x 2134mm Exterior:252224",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0mxk1RW8H5mvX1dNnpRqy_": {
+      "name": "M_Double-Flush:1830 x 2134mm Exterior:1830 x 2134mm Exterior:252102",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg0_": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261370",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg1N": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261267",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg2W": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261220",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg3B": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261135",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg4K": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261584",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg5J": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261527",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg6e": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261484",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg7t": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261427",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg87": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261827",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg8s": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261874",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmg94": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261760",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgB1": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261637",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgC_": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:262138",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgDl": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:262059",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgEk": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261994",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgFZ": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261927",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgGp": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260343",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgH8": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260236",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgIr": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260209",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgKt": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260595",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgMW": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260452",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgOb": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260833",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgQg": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260718",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgSS": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261080",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgTb": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:261025",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgUg": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260974",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgWH": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:259285",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgaJ": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:259543",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgdG": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:259348",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmgfp": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:259767",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmghI": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:259606",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6Dmgjh": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:260015",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DmgkM": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:259922",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DnLqt": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:262643",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DnLrq": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:262576",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0otfaO0qPDAhynjJ6DnLsa": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:262496",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "0tIhQ6hmz02e5gznEed4FD": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:355218",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0tIhQ6hmz02e5gznEed7$9": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:350102",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcDa": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:403890",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "0ztdC3L1HAzhbhMHypqcYf": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:402047",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$0$": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232789",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$0M": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232828",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$5v": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232467",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$7g": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232576",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$9Q": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:233264",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$CQ": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:233072",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Db": {
+      "name": "M_Single-Flush:0915 x 2134mm Exterior:0915 x 2134mm Exterior:232975",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Ex": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:233169",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$GX": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231755",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$H4": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231726",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Kj": {
+      "name": "M_Single-Flush:0915 x 2134mm Exterior:0915 x 2134mm Exterior:231495",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Ls": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231452",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$M9": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231651",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Mi": {
+      "name": "M_Single-Flush:0915 x 2134mm Exterior:0915 x 2134mm Exterior:231622",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$OE": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232292",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$P5": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232239",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Qk": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232388",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Rv": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232339",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$TS": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231990",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Um": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232154",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Vz": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:232087",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$WN": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:230781",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Wu": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:230738",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$Zq": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:230814",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$_5": {
+      "name": "M_Single-Flush:1000 x 2134mm:1000 x 2134mm:230127",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$cb": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:230607",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$ds": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:230556",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$e0": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231274",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$f7": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231213",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$fc": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231180",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$gx": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231377",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$iu": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:230994",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$jF": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:230949",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$lh": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:231041",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$m2": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229736",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$nD": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229671",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$pH": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229819",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$qC": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229478",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$rP": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229427",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$sW": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229578",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$t9": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229539",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$uh": {
+      "name": "M_Single-Flush:0915 x 2134mm Rated:0915 x 2134mm Rated:230209",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n$wG": {
+      "name": "M_Single-Flush:1.220 x 2134mm:1.220 x 2134mm:230394",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n__m": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234202",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n_q6": {
+      "name": "M_Single-Flush:1.220 x 2134mm Exterior:1.220 x 2134mm Exterior:233580",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n_s5": {
+      "name": "M_Single-Flush:0915 x 2134mm Exterior:0915 x 2134mm Exterior:233711",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$n_yt": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234077",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nm$e": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225922",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nm10": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228650",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nm5e": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228354",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nm6r": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228575",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nm7E": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228516",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nm9F": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229157",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nm9g": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229120",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmA0": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229354",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmAj": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:229319",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmCV": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228981",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmCW": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228938",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmDB": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228897",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmGk": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227652",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmHr": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227615",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmIS": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227830",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmJJ": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227769",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmKL": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227455",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmLC": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227366",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmMw": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227536",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmQZ": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:228297",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmSy": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227926",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmTD": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227879",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmW0": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226666",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmWh": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226625",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmXk": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226564",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmZR": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226737",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmaW": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226378",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmdJ": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226489",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmeL": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227199",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmeg": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227136",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmfx": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227089",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmg3": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227305",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmhs": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227228",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmj8": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226850",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmku": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:227026",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmlz": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226967",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmmF": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225637",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmnC": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225574",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmoB": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225761",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmpw": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225680",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmrp": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225305",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nms7": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225517",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmsg": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225472",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmuz": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226135",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmwJ": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226297",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmxs": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:226204",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmyn": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225883",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nmzE": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225828",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn0o": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224600",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn1R": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224561",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn3d": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224653",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn4z": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224343",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn54": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224302",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn6$": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224469",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn72": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224424",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn82": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225128",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn9n": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:225051",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnC3": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224873",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnE_": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224980",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnHw": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223504",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnIo": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223704",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnJP": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223667",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnKl": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223301",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnMB": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223457",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnMl": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223429",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnNu": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223378",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnOd": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224077",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnPu": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224018",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnQb": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224207",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnRu": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:224146",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnSA": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223840",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnTt": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223773",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnU$": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223957",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnW1": {
+      "name": "M_Single-Flush:0915 x 2134mm Rated:0915 x 2134mm Rated:222571",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nn_r": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:221919",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nncb": {
+      "name": "M_Single-Flush:0915 x 2134mm Exterior:0915 x 2134mm Exterior:222415",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nndY": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:222344",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnfS": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223030",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nng6": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223212",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnhB": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:223137",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnj_": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:222740",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnkx": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:222929",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnu8": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:222050",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnv2": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:221992",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1byTDaqS91rBnWJlv$nnxF": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:222117",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1eHJakbVPEdf9cGdMXVBAY": {
+      "name": "M_Single-Flush:0915 x 2134mm Rated:0915 x 2134mm Rated:471867",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1oCmeD_UH0NAQ13DTKAKXn": {
+      "name": "M_Curtain Wall Sgl Glass:M_Curtain Wall Sgl Glass:M_Curtain Wall Sgl Glass:283068",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "First Floor"
+      ]
+    },
+    "1qc5HjZvrCsga38tqxQ3VC": {
+      "name": "M_Double-Flush:1730 x 2134mm:1730 x 2134mm:367888",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "1uDBQ9y7vCyxXlpVEuen9f": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:362567",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2H9Xpd9Nf1Uu7_jFnBZWSx": {
+      "name": "M_Double-Flush:1830 x 2134mm Exterior:1830 x 2134mm Exterior:411107",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "2NHD_$8fb3ZexljM$wSStT": {
+      "name": "M_Curtain Wall Dbl Chain Link:M_Curtain Wall Dbl Chain Link:M_Curtain Wall Dbl Chain Link:346969",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "TOF Footing"
+      ]
+    },
+    "2g$QZpOGbBUxSNx_ZgxG1w": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:253943",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxG25": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:253704",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxG7q": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:253561",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxG8P": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:253332",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxGCP": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:253076",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJ$f": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254052",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJk0": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254989",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJl5": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:255048",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJnH": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254940",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJoj": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254752",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJps": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254843",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJqZ": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254638",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJrM": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254683",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJs2": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254479",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJsp": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254526",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJtw": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254583",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJu4": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254345",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJvL": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254424",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJw0": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254221",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJxR": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254294",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJyK": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254105",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "2g$QZpOGbBUxSNx_ZgxJz3": {
+      "name": "M_Fixed:1735 x 1000mm:1735 x 1000mm:254158",
+      "class": "IfcWindow",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mGD": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:242262",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mHI": {
+      "name": "M_Single-Flush:0915 x 2134mm Rated:0915 x 2134mm Rated:242185",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mJK": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:242319",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mOF": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241748",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mOc": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241789",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mPA": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241681",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mQM": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241869",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mR5": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241822",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mS8": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:242003",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mTr": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241966",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2mVx": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:242080",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n$O": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240003",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n09": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239186",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n1I": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239113",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n25": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239326",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n3I": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239241",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n4J": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239432",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n5C": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239383",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n6z": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239590",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n7C": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239511",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2n92": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238617",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nA4": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238815",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nB7": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238748",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nCI": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238921",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nDz": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238886",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nG0": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238171",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nHB": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238096",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nIt": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238316",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nKz": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238438",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nLm": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238379",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nMH": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238538",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nNu": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238499",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nOv": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:237666",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nRq": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237743",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nSp": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237928",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nTY": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237881",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nVW": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:238011",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nWf": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241266",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nXy": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241191",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nYS": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241351",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nbp": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241448",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2ncB": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241616",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nds": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241581",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nez": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240742",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nf$": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240676",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2ngM": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240845",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2njx": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240928",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nk$": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241124",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nl2": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:241049",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2no0": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240347",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2npj": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240310",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nqk": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240501",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nrl": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240436",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nsN": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:240588",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nuL": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239694",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nvC": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239639",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nxi": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239799",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2nzB": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:239888",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2o03": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235096",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2o1m": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235051",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2o3Q": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235137",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2o3X": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235194",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2o5b": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235326",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2o7O": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235395",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2o7X": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235450",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oAY": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234745",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oBp": {
+      "name": "M_Single-Flush:0915 x 2134mm Rated:0915 x 2134mm Rated:234664",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oC0": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234843",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oDt": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234796",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oEe": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234995",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oFr": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234926",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oNE": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234389",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oNd": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:234428",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oWQ": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237121",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oXS": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237063",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oXr": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237102",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2obk": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237365",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2odN": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:237452",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2ogt": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:236780",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2ohQ": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:236673",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oil": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:236916",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2oj8": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:236819",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2ojX": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:236858",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2olL": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:236942",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2olz": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:236966",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2ouF": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235604",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2ovI": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:235529",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2sGN": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:250444",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2sIn": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:250602",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2sJ8": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:250515",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "35QeWibpT4DfyH3NIf2sUZ": {
+      "name": "M_Double-Flush:1830 x 2134mm:1830 x 2134mm:250360",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3LjuaIy0TB9BYwqsSadrQS": {
+      "name": "M_Curtain Wall Sgl Glass:M_Curtain Wall Sgl Glass:M_Curtain Wall Sgl Glass:285186",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "First Floor"
+      ]
+    },
+    "3eIXtbz01CQuZOCQ8qhuxf": {
+      "name": "M_Curtain Wall Dbl Chain Link:M_Curtain Wall Dbl Chain Link:M_Curtain Wall Dbl Chain Link:346973",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "TOF Footing"
+      ]
+    },
+    "3o5ntlA212uQCF0q6eQsZI": {
+      "name": "M_Curtain Wall Dbl Glass:M_Curtain Wall Dbl Glass:M_Curtain Wall Dbl Glass:263359",
+      "class": "IfcDoor",
+      "label": "FAIL",
+      "issues": [
+        "First Floor"
+      ]
+    },
+    "3pms57Ad5AVAb74jf4yKZb": {
+      "name": "M_Single-Flush:0915 x 2134mm:0915 x 2134mm:364769",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qpE7fVkr8dRZ2wfCc6tWA": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:411832",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qpE7fVkr8dRZ2wfCc6tjC": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:412670",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qpE7fVkr8dRZ2wfCc6tpH": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:412771",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qpE7fVkr8dRZ2wfCc6tsf": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:412955",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qpE7fVkr8dRZ2wfCc6tut": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:413317",
+      "class": "IfcDoor",
+      "label": "PASS"
+    },
+    "3qpE7fVkr8dRZ2wfCc6tw0": {
+      "name": "M_Toilet Partition:0865 x 1500mm:0865 x 1500mm:413234",
+      "class": "IfcDoor",
+      "label": "PASS"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "case_id": "unallocated_floor_area__fzk",
+  "rule": "Every enclosed floor area of a building storey must be allocated to a space.\nSource: rule 'Unallocated Areas' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct.\nBenchmark convention: on each building storey, find floor areas enclosed by walls, curtain walls and columns that are occupied by no space, wall or column. Every such unallocated area larger than 0.50 m2 is a violation, reported through the walls, curtain walls and columns that surround it: each of them fails. All other walls, curtain walls and columns pass.\n\nLabel every wall, curtain wall and column.\nReport the GlobalId of every element (modelled as IfcWall or IfcCurtainWall or IfcColumn) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/fzk_house/arc.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0knNIAVBPBFvBy_m5QVHsU": "PASS",
+    "1$wmdwWPjDYuku_ghVkynE": "PASS",
+    "16DNNqzfP2thtfaOflvsKA": "PASS",
+    "1bzfVsJqn8De5PukCrqylz": "PASS",
+    "25OWQvmXj5BPgyergP43tY": "PASS",
+    "25fsbPyk15VvuXI$yNKenK": "PASS",
+    "2XPyKWY018sA1ygZKgQPtU": "PASS",
+    "2ptk1k7qn8_Qk22vjh$0DE": "PASS",
+    "3PfS__Y_DBAfq5naM6zD2Z": "PASS",
+    "3Ttjr$59XEWfWN1WUHjelZ": "PASS",
+    "3VCarUKgH1buLo22Ozxe6J": "PASS",
+    "3jjW3rL656ex34Gws22EfM": "PASS",
+    "3rPX_Juz59peXXY6wDJl18": "PASS"
+  },
+  "notes": "Unallocated Areas on 13 IfcWall or IfcCurtainWall or IfcColumn: {'PASS': 13}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_fzk_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 13,
+    "ifc_sha256": "70cc8ff245fc0894201d96496c031005a5cbd7a96b22d8a1b87c5a883fb77994",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Unallocated Areas",
+      "message": null,
+      "report_file": "ec3_fzk_check.xlsx",
+      "report_sha256": "052c173bc79ae0d31073c5829f122757ec0f6b162fcaf01f192db302f3dd4201",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0knNIAVBPBFvBy_m5QVHsU": {
+      "name": "Wand-Ext-OG-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1$wmdwWPjDYuku_ghVkynE": {
+      "name": "Wand-Int-ERDG-5",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "16DNNqzfP2thtfaOflvsKA": {
+      "name": "Wand-Ext-ERDG-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1bzfVsJqn8De5PukCrqylz": {
+      "name": "Wand-Ext-ERDG-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "25OWQvmXj5BPgyergP43tY": {
+      "name": "Wand-Ext-OG-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "25fsbPyk15VvuXI$yNKenK": {
+      "name": "Wand-Ext-ERDG-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2XPyKWY018sA1ygZKgQPtU": {
+      "name": "Wand-Int-ERDG-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ptk1k7qn8_Qk22vjh$0DE": {
+      "name": "Wand-Int-ERDG-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3PfS__Y_DBAfq5naM6zD2Z": {
+      "name": "Wand-Int-ERDG-2",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Ttjr$59XEWfWN1WUHjelZ": {
+      "name": "Wand-Ext-OG-4",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3VCarUKgH1buLo22Ozxe6J": {
+      "name": "Wand-Ext-OG-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3jjW3rL656ex34Gws22EfM": {
+      "name": "Wand-Int-ERDG-3",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3rPX_Juz59peXXY6wDJl18": {
+      "name": "Wand-Ext-ERDG-1",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    }
+  }
+}

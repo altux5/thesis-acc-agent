@@ -1,0 +1,6093 @@
+{
+  "case_id": "unallocated_floor_area__schependomlaan",
+  "rule": "Every enclosed floor area of a building storey must be allocated to a space.\nSource: rule 'Unallocated Areas' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct.\nBenchmark convention: on each building storey, find floor areas enclosed by walls, curtain walls and columns that are occupied by no space, wall or column. Every such unallocated area larger than 0.50 m2 is a violation, reported through the walls, curtain walls and columns that surround it: each of them fails. All other walls, curtain walls and columns pass.\n\nLabel every wall, curtain wall and column.\nReport the GlobalId of every element (modelled as IfcWall or IfcCurtainWall or IfcColumn) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Schependomlaan.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0$SpH8S2n2ufDBhk$ljbCs",
+    "0$nmb_JxzCaAMY_T0nZCdH",
+    "03jDCRbWX5juY7T5suP$h9",
+    "09ftZfqDr4NAqliSbe_Q2x",
+    "0CqTK2cer2YubDT0sUqCjK",
+    "0GUGYII3j58vHPlOrLYtw3",
+    "0OrKFlctL3BwozyQDz24Kf",
+    "0OvS7XTSrEEfgY9zLS52bd",
+    "0VfEUH2Vj3ARUZ0FmZ51oJ",
+    "0WqX0b_Gj53ObpF3GHqhgT",
+    "0apuv$1UrB68Hd8$GUUl1U",
+    "0bPVJE8dDCJuZfC321Nz06",
+    "0bkZLlteH4Gv_QuHkHzQDP",
+    "0cEZV1n5jF8RUNCsgczqnw",
+    "0dYXTnq1T6TvUR6OKvH25L",
+    "0fP8MV2Y52$vpMZsHCVKvA",
+    "0nrTWb4DvCCQtpg5uNJSdv",
+    "0pgNH1DHHA_AMCXvj8dZP0",
+    "0sfnf50Vz6qxgaVSSC_9Ng",
+    "0sp70S3SL34xgjHRQAVzCH",
+    "0uG931DjD31hhRwgBkGmit",
+    "11isJmlKb6GuisJNxWKISc",
+    "1CTGUsNkD2iQBMpcLlMjAY",
+    "1E_W7CZ8bFguuJuOlGiSq9",
+    "1EyK7eWxP2T94jexdjw7zO",
+    "1GALR4lb1EXeRUW8L575n7",
+    "1KWjkyI$n118qPzNlbN$tk",
+    "1LZPU6x0L9wOZBNrZ5df2z",
+    "1N0dLD7_b9g8tFENBqrJDV",
+    "1SHwwggSX5N85G1pvxbVJs",
+    "1XAtD5ST1B6hJBF87WWK_p",
+    "1XUARZ_Oj8K9AyF3GV$kQz",
+    "1beNKg3CL4DfsMvrzccZGK",
+    "1bgUfDc9n0g9HZP5aLbJ0n",
+    "1e1zdP$AzC4AbSnq$yxhNh",
+    "1l4OJxa6HEzfGDywLDzjC4",
+    "1lyoimFmL5zA5TFPtlaokD",
+    "1o9IVHY3z6jPb$8UF0w0pc",
+    "1s8is3Uiv7tQGUsBmvA$Si",
+    "1wVDx$yUr7JvYDVbX62qca",
+    "2$_Kkal4jC8BFBilJN8I3K",
+    "21dR9W9x91fvuQePLPaWmj",
+    "25xnmjtXDBEeYnceWKw7hY",
+    "2HHpDv_uDC4QWow2JwiAdZ",
+    "2MV1zwMlv8eBvA2WOEAaEl",
+    "2UBG6Q7d5DDBiKwUwETbGj",
+    "2UzzVHoG57Ex92Zgaglbg7",
+    "2Wvxe$Unr75AYlno91cf_O",
+    "2Yh7gIYaX4WulI_7Z3daPi",
+    "2_GpLiXvv0T9m7AS0ICKWx",
+    "2_OUbn7mHDGB97nRdx_Swc",
+    "2akm4sEy18KhqU2hKpeBjG",
+    "2b7WxLrT1FLu7GMANtCr5t",
+    "2erHyW9a93fxiTHg9u4oBi",
+    "2qiB0g_bbDCwZnOTvTZQ6o",
+    "2tjIJivgn4axF2ewhddO9d",
+    "2uaQbPNLX7DebbkESsYvDm",
+    "2uxQYe3V1DwQZELRcxkhw7",
+    "2y5dj7DKz9HvF8RYQofDdA",
+    "3$8ejY9wb5C8Jjn_NcmDw8",
+    "34b24nbdP4VwDBt7cfF8Fe",
+    "3CCqrUrgH98hGVnr$ZylYm",
+    "3Dr$ZMMa98fvt8EYMKh14n",
+    "3ENEtGT0P2aOgPXmUQo9L5",
+    "3HGDkJWG95UBZE0EMTLl3$",
+    "3KLlSyI5DCcB6QscI2_oI8",
+    "3Oiw4ELt1BaBeKn0mDwzz7",
+    "3P4RIlUy168hDz$MlvcMUR",
+    "3U4osC1p5EqwcBW8F2DJ6K",
+    "3UBzAzajr5q8aCMUEKo4IM",
+    "3auUwUfW5EcPaoBpNctlU$",
+    "3d11Rmvt5C6wKW52oYhu3V",
+    "3oyt7VQ65F5h4Da$jUkdcw",
+    "3s4FafcUf5Vg95Kh0woD3O",
+    "3uEMFzu2v8GRvw8kqNTH4S",
+    "3xcd5VqGn5fu$PUBghiK4$",
+    "3yqEwZ1P5D79qJ$faewDWt"
+  ],
+  "labels": {
+    "0$SpH8S2n2ufDBhk$ljbCs": "FAIL",
+    "0$YDCcbYPB0wRxDYucu1$k": "PASS",
+    "0$nmb_JxzCaAMY_T0nZCdH": "FAIL",
+    "0$rXI4QKH23g$k0kmZL$uo": "PASS",
+    "00$z$gLSv2BR45OgtA7FON": "PASS",
+    "00vrd77kP3I9l5yH8Fiv1u": "PASS",
+    "014PwDUKL5UQmLgv_0D$t9": "PASS",
+    "01Kt0gjUr0wQi3mfN_sJAF": "PASS",
+    "01hUAhn2r989LDYSpRx4VK": "PASS",
+    "01nWzpou174OweRJuvV0oN": "PASS",
+    "024PETTtr5LPliAdggDMDR": "PASS",
+    "026r04Lmj75x6ENTJ7WTIB": "PASS",
+    "0278_Daw13meE7b8P6cVmO": "PASS",
+    "02KCnN8qD7yunPHGlDlBkF": "PASS",
+    "02OffYjAT1s8Msmi40pyAF": "PASS",
+    "02RLewsq14rfNfUfsrYydb": "PASS",
+    "02XLK06DT5w8biXGZaesSW": "PASS",
+    "02jiAyhWL9AAwFG60v31tV": "PASS",
+    "02pJnwninFKefvu_ivlXzM": "PASS",
+    "03$ccRRszFBBvdHYRBhWBB": "PASS",
+    "037e4dk9f2mA5SA28Mu_Ya": "PASS",
+    "03AHdIiA55r8PqyXVRRazD": "PASS",
+    "03H6xp_QD6g83v4Lwkmveh": "PASS",
+    "03LjPhAPb7YwcCfCKjoBp0": "PASS",
+    "03_CVBI75Aj86591do_EB_": "PASS",
+    "03akWG6jD5YvV25Iim327M": "PASS",
+    "03bsiTWZnDxOuJzgGQiRYN": "PASS",
+    "03jDCRbWX5juY7T5suP$h9": "FAIL",
+    "049lATq1LDCPRaEaNkDT7E": "PASS",
+    "04AOBR8wLDz8EonUdH$yXd": "PASS",
+    "04Ezr5o2H4NgZr$CrXLBI_": "PASS",
+    "04LIlkhvb1Bvm_lsMUkqg0": "PASS",
+    "05FOAkTzrCUBgsJj6dAI3z": "PASS",
+    "05OARqtmL1oADCPKfx3yQP": "PASS",
+    "05PISK4lv4tAMDc9oYQUQO": "PASS",
+    "05yuQkJxb22el7nxTgecJc": "PASS",
+    "06FuADHCz36hBoAywogP5m": "PASS",
+    "06P8M5eRX7Q8DMqxH3c_wl": "PASS",
+    "06fbT3wWX0nvalSj0LVOEw": "PASS",
+    "06vshORsrEVvjbvNCwwl$2": "PASS",
+    "07CJSAM0fDC9txPX6iBpVL": "PASS",
+    "07KefAgD14SecYqb_G4vxC": "PASS",
+    "07o2mHpkH4_PxUBc290w3Z": "PASS",
+    "07ycr3rkX9oB1rB6HYpOJ0": "PASS",
+    "084e5AQmT0uflc7GA4Kii$": "PASS",
+    "08J5ZQbrj5Mx$rrc3rSlid": "PASS",
+    "08lCyzAS1By8H2pkiWtxEb": "PASS",
+    "09TMGnoXvA0QiwTfqmChQ0": "PASS",
+    "09VD$Lqi93x9JCZ1tfrTrL": "PASS",
+    "09YpdCHjz5YBYCUKfOMJyS": "PASS",
+    "09ftZfqDr4NAqliSbe_Q2x": "FAIL",
+    "0A$dxBFCfD698O7H1hW$fd": "PASS",
+    "0A3vw0h3r70vl1BMRbs2JR": "PASS",
+    "0A5H6Gj795FQZvzPeczKad": "PASS",
+    "0AvuKvwsjECuqQLpwsHUiy": "PASS",
+    "0B$7T0g8P0Qxh5KunO$Vuh": "PASS",
+    "0B$TCMJjPBzRAR8ZOmGVuF": "PASS",
+    "0B6H$8Szr3t9w$7S$WA_aT": "PASS",
+    "0BaTdFig96fAQhtMSd1Bze": "PASS",
+    "0BbZBldn94MfvyeV9ZExMT": "PASS",
+    "0BwPscFxPFCuMM1ImRc1Ih": "PASS",
+    "0CIHS3UqLCFfmV3hApIGQ6": "PASS",
+    "0CWWia1q51AgVCIHuLfLS1": "PASS",
+    "0CqTK2cer2YubDT0sUqCjK": "FAIL",
+    "0Dfap14aP2YP8pZtG63oRO": "PASS",
+    "0DiFYGULT7Q8CIC_CShhpg": "PASS",
+    "0DoMC7RY1C4u1e7ehHzO9a": "PASS",
+    "0EiOJWQwP8RP1i4VoottS1": "PASS",
+    "0FDpOPjDv2iud3tAKPO5Zh": "PASS",
+    "0FcOHM$Tz0OuZrgJPxG6uE": "PASS",
+    "0FdLbmS_r6Ch8VPitxry03": "PASS",
+    "0FepsNa9T4UhJymkj5VxYZ": "PASS",
+    "0GU$6X29PC6gNbWz5MWmi4": "PASS",
+    "0GUGYII3j58vHPlOrLYtw3": "FAIL",
+    "0GioG4iQzA1OyX4F47kc4a": "PASS",
+    "0GkhpndB96r98q9Zpfg0ks": "PASS",
+    "0GzsBzJf5A2f5drvUenvXI": "PASS",
+    "0HIb$9Byf2ZBlCjcOu2Qju": "PASS",
+    "0HJRV4BSTAkAtUp9svnqkF": "PASS",
+    "0I$ApwjMb2WhHUnG9PohvA": "PASS",
+    "0I$hY8NrnD9uJssTrChZth": "PASS",
+    "0I38IR49XCjeOw$CuPT3ZI": "PASS",
+    "0I7LtwbrXFA9_X5BhUfkIk": "PASS",
+    "0IDKbAsN90HOIaSuxh7$D_": "PASS",
+    "0IIlOCBsj3HgQHK5iljQCT": "PASS",
+    "0ItgJO_EL9ThNZBqkAgxcV": "PASS",
+    "0JA6_1Yrf0RQthH4oemj6g": "PASS",
+    "0JMWaqvB90a9vpyx$40t8U": "PASS",
+    "0JRfJnbfHFgQD3Cu1Y3Ti9": "PASS",
+    "0Js8lcInj8zAwW4RtybLWO": "PASS",
+    "0KEODzPAvAYfDEnWfvxPSf": "PASS",
+    "0Kx3M5Ak15Xe2RV4CREhVl": "PASS",
+    "0LrrAnsxDC59wymHCsWDmP": "PASS",
+    "0LxscyRCL35PTDOLAAjfSI": "PASS",
+    "0MManSxITCBR5hqtmVQft$": "PASS",
+    "0MShzpttDCFebRi8XxX5Be": "PASS",
+    "0MTC1GonbDHhxIHc0o_Hwo": "PASS",
+    "0MqRD9mj90_OBPCfUN$DCW": "PASS",
+    "0Mr6vY0jPDTRtp4MXIyyQU": "PASS",
+    "0N6xlCed99mPtUuN7Qd65B": "PASS",
+    "0N87rS0p59MefjiinSTPbO": "PASS",
+    "0Nj60ieO55uBt_I0iEvvde": "PASS",
+    "0Nml1uVCDDlRq6wu6UMyQA": "PASS",
+    "0NsAQU_RzBew4mp1gDoLKM": "PASS",
+    "0NsY4MrjP47eGpLW37qLNh": "PASS",
+    "0OeTVTjU5EHg8eoSvuD3f9": "PASS",
+    "0OgpsAvNXAkRbqgrv0PLw5": "PASS",
+    "0OrKFlctL3BwozyQDz24Kf": "FAIL",
+    "0OvS7XTSrEEfgY9zLS52bd": "FAIL",
+    "0OwiY0E_H6nAVOZ5L_gs8R": "PASS",
+    "0P9P2MTnDFWgpzAECWRMfc": "PASS",
+    "0PH9okqXD9oRQ1c7UPiNBe": "PASS",
+    "0PYnvK1QT2g90Zy$gCExD1": "PASS",
+    "0PbuAnDOv9MROtn6VXvlS9": "PASS",
+    "0PwN5MKCnENu413RHBr2sB": "PASS",
+    "0Q9MMqksT8Lw1MSX6wiWlm": "PASS",
+    "0QG1UZ5cH2Pv9Pjhl_SLt1": "PASS",
+    "0RAk_ZkAf6gB8J5bo4h2r7": "PASS",
+    "0RXt3SWyX7NQmQgLj8MtLn": "PASS",
+    "0RZYP$9znCHg11Unjzo2gM": "PASS",
+    "0RcMlaEQT1OPaNSwo8vOeV": "PASS",
+    "0RrPQ1pTz1IBZvY9bQxtJH": "PASS",
+    "0SAmxP$$bBAgZObgQGJhrq": "PASS",
+    "0SzdhD7kXE$9LKStg07UwP": "PASS",
+    "0T0_lwb8vCZ82bqHL85eAN": "PASS",
+    "0THNgQ0CDF9BljZQaz9g8p": "PASS",
+    "0TQftTqorEnA$V3IcZujpF": "PASS",
+    "0UEcPQQZf2ruz21iN4LQvo": "PASS",
+    "0UqYpHM_f69uGDRRbUc$FH": "PASS",
+    "0V0wCK9cz2TfrOzWHZVy$k": "PASS",
+    "0VddUtFIf0YOTa5v8yH$LX": "PASS",
+    "0VfEUH2Vj3ARUZ0FmZ51oJ": "FAIL",
+    "0VgxmJGxv2wP5IVI81qJrl": "PASS",
+    "0VtorzIgT4YQ3IWHyNlS39": "PASS",
+    "0W7j$v4vD3yRYaWSNgQcv2": "PASS",
+    "0WbxJm47zCSxPd8I4EJBzV": "PASS",
+    "0WoZLLChzDIvoZsmSZcBDg": "PASS",
+    "0WqX0b_Gj53ObpF3GHqhgT": "FAIL",
+    "0X2zNK4Gr959hH90pZPnh_": "PASS",
+    "0X5njjJnD05RlVfFUaRcc_": "PASS",
+    "0Y0Dldwy50Eg_FPmXF$IEI": "PASS",
+    "0YU639B0b26vJoT3EwCZ1S": "PASS",
+    "0YU6oy1EfCeBW1mHFSweX2": "PASS",
+    "0Yg$3eCdj5TfoJlEv2sNBN": "PASS",
+    "0Z4DuejWD50xg4CFcjidlO": "PASS",
+    "0ZmS3bTmHEN9O1xmMHDik$": "PASS",
+    "0Zx4cqrajBR8O5_p97fE50": "PASS",
+    "0_$Vb4UgX1xBB1w8C2cj2L": "PASS",
+    "0_1$ZiaxXBKAoIe0SzFsy4": "PASS",
+    "0_4DdazE95P956DJ3xDRfk": "PASS",
+    "0_E9R9yPzBxR$ZVU$pENfy": "PASS",
+    "0_eHrpDSL0BenGv3Mcv8fS": "PASS",
+    "0_ig6A34vCA8BhO4VTs82C": "PASS",
+    "0_iidB$pr6yercMCS15Alt": "PASS",
+    "0_l2ELmojF3vYbiNvMXM17": "PASS",
+    "0aS6kmdNTA78a6rHPn0utA": "PASS",
+    "0ahwXaU353xOITjLmOzUt4": "PASS",
+    "0apuv$1UrB68Hd8$GUUl1U": "FAIL",
+    "0bN1XastH7E8NuXGmKqrWD": "PASS",
+    "0bOXbgHd9B38fgrdG4v0Rg": "PASS",
+    "0bPVJE8dDCJuZfC321Nz06": "FAIL",
+    "0bRZzgbzD4IuC4gxNY7xQh": "PASS",
+    "0bgtceKbb1q8CGOdbPa1PM": "PASS",
+    "0bkZLlteH4Gv_QuHkHzQDP": "FAIL",
+    "0c01Rv4rP95PoAhsRXcgwU": "PASS",
+    "0c6TWvGAHBORZRvoEDgQFO": "PASS",
+    "0cEQnttXL9iAGcN5wu5iIi": "PASS",
+    "0cEZV1n5jF8RUNCsgczqnw": "FAIL",
+    "0cr6SQeNT879fCrehfWeM7": "PASS",
+    "0d193_IC94VBo0OC8YxmOX": "PASS",
+    "0dAofjIyHFM9KgIhqrn1sO": "PASS",
+    "0dAxGfAP51s88l$orgTdn4": "PASS",
+    "0dYXTnq1T6TvUR6OKvH25L": "FAIL",
+    "0d_oFBP1HFvQb5Faeki0yw": "PASS",
+    "0deLVuR01FZAQAP50$NggQ": "PASS",
+    "0dv5m3Uyz21Ah3WBH5x$Lz": "PASS",
+    "0eH4s4FArDowd5Az30KXRB": "PASS",
+    "0eZiD1rUvDiRlrDMG3tx8T": "PASS",
+    "0emZXkn5TF2PHGNfqrnDSC": "PASS",
+    "0exQNtZczDAOyzHY$YLkO2": "PASS",
+    "0fP8MV2Y52$vpMZsHCVKvA": "FAIL",
+    "0fvTtXunb1Fwv_e4ll9UPn": "PASS",
+    "0gDFYFSIb8WR4zH2JTY1zU": "PASS",
+    "0gPViWnc97_em9NLpt_LR_": "PASS",
+    "0gbR2DoCHFEfOlinGdyTXb": "PASS",
+    "0gjkZSaxz2lQqbBG8NzPmQ": "PASS",
+    "0h0J8$jKDB7vqG8dDiDAKz": "PASS",
+    "0hCGa0m7L5vxYadRPxstkw": "PASS",
+    "0hDghtDLb88ODx5EtvPzgM": "PASS",
+    "0hxjm9AAf15upUBjgwA0Rn": "PASS",
+    "0j1_rzpXL9NRGFgvzNNHj7": "PASS",
+    "0j2Oz3Bjz8g95L4tRLEvJR": "PASS",
+    "0j5C6LoLTDdevKXyVVZKEr": "PASS",
+    "0j6o0yB1fFhuN_Qos13Bz5": "PASS",
+    "0j8iqQ1cHD_wWRaox$OwDX": "PASS",
+    "0jnEXUcjnDq8kxq1jLk0I5": "PASS",
+    "0jzFz$TozAjQrbFqUARxz$": "PASS",
+    "0k3Fv57_HFQ9A8iOn_65kY": "PASS",
+    "0kWJnAkxrDEB6OzCYJGlDZ": "PASS",
+    "0klGaA9M11cw9VwJ96pWIe": "PASS",
+    "0l9eFmlAD0bPx_2$7MDd3z": "PASS",
+    "0lV3_6JX5Dn8WMYQWopUL4": "PASS",
+    "0mBWreOprCfhxEee1_L62E": "PASS",
+    "0mvjiuGlP7MPeepglQyQNO": "PASS",
+    "0n3286K797DvQM_Fi5RIsM": "PASS",
+    "0npgzQizb9UOxmY2t29tNR": "PASS",
+    "0nrQiWUSfB6g722vNHkgc_": "PASS",
+    "0nrTWb4DvCCQtpg5uNJSdv": "FAIL",
+    "0oDaXCEUb4qRApwJFIFZGb": "PASS",
+    "0odjMCkULFYPcxRhNspVwF": "PASS",
+    "0ohCctKtf3xAERYPncHkFE": "PASS",
+    "0opoNTmV5DihPxS3qf88gc": "PASS",
+    "0oq3Y7GEDEWwB4m3kkbnC2": "PASS",
+    "0p5DTahObB4gZyJfnNXgRR": "PASS",
+    "0pgNH1DHHA_AMCXvj8dZP0": "FAIL",
+    "0qjLt6tpjDu8lujp9gCtYe": "PASS",
+    "0rNbUsEKD4XBbyiiTLa27n": "PASS",
+    "0sfnf50Vz6qxgaVSSC_9Ng": "FAIL",
+    "0sp70S3SL34xgjHRQAVzCH": "FAIL",
+    "0tXk1VggPDAu8Pm5b9CfDe": "PASS",
+    "0tcR38Brv6pOxSmBDiytX0": "PASS",
+    "0tyKkyPHXFkvhRpZpx0R5f": "PASS",
+    "0uG931DjD31hhRwgBkGmit": "FAIL",
+    "0uQlWOMIL5sgPCcbhdbYkA": "PASS",
+    "0uYipqPGHFivV8pH6oIeF6": "PASS",
+    "0vMW8cByPFX8BI$W96Sbm3": "PASS",
+    "0vR_41KwL8TONUw$RC45Tp": "PASS",
+    "0vTAFL4d1DwxQSNiJxvejT": "PASS",
+    "0wAaPRefDFjQKjv08CArN4": "PASS",
+    "0waDvH$z1BAuy6RDYVrspu": "PASS",
+    "0wy5YnvrH2ZOH2izVhvOeV": "PASS",
+    "0x8663Ubf6t9GPNfvbHat5": "PASS",
+    "0xlZwI2nnDuf_2wkrcyQcc": "PASS",
+    "0y7qZLfyTFRxJCpK$rGvlq": "PASS",
+    "0y8InRC0PA_QAR3SQu10jj": "PASS",
+    "0yGvJBe$9ArOV8je0sM0oV": "PASS",
+    "0yKSa9A8bBuRIXwylue0ES": "PASS",
+    "0y_z48Xb192w3Y1QR0DkXK": "PASS",
+    "0yfAXMIyTD4OemjMEjshON": "PASS",
+    "0yqn783mn5b8lSBwRQAGYV": "PASS",
+    "0zCNq_mof6gPonl4mLYuLv": "PASS",
+    "0zijvaqYb2avG5CJ9VqLrO": "PASS",
+    "0zoY98O157i8MAJTtMw2tr": "PASS",
+    "0zqN$1Spv2UAq7aXZK3XKv": "PASS",
+    "1$vNox_g1FifYtmbY51XxV": "PASS",
+    "10OU69waTEDvLdArMy4CnC": "PASS",
+    "10PY7tTYf3YAoiKKQMe9Wi": "PASS",
+    "10ogexLW905RKdX1927VSU": "PASS",
+    "11emksH1TFfeNTGT$0J1nP": "PASS",
+    "11isJmlKb6GuisJNxWKISc": "FAIL",
+    "11mo33UpLFjwOcPbSdqngd": "PASS",
+    "11sY8mZADDkvJg9PvHNKN5": "PASS",
+    "125bFabrLCqQQ0adr4pzjL": "PASS",
+    "129TmjQAD9ye2vA2ED4kH6": "PASS",
+    "12grnadITFjfJK8cHbftP3": "PASS",
+    "12hYt_1D96Bvi$FtsKq7Ts": "PASS",
+    "12j6jtmaL8zuq2HGrdglgu": "PASS",
+    "12n3rezy5ABfwwc5yfQdvw": "PASS",
+    "13VGtZxGT04gWQa7ANTKuD": "PASS",
+    "13hN5zL1L2fftXqB_Ac_WZ": "PASS",
+    "143VmHA6z6_9Ju$8nLSk75": "PASS",
+    "148inggZz0fAp_L7YGDBl6": "PASS",
+    "14K5xdkbjFFxYMTqMomdZc": "PASS",
+    "14SQKeTXT0bxeTGZbdgN$9": "PASS",
+    "14XsuvhErDaQe9Ghiv9NHI": "PASS",
+    "155JGPm0v1bRun6HwItrP8": "PASS",
+    "159QrTsQb9zu88XvB88A2Z": "PASS",
+    "15T8e5$wL0PuR3k2ZvZ6I1": "PASS",
+    "15jfYuGer1Ah1QZYTNDpTJ": "PASS",
+    "16WP2f9KP2DBE9sfY$ffYK": "PASS",
+    "16qUObfsXFShDHc3t7gGIZ": "PASS",
+    "17dT5kmgn18w5w5Mwe_TO2": "PASS",
+    "18Nc74m4zBDvow8cF_wmNX": "PASS",
+    "18QJYzL6z4iAOHp4H6Ay3e": "PASS",
+    "18b_p0iTHCeOdrecTjmnfy": "PASS",
+    "19arA5gn17b8SQaKVdvfz3": "PASS",
+    "19wRuwW0DBPwA2NduOQ2rx": "PASS",
+    "1A9aTEU4z9SwaqEUwI8Lx4": "PASS",
+    "1AD2j$SNTAhBnN$NNYqXG4": "PASS",
+    "1AV_hs6Kf5MBG2ZRq0OyR0": "PASS",
+    "1A_ELmRfT6DuuCCqJYimXQ": "PASS",
+    "1AhWX5khb3eP6V6d393etE": "PASS",
+    "1AhlHMJ056E9Z8jbCHAyal": "PASS",
+    "1AtB01imf94g7vyKEx$EUO": "PASS",
+    "1BQPStyIP71erNv7anlefJ": "PASS",
+    "1BnMt3vVfFpBiFgNfeOg7r": "PASS",
+    "1Bzc8uSZD4XQVt_ohtWZId": "PASS",
+    "1CTGUsNkD2iQBMpcLlMjAY": "FAIL",
+    "1C_2jEzdDEK8Xv0nCzYd1Q": "PASS",
+    "1CbKRR0a92Mut22gOUS8EV": "PASS",
+    "1CsGhnRaDAb86NCoCwC08x": "PASS",
+    "1DGUzGqYPA48wqrK_0zvye": "PASS",
+    "1DJtnvOrX1OOYupc3T5tCZ": "PASS",
+    "1DSGX6PF1Ci9x95ZttlYHY": "PASS",
+    "1DWAGIZlj6RAB4An0ALhY$": "PASS",
+    "1DbP0KrnLBu9P61DsvE4$d": "PASS",
+    "1DmuGbPJ91dw5Kcyo77jdx": "PASS",
+    "1DrFQ$L096euRQX3RpKz6f": "PASS",
+    "1ES9GtArbBLv1n_CK2wxd2": "PASS",
+    "1EWWqeDT9BMgIJKXOapy7g": "PASS",
+    "1E_W7CZ8bFguuJuOlGiSq9": "FAIL",
+    "1E_lkxjMb4FwlCAOaRCfqv": "PASS",
+    "1EyK7eWxP2T94jexdjw7zO": "FAIL",
+    "1FGAmKk99819cnKcUMT2gL": "PASS",
+    "1FgbE$IVbDyuVsaYa7Qy5Q": "PASS",
+    "1FqYaESPXFuhUVvvYp6cz_": "PASS",
+    "1G1K7K61r3jxyH3FUlbbvN": "PASS",
+    "1G6YT_8LrAC8$aW$ayM0qB": "PASS",
+    "1GALR4lb1EXeRUW8L575n7": "FAIL",
+    "1Gd2wK2gTESAZkByEgtOjA": "PASS",
+    "1H3j$_zKfF3f7NmuRnd_KM": "PASS",
+    "1HB2RkFMD9UQq5pmmS3kII": "PASS",
+    "1HTsnt8sHE9vtJiO2XDVSy": "PASS",
+    "1HTzx6dK99rxYirl5arG$b": "PASS",
+    "1HkWuLTqj3CR3hVOSz_5Ak": "PASS",
+    "1Ht3sHXY19ZO0gy_WWLMfy": "PASS",
+    "1I9tCSVyDBEBMZBe$pLoMh": "PASS",
+    "1I9wybdkfBfQfy1clCu312": "PASS",
+    "1J9G$AMj5D8ePpFewsM_ee": "PASS",
+    "1K8DWpehnD0BEnccqnEzBM": "PASS",
+    "1KHRv4Wo92W8Ab30UPNcA8": "PASS",
+    "1KN7KJjST5sxuq4IDdIZ1v": "PASS",
+    "1KWjkyI$n118qPzNlbN$tk": "FAIL",
+    "1Kd0rYVgj3ZQL11$4pv7wq": "PASS",
+    "1L$7w_vsP2O9IsnEN5d1nZ": "PASS",
+    "1LZPU6x0L9wOZBNrZ5df2z": "FAIL",
+    "1MYwCqSdv7Ix8uPO8cUAsK": "PASS",
+    "1MhvJn8ib6dAT$Lmr5tFv7": "PASS",
+    "1Mi7kgLg5AVPl4maq3n2Gg": "PASS",
+    "1MmZYEKF5Fjg0U$Axhtgap": "PASS",
+    "1N0dLD7_b9g8tFENBqrJDV": "FAIL",
+    "1NIbBSGgf98vI9bBPL0SWL": "PASS",
+    "1NNiwqMg95jgPIDXLCuasC": "PASS",
+    "1NXgN45uzABPTg9bKlCFYR": "PASS",
+    "1NYbVKmtL3YP2AXrmS9FLZ": "PASS",
+    "1O7GR1UOf6r8WCpuroNm0Z": "PASS",
+    "1OLZLl3a18pQTsfuMNKOWg": "PASS",
+    "1Ozn_$8IX7DAmUpaIvALf9": "PASS",
+    "1PdtDF7oTDvA0vo83lvpNZ": "PASS",
+    "1PycZDUoP84w58oDIbUMKc": "PASS",
+    "1Pz5bTcYHD$O0CoWS9huuh": "PASS",
+    "1QKjhh_S58EOZF6F8vrJ6E": "PASS",
+    "1QORPgpTj4YPl0HjFsWYcQ": "PASS",
+    "1QdoUqDr1FNhj$RUw0amva": "PASS",
+    "1RZNf1j5n2Bxgp3S7pxeMw": "PASS",
+    "1RvcIXv5r5qApoABUlG0pn": "PASS",
+    "1SEgqQn0HA4hebPvPql32A": "PASS",
+    "1SHwwggSX5N85G1pvxbVJs": "FAIL",
+    "1STt9H3In5quyR1zJeBmHK": "PASS",
+    "1Smy9UIZz0PuzXFjRN_8t9": "PASS",
+    "1SoaRgKuD02hP0vTyWlgDU": "PASS",
+    "1TcWO8$wXBkfgTkeXVZkte": "PASS",
+    "1TiiPVUKD2aPYlSpzVRUs8": "PASS",
+    "1TyYgSSs92feQ6FboiVlCH": "PASS",
+    "1U2uLr_Iv7fAUjTUySx2R3": "PASS",
+    "1Ujkg0Sv91WPYvXF6dYBBV": "PASS",
+    "1UlvQl2Fr6x94ewQQV4QYD": "PASS",
+    "1UwMPl_Ff5TeTm5lgVVmYV": "PASS",
+    "1V$r0S$c98pPL1roHaiWvM": "PASS",
+    "1Vcc22DEz69QR7n2Cf7_7$": "PASS",
+    "1VtXJdt4L7kv9XQ9k2M6LK": "PASS",
+    "1W6YoNnJr89eUNAg7yarIz": "PASS",
+    "1WCZr3c7r05hqSejiWoWO4": "PASS",
+    "1WKOi2evr6bhCsVsQkzbKa": "PASS",
+    "1WM5Q$rAn8rvdvmWcR$vvr": "PASS",
+    "1WYR3a8rn1PwjMza2IEux8": "PASS",
+    "1WwDHDheL4wPrM0QpmGNrX": "PASS",
+    "1X1dyx5u95kBdimFBlNdD7": "PASS",
+    "1X9_auq7fAKPab7CpdR8v7": "PASS",
+    "1XAtD5ST1B6hJBF87WWK_p": "FAIL",
+    "1XEOpfOLnB7viu19VwOX3c": "PASS",
+    "1XPG8aW2HEnPkZs$_nNEgo": "PASS",
+    "1XUARZ_Oj8K9AyF3GV$kQz": "FAIL",
+    "1Xeom_rPb9RxptB79DEktP": "PASS",
+    "1YAmFJ8PrFRPmTAUAfERk_": "PASS",
+    "1YCu$eFwfF7BL8140KPXca": "PASS",
+    "1YQyrPEXHBLxjACMwg6JFx": "PASS",
+    "1YU8aaFOD8OPwDOmgEQKhm": "PASS",
+    "1YUFB$oSz7Ph9Moucnpfi$": "PASS",
+    "1YsYDA1r91IATxaJdCY3K9": "PASS",
+    "1ZZOV6oCb65REUbS44kIiy": "PASS",
+    "1ZbRQwjUz9DQ98KhTax8G9": "PASS",
+    "1ZjSTbnjDE3eg9hU_V3RZu": "PASS",
+    "1_5se9Bjn1rgHwEb$U1XcT": "PASS",
+    "1_BHYRe$fDXBhfHsjJoUsZ": "PASS",
+    "1_yHrjirr42P2omCvRv61n": "PASS",
+    "1a2lgRlTX5$vytE5V2eVMD": "PASS",
+    "1a3Bw$Plv1NBGNlNfFUZO_": "PASS",
+    "1aD6snfpn0GQ$ToC45d1nS": "PASS",
+    "1aanU1sID4GuGI4tqWjizO": "PASS",
+    "1adPyP$S5FOuoo6jijMkB5": "PASS",
+    "1amFc_TRT6hPyr2tODHze7": "PASS",
+    "1b2PVXDBDCvRuDvEnW$veo": "PASS",
+    "1beNKg3CL4DfsMvrzccZGK": "FAIL",
+    "1bgUfDc9n0g9HZP5aLbJ0n": "FAIL",
+    "1bmmlgs9PEJOO_nbRCiVVf": "PASS",
+    "1bxNK1wJ15XRDckLWQ$BAb": "PASS",
+    "1bzY3tIwjEEAUZw62_UiuO": "PASS",
+    "1cMmlPl490tPOO2RzYrdce": "PASS",
+    "1chqBV5fz1DAQ7iTYl9xJW": "PASS",
+    "1ckT0RmsnAARlFpWWu4Tng": "PASS",
+    "1cqatVBUbE7ulPbW1qGfHB": "PASS",
+    "1cwdTk8S96F8MVrL$7PPbb": "PASS",
+    "1dAtUpLDz73PTe3wIpQOtG": "PASS",
+    "1dKTBRP$50WglvLBumwpIK": "PASS",
+    "1dcl_KEgvBzg2V0ywDT44c": "PASS",
+    "1e1zdP$AzC4AbSnq$yxhNh": "FAIL",
+    "1e3LLVW_12PPIMvff5kUE_": "PASS",
+    "1e5jDbsmzDIxa_hKrQ03J4": "PASS",
+    "1eNXen6OD4JOmh7NdHP9jp": "PASS",
+    "1ecPb8Ljv5du9f_BTPBG2_": "PASS",
+    "1ew$4Yu4v9Vv4KrOFOPnZH": "PASS",
+    "1exrUt$krCl8d_cqMo9LQ1": "PASS",
+    "1f0niA5XD16BehmueNucKp": "PASS",
+    "1f5AtB78TCSfLPJ75qhQVd": "PASS",
+    "1fDCTPwoDCwQjPVZtcx23B": "PASS",
+    "1fGrQYIYP4IxWBDX0HVDV6": "PASS",
+    "1fHeY3m7nFlxdWcaufG5ZK": "PASS",
+    "1f_ym7cBPBg8lptVrtQpIa": "PASS",
+    "1gJIlGYF99aAEU6VbRDsIV": "PASS",
+    "1gNkbSVZbFBxFXaKoy2iyq": "PASS",
+    "1gx0Xl4ar0_QVYF7WPkiWw": "PASS",
+    "1hBjzJQ_r4MQi5$dPip1Ju": "PASS",
+    "1hNUSW9Fz2kwTPOlreVhJU": "PASS",
+    "1hPB35rErB1eLTnNNR9Txn": "PASS",
+    "1hWMKdA2X8793OkX5$OmQf": "PASS",
+    "1hsZ5cIZbElRpA938d3ffl": "PASS",
+    "1i40eUabT0jBHvLTD9ciNT": "PASS",
+    "1i4_mvNgv86Pj97Vy1f2eY": "PASS",
+    "1iVtHa_7f46e6rXH_0ueYM": "PASS",
+    "1ir2UHdQfEdfEBkNwAW_9u": "PASS",
+    "1isL1SRaT9YBDYiTeS2Ty8": "PASS",
+    "1j$4rRHLz1HQbuBG5lkdFZ": "PASS",
+    "1j8aXfZ61FCQlpST1A47EK": "PASS",
+    "1jYNjECon1MwxCVxTA6CsR": "PASS",
+    "1jf6xhOyP38hazktRRDqpM": "PASS",
+    "1jwWHfvA56nwQIdYNHWi21": "PASS",
+    "1jxF$_0yTC98_L1BUP3f7y": "PASS",
+    "1kbGkmCozDwxyH6BQswrOc": "PASS",
+    "1kqWYCHTD7O9PRPuC8iVbj": "PASS",
+    "1l4OJxa6HEzfGDywLDzjC4": "FAIL",
+    "1lEjph7wz1fB40MAeoR5xD": "PASS",
+    "1lcU7PUgP9PgiWOrFx2wV4": "PASS",
+    "1lwY_TdJr2cPYIacxTvNwI": "PASS",
+    "1lyoimFmL5zA5TFPtlaokD": "FAIL",
+    "1mT7Bow8PF7PF6vCUEchmm": "PASS",
+    "1magbedPL42RAhf3XfDKY6": "PASS",
+    "1mixsyQgL2yPSXNO8DXz33": "PASS",
+    "1mqSCWO5bBR84dhZ5SEDMu": "PASS",
+    "1n$EpDaJj77Qx4eKJyFNzY": "PASS",
+    "1nOs6Hg0v9fR$sLR1LjIyX": "PASS",
+    "1nZz9768j4pAFS7rcljTUA": "PASS",
+    "1neRZM3Jz4YRFBbSzyVXpb": "PASS",
+    "1nk4MALuvFOBEQoHF5$rG7": "PASS",
+    "1nrtcIEWXCJBl2_he$mODZ": "PASS",
+    "1nuR7Rs590TQ5OKJ9Z1uEI": "PASS",
+    "1o3JNwlLT2pR5xzj7dIHdp": "PASS",
+    "1o9IVHY3z6jPb$8UF0w0pc": "FAIL",
+    "1oG8K7PMn35RVgxyYflbEL": "PASS",
+    "1oHEx35PDDzQFKEx3RZUI5": "PASS",
+    "1oJyju8TLF2fHh517_OS1e": "PASS",
+    "1ocvZUdNzBqPiJsdrrFn1c": "PASS",
+    "1oj0t$E6HCLgy3dI2OlRsM": "PASS",
+    "1ookyeC7LE$AaPpQcJd5pu": "PASS",
+    "1oraHrHF1Dyu4SuSnO8ARQ": "PASS",
+    "1p1FF_z_f4WQbihlDHKOVU": "PASS",
+    "1pBD50fUf4HOQWY_FkoYJT": "PASS",
+    "1pjf8_QnDCkB1dNjpKR_lv": "PASS",
+    "1qEc_xJ5f3yeVcsCS0rZ7V": "PASS",
+    "1qHBiNfAHCHhBLrRv9Uyf5": "PASS",
+    "1qSuEDSd1E8ftzFK1HXdBc": "PASS",
+    "1r5cBiWc5CL9A0KNGbzrzM": "PASS",
+    "1rSzOTGwP5sAz8s_QFzsbt": "PASS",
+    "1ra$MdZfHBPOSr$MO20fsZ": "PASS",
+    "1s8is3Uiv7tQGUsBmvA$Si": "FAIL",
+    "1s_rF_1un3wOdkmGxpCfiN": "PASS",
+    "1tE5Pvx2b1b91s5G2OMYFP": "PASS",
+    "1tYO1kwy17RRUruN2aoAOl": "PASS",
+    "1tcWGl1LzD4PaO22w5iJ$y": "PASS",
+    "1tmLhF7Cn61RudeBvrE04v": "PASS",
+    "1toAPIPJD7oPqBKCS6Nz$d": "PASS",
+    "1uRc_LHwLCmOpEs$CvHIwc": "PASS",
+    "1uUPZpr3j4Lhny6RrkUukO": "PASS",
+    "1umTqd3qjB5xn4xlPSMoml": "PASS",
+    "1us$eS2XH6h9DpSVtp$vYM": "PASS",
+    "1virtZ$r5EUAHNnyzDVvgX": "PASS",
+    "1wVDx$yUr7JvYDVbX62qca": "FAIL",
+    "1wiFMRwA14eOSQ629Ds0EN": "PASS",
+    "1wiWGNReP648JAaHUzIpH7": "PASS",
+    "1x4AMhoX5FCvaqi3Pl_pSD": "PASS",
+    "1x7Mc6nmT7bwvgcqGXCkvz": "PASS",
+    "1xGRL2W0f9oOLYrSo$ob8a": "PASS",
+    "1xkmYzLHD1VPKdNI8y8Me1": "PASS",
+    "1xxJ8dxUX8FO1xRHT446SR": "PASS",
+    "1yIET64x99PfQ4ri7yb9K4": "PASS",
+    "1z1vUhjSD0DA4$hE7I0_5_": "PASS",
+    "1zGerOGCD5Rvedyb1slEai": "PASS",
+    "2$_Kkal4jC8BFBilJN8I3K": "FAIL",
+    "2$jpBsfqD9mwGiQ1MIMyCK": "PASS",
+    "20cjtlT5j2yRhg3KCrPNR1": "PASS",
+    "20qiUKbuDCo9jUCIK_Aq9A": "PASS",
+    "21bpzoYon9TeghbO0ho825": "PASS",
+    "21dR9W9x91fvuQePLPaWmj": "FAIL",
+    "21iVHGuE5Aae60NipXJ6ao": "PASS",
+    "2266ahoUX5twjwxCprNIE$": "PASS",
+    "228l_jAhDCs8IltPd8fl$x": "PASS",
+    "22BCGZUH10WuKzQoQbSwhw": "PASS",
+    "22UbO4brrFvQJCWjanZuvV": "PASS",
+    "22V6iCqlz6FBLNTsOBRNQ$": "PASS",
+    "22dkzeSP1C2vUCoDO3J0FD": "PASS",
+    "22mAbcvOX0$BQrqP9Ht5Wu": "PASS",
+    "22wVacMRr0RfER8E2O$vLe": "PASS",
+    "232kvyKbLFYgj8ZO97j_As": "PASS",
+    "23NrJ1a$r1DOY9eePDI0DJ": "PASS",
+    "23PS8rQv5E1BulEvT_9Lm4": "PASS",
+    "23WtecHJX4cB$W9D3l89Gz": "PASS",
+    "23_VOHnPPArRsc$svE7nkR": "PASS",
+    "23nSY_Wdr7lRZ4bELCuUa$": "PASS",
+    "23vbTQ1Xb6I9RR8JQjRHhM": "PASS",
+    "24$jwl0afAx8xKI8Xz$brq": "PASS",
+    "24AsVNrK12ieTYzCHkhC5E": "PASS",
+    "24KQNv7ID5k8TEYH_QWIPo": "PASS",
+    "24_ACX2uf3DQHvDbd2z98c": "PASS",
+    "24dxcSg8f1yBqpqT3Ttjz8": "PASS",
+    "251MpPi5nDfgW6sNnBdgEm": "PASS",
+    "25xnmjtXDBEeYnceWKw7hY": "FAIL",
+    "264trgx691ZQ1dy9itipVe": "PASS",
+    "27SAqTJ4n1cfkb4yN$O3Ny": "PASS",
+    "27UY7Jvcf9lwFMjSTxNQnh": "PASS",
+    "27avDheLb5IRUF3u2QaId2": "PASS",
+    "27hOrbxS9AhO93h_RDjqPg": "PASS",
+    "27laWgAXX3AQWepVcTmr0b": "PASS",
+    "27uvm4mVj9Fh2G4GW$nbBr": "PASS",
+    "28HZd$WzTErO4P_xcWWr2R": "PASS",
+    "28wb0jU9b5qeDiiKq5PVkR": "PASS",
+    "29$cvhYMr99eZZSTXex7YO": "PASS",
+    "2A$7uUIbP13B7P0LW_wNaR": "PASS",
+    "2AN3EpcXvFk9pPcpHH7MhD": "PASS",
+    "2B0G8J6dD9_eLksetBKO8G": "PASS",
+    "2BTB5LQ8HDNP8ojpnQFMGW": "PASS",
+    "2BbC$n0yrCdeZPo4oGzJUF": "PASS",
+    "2BnTMgxmnCCvzxNQCnUXN0": "PASS",
+    "2Bxgu8k2L9pfsSj3Di_iJI": "PASS",
+    "2CAjyYu5rBgeq7raWO$nCM": "PASS",
+    "2Ceuxj28f1jeasNbgQdOxb": "PASS",
+    "2D4tEzzn96KxhitMgTCmsY": "PASS",
+    "2DXswjBO17YBftrJtbKRyD": "PASS",
+    "2Dd7N80nT6xvZLlvwl32zj": "PASS",
+    "2Deg5LVyrBj8lmqeJEcC9g": "PASS",
+    "2E0UIyR1D8MwHXB_I7Dkrt": "PASS",
+    "2E6mo2HkfDvuJiRRG$wc1e": "PASS",
+    "2ELxAjp9v3euJJCvWVVMtg": "PASS",
+    "2EvgfrVCvBDRKMUr9VcRni": "PASS",
+    "2FEj_vwVnA0wmw3ugle$qu": "PASS",
+    "2FJRWxBJD9PAYk_P_Dp7uD": "PASS",
+    "2Fvh2bjBf7VvAXtB48RNxw": "PASS",
+    "2G3UTfDMD1egi1bydvtHzQ": "PASS",
+    "2GZxODkNP6YPny_4TNjMbw": "PASS",
+    "2Ge90Q03n0MANbJpOUtA4_": "PASS",
+    "2HHpDv_uDC4QWow2JwiAdZ": "FAIL",
+    "2HKSZ_NNT17fle0rgo6vqX": "PASS",
+    "2HMywdZ4v9ehAMv0ULqY7g": "PASS",
+    "2Hagr_o5nCPha8GzqG_2Pz": "PASS",
+    "2Heu00tLvFlPQxYnPGx8AX": "PASS",
+    "2IBK6_51z5PfBrZG7jZNaY": "PASS",
+    "2IGgkY9NzFsO6L9Hw4opSW": "PASS",
+    "2IKZYPom90NBBWPrDMsabL": "PASS",
+    "2IddtI00n0rx1sVzeIOFgT": "PASS",
+    "2Igex6onTAmfhouHOSUg8V": "PASS",
+    "2IwaDf7jv9jQ$qH1aQXS$b": "PASS",
+    "2JPdNMyFX7BeGxw9gHJ640": "PASS",
+    "2JtUzxXCjFj9jo3oilNdf7": "PASS",
+    "2KDiiUOLb3WAKWvMvjXliZ": "PASS",
+    "2KG9S4Gt1FQALCzumz4aA4": "PASS",
+    "2KGpm9zbnERBaMzt8D8bA0": "PASS",
+    "2KNXXMxvT9KwmfbIdOJvFZ": "PASS",
+    "2KaTlAZm90L8ylCN2TaJL1": "PASS",
+    "2LUMJaNrP2fADnpLMmofDg": "PASS",
+    "2LY4pySAHCMRiOW6gZJB2k": "PASS",
+    "2La$$5$C99PhLMBg99JnTe": "PASS",
+    "2Lfx3m2W1D0BCPLmz9wvjA": "PASS",
+    "2M22IcCrn03fbyBol6Rumq": "PASS",
+    "2MAqitKn16se9p5LgkoYa_": "PASS",
+    "2MO6G9ns58cQ7xbcbLdz06": "PASS",
+    "2MV1zwMlv8eBvA2WOEAaEl": "FAIL",
+    "2MZ_55Sir09gB7BB1JSjYM": "PASS",
+    "2MtbYSfxf8XPurPixjtvdV": "PASS",
+    "2Mx9$tysPDB9LvSC7Uga$h": "PASS",
+    "2N820yNsH7P9D_BMeGcEoL": "PASS",
+    "2NK6L58znE3x0jludfQJ0Q": "PASS",
+    "2OIA0__HjCZQxPB5tMpYIZ": "PASS",
+    "2OIWyGBtrCv8R3lIQz00C2": "PASS",
+    "2OPGVjLwDF0wVnNywHUUlT": "PASS",
+    "2OaEEPzi95OPFp9P1ePXMb": "PASS",
+    "2OqtQrOIX5SgQiSf_8aJMC": "PASS",
+    "2Oyl7MsmPBX8QuVAq0wJYB": "PASS",
+    "2PDIGVW1b4Nhx5UPa0fgz7": "PASS",
+    "2PNj2dMNT9wOnOYdNWAJQh": "PASS",
+    "2Q3H7PK0j5Ux$7$peFmB5R": "PASS",
+    "2Q8nE94kjBZQ9wLLJEIi7a": "PASS",
+    "2QS4fApj12O96cFKByf97B": "PASS",
+    "2R6F$WfUj7CApH6kaihZst": "PASS",
+    "2RWoWcgO9EtBUuIPPuD7Ot": "PASS",
+    "2S6$Rb90X6tvy86v8wMz92": "PASS",
+    "2SOFxehfn3JPJ42eH$gc$u": "PASS",
+    "2SU_$70IL9dP1iVpfoyafy": "PASS",
+    "2SmJxWwbTEYA63r0gQnWj5": "PASS",
+    "2T0DOi9tPAZBOy2yjz78BB": "PASS",
+    "2T7$dTI398mR34m8VeIw4m": "PASS",
+    "2TrMoO439DxOlECBPIzO4S": "PASS",
+    "2Tzx7w7sD0lO244T1GnOv$": "PASS",
+    "2U1qifvIT5ge0qFAL2VUhi": "PASS",
+    "2U35Nruyf1cfc5sAWDSOX1": "PASS",
+    "2UBG6Q7d5DDBiKwUwETbGj": "FAIL",
+    "2U_SkEGmL8xOrgREFcAZVV": "PASS",
+    "2UekXAS9D7Axk7JFozbAzY": "PASS",
+    "2UnVuOVXb3bOG3sOJS1Zt2": "PASS",
+    "2Ut36uLtj0Jh3lOXK1Cyx8": "PASS",
+    "2UzzVHoG57Ex92Zgaglbg7": "FAIL",
+    "2VqWkt35X9yQtKQjAy_Y54": "PASS",
+    "2W6rpbxm58RAbCztJP9sdd": "PASS",
+    "2WJjAV$8v4jOUzZCgqJCcm": "PASS",
+    "2WLxeUa2P6K9FRHev9QauM": "PASS",
+    "2WW_2E6Wr1XPPZ0X1qKYGa": "PASS",
+    "2Wvxe$Unr75AYlno91cf_O": "FAIL",
+    "2WwJToEmn6mgw6GIYna5Lb": "PASS",
+    "2X7K0fWBzEBwqRpOV6YOyi": "PASS",
+    "2X9Gop0bn3_x38P_1PGdAJ": "PASS",
+    "2XCsjo3zH3CAxHIt06QmUl": "PASS",
+    "2XddRbY_j3x8eYm8oLZNXR": "PASS",
+    "2Y17p3X0LCwAQBBap_PfuM": "PASS",
+    "2YCvD5WXrDSvT9hUS0mMVk": "PASS",
+    "2YMzAzDVLEQgj6C$uJ2tng": "PASS",
+    "2YRW0FRcH568BvC0n1uc$J": "PASS",
+    "2YbkLyzAX8sufEsj84l6uQ": "PASS",
+    "2Yh7gIYaX4WulI_7Z3daPi": "FAIL",
+    "2Yxhz5qhH1i9kybbH$UNZe": "PASS",
+    "2ZLM_28ojBLQ7MioqA3Uef": "PASS",
+    "2Zb5jLlbD7TeMfbx6mSTkJ": "PASS",
+    "2ZiBjkwkb9Tw6JeNNhNy0C": "PASS",
+    "2ZmMppv5rB_ONxxlP9t69C": "PASS",
+    "2ZxrJoH7j3rw1xO07B0ZYF": "PASS",
+    "2_GpLiXvv0T9m7AS0ICKWx": "FAIL",
+    "2_OUbn7mHDGB97nRdx_Swc": "FAIL",
+    "2_PD0MSuX0qeRQMB0w4Za0": "PASS",
+    "2_Spc3OFz32f9Immwt4_7U": "PASS",
+    "2_aOxJ0vb20v1d5h5564dh": "PASS",
+    "2_xwfAnHjEGheqbGUc$BD5": "PASS",
+    "2a_A$QZ6b08fzqzP6NgKSG": "PASS",
+    "2adNDBpjPCFx0FjvPzxk4J": "PASS",
+    "2akm4sEy18KhqU2hKpeBjG": "FAIL",
+    "2b61I4AHX32vjsQH0d5lBm": "PASS",
+    "2b7WxLrT1FLu7GMANtCr5t": "FAIL",
+    "2bF_5Z$bP7cgvJFU8oBkt4": "PASS",
+    "2bPBntZlnEWQZkSXsG5rjA": "PASS",
+    "2cIQdivwH0euQ3BKDTFgOA": "PASS",
+    "2cQ8IsS3f1kgXeLJHb2tT5": "PASS",
+    "2c_AF5wUTF1QfaOZAIaoc_": "PASS",
+    "2cmOQW7ZP7CfQK001MVxdq": "PASS",
+    "2coheVmn10xepG8L0X4PjH": "PASS",
+    "2cxNc1U458jxM3uvZIlspS": "PASS",
+    "2dOn0Rxx9BM94apjsEB5vG": "PASS",
+    "2dez8YjPv64QJPWa_Ut4T2": "PASS",
+    "2du1puVD9BDw_hpi4B0Nz1": "PASS",
+    "2enUmZYnj72OcwNACl0MbV": "PASS",
+    "2erHyW9a93fxiTHg9u4oBi": "FAIL",
+    "2fHkuDHjr38vJAKjFDaE3T": "PASS",
+    "2f_jfRbF16awLBIX13CDXP": "PASS",
+    "2fm0mZk$v1jv8Zx4BDh_0A": "PASS",
+    "2fzWmLwVz2EfmQoLFRNg48": "PASS",
+    "2g0OC6oRfEpR4HdBbXhEgE": "PASS",
+    "2g6fy99p57ceCZvYI38wB6": "PASS",
+    "2gAZt67mv01hyopJN2Rsjy": "PASS",
+    "2gGcTEl0v0ShI1XyO_sw82": "PASS",
+    "2gZ_44VXjAzRuZlYzgvtgB": "PASS",
+    "2gjTPGDyjDTuEPcBmfMwbs": "PASS",
+    "2gk5LNkGDAiezdMGuWISeo": "PASS",
+    "2h$Xm5_hj2BPg_mcmbgCTX": "PASS",
+    "2hTyYpGXf8zwMdBgZbdyko": "PASS",
+    "2iybqz3VH31hQztnwzJ_m7": "PASS",
+    "2j63fN3Y59zRTHstj46MKH": "PASS",
+    "2jBoz4nA9C1vNRWoQoZCw5": "PASS",
+    "2jJFj_IGr059N3J3HNyAwC": "PASS",
+    "2jMXaMTy17tOYjMh68W7L1": "PASS",
+    "2japyIy5LCh9FVOdjL5sLr": "PASS",
+    "2jijIuzvzCMOBIhgOoeHnJ": "PASS",
+    "2kHoPrvTH4mgO72z01pDOc": "PASS",
+    "2kIIPu2dr7u8bW3NRIt$iN": "PASS",
+    "2kKKJCXvb8$uI5opVLCiQE": "PASS",
+    "2kVGJvQZL0mAExkU9324Cw": "PASS",
+    "2lqfq7sKH8m9jYTXN7BC2$": "PASS",
+    "2mrJJwztH1lRWVSJaE436d": "PASS",
+    "2myRdJgB9D0wiu$QoesY6D": "PASS",
+    "2n3hZ9D9H7_hLXKsBS_jtw": "PASS",
+    "2nSc65nI157BNwwXccpxDw": "PASS",
+    "2niu_iCwbDV8RTwkUv3xsE": "PASS",
+    "2oV_twygL43RXSDJkKYyRa": "PASS",
+    "2ojCl65KjB$gf89qZ5MPfM": "PASS",
+    "2pbiLPvmT6YhtHLcp58S99": "PASS",
+    "2pjO5b_CT3kxxZIf3Tw3UH": "PASS",
+    "2q0u5mFjD3c9$BNFL_WViM": "PASS",
+    "2qVLSA1HjA7gEgBcbFEzQ$": "PASS",
+    "2qcWMhv7X4VQw$dXrmGBAF": "PASS",
+    "2qiB0g_bbDCwZnOTvTZQ6o": "FAIL",
+    "2qmQa8nAP39u6po5334l9v": "PASS",
+    "2qrvVkep90wRmHFYUy6Epb": "PASS",
+    "2r3yVmqMz9zBwYn9dHz5cg": "PASS",
+    "2r4e5jHWfDKhLK$Is1u15D": "PASS",
+    "2smbTp1y91MwG0CTtOPTAw": "PASS",
+    "2tetrk$QnA49mTczDExu06": "PASS",
+    "2tjIJivgn4axF2ewhddO9d": "FAIL",
+    "2uaQbPNLX7DebbkESsYvDm": "FAIL",
+    "2ukcZZOQX3hvxY6QWgxpl_": "PASS",
+    "2uxQYe3V1DwQZELRcxkhw7": "FAIL",
+    "2vAiffEY52lh0rPlxXkYKc": "PASS",
+    "2vERavliX7vPHqu2JyhRbq": "PASS",
+    "2vp_usBx12Y9PoQVOVdAFF": "PASS",
+    "2w4EgNvcXAxOiGhNOfuw5d": "PASS",
+    "2wk5wp3ynE2wbb1It1IEO6": "PASS",
+    "2x8r6mt6H0iR0MeEuwtMRQ": "PASS",
+    "2xj8og5ynADeLjrLMO9aln": "PASS",
+    "2xq1ULvID0ZhZQyYVmG_x8": "PASS",
+    "2xvopPXd9EPgibaSIHI8QI": "PASS",
+    "2xwBlNrYfAchV3j2l7PQmO": "PASS",
+    "2y5dj7DKz9HvF8RYQofDdA": "FAIL",
+    "2y7S$CXyT1DRAHPrckxu7F": "PASS",
+    "2yGqckrs5DJB1X5tSmguGd": "PASS",
+    "2yLc5m5c562gD7oOBx$ZML": "PASS",
+    "2yQ4V1Ntn8pezOU3JG_CmS": "PASS",
+    "2yalEh8OrE6uikJxoQiffi": "PASS",
+    "2ymUTayl529wjp97XSqlkb": "PASS",
+    "2z4_cLW$15$BrtLnL76nI1": "PASS",
+    "3$8ejY9wb5C8Jjn_NcmDw8": "FAIL",
+    "3$BXedLBf6D967CVOV_ebe": "PASS",
+    "30PtVh$Bz9RxwCgystZdJF": "PASS",
+    "30WEjfMGz3yuCn14_i4kip": "PASS",
+    "30d$oCa$97QwnV5mZFo6CK": "PASS",
+    "31FCK2RS1EuA77gZKV2XJD": "PASS",
+    "31GveRCSn6hRz9bWTBO2Sx": "PASS",
+    "31cdahMYL9Leho2rsQXm2b": "PASS",
+    "31jJ7Ha698fBHCB0Q2e1yq": "PASS",
+    "31lVOEPPf3OfIKg0uKPRBg": "PASS",
+    "32BRu80e95IgL7sHEAaW4K": "PASS",
+    "32E8b9i1P7UhL7O9IHfQCU": "PASS",
+    "32bwVvXTDCG9KBVnHmBwjs": "PASS",
+    "32cOaJbaP9VOemKr9dYXtJ": "PASS",
+    "32dcXAt7L1eecrauLpV4ya": "PASS",
+    "33Kr6bhDfDw8cTao1b83Jj": "PASS",
+    "33eAV7UCH3ivGX7bdUtSDE": "PASS",
+    "33iRUNUF92df$CutlVAdNZ": "PASS",
+    "33popJ5N52LwaCtgF8Y$AT": "PASS",
+    "345cLww$z3hfdn3CHwKK17": "PASS",
+    "34GGUGAIfFtxn_c95jJjry": "PASS",
+    "34b24nbdP4VwDBt7cfF8Fe": "FAIL",
+    "34boc95w531BHjQiyeFScJ": "PASS",
+    "34dgUlG_HFa9U89iOrk_fk": "PASS",
+    "356ZU40Tn3tvjGsP5aWnKD": "PASS",
+    "35lxEQN1T28BAoF82UTp4p": "PASS",
+    "35sB5hOEPF8R6s4haDTl5Q": "PASS",
+    "36GtlHnYf65hKVVR2kT4x0": "PASS",
+    "36MTIgYN58Khj4Maho8oRs": "PASS",
+    "36OsTfoWX4eg8RrFRpldHA": "PASS",
+    "36eFiCXT94$epOezE7s33Q": "PASS",
+    "36fadt$IzDJQp5auYj8rIY": "PASS",
+    "36zbLfC19AzAp$d2fdItUB": "PASS",
+    "38M13axmP7Leh6M0bMLeTb": "PASS",
+    "38WNoiHDr8$Pci7QltamW4": "PASS",
+    "38l_4KH3nDcgCphNLY110B": "PASS",
+    "390EuePXb0OhjRV8d6hXqE": "PASS",
+    "39FsFjEuL3dQTjl2UmVHsR": "PASS",
+    "3A25_zHmn6zvE6RvYBE4vL": "PASS",
+    "3AQlpGNjz5ZxSqHIv9tjed": "PASS",
+    "3AgwZ0_yPDWxtRR7SaGGUJ": "PASS",
+    "3AuBloy8rB2eQ0HbTV6Kmm": "PASS",
+    "3AzhV62db1MfXJq1r$2nl4": "PASS",
+    "3BRCTWHh97vv6a5eleOkf9": "PASS",
+    "3B_EPhJC9EX98Fq1ITIUW2": "PASS",
+    "3CCqrUrgH98hGVnr$ZylYm": "FAIL",
+    "3CZIhaS2X1axbTF8juS7Mz": "PASS",
+    "3Cm7scBgX4CQfTVM1hDF2B": "PASS",
+    "3DFmbDSn5BAgDHvlMxbGui": "PASS",
+    "3DGQEI9Mn2nPDr4X9RyE6B": "PASS",
+    "3DYtDpqDX9rhVnEVsp_6RQ": "PASS",
+    "3Dr$ZMMa98fvt8EYMKh14n": "FAIL",
+    "3EI5egGLv6nRBJSwVb6eY0": "PASS",
+    "3ENEtGT0P2aOgPXmUQo9L5": "FAIL",
+    "3F1ISapgvFFRkUizflbUfj": "PASS",
+    "3F8rMkRHX4UAiIGKwBj4Po": "PASS",
+    "3G7K2WeEz6Yx3gFem0Mu8N": "PASS",
+    "3GgWasL7D0fOL_Qpv72VFd": "PASS",
+    "3GkVJkbxnCbBdkElcpIobH": "PASS",
+    "3Gl09z0xrDMhikUUZFZdvs": "PASS",
+    "3HGDkJWG95UBZE0EMTLl3$": "FAIL",
+    "3HJMA9pCn1i8rqTdIY$FGx": "PASS",
+    "3HN6IBOw1BKQP$d73uzLdY": "PASS",
+    "3HXFH_8Kf3ixZJgb7yuoAq": "PASS",
+    "3HjuPtyCPEmu97uERfnDFZ": "PASS",
+    "3I0Mxc4yT7gf5sgqnBUCnr": "PASS",
+    "3I1SbPKkL4zAlqpNU0djSH": "PASS",
+    "3IBoEUFNz2$emtSPYYqofy": "PASS",
+    "3ICu8JsLD61wqtGk04qXlS": "PASS",
+    "3ID8ceKyb379nQYi3vIepA": "PASS",
+    "3INImExTrECfjOcTurcdR3": "PASS",
+    "3IRzbnRxr7tRoMgqhcMpHJ": "PASS",
+    "3Ifq_8Lo53s8fC6K29hy5u": "PASS",
+    "3IuK8$_ZHAJw36Pw2gYslk": "PASS",
+    "3JDoqJnxb3Qe97DYfI5N2S": "PASS",
+    "3JOyzS90z7NeKMHT$tWAAY": "PASS",
+    "3JaHyppKTBGBnjCpoJt74v": "PASS",
+    "3JeDxuVZX278wZ3E$qtYHH": "PASS",
+    "3K4sDlB8X44RAiRHBjIKFR": "PASS",
+    "3KLNE8pAj368INMalwxWdL": "PASS",
+    "3KLlSyI5DCcB6QscI2_oI8": "FAIL",
+    "3KcIMVZ513EPkQumNhbyRn": "PASS",
+    "3Lm974x2fEPgfOqVvZhvhW": "PASS",
+    "3MbRrcI21CE98sQs6t3WRb": "PASS",
+    "3NC1dYtqL1pRl7LXtoL4QX": "PASS",
+    "3NCom$HHj0s8CFEaff7h0i": "PASS",
+    "3NSXc2oELEOw72BpEhL0Ho": "PASS",
+    "3OJXj65Af8H9Kb3GdS63X8": "PASS",
+    "3Oiw4ELt1BaBeKn0mDwzz7": "FAIL",
+    "3OrWvPz0L53vVLOcg_Vn3G": "PASS",
+    "3P4RIlUy168hDz$MlvcMUR": "FAIL",
+    "3PZVRZoyjCPBphjdTHYUqQ": "PASS",
+    "3PoAJuTXPF$u36k5Jw4Z5a": "PASS",
+    "3PxcgMX$j6XBsE4BpxQwRG": "PASS",
+    "3Qdk$TMxrAuxQZiJv_K8BY": "PASS",
+    "3RS6khZcH6xe8eMNVG5kXl": "PASS",
+    "3RyopHsn1E0hLmAiylGg_C": "PASS",
+    "3SaiHeo5LCzxecqRkOokyn": "PASS",
+    "3SiUNxtcn0yQfTkkuMVtbA": "PASS",
+    "3So0XCTXD9LOOcc8xKMDxu": "PASS",
+    "3T64ifBjD5OekUb06AiV26": "PASS",
+    "3TJALh2NH58fnTzUmA$xeG": "PASS",
+    "3TK6FSuO9AVg4wHo$O3IN3": "PASS",
+    "3U4osC1p5EqwcBW8F2DJ6K": "FAIL",
+    "3U8ZfIcGDBM8M360rr2jhL": "PASS",
+    "3UBXqYk8n2BvnMbkKRXzyl": "PASS",
+    "3UBzAzajr5q8aCMUEKo4IM": "FAIL",
+    "3V$ApEXsL4kuuKln_RMzx7": "PASS",
+    "3VPfLoGP93KB2ZAJFRlJBf": "PASS",
+    "3WCGRIZNT4NAcbbtFlpxb5": "PASS",
+    "3WUNETxEDBHgxwkEJ1_F9C": "PASS",
+    "3WwF3ZUyL3_uOcvhLTlqWJ": "PASS",
+    "3XEK0$_UjAlwZMwjEFf978": "PASS",
+    "3XUEQ1GvT3jA_Nbj5X$65Y": "PASS",
+    "3XhijCDWT4ERsmhSDcEHtI": "PASS",
+    "3XkSf_WQD8B95Qz7TinhrH": "PASS",
+    "3Y$Zx5Ilj20hTV9WYChn09": "PASS",
+    "3YDoxP1AL2yOJ5bNO5Jiuq": "PASS",
+    "3YJAx09Gb8txATI7X87x8M": "PASS",
+    "3YLJyxBUz6tByQMuL5pipR": "PASS",
+    "3YLmLSYqr0kxvCC8B81IAJ": "PASS",
+    "3YPowjOjj46Aqmo9CcIrNd": "PASS",
+    "3YRqEfrCP8BhPfrw8ie$07": "PASS",
+    "3YWZENIwv2cRjcU4sOLnqp": "PASS",
+    "3ZAgbgjkD0pezbSpKh8cdk": "PASS",
+    "3ZRYiyNFH08hTnlj_xBf6i": "PASS",
+    "3ZT2xJqOf95AGfYHSE9vsv": "PASS",
+    "3ZrkktGzTA2AWEqU4sCSU0": "PASS",
+    "3Zz4XmJlvDFxeVZaItTzNS": "PASS",
+    "3_66xHtdD00gDHwZ35Ec9S": "PASS",
+    "3_FNYG$Or15vzG_WtX1Dra": "PASS",
+    "3_KLM_wLHAKg4j6BDg71DH": "PASS",
+    "3_LAKs74TEqwOfhvpeA_i8": "PASS",
+    "3_Q_3tf9PB0gG8Y6HQWbnU": "PASS",
+    "3_iO12ohL1_ho4SqhocKBY": "PASS",
+    "3_oxSjdbrA2vjqc3bWxC2g": "PASS",
+    "3aKP_9cLT3Ieogd56ggYoH": "PASS",
+    "3aiixXmHf4dwr8r_4mNw9M": "PASS",
+    "3auUwUfW5EcPaoBpNctlU$": "FAIL",
+    "3azr12Tev2re9qfmBJNIhw": "PASS",
+    "3b2U496P5Ebhz5FROhTwFH": "PASS",
+    "3bBEEvVlvEOPrWs5bUkDsC": "PASS",
+    "3bi7XzqxrAgvdZxFnRwTdg": "PASS",
+    "3cAt3keOr5IAqWcOfbuNAx": "PASS",
+    "3cOY44wWnFkPbXVkjznSkG": "PASS",
+    "3cn6wvI6HBu8fP4N2GN$Pj": "PASS",
+    "3d11Rmvt5C6wKW52oYhu3V": "FAIL",
+    "3dF$AXDDD2JfNM4ZDuGS7e": "PASS",
+    "3epBlD4FL6Ufbmfw91XuQv": "PASS",
+    "3esS7s_B5C2huIWmYkTJPq": "PASS",
+    "3ew41MT6r7mAzMkFPWSywt": "PASS",
+    "3f0aTSwAX5n8oP68ncSUmN": "PASS",
+    "3fqzucbC53mxxunSDyWwfk": "PASS",
+    "3fuVRb4XjElhDvhrOaoTtt": "PASS",
+    "3fvHYcQET4afRMl3etTK4F": "PASS",
+    "3gDDH0mPrAzfl6dkPI$_uZ": "PASS",
+    "3gGaKULxj7vO9NevTUNlI8": "PASS",
+    "3gGmXbzkjAsuTeSl1cCGLB": "PASS",
+    "3gnRbbc8f6xQGyDQ_NG2tX": "PASS",
+    "3gpatvkjr49vcFHijloS3i": "PASS",
+    "3h7$q77HL7y9ib6jdqEGaU": "PASS",
+    "3hGtOZh1X55h2EX09_BAZ8": "PASS",
+    "3hPtwB9dPCrQf5d5COzFHr": "PASS",
+    "3hhiC8yEn2tx0W6$uE_WXb": "PASS",
+    "3hnrJo__H1th0M6JbxK0Qr": "PASS",
+    "3i6YzLPHXAZOX3pEL9NEAY": "PASS",
+    "3iLtr1ui53ofDOXEJX4gjT": "PASS",
+    "3jpVM5WZ16TeYfO6FM2grI": "PASS",
+    "3k13aCiJv7Fu95f6UUXxdk": "PASS",
+    "3k4bKKm$v3NhnNEkaCaT8m": "PASS",
+    "3k5fe2GK57AvySEimXpMxv": "PASS",
+    "3k9bZEdJLCwuXfzWidDJzy": "PASS",
+    "3l4LEWO$z6PR20zTCo0DFf": "PASS",
+    "3lUaefqT14jRJXPO$2osRB": "PASS",
+    "3ls5Dm7gH70eH43kipcgjP": "PASS",
+    "3m4OJLKQX4J9bJbE0bieP3": "PASS",
+    "3m6x5s_8PAAhYa93zpsvfd": "PASS",
+    "3m9Hy1M75BH9VBDXHStI5B": "PASS",
+    "3mtBIKwCnBVfKSlgawrl_w": "PASS",
+    "3nEQqWNWTE_v9UbdS1CA69": "PASS",
+    "3nFC64uPPAXefSRxq6JPqA": "PASS",
+    "3nSAIsE4n8sBWbxoPQ5dy9": "PASS",
+    "3nYzqJhnfBkOR94jliuzeB": "PASS",
+    "3nxm$Vo_XDpfp4gaIyp2WC": "PASS",
+    "3nzu1bC1j9OASHamQgK09U": "PASS",
+    "3o_mcdn_vDavgeLjgPBtk_": "PASS",
+    "3oqP6P3$n36BZp4seP6jBe": "PASS",
+    "3oqbpQmTz3fuh9S3tOlVZ8": "PASS",
+    "3oyt7VQ65F5h4Da$jUkdcw": "FAIL",
+    "3pWgo6GgjDmBfRg2bfmX7L": "PASS",
+    "3pvjKhWy13A9kxY9YJFWVh": "PASS",
+    "3q8aQLG$L6gAja8u0czfoL": "PASS",
+    "3qaZ5SwO91k8OhrLYeYPcl": "PASS",
+    "3qg7Wwbh5AgulDFXBaIFZA": "PASS",
+    "3qnBAcChL4Vx5NE2JgS9DS": "PASS",
+    "3qwqZPeTDBNwoqje$5Pg6w": "PASS",
+    "3rm7AtWY9BCBlzkw8$VplC": "PASS",
+    "3s4FafcUf5Vg95Kh0woD3O": "FAIL",
+    "3sE5jXfPXFZgznxuVnQdCO": "PASS",
+    "3snxK5QIXBjQysiZr3CAkz": "PASS",
+    "3svLfMUGz6RPW7zJsbFgVI": "PASS",
+    "3tN_Pe9Bn2su$y5CGYbUOg": "PASS",
+    "3tpY8iJUX04PuBuWL58WJY": "PASS",
+    "3tpvWfQc93Pe5RIl_A8mon": "PASS",
+    "3tzmbbcRPEK8Jf8X7AmWZI": "PASS",
+    "3uEMFzu2v8GRvw8kqNTH4S": "FAIL",
+    "3uK_yBk8z6lRGEp4$AHAFc": "PASS",
+    "3u_b3DOQ16afvB2LeI3Bn3": "PASS",
+    "3v6F8ltknAuO1JJakibxnI": "PASS",
+    "3viuF7apj30uTA$BnbmYaw": "PASS",
+    "3vqnVssVr38PmaxLZRlkiQ": "PASS",
+    "3w7zWNbiT30PlEUwkvLv6L": "PASS",
+    "3wYxh0Tzb4jgB_lNtlAast": "PASS",
+    "3wdTux4mr1TeVnxQ0KiOLe": "PASS",
+    "3wmcZBj8H2fBiTVxjtc76K": "PASS",
+    "3x9ycAZtX5CQvD0YimN_OD": "PASS",
+    "3xRi6WMC572By6DWM_I3Le": "PASS",
+    "3xUCqCcT5CIgdra2gZT2db": "PASS",
+    "3xcd5VqGn5fu$PUBghiK4$": "FAIL",
+    "3y4kc37zvEUflqx63YvD_Y": "PASS",
+    "3yqEwZ1P5D79qJ$faewDWt": "FAIL",
+    "3ywoxytLL6Ze1mLcpf_CYM": "PASS",
+    "3z8lK3Ks97n8dXJTJuwYh1": "PASS",
+    "3zCgRefMzFTuEzSGylppUP": "PASS",
+    "3zYx8Hv3PByAOvjIddv_ZR": "PASS"
+  },
+  "notes": "Unallocated Areas on 957 IfcWall or IfcCurtainWall or IfcColumn: {'FAIL': 77, 'PASS': 880}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_schependomlaan_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 957,
+    "ifc_sha256": "2c3565ca1904f2aa61adab92024cf3755b2c5b21a498144d3094d7cb58cebec7",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Unallocated Areas",
+      "message": null,
+      "report_file": "ec3_schependomlaan_check.xlsx",
+      "report_sha256": "b954300e9bca700327da74ef5b8e13649d974af6b257bbfe29b884cbdde0708a",
+      "rule_issues": 11,
+      "matching_issues": 11
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$SpH8S2n2ufDBhk$ljbCs": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "0$YDCcbYPB0wRxDYucu1$k": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0$nmb_JxzCaAMY_T0nZCdH": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "0$rXI4QKH23g$k0kmZL$uo": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "00$z$gLSv2BR45OgtA7FON": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "00vrd77kP3I9l5yH8Fiv1u": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "014PwDUKL5UQmLgv_0D$t9": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "01Kt0gjUr0wQi3mfN_sJAF": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "01hUAhn2r989LDYSpRx4VK": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "01nWzpou174OweRJuvV0oN": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "024PETTtr5LPliAdggDMDR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "026r04Lmj75x6ENTJ7WTIB": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0278_Daw13meE7b8P6cVmO": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "02KCnN8qD7yunPHGlDlBkF": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "02OffYjAT1s8Msmi40pyAF": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "02RLewsq14rfNfUfsrYydb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "02XLK06DT5w8biXGZaesSW": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "02jiAyhWL9AAwFG60v31tV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "02pJnwninFKefvu_ivlXzM": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "03$ccRRszFBBvdHYRBhWBB": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "037e4dk9f2mA5SA28Mu_Ya": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "03AHdIiA55r8PqyXVRRazD": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "03H6xp_QD6g83v4Lwkmveh": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "03LjPhAPb7YwcCfCKjoBp0": {
+      "name": "HEB220",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "03_CVBI75Aj86591do_EB_": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "03akWG6jD5YvV25Iim327M": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "03bsiTWZnDxOuJzgGQiRYN": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "03jDCRbWX5juY7T5suP$h9": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "049lATq1LDCPRaEaNkDT7E": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "04AOBR8wLDz8EonUdH$yXd": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "04Ezr5o2H4NgZr$CrXLBI_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "04LIlkhvb1Bvm_lsMUkqg0": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "05FOAkTzrCUBgsJj6dAI3z": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "05OARqtmL1oADCPKfx3yQP": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "05PISK4lv4tAMDc9oYQUQO": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "05yuQkJxb22el7nxTgecJc": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "06FuADHCz36hBoAywogP5m": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "06P8M5eRX7Q8DMqxH3c_wl": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "06fbT3wWX0nvalSj0LVOEw": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "06vshORsrEVvjbvNCwwl$2": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "07CJSAM0fDC9txPX6iBpVL": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "07KefAgD14SecYqb_G4vxC": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "07o2mHpkH4_PxUBc290w3Z": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "07ycr3rkX9oB1rB6HYpOJ0": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "084e5AQmT0uflc7GA4Kii$": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "08J5ZQbrj5Mx$rrc3rSlid": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "08lCyzAS1By8H2pkiWtxEb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "09TMGnoXvA0QiwTfqmChQ0": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "09VD$Lqi93x9JCZ1tfrTrL": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "09YpdCHjz5YBYCUKfOMJyS": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "09ftZfqDr4NAqliSbe_Q2x": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "0A$dxBFCfD698O7H1hW$fd": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0A3vw0h3r70vl1BMRbs2JR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0A5H6Gj795FQZvzPeczKad": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0AvuKvwsjECuqQLpwsHUiy": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0B$7T0g8P0Qxh5KunO$Vuh": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0B$TCMJjPBzRAR8ZOmGVuF": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0B6H$8Szr3t9w$7S$WA_aT": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0BaTdFig96fAQhtMSd1Bze": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0BbZBldn94MfvyeV9ZExMT": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0BwPscFxPFCuMM1ImRc1Ih": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0CIHS3UqLCFfmV3hApIGQ6": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0CWWia1q51AgVCIHuLfLS1": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0CqTK2cer2YubDT0sUqCjK": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "0Dfap14aP2YP8pZtG63oRO": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0DiFYGULT7Q8CIC_CShhpg": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0DoMC7RY1C4u1e7ehHzO9a": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0EiOJWQwP8RP1i4VoottS1": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0FDpOPjDv2iud3tAKPO5Zh": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0FcOHM$Tz0OuZrgJPxG6uE": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0FdLbmS_r6Ch8VPitxry03": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0FepsNa9T4UhJymkj5VxYZ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0GU$6X29PC6gNbWz5MWmi4": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0GUGYII3j58vHPlOrLYtw3": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "0GioG4iQzA1OyX4F47kc4a": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0GkhpndB96r98q9Zpfg0ks": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0GzsBzJf5A2f5drvUenvXI": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0HIb$9Byf2ZBlCjcOu2Qju": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0HJRV4BSTAkAtUp9svnqkF": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0I$ApwjMb2WhHUnG9PohvA": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0I$hY8NrnD9uJssTrChZth": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0I38IR49XCjeOw$CuPT3ZI": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0I7LtwbrXFA9_X5BhUfkIk": {
+      "name": "K152,4/12,5",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0IDKbAsN90HOIaSuxh7$D_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0IIlOCBsj3HgQHK5iljQCT": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ItgJO_EL9ThNZBqkAgxcV": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0JA6_1Yrf0RQthH4oemj6g": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0JMWaqvB90a9vpyx$40t8U": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0JRfJnbfHFgQD3Cu1Y3Ti9": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Js8lcInj8zAwW4RtybLWO": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0KEODzPAvAYfDEnWfvxPSf": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Kx3M5Ak15Xe2RV4CREhVl": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0LrrAnsxDC59wymHCsWDmP": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0LxscyRCL35PTDOLAAjfSI": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0MManSxITCBR5hqtmVQft$": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0MShzpttDCFebRi8XxX5Be": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0MTC1GonbDHhxIHc0o_Hwo": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0MqRD9mj90_OBPCfUN$DCW": {
+      "name": "metalstudwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Mr6vY0jPDTRtp4MXIyyQU": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0N6xlCed99mPtUuN7Qd65B": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0N87rS0p59MefjiinSTPbO": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Nj60ieO55uBt_I0iEvvde": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Nml1uVCDDlRq6wu6UMyQA": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0NsAQU_RzBew4mp1gDoLKM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0NsY4MrjP47eGpLW37qLNh": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0OeTVTjU5EHg8eoSvuD3f9": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0OgpsAvNXAkRbqgrv0PLw5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0OrKFlctL3BwozyQDz24Kf": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "0OvS7XTSrEEfgY9zLS52bd": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "0OwiY0E_H6nAVOZ5L_gs8R": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0P9P2MTnDFWgpzAECWRMfc": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0PH9okqXD9oRQ1c7UPiNBe": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0PYnvK1QT2g90Zy$gCExD1": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0PbuAnDOv9MROtn6VXvlS9": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0PwN5MKCnENu413RHBr2sB": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0Q9MMqksT8Lw1MSX6wiWlm": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0QG1UZ5cH2Pv9Pjhl_SLt1": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0RAk_ZkAf6gB8J5bo4h2r7": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0RXt3SWyX7NQmQgLj8MtLn": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0RZYP$9znCHg11Unjzo2gM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0RcMlaEQT1OPaNSwo8vOeV": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0RrPQ1pTz1IBZvY9bQxtJH": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0SAmxP$$bBAgZObgQGJhrq": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0SzdhD7kXE$9LKStg07UwP": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0T0_lwb8vCZ82bqHL85eAN": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0THNgQ0CDF9BljZQaz9g8p": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0TQftTqorEnA$V3IcZujpF": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0UEcPQQZf2ruz21iN4LQvo": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0UqYpHM_f69uGDRRbUc$FH": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0V0wCK9cz2TfrOzWHZVy$k": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0VddUtFIf0YOTa5v8yH$LX": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0VfEUH2Vj3ARUZ0FmZ51oJ": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)",
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "0VgxmJGxv2wP5IVI81qJrl": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0VtorzIgT4YQ3IWHyNlS39": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0W7j$v4vD3yRYaWSNgQcv2": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0WbxJm47zCSxPd8I4EJBzV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0WoZLLChzDIvoZsmSZcBDg": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0WqX0b_Gj53ObpF3GHqhgT": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,59 m2)"
+      ]
+    },
+    "0X2zNK4Gr959hH90pZPnh_": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0X5njjJnD05RlVfFUaRcc_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Y0Dldwy50Eg_FPmXF$IEI": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0YU639B0b26vJoT3EwCZ1S": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0YU6oy1EfCeBW1mHFSweX2": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Yg$3eCdj5TfoJlEv2sNBN": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Z4DuejWD50xg4CFcjidlO": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZmS3bTmHEN9O1xmMHDik$": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Zx4cqrajBR8O5_p97fE50": {
+      "name": "dakopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0_$Vb4UgX1xBB1w8C2cj2L": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0_1$ZiaxXBKAoIe0SzFsy4": {
+      "name": "HEB220",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0_4DdazE95P956DJ3xDRfk": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0_E9R9yPzBxR$ZVU$pENfy": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0_eHrpDSL0BenGv3Mcv8fS": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0_ig6A34vCA8BhO4VTs82C": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0_iidB$pr6yercMCS15Alt": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0_l2ELmojF3vYbiNvMXM17": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0aS6kmdNTA78a6rHPn0utA": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ahwXaU353xOITjLmOzUt4": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0apuv$1UrB68Hd8$GUUl1U": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "0bN1XastH7E8NuXGmKqrWD": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0bOXbgHd9B38fgrdG4v0Rg": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0bPVJE8dDCJuZfC321Nz06": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "0bRZzgbzD4IuC4gxNY7xQh": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0bgtceKbb1q8CGOdbPa1PM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0bkZLlteH4Gv_QuHkHzQDP": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "0c01Rv4rP95PoAhsRXcgwU": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0c6TWvGAHBORZRvoEDgQFO": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0cEQnttXL9iAGcN5wu5iIi": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0cEZV1n5jF8RUNCsgczqnw": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "0cr6SQeNT879fCrehfWeM7": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0d193_IC94VBo0OC8YxmOX": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0dAofjIyHFM9KgIhqrn1sO": {
+      "name": "HEB220",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0dAxGfAP51s88l$orgTdn4": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0dYXTnq1T6TvUR6OKvH25L": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "0d_oFBP1HFvQb5Faeki0yw": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0deLVuR01FZAQAP50$NggQ": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0dv5m3Uyz21Ah3WBH5x$Lz": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0eH4s4FArDowd5Az30KXRB": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0eZiD1rUvDiRlrDMG3tx8T": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0emZXkn5TF2PHGNfqrnDSC": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0exQNtZczDAOyzHY$YLkO2": {
+      "name": "binnenwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0fP8MV2Y52$vpMZsHCVKvA": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "0fvTtXunb1Fwv_e4ll9UPn": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0gDFYFSIb8WR4zH2JTY1zU": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0gPViWnc97_em9NLpt_LR_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0gbR2DoCHFEfOlinGdyTXb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0gjkZSaxz2lQqbBG8NzPmQ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0h0J8$jKDB7vqG8dDiDAKz": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0hCGa0m7L5vxYadRPxstkw": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0hDghtDLb88ODx5EtvPzgM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0hxjm9AAf15upUBjgwA0Rn": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0j1_rzpXL9NRGFgvzNNHj7": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0j2Oz3Bjz8g95L4tRLEvJR": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0j5C6LoLTDdevKXyVVZKEr": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0j6o0yB1fFhuN_Qos13Bz5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0j8iqQ1cHD_wWRaox$OwDX": {
+      "name": "spouwisolatie",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0jnEXUcjnDq8kxq1jLk0I5": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jzFz$TozAjQrbFqUARxz$": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0k3Fv57_HFQ9A8iOn_65kY": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0kWJnAkxrDEB6OzCYJGlDZ": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0klGaA9M11cw9VwJ96pWIe": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0l9eFmlAD0bPx_2$7MDd3z": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0lV3_6JX5Dn8WMYQWopUL4": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0mBWreOprCfhxEee1_L62E": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0mvjiuGlP7MPeepglQyQNO": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0n3286K797DvQM_Fi5RIsM": {
+      "name": "zijwang dakk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0npgzQizb9UOxmY2t29tNR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0nrQiWUSfB6g722vNHkgc_": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0nrTWb4DvCCQtpg5uNJSdv": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "0oDaXCEUb4qRApwJFIFZGb": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0odjMCkULFYPcxRhNspVwF": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ohCctKtf3xAERYPncHkFE": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0opoNTmV5DihPxS3qf88gc": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0oq3Y7GEDEWwB4m3kkbnC2": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0p5DTahObB4gZyJfnNXgRR": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0pgNH1DHHA_AMCXvj8dZP0": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "0qjLt6tpjDu8lujp9gCtYe": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0rNbUsEKD4XBbyiiTLa27n": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0sfnf50Vz6qxgaVSSC_9Ng": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "0sp70S3SL34xgjHRQAVzCH": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,59 m2)"
+      ]
+    },
+    "0tXk1VggPDAu8Pm5b9CfDe": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0tcR38Brv6pOxSmBDiytX0": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0tyKkyPHXFkvhRpZpx0R5f": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0uG931DjD31hhRwgBkGmit": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "0uQlWOMIL5sgPCcbhdbYkA": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0uYipqPGHFivV8pH6oIeF6": {
+      "name": "binnenwanden",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0vMW8cByPFX8BI$W96Sbm3": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0vR_41KwL8TONUw$RC45Tp": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0vTAFL4d1DwxQSNiJxvejT": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0wAaPRefDFjQKjv08CArN4": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0waDvH$z1BAuy6RDYVrspu": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0wy5YnvrH2ZOH2izVhvOeV": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0x8663Ubf6t9GPNfvbHat5": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0xlZwI2nnDuf_2wkrcyQcc": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0y7qZLfyTFRxJCpK$rGvlq": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0y8InRC0PA_QAR3SQu10jj": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0yGvJBe$9ArOV8je0sM0oV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0yKSa9A8bBuRIXwylue0ES": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0y_z48Xb192w3Y1QR0DkXK": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0yfAXMIyTD4OemjMEjshON": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0yqn783mn5b8lSBwRQAGYV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0zCNq_mof6gPonl4mLYuLv": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0zijvaqYb2avG5CJ9VqLrO": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0zoY98O157i8MAJTtMw2tr": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0zqN$1Spv2UAq7aXZK3XKv": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1$vNox_g1FifYtmbY51XxV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "10OU69waTEDvLdArMy4CnC": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "10PY7tTYf3YAoiKKQMe9Wi": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "10ogexLW905RKdX1927VSU": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "11emksH1TFfeNTGT$0J1nP": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "11isJmlKb6GuisJNxWKISc": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "11mo33UpLFjwOcPbSdqngd": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "11sY8mZADDkvJg9PvHNKN5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "125bFabrLCqQQ0adr4pzjL": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "129TmjQAD9ye2vA2ED4kH6": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "12grnadITFjfJK8cHbftP3": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "12hYt_1D96Bvi$FtsKq7Ts": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "12j6jtmaL8zuq2HGrdglgu": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "12n3rezy5ABfwwc5yfQdvw": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "13VGtZxGT04gWQa7ANTKuD": {
+      "name": "HEB220",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "13hN5zL1L2fftXqB_Ac_WZ": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "143VmHA6z6_9Ju$8nLSk75": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "148inggZz0fAp_L7YGDBl6": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "14K5xdkbjFFxYMTqMomdZc": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "14SQKeTXT0bxeTGZbdgN$9": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "14XsuvhErDaQe9Ghiv9NHI": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "155JGPm0v1bRun6HwItrP8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "159QrTsQb9zu88XvB88A2Z": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "15T8e5$wL0PuR3k2ZvZ6I1": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "15jfYuGer1Ah1QZYTNDpTJ": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "16WP2f9KP2DBE9sfY$ffYK": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "16qUObfsXFShDHc3t7gGIZ": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "17dT5kmgn18w5w5Mwe_TO2": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "18Nc74m4zBDvow8cF_wmNX": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "18QJYzL6z4iAOHp4H6Ay3e": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "18b_p0iTHCeOdrecTjmnfy": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "19arA5gn17b8SQaKVdvfz3": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "19wRuwW0DBPwA2NduOQ2rx": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1A9aTEU4z9SwaqEUwI8Lx4": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1AD2j$SNTAhBnN$NNYqXG4": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1AV_hs6Kf5MBG2ZRq0OyR0": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1A_ELmRfT6DuuCCqJYimXQ": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1AhWX5khb3eP6V6d393etE": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1AhlHMJ056E9Z8jbCHAyal": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1AtB01imf94g7vyKEx$EUO": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1BQPStyIP71erNv7anlefJ": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1BnMt3vVfFpBiFgNfeOg7r": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Bzc8uSZD4XQVt_ohtWZId": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1CTGUsNkD2iQBMpcLlMjAY": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "1C_2jEzdDEK8Xv0nCzYd1Q": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1CbKRR0a92Mut22gOUS8EV": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1CsGhnRaDAb86NCoCwC08x": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1DGUzGqYPA48wqrK_0zvye": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1DJtnvOrX1OOYupc3T5tCZ": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1DSGX6PF1Ci9x95ZttlYHY": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1DWAGIZlj6RAB4An0ALhY$": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1DbP0KrnLBu9P61DsvE4$d": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1DmuGbPJ91dw5Kcyo77jdx": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1DrFQ$L096euRQX3RpKz6f": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ES9GtArbBLv1n_CK2wxd2": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1EWWqeDT9BMgIJKXOapy7g": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1E_W7CZ8bFguuJuOlGiSq9": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)",
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "1E_lkxjMb4FwlCAOaRCfqv": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1EyK7eWxP2T94jexdjw7zO": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "1FGAmKk99819cnKcUMT2gL": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1FgbE$IVbDyuVsaYa7Qy5Q": {
+      "name": "zinkwerk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1FqYaESPXFuhUVvvYp6cz_": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1G1K7K61r3jxyH3FUlbbvN": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1G6YT_8LrAC8$aW$ayM0qB": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1GALR4lb1EXeRUW8L575n7": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "1Gd2wK2gTESAZkByEgtOjA": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1H3j$_zKfF3f7NmuRnd_KM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1HB2RkFMD9UQq5pmmS3kII": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1HTsnt8sHE9vtJiO2XDVSy": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1HTzx6dK99rxYirl5arG$b": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1HkWuLTqj3CR3hVOSz_5Ak": {
+      "name": "metalstudwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1Ht3sHXY19ZO0gy_WWLMfy": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1I9tCSVyDBEBMZBe$pLoMh": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1I9wybdkfBfQfy1clCu312": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1J9G$AMj5D8ePpFewsM_ee": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1K8DWpehnD0BEnccqnEzBM": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1KHRv4Wo92W8Ab30UPNcA8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1KN7KJjST5sxuq4IDdIZ1v": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1KWjkyI$n118qPzNlbN$tk": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "1Kd0rYVgj3ZQL11$4pv7wq": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1L$7w_vsP2O9IsnEN5d1nZ": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1LZPU6x0L9wOZBNrZ5df2z": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,59 m2)"
+      ]
+    },
+    "1MYwCqSdv7Ix8uPO8cUAsK": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1MhvJn8ib6dAT$Lmr5tFv7": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1Mi7kgLg5AVPl4maq3n2Gg": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MmZYEKF5Fjg0U$Axhtgap": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1N0dLD7_b9g8tFENBqrJDV": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "1NIbBSGgf98vI9bBPL0SWL": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1NNiwqMg95jgPIDXLCuasC": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1NXgN45uzABPTg9bKlCFYR": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1NYbVKmtL3YP2AXrmS9FLZ": {
+      "name": "HEA180",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1O7GR1UOf6r8WCpuroNm0Z": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1OLZLl3a18pQTsfuMNKOWg": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Ozn_$8IX7DAmUpaIvALf9": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1PdtDF7oTDvA0vo83lvpNZ": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1PycZDUoP84w58oDIbUMKc": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1Pz5bTcYHD$O0CoWS9huuh": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1QKjhh_S58EOZF6F8vrJ6E": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1QORPgpTj4YPl0HjFsWYcQ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1QdoUqDr1FNhj$RUw0amva": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1RZNf1j5n2Bxgp3S7pxeMw": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1RvcIXv5r5qApoABUlG0pn": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1SEgqQn0HA4hebPvPql32A": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1SHwwggSX5N85G1pvxbVJs": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "1STt9H3In5quyR1zJeBmHK": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Smy9UIZz0PuzXFjRN_8t9": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1SoaRgKuD02hP0vTyWlgDU": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1TcWO8$wXBkfgTkeXVZkte": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1TiiPVUKD2aPYlSpzVRUs8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1TyYgSSs92feQ6FboiVlCH": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1U2uLr_Iv7fAUjTUySx2R3": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Ujkg0Sv91WPYvXF6dYBBV": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1UlvQl2Fr6x94ewQQV4QYD": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1UwMPl_Ff5TeTm5lgVVmYV": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1V$r0S$c98pPL1roHaiWvM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1Vcc22DEz69QR7n2Cf7_7$": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1VtXJdt4L7kv9XQ9k2M6LK": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1W6YoNnJr89eUNAg7yarIz": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1WCZr3c7r05hqSejiWoWO4": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1WKOi2evr6bhCsVsQkzbKa": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1WM5Q$rAn8rvdvmWcR$vvr": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1WYR3a8rn1PwjMza2IEux8": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1WwDHDheL4wPrM0QpmGNrX": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1X1dyx5u95kBdimFBlNdD7": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1X9_auq7fAKPab7CpdR8v7": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1XAtD5ST1B6hJBF87WWK_p": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "1XEOpfOLnB7viu19VwOX3c": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1XPG8aW2HEnPkZs$_nNEgo": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1XUARZ_Oj8K9AyF3GV$kQz": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)",
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "1Xeom_rPb9RxptB79DEktP": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1YAmFJ8PrFRPmTAUAfERk_": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1YCu$eFwfF7BL8140KPXca": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1YQyrPEXHBLxjACMwg6JFx": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1YU8aaFOD8OPwDOmgEQKhm": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1YUFB$oSz7Ph9Moucnpfi$": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1YsYDA1r91IATxaJdCY3K9": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1ZZOV6oCb65REUbS44kIiy": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ZbRQwjUz9DQ98KhTax8G9": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ZjSTbnjDE3eg9hU_V3RZu": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1_5se9Bjn1rgHwEb$U1XcT": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1_BHYRe$fDXBhfHsjJoUsZ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1_yHrjirr42P2omCvRv61n": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1a2lgRlTX5$vytE5V2eVMD": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1a3Bw$Plv1NBGNlNfFUZO_": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1aD6snfpn0GQ$ToC45d1nS": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1aanU1sID4GuGI4tqWjizO": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1adPyP$S5FOuoo6jijMkB5": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1amFc_TRT6hPyr2tODHze7": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1b2PVXDBDCvRuDvEnW$veo": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1beNKg3CL4DfsMvrzccZGK": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "1bgUfDc9n0g9HZP5aLbJ0n": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "1bmmlgs9PEJOO_nbRCiVVf": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1bxNK1wJ15XRDckLWQ$BAb": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1bzY3tIwjEEAUZw62_UiuO": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1cMmlPl490tPOO2RzYrdce": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1chqBV5fz1DAQ7iTYl9xJW": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1ckT0RmsnAARlFpWWu4Tng": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1cqatVBUbE7ulPbW1qGfHB": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1cwdTk8S96F8MVrL$7PPbb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1dAtUpLDz73PTe3wIpQOtG": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1dKTBRP$50WglvLBumwpIK": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1dcl_KEgvBzg2V0ywDT44c": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1e1zdP$AzC4AbSnq$yxhNh": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)",
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "1e3LLVW_12PPIMvff5kUE_": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1e5jDbsmzDIxa_hKrQ03J4": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1eNXen6OD4JOmh7NdHP9jp": {
+      "name": "spouwisolatie",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1ecPb8Ljv5du9f_BTPBG2_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1ew$4Yu4v9Vv4KrOFOPnZH": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1exrUt$krCl8d_cqMo9LQ1": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1f0niA5XD16BehmueNucKp": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1f5AtB78TCSfLPJ75qhQVd": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1fDCTPwoDCwQjPVZtcx23B": {
+      "name": "metalstudwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1fGrQYIYP4IxWBDX0HVDV6": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1fHeY3m7nFlxdWcaufG5ZK": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1f_ym7cBPBg8lptVrtQpIa": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1gJIlGYF99aAEU6VbRDsIV": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1gNkbSVZbFBxFXaKoy2iyq": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1gx0Xl4ar0_QVYF7WPkiWw": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1hBjzJQ_r4MQi5$dPip1Ju": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1hNUSW9Fz2kwTPOlreVhJU": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1hPB35rErB1eLTnNNR9Txn": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1hWMKdA2X8793OkX5$OmQf": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1hsZ5cIZbElRpA938d3ffl": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1i40eUabT0jBHvLTD9ciNT": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1i4_mvNgv86Pj97Vy1f2eY": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1iVtHa_7f46e6rXH_0ueYM": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1ir2UHdQfEdfEBkNwAW_9u": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1isL1SRaT9YBDYiTeS2Ty8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1j$4rRHLz1HQbuBG5lkdFZ": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1j8aXfZ61FCQlpST1A47EK": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1jYNjECon1MwxCVxTA6CsR": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1jf6xhOyP38hazktRRDqpM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1jwWHfvA56nwQIdYNHWi21": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1jxF$_0yTC98_L1BUP3f7y": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1kbGkmCozDwxyH6BQswrOc": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1kqWYCHTD7O9PRPuC8iVbj": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1l4OJxa6HEzfGDywLDzjC4": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "1lEjph7wz1fB40MAeoR5xD": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1lcU7PUgP9PgiWOrFx2wV4": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1lwY_TdJr2cPYIacxTvNwI": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1lyoimFmL5zA5TFPtlaokD": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "1mT7Bow8PF7PF6vCUEchmm": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1magbedPL42RAhf3XfDKY6": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1mixsyQgL2yPSXNO8DXz33": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1mqSCWO5bBR84dhZ5SEDMu": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1n$EpDaJj77Qx4eKJyFNzY": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1nOs6Hg0v9fR$sLR1LjIyX": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1nZz9768j4pAFS7rcljTUA": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1neRZM3Jz4YRFBbSzyVXpb": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1nk4MALuvFOBEQoHF5$rG7": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1nrtcIEWXCJBl2_he$mODZ": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1nuR7Rs590TQ5OKJ9Z1uEI": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1o3JNwlLT2pR5xzj7dIHdp": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1o9IVHY3z6jPb$8UF0w0pc": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "1oG8K7PMn35RVgxyYflbEL": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1oHEx35PDDzQFKEx3RZUI5": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1oJyju8TLF2fHh517_OS1e": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ocvZUdNzBqPiJsdrrFn1c": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1oj0t$E6HCLgy3dI2OlRsM": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ookyeC7LE$AaPpQcJd5pu": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1oraHrHF1Dyu4SuSnO8ARQ": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1p1FF_z_f4WQbihlDHKOVU": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1pBD50fUf4HOQWY_FkoYJT": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1pjf8_QnDCkB1dNjpKR_lv": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1qEc_xJ5f3yeVcsCS0rZ7V": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1qHBiNfAHCHhBLrRv9Uyf5": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1qSuEDSd1E8ftzFK1HXdBc": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1r5cBiWc5CL9A0KNGbzrzM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rSzOTGwP5sAz8s_QFzsbt": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1ra$MdZfHBPOSr$MO20fsZ": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1s8is3Uiv7tQGUsBmvA$Si": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "1s_rF_1un3wOdkmGxpCfiN": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1tE5Pvx2b1b91s5G2OMYFP": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1tYO1kwy17RRUruN2aoAOl": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1tcWGl1LzD4PaO22w5iJ$y": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1tmLhF7Cn61RudeBvrE04v": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1toAPIPJD7oPqBKCS6Nz$d": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1uRc_LHwLCmOpEs$CvHIwc": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1uUPZpr3j4Lhny6RrkUukO": {
+      "name": "spouwisolatie",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1umTqd3qjB5xn4xlPSMoml": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1us$eS2XH6h9DpSVtp$vYM": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1virtZ$r5EUAHNnyzDVvgX": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1wVDx$yUr7JvYDVbX62qca": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "1wiFMRwA14eOSQ629Ds0EN": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1wiWGNReP648JAaHUzIpH7": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1x4AMhoX5FCvaqi3Pl_pSD": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1x7Mc6nmT7bwvgcqGXCkvz": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1xGRL2W0f9oOLYrSo$ob8a": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1xkmYzLHD1VPKdNI8y8Me1": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1xxJ8dxUX8FO1xRHT446SR": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1yIET64x99PfQ4ri7yb9K4": {
+      "name": "binnenwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1z1vUhjSD0DA4$hE7I0_5_": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1zGerOGCD5Rvedyb1slEai": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2$_Kkal4jC8BFBilJN8I3K": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "2$jpBsfqD9mwGiQ1MIMyCK": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "20cjtlT5j2yRhg3KCrPNR1": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "20qiUKbuDCo9jUCIK_Aq9A": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "21bpzoYon9TeghbO0ho825": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "21dR9W9x91fvuQePLPaWmj": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "21iVHGuE5Aae60NipXJ6ao": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2266ahoUX5twjwxCprNIE$": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "228l_jAhDCs8IltPd8fl$x": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "22BCGZUH10WuKzQoQbSwhw": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "22UbO4brrFvQJCWjanZuvV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "22V6iCqlz6FBLNTsOBRNQ$": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "22dkzeSP1C2vUCoDO3J0FD": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "22mAbcvOX0$BQrqP9Ht5Wu": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "22wVacMRr0RfER8E2O$vLe": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "232kvyKbLFYgj8ZO97j_As": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "23NrJ1a$r1DOY9eePDI0DJ": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "23PS8rQv5E1BulEvT_9Lm4": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "23WtecHJX4cB$W9D3l89Gz": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "23_VOHnPPArRsc$svE7nkR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "23nSY_Wdr7lRZ4bELCuUa$": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "23vbTQ1Xb6I9RR8JQjRHhM": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "24$jwl0afAx8xKI8Xz$brq": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "24AsVNrK12ieTYzCHkhC5E": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "24KQNv7ID5k8TEYH_QWIPo": {
+      "name": "metalstudwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "24_ACX2uf3DQHvDbd2z98c": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "24dxcSg8f1yBqpqT3Ttjz8": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "251MpPi5nDfgW6sNnBdgEm": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "25xnmjtXDBEeYnceWKw7hY": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "264trgx691ZQ1dy9itipVe": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "27SAqTJ4n1cfkb4yN$O3Ny": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "27UY7Jvcf9lwFMjSTxNQnh": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "27avDheLb5IRUF3u2QaId2": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "27hOrbxS9AhO93h_RDjqPg": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "27laWgAXX3AQWepVcTmr0b": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "27uvm4mVj9Fh2G4GW$nbBr": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "28HZd$WzTErO4P_xcWWr2R": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "28wb0jU9b5qeDiiKq5PVkR": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "29$cvhYMr99eZZSTXex7YO": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2A$7uUIbP13B7P0LW_wNaR": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2AN3EpcXvFk9pPcpHH7MhD": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2B0G8J6dD9_eLksetBKO8G": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2BTB5LQ8HDNP8ojpnQFMGW": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2BbC$n0yrCdeZPo4oGzJUF": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2BnTMgxmnCCvzxNQCnUXN0": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Bxgu8k2L9pfsSj3Di_iJI": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2CAjyYu5rBgeq7raWO$nCM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Ceuxj28f1jeasNbgQdOxb": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2D4tEzzn96KxhitMgTCmsY": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2DXswjBO17YBftrJtbKRyD": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Dd7N80nT6xvZLlvwl32zj": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Deg5LVyrBj8lmqeJEcC9g": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2E0UIyR1D8MwHXB_I7Dkrt": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2E6mo2HkfDvuJiRRG$wc1e": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2ELxAjp9v3euJJCvWVVMtg": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2EvgfrVCvBDRKMUr9VcRni": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2FEj_vwVnA0wmw3ugle$qu": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2FJRWxBJD9PAYk_P_Dp7uD": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Fvh2bjBf7VvAXtB48RNxw": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2G3UTfDMD1egi1bydvtHzQ": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2GZxODkNP6YPny_4TNjMbw": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Ge90Q03n0MANbJpOUtA4_": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2HHpDv_uDC4QWow2JwiAdZ": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "2HKSZ_NNT17fle0rgo6vqX": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2HMywdZ4v9ehAMv0ULqY7g": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Hagr_o5nCPha8GzqG_2Pz": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Heu00tLvFlPQxYnPGx8AX": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2IBK6_51z5PfBrZG7jZNaY": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2IGgkY9NzFsO6L9Hw4opSW": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2IKZYPom90NBBWPrDMsabL": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2IddtI00n0rx1sVzeIOFgT": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Igex6onTAmfhouHOSUg8V": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2IwaDf7jv9jQ$qH1aQXS$b": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2JPdNMyFX7BeGxw9gHJ640": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2JtUzxXCjFj9jo3oilNdf7": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2KDiiUOLb3WAKWvMvjXliZ": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2KG9S4Gt1FQALCzumz4aA4": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2KGpm9zbnERBaMzt8D8bA0": {
+      "name": "zinkwerk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2KNXXMxvT9KwmfbIdOJvFZ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2KaTlAZm90L8ylCN2TaJL1": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2LUMJaNrP2fADnpLMmofDg": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2LY4pySAHCMRiOW6gZJB2k": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2La$$5$C99PhLMBg99JnTe": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Lfx3m2W1D0BCPLmz9wvjA": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2M22IcCrn03fbyBol6Rumq": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2MAqitKn16se9p5LgkoYa_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2MO6G9ns58cQ7xbcbLdz06": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2MV1zwMlv8eBvA2WOEAaEl": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "2MZ_55Sir09gB7BB1JSjYM": {
+      "name": "HEB220",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2MtbYSfxf8XPurPixjtvdV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Mx9$tysPDB9LvSC7Uga$h": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2N820yNsH7P9D_BMeGcEoL": {
+      "name": "binnenwanden",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2NK6L58znE3x0jludfQJ0Q": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2OIA0__HjCZQxPB5tMpYIZ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2OIWyGBtrCv8R3lIQz00C2": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2OPGVjLwDF0wVnNywHUUlT": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2OaEEPzi95OPFp9P1ePXMb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2OqtQrOIX5SgQiSf_8aJMC": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Oyl7MsmPBX8QuVAq0wJYB": {
+      "name": "dakopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2PDIGVW1b4Nhx5UPa0fgz7": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2PNj2dMNT9wOnOYdNWAJQh": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Q3H7PK0j5Ux$7$peFmB5R": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Q8nE94kjBZQ9wLLJEIi7a": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2QS4fApj12O96cFKByf97B": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2R6F$WfUj7CApH6kaihZst": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2RWoWcgO9EtBUuIPPuD7Ot": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2S6$Rb90X6tvy86v8wMz92": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2SOFxehfn3JPJ42eH$gc$u": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2SU_$70IL9dP1iVpfoyafy": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2SmJxWwbTEYA63r0gQnWj5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2T0DOi9tPAZBOy2yjz78BB": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2T7$dTI398mR34m8VeIw4m": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2TrMoO439DxOlECBPIzO4S": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Tzx7w7sD0lO244T1GnOv$": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2U1qifvIT5ge0qFAL2VUhi": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2U35Nruyf1cfc5sAWDSOX1": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2UBG6Q7d5DDBiKwUwETbGj": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)",
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "2U_SkEGmL8xOrgREFcAZVV": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2UekXAS9D7Axk7JFozbAzY": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2UnVuOVXb3bOG3sOJS1Zt2": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Ut36uLtj0Jh3lOXK1Cyx8": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2UzzVHoG57Ex92Zgaglbg7": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "2VqWkt35X9yQtKQjAy_Y54": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2W6rpbxm58RAbCztJP9sdd": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2WJjAV$8v4jOUzZCgqJCcm": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2WLxeUa2P6K9FRHev9QauM": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2WW_2E6Wr1XPPZ0X1qKYGa": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Wvxe$Unr75AYlno91cf_O": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "2WwJToEmn6mgw6GIYna5Lb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2X7K0fWBzEBwqRpOV6YOyi": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2X9Gop0bn3_x38P_1PGdAJ": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2XCsjo3zH3CAxHIt06QmUl": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2XddRbY_j3x8eYm8oLZNXR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Y17p3X0LCwAQBBap_PfuM": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2YCvD5WXrDSvT9hUS0mMVk": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2YMzAzDVLEQgj6C$uJ2tng": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2YRW0FRcH568BvC0n1uc$J": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2YbkLyzAX8sufEsj84l6uQ": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Yh7gIYaX4WulI_7Z3daPi": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "2Yxhz5qhH1i9kybbH$UNZe": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2ZLM_28ojBLQ7MioqA3Uef": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Zb5jLlbD7TeMfbx6mSTkJ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2ZiBjkwkb9Tw6JeNNhNy0C": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ZmMppv5rB_ONxxlP9t69C": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ZxrJoH7j3rw1xO07B0ZYF": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2_GpLiXvv0T9m7AS0ICKWx": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,93 m2)"
+      ]
+    },
+    "2_OUbn7mHDGB97nRdx_Swc": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "2_PD0MSuX0qeRQMB0w4Za0": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2_Spc3OFz32f9Immwt4_7U": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2_aOxJ0vb20v1d5h5564dh": {
+      "name": "zijwang dakk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2_xwfAnHjEGheqbGUc$BD5": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2a_A$QZ6b08fzqzP6NgKSG": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2adNDBpjPCFx0FjvPzxk4J": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2akm4sEy18KhqU2hKpeBjG": {
+      "name": "binnenwand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "2b61I4AHX32vjsQH0d5lBm": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2b7WxLrT1FLu7GMANtCr5t": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,59 m2)"
+      ]
+    },
+    "2bF_5Z$bP7cgvJFU8oBkt4": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2bPBntZlnEWQZkSXsG5rjA": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2cIQdivwH0euQ3BKDTFgOA": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2cQ8IsS3f1kgXeLJHb2tT5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2c_AF5wUTF1QfaOZAIaoc_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2cmOQW7ZP7CfQK001MVxdq": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2coheVmn10xepG8L0X4PjH": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2cxNc1U458jxM3uvZIlspS": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2dOn0Rxx9BM94apjsEB5vG": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2dez8YjPv64QJPWa_Ut4T2": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2du1puVD9BDw_hpi4B0Nz1": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2enUmZYnj72OcwNACl0MbV": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2erHyW9a93fxiTHg9u4oBi": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "2fHkuDHjr38vJAKjFDaE3T": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2f_jfRbF16awLBIX13CDXP": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2fm0mZk$v1jv8Zx4BDh_0A": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2fzWmLwVz2EfmQoLFRNg48": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2g0OC6oRfEpR4HdBbXhEgE": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2g6fy99p57ceCZvYI38wB6": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2gAZt67mv01hyopJN2Rsjy": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2gGcTEl0v0ShI1XyO_sw82": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2gZ_44VXjAzRuZlYzgvtgB": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2gjTPGDyjDTuEPcBmfMwbs": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2gk5LNkGDAiezdMGuWISeo": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2h$Xm5_hj2BPg_mcmbgCTX": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2hTyYpGXf8zwMdBgZbdyko": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2iybqz3VH31hQztnwzJ_m7": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2j63fN3Y59zRTHstj46MKH": {
+      "name": "zijwang dakk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2jBoz4nA9C1vNRWoQoZCw5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2jJFj_IGr059N3J3HNyAwC": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2jMXaMTy17tOYjMh68W7L1": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2japyIy5LCh9FVOdjL5sLr": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2jijIuzvzCMOBIhgOoeHnJ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2kHoPrvTH4mgO72z01pDOc": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2kIIPu2dr7u8bW3NRIt$iN": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2kKKJCXvb8$uI5opVLCiQE": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2kVGJvQZL0mAExkU9324Cw": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2lqfq7sKH8m9jYTXN7BC2$": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2mrJJwztH1lRWVSJaE436d": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2myRdJgB9D0wiu$QoesY6D": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2n3hZ9D9H7_hLXKsBS_jtw": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2nSc65nI157BNwwXccpxDw": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2niu_iCwbDV8RTwkUv3xsE": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2oV_twygL43RXSDJkKYyRa": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2ojCl65KjB$gf89qZ5MPfM": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2pbiLPvmT6YhtHLcp58S99": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2pjO5b_CT3kxxZIf3Tw3UH": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2q0u5mFjD3c9$BNFL_WViM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2qVLSA1HjA7gEgBcbFEzQ$": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2qcWMhv7X4VQw$dXrmGBAF": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2qiB0g_bbDCwZnOTvTZQ6o": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "2qmQa8nAP39u6po5334l9v": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2qrvVkep90wRmHFYUy6Epb": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2r3yVmqMz9zBwYn9dHz5cg": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2r4e5jHWfDKhLK$Is1u15D": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2smbTp1y91MwG0CTtOPTAw": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2tetrk$QnA49mTczDExu06": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2tjIJivgn4axF2ewhddO9d": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "2uaQbPNLX7DebbkESsYvDm": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "2ukcZZOQX3hvxY6QWgxpl_": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2uxQYe3V1DwQZELRcxkhw7": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "2vAiffEY52lh0rPlxXkYKc": {
+      "name": "binnenwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2vERavliX7vPHqu2JyhRbq": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2vp_usBx12Y9PoQVOVdAFF": {
+      "name": "dakopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2w4EgNvcXAxOiGhNOfuw5d": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2wk5wp3ynE2wbb1It1IEO6": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2x8r6mt6H0iR0MeEuwtMRQ": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2xj8og5ynADeLjrLMO9aln": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2xq1ULvID0ZhZQyYVmG_x8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2xvopPXd9EPgibaSIHI8QI": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2xwBlNrYfAchV3j2l7PQmO": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2y5dj7DKz9HvF8RYQofDdA": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "2y7S$CXyT1DRAHPrckxu7F": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2yGqckrs5DJB1X5tSmguGd": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2yLc5m5c562gD7oOBx$ZML": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2yQ4V1Ntn8pezOU3JG_CmS": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2yalEh8OrE6uikJxoQiffi": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2ymUTayl529wjp97XSqlkb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2z4_cLW$15$BrtLnL76nI1": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3$8ejY9wb5C8Jjn_NcmDw8": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "3$BXedLBf6D967CVOV_ebe": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "30PtVh$Bz9RxwCgystZdJF": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "30WEjfMGz3yuCn14_i4kip": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "30d$oCa$97QwnV5mZFo6CK": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "31FCK2RS1EuA77gZKV2XJD": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "31GveRCSn6hRz9bWTBO2Sx": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "31cdahMYL9Leho2rsQXm2b": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "31jJ7Ha698fBHCB0Q2e1yq": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "31lVOEPPf3OfIKg0uKPRBg": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "32BRu80e95IgL7sHEAaW4K": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "32E8b9i1P7UhL7O9IHfQCU": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "32bwVvXTDCG9KBVnHmBwjs": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "32cOaJbaP9VOemKr9dYXtJ": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "32dcXAt7L1eecrauLpV4ya": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "33Kr6bhDfDw8cTao1b83Jj": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "33eAV7UCH3ivGX7bdUtSDE": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "33iRUNUF92df$CutlVAdNZ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "33popJ5N52LwaCtgF8Y$AT": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "345cLww$z3hfdn3CHwKK17": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "34GGUGAIfFtxn_c95jJjry": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "34b24nbdP4VwDBt7cfF8Fe": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "34boc95w531BHjQiyeFScJ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "34dgUlG_HFa9U89iOrk_fk": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "356ZU40Tn3tvjGsP5aWnKD": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "35lxEQN1T28BAoF82UTp4p": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "35sB5hOEPF8R6s4haDTl5Q": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "36GtlHnYf65hKVVR2kT4x0": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "36MTIgYN58Khj4Maho8oRs": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "36OsTfoWX4eg8RrFRpldHA": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "36eFiCXT94$epOezE7s33Q": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "36fadt$IzDJQp5auYj8rIY": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "36zbLfC19AzAp$d2fdItUB": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "38M13axmP7Leh6M0bMLeTb": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "38WNoiHDr8$Pci7QltamW4": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "38l_4KH3nDcgCphNLY110B": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "390EuePXb0OhjRV8d6hXqE": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "39FsFjEuL3dQTjl2UmVHsR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3A25_zHmn6zvE6RvYBE4vL": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3AQlpGNjz5ZxSqHIv9tjed": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3AgwZ0_yPDWxtRR7SaGGUJ": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3AuBloy8rB2eQ0HbTV6Kmm": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3AzhV62db1MfXJq1r$2nl4": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3BRCTWHh97vv6a5eleOkf9": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3B_EPhJC9EX98Fq1ITIUW2": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3CCqrUrgH98hGVnr$ZylYm": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "3CZIhaS2X1axbTF8juS7Mz": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3Cm7scBgX4CQfTVM1hDF2B": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3DFmbDSn5BAgDHvlMxbGui": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3DGQEI9Mn2nPDr4X9RyE6B": {
+      "name": "liftwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3DYtDpqDX9rhVnEVsp_6RQ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3Dr$ZMMa98fvt8EYMKh14n": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,59 m2)"
+      ]
+    },
+    "3EI5egGLv6nRBJSwVb6eY0": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ENEtGT0P2aOgPXmUQo9L5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "3F1ISapgvFFRkUizflbUfj": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3F8rMkRHX4UAiIGKwBj4Po": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3G7K2WeEz6Yx3gFem0Mu8N": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3GgWasL7D0fOL_Qpv72VFd": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3GkVJkbxnCbBdkElcpIobH": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3Gl09z0xrDMhikUUZFZdvs": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3HGDkJWG95UBZE0EMTLl3$": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "3HJMA9pCn1i8rqTdIY$FGx": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3HN6IBOw1BKQP$d73uzLdY": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3HXFH_8Kf3ixZJgb7yuoAq": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3HjuPtyCPEmu97uERfnDFZ": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3I0Mxc4yT7gf5sgqnBUCnr": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3I1SbPKkL4zAlqpNU0djSH": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3IBoEUFNz2$emtSPYYqofy": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ICu8JsLD61wqtGk04qXlS": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ID8ceKyb379nQYi3vIepA": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3INImExTrECfjOcTurcdR3": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3IRzbnRxr7tRoMgqhcMpHJ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3Ifq_8Lo53s8fC6K29hy5u": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3IuK8$_ZHAJw36Pw2gYslk": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3JDoqJnxb3Qe97DYfI5N2S": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3JOyzS90z7NeKMHT$tWAAY": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3JaHyppKTBGBnjCpoJt74v": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3JeDxuVZX278wZ3E$qtYHH": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3K4sDlB8X44RAiRHBjIKFR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3KLNE8pAj368INMalwxWdL": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3KLlSyI5DCcB6QscI2_oI8": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "3KcIMVZ513EPkQumNhbyRn": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Lm974x2fEPgfOqVvZhvhW": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3MbRrcI21CE98sQs6t3WRb": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3NC1dYtqL1pRl7LXtoL4QX": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3NCom$HHj0s8CFEaff7h0i": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3NSXc2oELEOw72BpEhL0Ho": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3OJXj65Af8H9Kb3GdS63X8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3Oiw4ELt1BaBeKn0mDwzz7": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "3OrWvPz0L53vVLOcg_Vn3G": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3P4RIlUy168hDz$MlvcMUR": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "3PZVRZoyjCPBphjdTHYUqQ": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3PoAJuTXPF$u36k5Jw4Z5a": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3PxcgMX$j6XBsE4BpxQwRG": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Qdk$TMxrAuxQZiJv_K8BY": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3RS6khZcH6xe8eMNVG5kXl": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3RyopHsn1E0hLmAiylGg_C": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3SaiHeo5LCzxecqRkOokyn": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3SiUNxtcn0yQfTkkuMVtbA": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3So0XCTXD9LOOcc8xKMDxu": {
+      "name": "dakisolatie",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3T64ifBjD5OekUb06AiV26": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3TJALh2NH58fnTzUmA$xeG": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3TK6FSuO9AVg4wHo$O3IN3": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3U4osC1p5EqwcBW8F2DJ6K": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "3U8ZfIcGDBM8M360rr2jhL": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3UBXqYk8n2BvnMbkKRXzyl": {
+      "name": "spouwisolatie",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3UBzAzajr5q8aCMUEKo4IM": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (4,99 m2)"
+      ]
+    },
+    "3V$ApEXsL4kuuKln_RMzx7": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3VPfLoGP93KB2ZAJFRlJBf": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3WCGRIZNT4NAcbbtFlpxb5": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3WUNETxEDBHgxwkEJ1_F9C": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3WwF3ZUyL3_uOcvhLTlqWJ": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3XEK0$_UjAlwZMwjEFf978": {
+      "name": "binnenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3XUEQ1GvT3jA_Nbj5X$65Y": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3XhijCDWT4ERsmhSDcEHtI": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3XkSf_WQD8B95Qz7TinhrH": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3Y$Zx5Ilj20hTV9WYChn09": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3YDoxP1AL2yOJ5bNO5Jiuq": {
+      "name": "zijwang dakk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3YJAx09Gb8txATI7X87x8M": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3YLJyxBUz6tByQMuL5pipR": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3YLmLSYqr0kxvCC8B81IAJ": {
+      "name": "binnenwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3YPowjOjj46Aqmo9CcIrNd": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3YRqEfrCP8BhPfrw8ie$07": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3YWZENIwv2cRjcU4sOLnqp": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ZAgbgjkD0pezbSpKh8cdk": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ZRYiyNFH08hTnlj_xBf6i": {
+      "name": "K80/80/4",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3ZT2xJqOf95AGfYHSE9vsv": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ZrkktGzTA2AWEqU4sCSU0": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Zz4XmJlvDFxeVZaItTzNS": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3_66xHtdD00gDHwZ35Ec9S": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3_FNYG$Or15vzG_WtX1Dra": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3_KLM_wLHAKg4j6BDg71DH": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3_LAKs74TEqwOfhvpeA_i8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3_Q_3tf9PB0gG8Y6HQWbnU": {
+      "name": "metalstudwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3_iO12ohL1_ho4SqhocKBY": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3_oxSjdbrA2vjqc3bWxC2g": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3aKP_9cLT3Ieogd56ggYoH": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3aiixXmHf4dwr8r_4mNw9M": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3auUwUfW5EcPaoBpNctlU$": {
+      "name": "zijwang dakk",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,92 m2)"
+      ]
+    },
+    "3azr12Tev2re9qfmBJNIhw": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3b2U496P5Ebhz5FROhTwFH": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3bBEEvVlvEOPrWs5bUkDsC": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3bi7XzqxrAgvdZxFnRwTdg": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3cAt3keOr5IAqWcOfbuNAx": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3cOY44wWnFkPbXVkjznSkG": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3cn6wvI6HBu8fP4N2GN$Pj": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3d11Rmvt5C6wKW52oYhu3V": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "3dF$AXDDD2JfNM4ZDuGS7e": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3epBlD4FL6Ufbmfw91XuQv": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3esS7s_B5C2huIWmYkTJPq": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ew41MT6r7mAzMkFPWSywt": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3f0aTSwAX5n8oP68ncSUmN": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3fqzucbC53mxxunSDyWwfk": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3fuVRb4XjElhDvhrOaoTtt": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3fvHYcQET4afRMl3etTK4F": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3gDDH0mPrAzfl6dkPI$_uZ": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3gGaKULxj7vO9NevTUNlI8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3gGmXbzkjAsuTeSl1cCGLB": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3gnRbbc8f6xQGyDQ_NG2tX": {
+      "name": "zijwang dakk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3gpatvkjr49vcFHijloS3i": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3h7$q77HL7y9ib6jdqEGaU": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3hGtOZh1X55h2EX09_BAZ8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3hPtwB9dPCrQf5d5COzFHr": {
+      "name": "metalstudwand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3hhiC8yEn2tx0W6$uE_WXb": {
+      "name": "dakopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3hnrJo__H1th0M6JbxK0Qr": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3i6YzLPHXAZOX3pEL9NEAY": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3iLtr1ui53ofDOXEJX4gjT": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3jpVM5WZ16TeYfO6FM2grI": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3k13aCiJv7Fu95f6UUXxdk": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3k4bKKm$v3NhnNEkaCaT8m": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3k5fe2GK57AvySEimXpMxv": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3k9bZEdJLCwuXfzWidDJzy": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3l4LEWO$z6PR20zTCo0DFf": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3lUaefqT14jRJXPO$2osRB": {
+      "name": "kozijn",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ls5Dm7gH70eH43kipcgjP": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3m4OJLKQX4J9bJbE0bieP3": {
+      "name": "buitenblad",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3m6x5s_8PAAhYa93zpsvfd": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3m9Hy1M75BH9VBDXHStI5B": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3mtBIKwCnBVfKSlgawrl_w": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3nEQqWNWTE_v9UbdS1CA69": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3nFC64uPPAXefSRxq6JPqA": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3nSAIsE4n8sBWbxoPQ5dy9": {
+      "name": "opgaand werk",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3nYzqJhnfBkOR94jliuzeB": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3nxm$Vo_XDpfp4gaIyp2WC": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3nzu1bC1j9OASHamQgK09U": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3o_mcdn_vDavgeLjgPBtk_": {
+      "name": "balusters",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3oqP6P3$n36BZp4seP6jBe": {
+      "name": "balkonopstand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3oqbpQmTz3fuh9S3tOlVZ8": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3oyt7VQ65F5h4Da$jUkdcw": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (7,76 m2)"
+      ]
+    },
+    "3pWgo6GgjDmBfRg2bfmX7L": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3pvjKhWy13A9kxY9YJFWVh": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3q8aQLG$L6gAja8u0czfoL": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3qaZ5SwO91k8OhrLYeYPcl": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3qg7Wwbh5AgulDFXBaIFZA": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3qnBAcChL4Vx5NE2JgS9DS": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3qwqZPeTDBNwoqje$5Pg6w": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3rm7AtWY9BCBlzkw8$VplC": {
+      "name": "opgaand werk",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3s4FafcUf5Vg95Kh0woD3O": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "3sE5jXfPXFZgznxuVnQdCO": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3snxK5QIXBjQysiZr3CAkz": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3svLfMUGz6RPW7zJsbFgVI": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3tN_Pe9Bn2su$y5CGYbUOg": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3tpY8iJUX04PuBuWL58WJY": {
+      "name": "knieschot",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3tpvWfQc93Pe5RIl_A8mon": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3tzmbbcRPEK8Jf8X7AmWZI": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3uEMFzu2v8GRvw8kqNTH4S": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,57 m2)"
+      ]
+    },
+    "3uK_yBk8z6lRGEp4$AHAFc": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3u_b3DOQ16afvB2LeI3Bn3": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3v6F8ltknAuO1JJakibxnI": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3viuF7apj30uTA$BnbmYaw": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3vqnVssVr38PmaxLZRlkiQ": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3w7zWNbiT30PlEUwkvLv6L": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3wYxh0Tzb4jgB_lNtlAast": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3wdTux4mr1TeVnxQ0KiOLe": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3wmcZBj8H2fBiTVxjtc76K": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3x9ycAZtX5CQvD0YimN_OD": {
+      "name": "separatiewand",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3xRi6WMC572By6DWM_I3Le": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3xUCqCcT5CIgdra2gZT2db": {
+      "name": "HSB-element",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3xcd5VqGn5fu$PUBghiK4$": {
+      "name": "binnenblad",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,50 m2)"
+      ]
+    },
+    "3y4kc37zvEUflqx63YvD_Y": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3yqEwZ1P5D79qJ$faewDWt": {
+      "name": "binnenwand",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,02 m2)"
+      ]
+    },
+    "3ywoxytLL6Ze1mLcpf_CYM": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3z8lK3Ks97n8dXJTJuwYh1": {
+      "name": "liftwand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3zCgRefMzFTuEzSGylppUP": {
+      "name": "separatiewand",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3zYx8Hv3PByAOvjIddv_ZR": {
+      "name": "buitenblad",
+      "class": "IfcWall",
+      "label": "PASS"
+    }
+  }
+}

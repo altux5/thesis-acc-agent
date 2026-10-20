@@ -1,0 +1,144 @@
+{
+  "case_id": "stair_tread_depth__nus",
+  "rule": "Every stair must have treads at least 280 mm deep.\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nADA and ABA Accessibility Guidelines (2004), 504.2 Treads and Risers: All steps on a flight of stairs shall have uniform riser heights and uniform tread depths. Risers shall be 4 inches (100 mm) high minimum and 7 inches (180 mm) high maximum. Treads shall be 11 inches (280 mm) deep minimum.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. The limit applies in inches as written: 11 in = 279.4 mm. A stair fails when its typical tread depth (the horizontal going from one riser to the next, shared by its regular steps) is below 279.4 mm. Riser heights are covered by separate checks.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_068_ARK_NUS_skolebygg.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "09MpxVkC91pwQ$SiU097gn",
+    "09MpxVkC91pwQ$SiU097qP",
+    "0AlmywTfj8vhbhDiI1W4Fx",
+    "0AlmywTfj8vhbhDiI1W4Sn",
+    "0kuFisJAD14eVj$fTo9Ppn",
+    "0kuFisJAD14eVj$fTo9Q46",
+    "0kuFisJAD14eVj$fTo9Q5d",
+    "2SIAfht1TEl8lQwY5FCMu3",
+    "3iPInG7tz8TQ8k$JBnn$fn"
+  ],
+  "labels": {
+    "09MpxVkC91pwQ$SiU097gn": "FAIL",
+    "09MpxVkC91pwQ$SiU097qP": "FAIL",
+    "0AlmywTfj8vhbhDiI1W4Fx": "FAIL",
+    "0AlmywTfj8vhbhDiI1W4Sn": "FAIL",
+    "0kuFisJAD14eVj$fTo9Ppn": "FAIL",
+    "0kuFisJAD14eVj$fTo9Q46": "FAIL",
+    "0kuFisJAD14eVj$fTo9Q5d": "FAIL",
+    "2SIAfht1TEl8lQwY5FCMu3": "FAIL",
+    "3iPInG7tz8TQ8k$JBnn$fn": "FAIL",
+    "3y7w$rQQ92sPNEVtsgzp_O": "PASS",
+    "3y7w$rQQ92sPNEVtsgzp_Z": "PASS"
+  },
+  "notes": "504.2 Treads and Risers on 13 IfcStair: {'FAIL': 9, 'PASS': 2}. 2 unscored: An IfcStair that is a part of another IfcStair duplicates its parent stair; Solibri reports the parent.",
+  "clause": "ADA 504.2",
+  "source": "solibri_reference.py::build_ec3 (ec3_nus_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 13,
+    "ifc_sha256": "362f0f5e5ad35557014100a6c4de75ec166f6dbd9197933170dc1423f4af2a76",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "tread length is .* length for the tread is",
+      "report_file": "ec3_nus_check.xlsx",
+      "report_sha256": "90c05f08536b3d573876849b4be498f33c8c6e47af3819fd8d28a8b94b675f1f",
+      "rule_issues": 14,
+      "matching_issues": 9
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently. 2 unscored: An IfcStair that is a part of another IfcStair duplicates its parent stair; Solibri reports the parent.",
+    "unscored_ids": [
+      "3y7w$rQQ92sPNEVt_gzp_O",
+      "3y7w$rQQ92sPNEVt_gzp_Z"
+    ]
+  },
+  "provenance": {
+    "09MpxVkC91pwQ$SiU097gn": {
+      "name": "Cast-In-Place Stair:Stair:4428775",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-1.6: 272,00 mm"
+      ]
+    },
+    "09MpxVkC91pwQ$SiU097qP": {
+      "name": "Cast-In-Place Stair:Stair:4428879",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-2.1: 272,00 mm"
+      ]
+    },
+    "0AlmywTfj8vhbhDiI1W4Fx": {
+      "name": "Cast-In-Place Stair:Stair:4251515",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-1.5: 272,00 mm"
+      ]
+    },
+    "0AlmywTfj8vhbhDiI1W4Sn": {
+      "name": "Cast-In-Place Stair:Stair:4250545",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-1.4: 272,00 mm"
+      ]
+    },
+    "0kuFisJAD14eVj$fTo9Ppn": {
+      "name": "Cast-In-Place Stair:Stair:4430332",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.2: 272,00 mm"
+      ]
+    },
+    "0kuFisJAD14eVj$fTo9Q46": {
+      "name": "Cast-In-Place Stair:Stair:4432907",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-1.1: 272,00 mm"
+      ]
+    },
+    "0kuFisJAD14eVj$fTo9Q5d": {
+      "name": "Cast-In-Place Stair:Stair:4433002",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.0.1: 272,00 mm"
+      ]
+    },
+    "2SIAfht1TEl8lQwY5FCMu3": {
+      "name": "Assembled Stair:Stair:4959975",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-1.2: 272,00 mm"
+      ]
+    },
+    "3iPInG7tz8TQ8k$JBnn$fn": {
+      "name": "Assembled Stair:Stair:4960365",
+      "class": "IfcStair",
+      "label": "FAIL",
+      "issues": [
+        "Stair.-1.3: 274,00 mm"
+      ]
+    },
+    "3y7w$rQQ92sPNEVtsgzp_O": {
+      "name": "Stair:Trapp amfi:2067496",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzp_Z": {
+      "name": "Stair:amfi:2067475",
+      "class": "IfcStair",
+      "label": "PASS"
+    }
+  }
+}

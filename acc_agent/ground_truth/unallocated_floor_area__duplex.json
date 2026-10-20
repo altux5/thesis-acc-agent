@@ -1,0 +1,404 @@
+{
+  "case_id": "unallocated_floor_area__duplex",
+  "rule": "Every enclosed floor area of a building storey must be allocated to a space.\nSource: rule 'Unallocated Areas' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct.\nBenchmark convention: on each building storey, find floor areas enclosed by walls, curtain walls and columns that are occupied by no space, wall or column. Every such unallocated area larger than 0.50 m2 is a violation, reported through the walls, curtain walls and columns that surround it: each of them fails. All other walls, curtain walls and columns pass.\n\nLabel every wall, curtain wall and column.\nReport the GlobalId of every element (modelled as IfcWall or IfcCurtainWall or IfcColumn) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/duplex/arc.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "2O2Fr$t4X7Zf8NOew3FL8v",
+    "2O2Fr$t4X7Zf8NOew3FL9r",
+    "2O2Fr$t4X7Zf8NOew3FLIE",
+    "2O2Fr$t4X7Zf8NOew3FLPP",
+    "2O2Fr$t4X7Zf8NOew3FLR9",
+    "2O2Fr$t4X7Zf8NOew3FLTF"
+  ],
+  "labels": {
+    "0dxE1Sy6nDqfpDb5vIMN_Z": "PASS",
+    "0dxE1Sy6nDqfpDb5vIMNiA": "PASS",
+    "0iEHWY1$XA8eQeeULq4jDb": "PASS",
+    "0iEHWY1$XA8eQeeULq4jE6": "PASS",
+    "0iEHWY1$XA8eQeeULq4jZ1": "PASS",
+    "0iEHWY1$XA8eQeeULq4j_U": "PASS",
+    "0iEHWY1$XA8eQeeULq4jpl": "PASS",
+    "0jf0rYHfX3RAB3bSIRjmmy": "PASS",
+    "0jf0rYHfX3RAB3bSIRjmoa": "PASS",
+    "0jf0rYHfX3RAB3bSIRjmpw": "PASS",
+    "0jf0rYHfX3RAB3bSIRjmr1": "PASS",
+    "1aj$VJZFn2TxepZUBcKpZw": "PASS",
+    "1aj$VJZFn2TxepZUBcKpee": "PASS",
+    "1aj$VJZFn2TxepZUBcKphf": "PASS",
+    "1aj$VJZFn2TxepZUBcKpvt": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FK04": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FK1b": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FK3E": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FK80": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FK9N": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKE5": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKEr": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKGS": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKIu": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKRH": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKRi": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKST": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FKau": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FL8v": "FAIL",
+    "2O2Fr$t4X7Zf8NOew3FL96": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FL9r": "FAIL",
+    "2O2Fr$t4X7Zf8NOew3FLCm": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FLEJ": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FLIE": "FAIL",
+    "2O2Fr$t4X7Zf8NOew3FLJd": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FLKI": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FLMr": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FLOH": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FLPP": "FAIL",
+    "2O2Fr$t4X7Zf8NOew3FLQD": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FLR9": "FAIL",
+    "2O2Fr$t4X7Zf8NOew3FLTF": "FAIL",
+    "2O2Fr$t4X7Zf8NOew3FNau": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FNbT": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FNhv": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FNld": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FNqI": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FNr2": "PASS",
+    "2O2Fr$t4X7Zf8NOew3FNtn": "PASS",
+    "3Y4YRln2r91vflHcHE5ITm": "PASS",
+    "3Y4YRln2r91vflHcHE5ITn": "PASS",
+    "3Y4YRln2r91vflHcHE5ITp": "PASS",
+    "3Y4YRln2r91vflHcHE5ITs": "PASS",
+    "3Y4YRln2r91vflHcHE5IVI": "PASS",
+    "3Y4YRln2r91vflHcHE5IVJ": "PASS",
+    "3Y4YRln2r91vflHcHE5IVS": "PASS",
+    "3Y4YRln2r91vflHcHE5IVT": "PASS"
+  },
+  "notes": "Unallocated Areas on 57 IfcWall or IfcCurtainWall or IfcColumn: {'FAIL': 6, 'PASS': 51}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_duplex_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 57,
+    "ifc_sha256": "707a032566dee8e969a44d95509be46d646440e2443624709f8d3ae2b45f4656",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Unallocated Areas",
+      "message": null,
+      "report_file": "ec3_duplex_check.xlsx",
+      "report_sha256": "eb382d9a8558816db6474da78e80318d45ee42d92aa9048be085431a09138c6a",
+      "rule_issues": 2,
+      "matching_issues": 2
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0dxE1Sy6nDqfpDb5vIMN_Z": {
+      "name": "Basic Wall:Interior - Furring (152 mm Stud):194166",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0dxE1Sy6nDqfpDb5vIMNiA": {
+      "name": "Basic Wall:Interior - Furring (152 mm Stud):193247",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0iEHWY1$XA8eQeeULq4jDb": {
+      "name": "Basic Wall:Interior - Furring (152 mm Stud):190774",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0iEHWY1$XA8eQeeULq4jE6": {
+      "name": "Basic Wall:Interior - Furring (152 mm Stud):190933",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0iEHWY1$XA8eQeeULq4jZ1": {
+      "name": "Basic Wall:Interior - Furring (152 mm Stud):189074",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0iEHWY1$XA8eQeeULq4j_U": {
+      "name": "Basic Wall:Interior - Furring (152 mm Stud):189901",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0iEHWY1$XA8eQeeULq4jpl": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):190140",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jf0rYHfX3RAB3bSIRjmmy": {
+      "name": "Basic Wall:Exterior - Brick on Block:184944",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jf0rYHfX3RAB3bSIRjmoa": {
+      "name": "Basic Wall:Exterior - Brick on Block:185064",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jf0rYHfX3RAB3bSIRjmpw": {
+      "name": "Basic Wall:Exterior - Brick on Block:185014",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jf0rYHfX3RAB3bSIRjmr1": {
+      "name": "Basic Wall:Exterior - Brick on Block:185101",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1aj$VJZFn2TxepZUBcKpZw": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):203998",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1aj$VJZFn2TxepZUBcKpee": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):204300",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1aj$VJZFn2TxepZUBcKphf": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):204493",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1aj$VJZFn2TxepZUBcKpvt": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):203347",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FK04": {
+      "name": "Basic Wall:Foundation - Concrete (435mm):140987",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FK1b": {
+      "name": "Basic Wall:Foundation - Concrete (435mm):141018",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FK3E": {
+      "name": "Basic Wall:Foundation - Concrete (435mm):140913",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FK80": {
+      "name": "Basic Wall:Foundation - Concrete (417mm):140479",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FK9N": {
+      "name": "Basic Wall:Foundation - Concrete (417mm):140520",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKE5": {
+      "name": "Basic Wall:Foundation - Concrete (417mm):140602",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKEr": {
+      "name": "Basic Wall:Foundation - Concrete (417mm):140554",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKGS": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):139939",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKIu": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):139783",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKRH": {
+      "name": "Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139374",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKRi": {
+      "name": "Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139347",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKST": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):139682",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FKau": {
+      "name": "Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:143239",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FL8v": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):144518",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (3.35 m2)"
+      ]
+    },
+    "2O2Fr$t4X7Zf8NOew3FL96": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):144633",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FL9r": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):144586",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (3.35 m2)"
+      ]
+    },
+    "2O2Fr$t4X7Zf8NOew3FLCm": {
+      "name": "Basic Wall:Interior - Plumbing (152mm Stud):144783",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FLEJ": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):144684",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FLIE": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):143921",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (3.35 m2)"
+      ]
+    },
+    "2O2Fr$t4X7Zf8NOew3FLJd": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):143960",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FLKI": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):144301",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FLMr": {
+      "name": "Basic Wall:Interior - Plumbing (152mm Stud):144138",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FLOH": {
+      "name": "Basic Wall:Exterior - Brick on Block:143534",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FLPP": {
+      "name": "Basic Wall:Exterior - Brick on Block:143590",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (3.35 m2)"
+      ]
+    },
+    "2O2Fr$t4X7Zf8NOew3FLQD": {
+      "name": "Basic Wall:Exterior - Brick on Block:143410",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FLR9": {
+      "name": "Basic Wall:Exterior - Brick on Block:143478",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (3.35 m2)"
+      ]
+    },
+    "2O2Fr$t4X7Zf8NOew3FLTF": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):143856",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (3.35 m2)"
+      ]
+    },
+    "2O2Fr$t4X7Zf8NOew3FNau": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):139143",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FNbT": {
+      "name": "Basic Wall:Party Wall - CMU Residential Unit Dimising Wall:139234",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FNhv": {
+      "name": "Basic Wall:Exterior - Brick on Block:138310",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FNld": {
+      "name": "Basic Wall:Interior - Partition (92mm Stud):138584",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FNqI": {
+      "name": "Basic Wall:Exterior - Brick on Block:138157",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FNr2": {
+      "name": "Basic Wall:Exterior - Brick on Block:138237",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O2Fr$t4X7Zf8NOew3FNtn": {
+      "name": "Basic Wall:Exterior - Brick on Block:138062",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5ITm": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217578",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5ITn": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217579",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5ITp": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217577",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5ITs": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217580",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5IVI": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217416",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5IVJ": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217417",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5IVS": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217414",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y4YRln2r91vflHcHE5IVT": {
+      "name": "Basic Wall:Interior - Furring (38 mm Stud):217415",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    }
+  }
+}

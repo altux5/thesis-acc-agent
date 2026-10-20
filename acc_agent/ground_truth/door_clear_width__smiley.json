@@ -1,0 +1,2278 @@
+{
+  "case_id": "door_clear_width__smiley",
+  "rule": "Every door must have a clear width of at least 900 mm.\n\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nDIN 18040-1:2010-10 (Accessible buildings - publicly accessible buildings), 4.3.3.2 Dimensional requirements, Table 1 (paraphrased): all doors must provide a clear width of at least 90 cm.\nBenchmark convention: the clear width of a door is its overall width (IfcDoor.OverallWidth) minus twice the lining thickness recorded in the IfcDoorLiningProperties of its door type. When the door type records no lining thickness, the clear width is the overall width. A door without a recorded overall width cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nLabel every door.\nReport the GlobalId of every element (modelled as IfcDoor) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/smiley_west/arc.ifc",
+  "complexity": 2,
+  "threshold_mm": 900.0,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0$NG_rsVD5wgdTGNw6D1QL",
+    "02R7IR9FnDt9WlRfbEQvBi",
+    "062AZa7G9C3x_w$f36WUdo",
+    "06QP0zTXvBsQia1ACxdRF1",
+    "0AiKM4GYnAtPcV5aJaXK4s",
+    "0ArpgM$Pv509jkw4pPPtJZ",
+    "0AshmBhwD0hRRSIumelpbV",
+    "0IQWwY5YT6Dv_3oqF3e2yy",
+    "0KofzpuJn24Baa$9Cao9x$",
+    "0LFTeiWiH8M9iZkR2XgSXO",
+    "0LG2QCtOX8QhgNUkA1sJwH",
+    "0Mmn9qZmD8RBgTbBN8wJVw",
+    "0OhcZRZYD7zhWaBR5R1LZ3",
+    "0SXDciA1H8XA0fwNaKf8wG",
+    "0Tmb_7qyP3FxhYZpbpS28R",
+    "0a4XKR2ln4XeOxkNix2_ng",
+    "0cW7xsvD51dvtwlChfchN7",
+    "0ezPRbGJD7MOcZ6okDj7$l",
+    "0f7t_GRj1BQx$CUtLhHvwY",
+    "0ix0vFG9H1lQwsyQFrVVF3",
+    "0lyPX9zsPDO8ToHUACwLFe",
+    "0nTnu_pMD7IOn9DeIPUqo9",
+    "0teqNjj$v4IgRS6SRbshXe",
+    "10d6QlA4zCuOps5HGt3cT$",
+    "11_LljMsPFHBN_aTQlacef",
+    "14DEFG6yfFHBg$xRWpZjUt",
+    "17a4HgJ7HFw8TlthCViTkQ",
+    "18vF1$7C5BROwmJKsCLtLn",
+    "1Awi9GHof9eh5YPnVr33HL",
+    "1D4ZaLOR518u_gHOosSjxq",
+    "1EdLEUb3rBk8Jj8gejG$jd",
+    "1Gy_$vFfv3$hiRtQc0Dk31",
+    "1HQvKIahT6vx0SVvpDWV0x",
+    "1Js6B1CsDDTB7yF6CxOWEP",
+    "1PwtJ8pnXFKOZL66wyi_lU",
+    "1RnnYbN$n3pQpTUql_KNrp",
+    "1TZmU2lv57OvMzbIWK6wQc",
+    "1Tr3hvRjX1ugE5z2RLgPLy",
+    "1VICIhM1DBo9PxPc3PkgpU",
+    "1XefGgz8rEZ8iKn91elwPC",
+    "1c9I09RivE$hYgYe_Pr8LV",
+    "1dsDP1zDzE3fYtkFVaBI96",
+    "1fL7wmm85CAffiK1GncHqy",
+    "1hAVtYHi15WxNEP9PRHWMz",
+    "1j9hhYnN593Pw0_W7Uwjka",
+    "1kBlDbX2P1UPNtZMvF8ZCM",
+    "1l4_lfgXrFN9bcxHtno3xs",
+    "1mFrq_wz9DufZsGnJEb$PL",
+    "1ntjj0BCPB3QyOrpCVOFAz",
+    "1va58tOrnB8ORDKmI9J_rg",
+    "2$sv8HNSv8mQdn2hERfeso",
+    "258x8TPc92hhQfpOAhEuPw",
+    "27GIzscSjENBuPYyF2V6aW",
+    "27HFBZrp97oRVuSIdXUagw",
+    "28RFg$J5f1keL_s9N8qdW0",
+    "2F2376nCTDDQ7eU_R0onGY",
+    "2FvbESAhn9$PtVc1I3SP0z",
+    "2H9Oqw3RbDFf7FvbEfeIvv",
+    "2K8zFEPrzBfgkpngTRI6y8",
+    "2MkMjyrxX3$90rK2vfDN_i",
+    "2PUn$NA7TCGxP83At9kDkz",
+    "2a4NjoGVf6FuulY$QF6Fwx",
+    "2cUAje2WTDyxvYox5L65qJ",
+    "2fMc8oFQ12NuwOSAwsv_0S",
+    "2pb5WsyPn6xu8siSWdLY65",
+    "2q7hEE7QH3re1qT8r7j9Hn",
+    "2wToZTecT3LRQkx7tErj1T",
+    "2zQHrZ2Yj6tuvIt4OYclVF",
+    "2zdrjIsTH9nh8Dyd9KHhfB",
+    "37PgXi$i5B6wWv2oQumMjc",
+    "37pDdxPPvANAGzxWQD5Lts",
+    "37u9WVyj553uTcNpukwQpQ",
+    "38b8JGarLC1wy4YKdqVTPp",
+    "3Bf7NxOJn82RByu5rQ4xtZ",
+    "3JZ0ZsdkH79P8Yw$$YRHgR",
+    "3WjeHOGub93x2d5WIQ9UWQ",
+    "3Y4Dd6fIb8hel8xylMxMt9",
+    "3Z2cKsECz8tO88JGvj1By7",
+    "3awXKZFGT7RwYfvIYeJ7mD",
+    "3fO6qkXBX4QAs5j3o2jd5W",
+    "3hbJsms$50dPpYn6uPFBnQ",
+    "3jygffyhv4Tg4XwXbPw5xM",
+    "3kG5_tns96chzH4dtCO28B",
+    "3kg1tQu5XCpgpj6caG2K_5",
+    "3pzrtlhEbD1hUXyG20n6vl",
+    "3vpgBJYFvFUvkWdG1z5Iy8",
+    "3xiG40cEz3YAIQNc_mxcTP",
+    "3yJXrHykz6guMyeT1SI$Cv",
+    "3yUm5CJ$b9ZBf889jPYLy6",
+    "3ysmOYyW9E2uJ8ee4tqim3"
+  ],
+  "labels": {
+    "0$NG_rsVD5wgdTGNw6D1QL": "FAIL",
+    "02R7IR9FnDt9WlRfbEQvBi": "FAIL",
+    "062AZa7G9C3x_w$f36WUdo": "FAIL",
+    "06QP0zTXvBsQia1ACxdRF1": "FAIL",
+    "09b7UCg_b69hBhCu8$B9pl": "PASS",
+    "09mjvhx8HDuRkKHli_8H4G": "PASS",
+    "0AiKM4GYnAtPcV5aJaXK4s": "FAIL",
+    "0ArpgM$Pv509jkw4pPPtJZ": "FAIL",
+    "0AshmBhwD0hRRSIumelpbV": "FAIL",
+    "0IQWwY5YT6Dv_3oqF3e2yy": "FAIL",
+    "0KofzpuJn24Baa$9Cao9x$": "FAIL",
+    "0LFTeiWiH8M9iZkR2XgSXO": "FAIL",
+    "0LG2QCtOX8QhgNUkA1sJwH": "FAIL",
+    "0La0w7L7z5jB1GrTIMWiBQ": "PASS",
+    "0Mmn9qZmD8RBgTbBN8wJVw": "FAIL",
+    "0MpabxB_z8vw6_$VEQedCd": "PASS",
+    "0OhcZRZYD7zhWaBR5R1LZ3": "FAIL",
+    "0SXDciA1H8XA0fwNaKf8wG": "FAIL",
+    "0Tmb_7qyP3FxhYZpbpS28R": "FAIL",
+    "0UQ4EVaKr9ou43578uaIkY": "PASS",
+    "0XkMv4R5LBewkAfMcaeXV6": "PASS",
+    "0YIqKdEmr4SxW6sPEi3sY8": "PASS",
+    "0a4XKR2ln4XeOxkNix2_ng": "FAIL",
+    "0cEwFA6XT1O8WmwQPY$sGB": "PASS",
+    "0cW7xsvD51dvtwlChfchN7": "FAIL",
+    "0dOowmPvrB4B2hh1rR8qaA": "PASS",
+    "0djX3pXzHDmwXSu0VwOKLP": "PASS",
+    "0eOPo05n54ZQZuSA1Z5S_Z": "PASS",
+    "0ebsgwLsf4Ph7W3rT8Glad": "PASS",
+    "0ezPRbGJD7MOcZ6okDj7$l": "FAIL",
+    "0f7t_GRj1BQx$CUtLhHvwY": "FAIL",
+    "0gBwWXCcXCD8y1ciaHIqWm": "PASS",
+    "0ix0vFG9H1lQwsyQFrVVF3": "FAIL",
+    "0lyPX9zsPDO8ToHUACwLFe": "FAIL",
+    "0nTnu_pMD7IOn9DeIPUqo9": "FAIL",
+    "0rUVStkdPD5ufCEGkaTYcQ": "PASS",
+    "0teqNjj$v4IgRS6SRbshXe": "FAIL",
+    "0xhGFQzDL31QqH9njU4cef": "PASS",
+    "10d6QlA4zCuOps5HGt3cT$": "FAIL",
+    "11K8wGQdL1buRHvicQkWsi": "PASS",
+    "11_LljMsPFHBN_aTQlacef": "FAIL",
+    "12pxH55qv96vAXOkVJo3Al": "PASS",
+    "13LeOz5YDBRuWKGn3XV8ny": "PASS",
+    "13RW8trmf9P8u3wldP5JtV": "PASS",
+    "14DEFG6yfFHBg$xRWpZjUt": "FAIL",
+    "17a4HgJ7HFw8TlthCViTkQ": "FAIL",
+    "18vF1$7C5BROwmJKsCLtLn": "FAIL",
+    "1Awi9GHof9eh5YPnVr33HL": "FAIL",
+    "1BiF1BVKbDLgw4ZS_mf7kn": "PASS",
+    "1D4ZaLOR518u_gHOosSjxq": "FAIL",
+    "1EdLEUb3rBk8Jj8gejG$jd": "FAIL",
+    "1Gy_$vFfv3$hiRtQc0Dk31": "FAIL",
+    "1HQvKIahT6vx0SVvpDWV0x": "FAIL",
+    "1IJarhVFHD7g8aPkGs5vDt": "PASS",
+    "1IL6KF4EH3oeh_59nylQYC": "PASS",
+    "1JRJFNBMvAsxG$a0t66RQI": "PASS",
+    "1JiJD98Rj4h8OxAt7PTe_M": "PASS",
+    "1Js6B1CsDDTB7yF6CxOWEP": "FAIL",
+    "1LJuy5LCLE2wZBhz2qm3PB": "PASS",
+    "1Of_uGimzFbwc59UDmGamB": "PASS",
+    "1PwtJ8pnXFKOZL66wyi_lU": "FAIL",
+    "1RTrAr3ejAsxrZqLRfwayz": "PASS",
+    "1R_N5LShP40u5dMVlwa3gH": "PASS",
+    "1RnnYbN$n3pQpTUql_KNrp": "FAIL",
+    "1TZmU2lv57OvMzbIWK6wQc": "FAIL",
+    "1Tr3hvRjX1ugE5z2RLgPLy": "FAIL",
+    "1VICIhM1DBo9PxPc3PkgpU": "FAIL",
+    "1VcyNF6$D0d91nnR8qb19O": "PASS",
+    "1XefGgz8rEZ8iKn91elwPC": "FAIL",
+    "1Zw0IJyUPEAuhQ1OFxzm9P": "PASS",
+    "1_w0XUO3j7GeI4I_AlllN8": "PASS",
+    "1aM_qMkfLAsvRTcDLmM9OA": "PASS",
+    "1c9I09RivE$hYgYe_Pr8LV": "FAIL",
+    "1ccBjZfQjCJwctxYR_KS9A": "PASS",
+    "1dsDP1zDzE3fYtkFVaBI96": "FAIL",
+    "1eZFjMQRn1k8TV$yXW6ipW": "PASS",
+    "1fF4I6XyP8IQPTsCqPwIvk": "PASS",
+    "1fL7wmm85CAffiK1GncHqy": "FAIL",
+    "1gX_KChVjCd8OhwS0XD4Ss": "PASS",
+    "1hAVtYHi15WxNEP9PRHWMz": "FAIL",
+    "1j9hhYnN593Pw0_W7Uwjka": "FAIL",
+    "1jPJ8T__n37uhagnE51Xpy": "PASS",
+    "1kBlDbX2P1UPNtZMvF8ZCM": "FAIL",
+    "1l4_lfgXrFN9bcxHtno3xs": "FAIL",
+    "1mFrq_wz9DufZsGnJEb$PL": "FAIL",
+    "1njbt8n_LC2P2hrejNC74Q": "PASS",
+    "1ntjj0BCPB3QyOrpCVOFAz": "FAIL",
+    "1qA_6Xm0TB3ejii0NvRdE3": "PASS",
+    "1r5iVhtsjCQfPmidPVsu_j": "PASS",
+    "1va58tOrnB8ORDKmI9J_rg": "FAIL",
+    "1xYcndjbv64eB3PX_LPhVP": "PASS",
+    "2$sv8HNSv8mQdn2hERfeso": "FAIL",
+    "20W2Icg8f7EAW5mGtBEmoM": "PASS",
+    "231KKoe0P7TwW6OAyZdPoY": "PASS",
+    "23DdL3udr2P85ZeV0COWMo": "PASS",
+    "24C5qr6SP3Qf$NmDp6tGw$": "PASS",
+    "258x8TPc92hhQfpOAhEuPw": "FAIL",
+    "27GIzscSjENBuPYyF2V6aW": "FAIL",
+    "27HFBZrp97oRVuSIdXUagw": "FAIL",
+    "28RFg$J5f1keL_s9N8qdW0": "FAIL",
+    "2CDxAXb$DFgBF_0C5LC69r": "PASS",
+    "2D08U6oWfAMf5GLyobuPfd": "PASS",
+    "2DJvCRWaX4SeFcNKUW7jiY": "PASS",
+    "2EJVUYxBv8DOZ14coPalce": "PASS",
+    "2EfSxzWN51gvc8AcS_ioZH": "PASS",
+    "2F2376nCTDDQ7eU_R0onGY": "FAIL",
+    "2FvbESAhn9$PtVc1I3SP0z": "FAIL",
+    "2H9Oqw3RbDFf7FvbEfeIvv": "FAIL",
+    "2K8zFEPrzBfgkpngTRI6y8": "FAIL",
+    "2LBW0CpMT6UusMcTXSTjAe": "PASS",
+    "2MkMjyrxX3$90rK2vfDN_i": "FAIL",
+    "2PUn$NA7TCGxP83At9kDkz": "FAIL",
+    "2SBuZi_b5ECu0TVs4rgY97": "PASS",
+    "2UHOTShfvFIwyna$UHz$jy": "PASS",
+    "2Yo20tjKjD8OGqvW2bc6Jg": "PASS",
+    "2a4NjoGVf6FuulY$QF6Fwx": "FAIL",
+    "2cUAje2WTDyxvYox5L65qJ": "FAIL",
+    "2clitPzYr69gZ$FUBzqu3t": "PASS",
+    "2fMc8oFQ12NuwOSAwsv_0S": "FAIL",
+    "2gvSD2cqj4$Bce4hkIsQWa": "PASS",
+    "2hlg8yiTvDsetZm60RBXsW": "PASS",
+    "2joMtvKjrDL97_2Z2o_WoO": "PASS",
+    "2oBbNEnJTA3egCrAPin4uq": "PASS",
+    "2pb5WsyPn6xu8siSWdLY65": "FAIL",
+    "2puQc163H1ixxfjYYxCixW": "PASS",
+    "2q7hEE7QH3re1qT8r7j9Hn": "FAIL",
+    "2rSjVEljXFoukvEyh6dTJb": "PASS",
+    "2vsEKGvZP2ye5ZyzBr5XnP": "PASS",
+    "2wToZTecT3LRQkx7tErj1T": "FAIL",
+    "2zQHrZ2Yj6tuvIt4OYclVF": "FAIL",
+    "2zdrjIsTH9nh8Dyd9KHhfB": "FAIL",
+    "34GiEabTr5c96Hbrr8OzEw": "PASS",
+    "34Mx0IYkv8DPxJyVsgaU$o": "PASS",
+    "35kp2dZaL0$xOuXv7lhpsB": "PASS",
+    "369WrkJz19XgXcPnsGGNgx": "PASS",
+    "37PgXi$i5B6wWv2oQumMjc": "FAIL",
+    "37QsqAUsz5yeDcxGz8kZPM": "PASS",
+    "37pDdxPPvANAGzxWQD5Lts": "FAIL",
+    "37u9WVyj553uTcNpukwQpQ": "FAIL",
+    "38b8JGarLC1wy4YKdqVTPp": "FAIL",
+    "39iR0NdS5AtxJAWX5qyAeR": "PASS",
+    "3Bf7NxOJn82RByu5rQ4xtZ": "FAIL",
+    "3Edmbnp9XDfAmKCgu9b5Ck": "PASS",
+    "3JZ0ZsdkH79P8Yw$$YRHgR": "FAIL",
+    "3N_k_TMWPEbOOUhxDlyjxG": "PASS",
+    "3UZzPg$F17uxYdmaFQJ1HQ": "PASS",
+    "3WjeHOGub93x2d5WIQ9UWQ": "FAIL",
+    "3Y4Dd6fIb8hel8xylMxMt9": "FAIL",
+    "3YG$rrZ454$h5hiT23v5Gf": "PASS",
+    "3Z2cKsECz8tO88JGvj1By7": "FAIL",
+    "3_4IAm1r50aBil1u$aSDAy": "PASS",
+    "3awXKZFGT7RwYfvIYeJ7mD": "FAIL",
+    "3eKJovGj55pvn9EaGmrBkc": "PASS",
+    "3fO6qkXBX4QAs5j3o2jd5W": "FAIL",
+    "3hbJsms$50dPpYn6uPFBnQ": "FAIL",
+    "3jygffyhv4Tg4XwXbPw5xM": "FAIL",
+    "3kG5_tns96chzH4dtCO28B": "FAIL",
+    "3kg1tQu5XCpgpj6caG2K_5": "FAIL",
+    "3o$eC0fUb4Dfh$UadBcdtD": "PASS",
+    "3pzrtlhEbD1hUXyG20n6vl": "FAIL",
+    "3s5FvKVQv3YPFzlkhTwfof": "PASS",
+    "3sh7whqTvD$RO_RKpqNHR3": "PASS",
+    "3tEADTnLf6Vu$EgODmx67E": "PASS",
+    "3vpgBJYFvFUvkWdG1z5Iy8": "FAIL",
+    "3xiG40cEz3YAIQNc_mxcTP": "FAIL",
+    "3yJXrHykz6guMyeT1SI$Cv": "FAIL",
+    "3yUm5CJ$b9ZBf889jPYLy6": "FAIL",
+    "3ysmOYyW9E2uJ8ee4tqim3": "FAIL",
+    "3zPIO5wGn6eAHQK2NcKlGh": "PASS",
+    "3zaW2mEcr4Aw9T$IyVHTk_": "PASS"
+  },
+  "notes": "Door clear width on 170 IfcDoor: {'FAIL': 90, 'PASS': 80}.",
+  "clause": "DIN 18040-1 4.3.3.2 Table 1",
+  "source": "solibri_reference.py::build_door_width (door_width__Smiley-West.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 170,
+    "ifc_sha256": "26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "SOL/208 Accessible Door Rule, sub-rule 404.2.2 reduced to clear width: Use spaces off; one requirement row * / * with min width 900 mm, min height 0, max threshold 99999 mm, min glazing 0 %, no free-area requirements; default frame and panel thickness 0; no property overrides. Role Get Started (the Schependomlaan report was made under Example Rules; no classification is used by this rule).",
+      "ruleset_file": "thesis_heldout.cset",
+      "ruleset_sha256": "bbc188d5980640c8c44b2a7eb37fb6e530032c28fbc00a29c5724fbc32ef2494",
+      "report_file": "door_width__Smiley-West.xlsx",
+      "report_sha256": "c0e1ab261a2bd8ff92177f98082f9c935c291a277214a3d9c950c1389d299138",
+      "issues": 90,
+      "outside_scope": []
+    },
+    "status": "Solibri SOL/208 issues reproduced from the IFC under the stated convention; disagreements adjudicated with reasons.",
+    "policy": "Clear width = OverallWidth - 2 x type LiningThickness (else OverallWidth) >= 900 mm with 0.5 mm tolerance.",
+    "limitations": "Solibri measures door geometry including the frame when no lining thickness is recorded; outcomes agree here, values may differ."
+  },
+  "provenance": {
+    "0$NG_rsVD5wgdTGNw6D1QL": {
+      "name": "OG-1-T\u00fcr-07-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.16",
+        "name": "OG-1-T\u00fcr-07-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "02R7IR9FnDt9WlRfbEQvBi": {
+      "name": "EG-T\u00fcr-07-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.44",
+        "name": "EG-T\u00fcr-07-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "062AZa7G9C3x_w$f36WUdo": {
+      "name": "2OG-T\u00fcr-1-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.6",
+        "name": "2OG-T\u00fcr-1-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "06QP0zTXvBsQia1ACxdRF1": {
+      "name": "Keller-T\u00fcr-05-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.9",
+        "name": "Keller-T\u00fcr-05-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "09b7UCg_b69hBhCu8$B9pl": {
+      "name": "OG-1-Balkon-02-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "09mjvhx8HDuRkKHli_8H4G": {
+      "name": "EG-Terrasse-04-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0AiKM4GYnAtPcV5aJaXK4s": {
+      "name": "2OG-T\u00fcr-5-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.10",
+        "name": "2OG-T\u00fcr-5-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0ArpgM$Pv509jkw4pPPtJZ": {
+      "name": "EG-T\u00fcr-10-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.12",
+        "name": "EG-T\u00fcr-10-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0AshmBhwD0hRRSIumelpbV": {
+      "name": "EG-T\u00fcr-02-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.28",
+        "name": "EG-T\u00fcr-02-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0IQWwY5YT6Dv_3oqF3e2yy": {
+      "name": "2OG-T\u00fcr-4-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.21",
+        "name": "2OG-T\u00fcr-4-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0KofzpuJn24Baa$9Cao9x$": {
+      "name": "Keller-T\u00fcr-08-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.1",
+        "name": "Keller-T\u00fcr-08-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0LFTeiWiH8M9iZkR2XgSXO": {
+      "name": "Keller-T\u00fcr-10-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.16",
+        "name": "Keller-T\u00fcr-10-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0LG2QCtOX8QhgNUkA1sJwH": {
+      "name": "EG-T\u00fcr-05-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.23",
+        "name": "EG-T\u00fcr-05-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0La0w7L7z5jB1GrTIMWiBQ": {
+      "name": "2OG-Balkon-2-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0Mmn9qZmD8RBgTbBN8wJVw": {
+      "name": "EG-T\u00fcr-03-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.29",
+        "name": "EG-T\u00fcr-03-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0MpabxB_z8vw6_$VEQedCd": {
+      "name": "EG-Haustuer-08",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0OhcZRZYD7zhWaBR5R1LZ3": {
+      "name": "OG-1-T\u00fcr-09-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.3",
+        "name": "OG-1-T\u00fcr-09-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0SXDciA1H8XA0fwNaKf8wG": {
+      "name": "OG-1-T\u00fcr-01-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.33",
+        "name": "OG-1-T\u00fcr-01-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0Tmb_7qyP3FxhYZpbpS28R": {
+      "name": "2OG-T\u00fcr-5-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.26",
+        "name": "2OG-T\u00fcr-5-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0UQ4EVaKr9ou43578uaIkY": {
+      "name": "1OG-Balkon-2-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0XkMv4R5LBewkAfMcaeXV6": {
+      "name": "2OG-Balkon-1-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0YIqKdEmr4SxW6sPEi3sY8": {
+      "name": "EG-Terrasse-02-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0a4XKR2ln4XeOxkNix2_ng": {
+      "name": "EG-T\u00fcr-01-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.21",
+        "name": "EG-T\u00fcr-01-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0cEwFA6XT1O8WmwQPY$sGB": {
+      "name": "EG-Terrasse-07-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0cW7xsvD51dvtwlChfchN7": {
+      "name": "2OG-T\u00fcr-1-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.36",
+        "name": "2OG-T\u00fcr-1-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0dOowmPvrB4B2hh1rR8qaA": {
+      "name": "2OG-Balkon-2-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0djX3pXzHDmwXSu0VwOKLP": {
+      "name": "2OG-Balkon-2-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0eOPo05n54ZQZuSA1Z5S_Z": {
+      "name": "EG-Haustuer-09",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0ebsgwLsf4Ph7W3rT8Glad": {
+      "name": "2OG-Balkon-3-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0ezPRbGJD7MOcZ6okDj7$l": {
+      "name": "OG-1-T\u00fcr-02-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.31",
+        "name": "OG-1-T\u00fcr-02-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0f7t_GRj1BQx$CUtLhHvwY": {
+      "name": "Keller-T\u00fcr-05-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.20",
+        "name": "Keller-T\u00fcr-05-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0gBwWXCcXCD8y1ciaHIqWm": {
+      "name": "EG-Haustuer-03",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0ix0vFG9H1lQwsyQFrVVF3": {
+      "name": "2OG-T\u00fcr-3-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.34",
+        "name": "2OG-T\u00fcr-3-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0lyPX9zsPDO8ToHUACwLFe": {
+      "name": "2OG-T\u00fcr-4-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.23",
+        "name": "2OG-T\u00fcr-4-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0nTnu_pMD7IOn9DeIPUqo9": {
+      "name": "OG-1-T\u00fcr-09-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.23",
+        "name": "OG-1-T\u00fcr-09-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0rUVStkdPD5ufCEGkaTYcQ": {
+      "name": "2OG-Balkon-1-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0teqNjj$v4IgRS6SRbshXe": {
+      "name": "Keller-T\u00fcr-04-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.2",
+        "name": "Keller-T\u00fcr-04-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0xhGFQzDL31QqH9njU4cef": {
+      "name": "1OG-Balkon-5-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "10d6QlA4zCuOps5HGt3cT$": {
+      "name": "OG-1-T\u00fcr-05-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.24",
+        "name": "OG-1-T\u00fcr-05-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "11K8wGQdL1buRHvicQkWsi": {
+      "name": "EG-T\u00fcr-03-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "11_LljMsPFHBN_aTQlacef": {
+      "name": "Keller-T\u00fcr-01-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.8",
+        "name": "Keller-T\u00fcr-01-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "12pxH55qv96vAXOkVJo3Al": {
+      "name": "1OG-Balkon-5-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "13LeOz5YDBRuWKGn3XV8ny": {
+      "name": "EG-Haustuer-04",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "13RW8trmf9P8u3wldP5JtV": {
+      "name": "EG-T\u00fcr-05-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "14DEFG6yfFHBg$xRWpZjUt": {
+      "name": "2OG-T\u00fcr-2-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.18",
+        "name": "2OG-T\u00fcr-2-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "17a4HgJ7HFw8TlthCViTkQ": {
+      "name": "2OG-T\u00fcr-2-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.5",
+        "name": "2OG-T\u00fcr-2-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "18vF1$7C5BROwmJKsCLtLn": {
+      "name": "OG-1-T\u00fcr-05-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.45",
+        "name": "OG-1-T\u00fcr-05-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1Awi9GHof9eh5YPnVr33HL": {
+      "name": "Keller-T\u00fcr-01-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.3",
+        "name": "Keller-T\u00fcr-01-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1BiF1BVKbDLgw4ZS_mf7kn": {
+      "name": "1OG-Balkon-4-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1D4ZaLOR518u_gHOosSjxq": {
+      "name": "Keller-T\u00fcr-08-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.12",
+        "name": "Keller-T\u00fcr-08-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1EdLEUb3rBk8Jj8gejG$jd": {
+      "name": "OG-1-T\u00fcr-10-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.42",
+        "name": "OG-1-T\u00fcr-10-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1Gy_$vFfv3$hiRtQc0Dk31": {
+      "name": "OG-1-T\u00fcr-01-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.29",
+        "name": "OG-1-T\u00fcr-01-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1HQvKIahT6vx0SVvpDWV0x": {
+      "name": "Keller-T\u00fcr-04-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.4",
+        "name": "Keller-T\u00fcr-04-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1IJarhVFHD7g8aPkGs5vDt": {
+      "name": "EG-Terrasse-05-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1IL6KF4EH3oeh_59nylQYC": {
+      "name": "EG-Haustuer-05",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1JRJFNBMvAsxG$a0t66RQI": {
+      "name": "OG-1-Balkon-06-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1JiJD98Rj4h8OxAt7PTe_M": {
+      "name": "1OG-Balkon-2-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1Js6B1CsDDTB7yF6CxOWEP": {
+      "name": "2OG-T\u00fcr-1-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.50",
+        "name": "2OG-T\u00fcr-1-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1LJuy5LCLE2wZBhz2qm3PB": {
+      "name": "2OG-Balkon-4-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1Of_uGimzFbwc59UDmGamB": {
+      "name": "OG-1-Balkon-01-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1PwtJ8pnXFKOZL66wyi_lU": {
+      "name": "2OG-T\u00fcr-5-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.8",
+        "name": "2OG-T\u00fcr-5-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1RTrAr3ejAsxrZqLRfwayz": {
+      "name": "EG-Terrasse-07-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1R_N5LShP40u5dMVlwa3gH": {
+      "name": "2OG-Balkon-5-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1RnnYbN$n3pQpTUql_KNrp": {
+      "name": "Keller-T\u00fcr-07-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.14",
+        "name": "Keller-T\u00fcr-07-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1TZmU2lv57OvMzbIWK6wQc": {
+      "name": "2OG-T\u00fcr-2-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.44",
+        "name": "2OG-T\u00fcr-2-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1Tr3hvRjX1ugE5z2RLgPLy": {
+      "name": "EG-T\u00fcr-04-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.50",
+        "name": "EG-T\u00fcr-04-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1VICIhM1DBo9PxPc3PkgpU": {
+      "name": "2OG-T\u00fcr-4-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.41",
+        "name": "2OG-T\u00fcr-4-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1VcyNF6$D0d91nnR8qb19O": {
+      "name": "EG-Haustuer-01",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1XefGgz8rEZ8iKn91elwPC": {
+      "name": "2OG-T\u00fcr-3-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.48",
+        "name": "2OG-T\u00fcr-3-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1Zw0IJyUPEAuhQ1OFxzm9P": {
+      "name": "2OG-Balkon-5-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1_w0XUO3j7GeI4I_AlllN8": {
+      "name": "2OG-Balkon-1-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1aM_qMkfLAsvRTcDLmM9OA": {
+      "name": "EG-T\u00fcr-09-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1c9I09RivE$hYgYe_Pr8LV": {
+      "name": "OG-1-T\u00fcr-09-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.18",
+        "name": "OG-1-T\u00fcr-09-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1ccBjZfQjCJwctxYR_KS9A": {
+      "name": "2OG-Balkon-1-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1dsDP1zDzE3fYtkFVaBI96": {
+      "name": "2OG-T\u00fcr-3-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.30",
+        "name": "2OG-T\u00fcr-3-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1eZFjMQRn1k8TV$yXW6ipW": {
+      "name": "1OG-Balkon-2-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1fF4I6XyP8IQPTsCqPwIvk": {
+      "name": "EG-Terrasse-01-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1fL7wmm85CAffiK1GncHqy": {
+      "name": "OG-1-T\u00fcr-06-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.19",
+        "name": "OG-1-T\u00fcr-06-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1gX_KChVjCd8OhwS0XD4Ss": {
+      "name": "EG-Haustuer-06",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1hAVtYHi15WxNEP9PRHWMz": {
+      "name": "2OG-T\u00fcr-2-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.3",
+        "name": "2OG-T\u00fcr-2-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1j9hhYnN593Pw0_W7Uwjka": {
+      "name": "2OG-T\u00fcr-4-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.37",
+        "name": "2OG-T\u00fcr-4-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1jPJ8T__n37uhagnE51Xpy": {
+      "name": "2OG-Balkon-5-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1kBlDbX2P1UPNtZMvF8ZCM": {
+      "name": "2OG-T\u00fcr-1-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.39",
+        "name": "2OG-T\u00fcr-1-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1l4_lfgXrFN9bcxHtno3xs": {
+      "name": "OG-1-T\u00fcr-05-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.20",
+        "name": "OG-1-T\u00fcr-05-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1mFrq_wz9DufZsGnJEb$PL": {
+      "name": "OG-1-T\u00fcr-08-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.7",
+        "name": "OG-1-T\u00fcr-08-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1njbt8n_LC2P2hrejNC74Q": {
+      "name": "EG-T\u00fcr-01-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ntjj0BCPB3QyOrpCVOFAz": {
+      "name": "Keller-T\u00fcr-02-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.13",
+        "name": "Keller-T\u00fcr-02-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1qA_6Xm0TB3ejii0NvRdE3": {
+      "name": "2OG-Balkon-4-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1r5iVhtsjCQfPmidPVsu_j": {
+      "name": "OG-1-Balkon-03-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1va58tOrnB8ORDKmI9J_rg": {
+      "name": "Keller-T\u00fcr-03-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.7",
+        "name": "Keller-T\u00fcr-03-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1xYcndjbv64eB3PX_LPhVP": {
+      "name": "EG-Terrasse-09-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2$sv8HNSv8mQdn2hERfeso": {
+      "name": "OG-1-T\u00fcr-03-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.26",
+        "name": "OG-1-T\u00fcr-03-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "20W2Icg8f7EAW5mGtBEmoM": {
+      "name": "1OG-Balkon-3-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "231KKoe0P7TwW6OAyZdPoY": {
+      "name": "EG-T\u00fcr-07-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "23DdL3udr2P85ZeV0COWMo": {
+      "name": "EG-Terrasse-05-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "24C5qr6SP3Qf$NmDp6tGw$": {
+      "name": "EG-T\u00fcr-02-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "258x8TPc92hhQfpOAhEuPw": {
+      "name": "2OG-T\u00fcr-1-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.7",
+        "name": "2OG-T\u00fcr-1-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "27GIzscSjENBuPYyF2V6aW": {
+      "name": "OG-1-T\u00fcr-06-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.47",
+        "name": "OG-1-T\u00fcr-06-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "27HFBZrp97oRVuSIdXUagw": {
+      "name": "OG-1-T\u00fcr-03-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.13",
+        "name": "OG-1-T\u00fcr-03-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "28RFg$J5f1keL_s9N8qdW0": {
+      "name": "Keller-T\u00fcr-10-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.11",
+        "name": "Keller-T\u00fcr-10-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2CDxAXb$DFgBF_0C5LC69r": {
+      "name": "EG-T\u00fcr-06-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2D08U6oWfAMf5GLyobuPfd": {
+      "name": "2OG-Balkon-4-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2DJvCRWaX4SeFcNKUW7jiY": {
+      "name": "EG-Haustuer-07",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2EJVUYxBv8DOZ14coPalce": {
+      "name": "EG-Terrasse-10-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2EfSxzWN51gvc8AcS_ioZH": {
+      "name": "1OG-Balkon-5-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2F2376nCTDDQ7eU_R0onGY": {
+      "name": "2OG-T\u00fcr-3-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.20",
+        "name": "2OG-T\u00fcr-3-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2FvbESAhn9$PtVc1I3SP0z": {
+      "name": "OG-1-T\u00fcr-02-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.49",
+        "name": "OG-1-T\u00fcr-02-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2H9Oqw3RbDFf7FvbEfeIvv": {
+      "name": "OG-1-T\u00fcr-07-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.44",
+        "name": "OG-1-T\u00fcr-07-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2K8zFEPrzBfgkpngTRI6y8": {
+      "name": "OG-1-T\u00fcr-04-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.34",
+        "name": "OG-1-T\u00fcr-04-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2LBW0CpMT6UusMcTXSTjAe": {
+      "name": "EG-T\u00fcr-08-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2MkMjyrxX3$90rK2vfDN_i": {
+      "name": "OG-1-T\u00fcr-08-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.11",
+        "name": "OG-1-T\u00fcr-08-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2PUn$NA7TCGxP83At9kDkz": {
+      "name": "2OG-T\u00fcr-5-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.15",
+        "name": "2OG-T\u00fcr-5-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2SBuZi_b5ECu0TVs4rgY97": {
+      "name": "EG-Terrasse-02-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2UHOTShfvFIwyna$UHz$jy": {
+      "name": "2OG-Balkon-3-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2Yo20tjKjD8OGqvW2bc6Jg": {
+      "name": "1OG-Balkon-3-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2a4NjoGVf6FuulY$QF6Fwx": {
+      "name": "2OG-T\u00fcr-1-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.43",
+        "name": "2OG-T\u00fcr-1-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2cUAje2WTDyxvYox5L65qJ": {
+      "name": "OG-1-T\u00fcr-07-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.15",
+        "name": "OG-1-T\u00fcr-07-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2clitPzYr69gZ$FUBzqu3t": {
+      "name": "2OG-Balkon-5-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2fMc8oFQ12NuwOSAwsv_0S": {
+      "name": "2OG-T\u00fcr-4-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.38",
+        "name": "2OG-T\u00fcr-4-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2gvSD2cqj4$Bce4hkIsQWa": {
+      "name": "2OG-Balkon-3-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2hlg8yiTvDsetZm60RBXsW": {
+      "name": "2OG-Balkon-3-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2joMtvKjrDL97_2Z2o_WoO": {
+      "name": "1OG-Balkon-4-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2oBbNEnJTA3egCrAPin4uq": {
+      "name": "EG-T\u00fcr-04-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2pb5WsyPn6xu8siSWdLY65": {
+      "name": "EG-T\u00fcr-09-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.20",
+        "name": "EG-T\u00fcr-09-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2puQc163H1ixxfjYYxCixW": {
+      "name": "OG-1-Balkon-05-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2q7hEE7QH3re1qT8r7j9Hn": {
+      "name": "2OG-T\u00fcr-3-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.28",
+        "name": "2OG-T\u00fcr-3-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2rSjVEljXFoukvEyh6dTJb": {
+      "name": "1OG-Balkon-3-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2vsEKGvZP2ye5ZyzBr5XnP": {
+      "name": "EG-T\u00fcr-10-2",
+      "overall_width_mm": 1010.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1010.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2wToZTecT3LRQkx7tErj1T": {
+      "name": "OG-1-T\u00fcr-04-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.38",
+        "name": "OG-1-T\u00fcr-04-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2zQHrZ2Yj6tuvIt4OYclVF": {
+      "name": "2OG-T\u00fcr-2-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.24",
+        "name": "2OG-T\u00fcr-2-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2zdrjIsTH9nh8Dyd9KHhfB": {
+      "name": "2OG-T\u00fcr-3-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.35",
+        "name": "2OG-T\u00fcr-3-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "34GiEabTr5c96Hbrr8OzEw": {
+      "name": "EG-Terrasse-06-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "34Mx0IYkv8DPxJyVsgaU$o": {
+      "name": "OG-1-Balkon-04-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "35kp2dZaL0$xOuXv7lhpsB": {
+      "name": "2OG-Balkon-2-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "369WrkJz19XgXcPnsGGNgx": {
+      "name": "EG-Terrasse-09-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37PgXi$i5B6wWv2oQumMjc": {
+      "name": "OG-1-T\u00fcr-08-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.12",
+        "name": "OG-1-T\u00fcr-08-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "37QsqAUsz5yeDcxGz8kZPM": {
+      "name": "EG-Terrasse-10-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "37pDdxPPvANAGzxWQD5Lts": {
+      "name": "EG-T\u00fcr-08-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.34",
+        "name": "EG-T\u00fcr-08-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "37u9WVyj553uTcNpukwQpQ": {
+      "name": "Keller-T\u00fcr-09-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.6",
+        "name": "Keller-T\u00fcr-09-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "38b8JGarLC1wy4YKdqVTPp": {
+      "name": "2OG-T\u00fcr-4-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.40",
+        "name": "2OG-T\u00fcr-4-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "39iR0NdS5AtxJAWX5qyAeR": {
+      "name": "1OG-Balkon-2-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3Bf7NxOJn82RByu5rQ4xtZ": {
+      "name": "Keller-T\u00fcr-02-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.10",
+        "name": "Keller-T\u00fcr-02-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3Edmbnp9XDfAmKCgu9b5Ck": {
+      "name": "1OG-Balkon-2-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3JZ0ZsdkH79P8Yw$$YRHgR": {
+      "name": "2OG-T\u00fcr-2-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.16",
+        "name": "2OG-T\u00fcr-2-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3N_k_TMWPEbOOUhxDlyjxG": {
+      "name": "EG-Terrasse-03-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3UZzPg$F17uxYdmaFQJ1HQ": {
+      "name": "1OG-Balkon-4-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3WjeHOGub93x2d5WIQ9UWQ": {
+      "name": "Keller-T\u00fcr-03-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.19",
+        "name": "Keller-T\u00fcr-03-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3Y4Dd6fIb8hel8xylMxMt9": {
+      "name": "2OG-T\u00fcr-5-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.1.29",
+        "name": "2OG-T\u00fcr-5-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3YG$rrZ454$h5hiT23v5Gf": {
+      "name": "EG-Haustuer-02",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3Z2cKsECz8tO88JGvj1By7": {
+      "name": "OG-1-T\u00fcr-04-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.32",
+        "name": "OG-1-T\u00fcr-04-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3_4IAm1r50aBil1u$aSDAy": {
+      "name": "EG-Terrasse-04-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3awXKZFGT7RwYfvIYeJ7mD": {
+      "name": "2OG-T\u00fcr-5-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.1.32",
+        "name": "2OG-T\u00fcr-5-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3eKJovGj55pvn9EaGmrBkc": {
+      "name": "EG-Terrasse-06-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3fO6qkXBX4QAs5j3o2jd5W": {
+      "name": "EG-T\u00fcr-06-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.-1.9",
+        "name": "EG-T\u00fcr-06-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3hbJsms$50dPpYn6uPFBnQ": {
+      "name": "OG-1-T\u00fcr-02-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.4",
+        "name": "OG-1-T\u00fcr-02-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3jygffyhv4Tg4XwXbPw5xM": {
+      "name": "OG-1-T\u00fcr-06-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.21",
+        "name": "OG-1-T\u00fcr-06-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3kG5_tns96chzH4dtCO28B": {
+      "name": "OG-1-T\u00fcr-01-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.30",
+        "name": "OG-1-T\u00fcr-01-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3kg1tQu5XCpgpj6caG2K_5": {
+      "name": "Keller-T\u00fcr-06-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.15",
+        "name": "Keller-T\u00fcr-06-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3o$eC0fUb4Dfh$UadBcdtD": {
+      "name": "2OG-Balkon-4-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3pzrtlhEbD1hUXyG20n6vl": {
+      "name": "Keller-T\u00fcr-09-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.17",
+        "name": "Keller-T\u00fcr-09-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3s5FvKVQv3YPFzlkhTwfof": {
+      "name": "EG-Terrasse-01-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3sh7whqTvD$RO_RKpqNHR3": {
+      "name": "EG-Haustuer-10",
+      "overall_width_mm": 1135.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 1135.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3tEADTnLf6Vu$EgODmx67E": {
+      "name": "EG-Terrasse-08-1",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3vpgBJYFvFUvkWdG1z5Iy8": {
+      "name": "OG-1-T\u00fcr-10-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.41",
+        "name": "OG-1-T\u00fcr-10-2",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3xiG40cEz3YAIQNc_mxcTP": {
+      "name": "Keller-T\u00fcr-06-1",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.5",
+        "name": "Keller-T\u00fcr-06-1",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3yJXrHykz6guMyeT1SI$Cv": {
+      "name": "Keller-T\u00fcr-07-2",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 785.0,
+      "solibri": {
+        "component": "Door.-2.18",
+        "name": "Keller-T\u00fcr-07-2",
+        "width_mm": 785.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3yUm5CJ$b9ZBf889jPYLy6": {
+      "name": "OG-1-T\u00fcr-10-3",
+      "overall_width_mm": 885.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 885.0,
+      "solibri": {
+        "component": "Door.0.35",
+        "name": "OG-1-T\u00fcr-10-3",
+        "width_mm": 885.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3ysmOYyW9E2uJ8ee4tqim3": {
+      "name": "OG-1-T\u00fcr-03-1",
+      "overall_width_mm": 760.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 760.0,
+      "solibri": {
+        "component": "Door.0.1",
+        "name": "OG-1-T\u00fcr-03-1",
+        "width_mm": 760.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3zPIO5wGn6eAHQK2NcKlGh": {
+      "name": "EG-Terrasse-08-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3zaW2mEcr4Aw9T$IyVHTk_": {
+      "name": "EG-Terrasse-03-2",
+      "overall_width_mm": 1990.0,
+      "lining_thickness_mm": 50.0,
+      "clear_width_mm": 1890.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    }
+  }
+}

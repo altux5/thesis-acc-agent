@@ -1,0 +1,1313 @@
+{
+  "case_id": "door_clear_width__schependomlaan",
+  "rule": "Every door must have a clear width of at least 900 mm.\n\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nDIN 18040-1:2010-10 (Accessible buildings - publicly accessible buildings), 4.3.3.2 Dimensional requirements, Table 1 (paraphrased): all doors must provide a clear width of at least 90 cm.\nBenchmark convention: the clear width of a door is its overall width (IfcDoor.OverallWidth) minus twice the lining thickness recorded in the IfcDoorLiningProperties of its door type. When the door type records no lining thickness, the clear width is the overall width. A door without a recorded overall width cannot be judged: label it ALERT, and do NOT report it as a violation.\n\nLabel every door.\nReport the GlobalId of every element (modelled as IfcDoor) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Schependomlaan.ifc",
+  "complexity": 2,
+  "threshold_mm": 900.0,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "012S6Z0qLCRuoYXSZ2tygw",
+    "03KwpgDxXCQBYi7KkY7sYB",
+    "0Hdk5PAnP3pwtj9xXKmFBe",
+    "0h4oGef9T1PgTelA09ZLn2",
+    "0rEPlH2fP8YQ_q3GiazsFo",
+    "0xrZguOJ55xx5lucOklTa9",
+    "0yy1u9ooTD5vShTp5wGvUE",
+    "14rAyAJ$L5nPK$yo6WYX5X",
+    "1ZFLyNI$fDRgE2KgYahsry",
+    "1btohEUvb9RxFSreiwC9NA",
+    "26_$0XSjr4qx6Hsbp36s4D",
+    "2KQzcnl4P108p1xYLp2BcG",
+    "2lVoJcfoDAWB0KDozjmBha",
+    "2mNENoxwD4MQMQY_gKi$v7",
+    "2wNrfbWo5F3AXCQjcATu9n",
+    "3UPz4qnhz6dR_hTWbylJYM",
+    "3lVtU7tjD3YOCLUfqajZ2A",
+    "3nUiG96vjAwPUR6jFmv$ZI",
+    "3qYGwE1BDBbP2FWtfJUDNa",
+    "3rLHaGT8f4ffCX220B$XUw",
+    "3topRXa9T1svryvk0HDA1V",
+    "3vqhA9V$zD8Ri_tijsQ9Uy"
+  ],
+  "labels": {
+    "0$vj6GrA15b852nxv8ecYB": "PASS",
+    "012S6Z0qLCRuoYXSZ2tygw": "FAIL",
+    "02v5nA3u16Nh8SnTLbZVnM": "PASS",
+    "03KwpgDxXCQBYi7KkY7sYB": "FAIL",
+    "06_o2t73nBXvUfWV0NnaRj": "PASS",
+    "09NbJFNdj9fxN2xh$EA6wX": "PASS",
+    "0DE9eeknn1UwV6HdBQLtSn": "PASS",
+    "0ETp$wstn6uO7g6ZydQW6K": "PASS",
+    "0EWFPIrsv7_9lhqHOpPwsU": "PASS",
+    "0HKXdsxQDBXehvvnIH9Bj2": "PASS",
+    "0HTjC8kFv6W9Fd4e3r5fjg": "PASS",
+    "0Hdk5PAnP3pwtj9xXKmFBe": "FAIL",
+    "0IzB0Fhx1E3e$Sm$$GKqe7": "PASS",
+    "0MO3NBPw1FofnfwKUa2odt": "PASS",
+    "0NWv8IgP5Ch9a8sHZoyivA": "PASS",
+    "0NZRpUHUn8f9KjPRtTRauP": "PASS",
+    "0OL2bP1B5Ezfgv8L13MayF": "PASS",
+    "0REpZXGX116vUWlC_COT3l": "PASS",
+    "0WcADPJA571PyQI1eSlkC4": "PASS",
+    "0WwnDCcYLFJx3r5wMCkNbs": "PASS",
+    "0_AyfC57H5ZhnJFKbaFPKq": "PASS",
+    "0etZemLbbAog_wCl27YohR": "PASS",
+    "0h4oGef9T1PgTelA09ZLn2": "FAIL",
+    "0hLbfgnI116fYrSi5yltYv": "PASS",
+    "0m7Z8$vfnDLxF9ZlRdjI6b": "PASS",
+    "0paFAbnyj3DQz4eYs1LQRb": "PASS",
+    "0rEPlH2fP8YQ_q3GiazsFo": "FAIL",
+    "0wAyj9PWL7guJFQHdw7ccc": "PASS",
+    "0xrZguOJ55xx5lucOklTa9": "FAIL",
+    "0yGGfH85nFPvINarcAfBNX": "PASS",
+    "0yy1u9ooTD5vShTp5wGvUE": "FAIL",
+    "12pKvnM8rEghVj2eehBckA": "PASS",
+    "13lQ7MfpP9YQNh0Z31qoMP": "PASS",
+    "140c7DVn1Fdgh5_iO2DSKg": "PASS",
+    "14rAyAJ$L5nPK$yo6WYX5X": "FAIL",
+    "14tZx$UMb8cBHoti0zk1Nr": "PASS",
+    "15D5L0A5L99eNxZZrhk3Pa": "PASS",
+    "1AjHEuqyLASxbhLNVsGq0u": "PASS",
+    "1DMKLKe45CzO6gemze$ha$": "PASS",
+    "1FtRH1k0bE4fyu_U9mJBmf": "PASS",
+    "1LZHcsRev6lhsez4LMDFr$": "PASS",
+    "1Le1BurSf8iQTApHN20xGM": "PASS",
+    "1MMTbq1t93CfhQ63Tyks8n": "PASS",
+    "1X$gsMt2nFuv_fouZFh5_Z": "PASS",
+    "1ZFLyNI$fDRgE2KgYahsry": "FAIL",
+    "1btohEUvb9RxFSreiwC9NA": "FAIL",
+    "1cjDN$L7j3xQ6006KWGjlJ": "PASS",
+    "1ct3PC$Rf39OYRwaCfR2gz": "PASS",
+    "1dnueTAkL0h8RlVLQtwd3w": "PASS",
+    "1donuLXK125fRkeWlAA8Cq": "PASS",
+    "1f8696ukP6ngAHgpRZz3ju": "PASS",
+    "1jTFg_BbD2_gRGTcr0jnVr": "PASS",
+    "1jm08JDI1AxPr7MMlr69d8": "PASS",
+    "1k3S_FTjr5YgVNsOxgXfqg": "PASS",
+    "1ktZHnXqP81AONft3VUKlo": "PASS",
+    "1xjGgwmzP23uthLfXurB67": "PASS",
+    "1zWpVk7Az3eeFDJEw36Ky9": "PASS",
+    "2$GgreKs5Auv1nDBFIDDQQ": "PASS",
+    "26_$0XSjr4qx6Hsbp36s4D": "FAIL",
+    "275N_u7Z9EtgoRNFproXEn": "PASS",
+    "27bh8yZhL8hPRD0H6aMxEY": "PASS",
+    "29ln2Cp8P9jBBVLpq36yJx": "PASS",
+    "2AH9fQqwXE9O9QvwUR77zF": "PASS",
+    "2DaLEnOpD71xPKiE7SoDTP": "PASS",
+    "2EKQPtlE15r9nj5or9E3v0": "PASS",
+    "2Gq0QN14T6$e3J8hk70VQH": "PASS",
+    "2Jqop0uBb9AxYtqSXLjzrD": "PASS",
+    "2KQzcnl4P108p1xYLp2BcG": "FAIL",
+    "2XH6N5hOT3yAuGpef5XEDg": "PASS",
+    "2cb8c3os963f5n9Wjr4O99": "PASS",
+    "2hVrKM8Vv2Xxs7m9ITda8L": "PASS",
+    "2i$ImWrU5CrPuyb0cxLRsY": "PASS",
+    "2lVoJcfoDAWB0KDozjmBha": "FAIL",
+    "2mNENoxwD4MQMQY_gKi$v7": "FAIL",
+    "2pAvanoIzEV8kE6N3CBDLL": "PASS",
+    "2qY72vI$D0SenCZx1z6HDK": "PASS",
+    "2uTeXyy8XDYvkI0uWy38WP": "PASS",
+    "2vFhUBbYLDEuToK036Hl$0": "PASS",
+    "2wNrfbWo5F3AXCQjcATu9n": "FAIL",
+    "2zIan9UMbEDv$MtEuXRGaI": "PASS",
+    "36MmH3zZH16QTwC46Vbk$D": "PASS",
+    "38X2u$b_51PQbXrbF3UXq0": "PASS",
+    "3BDarYIf1EXRuu7o6glIV$": "PASS",
+    "3FUHlAm49BC88X$DRC3IqI": "PASS",
+    "3G$_TtmoH0i97AYiv2eBBu": "PASS",
+    "3I96DDOZX58xC3RmUZssQx": "PASS",
+    "3LHBKM1sPCkOXvRtwp$pev": "PASS",
+    "3N5xNVjr9Ehhxk6BUdGUAs": "PASS",
+    "3OgInA0dD3qBERzneS1WG0": "PASS",
+    "3UPz4qnhz6dR_hTWbylJYM": "FAIL",
+    "3WXd7RsH9CT9CRRwuhBxrU": "PASS",
+    "3XlDiPbzT5wuWLtvoN9ad0": "PASS",
+    "3b$SMEeUf10eNHEHoPH0ta": "PASS",
+    "3cjGEZBqP9GQh7eyumO1LZ": "PASS",
+    "3lE1SkMIbDaBDRbQV9PuSz": "PASS",
+    "3lVtU7tjD3YOCLUfqajZ2A": "FAIL",
+    "3nUiG96vjAwPUR6jFmv$ZI": "FAIL",
+    "3p9J1sHcf4ju8QNF1IhRNV": "PASS",
+    "3qYGwE1BDBbP2FWtfJUDNa": "FAIL",
+    "3rLHaGT8f4ffCX220B$XUw": "FAIL",
+    "3sicsb7Rv7vOSpwjkHwdXP": "PASS",
+    "3topRXa9T1svryvk0HDA1V": "FAIL",
+    "3vqhA9V$zD8Ri_tijsQ9Uy": "FAIL",
+    "3wks5cHiv9puC78stid7dq": "PASS"
+  },
+  "notes": "Door clear width on 205 IfcDoor: {'FAIL': 22, 'PASS': 82}. 101 IfcDoor objects without a recorded width are unscored ({'liftdeur': 36, 'stelkozijn': 65}); Solibri flagged 28 of them from geometry.",
+  "clause": "DIN 18040-1 4.3.3.2 Table 1",
+  "source": "solibri_reference.py::build_door_width (door_width__schependomlaan.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 205,
+    "ifc_sha256": "2c3565ca1904f2aa61adab92024cf3755b2c5b21a498144d3094d7cb58cebec7",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "SOL/208 Accessible Door Rule, sub-rule 404.2.2 reduced to clear width: Use spaces off; one requirement row * / * with min width 900 mm, min height 0, max threshold 99999 mm, min glazing 0 %, no free-area requirements; default frame and panel thickness 0; no property overrides. Role Get Started (the Schependomlaan report was made under Example Rules; no classification is used by this rule).",
+      "ruleset_file": "thesis_heldout.cset",
+      "ruleset_sha256": "bbc188d5980640c8c44b2a7eb37fb6e530032c28fbc00a29c5724fbc32ef2494",
+      "report_file": "door_width__schependomlaan.xlsx",
+      "report_sha256": "09fab5ef3cbba9be232364974624ce4434d2086f7dd6baca3a66c4f9fd18f921",
+      "issues": 50,
+      "outside_scope": []
+    },
+    "status": "Solibri SOL/208 issues reproduced from the IFC under the stated convention; disagreements adjudicated with reasons.",
+    "policy": "Clear width = OverallWidth - 2 x type LiningThickness (else OverallWidth) >= 900 mm with 0.5 mm tolerance.",
+    "limitations": "Solibri measures door geometry including the frame when no lining thickness is recorded; outcomes agree here, values may differ. 101 IfcDoor objects without a recorded width are unscored ({'liftdeur': 36, 'stelkozijn': 65}); Solibri flagged 28 of them from geometry.",
+    "unscored_ids": [
+      "0$bCLIu6XFZvKNAS5U2$M5",
+      "04E1PaUW1Fze4qITB_nFaa",
+      "06lQ_SRDbDyuiUF0YIGOKi",
+      "073$0OxmvEMu0iJzPT4cfg",
+      "08IQ8vQ6n73vV7LBrwxuZu",
+      "0B9KdcSuf3jh8POLbkPzQ4",
+      "0B9hE_gGb05uoY$Fs9k827",
+      "0FjOoBbcP2FxJiAEY$_Ky$",
+      "0JzQ9ARmz4J9VOnJDh2nWI",
+      "0K1kgDm1jFHfoPfMpxkAe5",
+      "0LbBET9Yz9egUjXX_5FIas",
+      "0O3slHyAT0WgNB1xnKYnaE",
+      "0X248I49P2ruJd$STte42p",
+      "0YHiCuhWH8Qh_HTW9vOiHy",
+      "0ZNb2THTz00eu1RAEsgAJm",
+      "0ci9nEgpD5hOOJ58LmeO5E",
+      "0ghxYtUBn0pv_pxPdAfhme",
+      "0mLDe0vvD7lQPHmwh__YTZ",
+      "0oXb8$CCzDygbz5_8Oxzxv",
+      "0w3wabzRLAz99bhnECWj79",
+      "0zCkMWkdv5GfPfhUIwPa9J",
+      "0zzou4R_11kPXaS0hC0pre",
+      "1$7$AzEPH8hxqREDEXC9Ab",
+      "12kDL1eWzET9Qm2diwFxeL",
+      "13kU2WeeX43AmAN7yJpj7M",
+      "1EgBW0IB95EeR9l7z9ma4W",
+      "1HDfKcH0v4VRSVJicriZF4",
+      "1N$Oi2JN18FvfRlqLXpxqx",
+      "1UCnFJQ7nDgAX31ppgw6Pa",
+      "1Uv0j9g_TDo9SZvipUwvCd",
+      "1V8Tq0OFj91OWiIb7OgssW",
+      "1YmJTz8Sn4SxVWF6uxPIi6",
+      "1_5gcKSrbEWfNgi3h_qdnx",
+      "1a0yXwaPr6bQS$tJIhLQr1",
+      "1aJ$Qkat1AFgC0aRnCKwoP",
+      "1fXWFMY$T5VwEu43MZumk6",
+      "1h4sXeQ3fCCQTfDg40kePC",
+      "1lOvmnURjBcPf07ELTOqCT",
+      "1oUU4liMH32hV5EvVPxQjH",
+      "1s39gsbh161QnI10muM$N9",
+      "1soUbpz7v1zxTj9qXJhloc",
+      "1uxuNhGl5C28Agr6eD5Bmj",
+      "1weVzahvb12Qj14QP5JtRt",
+      "1zulTwZuvE8uDQG8i0rPWu",
+      "2$o2jRMbz4Ug6JAhiXdSr5",
+      "2$y_vPdK50rvRCnxRgbax0",
+      "2152K7A7j0Xhs5JOT$GaL4",
+      "25jGa8wIHFKepyW_M4Ngs7",
+      "262iH081180RfRZcryzr7v",
+      "26wG__yAf4jhBihTArGrfi",
+      "27b7kJ2C50Wxcp8woudHRw",
+      "28KVDgny54GgQmudzivmSF",
+      "2ANGxgZInBiOwD5Faih5nH",
+      "2BidPHSyjAeQnxVo9HGHwm",
+      "2IW6IWMcn9p9GSb$1bcM9y",
+      "2K7avqptP0rAzb1886J2AI",
+      "2O5ano1e1EJeQxf8IVwahY",
+      "2PEMzkDK9Dxum8sPRjDtq_",
+      "2RuuzaH1vFUwKXpU33GTyt",
+      "2VKgopOMr4PQnzIHA$Zbht",
+      "2VN0ufVPXBz91XSIqSEA4N",
+      "2Vb0PGtxLAoxa0tjC07GCC",
+      "2VhjvgnFDDXBW8fTsJGXX_",
+      "2WU8Fxger4FOI4ySi472UL",
+      "2_vRJL86PBTQqE3ySM6YFm",
+      "2b6PFyVHj5AwfHVP2cSS7T",
+      "2i1Z9kKWv4ie2N0CBoZWie",
+      "2lIYJtavL8Qgz5F0uXNHL_",
+      "2lRzoejMfDL9Jj8LLmEFKf",
+      "2nEtJExy5EkR8dxB8J7WF8",
+      "2qQEfBo11B5RTiiCq7k79L",
+      "2qunupXbPCmxdwcf_gKob5",
+      "2tt4s65cb2fgd3alKSa46a",
+      "2u5XGmt4D2bRNIEXQ9IBsW",
+      "2zilQ_m$j83PfsTQ$4$xs$",
+      "2zx7EWNY98lOv3r2x2yc76",
+      "31CBV10iDANhFbENO3uY2l",
+      "31JhVzvWf3EhVtVaBbU7f1",
+      "36DzLjnuL9XA2dudd2r92m",
+      "36ovl7bSP7_8ZDfLgjHA1Q",
+      "39Lqndo0HD0PPTIv$0QRef",
+      "3Ch3PayTPB6BbnIbMg0VDz",
+      "3D1M31qn1D9eCfALMUlAC6",
+      "3Elkb_Klj4kOU0Qc6PaizN",
+      "3G7ktHYG96gQbiZjzEbR8N",
+      "3IAsrlzln2x9CGCwGk5aBc",
+      "3J3WcMT$r8Zhg8fsSyC9$A",
+      "3KMMm8oqPDGRsQcfPPC6kS",
+      "3MkalSSaPB_h_tTcRHxH9A",
+      "3Qw1ZJI6n0$OYdAwY3sPY0",
+      "3V4FbFEIL7Texif7yDL7jp",
+      "3V_oBYi792a9_YZErx8HIx",
+      "3VeGPWRHL5QfWdPbnVK9h3",
+      "3YCmX8dc506hVi08zLmpbh",
+      "3lsMx$fx16hhyCY_qE6IRh",
+      "3qU0EkhG9CDeH0fDWtriF3",
+      "3tB9bs0jH8kvDCXNaFXLU4",
+      "3v$Jw_gpr6OOS8FFzqFDOt",
+      "3vVPMVKpv8WR4t1AhJIyPH",
+      "3xkLH3xAf9Qvv7jXLTD0bw",
+      "3ztvEc4nv0AQG9DRef3G4g"
+    ]
+  },
+  "provenance": {
+    "0$vj6GrA15b852nxv8ecYB": {
+      "name": "D2R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "012S6Z0qLCRuoYXSZ2tygw": {
+      "name": "merk A3",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.0.69",
+        "name": "merk A3",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "02v5nA3u16Nh8SnTLbZVnM": {
+      "name": "D5R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "03KwpgDxXCQBYi7KkY7sYB": {
+      "name": "D6L",
+      "overall_width_mm": 680.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 680.0,
+      "solibri": {
+        "component": "Door.0.4",
+        "name": "D6L",
+        "width_mm": 795.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "06_o2t73nBXvUfWV0NnaRj": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "09NbJFNdj9fxN2xh$EA6wX": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0DE9eeknn1UwV6HdBQLtSn": {
+      "name": "D2R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0ETp$wstn6uO7g6ZydQW6K": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0EWFPIrsv7_9lhqHOpPwsU": {
+      "name": "merk E5-R",
+      "overall_width_mm": 2540.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2540.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0HKXdsxQDBXehvvnIH9Bj2": {
+      "name": "merk E2-R",
+      "overall_width_mm": 2540.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2540.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0HTjC8kFv6W9Fd4e3r5fjg": {
+      "name": "D2L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0Hdk5PAnP3pwtj9xXKmFBe": {
+      "name": "D6L",
+      "overall_width_mm": 680.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 680.0,
+      "solibri": {
+        "component": "Door.3.22",
+        "name": "D6L",
+        "width_mm": 777.5,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0IzB0Fhx1E3e$Sm$$GKqe7": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0MO3NBPw1FofnfwKUa2odt": {
+      "name": "merk A5",
+      "overall_width_mm": 1034.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 900.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0NWv8IgP5Ch9a8sHZoyivA": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0NZRpUHUn8f9KjPRtTRauP": {
+      "name": "D5R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0OL2bP1B5Ezfgv8L13MayF": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0REpZXGX116vUWlC_COT3l": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0WcADPJA571PyQI1eSlkC4": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0WwnDCcYLFJx3r5wMCkNbs": {
+      "name": "D3R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0_AyfC57H5ZhnJFKbaFPKq": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0etZemLbbAog_wCl27YohR": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0h4oGef9T1PgTelA09ZLn2": {
+      "name": "D6L",
+      "overall_width_mm": 680.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 680.0,
+      "solibri": {
+        "component": "Door.2.36",
+        "name": "D6L",
+        "width_mm": 777.5,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0hLbfgnI116fYrSi5yltYv": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0m7Z8$vfnDLxF9ZlRdjI6b": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0paFAbnyj3DQz4eYs1LQRb": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0rEPlH2fP8YQ_q3GiazsFo": {
+      "name": "merk A3sp",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.2.18",
+        "name": "merk A3sp",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0wAyj9PWL7guJFQHdw7ccc": {
+      "name": "D5R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0xrZguOJ55xx5lucOklTa9": {
+      "name": "D7L",
+      "overall_width_mm": 630.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 630.0,
+      "solibri": {
+        "component": "Door.2.44",
+        "name": "D7L",
+        "width_mm": 745.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "0yGGfH85nFPvINarcAfBNX": {
+      "name": "merk E1-R",
+      "overall_width_mm": 2470.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2470.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "0yy1u9ooTD5vShTp5wGvUE": {
+      "name": "D6L",
+      "overall_width_mm": 680.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 680.0,
+      "solibri": {
+        "component": "Door.0.49",
+        "name": "D6L",
+        "width_mm": 795.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "12pKvnM8rEghVj2eehBckA": {
+      "name": "D5R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "13lQ7MfpP9YQNh0Z31qoMP": {
+      "name": "merk E2-R",
+      "overall_width_mm": 2540.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2540.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "140c7DVn1Fdgh5_iO2DSKg": {
+      "name": "merk E5-R",
+      "overall_width_mm": 2540.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2540.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "14rAyAJ$L5nPK$yo6WYX5X": {
+      "name": "D6L",
+      "overall_width_mm": 680.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 680.0,
+      "solibri": {
+        "component": "Door.1.17",
+        "name": "D6L",
+        "width_mm": 777.5,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "14tZx$UMb8cBHoti0zk1Nr": {
+      "name": "D2R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "15D5L0A5L99eNxZZrhk3Pa": {
+      "name": "D3L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1AjHEuqyLASxbhLNVsGq0u": {
+      "name": "D2R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1DMKLKe45CzO6gemze$ha$": {
+      "name": "D3L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1FtRH1k0bE4fyu_U9mJBmf": {
+      "name": "merk H",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1LZHcsRev6lhsez4LMDFr$": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1Le1BurSf8iQTApHN20xGM": {
+      "name": "D2L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1MMTbq1t93CfhQ63Tyks8n": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1X$gsMt2nFuv_fouZFh5_Z": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ZFLyNI$fDRgE2KgYahsry": {
+      "name": "merk A3sp",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.1.14",
+        "name": "merk A3sp",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1btohEUvb9RxFSreiwC9NA": {
+      "name": "merk A2",
+      "overall_width_mm": 1034.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 854.0,
+      "solibri": {
+        "component": "Door.0.41",
+        "name": "merk A2",
+        "width_mm": 854.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "1cjDN$L7j3xQ6006KWGjlJ": {
+      "name": "D2L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ct3PC$Rf39OYRwaCfR2gz": {
+      "name": "D2L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1dnueTAkL0h8RlVLQtwd3w": {
+      "name": "merk A1sp",
+      "overall_width_mm": 1210.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1030.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1donuLXK125fRkeWlAA8Cq": {
+      "name": "D4R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1f8696ukP6ngAHgpRZz3ju": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1jTFg_BbD2_gRGTcr0jnVr": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1jm08JDI1AxPr7MMlr69d8": {
+      "name": "merk E3-R",
+      "overall_width_mm": 2860.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2860.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1k3S_FTjr5YgVNsOxgXfqg": {
+      "name": "merk F-R",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1ktZHnXqP81AONft3VUKlo": {
+      "name": "merk F-R",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1xjGgwmzP23uthLfXurB67": {
+      "name": "merk A",
+      "overall_width_mm": 1210.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1030.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "1zWpVk7Az3eeFDJEw36Ky9": {
+      "name": "merk E1-R",
+      "overall_width_mm": 2470.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2470.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2$GgreKs5Auv1nDBFIDDQQ": {
+      "name": "D2R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "26_$0XSjr4qx6Hsbp36s4D": {
+      "name": "D8R",
+      "overall_width_mm": 680.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 680.0,
+      "solibri": {
+        "component": "Door.1.16",
+        "name": "D8R",
+        "width_mm": 775.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "275N_u7Z9EtgoRNFproXEn": {
+      "name": "D3R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "27bh8yZhL8hPRD0H6aMxEY": {
+      "name": "merk H",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "29ln2Cp8P9jBBVLpq36yJx": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2AH9fQqwXE9O9QvwUR77zF": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2DaLEnOpD71xPKiE7SoDTP": {
+      "name": "merk F-R",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2EKQPtlE15r9nj5or9E3v0": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2Gq0QN14T6$e3J8hk70VQH": {
+      "name": "D5R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2Jqop0uBb9AxYtqSXLjzrD": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2KQzcnl4P108p1xYLp2BcG": {
+      "name": "merk A2sp",
+      "overall_width_mm": 1034.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 854.0,
+      "solibri": {
+        "component": "Door.0.52",
+        "name": "merk A2sp",
+        "width_mm": 854.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2XH6N5hOT3yAuGpef5XEDg": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2cb8c3os963f5n9Wjr4O99": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2hVrKM8Vv2Xxs7m9ITda8L": {
+      "name": "merk F-R",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2i$ImWrU5CrPuyb0cxLRsY": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2lVoJcfoDAWB0KDozjmBha": {
+      "name": "D6L",
+      "overall_width_mm": 680.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 680.0,
+      "solibri": {
+        "component": "Door.0.73",
+        "name": "D6L",
+        "width_mm": 795.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2mNENoxwD4MQMQY_gKi$v7": {
+      "name": "D7L",
+      "overall_width_mm": 630.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 630.0,
+      "solibri": {
+        "component": "Door.1.40",
+        "name": "D7L",
+        "width_mm": 745.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2pAvanoIzEV8kE6N3CBDLL": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2qY72vI$D0SenCZx1z6HDK": {
+      "name": "merk E4-R",
+      "overall_width_mm": 2860.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 2860.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2uTeXyy8XDYvkI0uWy38WP": {
+      "name": "D3L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2vFhUBbYLDEuToK036Hl$0": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "2wNrfbWo5F3AXCQjcATu9n": {
+      "name": "D8R",
+      "overall_width_mm": 630.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 630.0,
+      "solibri": {
+        "component": "Door.1.24",
+        "name": "D8R",
+        "width_mm": 745.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "2zIan9UMbEDv$MtEuXRGaI": {
+      "name": "D5R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "36MmH3zZH16QTwC46Vbk$D": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "38X2u$b_51PQbXrbF3UXq0": {
+      "name": "merk A6",
+      "overall_width_mm": 1470.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 1336.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3BDarYIf1EXRuu7o6glIV$": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3FUHlAm49BC88X$DRC3IqI": {
+      "name": "D3L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3G$_TtmoH0i97AYiv2eBBu": {
+      "name": "merk H",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3I96DDOZX58xC3RmUZssQx": {
+      "name": "D2R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3LHBKM1sPCkOXvRtwp$pev": {
+      "name": "D4R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3N5xNVjr9Ehhxk6BUdGUAs": {
+      "name": "D5R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3OgInA0dD3qBERzneS1WG0": {
+      "name": "D3L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3UPz4qnhz6dR_hTWbylJYM": {
+      "name": "merk A3",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.2.33",
+        "name": "merk A3",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3WXd7RsH9CT9CRRwuhBxrU": {
+      "name": "merk H",
+      "overall_width_mm": 1715.0,
+      "lining_thickness_mm": 90.0,
+      "clear_width_mm": 1535.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3XlDiPbzT5wuWLtvoN9ad0": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3b$SMEeUf10eNHEHoPH0ta": {
+      "name": "D1R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3cjGEZBqP9GQh7eyumO1LZ": {
+      "name": "D3R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3lE1SkMIbDaBDRbQV9PuSz": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3lVtU7tjD3YOCLUfqajZ2A": {
+      "name": "merk A4",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.3.9",
+        "name": "merk A4",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3nUiG96vjAwPUR6jFmv$ZI": {
+      "name": "D8R",
+      "overall_width_mm": 630.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 630.0,
+      "solibri": {
+        "component": "Door.2.16",
+        "name": "D8R",
+        "width_mm": 745.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3p9J1sHcf4ju8QNF1IhRNV": {
+      "name": "D5L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3qYGwE1BDBbP2FWtfJUDNa": {
+      "name": "merk A3",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.1.2",
+        "name": "merk A3",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3rLHaGT8f4ffCX220B$XUw": {
+      "name": "D9L",
+      "overall_width_mm": 630.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 630.0,
+      "solibri": {
+        "component": "Door.3.3",
+        "name": "D9L",
+        "width_mm": 725.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3sicsb7Rv7vOSpwjkHwdXP": {
+      "name": "D1L",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    },
+    "3topRXa9T1svryvk0HDA1V": {
+      "name": "merk A3sp",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.1.8",
+        "name": "merk A3sp",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3vqhA9V$zD8Ri_tijsQ9Uy": {
+      "name": "merk A3sp",
+      "overall_width_mm": 1016.0,
+      "lining_thickness_mm": 67.0,
+      "clear_width_mm": 882.0,
+      "solibri": {
+        "component": "Door.3.20",
+        "name": "merk A3sp",
+        "width_mm": 882.0,
+        "severity": "Moderate Severity"
+      },
+      "label": "FAIL",
+      "conflict": null
+    },
+    "3wks5cHiv9puC78stid7dq": {
+      "name": "D3R",
+      "overall_width_mm": 930.0,
+      "lining_thickness_mm": null,
+      "clear_width_mm": 930.0,
+      "solibri": null,
+      "label": "PASS",
+      "conflict": null
+    }
+  }
+}

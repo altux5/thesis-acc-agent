@@ -80,6 +80,8 @@ FinalReport: submit your committed labels, or UNKNOWN naming what is unresolved.
 """
 NO_TOOL_CALL = ("No tool call received. Text alone does not end the check: call run_python "
                 "to execute code, or submit FinalReport.")
+MALFORMED_TOOL_CALL = ("Your tool call could not be parsed (invalid arguments), so no code ran. "
+                       "Send it again with valid JSON arguments.")
 LAST_CALL = ("This is the last model call and only FinalReport is accepted: run_python sent now is "
              "rejected and does not run. Submit FinalReport from your committed labels, or UNKNOWN "
              "naming what is unresolved.")
@@ -235,6 +237,15 @@ class RunEvents(AgentMiddleware):
         last_ai = state["messages"][last_index]
         if self.owner.harness == 2 and len(self.result.llm_calls) == 1:
             return {"messages": [HumanMessage("Now execute your plan with run_python, then submit FinalReport.")], "jump_to": "model"}
+        if last_ai.invalid_tool_calls:
+            # An unanswered malformed call makes the provider reject the next request, so it is removed.
+            self.result.llm_calls[-1]["malformed_tool_calls"] = len(last_ai.invalid_tool_calls)
+            cleaned = last_ai.model_copy(update={"invalid_tool_calls": [], "additional_kwargs": {
+                key: value for key, value in last_ai.additional_kwargs.items() if key != "tool_calls"}})
+            if last_ai.tool_calls:
+                return {"messages": [cleaned]}
+            self.emit("notice", message=MALFORMED_TOOL_CALL)
+            return {"messages": [cleaned, HumanMessage(MALFORMED_TOOL_CALL)], "jump_to": "model"}
         if not last_ai.tool_calls:
             self.emit("notice", message=NO_TOOL_CALL)
             return {"messages": [HumanMessage(NO_TOOL_CALL)], "jump_to": "model"}

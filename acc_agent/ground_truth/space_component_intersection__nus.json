@@ -1,0 +1,1869 @@
+{
+  "case_id": "space_component_intersection__nus",
+  "rule": "A space must not intersect walls, curtain walls, columns, slabs or roofs.\nSource: rule 'Space Validation' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct. It checks that space does not incorrectly intersect with slabs, walls or other components. This template focuses only on the 'intersect' check.\nBenchmark convention: a space fails when its volume overlaps a wall, curtain wall, column, slab or roof by more than 30 mm; smaller overlaps at the space boundary are tolerated. Components lying entirely inside the space are covered by a separate check; doors, windows, furniture and other spaces are ignored.\n\nLabel every space.\nReport the GlobalId of every element (modelled as IfcSpace) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_068_ARK_NUS_skolebygg.ifc",
+  "complexity": 2,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "07IPnbFF9A7OqEZXG1rZ4g",
+    "0O6RmI9obEW97tfOGeN2Rw",
+    "0VHRzkIDX2DuvjCFVkbfF4",
+    "0g6Q1Oziz5EwIXLFCMUYA9",
+    "0mHUZfD49ChOtSTEi2Ly30",
+    "0mHUZfD49ChOtSTEi2Ly3A",
+    "1Lay46Xgv6RgWeQkUTlz0b",
+    "1O9GNXP$zBaOPPulmAYoop",
+    "1SbyHu_6T0kAAtXB$3$NRz",
+    "1SsGPt4o9Afxe9eGF2Wk_D",
+    "1SsGPt4o9Afxe9eGF2WknZ",
+    "1SsGPt4o9Afxe9eGF2lHmg",
+    "1SsGPt4o9Afxe9eGF2lHnm",
+    "1VZcOche5DNBaEqNbjG4u$",
+    "1W4anoHSvEagzJkF5I2Jeh",
+    "1rtshpHUfBEByl_99_lGeb",
+    "2Jhr9gTEb7uRPEikz62uD5",
+    "2Jhr9gTEb7uRPEikz62uoG",
+    "2Mk4fTGVn7uRSK9CXQV6I_",
+    "2Mk4fTGVn7uRSK9CXQV6Iu",
+    "2eRgnu7L17ZOubCmc00spZ",
+    "2m1K8l4J5EVRSrdPe9FBMT",
+    "3BKmLu96P3x81trSIDmkLm",
+    "3BKmLu96P3x81trSIDmkNb",
+    "3BKmLu96P3x81trSIDmkQo",
+    "3Fb4Dxdo92M90cDdbfIueo",
+    "3vd1UdIAvDjRJYlTsnj81F",
+    "3y7w$rQQ92sPNEVtsgzpX2"
+  ],
+  "labels": {
+    "05REHM4pX8oud$dIi5_3Q7": "PASS",
+    "07IPnbFF9A7OqEZXG1rZ4g": "FAIL",
+    "07IPnbFF9A7OqEZXG1rZD1": "PASS",
+    "07IPnbFF9A7OqEZXG1rZD4": "PASS",
+    "07IPnbFF9A7OqEZXG1rZD7": "PASS",
+    "07IPnbFF9A7OqEZXG1rZDG": "PASS",
+    "07IPnbFF9A7OqEZXG1rZDJ": "PASS",
+    "07IPnbFF9A7OqEZXG1rZMA": "PASS",
+    "07IPnbFF9A7OqEZXG1rZMD": "PASS",
+    "07IPnbFF9A7OqEZXG1rZMq": "PASS",
+    "07IPnbFF9A7OqEZXG1rZMt": "PASS",
+    "07IPnbFF9A7OqEZXG1rZNV": "PASS",
+    "07IPnbFF9A7OqEZXG1rZNv": "PASS",
+    "07UrQhYVz9yBaIyQU10bri": "PASS",
+    "07UrQhYVz9yBaIyQU10dij": "PASS",
+    "08GVq7fsXFERuG_j1Qwe$9": "PASS",
+    "0L5obUJ515fwEAPUAA9DTC": "PASS",
+    "0L5obUJ515fwEAPUAA9Ew$": "PASS",
+    "0MGILT7Q5BlwRIAtxlLZlj": "PASS",
+    "0O6RmI9obEW97tfOGeN2R0": "PASS",
+    "0O6RmI9obEW97tfOGeN2R2": "PASS",
+    "0O6RmI9obEW97tfOGeN2R6": "PASS",
+    "0O6RmI9obEW97tfOGeN2R8": "PASS",
+    "0O6RmI9obEW97tfOGeN2RC": "PASS",
+    "0O6RmI9obEW97tfOGeN2RE": "PASS",
+    "0O6RmI9obEW97tfOGeN2RW": "PASS",
+    "0O6RmI9obEW97tfOGeN2R_": "PASS",
+    "0O6RmI9obEW97tfOGeN2Rm": "PASS",
+    "0O6RmI9obEW97tfOGeN2Ro": "PASS",
+    "0O6RmI9obEW97tfOGeN2Rq": "PASS",
+    "0O6RmI9obEW97tfOGeN2Rs": "PASS",
+    "0O6RmI9obEW97tfOGeN2Ru": "PASS",
+    "0O6RmI9obEW97tfOGeN2Rw": "FAIL",
+    "0O6RmI9obEW97tfOGeN2Ry": "PASS",
+    "0VHRzkIDX2DuvjCFVkbfF4": "FAIL",
+    "0VHRzkIDX2DuvjCFVkbfF5": "PASS",
+    "0VHRzkIDX2DuvjCFVkbfJD": "PASS",
+    "0VHRzkIDX2DuvjCFVkbfJE": "PASS",
+    "0Y$aYBsd95XvxtX1ReaVfJ": "PASS",
+    "0YQcG7Ix17qwu5Cxec8rw7": "PASS",
+    "0YQcG7Ix17qwu5Cxec8rwA": "PASS",
+    "0YQcG7Ix17qwu5Cxec8ry7": "PASS",
+    "0YQcG7Ix17qwu5Cxec8rzP": "PASS",
+    "0YQcG7Ix17qwu5Cxec8rzh": "PASS",
+    "0Zn0wx8eH7NfKTR5S_7AGY": "PASS",
+    "0_btFICcn5Ohf6LjltFrFX": "PASS",
+    "0g6Q1Oziz5EwIXLFCMUYA9": "FAIL",
+    "0g6Q1Oziz5EwIXLFCMUYpx": "PASS",
+    "0kU0O9WIP2WgsQMWFu_Mje": "PASS",
+    "0m$xqYYAH4$9ONy59vBOMM": "PASS",
+    "0m$xqYYAH4$9ONy59vBPTn": "PASS",
+    "0m$xqYYAH4$9ONy59vBPdJ": "PASS",
+    "0m$xqYYAH4$9ONy59vBVIZ": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0_": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0m": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0o": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0q": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0s": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0u": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0w": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly0y": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly30": "FAIL",
+    "0mHUZfD49ChOtSTEi2Ly32": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly34": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly36": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly38": "PASS",
+    "0mHUZfD49ChOtSTEi2Ly3A": "FAIL",
+    "0pVXoN1Hn1UAOvcR4gh9Eo": "PASS",
+    "0pVXoN1Hn1UAOvcR4gh9jG": "PASS",
+    "0pVXoN1Hn1UAOvcR4ghE9k": "PASS",
+    "0v6bRnwlv82AjqcubmQMd7": "PASS",
+    "0xreTDAeLELx4IZoI4A_DQ": "PASS",
+    "179JXYmSH1PeR25_V8cDO$": "PASS",
+    "1CyWAVy093fBtm4PNMCP$r": "PASS",
+    "1CyWAVy093fBtm4PNMCPzY": "PASS",
+    "1L$xslAsb6lOT$st_0GzzX": "PASS",
+    "1Lay46Xgv6RgWeQkUTlz0b": "FAIL",
+    "1Lay46Xgv6RgWeQkUTlz18": "PASS",
+    "1Lay46Xgv6RgWeQkUTlz2$": "PASS",
+    "1Lay46Xgv6RgWeQkUTlz2B": "PASS",
+    "1Lay46Xgv6RgWeQkUTlz2b": "PASS",
+    "1Lay46Xgv6RgWeQkUTlz7c": "PASS",
+    "1Lay46Xgv6RgWeQkUTlz7h": "PASS",
+    "1Lay46Xgv6RgWeQkUTlz8B": "PASS",
+    "1O9GNXP$zBaOPPulmAYoop": "FAIL",
+    "1RNV22clP118A7UAI7tUGo": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NOA": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NPp": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NR$": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRY": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRe": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRg": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRh": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRi": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRk": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRn": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRp": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRr": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRt": "PASS",
+    "1SbyHu_6T0kAAtXB$3$NRz": "FAIL",
+    "1SsGPt4o9Afxe9eGF2Wk_D": "FAIL",
+    "1SsGPt4o9Afxe9eGF2WknZ": "FAIL",
+    "1SsGPt4o9Afxe9eGF2lH4J": "PASS",
+    "1SsGPt4o9Afxe9eGF2lHMb": "PASS",
+    "1SsGPt4o9Afxe9eGF2lHmW": "PASS",
+    "1SsGPt4o9Afxe9eGF2lHmg": "FAIL",
+    "1SsGPt4o9Afxe9eGF2lHnm": "FAIL",
+    "1SsGPt4o9Afxe9eGF2lHqA": "PASS",
+    "1SsGPt4o9Afxe9eGF2lHsR": "PASS",
+    "1SsGPt4o9Afxe9eGF2lJ1z": "PASS",
+    "1SsGPt4o9Afxe9eGF2lJrC": "PASS",
+    "1VZcOche5DNBaEqNbjG2B2": "PASS",
+    "1VZcOche5DNBaEqNbjG2BV": "PASS",
+    "1VZcOche5DNBaEqNbjG4u$": "FAIL",
+    "1VZcOche5DNBaEqNbjG4uc": "PASS",
+    "1VZcOche5DNBaEqNbjG5AI": "PASS",
+    "1VZcOche5DNBaEqNbjG5xo": "PASS",
+    "1VZcOche5DNBaEqNbjG5xr": "PASS",
+    "1W4anoHSvEagzJkF5I2Icl": "PASS",
+    "1W4anoHSvEagzJkF5I2Jeh": "FAIL",
+    "1W4anoHSvEagzJkF5I2Jqr": "PASS",
+    "1W4anoHSvEagzJkF5I2Jr8": "PASS",
+    "1W4anoHSvEagzJkF5I2Jzu": "PASS",
+    "1ahQODQnPAMBZ$ZJoOQlUT": "PASS",
+    "1b4KDh3Ev8XQCDyubImQ83": "PASS",
+    "1b4KDh3Ev8XQCDyubImQ8S": "PASS",
+    "1b4KDh3Ev8XQCDyubImQC_": "PASS",
+    "1b4KDh3Ev8XQCDyubImQHj": "PASS",
+    "1faWhvRn5FTwhspca6dG0j": "PASS",
+    "1faWhvRn5FTwhspca6dG0t": "PASS",
+    "1gWEt8T_HBnvvrCjhE6Ix2": "PASS",
+    "1hzhZJcfzBdAO_ZxZN67dF": "PASS",
+    "1hzhZJcfzBdAO_ZxZN67qE": "PASS",
+    "1ljX6V5JL0PBBxw92e261A": "PASS",
+    "1ljX6V5JL0PBBxw92e26Mg": "PASS",
+    "1oN04Lj9z5RPCGRFPqyoj0": "PASS",
+    "1rtshpHUfBEByl_99_lGeb": "FAIL",
+    "1tt$4eT0DBwhSfiV$I$bYp": "PASS",
+    "26RxP6_5LFexv$UE65jJXr": "PASS",
+    "26gtHYBrT6nxlSTHaykFM3": "PASS",
+    "26gtHYBrT6nxlSTHaykFbK": "PASS",
+    "2I0AkHMNb4$AondkMUUESc": "PASS",
+    "2Jhr9gTEb7uRPEikz62uC0": "PASS",
+    "2Jhr9gTEb7uRPEikz62uD$": "PASS",
+    "2Jhr9gTEb7uRPEikz62uD5": "FAIL",
+    "2Jhr9gTEb7uRPEikz62uDI": "PASS",
+    "2Jhr9gTEb7uRPEikz62uDR": "PASS",
+    "2Jhr9gTEb7uRPEikz62uDS": "PASS",
+    "2Jhr9gTEb7uRPEikz62uEZ": "PASS",
+    "2Jhr9gTEb7uRPEikz62uEj": "PASS",
+    "2Jhr9gTEb7uRPEikz62uF2": "PASS",
+    "2Jhr9gTEb7uRPEikz62uoG": "FAIL",
+    "2Jhr9gTEb7uRPEikz62uph": "PASS",
+    "2Jhr9gTEb7uRPEikz62upi": "PASS",
+    "2Mk4fTGVn7uRSK9CXQV6I_": "FAIL",
+    "2Mk4fTGVn7uRSK9CXQV6Iu": "FAIL",
+    "2UP1D5XZXBVhn11uz1FkAp": "PASS",
+    "2UP1D5XZXBVhn11uz1FkB9": "PASS",
+    "2UnkuL9kTERwsmYkmjy1LY": "PASS",
+    "2UnkuL9kTERwsmYkmjy1Oj": "PASS",
+    "2UnkuL9kTERwsmYkmjy1Ok": "PASS",
+    "2eRgnu7L17ZOubCmc00nEL": "PASS",
+    "2eRgnu7L17ZOubCmc00nEN": "PASS",
+    "2eRgnu7L17ZOubCmc00nEP": "PASS",
+    "2eRgnu7L17ZOubCmc00smH": "PASS",
+    "2eRgnu7L17ZOubCmc00smR": "PASS",
+    "2eRgnu7L17ZOubCmc00snD": "PASS",
+    "2eRgnu7L17ZOubCmc00snY": "PASS",
+    "2eRgnu7L17ZOubCmc00sna": "PASS",
+    "2eRgnu7L17ZOubCmc00snc": "PASS",
+    "2eRgnu7L17ZOubCmc00sng": "PASS",
+    "2eRgnu7L17ZOubCmc00snl": "PASS",
+    "2eRgnu7L17ZOubCmc00snp": "PASS",
+    "2eRgnu7L17ZOubCmc00snt": "PASS",
+    "2eRgnu7L17ZOubCmc00snv": "PASS",
+    "2eRgnu7L17ZOubCmc00snx": "PASS",
+    "2eRgnu7L17ZOubCmc00sp$": "PASS",
+    "2eRgnu7L17ZOubCmc00sp0": "PASS",
+    "2eRgnu7L17ZOubCmc00sp2": "PASS",
+    "2eRgnu7L17ZOubCmc00sp5": "PASS",
+    "2eRgnu7L17ZOubCmc00spF": "PASS",
+    "2eRgnu7L17ZOubCmc00spQ": "PASS",
+    "2eRgnu7L17ZOubCmc00spX": "PASS",
+    "2eRgnu7L17ZOubCmc00spZ": "FAIL",
+    "2eRgnu7L17ZOubCmc00spb": "PASS",
+    "2eRgnu7L17ZOubCmc00spe": "PASS",
+    "2eRgnu7L17ZOubCmc00spq": "PASS",
+    "2eRgnu7L17ZOubCmc00spv": "PASS",
+    "2kvhrWDcL18AQNu3F5iev7": "PASS",
+    "2kvhrWDcL18AQNu3F5ifGf": "PASS",
+    "2kvhrWDcL18AQNu3F5ifUO": "PASS",
+    "2kvhrWDcL18AQNu3F5ifd1": "PASS",
+    "2kvhrWDcL18AQNu3F5ifdK": "PASS",
+    "2kvhrWDcL18AQNu3F5ifdP": "PASS",
+    "2kvhrWDcL18AQNu3F5ig_v": "PASS",
+    "2m1K8l4J5EVRSrdPe9FBMT": "FAIL",
+    "2m1K8l4J5EVRSrdPe9FBMW": "PASS",
+    "2m1K8l4J5EVRSrdPe9FBMc": "PASS",
+    "2m1K8l4J5EVRSrdPe9FBMf": "PASS",
+    "2n9DbFqOXANRrn9LydtL0h": "PASS",
+    "2n9DbFqOXANRrn9LydtL0i": "PASS",
+    "2pBbc1_Zv8Kg_ojb$Foxiv": "PASS",
+    "2pBbc1_Zv8Kg_ojb$Foxjm": "PASS",
+    "2pBbc1_Zv8Kg_ojb$Foxjy": "PASS",
+    "2qfnXEq6f9GQ8oiR65bOYj": "PASS",
+    "2qfnXEq6f9GQ8oiR65bPw1": "PASS",
+    "2qfnXEq6f9GQ8oiR65bPw6": "PASS",
+    "2qfnXEq6f9GQ8oiR65bPw8": "PASS",
+    "2qfnXEq6f9GQ8oiR65bPwB": "PASS",
+    "2sgv8ljCfCR8d7fPoL5Kx9": "PASS",
+    "2sgv8ljCfCR8d7fPoL5KxE": "PASS",
+    "3$4qWlrsf2R8XgVTqqEaRI": "PASS",
+    "3$4qWlrsf2R8XgVTqqEaZx": "PASS",
+    "3$rFGQEe52_QUl9J75_cpX": "PASS",
+    "395lAaLE1BUe7I1Z_lFR4A": "PASS",
+    "3BKmLu96P3x81trSIDmkKs": "PASS",
+    "3BKmLu96P3x81trSIDmkKv": "PASS",
+    "3BKmLu96P3x81trSIDmkKy": "PASS",
+    "3BKmLu96P3x81trSIDmkL1": "PASS",
+    "3BKmLu96P3x81trSIDmkLm": "FAIL",
+    "3BKmLu96P3x81trSIDmkMI": "PASS",
+    "3BKmLu96P3x81trSIDmkMo": "PASS",
+    "3BKmLu96P3x81trSIDmkN9": "PASS",
+    "3BKmLu96P3x81trSIDmkNC": "PASS",
+    "3BKmLu96P3x81trSIDmkNb": "FAIL",
+    "3BKmLu96P3x81trSIDmkO5": "PASS",
+    "3BKmLu96P3x81trSIDmkO8": "PASS",
+    "3BKmLu96P3x81trSIDmkOr": "PASS",
+    "3BKmLu96P3x81trSIDmkP7": "PASS",
+    "3BKmLu96P3x81trSIDmkQ4": "PASS",
+    "3BKmLu96P3x81trSIDmkQ7": "PASS",
+    "3BKmLu96P3x81trSIDmkQA": "PASS",
+    "3BKmLu96P3x81trSIDmkQo": "FAIL",
+    "3BKmLu96P3x81trSIDmkR2": "PASS",
+    "3BKmLu96P3x81trSIDmkSF": "PASS",
+    "3BKmLu96P3x81trSIDmkSo": "PASS",
+    "3BKmLu96P3x81trSIDmkU4": "PASS",
+    "3Fb4Dxdo92M90cDdbfIueo": "FAIL",
+    "3Fb4Dxdo92M90cDdbfIuqL": "PASS",
+    "3Fb4Dxdo92M90cDdbfIuqN": "PASS",
+    "3Fb4Dxdo92M90cDdbfIus$": "PASS",
+    "3Fb4Dxdo92M90cDdbfIus1": "PASS",
+    "3Fb4Dxdo92M90cDdbfIus3": "PASS",
+    "3Fb4Dxdo92M90cDdbfIus7": "PASS",
+    "3Fb4Dxdo92M90cDdbfIusB": "PASS",
+    "3Fb4Dxdo92M90cDdbfIusF": "PASS",
+    "3Fb4Dxdo92M90cDdbfIusn": "PASS",
+    "3Fb4Dxdo92M90cDdbfIusr": "PASS",
+    "3Fb4Dxdo92M90cDdbfIust": "PASS",
+    "3Fb4Dxdo92M90cDdbfIusv": "PASS",
+    "3Fb4Dxdo92M90cDdbfIusx": "PASS",
+    "3Fb4Dxdo92M90cDdbfIusz": "PASS",
+    "3Guh9aw2DAowCEeacH$UyD": "PASS",
+    "3HiJx4Leb7_OvgmGyCTnKE": "PASS",
+    "3HuqBDqOj6H9c2lS071LTU": "PASS",
+    "3PUP2p9hz1TRkdLnawtACP": "PASS",
+    "3QMa9A_7r8y91m$xOU35S_": "PASS",
+    "3TILYnBqn2LAQMVLVwlPDT": "PASS",
+    "3UwuebPsT9UQPBcwBbIuiD": "PASS",
+    "3aykUI48PFFPLT8mW5nEhx": "PASS",
+    "3bLZS8LdD0tBnDMMaF2LHz": "PASS",
+    "3eVd2GHRP7pBcAD$Ofxqx$": "PASS",
+    "3eVd2GHRP7pBcAD$Ofxqxz": "PASS",
+    "3ocZLIQYXDOPzNki$8h4_2": "PASS",
+    "3ocZLIQYXDOPzNki$8h4_4": "PASS",
+    "3ocZLIQYXDOPzNki$8h4_G": "PASS",
+    "3ocZLIQYXDOPzNki$8h4zA": "PASS",
+    "3ocZLIQYXDOPzNki$8h4zD": "PASS",
+    "3ocZLIQYXDOPzNki$8h4zZ": "PASS",
+    "3ocZLIQYXDOPzNki$8h4z_": "PASS",
+    "3ocZLIQYXDOPzNki$8h4zk": "PASS",
+    "3ocZLIQYXDOPzNki$8h4zu": "PASS",
+    "3paGAJbAj1URJxhZfktZ8P": "PASS",
+    "3paGAJbAj1URJxhZfktZ8R": "PASS",
+    "3s_REImLD8m8oa5_3mxxtH": "PASS",
+    "3vd1UdIAvDjRJYlTsnj81F": "FAIL",
+    "3vd1UdIAvDjRJYlTsnj8lP": "PASS",
+    "3y7w$rQQ92sPNEVtsgzp$r": "PASS",
+    "3y7w$rQQ92sPNEVtsgzp$t": "PASS",
+    "3y7w$rQQ92sPNEVtsgzp$w": "PASS",
+    "3y7w$rQQ92sPNEVtsgzpX2": "FAIL",
+    "3y7w$rQQ92sPNEVtsgzpyp": "PASS"
+  },
+  "notes": "Space Validation on 307 IfcSpace: {'FAIL': 28, 'PASS': 254}. 25 unscored: IfcSpace objects with LongName 'Area' are whole-storey GFA zones from Revit area plans that overlap the rooms; they are not rooms (user, 2026-10-16).",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_nus_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "annotated_subset",
+    "population": 307,
+    "ifc_sha256": "362f0f5e5ad35557014100a6c4de75ec166f6dbd9197933170dc1423f4af2a76",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Space Validation",
+      "message": "Space intersects with",
+      "report_file": "ec3_nus_check.xlsx",
+      "report_sha256": "90c05f08536b3d573876849b4be498f33c8c6e47af3819fd8d28a8b94b675f1f",
+      "rule_issues": 152,
+      "matching_issues": 51
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently. 25 unscored: IfcSpace objects with LongName 'Area' are whole-storey GFA zones from Revit area plans that overlap the rooms; they are not rooms (user, 2026-10-16).",
+    "unscored_ids": [
+      "0fjzaIj3f0WOY$kYZ8g9mh",
+      "0fjzaIj3f0WOY$kYZ8g9wb",
+      "0fjzaIj3f0WOY$kYZ8gA1_",
+      "0fjzaIj3f0WOY$kYZ8gA9R",
+      "1FkEtDPnzCn9WyF3lMebhC",
+      "1bzYx8Zgr6FQ7YFLe$Vo8$",
+      "1bzYx8Zgr6FQ7YFLe$Vo9M",
+      "1bzYx8Zgr6FQ7YFLe$Vo9T",
+      "1bzYx8Zgr6FQ7YFLe$Vov3",
+      "1lX3vnKWPBqg2ZPPNGLtvi",
+      "1vX7s0sEL3p9XfbIJY6aKH",
+      "1vX7s0sEL3p9XfbIJY6aMM",
+      "1vX7s0sEL3p9XfbIJY6aMR",
+      "1vX7s0sEL3p9XfbIJY6aNI",
+      "1vX7s0sEL3p9XfbIJY6aOe",
+      "1vX7s0sEL3p9XfbIJY6aOj",
+      "22L0lO0XjBthbVoWwG0D$l",
+      "2qfOX$pVz2tR8D1xrhyPfb",
+      "2qfOX$pVz2tR8D1xrhyPfo",
+      "2u_sb9jEb3Eu_yAWR$L0kh",
+      "37Z3OvAYzDZf6kIBNQv4J8",
+      "37Z3OvAYzDZf6kIBNQv5eb",
+      "37Z3OvAYzDZf6kIBNQv5gR",
+      "3CiEoiD8v4M8jajCUR4E6g",
+      "3CiEoiD8v4M8jajCUR4E6j"
+    ]
+  },
+  "provenance": {
+    "05REHM4pX8oud$dIi5_3Q7": {
+      "name": "02113",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZ4g": {
+      "name": "02002",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.56 : kantine -\u00f8vre del[02002]"
+      ]
+    },
+    "07IPnbFF9A7OqEZXG1rZD1": {
+      "name": "02057",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZD4": {
+      "name": "02055",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZD7": {
+      "name": "02092",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZDG": {
+      "name": "02017",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZDJ": {
+      "name": "02143",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZMA": {
+      "name": "02026",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZMD": {
+      "name": "02025",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZMq": {
+      "name": "02028",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZMt": {
+      "name": "02027",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZNV": {
+      "name": "02023",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07IPnbFF9A7OqEZXG1rZNv": {
+      "name": "02022",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07UrQhYVz9yBaIyQU10bri": {
+      "name": "01004",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "07UrQhYVz9yBaIyQU10dij": {
+      "name": "02044",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "08GVq7fsXFERuG_j1Qwe$9": {
+      "name": "0U148",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0L5obUJ515fwEAPUAA9DTC": {
+      "name": "02040",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0L5obUJ515fwEAPUAA9Ew$": {
+      "name": "02045",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0MGILT7Q5BlwRIAtxlLZlj": {
+      "name": "03149",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2R0": {
+      "name": "03109",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2R2": {
+      "name": "03106",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2R6": {
+      "name": "03111",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2R8": {
+      "name": "03105",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2RC": {
+      "name": "03128",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2RE": {
+      "name": "03140",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2RW": {
+      "name": "03129",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2R_": {
+      "name": "03123",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2Rm": {
+      "name": "03110",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2Ro": {
+      "name": "03121",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2Rq": {
+      "name": "03107",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2Rs": {
+      "name": "03124",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2Ru": {
+      "name": "03126",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2Rw": {
+      "name": "03148",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.20 : ventilasjon[03148]"
+      ]
+    },
+    "0O6RmI9obEW97tfOGeN2Ry": {
+      "name": "03127",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0VHRzkIDX2DuvjCFVkbfF4": {
+      "name": "02039",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.99 : personal[02039]"
+      ]
+    },
+    "0VHRzkIDX2DuvjCFVkbfF5": {
+      "name": "02024",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0VHRzkIDX2DuvjCFVkbfJD": {
+      "name": "02047",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0VHRzkIDX2DuvjCFVkbfJE": {
+      "name": "02032",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Y$aYBsd95XvxtX1ReaVfJ": {
+      "name": "01005",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0YQcG7Ix17qwu5Cxec8rw7": {
+      "name": "01091",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0YQcG7Ix17qwu5Cxec8rwA": {
+      "name": "01101",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0YQcG7Ix17qwu5Cxec8ry7": {
+      "name": "03101",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0YQcG7Ix17qwu5Cxec8rzP": {
+      "name": "02102",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0YQcG7Ix17qwu5Cxec8rzh": {
+      "name": "02091",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0Zn0wx8eH7NfKTR5S_7AGY": {
+      "name": "02059",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0_btFICcn5Ohf6LjltFrFX": {
+      "name": "01070",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0g6Q1Oziz5EwIXLFCMUYA9": {
+      "name": "01170",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.16 : Utebod-Nat-M&H[01170]"
+      ]
+    },
+    "0g6Q1Oziz5EwIXLFCMUYpx": {
+      "name": "01171",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0kU0O9WIP2WgsQMWFu_Mje": {
+      "name": "02055",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBOMM": {
+      "name": "01130",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBPTn": {
+      "name": "01122",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBPdJ": {
+      "name": "01013",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0m$xqYYAH4$9ONy59vBVIZ": {
+      "name": "01126",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0_": {
+      "name": "02107",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0m": {
+      "name": "02111",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0o": {
+      "name": "02130",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0q": {
+      "name": "02124",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0s": {
+      "name": "02128",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0u": {
+      "name": "02106",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0w": {
+      "name": "02127",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly0y": {
+      "name": "02125",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly30": {
+      "name": "02105",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.87 : fellesomr\u00e5de[02105]"
+      ]
+    },
+    "0mHUZfD49ChOtSTEi2Ly32": {
+      "name": "02110",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly34": {
+      "name": "02119",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly36": {
+      "name": "02108",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly38": {
+      "name": "02129",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0mHUZfD49ChOtSTEi2Ly3A": {
+      "name": "02149",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.84 : bibliotek[02149]"
+      ]
+    },
+    "0pVXoN1Hn1UAOvcR4gh9Eo": {
+      "name": "01015",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4gh9jG": {
+      "name": "01054",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0pVXoN1Hn1UAOvcR4ghE9k": {
+      "name": "01125",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0v6bRnwlv82AjqcubmQMd7": {
+      "name": "02050",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "0xreTDAeLELx4IZoI4A_DQ": {
+      "name": "01153",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "179JXYmSH1PeR25_V8cDO$": {
+      "name": "02148",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1CyWAVy093fBtm4PNMCP$r": {
+      "name": "03112",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1CyWAVy093fBtm4PNMCPzY": {
+      "name": "03108",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1L$xslAsb6lOT$st_0GzzX": {
+      "name": "02030",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Lay46Xgv6RgWeQkUTlz0b": {
+      "name": "01023",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.21 : forrom[01023]"
+      ]
+    },
+    "1Lay46Xgv6RgWeQkUTlz18": {
+      "name": "01022",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Lay46Xgv6RgWeQkUTlz2$": {
+      "name": "01012",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Lay46Xgv6RgWeQkUTlz2B": {
+      "name": "01017",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Lay46Xgv6RgWeQkUTlz2b": {
+      "name": "01014",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Lay46Xgv6RgWeQkUTlz7c": {
+      "name": "01030",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Lay46Xgv6RgWeQkUTlz7h": {
+      "name": "01027",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1Lay46Xgv6RgWeQkUTlz8B": {
+      "name": "01001",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1O9GNXP$zBaOPPulmAYoop": {
+      "name": "03122",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.30 : garderobe[03122]"
+      ]
+    },
+    "1RNV22clP118A7UAI7tUGo": {
+      "name": "01026",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NOA": {
+      "name": "01116",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NPp": {
+      "name": "01104",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NR$": {
+      "name": "01109",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRY": {
+      "name": "01103",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRe": {
+      "name": "01115",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRg": {
+      "name": "01118",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRh": {
+      "name": "01100",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRi": {
+      "name": "01117",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRk": {
+      "name": "01119",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRn": {
+      "name": "01114",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRp": {
+      "name": "01111",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRr": {
+      "name": "01108",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRt": {
+      "name": "01113",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SbyHu_6T0kAAtXB$3$NRz": {
+      "name": "01110",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.86 : aktivitetsrom[01110]"
+      ]
+    },
+    "1SsGPt4o9Afxe9eGF2Wk_D": {
+      "name": "02060",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.26 : garderobe[02060]"
+      ]
+    },
+    "1SsGPt4o9Afxe9eGF2WknZ": {
+      "name": "02029",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.25 : garderobe[02029]"
+      ]
+    },
+    "1SsGPt4o9Afxe9eGF2lH4J": {
+      "name": "02052",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2lHMb": {
+      "name": "02054",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2lHmW": {
+      "name": "02144",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2lHmg": {
+      "name": "02123",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.76 : garderobe[02123]"
+      ]
+    },
+    "1SsGPt4o9Afxe9eGF2lHnm": {
+      "name": "02104",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.75 : garderobe[02104]"
+      ]
+    },
+    "1SsGPt4o9Afxe9eGF2lHqA": {
+      "name": "02120",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2lHsR": {
+      "name": "02115",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2lJ1z": {
+      "name": "02121",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1SsGPt4o9Afxe9eGF2lJrC": {
+      "name": "02122",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VZcOche5DNBaEqNbjG2B2": {
+      "name": "02140",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VZcOche5DNBaEqNbjG2BV": {
+      "name": "02100",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VZcOche5DNBaEqNbjG4u$": {
+      "name": "01140",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.93 : trapp[01140]"
+      ]
+    },
+    "1VZcOche5DNBaEqNbjG4uc": {
+      "name": "01020",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VZcOche5DNBaEqNbjG5AI": {
+      "name": "0U140",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VZcOche5DNBaEqNbjG5xo": {
+      "name": "02020",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1VZcOche5DNBaEqNbjG5xr": {
+      "name": "02090",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Icl": {
+      "name": "03114",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Jeh": {
+      "name": "03104",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.25 : garderobe[03104]"
+      ]
+    },
+    "1W4anoHSvEagzJkF5I2Jqr": {
+      "name": "03119",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Jr8": {
+      "name": "03120",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1W4anoHSvEagzJkF5I2Jzu": {
+      "name": "03118",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1ahQODQnPAMBZ$ZJoOQlUT": {
+      "name": "01052",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1b4KDh3Ev8XQCDyubImQ83": {
+      "name": "0U147",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1b4KDh3Ev8XQCDyubImQ8S": {
+      "name": "0U146",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1b4KDh3Ev8XQCDyubImQC_": {
+      "name": "0U142",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1b4KDh3Ev8XQCDyubImQHj": {
+      "name": "0U143",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1faWhvRn5FTwhspca6dG0j": {
+      "name": "03152",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1faWhvRn5FTwhspca6dG0t": {
+      "name": "02152",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1gWEt8T_HBnvvrCjhE6Ix2": {
+      "name": "01163",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1hzhZJcfzBdAO_ZxZN67dF": {
+      "name": "01065",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1hzhZJcfzBdAO_ZxZN67qE": {
+      "name": "01060",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1ljX6V5JL0PBBxw92e261A": {
+      "name": "03102",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1ljX6V5JL0PBBxw92e26Mg": {
+      "name": "03142",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1oN04Lj9z5RPCGRFPqyoj0": {
+      "name": "0U149",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "1rtshpHUfBEByl_99_lGeb": {
+      "name": "01002",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.28 : kantine[01002]"
+      ]
+    },
+    "1tt$4eT0DBwhSfiV$I$bYp": {
+      "name": "01096",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "26RxP6_5LFexv$UE65jJXr": {
+      "name": "03144",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "26gtHYBrT6nxlSTHaykFM3": {
+      "name": "02151",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "26gtHYBrT6nxlSTHaykFbK": {
+      "name": "01131",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2I0AkHMNb4$AondkMUUESc": {
+      "name": "01160",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uC0": {
+      "name": "01090",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uD$": {
+      "name": "01107",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uD5": {
+      "name": "01092",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.123 : korridor/sluse[01092]"
+      ]
+    },
+    "2Jhr9gTEb7uRPEikz62uDI": {
+      "name": "01093",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uDR": {
+      "name": "01095",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uDS": {
+      "name": "01094",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uEZ": {
+      "name": "01046",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uEj": {
+      "name": "01047",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uF2": {
+      "name": "01053",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62uoG": {
+      "name": "01120",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.114 : korridor[01120]"
+      ]
+    },
+    "2Jhr9gTEb7uRPEikz62uph": {
+      "name": "01106",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Jhr9gTEb7uRPEikz62upi": {
+      "name": "01105",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2Mk4fTGVn7uRSK9CXQV6I_": {
+      "name": "01162",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.39 : vaktm[01162]"
+      ]
+    },
+    "2Mk4fTGVn7uRSK9CXQV6Iu": {
+      "name": "01161",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.38 : temperert sykkelbod[01161]"
+      ]
+    },
+    "2UP1D5XZXBVhn11uz1FkAp": {
+      "name": "01147",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2UP1D5XZXBVhn11uz1FkB9": {
+      "name": "01150",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2UnkuL9kTERwsmYkmjy1LY": {
+      "name": "01143",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2UnkuL9kTERwsmYkmjy1Oj": {
+      "name": "01144",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2UnkuL9kTERwsmYkmjy1Ok": {
+      "name": "01145",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00nEL": {
+      "name": "01031",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00nEN": {
+      "name": "01035",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00nEP": {
+      "name": "01024",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00smH": {
+      "name": "01025",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00smR": {
+      "name": "01006",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snD": {
+      "name": "01049",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snY": {
+      "name": "01058",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00sna": {
+      "name": "01051",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snc": {
+      "name": "01050",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00sng": {
+      "name": "01069",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snl": {
+      "name": "01048",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snp": {
+      "name": "01029",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snt": {
+      "name": "01040",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snv": {
+      "name": "01045",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00snx": {
+      "name": "01028",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00sp$": {
+      "name": "01061",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00sp0": {
+      "name": "01039",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00sp2": {
+      "name": "01042",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00sp5": {
+      "name": "01043",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spF": {
+      "name": "01059",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spQ": {
+      "name": "01044",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spX": {
+      "name": "01067",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spZ": {
+      "name": "01064",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.63 : Tre og metall[01064]"
+      ]
+    },
+    "2eRgnu7L17ZOubCmc00spb": {
+      "name": "01056",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spe": {
+      "name": "01068",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spq": {
+      "name": "01057",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2eRgnu7L17ZOubCmc00spv": {
+      "name": "01062",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5iev7": {
+      "name": "02142",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ifGf": {
+      "name": "01102",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ifUO": {
+      "name": "01021",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ifd1": {
+      "name": "02021",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ifdK": {
+      "name": "02046",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ifdP": {
+      "name": "02043",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2kvhrWDcL18AQNu3F5ig_v": {
+      "name": "02056",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2m1K8l4J5EVRSrdPe9FBMT": {
+      "name": "0U145",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-2.9 : sjakt[0U145]"
+      ]
+    },
+    "2m1K8l4J5EVRSrdPe9FBMW": {
+      "name": "0U144",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2m1K8l4J5EVRSrdPe9FBMc": {
+      "name": "0U141",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2m1K8l4J5EVRSrdPe9FBMf": {
+      "name": "0U017",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2n9DbFqOXANRrn9LydtL0h": {
+      "name": "0U150",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2n9DbFqOXANRrn9LydtL0i": {
+      "name": "0U151",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2pBbc1_Zv8Kg_ojb$Foxiv": {
+      "name": "01152",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2pBbc1_Zv8Kg_ojb$Foxjm": {
+      "name": "01121",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2pBbc1_Zv8Kg_ojb$Foxjy": {
+      "name": "01141",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bOYj": {
+      "name": "03100",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bPw1": {
+      "name": "01036",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bPw6": {
+      "name": "01033",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bPw8": {
+      "name": "01037",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2qfnXEq6f9GQ8oiR65bPwB": {
+      "name": "01034",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2sgv8ljCfCR8d7fPoL5Kx9": {
+      "name": "02033",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "2sgv8ljCfCR8d7fPoL5KxE": {
+      "name": "02034",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEaRI": {
+      "name": "03125",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3$4qWlrsf2R8XgVTqqEaZx": {
+      "name": "03113",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3$rFGQEe52_QUl9J75_cpX": {
+      "name": "02101",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "395lAaLE1BUe7I1Z_lFR4A": {
+      "name": "03153",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkKs": {
+      "name": "03145",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkKv": {
+      "name": "03147",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkKy": {
+      "name": "03146",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkL1": {
+      "name": "03017",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkLm": {
+      "name": "03143",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.39 : korridor[03143]"
+      ]
+    },
+    "3BKmLu96P3x81trSIDmkMI": {
+      "name": "03141",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkMo": {
+      "name": "03117",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkN9": {
+      "name": "03115",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkNC": {
+      "name": "03116",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkNb": {
+      "name": "03103",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.34 : korridor[03103]"
+      ]
+    },
+    "3BKmLu96P3x81trSIDmkO5": {
+      "name": "02145",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkO8": {
+      "name": "02146",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkOr": {
+      "name": "02141",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkP7": {
+      "name": "02114",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkQ4": {
+      "name": "02116",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkQ7": {
+      "name": "02117",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkQA": {
+      "name": "02118",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkQo": {
+      "name": "02103",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.30 : sluse/korr[02103]"
+      ]
+    },
+    "3BKmLu96P3x81trSIDmkR2": {
+      "name": "02093",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkSF": {
+      "name": "02051",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkSo": {
+      "name": "02038",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3BKmLu96P3x81trSIDmkU4": {
+      "name": "02037",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIueo": {
+      "name": "03030",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.1.46 : ventilasjon[03030]"
+      ]
+    },
+    "3Fb4Dxdo92M90cDdbfIuqL": {
+      "name": "02053",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIuqN": {
+      "name": "02048",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIus$": {
+      "name": "02064",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIus1": {
+      "name": "02061",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIus3": {
+      "name": "02065",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIus7": {
+      "name": "02063",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIusB": {
+      "name": "02031",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIusF": {
+      "name": "02036",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIusn": {
+      "name": "02067",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIusr": {
+      "name": "02066",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIust": {
+      "name": "02058",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIusv": {
+      "name": "02035",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIusx": {
+      "name": "02062",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Fb4Dxdo92M90cDdbfIusz": {
+      "name": "02068",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3Guh9aw2DAowCEeacH$UyD": {
+      "name": "01129",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3HiJx4Leb7_OvgmGyCTnKE": {
+      "name": "02049",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3HuqBDqOj6H9c2lS071LTU": {
+      "name": "01038",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3PUP2p9hz1TRkdLnawtACP": {
+      "name": "02112",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3QMa9A_7r8y91m$xOU35S_": {
+      "name": "02069",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3TILYnBqn2LAQMVLVwlPDT": {
+      "name": "02150",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3UwuebPsT9UQPBcwBbIuiD": {
+      "name": "01041",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3aykUI48PFFPLT8mW5nEhx": {
+      "name": "01032",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3bLZS8LdD0tBnDMMaF2LHz": {
+      "name": "02126",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3eVd2GHRP7pBcAD$Ofxqx$": {
+      "name": "02042",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3eVd2GHRP7pBcAD$Ofxqxz": {
+      "name": "02041",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4_2": {
+      "name": "01146",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4_4": {
+      "name": "01142",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4_G": {
+      "name": "01123",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4zA": {
+      "name": "01149",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4zD": {
+      "name": "01148",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4zZ": {
+      "name": "01124",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4z_": {
+      "name": "01011",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4zk": {
+      "name": "01128",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3ocZLIQYXDOPzNki$8h4zu": {
+      "name": "01127",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3paGAJbAj1URJxhZfktZ8P": {
+      "name": "01066",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3paGAJbAj1URJxhZfktZ8R": {
+      "name": "01063",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3s_REImLD8m8oa5_3mxxtH": {
+      "name": "01055",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3vd1UdIAvDjRJYlTsnj81F": {
+      "name": "02003",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.0.96 : aula-\u00f8vre del[02003]"
+      ]
+    },
+    "3vd1UdIAvDjRJYlTsnj8lP": {
+      "name": "02109",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzp$r": {
+      "name": "01010",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzp$t": {
+      "name": "01008",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzp$w": {
+      "name": "01007",
+      "class": "IfcSpace",
+      "label": "PASS"
+    },
+    "3y7w$rQQ92sPNEVtsgzpX2": {
+      "name": "01003",
+      "class": "IfcSpace",
+      "label": "FAIL",
+      "issues": [
+        "Space.-1.137 : aula - nedre del[01003]"
+      ]
+    },
+    "3y7w$rQQ92sPNEVtsgzpyp": {
+      "name": "01009",
+      "class": "IfcSpace",
+      "label": "PASS"
+    }
+  }
+}

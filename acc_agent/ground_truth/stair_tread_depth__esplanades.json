@@ -1,0 +1,61 @@
+{
+  "case_id": "stair_tread_depth__esplanades",
+  "rule": "Every stair must have treads at least 280 mm deep.\nRegulatory text (the authoritative clauses - use them to interpret the requirement and its applicability; you must still work out how to read or measure it from the IFC):\nADA and ABA Accessibility Guidelines (2004), 504.2 Treads and Risers: All steps on a flight of stairs shall have uniform riser heights and uniform tread depths. Risers shall be 4 inches (100 mm) high minimum and 7 inches (180 mm) high maximum. Treads shall be 11 inches (280 mm) deep minimum.\nBenchmark convention: judge every stair as a whole, from its steps as modelled in its geometry; recorded step properties may be missing, zero or inconsistent with the geometry. The limit applies in inches as written: 11 in = 279.4 mm. A stair fails when its typical tread depth (the horizontal going from one riser to the next, shared by its regular steps) is below 279.4 mm. Riser heights are covered by separate checks.\n\nLabel every stair.\nReport the GlobalId of every element (modelled as IfcStair) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Esplanades_1807_EP_AR_v18.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "0$6xGwHfe7xv6o3XCOF8P1": "PASS",
+    "0YVg95JNGjBkES1se81M7T": "PASS",
+    "137S7XuHL$hLQIcF7yTLvo": "PASS",
+    "2DX9LYzXmwiwJnld$NY4Hf": "PASS"
+  },
+  "notes": "504.2 Treads and Risers on 4 IfcStair: {'PASS': 4}.",
+  "clause": "ADA 504.2",
+  "source": "solibri_reference.py::build_ec3 (ec3_esplanades_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 4,
+    "ifc_sha256": "b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "504.2 Treads and Risers",
+      "message": "tread length is .* length for the tread is",
+      "report_file": "ec3_esplanades_check.xlsx",
+      "report_sha256": "d2a9842276bb8f8c33bec9136bbf172c86758e661f1f0efa7dfe594b80911fd6",
+      "rule_issues": 4,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$6xGwHfe7xv6o3XCOF8P1": {
+      "name": "Sisetrepp",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "0YVg95JNGjBkES1se81M7T": {
+      "name": "Sisetrepp",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "137S7XuHL$hLQIcF7yTLvo": {
+      "name": "Sisetrepp",
+      "class": "IfcStair",
+      "label": "PASS"
+    },
+    "2DX9LYzXmwiwJnld$NY4Hf": {
+      "name": "Sisetrepp",
+      "class": "IfcStair",
+      "label": "PASS"
+    }
+  }
+}

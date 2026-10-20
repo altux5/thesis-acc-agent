@@ -151,6 +151,12 @@ def audit_case(case: GroundTruth, ifc_path: Path | None = None) -> dict:
             result["issues"].extend(verify_usable_2(case, result["ifc_sha256"]))
             result["status"] = "evidence-checked"
             result["limitation"] = "Evidence recorded at generation (2026-09-29 review); regenerate with reference_v2.py --check. Not independent expert certification."
+        elif case.reference.get("tier") == "heldout":
+            from solibri_reference import verify_recorded as verify_heldout
+
+            result["issues"].extend(verify_heldout(case, result["ifc_sha256"]))
+            result["status"] = "evidence-checked"
+            result["limitation"] = "Labels from Solibri issues recorded at generation (door clear width also reproduced from the IFC), with recorded adjudications; regenerate with solibri_reference.py --check. Not independent expert certification."
     except Exception as exc:
         result["issues"].append(f"Audit could not finish: {type(exc).__name__}: {exc}")
         result["status"] = "unverified"

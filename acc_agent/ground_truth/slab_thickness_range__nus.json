@@ -1,0 +1,922 @@
+{
+  "case_id": "slab_thickness_range__nus",
+  "rule": "Every slab must have a thickness between 30 mm and 1000 mm inclusive.\nSource: rule 'Slab Thickness' of the EC3-2026 rule catalogue: This rule checks that slab thickness is not too small or too large.\nBenchmark convention: the thickness of a slab is the thickness of its own construction: the total of its material layers or its recorded thickness, or else the depth of its body. A slab fails when it is thinner than 30 mm or thicker than 1000 mm. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_068_ARK_NUS_skolebygg.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0SrK8OlMD588N3PjiKTu_g",
+    "0SrK8OlMD588N3PjiKTuaA",
+    "0SrK8OlMD588N3PjiKTub7",
+    "0SrK8OlMD588N3PjiKTubY",
+    "0SrK8OlMD588N3PjiKTue8",
+    "0SrK8OlMD588N3PjiKTueK",
+    "0SrK8OlMD588N3PjiKTuew",
+    "0SrK8OlMD588N3PjiKTufD",
+    "0SrK8OlMD588N3PjiKTufM",
+    "0SrK8OlMD588N3PjiKTufZ",
+    "0SrK8OlMD588N3PjiKTuhU",
+    "0SrK8OlMD588N3PjiKTukG",
+    "0SrK8OlMD588N3PjiKTum$",
+    "0SrK8OlMD588N3PjiKTuuO",
+    "0SrK8OlMD588N3PjiKTuuW",
+    "0SrK8OlMD588N3PjiKTuv8",
+    "0SrK8OlMD588N3PjiKTuvk",
+    "0SrK8OlMD588N3PjiKTuvr",
+    "0SrK8OlMD588N3PjiKTuwO",
+    "0SrK8OlMD588N3PjiKTuwY",
+    "0SrK8OlMD588N3PjiKTuxE",
+    "0SrK8OlMD588N3PjiKTuxL",
+    "0SrK8OlMD588N3PjiKTuxd",
+    "0SrK8OlMD588N3PjiKTuxo",
+    "0SrK8OlMD588N3PjiKTvSX",
+    "2mRlfCyELFNBH6ZM52A00k",
+    "2mRlfCyELFNBH6ZM52A0FJ",
+    "2o$VFXWj1Fs9VM6240QWrg",
+    "2sskvzX7vDLgbkZk2mgb6C",
+    "2sskvzX7vDLgbkZk2mgb7H",
+    "3o0Fgcry15mAKm6$Zbxfrb",
+    "3uHPr7Nq13oOcxgrnPethy"
+  ],
+  "labels": {
+    "00VDbmpjfCg8GXr1fKYOml": "NA",
+    "00VDbmpjfCg8GXr1fKYOqK": "NA",
+    "00VDbmpjfCg8GXr1fKYOqp": "NA",
+    "02CXW$vWv8T8$wHaoOALal": "PASS",
+    "047CoVEFr9OfGT3CRiR82j": "NA",
+    "047CoVEFr9OfGT3CRiR87k": "NA",
+    "09MpxVkC91pwQ$SiU097gd": "PASS",
+    "09MpxVkC91pwQ$SiU097gw": "PASS",
+    "09MpxVkC91pwQ$SiU097q2": "PASS",
+    "09MpxVkC91pwQ$SiU097qF": "PASS",
+    "0AlmywTfj8vhbhDiI1W42b": "PASS",
+    "0AlmywTfj8vhbhDiI1W4C0": "PASS",
+    "0AlmywTfj8vhbhDiI1W4C5": "PASS",
+    "0AlmywTfj8vhbhDiI1W4E5": "PASS",
+    "0CeDJQGvT5JOB2qAw4Mgam": "PASS",
+    "0CeDJQGvT5JOB2qAw4Mgps": "PASS",
+    "0O6RmI9obEW97tfOGeN2xj": "PASS",
+    "0PWvxdyQTE0Qa2jKWeW74B": "NA",
+    "0SOwKVu6X9D9wyJSeyYe3H": "PASS",
+    "0SOwKVu6X9D9wyJSeyYevU": "PASS",
+    "0SrK8OlMD588N3PjiKTu_g": "FAIL",
+    "0SrK8OlMD588N3PjiKTuaA": "FAIL",
+    "0SrK8OlMD588N3PjiKTub7": "FAIL",
+    "0SrK8OlMD588N3PjiKTubY": "FAIL",
+    "0SrK8OlMD588N3PjiKTue8": "FAIL",
+    "0SrK8OlMD588N3PjiKTueK": "FAIL",
+    "0SrK8OlMD588N3PjiKTuew": "FAIL",
+    "0SrK8OlMD588N3PjiKTufD": "FAIL",
+    "0SrK8OlMD588N3PjiKTufM": "FAIL",
+    "0SrK8OlMD588N3PjiKTufZ": "FAIL",
+    "0SrK8OlMD588N3PjiKTuhU": "FAIL",
+    "0SrK8OlMD588N3PjiKTukG": "FAIL",
+    "0SrK8OlMD588N3PjiKTum$": "FAIL",
+    "0SrK8OlMD588N3PjiKTuuO": "FAIL",
+    "0SrK8OlMD588N3PjiKTuuW": "FAIL",
+    "0SrK8OlMD588N3PjiKTuv8": "FAIL",
+    "0SrK8OlMD588N3PjiKTuvk": "FAIL",
+    "0SrK8OlMD588N3PjiKTuvr": "FAIL",
+    "0SrK8OlMD588N3PjiKTuwO": "FAIL",
+    "0SrK8OlMD588N3PjiKTuwY": "FAIL",
+    "0SrK8OlMD588N3PjiKTuxE": "FAIL",
+    "0SrK8OlMD588N3PjiKTuxL": "FAIL",
+    "0SrK8OlMD588N3PjiKTuxd": "FAIL",
+    "0SrK8OlMD588N3PjiKTuxo": "FAIL",
+    "0SrK8OlMD588N3PjiKTvSX": "FAIL",
+    "0WboONk4b5J8t17zraPyHh": "PASS",
+    "0_2WsUBOb2ger3j$slf1Ip": "PASS",
+    "0_2WsUBOb2ger3j$slf1OC": "PASS",
+    "0_2WsUBOb2ger3j$slf1Pl": "PASS",
+    "0_2WsUBOb2ger3j$slf1S8": "PASS",
+    "0dvN5TvDnCLAux_IB7bo9e": "PASS",
+    "0fpxlfYjPDmf6_OrcqsInP": "NA",
+    "0fpxlfYjPDmf6_Orcqsj0v": "NA",
+    "0fpxlfYjPDmf6_OrcqsjFW": "NA",
+    "0g6Q1Oziz5EwIXLFCMUYSQ": "PASS",
+    "0kuFisJAD14eVj$fTo9PXY": "PASS",
+    "0kuFisJAD14eVj$fTo9PyC": "PASS",
+    "0kuFisJAD14eVj$fTo9Q4O": "PASS",
+    "0kuFisJAD14eVj$fTo9Q4T": "PASS",
+    "0kuFisJAD14eVj$fTo9Q5Y": "PASS",
+    "0kuFisJAD14eVj$fTo9Q5v": "PASS",
+    "0oqC4q0Tf3ohitthjgXUCh": "PASS",
+    "0y_I5X6rD5eO_NXdQQh7Tq": "PASS",
+    "11IxDWIgLE0hupe01bkK5J": "NA",
+    "1EQyZ6ydr1IPMoZfsg7iDc": "PASS",
+    "1GOgs9saL5T91aiIPruXZs": "PASS",
+    "1HPb6jR057Bxq$0S_Lkdh9": "PASS",
+    "1HPb6jR057Bxq$0S_Lkdhv": "PASS",
+    "1Oo0hxor523xN6pWDIzgAp": "PASS",
+    "1R5tn5PbD9ThhYQGn_w8w6": "PASS",
+    "1_JCWGOIrB4gDlqVO4vzWW": "NA",
+    "1_JCWGOIrB4gDlqVO4vzYt": "NA",
+    "1_JCWGOIrB4gDlqVO4vzbv": "NA",
+    "1g5DksxSj859dTC8ms3i5J": "PASS",
+    "1nViOG8zX5bukUgb1wdq4N": "PASS",
+    "1o2YJodL9BQwUvrJQp8UgQ": "PASS",
+    "1oay7WLxT9aRm1xyKK8kfb": "PASS",
+    "1qTe3sWF9BbfW_dW_Jsjok": "NA",
+    "1xiOSy2A95QPTJh3NiJZJJ": "NA",
+    "1yQqHJ9Nv1ov6$74lNuVrs": "PASS",
+    "206g8EFxv4ePomjZUA$SIv": "NA",
+    "25NUPG3rbCceMibvf29RMm": "PASS",
+    "2AE68yFlHCvRQIy6IE4tsm": "PASS",
+    "2AE68yFlHCvRQIy6ME4tsm": "PASS",
+    "2AE68yFlHCvRQIy6QE4tp4": "PASS",
+    "2AE68yFlHCvRQIy6QE4tsm": "PASS",
+    "2G9VQldqvC3ArRMK5Fb4AJ": "NA",
+    "2IctOr8WDDFxBOJjIHEdu3": "PASS",
+    "2KpeQdoBP9CO2mdK0Bdz9S": "PASS",
+    "2SIAfht1TEl8lQwY5FCMu8": "PASS",
+    "2SIAfht1TEl8lQwY5FCMuK": "PASS",
+    "2aJzGY1XD7kRyZBmD7NmD2": "PASS",
+    "2aJzGY1XD7kRyZBmD7NmDY": "PASS",
+    "2h3pIKKM5A$v$NF$wHk8$8": "PASS",
+    "2mRlfCyELFNBH6ZM52A00k": "FAIL",
+    "2mRlfCyELFNBH6ZM52A0FJ": "FAIL",
+    "2mmeNi0FH3YxXTPB95tdat": "PASS",
+    "2o$VFXWj1Fs9VM6240QWrg": "FAIL",
+    "2sskvzX7vDLgbkZk2mgb6C": "FAIL",
+    "2sskvzX7vDLgbkZk2mgb7H": "FAIL",
+    "2xnUJ3YLb9weMaJ2zmYReR": "PASS",
+    "310eYWhX54DRtclDi6V0P8": "PASS",
+    "310eYWhX54DRtclDi6V0Vv": "PASS",
+    "335R8J6JXEzhVwOzGfUf9r": "NA",
+    "358kVwIn99mxClCWz1zhsp": "NA",
+    "358kVwIn99mxClCWz1zhuX": "NA",
+    "358kVwIn99mxClCWz1zhva": "NA",
+    "377nMrJ_P1IRd_3TOMEe9Z": "PASS",
+    "3ADsXvE7j3A8aMotW$oJtV": "PASS",
+    "3C2ZphTer2Wf211y4oR9X8": "NA",
+    "3FlCgtBNn12un1iaPY7dNr": "PASS",
+    "3FlCgtBNn12un1iaPY7dRx": "PASS",
+    "3Tu$ZrQOj0kePMiFPC4S$R": "PASS",
+    "3ZUI3mcQ1EEumndcPNMlzB": "PASS",
+    "3_$Bj77$vAo9JzQ7i_$0sx": "PASS",
+    "3gbo2OxsL9CRNCRJCgVtl9": "NA",
+    "3gfY2WvY932R96o1R9U9nF": "PASS",
+    "3iPInG7tz8TQ8k$JBnn$W3": "PASS",
+    "3o0Fgcry15mAKm6$Zbxfrb": "FAIL",
+    "3oAv5guPT7UgJ6YI8TAz7b": "PASS",
+    "3rEgdVln17lwEx28Zk4Wiw": "PASS",
+    "3uHPr7Nq13oOcxgrnPethy": "FAIL",
+    "3uiEberADDMQYqxHoGo695": "PASS",
+    "3uiEberADDMQYqxHoGo6FT": "PASS",
+    "3xNvsVQenBce2WTpl0j6M8": "PASS",
+    "3xNvsVQenBce2WTpl0j6iY": "PASS"
+  },
+  "notes": "Slab Thickness on 126 IfcSlab: {'FAIL': 32, 'NA': 23, 'PASS': 71}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_nus_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 126,
+    "ifc_sha256": "362f0f5e5ad35557014100a6c4de75ec166f6dbd9197933170dc1423f4af2a76",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slab Thickness",
+      "message": null,
+      "report_file": "ec3_nus_check.xlsx",
+      "report_sha256": "90c05f08536b3d573876849b4be498f33c8c6e47af3819fd8d28a8b94b675f1f",
+      "rule_issues": 2,
+      "matching_issues": 2
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element; NA: IfcSlab ROOF (a roof for Solibri).",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "00VDbmpjfCg8GXr1fKYOml": {
+      "name": "Basic Roof:Tak betong 320 + 150:4448200",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "00VDbmpjfCg8GXr1fKYOqK": {
+      "name": "Basic Roof:Tak betong 320 + p\u00e5st\u00f8p 80 + 70:4447987",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "00VDbmpjfCg8GXr1fKYOqp": {
+      "name": "Basic Roof:Tak betong 400 +150:4447956",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "02CXW$vWv8T8$wHaoOALal": {
+      "name": "Floor:Betongdekke 120:6663160",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "047CoVEFr9OfGT3CRiR82j": {
+      "name": "Basic Roof:Tak betong 200 + 150:4637455",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "047CoVEFr9OfGT3CRiR87k": {
+      "name": "Basic Roof:Tak betong 200 + 150:4637260",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "09MpxVkC91pwQ$SiU097gd": {
+      "name": "Cast-In-Place Stair:Stair:4428775 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "09MpxVkC91pwQ$SiU097gw": {
+      "name": "Cast-In-Place Stair:Stair:4428775 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "09MpxVkC91pwQ$SiU097q2": {
+      "name": "Cast-In-Place Stair:Stair:4428879 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "09MpxVkC91pwQ$SiU097qF": {
+      "name": "Cast-In-Place Stair:Stair:4428879 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0AlmywTfj8vhbhDiI1W42b": {
+      "name": "Cast-In-Place Stair:Stair:4250545 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0AlmywTfj8vhbhDiI1W4C0": {
+      "name": "Cast-In-Place Stair:Stair:4251515 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0AlmywTfj8vhbhDiI1W4C5": {
+      "name": "Cast-In-Place Stair:Stair:4251515 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0AlmywTfj8vhbhDiI1W4E5": {
+      "name": "Cast-In-Place Stair:Stair:4250545 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0CeDJQGvT5JOB2qAw4Mgam": {
+      "name": "Floor:Betongdekke 400 + 30 avretting:2369486",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0CeDJQGvT5JOB2qAw4Mgps": {
+      "name": "Floor:Betongdekke 420+ isolasjon 100 + betong 50:2368008",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0O6RmI9obEW97tfOGeN2xj": {
+      "name": "Floor:Betongdekke 320 + 30 avretting:1700417",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0PWvxdyQTE0Qa2jKWeW74B": {
+      "name": "Basic Roof:Tak tre 223 spilehimling:5818769",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0SOwKVu6X9D9wyJSeyYe3H": {
+      "name": "Floor:Betongdekke 420+ isolasjon 100 + betong 50:4449980",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0SOwKVu6X9D9wyJSeyYevU": {
+      "name": "Floor:Betongdekke 400 + 80 iso + 10 avretting:4450355",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0SrK8OlMD588N3PjiKTu_g": {
+      "name": "Floor:Flis - trapp:7187174",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuaA": {
+      "name": "Floor:Flis - trapp:7187526",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTub7": {
+      "name": "Floor:Flis - trapp:7187467",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTubY": {
+      "name": "Floor:Flis - trapp:7187502",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTue8": {
+      "name": "Floor:Flis - trapp:7188292",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTueK": {
+      "name": "Floor:Flis - trapp:7188312",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuew": {
+      "name": "Floor:Flis - trapp:7188342",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTufD": {
+      "name": "Floor:Flis - trapp:7188225",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTufM": {
+      "name": "Floor:Flis - trapp:7188250",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTufZ": {
+      "name": "Floor:Flis - trapp:7188271",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuhU": {
+      "name": "Floor:Flis - trapp:7188370",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTukG": {
+      "name": "Floor:Flis - trapp:7188188",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTum$": {
+      "name": "Floor:Flis - trapp:7186803",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuuO": {
+      "name": "Floor:Flis - trapp:7187284",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuuW": {
+      "name": "Floor:Flis - trapp:7187308",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuv8": {
+      "name": "Floor:Flis - trapp:7187204",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuvk": {
+      "name": "Floor:Flis - trapp:7187234",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuvr": {
+      "name": "Floor:Flis - trapp:7187257",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuwO": {
+      "name": "Floor:Flis - trapp:7187412",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuwY": {
+      "name": "Floor:Flis - trapp:7187438",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuxE": {
+      "name": "Floor:Flis - trapp:7187330",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuxL": {
+      "name": "Floor:Flis - trapp:7187353",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuxd": {
+      "name": "Floor:Flis - trapp:7187371",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTuxo": {
+      "name": "Floor:Flis - trapp:7187390",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0SrK8OlMD588N3PjiKTvSX": {
+      "name": "Floor:Flis - trapp:7189101",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 5,00 mm"
+      ]
+    },
+    "0WboONk4b5J8t17zraPyHh": {
+      "name": "Floor:Betongdekke 150:3953567",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0_2WsUBOb2ger3j$slf1Ip": {
+      "name": "Floor:Betongdekke 265 + 80 p\u00e5st\u00f8p + 10 avretting:4439872",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0_2WsUBOb2ger3j$slf1OC": {
+      "name": "Floor:Betongdekke 320 + 80 p\u00e5st\u00f8p + 10 avretting:4439551",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0_2WsUBOb2ger3j$slf1Pl": {
+      "name": "Floor:Betongdekke 420 + p\u00e5st\u00f8p 80+ spaceloft 20 + betong 50:4439452",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0_2WsUBOb2ger3j$slf1S8": {
+      "name": "Floor:Betongdekke 265+80+20+50:4439291",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0dvN5TvDnCLAux_IB7bo9e": {
+      "name": "Floor:Betongdekke 200:2671357",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0fpxlfYjPDmf6_OrcqsInP": {
+      "name": "Basic Roof:Tak betong 320 + 150:1704457:1",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0fpxlfYjPDmf6_Orcqsj0v": {
+      "name": "Basic Roof:Tak betong 320 + p\u00e5st\u00f8p 80 + 150:1703529",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0fpxlfYjPDmf6_OrcqsjFW": {
+      "name": "Basic Roof:Tak betong 320 + 150:1703344",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "0g6Q1Oziz5EwIXLFCMUYSQ": {
+      "name": "Floor:Betongdekke 200:4090351",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9PXY": {
+      "name": "Cast-In-Place Stair:Stair:4430332 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9PyC": {
+      "name": "Cast-In-Place Stair:Stair:4430332 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9Q4O": {
+      "name": "Cast-In-Place Stair:Stair:4432907 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9Q4T": {
+      "name": "Cast-In-Place Stair:Stair:4432907 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9Q5Y": {
+      "name": "Cast-In-Place Stair:Stair:4433002 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0kuFisJAD14eVj$fTo9Q5v": {
+      "name": "Cast-In-Place Stair:Stair:4433002 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0oqC4q0Tf3ohitthjgXUCh": {
+      "name": "Floor:Betongdekke 350 + industriparkett, sl\u00f8yd:2410416",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0y_I5X6rD5eO_NXdQQh7Tq": {
+      "name": "Floor:Betongdekke 320 + 80 p\u00e5st\u00f8p + 10 avretting:4439102",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "11IxDWIgLE0hupe01bkK5J": {
+      "name": "Basic Roof:Tak tre 250 uisolert:5622188",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1EQyZ6ydr1IPMoZfsg7iDc": {
+      "name": "Floor:Betongdekke 300:3878971",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1GOgs9saL5T91aiIPruXZs": {
+      "name": "Floor:Betongdekke 220 + p\u00e5st\u00f8p 80 + avretting:4056892",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1HPb6jR057Bxq$0S_Lkdh9": {
+      "name": "Floor:Betongdekke 320 + 80 p\u00e5st\u00f8p + 10 avretting:1663916",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1HPb6jR057Bxq$0S_Lkdhv": {
+      "name": "Floor:Betongdekke 320 + 30 avretting:1663900",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1Oo0hxor523xN6pWDIzgAp": {
+      "name": "Floor:Betongdekke 350 + 120 flytende gulv:4056116",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1R5tn5PbD9ThhYQGn_w8w6": {
+      "name": "Floor:Betongdekke 320+100+50:2068595",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1_JCWGOIrB4gDlqVO4vzWW": {
+      "name": "Basic Roof:Tak tre 246 + spiler:2558158",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1_JCWGOIrB4gDlqVO4vzYt": {
+      "name": "Basic Roof:Tak tre 246:2558041",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1_JCWGOIrB4gDlqVO4vzbv": {
+      "name": "Basic Roof:Tak betong 400 + 80 + 70:2558359",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1g5DksxSj859dTC8ms3i5J": {
+      "name": "Floor:Betongdekke 220 + p\u00e5st\u00f8p 80 + avretting:3774068",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1nViOG8zX5bukUgb1wdq4N": {
+      "name": "Floor:Betongdekke 320 + 80 p\u00e5st\u00f8p + 10 avretting:4440744:2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1o2YJodL9BQwUvrJQp8UgQ": {
+      "name": "Floor:Betongdekke 250 m fall:3949601",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1oay7WLxT9aRm1xyKK8kfb": {
+      "name": "Floor:Betongdekke 350 + avretting 15:3761485",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1qTe3sWF9BbfW_dW_Jsjok": {
+      "name": "Basic Roof:Tak betong 320 + iso over og under:4334037",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1xiOSy2A95QPTJh3NiJZJJ": {
+      "name": "Basic Roof:Tak betong 200 + 80 p\u00e5st\u00f8p + 70:4618009:1",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1yQqHJ9Nv1ov6$74lNuVrs": {
+      "name": "Floor:Betongdekke 350 + 120 flytende gulv:4996272",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "206g8EFxv4ePomjZUA$SIv": {
+      "name": "Basic Roof:Tak betong 320 + 170:4447733:1",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "25NUPG3rbCceMibvf29RMm": {
+      "name": "Floor:Betongdekke 320 + 30 avretting:2409771",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2AE68yFlHCvRQIy6IE4tsm": {
+      "name": "Floor:Betongdekke 350 + avretting 15:3603360",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2AE68yFlHCvRQIy6ME4tsm": {
+      "name": "Floor:Betongdekke 350 + avretting 15:3603360",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2AE68yFlHCvRQIy6QE4tp4": {
+      "name": "Floor:Betongdekke 350 + industriparkett, aula:3603156",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2AE68yFlHCvRQIy6QE4tsm": {
+      "name": "Floor:Betongdekke 350 + avretting 15:3603360",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2G9VQldqvC3ArRMK5Fb4AJ": {
+      "name": "Basic Roof:Tak tre 250:5644151",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2IctOr8WDDFxBOJjIHEdu3": {
+      "name": "Floor:Betongdekke 320 + 80 p\u00e5st\u00f8p + 10 avretting:4439551:2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2KpeQdoBP9CO2mdK0Bdz9S": {
+      "name": "Floor:Betongdekke 250 m fall:3949707",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2SIAfht1TEl8lQwY5FCMu8": {
+      "name": "Assembled Stair:Stair:4959975 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2SIAfht1TEl8lQwY5FCMuK": {
+      "name": "Assembled Stair:Stair:4959975 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2aJzGY1XD7kRyZBmD7NmD2": {
+      "name": "Floor:Betongdekke 350:1851385",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2aJzGY1XD7kRyZBmD7NmDY": {
+      "name": "Floor:Betongdekke 250 + p\u00e5st\u00f8p 70:1851367",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2h3pIKKM5A$v$NF$wHk8$8": {
+      "name": "Floor:Betongdekke 300 + avretting og flis:3768473",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2mRlfCyELFNBH6ZM52A00k": {
+      "name": "Floor:Fotskraperist:5309873",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 25,00 mm"
+      ]
+    },
+    "2mRlfCyELFNBH6ZM52A0FJ": {
+      "name": "Floor:Fotskraperist:5310028",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 25,00 mm"
+      ]
+    },
+    "2mmeNi0FH3YxXTPB95tdat": {
+      "name": "Floor:Betongdekke 250 m fall:3879157",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2o$VFXWj1Fs9VM6240QWrg": {
+      "name": "Floor:Fotskraperist:5309873:3",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 25,00 mm"
+      ]
+    },
+    "2sskvzX7vDLgbkZk2mgb6C": {
+      "name": "Floor:Fotskraperist:6762310",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 25,00 mm"
+      ]
+    },
+    "2sskvzX7vDLgbkZk2mgb7H": {
+      "name": "Floor:Fotskraperist:6762267",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 25,00 mm"
+      ]
+    },
+    "2xnUJ3YLb9weMaJ2zmYReR": {
+      "name": "Floor:Betongdekke 350:3966644",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "310eYWhX54DRtclDi6V0P8": {
+      "name": "Floor:Betongdekke 350 + 120 flytende gulv:7442301",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "310eYWhX54DRtclDi6V0Vv": {
+      "name": "Floor:Betongdekke 350 + 120 flytende gulv:7442124",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "335R8J6JXEzhVwOzGfUf9r": {
+      "name": "Basic Roof:Tak tre 250 uisolert:5771871",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "358kVwIn99mxClCWz1zhsp": {
+      "name": "Basic Roof:Tak betong 200 + 80 p\u00e5st\u00f8p + 70:4498860:1",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "358kVwIn99mxClCWz1zhuX": {
+      "name": "Basic Roof:Tak betong 200 + 80 p\u00e5st\u00f8p + 70:4499006:1",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "358kVwIn99mxClCWz1zhva": {
+      "name": "Basic Roof:Tak betong 320 + p\u00e5st\u00f8p 80 + 70:4499067",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "377nMrJ_P1IRd_3TOMEe9Z": {
+      "name": "Assembled Stair:Stair:4960365 Landing 2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ADsXvE7j3A8aMotW$oJtV": {
+      "name": "Floor:Betongdekke 350 + avretting 65:2406772:2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3C2ZphTer2Wf211y4oR9X8": {
+      "name": "Basic Roof:Tak tre 250 uisolert:5626747",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3FlCgtBNn12un1iaPY7dNr": {
+      "name": "Floor:Betongdekke 400 + 80 p\u00e5st\u00f8p + 10 avretting:4440486",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3FlCgtBNn12un1iaPY7dRx": {
+      "name": "Floor:Betongdekke 320 + 80 p\u00e5st\u00f8p + 10 avretting:4440744",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3Tu$ZrQOj0kePMiFPC4S$R": {
+      "name": "Floor:Betongdekke 250 m fall:6762872",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ZUI3mcQ1EEumndcPNMlzB": {
+      "name": "Floor:Betongdekke 320 + 30 avretting:1700417:2",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3_$Bj77$vAo9JzQ7i_$0sx": {
+      "name": "Floor:Betongdekke 250 m fall:3875926",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3gbo2OxsL9CRNCRJCgVtl9": {
+      "name": "Basic Roof:Tak betong 320 + p\u00e5st\u00f8p 80 + 150:2082229",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "3gfY2WvY932R96o1R9U9nF": {
+      "name": "Floor:Betongdekke 100:6670544",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3iPInG7tz8TQ8k$JBnn$W3": {
+      "name": "Assembled Stair:Stair:4960365 Landing 1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3o0Fgcry15mAKm6$Zbxfrb": {
+      "name": "Floor:Fotskraperist:5309873:2",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 25,00 mm"
+      ]
+    },
+    "3oAv5guPT7UgJ6YI8TAz7b": {
+      "name": "Floor:Betongdekke 400 + 80 p\u00e5st\u00f8p + 10 avretting:3939993",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3rEgdVln17lwEx28Zk4Wiw": {
+      "name": "Floor:Betongdekke 265 + 80 p\u00e5st\u00f8p + 10 avretting:4455507",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3uHPr7Nq13oOcxgrnPethy": {
+      "name": "Floor:Fotskraperist:4527148",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Wrong value of Property - Thickness: 25,00 mm"
+      ]
+    },
+    "3uiEberADDMQYqxHoGo695": {
+      "name": "Floor:Betongdekke 320 + 80 p\u00e5st\u00f8p + 10 avretting:3021655",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3uiEberADDMQYqxHoGo6FT": {
+      "name": "Floor:Amfi repos:3021519",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3xNvsVQenBce2WTpl0j6M8": {
+      "name": "Floor:Betongdekke 350 + avretting 65:2406772",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3xNvsVQenBce2WTpl0j6iY": {
+      "name": "Floor:Betongdekke 350+ 120 dansegulv:2406366",
+      "class": "IfcSlab",
+      "label": "PASS"
+    }
+  }
+}

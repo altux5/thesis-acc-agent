@@ -1,0 +1,168 @@
+{
+  "case_id": "slab_fall_protection__esplanades",
+  "rule": "No one may be able to fall from the edge of a slab.\nSource: rule 'Slabs must be Guarded against Falling' of the EC3-2026 rule catalogue: This rule checks that it is not possible to fall from slabs. The rule checks that horizontal components are surrounded by vertical components, such as walls or railings. If no vertical component exists on the edge of a horizontal component, another horizontal component or stairs needs to continue and the drop to the other horizontal component must not be more than specified.\nBenchmark convention: check every edge of every slab. An edge is safe when (a) walls, railings, columns, stairs or other objects stand along it as a barrier at least 1.00 m high above the slab top, with gaps of at most 100 mm between barrier parts and between the slab and the barrier, or (b) another slab, a stair, a ramp or the site, at least 200 mm wide, continues within 100 mm of the edge and at most 500 mm below the slab top. A slab fails when part of its edge is neither guarded nor continued: a missing barrier, a barrier lower than 1.00 m, a barrier that does not cover the whole edge, or a continuing surface too far away, too narrow or more than 500 mm below. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Esplanades_1807_EP_AR_v18.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0jslk0yobDUaFNTV0$VWIx",
+    "16QgOMx1qOpe5CaV_QjSol",
+    "1JjHh0I48iusPJEW3mOLJj",
+    "1_RDzuVZ27jmhZCPb76v4I",
+    "1dYoMCfidjomMoSLsHhv29",
+    "2XpnttYDb5_62vmSMJUbQ4",
+    "2zpWk3aGYpwKQUNQoMGVL_",
+    "3VsPUw9otvTiNTT06xSacc",
+    "3X2bUSqFyULct2wlsnoWZG",
+    "3ujmHxicUlHki2vgPRUBFj"
+  ],
+  "labels": {
+    "0jslk0yobDUaFNTV0$VWIx": "FAIL",
+    "0yAEwlU8wCSwlZbMFNDBMf": "PASS",
+    "16QgOMx1qOpe5CaV_QjSol": "FAIL",
+    "17Dk$t8KUTwywuE6O0fesL": "PASS",
+    "1JjHh0I48iusPJEW3mOLJj": "FAIL",
+    "1_RDzuVZ27jmhZCPb76v4I": "FAIL",
+    "1dYoMCfidjomMoSLsHhv29": "FAIL",
+    "1t7cRInv0dTcqfhYXi1$mk": "PASS",
+    "2XpnttYDb5_62vmSMJUbQ4": "FAIL",
+    "2YeE_yZoMId99EkBLmj2kJ": "PASS",
+    "2zpWk3aGYpwKQUNQoMGVL_": "FAIL",
+    "3VsPUw9otvTiNTT06xSacc": "FAIL",
+    "3X2bUSqFyULct2wlsnoWZG": "FAIL",
+    "3n2guh6e0ZZ$YNwV7xAlOk": "PASS",
+    "3ujmHxicUlHki2vgPRUBFj": "FAIL"
+  },
+  "notes": "Slabs must be Guarded against Falling on 15 IfcSlab: {'FAIL': 10, 'PASS': 5}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_esplanades_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 15,
+    "ifc_sha256": "b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slabs must be Guarded against Falling",
+      "message": null,
+      "report_file": "ec3_esplanades_check.xlsx",
+      "report_sha256": "d2a9842276bb8f8c33bec9136bbf172c86758e661f1f0efa7dfe594b80911fd6",
+      "rule_issues": 15,
+      "matching_issues": 15
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0jslk0yobDUaFNTV0$VWIx": {
+      "name": "ARPP-01",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.6"
+      ]
+    },
+    "0yAEwlU8wCSwlZbMFNDBMf": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "16QgOMx1qOpe5CaV_QjSol": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.9"
+      ]
+    },
+    "17Dk$t8KUTwywuE6O0fesL": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1JjHh0I48iusPJEW3mOLJj": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.3"
+      ]
+    },
+    "1_RDzuVZ27jmhZCPb76v4I": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.7"
+      ]
+    },
+    "1dYoMCfidjomMoSLsHhv29": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.10"
+      ]
+    },
+    "1t7cRInv0dTcqfhYXi1$mk": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2XpnttYDb5_62vmSMJUbQ4": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.1"
+      ]
+    },
+    "2YeE_yZoMId99EkBLmj2kJ": {
+      "name": "ARVL-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2zpWk3aGYpwKQUNQoMGVL_": {
+      "name": "ARP\u00d5RAND - 001",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.4"
+      ]
+    },
+    "3VsPUw9otvTiNTT06xSacc": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.5"
+      ]
+    },
+    "3X2bUSqFyULct2wlsnoWZG": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.2"
+      ]
+    },
+    "3n2guh6e0ZZ$YNwV7xAlOk": {
+      "name": "ARPP-01",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "3ujmHxicUlHki2vgPRUBFj": {
+      "name": "ARP\u00d5RAND - 013",
+      "class": "IfcSlab",
+      "label": "FAIL",
+      "issues": [
+        "Slab.0.8"
+      ]
+    }
+  }
+}

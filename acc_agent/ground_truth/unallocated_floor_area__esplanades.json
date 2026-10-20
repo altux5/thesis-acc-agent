@@ -1,0 +1,5934 @@
+{
+  "case_id": "unallocated_floor_area__esplanades",
+  "rule": "Every enclosed floor area of a building storey must be allocated to a space.\nSource: rule 'Unallocated Areas' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct.\nBenchmark convention: on each building storey, find floor areas enclosed by walls, curtain walls and columns that are occupied by no space, wall or column. Every such unallocated area larger than 0.50 m2 is a violation, reported through the walls, curtain walls and columns that surround it: each of them fails. All other walls, curtain walls and columns pass.\n\nLabel every wall, curtain wall and column.\nReport the GlobalId of every element (modelled as IfcWall or IfcCurtainWall or IfcColumn) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/Esplanades_1807_EP_AR_v18.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "01404QvF9zMj9ivvy5ivew",
+    "01jdrkS6mHQ28n7ejurprk",
+    "02QBgtl90xKYuPRbt_ImGN",
+    "03aP__BVsScDwaeO4XODcL",
+    "03uct4lyoMJydMd79V47cX",
+    "0DCVoS5u3_6Rccl6oIKwUx",
+    "0EVrvLTOQ_bDAeuJY0ZFV0",
+    "0FFNG5cU_y2q$XMEDyEf8N",
+    "0HcHwStOVpWXWKi$Ntw3lt",
+    "0JNwXiDy9iZTCR4_D440uD",
+    "0Lo068nGhCkz7YD8dfLQ3x",
+    "0MemmfPAcZfKGpDEeZhVWU",
+    "0N8EvWR66w0XbHcwzucX2z",
+    "0N_d0WGC39TKq9YlLUt8IH",
+    "0PYSpJc8E9kQ2DJAF8oaUo",
+    "0R0x_uca92QcbOGXzmnMSF",
+    "0Sw1yWp9$PDvs9UYNJajr2",
+    "0UhWs9vuVIwAoWaDvMvBvb",
+    "0YQvlHhIghe7n2fj$NtZWn",
+    "0_ve2PdqQHRmD7SBg8FBb6",
+    "0ec3fHYVJOgJQFW$MBrTFN",
+    "0fyYFEn$eB0Ah_lKnXgaWn",
+    "0iQu5cLRt94nzXaJP8SODj",
+    "0jfcPUuDEtzNSuuvvxC8y5",
+    "0jsOJpF8_oj3ev_ozTToSv",
+    "0k8L301G5ABXntWZsMByJd",
+    "0lDCicmVdyNl5sbDCddCaQ",
+    "0lhbHFxCpOLMP2IjaJhc8B",
+    "0p39t5XVOq3Q8994tlnOgK",
+    "0pG_9gtB5xHxzNTcTzy_P5",
+    "0q7iOzwzU$tyFJDK2Q$dBW",
+    "0sgCBL6DdtEGkqlrJssakF",
+    "0shE9FGLknOGwpLlgr1xmC",
+    "1$mmZmca6vpqHfp9$I1gRa",
+    "1$q78psP7F7HPZaIhRSqdR",
+    "12ITjaLeK7Gb$t$Lr_VVFc",
+    "12YCRxFcaipFFv8LYWiQGK",
+    "13QTpB1Lvrf9gfNM2C0U80",
+    "13ekEOjR_PbcP4BxcYAIez",
+    "1D_VoyLJOdNKukNxm$ASBP",
+    "1FHBpDIBL$6YnO18yilhuc",
+    "1Hm7bGYnBJN8uhdKydbADA",
+    "1JrR9YGonvBTzsQxU66Tnr",
+    "1M83f_NYDAWXITf6XTy7p4",
+    "1OeTcLeYu2X8coCf84G0Kx",
+    "1OqNhyJCKmKgNMBNT3ku5I",
+    "1P10HEA8WxrI7c3i9HturG",
+    "1PFEHXlwv6pY6Utf61qsHE",
+    "1QGktJR1sfTC31vIPzGwPC",
+    "1QLe7aHdIxiRKrSlsSvJ$a",
+    "1QYYtbiHVluQwq3hnUIWCZ",
+    "1T2rWAOzSI4eCDFeq04CHS",
+    "1UGu6Ce4JNe_mU8KdxG1_1",
+    "1UJmtLzZusYTShODuIMJu8",
+    "1Vjo$NVEmYYgvGIR45IGEA",
+    "1Vrt0nlXahJaSLicXJjJLK",
+    "1Wqi5oZ4R8GBPoAAaomiN5",
+    "1ZL5sxgu2IzmndrU1DZQT6",
+    "1aTvlOuSHHrgzmmP5qsOxC",
+    "1bkIJ1mHgwv5JSQqfzFjRL",
+    "1cshcNS$l9yJGyoFr848cf",
+    "1gZHkrc5wklkttvRGL2Oe6",
+    "1jtFHl5NJ3EOpgfiA2ZHPU",
+    "1lNrIYn97wbS_TCi9eIgmn",
+    "1n2gbhKdKqUj$ZRcn_0Mf4",
+    "1o$RMAEhQk1PdepKRow3yK",
+    "1ojVqBV6gmq7bHW4p9h6TP",
+    "1otyPQ1cKX5IUAcdtKnV5p",
+    "1s7DxYK_xhaFeO1g8uqMZR",
+    "1t3hLoKl7tzlIx9wQu1$Cu",
+    "1tkHwPyYWasvz3unZsmYA4",
+    "1wDSRWHjd2EMaj$2XoIUh5",
+    "1wbUA112JXEckSZfK6i2yW",
+    "1x$REcTWbw1tnstLCUywsr",
+    "1x2tB26qZOHt91yHAuGr72",
+    "2$$O2OmtPGKYSYJg7hGVcS",
+    "20DLVOLq2BzHAlygEHP2vh",
+    "215Y6FDR4VnRlI7Mw0I847",
+    "21HnGvKHgUOh6ALk60jG4b",
+    "21ko9WjQgtdO3UFckbzPPB",
+    "25OgFZ2dbJJErl8PjRwQoS",
+    "27r23QDpLe8I2pqLaNxp1w",
+    "28K0gksUlE7PxpbkwVNXNr",
+    "2Ai3Uly72dHiCo0f51$$xo",
+    "2Amf9DV0o_IUEWHDKENcFJ",
+    "2B4IYuIHyZyfB0HdvvNry2",
+    "2CUK4UOyzyc5bs_WWAwv_f",
+    "2IjIwwKw0_qPUdjL$Jo237",
+    "2J5OaExYVIO108xZvL0z9i",
+    "2O1qmihy9yNC0h3UnLb94P",
+    "2OqwxY2ZK5MbNwW2hfhcEo",
+    "2UQARwdX$iVpPd7J4GjvCO",
+    "2Wob$HI5eFrsFYycG1wnm9",
+    "2ZtdKcxxt5jpR1EiJ$n12E",
+    "2c0HKIjr_YolRsvMhNPOjM",
+    "2c0tT5aTZtVEx8PNe5H4S0",
+    "2cLh49f5uZWhqsrcMq1hhl",
+    "2dJAm3N4oRq3L6rsN_cwBo",
+    "2hAfP3sATGNeYoip7N_rrP",
+    "2ls2L2m8QOpt7mqSy83dR1",
+    "2oj0G8h_MpQ8ESLnDcHxlr",
+    "2qEzJ6wy6lHk5LCWyVQimQ",
+    "2vTsAYLOkOr5$T25h5bxNl",
+    "2vau8zyIkJNKHv6fHxRMdn",
+    "2x27YbFSA5rVfBQ2EZcyMD",
+    "3BZFVQo52d1zwNM3fvOnjC",
+    "3BgRmwrzhOrIPkqssjlVIi",
+    "3EMSU_i$1lMXtzH0j7pSwt",
+    "3FHXOkxKt31wfGuSBLRYL7",
+    "3FyIjrx$jcO3GTqvWjrDds",
+    "3Hya_yWBMouzuoTveJesCY",
+    "3IJ4FOF$P0Tz9DTnf$xQaa",
+    "3IT9z0e92eUfDahn$nW7I2",
+    "3NEphsKPjKKEQnEMenXecd",
+    "3NYrWuYixFhWAtXagQ7zxc",
+    "3OoGWEJSY0bvGBwhvw1hZc",
+    "3Q10O2iXIpC4gVxlV27UN1",
+    "3S2e47JuySSAAbT5LJGvyz",
+    "3S9443EtPn0XvOJqFahbAP",
+    "3T0Go97lsZ6XP$31xlX26c",
+    "3TLTPqkPRonZ1OGgnmRaFK",
+    "3ZX5ks8IxHdteVnUyskdol",
+    "3_JGsZyzj1e9kT4PYSW5VF",
+    "3_y3Ufn7d1VwvXK8kUXoOR",
+    "3bqY_VkqBlU25u8uOJQMQQ",
+    "3cIuag3nhFPSGUuWECC5pL",
+    "3dP14RDGMXUxp4t0Y$haDc",
+    "3ewQRsWBZqPag4BgggLMfq",
+    "3fBLEebN0kN6xGCvJZZGb6",
+    "3frFGY6uaRM8$tqflqMufR",
+    "3g2oANOhj6JPgR6eQYjOF1",
+    "3gEj5FCL90q7btmyocSTQT",
+    "3j0DZLab70FR_yNIT5P$ei",
+    "3jEeFSNZkAr2cWKN7WM6I9",
+    "3mG$yFG84xrAiBNQDPqk0W",
+    "3pxidmeOfhtlNAlh7F0feI",
+    "3r0UA9bOaP1eUj75zNnRop",
+    "3vnpa$7B8wQ1Rjju10mdFU"
+  ],
+  "labels": {
+    "00$ikw2WlbnHCSXM795M_5": "PASS",
+    "00IQObsxTA8Uq8vfLpIX5c": "PASS",
+    "00_nHW96x9s2tNhBdCXL7g": "PASS",
+    "00b$xhbSXCJWLMprUdyrOX": "PASS",
+    "01$yaPi3_qPPIvokW5Mea3": "PASS",
+    "011Tuxdbqo3lZdifcrSXKI": "PASS",
+    "01404QvF9zMj9ivvy5ivew": "FAIL",
+    "01AKj$ZksBgtvbjgK3q_xQ": "PASS",
+    "01hbnBAayBDJcno9bBrwEb": "PASS",
+    "01jdrkS6mHQ28n7ejurprk": "FAIL",
+    "02QBgtl90xKYuPRbt_ImGN": "FAIL",
+    "02RiJ83MgFFMyk8_H38Pvh": "PASS",
+    "02hGbMcvLJE4OAy0yCU2eK": "PASS",
+    "03aP__BVsScDwaeO4XODcL": "FAIL",
+    "03jfOoq5iCWRekHEPxW9kQ": "PASS",
+    "03oZlKhcvcO8qO8tPWNwLS": "PASS",
+    "03uct4lyoMJydMd79V47cX": "FAIL",
+    "04cXS4b4j3mN4_eMDicHDB": "PASS",
+    "04m6_gPTuTgV39L5knxKKL": "PASS",
+    "04xDN7SSYZpHeGkitlkJmU": "PASS",
+    "05$cPS$niw1y2PjoJCfouZ": "PASS",
+    "051MiYYo29sW4UjglmKdOv": "PASS",
+    "05BA98p2DPMWBpzFslaRHa": "PASS",
+    "069MO8lcrHGr1EG8BnwmDl": "PASS",
+    "06gJr8nkcRQogNoCquaXoB": "PASS",
+    "06hxHaGWjkBhaKBoYyF7UG": "PASS",
+    "06jTZ5eBABkVhvC1eJawTR": "PASS",
+    "0750jGFq_BDIAuxd$mu1dJ": "PASS",
+    "07It64tpR23J7D$stxavnV": "PASS",
+    "08$hk4xM4WrSPmCpumFYUj": "PASS",
+    "08vEVNp7qY2i4$bNfUAgSo": "PASS",
+    "09Oa_wAv3pqYOORu0Oj6eC": "PASS",
+    "09U7Ztyi$at2zIgAJRYnup": "PASS",
+    "09bnNlB49ksiOE0YMA3QhU": "PASS",
+    "09mTtx_5ckx6IXRE0J7i6E": "PASS",
+    "0BJlM54v_49EEzl3F2bovf": "PASS",
+    "0BJypWp3zRfUHAap3InzIf": "PASS",
+    "0B_rzUlXag59FlIA_HgpJT": "PASS",
+    "0BwhkWzm3ZDGnkqaBQqdU8": "PASS",
+    "0D1oA1CFEDLP_snfB27pfg": "PASS",
+    "0DCVoS5u3_6Rccl6oIKwUx": "FAIL",
+    "0DFykwX6crHx3EOC$3mRcA": "PASS",
+    "0DOSh$Q97ebc5HtGXPRKXF": "PASS",
+    "0DRYzlLm0jKK6mTXX8cMws": "PASS",
+    "0DjG2IJSt$2$rxZ4U7yBnr": "PASS",
+    "0DtyA28q$lxGfXSmuzQioL": "PASS",
+    "0EC1oqjK58rttuMqoC2aje": "PASS",
+    "0EVrvLTOQ_bDAeuJY0ZFV0": "FAIL",
+    "0EuOBwkQFh$RSEFS_KE27y": "PASS",
+    "0EwqSGXNu3Vi3HSOwkgQwy": "PASS",
+    "0FFNG5cU_y2q$XMEDyEf8N": "FAIL",
+    "0FKQ2kVZRLFIxHj0FjOqjC": "PASS",
+    "0Fmj5XL0gt1X_h5iRhM9Ic": "PASS",
+    "0GY6W0fIAt6OGhoWazZRJH": "PASS",
+    "0Gqh1X271RqB05vhPzlKw0": "PASS",
+    "0GxgvwEMPv_3Djim4Pc12G": "PASS",
+    "0HcHwStOVpWXWKi$Ntw3lt": "FAIL",
+    "0HvbLQTS8Q675nmgGZnsfK": "PASS",
+    "0HyPqa4epu$FWkgI2z1ZT9": "PASS",
+    "0IIPFI0CIEuQ8BxlZknQUz": "PASS",
+    "0IKJVDEANDGJG5UhF96u42": "PASS",
+    "0IxqUoojsVGUKSmyEDXVkH": "PASS",
+    "0JNwXiDy9iZTCR4_D440uD": "FAIL",
+    "0K7M2jfc6nST9Q7MXy9Irs": "PASS",
+    "0L2yMLLqjIyNIRW3tF9U7b": "PASS",
+    "0Lo068nGhCkz7YD8dfLQ3x": "FAIL",
+    "0MCrs08ReGNX9V70Pnbr9I": "PASS",
+    "0MemmfPAcZfKGpDEeZhVWU": "FAIL",
+    "0MjIeRQldy0dMZB0vijAo2": "PASS",
+    "0Mkosj$yzSCUEoOzLTH4TN": "PASS",
+    "0MzcWiJcajKlYAkepIY$Cz": "PASS",
+    "0N18n4IAUhGSOKRf3KrvRU": "PASS",
+    "0N8EvWR66w0XbHcwzucX2z": "FAIL",
+    "0N_d0WGC39TKq9YlLUt8IH": "FAIL",
+    "0Nct9iR$BqQxtOwBorDVmr": "PASS",
+    "0O963aMYL2ld3X3QCSx2Oe": "PASS",
+    "0OPSxMgnZNDSFVI9bsD0Mf": "PASS",
+    "0PYSpJc8E9kQ2DJAF8oaUo": "FAIL",
+    "0PeS_d8LjOzJWE82SS_s99": "PASS",
+    "0Pqc6kKbakkvKT34C5LYgo": "PASS",
+    "0Q$NuXnjwJAYy$1Woo2m$8": "PASS",
+    "0Q4IHJV9v6MUhJCFrevkSF": "PASS",
+    "0Q8hzW83z6rMfsfk$_h3y3": "PASS",
+    "0R0x_uca92QcbOGXzmnMSF": "FAIL",
+    "0S7gKFqnKH9zI5$NjFkDFz": "PASS",
+    "0SEg0idtDExZ69AY$MwTQY": "PASS",
+    "0SeMLkCyZpiZUaKtAAWiKp": "PASS",
+    "0Sw1yWp9$PDvs9UYNJajr2": "FAIL",
+    "0Ty0YXOJQbOX_t0a7ZcOly": "PASS",
+    "0UhWs9vuVIwAoWaDvMvBvb": "FAIL",
+    "0VFfojh_0UAuaq_jeOTxnB": "PASS",
+    "0VhoaI0Jj6npzrzepbZL5X": "PASS",
+    "0Vja0nqn1KTjNeTbPFOum5": "PASS",
+    "0WOIlQI35EtIDIpsZeUM4z": "PASS",
+    "0WiZ7Q2OBnXGGW4sNhKtPM": "PASS",
+    "0Wk3lPHC4FEfroS55IqR9x": "PASS",
+    "0WmB2IJwPrUitSunvJ6XRm": "PASS",
+    "0WpWNwZfxZeSCFUar1diLh": "PASS",
+    "0X3RmNVKg7GfzUtF8hwLjf": "PASS",
+    "0XiRX82GTYimoGAhtxKqcT": "PASS",
+    "0YINNL6GPRFFnFZieldsip": "PASS",
+    "0YQvlHhIghe7n2fj$NtZWn": "FAIL",
+    "0Yk3Pc6Lkt8xrD7G2bKSrZ": "PASS",
+    "0ZXKERcsltlXkbcKrHPZOf": "PASS",
+    "0Zq3KZ8ThGynsW0NKrtihH": "PASS",
+    "0ZzJZj44LbnBHWPP4ORbsr": "PASS",
+    "0_5d$4GngU8BYQEdyxcXzP": "PASS",
+    "0_GB6WNRhV628cmfDbdxMq": "PASS",
+    "0_MbAPBdNF69Ii4I_P$BC2": "PASS",
+    "0_j0o2Ble2hR0fVhk8TAG7": "PASS",
+    "0_odJnbGycMRq29tGsfN9D": "PASS",
+    "0_ve2PdqQHRmD7SBg8FBb6": "FAIL",
+    "0ad5JSFNUZKCjRIk3Bwwkj": "PASS",
+    "0aeknw2dfZ5deGn9dzaR62": "PASS",
+    "0afGSp8K8JzAii$8u1TQde": "PASS",
+    "0afLdlbQ$t4oFNmP$D7HZR": "PASS",
+    "0bgSxoGjRW7Z3ffZ8KIhK0": "PASS",
+    "0cRLT7jSsPI63XWOMWBu4e": "PASS",
+    "0cckHLZql8NA9MCubR77ne": "PASS",
+    "0d7mK_ReEYvBhpLIn7zgzX": "PASS",
+    "0dUulnLhW1a2w617gKCxcq": "PASS",
+    "0dsYp8w9KuGzcMKXerEXo6": "PASS",
+    "0e$yhFG6e4PSWzCNQ8n5g6": "PASS",
+    "0e1fFWhm8zvlD4qdVZK5L4": "PASS",
+    "0eNUxk0nIr91K$5exSu_wR": "PASS",
+    "0eQ98JmZK90Vrmuqj$oDlS": "PASS",
+    "0eZnctB3TZGIAxdA5uctuF": "PASS",
+    "0ec3fHYVJOgJQFW$MBrTFN": "FAIL",
+    "0ewuGOior_dMZeC6EUKLUn": "PASS",
+    "0exNN4XEHJHP$Bzs4e6qqy": "PASS",
+    "0f5uyM$oTnCw1DSN2432D8": "PASS",
+    "0fKs1dMovlG7VuYaYYyeYS": "PASS",
+    "0fe5u2lFKI0rU7QPieDevn": "PASS",
+    "0fyYFEn$eB0Ah_lKnXgaWn": "FAIL",
+    "0gDutbWlsBJJVZZAUd06CV": "PASS",
+    "0gOOav6f7p_EXAM$BZLk1K": "PASS",
+    "0hic_X8qPGkBWPZXBWnDgS": "PASS",
+    "0i1C5Hp7v0DCQccwZk866R": "PASS",
+    "0i9eEf85AShP2LZk$wt8lM": "PASS",
+    "0iQu5cLRt94nzXaJP8SODj": "FAIL",
+    "0id262d1jFhhPRcrCfUbll": "PASS",
+    "0ikRk4fJBR_VeX58LFDXAr": "PASS",
+    "0iq1JANZBtAbNFYnBWJspq": "PASS",
+    "0jfcPUuDEtzNSuuvvxC8y5": "FAIL",
+    "0jsOJpF8_oj3ev_ozTToSv": "FAIL",
+    "0jwgBxTZhJkyhkQ9YjhbrL": "PASS",
+    "0jxri0CrpFGnzi0Tm_Ukdj": "PASS",
+    "0jynUnpov0aeyrsli_yd2i": "PASS",
+    "0k$Jb7gvgeRFG5vN3iHlIo": "PASS",
+    "0k8L301G5ABXntWZsMByJd": "FAIL",
+    "0k_LF08e7LKXr9$qCaafZa": "PASS",
+    "0ks$i9bI5AW7siOu6xQ0Nu": "PASS",
+    "0lAcu2RKh3s9uEqAkOE74O": "PASS",
+    "0lDCicmVdyNl5sbDCddCaQ": "FAIL",
+    "0lPMVtgKsWeeUmFo2gNmqL": "PASS",
+    "0lhbHFxCpOLMP2IjaJhc8B": "FAIL",
+    "0lmOwlTh$YEcVw6sE_vOG3": "PASS",
+    "0mH6fLSSywnIc47T29iRnZ": "PASS",
+    "0mvBquVfwMrFvvoGaz0X6A": "PASS",
+    "0mvkVVA2ViYIk7RVP3KH3m": "PASS",
+    "0nbMV3NmrXV7GlAB9A8CWz": "PASS",
+    "0nu2pRrw$zJXrGKSstFUCH": "PASS",
+    "0o97mF2PfWjZYrk1snS5vO": "PASS",
+    "0p39t5XVOq3Q8994tlnOgK": "FAIL",
+    "0p64s$4sKHECY58sCWQGfe": "PASS",
+    "0pFjv3a7BGdSPOhF7Jj5bz": "PASS",
+    "0pG_9gtB5xHxzNTcTzy_P5": "FAIL",
+    "0pLnIZ7uooMPBXDwl7m7AU": "PASS",
+    "0pdhCkz5JFJ9YURveX4pRz": "PASS",
+    "0prTHlcIzVLGut27QGpbfY": "PASS",
+    "0q7iOzwzU$tyFJDK2Q$dBW": "FAIL",
+    "0qQ7xkwnmY6QyLtn5p2$Mn": "PASS",
+    "0ql2dDSVeRTo6De5zop3V6": "PASS",
+    "0rSOf_cULQKQFDYeGvAvDi": "PASS",
+    "0rWUxdpMHNJIqUEivYI$3D": "PASS",
+    "0raLuEZD94cq_niT77WcWC": "PASS",
+    "0rl3nDv6Qtb3Zl7b0eplev": "PASS",
+    "0s1xi1yicCjR4aQADuAvCg": "PASS",
+    "0sLPkCwMpiLUyVqgq_ndIR": "PASS",
+    "0sgCBL6DdtEGkqlrJssakF": "FAIL",
+    "0shE9FGLknOGwpLlgr1xmC": "FAIL",
+    "0sjiQi_mdf7IIVNDTSrHwV": "PASS",
+    "0snQA9iuvkJjG961DAi9N9": "PASS",
+    "0soypB5Rf9QXTHQDv8Qm0e": "PASS",
+    "0tSm$6K4LFcHGJTKW55om8": "PASS",
+    "0tgI1$kIWMm3xIsAgc1TD7": "PASS",
+    "0uvg8VCIl6sx9cf0Veu3Z$": "PASS",
+    "0v0H1nZA1FYLGYcbjNs1GV": "PASS",
+    "0v3gRr$PreeyMVYpIYadFa": "PASS",
+    "0vPU3NEcM$qa9qLiiKOxnJ": "PASS",
+    "0w5jHk$HUVSfIYFVSVqQII": "PASS",
+    "0w5seomjwQyN9JS4E_pts5": "PASS",
+    "0w6_n3X08ItYVoaAqvc0Yn": "PASS",
+    "0wOU7oEZEiZynBBjoK8S0R": "PASS",
+    "0xKQRQ3eO$YWXwbslgbLlH": "PASS",
+    "0xrYtYnQsVr4BzOX$eOxFU": "PASS",
+    "0yAMzTweUeFLr0XbVWEWjm": "PASS",
+    "0yemHTL5fN1cmj9dbLOTfb": "PASS",
+    "0yii6eYVCIoLVV_9hvfwvO": "PASS",
+    "0yoIczmqXncPjt7sgHrdI7": "PASS",
+    "0ypcZTux455PKtbwr1BHDC": "PASS",
+    "0z1rrkYjZRqf9V7fm8bDqr": "PASS",
+    "0zVn0jfgVeceKBgf8JFFIN": "PASS",
+    "1$M512lZQQNQdcBzkJrKoc": "PASS",
+    "1$mmZmca6vpqHfp9$I1gRa": "FAIL",
+    "1$q78psP7F7HPZaIhRSqdR": "FAIL",
+    "11TbamKeltq5s9RcsekhLT": "PASS",
+    "12ITjaLeK7Gb$t$Lr_VVFc": "FAIL",
+    "12LHLkX14AVO$YcApVwZdZ": "PASS",
+    "12YCRxFcaipFFv8LYWiQGK": "FAIL",
+    "12k1CUJYmy$Mi_0cPYMeoo": "PASS",
+    "132QBLyvqvPWN6m5_nDLQb": "PASS",
+    "13QTpB1Lvrf9gfNM2C0U80": "FAIL",
+    "13doTrHdCym7TLaz2biv9d": "PASS",
+    "13ekEOjR_PbcP4BxcYAIez": "FAIL",
+    "13kOdGtzKvJiE$7bVQ5DI6": "PASS",
+    "144RL9uNC9sLz8JS6S2fGq": "PASS",
+    "14F_Ao1Vfnt_it6swf11uh": "PASS",
+    "14XpQBZQqg2WqZsTtcJHsw": "PASS",
+    "14ptvLYpDKf7BvSPOtZYgs": "PASS",
+    "14uqRCbkhCPvtKYn9NThJU": "PASS",
+    "15JpO460yk2wBqefVwcMzO": "PASS",
+    "15j_IAESHR88rM5rjF8Vau": "PASS",
+    "16$D17WchiXo7CGw3qSujM": "PASS",
+    "167Tchb5U2UZpIPRdUfV3X": "PASS",
+    "178IFMmVJGiOenPDKk9mZh": "PASS",
+    "17L07L_J8UmgZxzPX669g9": "PASS",
+    "17PcDxtiVCO10mfo84BMM4": "PASS",
+    "17SoMFbXr$JlxG6Nhawybb": "PASS",
+    "17ev6yZOd5tcWxQ0VwUvil": "PASS",
+    "187RbmJxmJgiVcQ1Eytf4b": "PASS",
+    "189zbsPhT1$amsYGzQOy1g": "PASS",
+    "18GUsf_w8caDeFZJD_WPRk": "PASS",
+    "18RbNb10wvPcC2sw$OkjU7": "PASS",
+    "18TEVPdQ7JfOjVW_3eBKiO": "PASS",
+    "18ent55nrHIKJt2$xAz2S8": "PASS",
+    "19L8HGtS3ywhYSXTzQ5pzS": "PASS",
+    "19cQWjHxZrdTAY9LU29orm": "PASS",
+    "1ADewuhSK0OYAYF3GeJxAU": "PASS",
+    "1AVtEzxgwfKoqZPe0ajcKa": "PASS",
+    "1AXEPQBB0fEpQeokR2Nh0x": "PASS",
+    "1AXHwzaQDg6xXvwLRovU9y": "PASS",
+    "1Agtmcx6x9IXPwBDxG_L5f": "PASS",
+    "1Bb3B71P_J7Gy$jDepjYn7": "PASS",
+    "1CKUNJ7RgbexTTeCCp8Jwv": "PASS",
+    "1CY02JtMeSMZj5mpatoK8m": "PASS",
+    "1DMvyKLxvzNPrIp5K$r3c0": "PASS",
+    "1D_VoyLJOdNKukNxm$ASBP": "FAIL",
+    "1E9buGfBtRHsCTQib9i4VI": "PASS",
+    "1EayZd6pIJbm75N2yMO1GN": "PASS",
+    "1EjlTprC4R5J_SQOEna0xn": "PASS",
+    "1EwNPiUcpTUoMiQGelh7w3": "PASS",
+    "1F21QgyVcbhOggnZEKpQug": "PASS",
+    "1FCPNercKiQtfQjRKyFTyB": "PASS",
+    "1FDaREwyHXCEinjVt3OPMh": "PASS",
+    "1FHBpDIBL$6YnO18yilhuc": "FAIL",
+    "1FMzEty1qpVvTGNHBGj7uf": "PASS",
+    "1FqZdJB7m2fle5K8mnyBqp": "PASS",
+    "1Fw34nPNnBLJBS$E1U8qWn": "PASS",
+    "1Fwp4VRehxTt7mh9$BqjI4": "PASS",
+    "1GH8VrKqLevP8Mbd6SVWcp": "PASS",
+    "1GMZ0ZsIJXSdPsA6eGvAiI": "PASS",
+    "1GpQAlMuM$S1cOdRtw9QvJ": "PASS",
+    "1GuMbrqzPi_ATTUoNodaMr": "PASS",
+    "1HURFyWOfGArHpMC3AnPP8": "PASS",
+    "1HkV2_vk5Zy0eCtPBFgbTO": "PASS",
+    "1Hm7bGYnBJN8uhdKydbADA": "FAIL",
+    "1Hpb_0AoaKRNKlsBddWy6n": "PASS",
+    "1IJ66MYfQACcvNa$TJonMV": "PASS",
+    "1Il3YRZ8iI2z5rRaMqobEt": "PASS",
+    "1IsV9v0eQcFNJ0tiINbQEY": "PASS",
+    "1IwHLaPQW3GUlk4mBINbLW": "PASS",
+    "1J8MPZ7H8IQsFHcRKIBh_s": "PASS",
+    "1JGNphiLBb$ScS69H_5JrY": "PASS",
+    "1JJEJncU6s_GgUmEn8wJod": "PASS",
+    "1JrR9YGonvBTzsQxU66Tnr": "FAIL",
+    "1K12AlwAA00jSgwv50SIoS": "PASS",
+    "1K1XIcq2ISCdXIcQbj3e0j": "PASS",
+    "1KuEn2MhGhsmyH1YC65YXJ": "PASS",
+    "1LlXPgVD1yQoAApwHR89Vs": "PASS",
+    "1Lt49i69CQXaP3nGD2s1SS": "PASS",
+    "1M83f_NYDAWXITf6XTy7p4": "FAIL",
+    "1MAl1YFvP011ots8fuAKeP": "PASS",
+    "1NIufWFEBM8fSczBV8YZtL": "PASS",
+    "1NMMsOl1rWRtt$oppN54cp": "PASS",
+    "1Njv0ZezS$G7ZRAvVmWjEh": "PASS",
+    "1O0ETRFQRX0etjFdZQBHvd": "PASS",
+    "1O46dGZX1eDGtqB4bkMPm_": "PASS",
+    "1OUJvTSBG8XDYvW1K0liWB": "PASS",
+    "1OeTcLeYu2X8coCf84G0Kx": "FAIL",
+    "1Ohggvu23GaDyn71pW9zU3": "PASS",
+    "1OqNhyJCKmKgNMBNT3ku5I": "FAIL",
+    "1OxPRXhFJBBcAf2b50Gpml": "PASS",
+    "1P10HEA8WxrI7c3i9HturG": "FAIL",
+    "1PFEHXlwv6pY6Utf61qsHE": "FAIL",
+    "1P_3CA2B2l$0IvCjYQMZHX": "PASS",
+    "1PqBu0xa_suGAzU63iurSZ": "PASS",
+    "1PyF26e7$UiwD0p3Nwh8Qz": "PASS",
+    "1Q2UmDqEPSEM26K7VFDkw3": "PASS",
+    "1QGktJR1sfTC31vIPzGwPC": "FAIL",
+    "1QLe7aHdIxiRKrSlsSvJ$a": "FAIL",
+    "1QXTxi_3cp5elhfq5t62k2": "PASS",
+    "1QYYtbiHVluQwq3hnUIWCZ": "FAIL",
+    "1QmPUHAqXWJ7HglvqgqaRd": "PASS",
+    "1QtM6torvoxs9xby8JEQY3": "PASS",
+    "1QvHC2h8jV8q3UzdxDlCqc": "PASS",
+    "1Qw0StGMB$SQQbCWgTVDNx": "PASS",
+    "1R9sAwtoqwV0$JmnUXMbQP": "PASS",
+    "1RCKAwr$fGIzF0nX7IWbEm": "PASS",
+    "1RvFvi_VJNHFPJB2iZCSmE": "PASS",
+    "1S4zIfhc5a39spvgPvpplH": "PASS",
+    "1SFRLzPXface6V65yCSY4R": "PASS",
+    "1STabXB9JVJalBg7SoUbXZ": "PASS",
+    "1SVlqHbngD3X0IllFqBnOL": "PASS",
+    "1SeNci73MB7AkHkkTVyZdB": "PASS",
+    "1SfXTWGbh_mzUtlFUVJEgw": "PASS",
+    "1Sm8_KHPirNDtRLSqjtSIe": "PASS",
+    "1T2rWAOzSI4eCDFeq04CHS": "FAIL",
+    "1T6FAZDU52QgTw1KLmUHI5": "PASS",
+    "1T6K2ywQiP1w2D8k0ImLPW": "PASS",
+    "1THrhVO01JDxAtGnSYxJ1b": "PASS",
+    "1U7FhmfIFqxjye3BEWHZ1g": "PASS",
+    "1U7L4_sABU9r3ah6JX$Q0b": "PASS",
+    "1UEq_nFzQ3sQiBkFElQRSH": "PASS",
+    "1UGu6Ce4JNe_mU8KdxG1_1": "FAIL",
+    "1UJmtLzZusYTShODuIMJu8": "FAIL",
+    "1UM0Vtfuh8sTHr4AhDsIfb": "PASS",
+    "1UVO41bSuRGdDPKDbJjDPN": "PASS",
+    "1V15ENH6sXHm8H57zGJk4X": "PASS",
+    "1VLtIDW5b1iLS_WICkb5vV": "PASS",
+    "1Vjo$NVEmYYgvGIR45IGEA": "FAIL",
+    "1Vrt0nlXahJaSLicXJjJLK": "FAIL",
+    "1WCL6DRjyeVAMJ8UR3lr1T": "PASS",
+    "1WnlUp3vcqf57yoie5VpFh": "PASS",
+    "1Wqi5oZ4R8GBPoAAaomiN5": "FAIL",
+    "1WvW5_IKlNDzEWgc8cCK0Z": "PASS",
+    "1X6kRG8AV08szv0csh5wFR": "PASS",
+    "1Xazdy27EfBWb6D4Hj14R8": "PASS",
+    "1Xm2qQz6ENiTjVvDM1PSYy": "PASS",
+    "1YDoHLK31au5lxzhySt1iZ": "PASS",
+    "1YdKPfxoUnrTL6im$QochI": "PASS",
+    "1Yowp1alcABBSP7ARgM9PP": "PASS",
+    "1ZCoCLxddTS4hwcz8hw4c1": "PASS",
+    "1ZL5sxgu2IzmndrU1DZQT6": "FAIL",
+    "1ZP4d4EdQWobmQgVG1bDh1": "PASS",
+    "1Zn3i5cXaNn9IqKv2RadiU": "PASS",
+    "1Zpiqhd0tm1AdJscyRYZfC": "PASS",
+    "1Zy58QWwHBixL6BJlLdBHl": "PASS",
+    "1_CSbaDEtP6RCYHgzYAMy3": "PASS",
+    "1_ULiDF_FUQVJ7XTGJq6QY": "PASS",
+    "1_s2aeBXHr5di9hlAWAcSL": "PASS",
+    "1aT6NVavCzcbWsIzMAZ9$a": "PASS",
+    "1aTvlOuSHHrgzmmP5qsOxC": "FAIL",
+    "1ahfWVCl3ryZWqCjCMnlsG": "PASS",
+    "1asUim0uJop0cr5LqvtlIB": "PASS",
+    "1b8TF0NwSCblBaNn4uigkC": "PASS",
+    "1biCRagJKJmNvJkbKzxpV6": "PASS",
+    "1bkIJ1mHgwv5JSQqfzFjRL": "FAIL",
+    "1c$GadFy03xZ9ZrTB$p4lY": "PASS",
+    "1cRfToMvdcJ4pzokZrrqGj": "PASS",
+    "1cbD6RpkDcG7VNo_82Vztk": "PASS",
+    "1ciKX41LVgNoh5emdxUhtJ": "PASS",
+    "1cshcNS$l9yJGyoFr848cf": "FAIL",
+    "1dElyaQXKeQ$I620f_dL92": "PASS",
+    "1dbzVN5YKomYePV2DCja7V": "PASS",
+    "1dsm3agJg1bzjoZ9EzapyB": "PASS",
+    "1eejTI0lTudHay3CNgXXxg": "PASS",
+    "1efhPqezCC17gHsJIIIpw3": "PASS",
+    "1f64ELQDk0RMhq0DWWD80x": "PASS",
+    "1f8bvpRWp9Pw_fzsRWXhkl": "PASS",
+    "1fRfSQ6hbBtijWcKkwn81G": "PASS",
+    "1fgsjAwSlR2v5QJOyOl_oW": "PASS",
+    "1flx5uRm_cTeKYqBTOdfQB": "PASS",
+    "1gNwkl3lQYfwQtbghzfdpw": "PASS",
+    "1gZHkrc5wklkttvRGL2Oe6": "FAIL",
+    "1h$Z2rwxzhPkzO44G4jGtn": "PASS",
+    "1h8d77QRCZOkvqARLjCy2$": "PASS",
+    "1hZugRpReghSrqZblGVYVo": "PASS",
+    "1htri_gvAqfxvLVmiwKLGh": "PASS",
+    "1ibcy9s6P1v8WIK338rzS7": "PASS",
+    "1j9pbg5pn0wqUA3EtgXf2G": "PASS",
+    "1jkXkgvWWcjf9NGy0JgUAB": "PASS",
+    "1jtFHl5NJ3EOpgfiA2ZHPU": "FAIL",
+    "1kJU6b4RoDP_vrgWwAJImq": "PASS",
+    "1lNrIYn97wbS_TCi9eIgmn": "FAIL",
+    "1lPhxznOAx4wSN0Swym4fs": "PASS",
+    "1mPZu1AgPG36VV9E8u_2qI": "PASS",
+    "1mk7zBh1yxoVzrBnbiUrvz": "PASS",
+    "1n2gbhKdKqUj$ZRcn_0Mf4": "FAIL",
+    "1n2lpnfSm6SbiG6y9BlvVp": "PASS",
+    "1nDZabFfdDO1fjNw$LVTuI": "PASS",
+    "1nE3AdPicdneBoql_ttNh0": "PASS",
+    "1nmA2hAvaR9zmvM0VfHOU9": "PASS",
+    "1nte85PzkGSe10buzLdkk1": "PASS",
+    "1o$RMAEhQk1PdepKRow3yK": "FAIL",
+    "1o1SntrLsISqHGuehIxFaI": "PASS",
+    "1oc8omSRAFAmhZVWQ8OPZf": "PASS",
+    "1ojVqBV6gmq7bHW4p9h6TP": "FAIL",
+    "1otyPQ1cKX5IUAcdtKnV5p": "FAIL",
+    "1pZ2X9NTMyaMxXEyFH4ZVr": "PASS",
+    "1petvUcSiS7kB0LkCYvR5q": "PASS",
+    "1pi3jx87qRp__fqZ3jx67m": "PASS",
+    "1pjGIKSnaAxB2VbD6SYv5F": "PASS",
+    "1pxEc9dFZrTkWNbIzNZ_R3": "PASS",
+    "1q05$e$OcRrVBdu2zpEKWo": "PASS",
+    "1qvBWTBFy9fbvwckUzEJl_": "PASS",
+    "1qvMG5WV7Z0mbfV7VGxFA1": "PASS",
+    "1r9nN7vVcXG2zy2h1nWwHJ": "PASS",
+    "1rbwzwr0FA24Ds6CbMSZRS": "PASS",
+    "1s7DxYK_xhaFeO1g8uqMZR": "FAIL",
+    "1sLKIA8GI1BYqZYQlZz11V": "PASS",
+    "1seVngGlUzShrS8Q0Xkbzf": "PASS",
+    "1t$JRfU3M7aBgi_xttwpo5": "PASS",
+    "1t3hLoKl7tzlIx9wQu1$Cu": "FAIL",
+    "1tRx5ibUnwCmU_s4M8sA_j": "PASS",
+    "1tfAR6IPWxZ5g9nvq8rIe1": "PASS",
+    "1tfrPp4NZwP02PjSSw1Rch": "PASS",
+    "1tkHwPyYWasvz3unZsmYA4": "FAIL",
+    "1uZN5B8xmE9PR17hcoegaf": "PASS",
+    "1uvaSI8x6vJk6Vn2sn5ATz": "PASS",
+    "1vAIug7dC7FKjxzvCH7UnY": "PASS",
+    "1vKYH0g8eU9GfjWozIOXSC": "PASS",
+    "1vNTyCOmK8lbtDExJ98DVV": "PASS",
+    "1vVsm$z5ftEqnCLda1fBh0": "PASS",
+    "1wDSRWHjd2EMaj$2XoIUh5": "FAIL",
+    "1wbUA112JXEckSZfK6i2yW": "FAIL",
+    "1wveWopcirxnFFa$xB_2$G": "PASS",
+    "1x$REcTWbw1tnstLCUywsr": "FAIL",
+    "1x2tB26qZOHt91yHAuGr72": "FAIL",
+    "1xBgvsHppY5A5B8qTPAD6X": "PASS",
+    "1y8ERMlu7eiPIh7LcYp2Cp": "PASS",
+    "1zQ6cDITKaPckQaz$Q96ic": "PASS",
+    "1zZ6wR3t__cAOVB2bCAhjA": "PASS",
+    "1zitGedqPB8aYPfDBzKbH1": "PASS",
+    "1zpx9cD3ueWLStuuiYv$RR": "PASS",
+    "1zvoLHEImc8sBYmoXiBkGK": "PASS",
+    "2$$O2OmtPGKYSYJg7hGVcS": "FAIL",
+    "2$EBc_EMkGejEITTgCpHjE": "PASS",
+    "2$Pod$HSvtLkQp33irF2_9": "PASS",
+    "2$ud7P8LRz$IrekwP9Jnpi": "PASS",
+    "20DLVOLq2BzHAlygEHP2vh": "FAIL",
+    "20fP40O2HEguT72DPOl3uj": "PASS",
+    "20qNIC6EqewH95QKKFyPX2": "PASS",
+    "215Y6FDR4VnRlI7Mw0I847": "FAIL",
+    "21BXnuGq7qEGcz5haqTv3S": "PASS",
+    "21HnGvKHgUOh6ALk60jG4b": "FAIL",
+    "21OhXwTpqOudT8kV7ajvrY": "PASS",
+    "21ko9WjQgtdO3UFckbzPPB": "FAIL",
+    "21prgnZOAm$3vQw9HWJg16": "PASS",
+    "21vhsExYoEDhFqxehtnkQ7": "PASS",
+    "229TmUHp6ZXCtTVtGut9cc": "PASS",
+    "22bQQcMzHRn42tx1KHf3VR": "PASS",
+    "22ubiWcyX7UoeNGBko2AB9": "PASS",
+    "23iXzdvCGXYn2iQV4PVwfm": "PASS",
+    "23vwoY3vS3Ci9Ds_m55cb9": "PASS",
+    "23ywZO3y$sSCo8tyVm43W9": "PASS",
+    "24uLDWJIVE_7XwVR_zThFx": "PASS",
+    "256Sd95jA5jwcSYof0IZQv": "PASS",
+    "25CIhmolGCrK5FheEsf3nq": "PASS",
+    "25GlWB412fXkl1udna7BkS": "PASS",
+    "25KPBG30DN6m0evvzBrwVO": "PASS",
+    "25OgFZ2dbJJErl8PjRwQoS": "FAIL",
+    "26A8dyxpncZ2pXs94SB6zC": "PASS",
+    "26AKPMhUiRjTp16c0DhmDv": "PASS",
+    "26GMRjkvhvoSj1MHOiI1d2": "PASS",
+    "26NcdCDDD$USagSoHQvQTW": "PASS",
+    "26p_eh9oVvpibGKOTNcyJm": "PASS",
+    "26rmrRP5IQQxSctOFaGnfM": "PASS",
+    "26y32jldmMk8YqrMYJ5seW": "PASS",
+    "27r23QDpLe8I2pqLaNxp1w": "FAIL",
+    "28K0gksUlE7PxpbkwVNXNr": "FAIL",
+    "28eMhHOCMLcOLbsNCag3Qt": "PASS",
+    "28ttgdnHcwLCwjk2RnUWxa": "PASS",
+    "29C1oFGtP8_5pciKxKfsDc": "PASS",
+    "29Kmfl15$u1RE52mR_4g_q": "PASS",
+    "29Q3Sl3v0h$4AF5wsx1OIg": "PASS",
+    "29b3etZKnUn_W6tFWr13Z4": "PASS",
+    "29evkftzk_NpyDsGhEAKt7": "PASS",
+    "29g4Wz$n9UvWNikt7dNZPa": "PASS",
+    "2AeKr0nIrF5Ebpb_qye2ya": "PASS",
+    "2Ai3Uly72dHiCo0f51$$xo": "FAIL",
+    "2Aldu3LtlNGnni6GXNppZQ": "PASS",
+    "2Amf9DV0o_IUEWHDKENcFJ": "FAIL",
+    "2B4IYuIHyZyfB0HdvvNry2": "FAIL",
+    "2B6uSwYHzLiPE3chyzAjEI": "PASS",
+    "2BLFO4x1xb4HwPdEbUYqld": "PASS",
+    "2C5YzayY4KMsGsgvJSHPQN": "PASS",
+    "2CUK4UOyzyc5bs_WWAwv_f": "FAIL",
+    "2Cf1KPhg0kptmeNKo5Hdik": "PASS",
+    "2CuGBzyO9vBUYgYP5GcFoD": "PASS",
+    "2CuhFaqgrI2ShAf4O8f2Ew": "PASS",
+    "2DFNs0cl_$D0COfUJpBNOC": "PASS",
+    "2DKWf8Y0xI0pXAgFj2YgHj": "PASS",
+    "2DMCtbuXfg70rIWYNmEVj0": "PASS",
+    "2DOQfAifoBoRXRUCZZQWnv": "PASS",
+    "2EISXGTHYQRUqgDalIH7Hz": "PASS",
+    "2EVlk6ul8$fVpLR_RcIBzR": "PASS",
+    "2F44lfTksNzUSFloyJcUOs": "PASS",
+    "2FRKvDgrtq70V7mhFX5Qsz": "PASS",
+    "2FW_1JZGZe2sjDKcJwT08B": "PASS",
+    "2FaW$Qv4WRZ3xqfeE8IFCO": "PASS",
+    "2Fb9NV73b0Js51G4VK0pKB": "PASS",
+    "2GPDS3kIcP15q1Z8gGDNOe": "PASS",
+    "2GPKW8QvdbsY2UMvg9lGUn": "PASS",
+    "2GXr$omRG2Nx9vof$WuOz_": "PASS",
+    "2HDltAr21yPs1wJE2dYrvQ": "PASS",
+    "2HGB9kHBWHWd_Pc63rFcHj": "PASS",
+    "2I57e7$Fd8_Qq5tUYGLsDd": "PASS",
+    "2IAfjP4zhBdGM8H5Sip$O9": "PASS",
+    "2IS7K7XPfyfuOKXDko3Rfr": "PASS",
+    "2IjIwwKw0_qPUdjL$Jo237": "FAIL",
+    "2J5OaExYVIO108xZvL0z9i": "FAIL",
+    "2JEQIRwwTfI2jXSSScva5Q": "PASS",
+    "2Jgp1Ko6VAgY6XfZOcXS3q": "PASS",
+    "2KB0XmJSGsvRoHXE7E2Xkt": "PASS",
+    "2KM8V35kQHtsvVobtWXSX3": "PASS",
+    "2L29olXS3SWMAALfA0AKCE": "PASS",
+    "2L3A2Rtc8Vn6rbqYCLfIKT": "PASS",
+    "2LHjW$4FHLVwZS8coiWlF0": "PASS",
+    "2Lsg4r0_WDqQEvodIL95X0": "PASS",
+    "2LumyiDNGi1brdFZJsF1so": "PASS",
+    "2M9EnaTX6xSoLXRDz1_k57": "PASS",
+    "2MEXhElJ5jU7lIFoq79xcE": "PASS",
+    "2MWjvPwH_fC4fm1sC$pARa": "PASS",
+    "2MgaZwv6UEJiykKVVtxT44": "PASS",
+    "2MtT9ITOVQGELpAuVEUJP7": "PASS",
+    "2NJxgKeGaiMBxTYNj2ZerY": "PASS",
+    "2NviLo_Cs5URMC02IY6IUt": "PASS",
+    "2Nzso8KYyl5Iby$qNNQ0X2": "PASS",
+    "2O1qmihy9yNC0h3UnLb94P": "FAIL",
+    "2OdQxzRRnSHNpJ1W48rxL3": "PASS",
+    "2OqwxY2ZK5MbNwW2hfhcEo": "FAIL",
+    "2P2pXQ$SqQ7fV4ooYmCljR": "PASS",
+    "2PX1NI5b73lQi__xhdZ4$0": "PASS",
+    "2Pmivw8RlW3tycxD0liZGI": "PASS",
+    "2Q$YV3R6f_QbiIL7Nr_wc$": "PASS",
+    "2QX8SC2Sl8flvk_cMV1b5O": "PASS",
+    "2QZ4Z569huOTV$ovCQe7Rz": "PASS",
+    "2QkXvugMCDhGBKisdYmU2J": "PASS",
+    "2R3INbTwDNQNrjyqPi0xSq": "PASS",
+    "2ROWpCSLdZOb9tcv_j4p6e": "PASS",
+    "2SN7ZOEuyu80OJq5WtdGGv": "PASS",
+    "2SXHlyjduLWGJJxsItcU27": "PASS",
+    "2SwTMoYTLG67$Sj6NwOS1j": "PASS",
+    "2TUObtQ55nMHCLlhu4XzCO": "PASS",
+    "2ToXdm7rnSi2j6gE1DsUYS": "PASS",
+    "2UE9ZiKcnXCv8gpfPUVQxV": "PASS",
+    "2UQARwdX$iVpPd7J4GjvCO": "FAIL",
+    "2V7gXMuFV9ULjOu9hsllPp": "PASS",
+    "2VC36EaoyFl8Kyac8iUvWh": "PASS",
+    "2VSK4X8tlW2aA0ejdObiIF": "PASS",
+    "2Vo$jPuQwWw5UC4J3sDbwR": "PASS",
+    "2VsWaGrjV23w5wnrkUwwXJ": "PASS",
+    "2W5lKmdv_eWHhYgpzEAI7r": "PASS",
+    "2WKweWyuhqRWqofNl77BsQ": "PASS",
+    "2Wgym1bn8qWORGYZo4xb0h": "PASS",
+    "2Wob$HI5eFrsFYycG1wnm9": "FAIL",
+    "2XcUa8qu_J0FiVC6Wx7bB7": "PASS",
+    "2Y2MyiCsqjOlGeLa_mz$zc": "PASS",
+    "2Y5W2bCSNFdVjprImm8ywP": "PASS",
+    "2Ytja_wQDZU$YmNzQnp67f": "PASS",
+    "2Za6aqCsBg4qs2f3ctdfJ5": "PASS",
+    "2ZtdKcxxt5jpR1EiJ$n12E": "FAIL",
+    "2_2yvpW0_x$UXjx4qcitJM": "PASS",
+    "2_HFEBTeeLZPNNxlEK7r5o": "PASS",
+    "2_KpF2Km4lR1yMHDaCmlZr": "PASS",
+    "2_vW$M0sedDlkg23PSwhHD": "PASS",
+    "2aD04zyyeFGEMzRjkWlqTs": "PASS",
+    "2aNLbstSUxECG4xQMbMuXB": "PASS",
+    "2aOnzxnKZoEHvSS1noMh1D": "PASS",
+    "2b5DgT37SRXUbkVkccMtic": "PASS",
+    "2b6DmlSWoIVe1nnpaek13q": "PASS",
+    "2bAT6sE8Rbaq9nx53tMWM6": "PASS",
+    "2bjHo1oAC4q$p_wquodMAG": "PASS",
+    "2c0HKIjr_YolRsvMhNPOjM": "FAIL",
+    "2c0tT5aTZtVEx8PNe5H4S0": "FAIL",
+    "2cLh49f5uZWhqsrcMq1hhl": "FAIL",
+    "2caUcmR3MqubSJSJ_Va7lf": "PASS",
+    "2dCp2ZGZ3i2RwiDBAnMt5_": "PASS",
+    "2dDhZFEcUchxMwf5YShgjR": "PASS",
+    "2dGph0V87lot9s95dG2Ynx": "PASS",
+    "2dJAm3N4oRq3L6rsN_cwBo": "FAIL",
+    "2dZrZSvEiuYianeFqjUsr3": "PASS",
+    "2dwrmKDguupiZFUsY2mpsp": "PASS",
+    "2e9Jc_wCMsl97qeaPZS6Cz": "PASS",
+    "2eORpy119YlH5MR0oIGDvD": "PASS",
+    "2eS3Ln06ENFvzEmzr7z8Zp": "PASS",
+    "2ebty4FNMqOL9e6sHsydlF": "PASS",
+    "2eqyXXCf$fXYN_Nf$876ft": "PASS",
+    "2exkcKyV_6UG3f2pM1u8DM": "PASS",
+    "2f6GPSBP$rl3BXJ5m8XJNF": "PASS",
+    "2f8OVLSn$2bFHn7p4hz5Ot": "PASS",
+    "2fP7ZXS3eTRhrKN3UcdvuN": "PASS",
+    "2fx3FatPJFTsZnvVFM_InC": "PASS",
+    "2gEH1l$T5z2sKHYjWAjS4g": "PASS",
+    "2gbJMvx1r0TNJtQOQC8SOW": "PASS",
+    "2hA0SNZDjnbarNczcRoyUY": "PASS",
+    "2hAfP3sATGNeYoip7N_rrP": "FAIL",
+    "2hHDA9jUIpwjndhWoSEGHr": "PASS",
+    "2hOzMrM9crbcxvA_6ZiR6D": "PASS",
+    "2hu7W3HwDhxt2Q6P_0QGqR": "PASS",
+    "2iCWYCLCKqwCn7wxDWjZH4": "PASS",
+    "2iTFjefF_KnrMMkexy3xzR": "PASS",
+    "2jIwxq0h2jU_di51_J$Rh5": "PASS",
+    "2kGsdVmObXmesmeA8$yvDa": "PASS",
+    "2l3EQ1SKKMC94rjgLwvmIq": "PASS",
+    "2l5iGegKZE9CMOehuUGCbY": "PASS",
+    "2lEj6mDlwuUL4rN5PAd8u_": "PASS",
+    "2lGgTaUDEBEWuQr6hnLXCc": "PASS",
+    "2lnTOFRwQI16wZ8nxcxW3P": "PASS",
+    "2lnsGFRKTQALXsBiyxgsr2": "PASS",
+    "2loHI1dPdXVTfFwShdFOvh": "PASS",
+    "2ls2L2m8QOpt7mqSy83dR1": "FAIL",
+    "2mXWDBu9K1BamnBU2YOvF1": "PASS",
+    "2n_A5k870sP0EV6wha1hUj": "PASS",
+    "2nidZSIAZO36gmR6dDos_7": "PASS",
+    "2oj0G8h_MpQ8ESLnDcHxlr": "FAIL",
+    "2p4HUPkXtGS8eVoSWBkGiN": "PASS",
+    "2p4IqOALxWtiM37S6MVKy7": "PASS",
+    "2p8t9OXTh18sAJaWraQf_e": "PASS",
+    "2pO436hPqvRQPWX9dNlC$W": "PASS",
+    "2q7BQMxbBWG6nTNsFxaFJe": "PASS",
+    "2qEzJ6wy6lHk5LCWyVQimQ": "FAIL",
+    "2qKSCDtaY50he3MKOo4n0Z": "PASS",
+    "2qT8gDQNP5aqpSW4jl6IQU": "PASS",
+    "2qdFcy1do19HIYCU0KVowP": "PASS",
+    "2rWAU1cGJmyRat4vnzA73p": "PASS",
+    "2sBz$GQBYs4KMP6zrHrpig": "PASS",
+    "2sNPVheVd1r$TGpnZbdory": "PASS",
+    "2sSlNXfAiiVPkAxkGXByZT": "PASS",
+    "2scHUjxjdulzdSY4jgovPs": "PASS",
+    "2sfKdRoFdGsaJtnDp0VZZh": "PASS",
+    "2t14xC$w9NPs3uIL$32AJv": "PASS",
+    "2t6r_bWYSVYW_KkL5WnYFX": "PASS",
+    "2tBfoGzzSiTSIIj6K8C5BG": "PASS",
+    "2tU9BHNv7ovW_UnR25cedD": "PASS",
+    "2tiwRe3VyQeccZhvBrXp04": "PASS",
+    "2tjM6Ug6$_CDlDcnyEnt1D": "PASS",
+    "2u1q3QaDL8orYM4ZAf$cye": "PASS",
+    "2uovvoveGvmiNrrZ5XkXYL": "PASS",
+    "2uqID4Ks8QatuHXiQYshmD": "PASS",
+    "2uqwtT$iU4$37PbKpCBwIg": "PASS",
+    "2usjcCtZryWrSaXEtN6FyF": "PASS",
+    "2vTsAYLOkOr5$T25h5bxNl": "FAIL",
+    "2vau8zyIkJNKHv6fHxRMdn": "FAIL",
+    "2vpk7sVm6nGnA_XE6cfx9S": "PASS",
+    "2ww$V4YebJ0aZ0E5WOra80": "PASS",
+    "2wzm4gEoCgH6dnXVXhok_b": "PASS",
+    "2x27YbFSA5rVfBQ2EZcyMD": "FAIL",
+    "2y4gDvSfAD_izIYaYrdL3k": "PASS",
+    "2ywOoY9LS0ey1pSVpiJDEk": "PASS",
+    "2yy6lhNM9tGNqIrBTEHtao": "PASS",
+    "2z9OiHdHifmzEQ_NAyZbPZ": "PASS",
+    "2zRX0Xga5$2UlVh8bNSd44": "PASS",
+    "2z_hn2HR0h$RKmSSnOqjxg": "PASS",
+    "3$GKLO9Lt6l3fPHVgzuzmk": "PASS",
+    "3$XyTXHWc2uKWi5XZjP4LL": "PASS",
+    "3$aaogzkMib6R8ZBui_viR": "PASS",
+    "3$gx0qLS$ZJ3KQsGw0yo0u": "PASS",
+    "3$tOkpj6DD13HluauyNzso": "PASS",
+    "3$tS6fyif6jzoWw9cB4clR": "PASS",
+    "30J39bQN38wj6Q4yYE01NH": "PASS",
+    "30L310LUrC0qUqWsS$Y18U": "PASS",
+    "30WdVjeaYMj83LoCK2X36G": "PASS",
+    "30aCTgQL3cOB7PEZ_FkU3Z": "PASS",
+    "30ev5b_7G9Nnoj0nVZspbL": "PASS",
+    "30lcaZfBKHln6s6blCTt_f": "PASS",
+    "318xBd9KdYrW2qJ1FDM6w_": "PASS",
+    "321_8WNVNn3qg$XEm4UkZa": "PASS",
+    "32szr9q_l_ELRaQUMCWGHT": "PASS",
+    "338DPZ1Eh2Bq7FXws1i5xS": "PASS",
+    "33PjOHhjTvfifVd$V4DPQT": "PASS",
+    "34AAVEQeLBt8uvfCnuBWeK": "PASS",
+    "34wYjruRLV1FbcSHoP1kid": "PASS",
+    "35LnAxnTSvx14tgsDXVCaI": "PASS",
+    "35PXO2QVN$Ye6L8a0Z6SD3": "PASS",
+    "35U24j$Yd8zWqR4V4HVi_G": "PASS",
+    "35x37x$K5qi0iu3lxPfSPL": "PASS",
+    "3624w9Gt$FQ1No1LZNo3we": "PASS",
+    "36jXY_b_zk8duZembB7zzS": "PASS",
+    "371ikE0Dms8Nm$s$MSdiz0": "PASS",
+    "37NQVWbjOfjJdNs4UqA5Ol": "PASS",
+    "37UAGAT7IZ96fQiUWSawVX": "PASS",
+    "37ZBmy28$YT1zMlZ0bBbLh": "PASS",
+    "37dOXs$byZY8m1YHQs2mc7": "PASS",
+    "37lLAnElTK9Zyuf7uO2aIT": "PASS",
+    "38Bu3yZ$VgywfqpWiHX7ky": "PASS",
+    "38Fv5hx7iIFd9GkaurQzll": "PASS",
+    "38c365AAeqMEFr6SYL1KJ4": "PASS",
+    "38hZLMsKP2cgGipPxKaJX3": "PASS",
+    "38rwAHYS4NVQfG1v1B7oYh": "PASS",
+    "39AyMuLz$3DYUNkOtthZE4": "PASS",
+    "3A96Hgu7S$ze7Pa7dOAhOr": "PASS",
+    "3B1T7FJJfyDjKPsjlAFEVP": "PASS",
+    "3B3O0S0VusHV4o56FJAfEH": "PASS",
+    "3BZFVQo52d1zwNM3fvOnjC": "FAIL",
+    "3Bb6fqQDqutxUGhNl97cS5": "PASS",
+    "3BgRmwrzhOrIPkqssjlVIi": "FAIL",
+    "3BqPw_CQ7roQ9k1uBXl4ce": "PASS",
+    "3CDAkOOtr8zNRW4riXRzTs": "PASS",
+    "3CDdsiIYNmdXQ2eQKhdFsZ": "PASS",
+    "3CG42Esw0UbqUb$TvW6boZ": "PASS",
+    "3D5ajVAhBvDKH_MOzc5kQU": "PASS",
+    "3Dgjcso0AebYM1Xj0tcAJS": "PASS",
+    "3DrMrL5nzKgZOMu8jZvJru": "PASS",
+    "3DwhpukGaQtR0npMcuIRGp": "PASS",
+    "3EJkoryWK$yn6c7DH9_UYR": "PASS",
+    "3EMSU_i$1lMXtzH0j7pSwt": "FAIL",
+    "3Eey_HgXFWjimOVMKc54Q_": "PASS",
+    "3F9kTdjZmVku6PFe3iAinf": "PASS",
+    "3FC$x7KDOMVBlRrQZ$e9$y": "PASS",
+    "3FHXOkxKt31wfGuSBLRYL7": "FAIL",
+    "3FJ321XHCkHGte0O3dASH2": "PASS",
+    "3FqcQS8Om7DS7yNF8gQgbk": "PASS",
+    "3FyIjrx$jcO3GTqvWjrDds": "FAIL",
+    "3G3oOygH$wZsvMc20Ct4d0": "PASS",
+    "3Gzig_cLbz0MjHx76MjqYn": "PASS",
+    "3HDHgN5$LwU1r6akzsLTGu": "PASS",
+    "3HDY$Lcen0jAHcZKmal1L3": "PASS",
+    "3Hya_yWBMouzuoTveJesCY": "FAIL",
+    "3IB_TXIcCqSAyYqYIN5q5g": "PASS",
+    "3IJ4FOF$P0Tz9DTnf$xQaa": "FAIL",
+    "3IT9z0e92eUfDahn$nW7I2": "FAIL",
+    "3IZAEChJX$bO3A4BG_2T5P": "PASS",
+    "3IlD61qEvSXiktVUu65_s1": "PASS",
+    "3J3S60vbpN3$dgfN1ggnXR": "PASS",
+    "3J4utjzpULy94FMiGghmJV": "PASS",
+    "3LOw7hD411IjnkO_m6cxn7": "PASS",
+    "3LcMU8zoYNQFjrGC8bITQW": "PASS",
+    "3LdaWlNjwFvMlrMUbxPxH_": "PASS",
+    "3Llrnv$REdxTJqu7SqauN8": "PASS",
+    "3MTbsP2mxnLL0xvjBwhb$7": "PASS",
+    "3N0kg87QGHvf8rUASRRmWK": "PASS",
+    "3N30_KAjqZ2jcPJmvbOc2A": "PASS",
+    "3N90YG71D9fKi8CEbPjoPn": "PASS",
+    "3NEphsKPjKKEQnEMenXecd": "FAIL",
+    "3NYrWuYixFhWAtXagQ7zxc": "FAIL",
+    "3NuloIdMbfQjb908MOYFRf": "PASS",
+    "3OEeDq9mJ9hE6Bz6NzPBn$": "PASS",
+    "3OlKTz8l5U42u2NQBO188y": "PASS",
+    "3OoGWEJSY0bvGBwhvw1hZc": "FAIL",
+    "3Ouawn5DxO9SVaAn99pMOU": "PASS",
+    "3P3pwbsNqHmFFDKHXhPZ4X": "PASS",
+    "3PRDOTBiTkkHCC6dI97D2T": "PASS",
+    "3Pr$e_BF7jbPU8lHJGMw0Q": "PASS",
+    "3Q10O2iXIpC4gVxlV27UN1": "FAIL",
+    "3QG3IiWgtA2SmXUUcithrS": "PASS",
+    "3QMfRyYrkkiBtsckpG4Aqp": "PASS",
+    "3QWfGhnbtMd8GmQauGw_3f": "PASS",
+    "3QXrJ1d6AAOnxto2fNNlxe": "PASS",
+    "3Qrdn_a0oNx9TyxcSLKUiH": "PASS",
+    "3RAbZ7wOrDN4z7P5_nj4$f": "PASS",
+    "3RxH6PdJSODygOYjlb7xvf": "PASS",
+    "3S2e47JuySSAAbT5LJGvyz": "FAIL",
+    "3S6WK2Mwqw9PGLqmhRs10D": "PASS",
+    "3S9443EtPn0XvOJqFahbAP": "FAIL",
+    "3SidOKkODKpCzaQ7cYtdp8": "PASS",
+    "3SjFKk0B4ElmbQkckfZdX_": "PASS",
+    "3SouZlc9HqQkih5j2lh3SA": "PASS",
+    "3T0Go97lsZ6XP$31xlX26c": "FAIL",
+    "3TLTPqkPRonZ1OGgnmRaFK": "FAIL",
+    "3TM$QZmPGG5ua2mMuvCcMm": "PASS",
+    "3TNEQp0kIkC9ALZ8H$OOyy": "PASS",
+    "3TWQmhEv0EvmOiCqtfz0Jt": "PASS",
+    "3TfoY4VVw4qQuzHmD2I8Px": "PASS",
+    "3UPMvzzQVcC_mI2s1Zww21": "PASS",
+    "3UlmB9p5YcxdXi$JthA_sP": "PASS",
+    "3VHDW$aJ_1CMiY1QQQ3kGi": "PASS",
+    "3VM210__aOAvHY$zOW$37L": "PASS",
+    "3VOSmoVVXYycAL6Je8_FzO": "PASS",
+    "3VqoG3TUK$VnimnIQPT_Kq": "PASS",
+    "3W7gBdCUHHObwW1oJzXGd7": "PASS",
+    "3WFv7G6iYz8b7SNYyEODH4": "PASS",
+    "3WGQcYYyNlRMTQfJMtVM88": "PASS",
+    "3WHY9av_Nrrt1_BWGoEg52": "PASS",
+    "3WrtEQZ8O4Y0nK71vYx7TQ": "PASS",
+    "3X8iOQZ_jQh4ThZZnNCGxR": "PASS",
+    "3XKX_1XX3YC_AS5r1LU0St": "PASS",
+    "3XdyX0GmDYzpE9Mh6dOVPL": "PASS",
+    "3Y1BQH4wcRxTvn6GPKGrl2": "PASS",
+    "3Yi3H0BOEV_poTkDhrOLhG": "PASS",
+    "3Z0zCJnt74ex3Cxbj0fxQZ": "PASS",
+    "3ZE4YAD2$mHJjZKu0PzN8c": "PASS",
+    "3ZRLJ8tZXImHZi87CWBtRo": "PASS",
+    "3ZTAGwzb1RgrouhL2H3tN9": "PASS",
+    "3ZVu_eAf8bQH08DpeZPaQP": "PASS",
+    "3ZX5ks8IxHdteVnUyskdol": "FAIL",
+    "3Zr7ZRXnl4r2SdGg8pLmP7": "PASS",
+    "3_1nNJ231QsoQXMiBDJX2y": "PASS",
+    "3_220jgTJdswzUyWvx5ABu": "PASS",
+    "3_6OUpS437lHtVdsC0774w": "PASS",
+    "3_JGsZyzj1e9kT4PYSW5VF": "FAIL",
+    "3_NbFrbWkTfcw5lZZ4C_P5": "PASS",
+    "3_dWVz2ancofjHfmluTn3p": "PASS",
+    "3_y3Ufn7d1VwvXK8kUXoOR": "FAIL",
+    "3a1CTPC032ayhez2w2d4th": "PASS",
+    "3aBHVfHoOZPfoHlwXYva1H": "PASS",
+    "3aJX14UCMkKhvIe7S2Pcw2": "PASS",
+    "3aTJDEbmZfA2paJwGwYtht": "PASS",
+    "3b4pdSPulkqZeqAZw$W8e5": "PASS",
+    "3b7Yoc0TygWnYkslQhQLR2": "PASS",
+    "3b_r1pdwDM5C$qjpiC3cPa": "PASS",
+    "3bqY_VkqBlU25u8uOJQMQQ": "FAIL",
+    "3c6MwqA$yM0M38eAmrKVL6": "PASS",
+    "3cIuag3nhFPSGUuWECC5pL": "FAIL",
+    "3dP14RDGMXUxp4t0Y$haDc": "FAIL",
+    "3dgCDn3fTFJpeura5Voaae": "PASS",
+    "3ewQRsWBZqPag4BgggLMfq": "FAIL",
+    "3fBLEebN0kN6xGCvJZZGb6": "FAIL",
+    "3fRZrVH5bYHmlr7f9OC3ov": "PASS",
+    "3foXgkf2MB_OFdjz2lb9uZ": "PASS",
+    "3frFGY6uaRM8$tqflqMufR": "FAIL",
+    "3g2oANOhj6JPgR6eQYjOF1": "FAIL",
+    "3g7pwh8oIvsRWDXbetscep": "PASS",
+    "3g8$_EcfbGZK_aJOU8AACO": "PASS",
+    "3gEj5FCL90q7btmyocSTQT": "FAIL",
+    "3hJ_35lqc2mbMpojfFD3_g": "PASS",
+    "3hPjk50I$Li5qJghXY0g$i": "PASS",
+    "3hV2ZCFs_EzGOEI5uQqYiP": "PASS",
+    "3hajtHs_hrfrZPGbE5dLFy": "PASS",
+    "3i3DjFdNCRXAj1QfgtE3YT": "PASS",
+    "3i4fjuHBRL3eoVaYz6CKM3": "PASS",
+    "3iNqCL8qUekFQiHD$2sK6C": "PASS",
+    "3ias69X1b2N37LhzFQWzff": "PASS",
+    "3j0DZLab70FR_yNIT5P$ei": "FAIL",
+    "3jEeFSNZkAr2cWKN7WM6I9": "FAIL",
+    "3jFx3Xf6MogNMzLYR2nDHd": "PASS",
+    "3jXXsmHmfhOYF3bSUu6hl6": "PASS",
+    "3jlKsp7Krj2si_w$cynUND": "PASS",
+    "3k2w0jLzP5V95WWTzOOG3z": "PASS",
+    "3k7ejQKLhJPapVsP_6kGOl": "PASS",
+    "3kfmqcD9Yw62CTUCOzUrjS": "PASS",
+    "3l2PIvweLlR5MXQWFwxRdv": "PASS",
+    "3lMiQZyaxXPq$zHwH897AV": "PASS",
+    "3lTilTfvbhj0syZfWASqeq": "PASS",
+    "3lbFn1SVEtvdUcfMHRzTfQ": "PASS",
+    "3lpymIQLt0KinRRZG6pcLZ": "PASS",
+    "3mG$yFG84xrAiBNQDPqk0W": "FAIL",
+    "3mdaqqG9eueBEPOFsbTx$8": "PASS",
+    "3mfoUCMR6C0NrihodlsauV": "PASS",
+    "3nMMmIx4p0rtWl9YKPG41t": "PASS",
+    "3nbZ3_pvhPs9ELZbAwUsTU": "PASS",
+    "3nhtKbNHxJqQLY52xChfjD": "PASS",
+    "3ot7ywP7G3rOIzpcTnad9m": "PASS",
+    "3p5Seu9JMBszV2zTM8HwsG": "PASS",
+    "3pqoXYrnDndXDZAw6b2v8q": "PASS",
+    "3pxidmeOfhtlNAlh7F0feI": "FAIL",
+    "3q6kKPvyi87YgIxTJBYW6B": "PASS",
+    "3qAs26YRF$MGNCiDSt59VS": "PASS",
+    "3qDmvGwJI7UEU1hLA6P0VG": "PASS",
+    "3qXv4ChKp_Zyko81zmbvyM": "PASS",
+    "3r0UA9bOaP1eUj75zNnRop": "FAIL",
+    "3r46LDwc1aSGUhCjitrh1m": "PASS",
+    "3rI32jRPLI3GnEqslUGXe1": "PASS",
+    "3rUpjnArqRtzsJ3_6$zQ5p": "PASS",
+    "3rqhruV0CYKfAxsiUWp7Ai": "PASS",
+    "3rs$2jH_d1LPZ3faVzavtX": "PASS",
+    "3ryCUPIqTv1dgaSg5qreuF": "PASS",
+    "3sJ8vKCu9dFKoavhZRTlmG": "PASS",
+    "3sP2Ub73$UvHKpgr6aLt7p": "PASS",
+    "3sSDxHohAi44n4yH6KzvBG": "PASS",
+    "3tJYCj4hifD2Q$HI7CKd9M": "PASS",
+    "3tY8nXItQFkYunEnALddqF": "PASS",
+    "3ubJWd35dAAEHQs0mR38x$": "PASS",
+    "3ueYxhRCVtuZO1zASdu2Lu": "PASS",
+    "3vb_BdGeYauUsc71iaefyw": "PASS",
+    "3vm23E5JIymYRo9bwxL1hS": "PASS",
+    "3vnpa$7B8wQ1Rjju10mdFU": "FAIL",
+    "3vp_DgBQV7UQH5uHAdyvSL": "PASS",
+    "3w9pDQvNu5Npi41A47y7L6": "PASS",
+    "3wDRzhduOLWF00re6u9Aj_": "PASS",
+    "3wZ7$qMWymhy6X_GqNY2k5": "PASS",
+    "3wdDHDC6j_zup8FT4fmbNY": "PASS",
+    "3wmxIf7a3Zszu9lGX8msKS": "PASS",
+    "3xHlboww8mFxdlgq6ZdG4v": "PASS",
+    "3xbs1E4LfiqLPxrp$hfCg7": "PASS",
+    "3xyNV1CDFHpOl4KSnjUOmB": "PASS",
+    "3yWiPuW1fh$lm6SuePvedc": "PASS",
+    "3yw62Keg63kx5GzQWq4pl0": "PASS",
+    "3zBYGaS7ifNksv9Zg5AOq0": "PASS",
+    "3zLHfYKiBgOxM_PMW0vqQo": "PASS",
+    "3zQCIOV$9IF2js6ol_0D5c": "PASS",
+    "3zW3ZOVfqq0f_wUDrLjcfu": "PASS"
+  },
+  "notes": "Unallocated Areas on 883 IfcWall or IfcCurtainWall or IfcColumn: {'FAIL': 138, 'PASS': 745}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_esplanades_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 883,
+    "ifc_sha256": "b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Unallocated Areas",
+      "message": null,
+      "report_file": "ec3_esplanades_check.xlsx",
+      "report_sha256": "d2a9842276bb8f8c33bec9136bbf172c86758e661f1f0efa7dfe594b80911fd6",
+      "rule_issues": 11,
+      "matching_issues": 11
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "00$ikw2WlbnHCSXM795M_5": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "00IQObsxTA8Uq8vfLpIX5c": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "00_nHW96x9s2tNhBdCXL7g": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "00b$xhbSXCJWLMprUdyrOX": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "01$yaPi3_qPPIvokW5Mea3": {
+      "name": "ARVS-02",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "011Tuxdbqo3lZdifcrSXKI": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "01404QvF9zMj9ivvy5ivew": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "01AKj$ZksBgtvbjgK3q_xQ": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "01hbnBAayBDJcno9bBrwEb": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "01jdrkS6mHQ28n7ejurprk": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "02QBgtl90xKYuPRbt_ImGN": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "02RiJ83MgFFMyk8_H38Pvh": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "02hGbMcvLJE4OAy0yCU2eK": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "03aP__BVsScDwaeO4XODcL": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "03jfOoq5iCWRekHEPxW9kQ": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "03oZlKhcvcO8qO8tPWNwLS": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "03uct4lyoMJydMd79V47cX": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "04cXS4b4j3mN4_eMDicHDB": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "04m6_gPTuTgV39L5knxKKL": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "04xDN7SSYZpHeGkitlkJmU": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "05$cPS$niw1y2PjoJCfouZ": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "051MiYYo29sW4UjglmKdOv": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "05BA98p2DPMWBpzFslaRHa": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "069MO8lcrHGr1EG8BnwmDl": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "06gJr8nkcRQogNoCquaXoB": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "06hxHaGWjkBhaKBoYyF7UG": {
+      "name": "ARSEIN - 033",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "06jTZ5eBABkVhvC1eJawTR": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0750jGFq_BDIAuxd$mu1dJ": {
+      "name": "ARSEIN - 029",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "07It64tpR23J7D$stxavnV": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "08$hk4xM4WrSPmCpumFYUj": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "08vEVNp7qY2i4$bNfUAgSo": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "09Oa_wAv3pqYOORu0Oj6eC": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "09U7Ztyi$at2zIgAJRYnup": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "09bnNlB49ksiOE0YMA3QhU": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "09mTtx_5ckx6IXRE0J7i6E": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0BJlM54v_49EEzl3F2bovf": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0BJypWp3zRfUHAap3InzIf": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0B_rzUlXag59FlIA_HgpJT": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0BwhkWzm3ZDGnkqaBQqdU8": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0D1oA1CFEDLP_snfB27pfg": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0DCVoS5u3_6Rccl6oIKwUx": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0DFykwX6crHx3EOC$3mRcA": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0DOSh$Q97ebc5HtGXPRKXF": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0DRYzlLm0jKK6mTXX8cMws": {
+      "name": "ARSEIN - 026",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0DjG2IJSt$2$rxZ4U7yBnr": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0DtyA28q$lxGfXSmuzQioL": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0EC1oqjK58rttuMqoC2aje": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0EVrvLTOQ_bDAeuJY0ZFV0": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0EuOBwkQFh$RSEFS_KE27y": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0EwqSGXNu3Vi3HSOwkgQwy": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0FFNG5cU_y2q$XMEDyEf8N": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0FKQ2kVZRLFIxHj0FjOqjC": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Fmj5XL0gt1X_h5iRhM9Ic": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0GY6W0fIAt6OGhoWazZRJH": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Gqh1X271RqB05vhPzlKw0": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0GxgvwEMPv_3Djim4Pc12G": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0HcHwStOVpWXWKi$Ntw3lt": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0HvbLQTS8Q675nmgGZnsfK": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0HyPqa4epu$FWkgI2z1ZT9": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0IIPFI0CIEuQ8BxlZknQUz": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0IKJVDEANDGJG5UhF96u42": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0IxqUoojsVGUKSmyEDXVkH": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0JNwXiDy9iZTCR4_D440uD": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "0K7M2jfc6nST9Q7MXy9Irs": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0L2yMLLqjIyNIRW3tF9U7b": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Lo068nGhCkz7YD8dfLQ3x": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0MCrs08ReGNX9V70Pnbr9I": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0MemmfPAcZfKGpDEeZhVWU": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0MjIeRQldy0dMZB0vijAo2": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Mkosj$yzSCUEoOzLTH4TN": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0MzcWiJcajKlYAkepIY$Cz": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0N18n4IAUhGSOKRf3KrvRU": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0N8EvWR66w0XbHcwzucX2z": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0N_d0WGC39TKq9YlLUt8IH": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0Nct9iR$BqQxtOwBorDVmr": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0O963aMYL2ld3X3QCSx2Oe": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0OPSxMgnZNDSFVI9bsD0Mf": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0PYSpJc8E9kQ2DJAF8oaUo": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0PeS_d8LjOzJWE82SS_s99": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0Pqc6kKbakkvKT34C5LYgo": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Q$NuXnjwJAYy$1Woo2m$8": {
+      "name": "ARPA-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Q4IHJV9v6MUhJCFrevkSF": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0Q8hzW83z6rMfsfk$_h3y3": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0R0x_uca92QcbOGXzmnMSF": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,87 m2)"
+      ]
+    },
+    "0S7gKFqnKH9zI5$NjFkDFz": {
+      "name": "ARSEIN - 015",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0SEg0idtDExZ69AY$MwTQY": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0SeMLkCyZpiZUaKtAAWiKp": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Sw1yWp9$PDvs9UYNJajr2": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "0Ty0YXOJQbOX_t0a7ZcOly": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0UhWs9vuVIwAoWaDvMvBvb": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0VFfojh_0UAuaq_jeOTxnB": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0VhoaI0Jj6npzrzepbZL5X": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Vja0nqn1KTjNeTbPFOum5": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0WOIlQI35EtIDIpsZeUM4z": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0WiZ7Q2OBnXGGW4sNhKtPM": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Wk3lPHC4FEfroS55IqR9x": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0WmB2IJwPrUitSunvJ6XRm": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0WpWNwZfxZeSCFUar1diLh": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0X3RmNVKg7GfzUtF8hwLjf": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0XiRX82GTYimoGAhtxKqcT": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0YINNL6GPRFFnFZieldsip": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0YQvlHhIghe7n2fj$NtZWn": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0Yk3Pc6Lkt8xrD7G2bKSrZ": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ZXKERcsltlXkbcKrHPZOf": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0Zq3KZ8ThGynsW0NKrtihH": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ZzJZj44LbnBHWPP4ORbsr": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0_5d$4GngU8BYQEdyxcXzP": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0_GB6WNRhV628cmfDbdxMq": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0_MbAPBdNF69Ii4I_P$BC2": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0_j0o2Ble2hR0fVhk8TAG7": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0_odJnbGycMRq29tGsfN9D": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0_ve2PdqQHRmD7SBg8FBb6": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0ad5JSFNUZKCjRIk3Bwwkj": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0aeknw2dfZ5deGn9dzaR62": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0afGSp8K8JzAii$8u1TQde": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0afLdlbQ$t4oFNmP$D7HZR": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0bgSxoGjRW7Z3ffZ8KIhK0": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0cRLT7jSsPI63XWOMWBu4e": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0cckHLZql8NA9MCubR77ne": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0d7mK_ReEYvBhpLIn7zgzX": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0dUulnLhW1a2w617gKCxcq": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0dsYp8w9KuGzcMKXerEXo6": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0e$yhFG6e4PSWzCNQ8n5g6": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0e1fFWhm8zvlD4qdVZK5L4": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0eNUxk0nIr91K$5exSu_wR": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0eQ98JmZK90Vrmuqj$oDlS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0eZnctB3TZGIAxdA5uctuF": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ec3fHYVJOgJQFW$MBrTFN": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0ewuGOior_dMZeC6EUKLUn": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0exNN4XEHJHP$Bzs4e6qqy": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0f5uyM$oTnCw1DSN2432D8": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0fKs1dMovlG7VuYaYYyeYS": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0fe5u2lFKI0rU7QPieDevn": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0fyYFEn$eB0Ah_lKnXgaWn": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0gDutbWlsBJJVZZAUd06CV": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0gOOav6f7p_EXAM$BZLk1K": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0hic_X8qPGkBWPZXBWnDgS": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0i1C5Hp7v0DCQccwZk866R": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0i9eEf85AShP2LZk$wt8lM": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0iQu5cLRt94nzXaJP8SODj": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0id262d1jFhhPRcrCfUbll": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ikRk4fJBR_VeX58LFDXAr": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0iq1JANZBtAbNFYnBWJspq": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jfcPUuDEtzNSuuvvxC8y5": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0jsOJpF8_oj3ev_ozTToSv": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0jwgBxTZhJkyhkQ9YjhbrL": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jxri0CrpFGnzi0Tm_Ukdj": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0jynUnpov0aeyrsli_yd2i": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0k$Jb7gvgeRFG5vN3iHlIo": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0k8L301G5ABXntWZsMByJd": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "0k_LF08e7LKXr9$qCaafZa": {
+      "name": "ARVUND-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ks$i9bI5AW7siOu6xQ0Nu": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0lAcu2RKh3s9uEqAkOE74O": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0lDCicmVdyNl5sbDCddCaQ": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0lPMVtgKsWeeUmFo2gNmqL": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0lhbHFxCpOLMP2IjaJhc8B": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0lmOwlTh$YEcVw6sE_vOG3": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0mH6fLSSywnIc47T29iRnZ": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0mvBquVfwMrFvvoGaz0X6A": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0mvkVVA2ViYIk7RVP3KH3m": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0nbMV3NmrXV7GlAB9A8CWz": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0nu2pRrw$zJXrGKSstFUCH": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0o97mF2PfWjZYrk1snS5vO": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0p39t5XVOq3Q8994tlnOgK": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "0p64s$4sKHECY58sCWQGfe": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0pFjv3a7BGdSPOhF7Jj5bz": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0pG_9gtB5xHxzNTcTzy_P5": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0pLnIZ7uooMPBXDwl7m7AU": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0pdhCkz5JFJ9YURveX4pRz": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0prTHlcIzVLGut27QGpbfY": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0q7iOzwzU$tyFJDK2Q$dBW": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "0qQ7xkwnmY6QyLtn5p2$Mn": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ql2dDSVeRTo6De5zop3V6": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0rSOf_cULQKQFDYeGvAvDi": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0rWUxdpMHNJIqUEivYI$3D": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0raLuEZD94cq_niT77WcWC": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0rl3nDv6Qtb3Zl7b0eplev": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0s1xi1yicCjR4aQADuAvCg": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0sLPkCwMpiLUyVqgq_ndIR": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0sgCBL6DdtEGkqlrJssakF": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0shE9FGLknOGwpLlgr1xmC": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "0sjiQi_mdf7IIVNDTSrHwV": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0snQA9iuvkJjG961DAi9N9": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0soypB5Rf9QXTHQDv8Qm0e": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0tSm$6K4LFcHGJTKW55om8": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0tgI1$kIWMm3xIsAgc1TD7": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0uvg8VCIl6sx9cf0Veu3Z$": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0v0H1nZA1FYLGYcbjNs1GV": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0v3gRr$PreeyMVYpIYadFa": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0vPU3NEcM$qa9qLiiKOxnJ": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0w5jHk$HUVSfIYFVSVqQII": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0w5seomjwQyN9JS4E_pts5": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0w6_n3X08ItYVoaAqvc0Yn": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0wOU7oEZEiZynBBjoK8S0R": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0xKQRQ3eO$YWXwbslgbLlH": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0xrYtYnQsVr4BzOX$eOxFU": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0yAMzTweUeFLr0XbVWEWjm": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0yemHTL5fN1cmj9dbLOTfb": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "0yii6eYVCIoLVV_9hvfwvO": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0yoIczmqXncPjt7sgHrdI7": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0ypcZTux455PKtbwr1BHDC": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0z1rrkYjZRqf9V7fm8bDqr": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "0zVn0jfgVeceKBgf8JFFIN": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1$M512lZQQNQdcBzkJrKoc": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1$mmZmca6vpqHfp9$I1gRa": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1$q78psP7F7HPZaIhRSqdR": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "11TbamKeltq5s9RcsekhLT": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "12ITjaLeK7Gb$t$Lr_VVFc": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "12LHLkX14AVO$YcApVwZdZ": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "12YCRxFcaipFFv8LYWiQGK": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "12k1CUJYmy$Mi_0cPYMeoo": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "132QBLyvqvPWN6m5_nDLQb": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "13QTpB1Lvrf9gfNM2C0U80": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "13doTrHdCym7TLaz2biv9d": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "13ekEOjR_PbcP4BxcYAIez": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "13kOdGtzKvJiE$7bVQ5DI6": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "144RL9uNC9sLz8JS6S2fGq": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "14F_Ao1Vfnt_it6swf11uh": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "14XpQBZQqg2WqZsTtcJHsw": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "14ptvLYpDKf7BvSPOtZYgs": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "14uqRCbkhCPvtKYn9NThJU": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "15JpO460yk2wBqefVwcMzO": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "15j_IAESHR88rM5rjF8Vau": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "16$D17WchiXo7CGw3qSujM": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "167Tchb5U2UZpIPRdUfV3X": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "178IFMmVJGiOenPDKk9mZh": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "17L07L_J8UmgZxzPX669g9": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "17PcDxtiVCO10mfo84BMM4": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "17SoMFbXr$JlxG6Nhawybb": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "17ev6yZOd5tcWxQ0VwUvil": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "187RbmJxmJgiVcQ1Eytf4b": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "189zbsPhT1$amsYGzQOy1g": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "18GUsf_w8caDeFZJD_WPRk": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "18RbNb10wvPcC2sw$OkjU7": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "18TEVPdQ7JfOjVW_3eBKiO": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "18ent55nrHIKJt2$xAz2S8": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "19L8HGtS3ywhYSXTzQ5pzS": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "19cQWjHxZrdTAY9LU29orm": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ADewuhSK0OYAYF3GeJxAU": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1AVtEzxgwfKoqZPe0ajcKa": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1AXEPQBB0fEpQeokR2Nh0x": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1AXHwzaQDg6xXvwLRovU9y": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Agtmcx6x9IXPwBDxG_L5f": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Bb3B71P_J7Gy$jDepjYn7": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1CKUNJ7RgbexTTeCCp8Jwv": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1CY02JtMeSMZj5mpatoK8m": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1DMvyKLxvzNPrIp5K$r3c0": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1D_VoyLJOdNKukNxm$ASBP": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)"
+      ]
+    },
+    "1E9buGfBtRHsCTQib9i4VI": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1EayZd6pIJbm75N2yMO1GN": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1EjlTprC4R5J_SQOEna0xn": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1EwNPiUcpTUoMiQGelh7w3": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1F21QgyVcbhOggnZEKpQug": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1FCPNercKiQtfQjRKyFTyB": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1FDaREwyHXCEinjVt3OPMh": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1FHBpDIBL$6YnO18yilhuc": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1FMzEty1qpVvTGNHBGj7uf": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1FqZdJB7m2fle5K8mnyBqp": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Fw34nPNnBLJBS$E1U8qWn": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1Fwp4VRehxTt7mh9$BqjI4": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1GH8VrKqLevP8Mbd6SVWcp": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1GMZ0ZsIJXSdPsA6eGvAiI": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1GpQAlMuM$S1cOdRtw9QvJ": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1GuMbrqzPi_ATTUoNodaMr": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1HURFyWOfGArHpMC3AnPP8": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1HkV2_vk5Zy0eCtPBFgbTO": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Hm7bGYnBJN8uhdKydbADA": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1Hpb_0AoaKRNKlsBddWy6n": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1IJ66MYfQACcvNa$TJonMV": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Il3YRZ8iI2z5rRaMqobEt": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1IsV9v0eQcFNJ0tiINbQEY": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1IwHLaPQW3GUlk4mBINbLW": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1J8MPZ7H8IQsFHcRKIBh_s": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1JGNphiLBb$ScS69H_5JrY": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1JJEJncU6s_GgUmEn8wJod": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1JrR9YGonvBTzsQxU66Tnr": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1K12AlwAA00jSgwv50SIoS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1K1XIcq2ISCdXIcQbj3e0j": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1KuEn2MhGhsmyH1YC65YXJ": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1LlXPgVD1yQoAApwHR89Vs": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Lt49i69CQXaP3nGD2s1SS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1M83f_NYDAWXITf6XTy7p4": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "1MAl1YFvP011ots8fuAKeP": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1NIufWFEBM8fSczBV8YZtL": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1NMMsOl1rWRtt$oppN54cp": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Njv0ZezS$G7ZRAvVmWjEh": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1O0ETRFQRX0etjFdZQBHvd": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1O46dGZX1eDGtqB4bkMPm_": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1OUJvTSBG8XDYvW1K0liWB": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1OeTcLeYu2X8coCf84G0Kx": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1Ohggvu23GaDyn71pW9zU3": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1OqNhyJCKmKgNMBNT3ku5I": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "1OxPRXhFJBBcAf2b50Gpml": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1P10HEA8WxrI7c3i9HturG": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1PFEHXlwv6pY6Utf61qsHE": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1P_3CA2B2l$0IvCjYQMZHX": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1PqBu0xa_suGAzU63iurSZ": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1PyF26e7$UiwD0p3Nwh8Qz": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Q2UmDqEPSEM26K7VFDkw3": {
+      "name": "ARSEIN - 012",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1QGktJR1sfTC31vIPzGwPC": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1QLe7aHdIxiRKrSlsSvJ$a": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1QXTxi_3cp5elhfq5t62k2": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1QYYtbiHVluQwq3hnUIWCZ": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1QmPUHAqXWJ7HglvqgqaRd": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1QtM6torvoxs9xby8JEQY3": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1QvHC2h8jV8q3UzdxDlCqc": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Qw0StGMB$SQQbCWgTVDNx": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1R9sAwtoqwV0$JmnUXMbQP": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1RCKAwr$fGIzF0nX7IWbEm": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1RvFvi_VJNHFPJB2iZCSmE": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1S4zIfhc5a39spvgPvpplH": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1SFRLzPXface6V65yCSY4R": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1STabXB9JVJalBg7SoUbXZ": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1SVlqHbngD3X0IllFqBnOL": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1SeNci73MB7AkHkkTVyZdB": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1SfXTWGbh_mzUtlFUVJEgw": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Sm8_KHPirNDtRLSqjtSIe": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1T2rWAOzSI4eCDFeq04CHS": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "1T6FAZDU52QgTw1KLmUHI5": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1T6K2ywQiP1w2D8k0ImLPW": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1THrhVO01JDxAtGnSYxJ1b": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1U7FhmfIFqxjye3BEWHZ1g": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1U7L4_sABU9r3ah6JX$Q0b": {
+      "name": "ARSEIN - 034",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1UEq_nFzQ3sQiBkFElQRSH": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1UGu6Ce4JNe_mU8KdxG1_1": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)"
+      ]
+    },
+    "1UJmtLzZusYTShODuIMJu8": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "1UM0Vtfuh8sTHr4AhDsIfb": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1UVO41bSuRGdDPKDbJjDPN": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1V15ENH6sXHm8H57zGJk4X": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1VLtIDW5b1iLS_WICkb5vV": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Vjo$NVEmYYgvGIR45IGEA": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1Vrt0nlXahJaSLicXJjJLK": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1WCL6DRjyeVAMJ8UR3lr1T": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1WnlUp3vcqf57yoie5VpFh": {
+      "name": "ARPA-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Wqi5oZ4R8GBPoAAaomiN5": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1WvW5_IKlNDzEWgc8cCK0Z": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1X6kRG8AV08szv0csh5wFR": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Xazdy27EfBWb6D4Hj14R8": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1Xm2qQz6ENiTjVvDM1PSYy": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1YDoHLK31au5lxzhySt1iZ": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1YdKPfxoUnrTL6im$QochI": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Yowp1alcABBSP7ARgM9PP": {
+      "name": "ARVUND-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ZCoCLxddTS4hwcz8hw4c1": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ZL5sxgu2IzmndrU1DZQT6": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1ZP4d4EdQWobmQgVG1bDh1": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Zn3i5cXaNn9IqKv2RadiU": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Zpiqhd0tm1AdJscyRYZfC": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1Zy58QWwHBixL6BJlLdBHl": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1_CSbaDEtP6RCYHgzYAMy3": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1_ULiDF_FUQVJ7XTGJq6QY": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1_s2aeBXHr5di9hlAWAcSL": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1aT6NVavCzcbWsIzMAZ9$a": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1aTvlOuSHHrgzmmP5qsOxC": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1ahfWVCl3ryZWqCjCMnlsG": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1asUim0uJop0cr5LqvtlIB": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1b8TF0NwSCblBaNn4uigkC": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1biCRagJKJmNvJkbKzxpV6": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1bkIJ1mHgwv5JSQqfzFjRL": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1c$GadFy03xZ9ZrTB$p4lY": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1cRfToMvdcJ4pzokZrrqGj": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1cbD6RpkDcG7VNo_82Vztk": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ciKX41LVgNoh5emdxUhtJ": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1cshcNS$l9yJGyoFr848cf": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1dElyaQXKeQ$I620f_dL92": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1dbzVN5YKomYePV2DCja7V": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1dsm3agJg1bzjoZ9EzapyB": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1eejTI0lTudHay3CNgXXxg": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1efhPqezCC17gHsJIIIpw3": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1f64ELQDk0RMhq0DWWD80x": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1f8bvpRWp9Pw_fzsRWXhkl": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1fRfSQ6hbBtijWcKkwn81G": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1fgsjAwSlR2v5QJOyOl_oW": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1flx5uRm_cTeKYqBTOdfQB": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1gNwkl3lQYfwQtbghzfdpw": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1gZHkrc5wklkttvRGL2Oe6": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1h$Z2rwxzhPkzO44G4jGtn": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1h8d77QRCZOkvqARLjCy2$": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1hZugRpReghSrqZblGVYVo": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1htri_gvAqfxvLVmiwKLGh": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ibcy9s6P1v8WIK338rzS7": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1j9pbg5pn0wqUA3EtgXf2G": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1jkXkgvWWcjf9NGy0JgUAB": {
+      "name": "ARPA-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1jtFHl5NJ3EOpgfiA2ZHPU": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,87 m2)"
+      ]
+    },
+    "1kJU6b4RoDP_vrgWwAJImq": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1lNrIYn97wbS_TCi9eIgmn": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1lPhxznOAx4wSN0Swym4fs": {
+      "name": "ARSEIN - 032",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1mPZu1AgPG36VV9E8u_2qI": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1mk7zBh1yxoVzrBnbiUrvz": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1n2gbhKdKqUj$ZRcn_0Mf4": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1n2lpnfSm6SbiG6y9BlvVp": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1nDZabFfdDO1fjNw$LVTuI": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1nE3AdPicdneBoql_ttNh0": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1nmA2hAvaR9zmvM0VfHOU9": {
+      "name": "ARVUND-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1nte85PzkGSe10buzLdkk1": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1o$RMAEhQk1PdepKRow3yK": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1o1SntrLsISqHGuehIxFaI": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1oc8omSRAFAmhZVWQ8OPZf": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1ojVqBV6gmq7bHW4p9h6TP": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "1otyPQ1cKX5IUAcdtKnV5p": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1pZ2X9NTMyaMxXEyFH4ZVr": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1petvUcSiS7kB0LkCYvR5q": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1pi3jx87qRp__fqZ3jx67m": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1pjGIKSnaAxB2VbD6SYv5F": {
+      "name": "ARSEIN - 024",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1pxEc9dFZrTkWNbIzNZ_R3": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1q05$e$OcRrVBdu2zpEKWo": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1qvBWTBFy9fbvwckUzEJl_": {
+      "name": "ARSEIN - 028",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1qvMG5WV7Z0mbfV7VGxFA1": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1r9nN7vVcXG2zy2h1nWwHJ": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1rbwzwr0FA24Ds6CbMSZRS": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1s7DxYK_xhaFeO1g8uqMZR": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,87 m2)"
+      ]
+    },
+    "1sLKIA8GI1BYqZYQlZz11V": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1seVngGlUzShrS8Q0Xkbzf": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1t$JRfU3M7aBgi_xttwpo5": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1t3hLoKl7tzlIx9wQu1$Cu": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "1tRx5ibUnwCmU_s4M8sA_j": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1tfAR6IPWxZ5g9nvq8rIe1": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1tfrPp4NZwP02PjSSw1Rch": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "1tkHwPyYWasvz3unZsmYA4": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "1uZN5B8xmE9PR17hcoegaf": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1uvaSI8x6vJk6Vn2sn5ATz": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1vAIug7dC7FKjxzvCH7UnY": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1vKYH0g8eU9GfjWozIOXSC": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1vNTyCOmK8lbtDExJ98DVV": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1vVsm$z5ftEqnCLda1fBh0": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1wDSRWHjd2EMaj$2XoIUh5": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)",
+        "Unallocated Area (0,87 m2)"
+      ]
+    },
+    "1wbUA112JXEckSZfK6i2yW": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1wveWopcirxnFFa$xB_2$G": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1x$REcTWbw1tnstLCUywsr": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1x2tB26qZOHt91yHAuGr72": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "1xBgvsHppY5A5B8qTPAD6X": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1y8ERMlu7eiPIh7LcYp2Cp": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1zQ6cDITKaPckQaz$Q96ic": {
+      "name": "ARSEIN - 030",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1zZ6wR3t__cAOVB2bCAhjA": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1zitGedqPB8aYPfDBzKbH1": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1zpx9cD3ueWLStuuiYv$RR": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "1zvoLHEImc8sBYmoXiBkGK": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2$$O2OmtPGKYSYJg7hGVcS": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2$EBc_EMkGejEITTgCpHjE": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2$Pod$HSvtLkQp33irF2_9": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2$ud7P8LRz$IrekwP9Jnpi": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "20DLVOLq2BzHAlygEHP2vh": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "20fP40O2HEguT72DPOl3uj": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "20qNIC6EqewH95QKKFyPX2": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "215Y6FDR4VnRlI7Mw0I847": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "21BXnuGq7qEGcz5haqTv3S": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "21HnGvKHgUOh6ALk60jG4b": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "21OhXwTpqOudT8kV7ajvrY": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "21ko9WjQgtdO3UFckbzPPB": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "21prgnZOAm$3vQw9HWJg16": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "21vhsExYoEDhFqxehtnkQ7": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "229TmUHp6ZXCtTVtGut9cc": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "22bQQcMzHRn42tx1KHf3VR": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "22ubiWcyX7UoeNGBko2AB9": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "23iXzdvCGXYn2iQV4PVwfm": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "23vwoY3vS3Ci9Ds_m55cb9": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "23ywZO3y$sSCo8tyVm43W9": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "24uLDWJIVE_7XwVR_zThFx": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "256Sd95jA5jwcSYof0IZQv": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "25CIhmolGCrK5FheEsf3nq": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "25GlWB412fXkl1udna7BkS": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "25KPBG30DN6m0evvzBrwVO": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "25OgFZ2dbJJErl8PjRwQoS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "26A8dyxpncZ2pXs94SB6zC": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "26AKPMhUiRjTp16c0DhmDv": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "26GMRjkvhvoSj1MHOiI1d2": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "26NcdCDDD$USagSoHQvQTW": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "26p_eh9oVvpibGKOTNcyJm": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "26rmrRP5IQQxSctOFaGnfM": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "26y32jldmMk8YqrMYJ5seW": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "27r23QDpLe8I2pqLaNxp1w": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "28K0gksUlE7PxpbkwVNXNr": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "28eMhHOCMLcOLbsNCag3Qt": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "28ttgdnHcwLCwjk2RnUWxa": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "29C1oFGtP8_5pciKxKfsDc": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "29Kmfl15$u1RE52mR_4g_q": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "29Q3Sl3v0h$4AF5wsx1OIg": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "29b3etZKnUn_W6tFWr13Z4": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "29evkftzk_NpyDsGhEAKt7": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "29g4Wz$n9UvWNikt7dNZPa": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2AeKr0nIrF5Ebpb_qye2ya": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Ai3Uly72dHiCo0f51$$xo": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2Aldu3LtlNGnni6GXNppZQ": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Amf9DV0o_IUEWHDKENcFJ": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2B4IYuIHyZyfB0HdvvNry2": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2B6uSwYHzLiPE3chyzAjEI": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2BLFO4x1xb4HwPdEbUYqld": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2C5YzayY4KMsGsgvJSHPQN": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2CUK4UOyzyc5bs_WWAwv_f": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "2Cf1KPhg0kptmeNKo5Hdik": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2CuGBzyO9vBUYgYP5GcFoD": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2CuhFaqgrI2ShAf4O8f2Ew": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2DFNs0cl_$D0COfUJpBNOC": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2DKWf8Y0xI0pXAgFj2YgHj": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2DMCtbuXfg70rIWYNmEVj0": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2DOQfAifoBoRXRUCZZQWnv": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2EISXGTHYQRUqgDalIH7Hz": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2EVlk6ul8$fVpLR_RcIBzR": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2F44lfTksNzUSFloyJcUOs": {
+      "name": "ARSEIN - 009",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2FRKvDgrtq70V7mhFX5Qsz": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2FW_1JZGZe2sjDKcJwT08B": {
+      "name": "ARSEIN - 031",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2FaW$Qv4WRZ3xqfeE8IFCO": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Fb9NV73b0Js51G4VK0pKB": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2GPDS3kIcP15q1Z8gGDNOe": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2GPKW8QvdbsY2UMvg9lGUn": {
+      "name": "ARSEIN - 025",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2GXr$omRG2Nx9vof$WuOz_": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2HDltAr21yPs1wJE2dYrvQ": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2HGB9kHBWHWd_Pc63rFcHj": {
+      "name": "ARVS-02",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2I57e7$Fd8_Qq5tUYGLsDd": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2IAfjP4zhBdGM8H5Sip$O9": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2IS7K7XPfyfuOKXDko3Rfr": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2IjIwwKw0_qPUdjL$Jo237": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2J5OaExYVIO108xZvL0z9i": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2JEQIRwwTfI2jXSSScva5Q": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Jgp1Ko6VAgY6XfZOcXS3q": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2KB0XmJSGsvRoHXE7E2Xkt": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2KM8V35kQHtsvVobtWXSX3": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2L29olXS3SWMAALfA0AKCE": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2L3A2Rtc8Vn6rbqYCLfIKT": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2LHjW$4FHLVwZS8coiWlF0": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Lsg4r0_WDqQEvodIL95X0": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2LumyiDNGi1brdFZJsF1so": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2M9EnaTX6xSoLXRDz1_k57": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2MEXhElJ5jU7lIFoq79xcE": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2MWjvPwH_fC4fm1sC$pARa": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2MgaZwv6UEJiykKVVtxT44": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2MtT9ITOVQGELpAuVEUJP7": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2NJxgKeGaiMBxTYNj2ZerY": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2NviLo_Cs5URMC02IY6IUt": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Nzso8KYyl5Iby$qNNQ0X2": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2O1qmihy9yNC0h3UnLb94P": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2OdQxzRRnSHNpJ1W48rxL3": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2OqwxY2ZK5MbNwW2hfhcEo": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2P2pXQ$SqQ7fV4ooYmCljR": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2PX1NI5b73lQi__xhdZ4$0": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Pmivw8RlW3tycxD0liZGI": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Q$YV3R6f_QbiIL7Nr_wc$": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2QX8SC2Sl8flvk_cMV1b5O": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2QZ4Z569huOTV$ovCQe7Rz": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2QkXvugMCDhGBKisdYmU2J": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2R3INbTwDNQNrjyqPi0xSq": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ROWpCSLdZOb9tcv_j4p6e": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2SN7ZOEuyu80OJq5WtdGGv": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2SXHlyjduLWGJJxsItcU27": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2SwTMoYTLG67$Sj6NwOS1j": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2TUObtQ55nMHCLlhu4XzCO": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ToXdm7rnSi2j6gE1DsUYS": {
+      "name": "ARSEIN - 006",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2UE9ZiKcnXCv8gpfPUVQxV": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2UQARwdX$iVpPd7J4GjvCO": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2V7gXMuFV9ULjOu9hsllPp": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2VC36EaoyFl8Kyac8iUvWh": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2VSK4X8tlW2aA0ejdObiIF": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2Vo$jPuQwWw5UC4J3sDbwR": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2VsWaGrjV23w5wnrkUwwXJ": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2W5lKmdv_eWHhYgpzEAI7r": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2WKweWyuhqRWqofNl77BsQ": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Wgym1bn8qWORGYZo4xb0h": {
+      "name": "ARSEIN - 010",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Wob$HI5eFrsFYycG1wnm9": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2XcUa8qu_J0FiVC6Wx7bB7": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Y2MyiCsqjOlGeLa_mz$zc": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Y5W2bCSNFdVjprImm8ywP": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Ytja_wQDZU$YmNzQnp67f": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2Za6aqCsBg4qs2f3ctdfJ5": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ZtdKcxxt5jpR1EiJ$n12E": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2_2yvpW0_x$UXjx4qcitJM": {
+      "name": "ARSEIN - 027",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2_HFEBTeeLZPNNxlEK7r5o": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2_KpF2Km4lR1yMHDaCmlZr": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2_vW$M0sedDlkg23PSwhHD": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2aD04zyyeFGEMzRjkWlqTs": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2aNLbstSUxECG4xQMbMuXB": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2aOnzxnKZoEHvSS1noMh1D": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2b5DgT37SRXUbkVkccMtic": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2b6DmlSWoIVe1nnpaek13q": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2bAT6sE8Rbaq9nx53tMWM6": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2bjHo1oAC4q$p_wquodMAG": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2c0HKIjr_YolRsvMhNPOjM": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2c0tT5aTZtVEx8PNe5H4S0": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2cLh49f5uZWhqsrcMq1hhl": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2caUcmR3MqubSJSJ_Va7lf": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2dCp2ZGZ3i2RwiDBAnMt5_": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2dDhZFEcUchxMwf5YShgjR": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2dGph0V87lot9s95dG2Ynx": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2dJAm3N4oRq3L6rsN_cwBo": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2dZrZSvEiuYianeFqjUsr3": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2dwrmKDguupiZFUsY2mpsp": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2e9Jc_wCMsl97qeaPZS6Cz": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2eORpy119YlH5MR0oIGDvD": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2eS3Ln06ENFvzEmzr7z8Zp": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ebty4FNMqOL9e6sHsydlF": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2eqyXXCf$fXYN_Nf$876ft": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2exkcKyV_6UG3f2pM1u8DM": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2f6GPSBP$rl3BXJ5m8XJNF": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2f8OVLSn$2bFHn7p4hz5Ot": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2fP7ZXS3eTRhrKN3UcdvuN": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2fx3FatPJFTsZnvVFM_InC": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2gEH1l$T5z2sKHYjWAjS4g": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2gbJMvx1r0TNJtQOQC8SOW": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2hA0SNZDjnbarNczcRoyUY": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2hAfP3sATGNeYoip7N_rrP": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2hHDA9jUIpwjndhWoSEGHr": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2hOzMrM9crbcxvA_6ZiR6D": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2hu7W3HwDhxt2Q6P_0QGqR": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2iCWYCLCKqwCn7wxDWjZH4": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2iTFjefF_KnrMMkexy3xzR": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2jIwxq0h2jU_di51_J$Rh5": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2kGsdVmObXmesmeA8$yvDa": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2l3EQ1SKKMC94rjgLwvmIq": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2l5iGegKZE9CMOehuUGCbY": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2lEj6mDlwuUL4rN5PAd8u_": {
+      "name": "ARVUND-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2lGgTaUDEBEWuQr6hnLXCc": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2lnTOFRwQI16wZ8nxcxW3P": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2lnsGFRKTQALXsBiyxgsr2": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2loHI1dPdXVTfFwShdFOvh": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ls2L2m8QOpt7mqSy83dR1": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2mXWDBu9K1BamnBU2YOvF1": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2n_A5k870sP0EV6wha1hUj": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2nidZSIAZO36gmR6dDos_7": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2oj0G8h_MpQ8ESLnDcHxlr": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2p4HUPkXtGS8eVoSWBkGiN": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2p4IqOALxWtiM37S6MVKy7": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2p8t9OXTh18sAJaWraQf_e": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2pO436hPqvRQPWX9dNlC$W": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2q7BQMxbBWG6nTNsFxaFJe": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2qEzJ6wy6lHk5LCWyVQimQ": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2qKSCDtaY50he3MKOo4n0Z": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2qT8gDQNP5aqpSW4jl6IQU": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2qdFcy1do19HIYCU0KVowP": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2rWAU1cGJmyRat4vnzA73p": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2sBz$GQBYs4KMP6zrHrpig": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2sNPVheVd1r$TGpnZbdory": {
+      "name": "ARPA-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2sSlNXfAiiVPkAxkGXByZT": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2scHUjxjdulzdSY4jgovPs": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2sfKdRoFdGsaJtnDp0VZZh": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2t14xC$w9NPs3uIL$32AJv": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2t6r_bWYSVYW_KkL5WnYFX": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2tBfoGzzSiTSIIj6K8C5BG": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2tU9BHNv7ovW_UnR25cedD": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2tiwRe3VyQeccZhvBrXp04": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2tjM6Ug6$_CDlDcnyEnt1D": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2u1q3QaDL8orYM4ZAf$cye": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2uovvoveGvmiNrrZ5XkXYL": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2uqID4Ks8QatuHXiQYshmD": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2uqwtT$iU4$37PbKpCBwIg": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2usjcCtZryWrSaXEtN6FyF": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2vTsAYLOkOr5$T25h5bxNl": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2vau8zyIkJNKHv6fHxRMdn": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "2vpk7sVm6nGnA_XE6cfx9S": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2ww$V4YebJ0aZ0E5WOra80": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "2wzm4gEoCgH6dnXVXhok_b": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2x27YbFSA5rVfBQ2EZcyMD": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "2y4gDvSfAD_izIYaYrdL3k": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2ywOoY9LS0ey1pSVpiJDEk": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2yy6lhNM9tGNqIrBTEHtao": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2z9OiHdHifmzEQ_NAyZbPZ": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "2zRX0Xga5$2UlVh8bNSd44": {
+      "name": "ARVS-02",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2z_hn2HR0h$RKmSSnOqjxg": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3$GKLO9Lt6l3fPHVgzuzmk": {
+      "name": "ARVS-02",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3$XyTXHWc2uKWi5XZjP4LL": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3$aaogzkMib6R8ZBui_viR": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3$gx0qLS$ZJ3KQsGw0yo0u": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3$tOkpj6DD13HluauyNzso": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3$tS6fyif6jzoWw9cB4clR": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "30J39bQN38wj6Q4yYE01NH": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "30L310LUrC0qUqWsS$Y18U": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "30WdVjeaYMj83LoCK2X36G": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "30aCTgQL3cOB7PEZ_FkU3Z": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "30ev5b_7G9Nnoj0nVZspbL": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "30lcaZfBKHln6s6blCTt_f": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "318xBd9KdYrW2qJ1FDM6w_": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "321_8WNVNn3qg$XEm4UkZa": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "32szr9q_l_ELRaQUMCWGHT": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "338DPZ1Eh2Bq7FXws1i5xS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "33PjOHhjTvfifVd$V4DPQT": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "34AAVEQeLBt8uvfCnuBWeK": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "34wYjruRLV1FbcSHoP1kid": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "35LnAxnTSvx14tgsDXVCaI": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "35PXO2QVN$Ye6L8a0Z6SD3": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "35U24j$Yd8zWqR4V4HVi_G": {
+      "name": "ARPA-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "35x37x$K5qi0iu3lxPfSPL": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3624w9Gt$FQ1No1LZNo3we": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "36jXY_b_zk8duZembB7zzS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "371ikE0Dms8Nm$s$MSdiz0": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "37NQVWbjOfjJdNs4UqA5Ol": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "37UAGAT7IZ96fQiUWSawVX": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "37ZBmy28$YT1zMlZ0bBbLh": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "37dOXs$byZY8m1YHQs2mc7": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "37lLAnElTK9Zyuf7uO2aIT": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "38Bu3yZ$VgywfqpWiHX7ky": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "38Fv5hx7iIFd9GkaurQzll": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "38c365AAeqMEFr6SYL1KJ4": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "38hZLMsKP2cgGipPxKaJX3": {
+      "name": "ARVS-02",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "38rwAHYS4NVQfG1v1B7oYh": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "39AyMuLz$3DYUNkOtthZE4": {
+      "name": "ARSEIN - 013",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3A96Hgu7S$ze7Pa7dOAhOr": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3B1T7FJJfyDjKPsjlAFEVP": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3B3O0S0VusHV4o56FJAfEH": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3BZFVQo52d1zwNM3fvOnjC": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "3Bb6fqQDqutxUGhNl97cS5": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3BgRmwrzhOrIPkqssjlVIi": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3BqPw_CQ7roQ9k1uBXl4ce": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3CDAkOOtr8zNRW4riXRzTs": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3CDdsiIYNmdXQ2eQKhdFsZ": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3CG42Esw0UbqUb$TvW6boZ": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3D5ajVAhBvDKH_MOzc5kQU": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Dgjcso0AebYM1Xj0tcAJS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3DrMrL5nzKgZOMu8jZvJru": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3DwhpukGaQtR0npMcuIRGp": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3EJkoryWK$yn6c7DH9_UYR": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3EMSU_i$1lMXtzH0j7pSwt": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3Eey_HgXFWjimOVMKc54Q_": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3F9kTdjZmVku6PFe3iAinf": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3FC$x7KDOMVBlRrQZ$e9$y": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3FHXOkxKt31wfGuSBLRYL7": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3FJ321XHCkHGte0O3dASH2": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3FqcQS8Om7DS7yNF8gQgbk": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3FyIjrx$jcO3GTqvWjrDds": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3G3oOygH$wZsvMc20Ct4d0": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Gzig_cLbz0MjHx76MjqYn": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3HDHgN5$LwU1r6akzsLTGu": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3HDY$Lcen0jAHcZKmal1L3": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Hya_yWBMouzuoTveJesCY": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "3IB_TXIcCqSAyYqYIN5q5g": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3IJ4FOF$P0Tz9DTnf$xQaa": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)",
+        "Unallocated Area (0,87 m2)"
+      ]
+    },
+    "3IT9z0e92eUfDahn$nW7I2": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3IZAEChJX$bO3A4BG_2T5P": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3IlD61qEvSXiktVUu65_s1": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3J3S60vbpN3$dgfN1ggnXR": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3J4utjzpULy94FMiGghmJV": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3LOw7hD411IjnkO_m6cxn7": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3LcMU8zoYNQFjrGC8bITQW": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3LdaWlNjwFvMlrMUbxPxH_": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Llrnv$REdxTJqu7SqauN8": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3MTbsP2mxnLL0xvjBwhb$7": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3N0kg87QGHvf8rUASRRmWK": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3N30_KAjqZ2jcPJmvbOc2A": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3N90YG71D9fKi8CEbPjoPn": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3NEphsKPjKKEQnEMenXecd": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3NYrWuYixFhWAtXagQ7zxc": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3NuloIdMbfQjb908MOYFRf": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3OEeDq9mJ9hE6Bz6NzPBn$": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3OlKTz8l5U42u2NQBO188y": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3OoGWEJSY0bvGBwhvw1hZc": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3Ouawn5DxO9SVaAn99pMOU": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3P3pwbsNqHmFFDKHXhPZ4X": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3PRDOTBiTkkHCC6dI97D2T": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Pr$e_BF7jbPU8lHJGMw0Q": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Q10O2iXIpC4gVxlV27UN1": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3QG3IiWgtA2SmXUUcithrS": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3QMfRyYrkkiBtsckpG4Aqp": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3QWfGhnbtMd8GmQauGw_3f": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3QXrJ1d6AAOnxto2fNNlxe": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Qrdn_a0oNx9TyxcSLKUiH": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3RAbZ7wOrDN4z7P5_nj4$f": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3RxH6PdJSODygOYjlb7xvf": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3S2e47JuySSAAbT5LJGvyz": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "3S6WK2Mwqw9PGLqmhRs10D": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3S9443EtPn0XvOJqFahbAP": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3SidOKkODKpCzaQ7cYtdp8": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3SjFKk0B4ElmbQkckfZdX_": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3SouZlc9HqQkih5j2lh3SA": {
+      "name": "ARSEIN - 004",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3T0Go97lsZ6XP$31xlX26c": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3TLTPqkPRonZ1OGgnmRaFK": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3TM$QZmPGG5ua2mMuvCcMm": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3TNEQp0kIkC9ALZ8H$OOyy": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3TWQmhEv0EvmOiCqtfz0Jt": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3TfoY4VVw4qQuzHmD2I8Px": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3UPMvzzQVcC_mI2s1Zww21": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3UlmB9p5YcxdXi$JthA_sP": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3VHDW$aJ_1CMiY1QQQ3kGi": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3VM210__aOAvHY$zOW$37L": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3VOSmoVVXYycAL6Je8_FzO": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3VqoG3TUK$VnimnIQPT_Kq": {
+      "name": "ARSEIN - 006",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3W7gBdCUHHObwW1oJzXGd7": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3WFv7G6iYz8b7SNYyEODH4": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3WGQcYYyNlRMTQfJMtVM88": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3WHY9av_Nrrt1_BWGoEg52": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3WrtEQZ8O4Y0nK71vYx7TQ": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3X8iOQZ_jQh4ThZZnNCGxR": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3XKX_1XX3YC_AS5r1LU0St": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3XdyX0GmDYzpE9Mh6dOVPL": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Y1BQH4wcRxTvn6GPKGrl2": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Yi3H0BOEV_poTkDhrOLhG": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3Z0zCJnt74ex3Cxbj0fxQZ": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ZE4YAD2$mHJjZKu0PzN8c": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3ZRLJ8tZXImHZi87CWBtRo": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ZTAGwzb1RgrouhL2H3tN9": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ZVu_eAf8bQH08DpeZPaQP": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ZX5ks8IxHdteVnUyskdol": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3Zr7ZRXnl4r2SdGg8pLmP7": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3_1nNJ231QsoQXMiBDJX2y": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3_220jgTJdswzUyWvx5ABu": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3_6OUpS437lHtVdsC0774w": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3_JGsZyzj1e9kT4PYSW5VF": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3_NbFrbWkTfcw5lZZ4C_P5": {
+      "name": "ARSEIN - 035",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3_dWVz2ancofjHfmluTn3p": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3_y3Ufn7d1VwvXK8kUXoOR": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3a1CTPC032ayhez2w2d4th": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3aBHVfHoOZPfoHlwXYva1H": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3aJX14UCMkKhvIe7S2Pcw2": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3aTJDEbmZfA2paJwGwYtht": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3b4pdSPulkqZeqAZw$W8e5": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3b7Yoc0TygWnYkslQhQLR2": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3b_r1pdwDM5C$qjpiC3cPa": {
+      "name": "ARPOST - 002",
+      "class": "IfcColumn",
+      "label": "PASS"
+    },
+    "3bqY_VkqBlU25u8uOJQMQQ": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3c6MwqA$yM0M38eAmrKVL6": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3cIuag3nhFPSGUuWECC5pL": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "3dP14RDGMXUxp4t0Y$haDc": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3dgCDn3fTFJpeura5Voaae": {
+      "name": "ARSEIN - 017",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ewQRsWBZqPag4BgggLMfq": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3fBLEebN0kN6xGCvJZZGb6": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (0,68 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3fRZrVH5bYHmlr7f9OC3ov": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3foXgkf2MB_OFdjz2lb9uZ": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3frFGY6uaRM8$tqflqMufR": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3g2oANOhj6JPgR6eQYjOF1": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "3g7pwh8oIvsRWDXbetscep": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3g8$_EcfbGZK_aJOU8AACO": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3gEj5FCL90q7btmyocSTQT": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3hJ_35lqc2mbMpojfFD3_g": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3hPjk50I$Li5qJghXY0g$i": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3hV2ZCFs_EzGOEI5uQqYiP": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3hajtHs_hrfrZPGbE5dLFy": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3i3DjFdNCRXAj1QfgtE3YT": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3i4fjuHBRL3eoVaYz6CKM3": {
+      "name": "ARVS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3iNqCL8qUekFQiHD$2sK6C": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ias69X1b2N37LhzFQWzff": {
+      "name": "ARSEIN - 010",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3j0DZLab70FR_yNIT5P$ei": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "3jEeFSNZkAr2cWKN7WM6I9": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,87 m2)"
+      ]
+    },
+    "3jFx3Xf6MogNMzLYR2nDHd": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3jXXsmHmfhOYF3bSUu6hl6": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3jlKsp7Krj2si_w$cynUND": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3k2w0jLzP5V95WWTzOOG3z": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3k7ejQKLhJPapVsP_6kGOl": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3kfmqcD9Yw62CTUCOzUrjS": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3l2PIvweLlR5MXQWFwxRdv": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3lMiQZyaxXPq$zHwH897AV": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3lTilTfvbhj0syZfWASqeq": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3lbFn1SVEtvdUcfMHRzTfQ": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3lpymIQLt0KinRRZG6pcLZ": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3mG$yFG84xrAiBNQDPqk0W": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)"
+      ]
+    },
+    "3mdaqqG9eueBEPOFsbTx$8": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3mfoUCMR6C0NrihodlsauV": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3nMMmIx4p0rtWl9YKPG41t": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3nbZ3_pvhPs9ELZbAwUsTU": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3nhtKbNHxJqQLY52xChfjD": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ot7ywP7G3rOIzpcTnad9m": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3p5Seu9JMBszV2zTM8HwsG": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3pqoXYrnDndXDZAw6b2v8q": {
+      "name": "ARVS-02",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3pxidmeOfhtlNAlh7F0feI": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,71 m2)"
+      ]
+    },
+    "3q6kKPvyi87YgIxTJBYW6B": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3qAs26YRF$MGNCiDSt59VS": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3qDmvGwJI7UEU1hLA6P0VG": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3qXv4ChKp_Zyko81zmbvyM": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3r0UA9bOaP1eUj75zNnRop": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3r46LDwc1aSGUhCjitrh1m": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3rI32jRPLI3GnEqslUGXe1": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3rUpjnArqRtzsJ3_6$zQ5p": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3rqhruV0CYKfAxsiUWp7Ai": {
+      "name": "ARSEIN - 014",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3rs$2jH_d1LPZ3faVzavtX": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ryCUPIqTv1dgaSg5qreuF": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3sJ8vKCu9dFKoavhZRTlmG": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3sP2Ub73$UvHKpgr6aLt7p": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3sSDxHohAi44n4yH6KzvBG": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3tJYCj4hifD2Q$HI7CKd9M": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3tY8nXItQFkYunEnALddqF": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ubJWd35dAAEHQs0mR38x$": {
+      "name": "ARSS-05",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3ueYxhRCVtuZO1zASdu2Lu": {
+      "name": "ARSS-04",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3vb_BdGeYauUsc71iaefyw": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3vm23E5JIymYRo9bwxL1hS": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3vnpa$7B8wQ1Rjju10mdFU": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (0,66 m2)",
+        "Unallocated Area (1,07 m2)"
+      ]
+    },
+    "3vp_DgBQV7UQH5uHAdyvSL": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3w9pDQvNu5Npi41A47y7L6": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3wDRzhduOLWF00re6u9Aj_": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3wZ7$qMWymhy6X_GqNY2k5": {
+      "name": "ARSEIN - 016",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3wdDHDC6j_zup8FT4fmbNY": {
+      "name": "ARVUND-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3wmxIf7a3Zszu9lGX8msKS": {
+      "name": "ARVUND-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3xHlboww8mFxdlgq6ZdG4v": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3xbs1E4LfiqLPxrp$hfCg7": {
+      "name": "AR",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3xyNV1CDFHpOl4KSnjUOmB": {
+      "name": "ARSS-03",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3yWiPuW1fh$lm6SuePvedc": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3yw62Keg63kx5GzQWq4pl0": {
+      "name": "ARSEIN - 018",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3zBYGaS7ifNksv9Zg5AOq0": {
+      "name": "ARVS-01",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "3zLHfYKiBgOxM_PMW0vqQo": {
+      "name": "ARSS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3zQCIOV$9IF2js6ol_0D5c": {
+      "name": "ARVS-01",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    },
+    "3zW3ZOVfqq0f_wUDrLjcfu": {
+      "name": "ARSS-02",
+      "class": "IfcWallStandardCase",
+      "label": "PASS"
+    }
+  }
+}

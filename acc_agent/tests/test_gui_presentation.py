@@ -9,8 +9,8 @@ from unittest.mock import Mock, patch
 import ground_truth
 from agent import AgentResult
 from ground_truth import GroundTruth
-from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, MAX_MODEL_CALLS, QUICK_SUITE_CASES, USABLE_CASES,
-                 USABLE_2_CASES, USABLE_2_SUITE_CASES, case_assessment)
+from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, HELDOUT_SUITE_CASES, MAX_MODEL_CALLS, QUICK_SUITE_CASES,
+                 USABLE_CASES, USABLE_2_CASES, USABLE_2_SUITE_CASES, case_assessment)
 from kernel_executor import KernelCodeExecutor
 from gui_widgets import METRIC_GUIDE, GREEN, ORANGE, RED, bind_wrapping, result_presentation
 from scoring import ParsedVerdict, aggregate, score
@@ -133,13 +133,14 @@ class GuiWorkflowTests(unittest.TestCase):
 
     def test_reference_tiers_cover_catalogue_and_health_suite(self):
         app = self.app
-        self.assertEqual(len(app.case_labels), 46)
+        self.assertGreaterEqual(len(HELDOUT_SUITE_CASES), 3)
+        self.assertEqual(len(app.case_labels), 46 + len(HELDOUT_SUITE_CASES))
         self.assertFalse(any(ground_truth.is_deprecated(metadata["case_id"]) for metadata in app.case_labels.values()))
         self.assertEqual(len(USABLE_CASES), 6)
         self.assertEqual(len(set(HEALTH_SUITE_CASES)), 8)
         self.assertEqual(case_assessment("future_case")[0], "Unreviewed")
         self.assertTrue(all(metadata["assessment"] != "Unreviewed" for metadata in app.case_labels.values()))
-        for group, count in (("Health suite", 8), ("Usable", 6), ("usable_2", 10),
+        for group, count in (("Health suite", 8), ("Usable", 6), ("usable_2", 10), ("Held-out", len(HELDOUT_SUITE_CASES)),
                              ("Retired", 9), ("Controls", 20), ("Provisional", 1)):
             with self.subTest(group=group):
                 app._filter_cases(group)
@@ -308,6 +309,50 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertEqual(manifest["settings"]["repeats"], 2)
             self.assertEqual(manifest["finished_runs"], len(expected))
             errors.assert_not_called()
+
+    def test_heldout_pilot_sets_fixed_settings_and_resumes_finished_cases(self):
+        app = self.app
+        with TemporaryDirectory() as directory, patch("gui.LOG_DIR", Path(directory)), \
+                patch.object(app, "_on_suite") as on_suite, patch("gui.messagebox.askyesnocancel", return_value=True) as ask:
+            app.mode_var.set("both")
+            app.repeats_var.set(3)
+            app.harness_var.set(2)
+            app.heldout_pilot_btns["heldout_pilot"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_pilot")
+            ask.assert_not_called()
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get()),
+                             ("openrouter", "minimax/minimax-m3", "stateful"))
+            self.assertEqual((int(app.repeats_var.get()), int(app.harness_var.get())), (1, 1))
+            done = HELDOUT_SUITE_CASES[:2]
+            index = {"kind": "heldout_pilot", "cases": [{"case_id": done[0], "status": "finished"},
+                                                       {"case_id": done[1], "status": "finished"},
+                                                       {"case_id": HELDOUT_SUITE_CASES[2], "status": "error"}]}
+            (Path(directory) / "x_health_suite.json").write_text(json.dumps(index), encoding="utf-8")
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_pilot"].invoke()
+            ask.assert_called_once()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES[2:], kind="heldout_pilot")
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_pilot_stateless_minimax"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_pilot_stateless_minimax")
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get()),
+                             ("minimax", "MiniMax-M3", "stateless"))
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_main_minimax"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_main_minimax")
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(), int(app.repeats_var.get())),
+                             ("minimax", "MiniMax-M3", "both", 2))
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_sonnet_stateful"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_sonnet_stateful")
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(), int(app.repeats_var.get())),
+                             ("openrouter", "anthropic/claude-sonnet-5.5", "stateful", 1))
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_h2_minimax"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax")
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
+                              int(app.repeats_var.get()), int(app.harness_var.get())),
+                             ("minimax", "MiniMax-M3", "stateful", 2, 2))
 
     def test_declining_health_suite_makes_no_provider_or_worker_calls(self):
         with self.suite_fixture(approve=False) as (_, _, seen, executors, client, confirm, _):

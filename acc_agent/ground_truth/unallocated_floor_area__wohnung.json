@@ -1,0 +1,1432 @@
+{
+  "case_id": "unallocated_floor_area__wohnung",
+  "rule": "Every enclosed floor area of a building storey must be allocated to a space.\nSource: rule 'Unallocated Areas' of the EC3-2026 rule catalogue: This rule checks that space geometry and location are correct.\nBenchmark convention: on each building storey, find floor areas enclosed by walls, curtain walls and columns that are occupied by no space, wall or column. Every such unallocated area larger than 0.50 m2 is a violation, reported through the walls, curtain walls and columns that surround it: each of them fails. All other walls, curtain walls and columns pass.\n\nLabel every wall, curtain wall and column.\nReport the GlobalId of every element (modelled as IfcWall or IfcCurtainWall or IfcColumn) that does NOT satisfy this requirement.",
+  "ifc_path": "heldout_models/ISSUE_159_kleine_Wohnung_R22.ifc",
+  "complexity": 3,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [
+    "0ZTT5Wp3H2aOtYWV7e$eDQ",
+    "0ZTT5Wp3H2aOtYWV7e$h$W",
+    "0ZTT5Wp3H2aOtYWV7e$hU9",
+    "0ZTT5Wp3H2aOtYWV7e$hyU",
+    "0ZTT5Wp3H2aOtYWV7e$hze",
+    "0ZTT5Wp3H2aOtYWV7e$q3f",
+    "0ZTT5Wp3H2aOtYWV7e$q4u",
+    "0ZTT5Wp3H2aOtYWV7e$q5w",
+    "0ZTT5Wp3H2aOtYWV7e$qF8",
+    "0ZTT5Wp3H2aOtYWV7e$qM1",
+    "0ZTT5Wp3H2aOtYWV7e$qM3",
+    "0ZTT5Wp3H2aOtYWV7e$qM4",
+    "0ZTT5Wp3H2aOtYWV7e$qM5",
+    "0ZTT5Wp3H2aOtYWV7e$qM6",
+    "0ZTT5Wp3H2aOtYWV7e$qM8",
+    "0ZTT5Wp3H2aOtYWV7e$qME",
+    "0ZTT5Wp3H2aOtYWV7e$qMM",
+    "0ZTT5Wp3H2aOtYWV7e$qOf",
+    "0ZTT5Wp3H2aOtYWV7e$qOs",
+    "0ZTT5Wp3H2aOtYWV7e$qOt",
+    "0ZTT5Wp3H2aOtYWV7e$tnP",
+    "0ZTT5Wp3H2aOtYWV7e$to6",
+    "0ZTT5Wp3H2aOtYWV7e$ttF",
+    "13r2DB9a17cBv_AmP68a1m",
+    "13r2DB9a17cBv_AmP68a4v",
+    "13r2DB9a17cBv_AmP68aAs",
+    "13r2DB9a17cBv_AmP68aCO",
+    "13r2DB9a17cBv_AmP68aFt",
+    "13r2DB9a17cBv_AmP68aGV",
+    "13r2DB9a17cBv_AmP68aKX",
+    "13r2DB9a17cBv_AmP68aNp",
+    "13r2DB9a17cBv_AmP68bZL"
+  ],
+  "labels": {
+    "0$FG2iNr1DoO99Ip41SsoW": "PASS",
+    "0$FG2iNr1DoO99Ip41SsoX": "PASS",
+    "0$FG2iNr1DoO99Ip41SsoY": "PASS",
+    "0$FG2iNr1DoO99Ip41SsoZ": "PASS",
+    "0$FG2iNr1DoO99Ip41Ssoa": "PASS",
+    "0$FG2iNr1DoO99Ip41Ssob": "PASS",
+    "0$FG2iNr1DoO99Ip41Ssok": "PASS",
+    "0$FG2iNr1DoO99Ip41Ssol": "PASS",
+    "0$FG2iNr1DoO99Ip41StGF": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$eDQ": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$h$W": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$hSh": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hU9": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$hXs": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hZS": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$haV": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hgp": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hks": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hnE": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hqx": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hrm": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$htV": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hui": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hv6": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hwi": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$hyU": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$hze": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$q3f": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$q4u": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$q5w": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qF8": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qM0": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qM1": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qM2": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qM3": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qM4": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qM5": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qM6": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qM7": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qM8": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qMC": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qME": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qMF": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qMK": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qMM": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qOe": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOf": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qOg": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOh": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOi": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOj": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOm": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOn": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOo": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOp": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOq": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOr": "PASS",
+    "0ZTT5Wp3H2aOtYWV7e$qOs": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$qOt": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$tnP": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$to6": "FAIL",
+    "0ZTT5Wp3H2aOtYWV7e$ttF": "FAIL",
+    "13r2DB9a17cBv_AmP68a1m": "FAIL",
+    "13r2DB9a17cBv_AmP68a3d": "PASS",
+    "13r2DB9a17cBv_AmP68a4v": "FAIL",
+    "13r2DB9a17cBv_AmP68a8O": "PASS",
+    "13r2DB9a17cBv_AmP68aAs": "FAIL",
+    "13r2DB9a17cBv_AmP68aCO": "FAIL",
+    "13r2DB9a17cBv_AmP68aEW": "PASS",
+    "13r2DB9a17cBv_AmP68aFt": "FAIL",
+    "13r2DB9a17cBv_AmP68aGV": "FAIL",
+    "13r2DB9a17cBv_AmP68aHH": "PASS",
+    "13r2DB9a17cBv_AmP68aJW": "PASS",
+    "13r2DB9a17cBv_AmP68aKX": "FAIL",
+    "13r2DB9a17cBv_AmP68aNp": "FAIL",
+    "13r2DB9a17cBv_AmP68bYx": "PASS",
+    "13r2DB9a17cBv_AmP68bZL": "FAIL",
+    "1MCzJggrb7zRdoy7aMKUHG": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHH": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHI": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHJ": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHK": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHM": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHO": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHP": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHQ": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHS": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHT": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHU": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHV": "PASS",
+    "1MCzJggrb7zRdoy7aMKUHg": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI0": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI1": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI2": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI3": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI4": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI5": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI6": "PASS",
+    "1MCzJggrb7zRdoy7aMKUI7": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIC": "PASS",
+    "1MCzJggrb7zRdoy7aMKUID": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIE": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIF": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIP": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIQ": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIR": "PASS",
+    "1MCzJggrb7zRdoy7aMKUIV": "PASS",
+    "1MCzJggrb7zRdoy7aMKUJr": "PASS",
+    "1MCzJggrb7zRdoy7aMKUJs": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK0": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK1": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK2": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK3": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK4": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK6": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK7": "PASS",
+    "1MCzJggrb7zRdoy7aMKUK8": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKC": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKD": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKE": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKF": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKO": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKQ": "PASS",
+    "1MCzJggrb7zRdoy7aMKUKU": "PASS",
+    "1MCzJggrb7zRdoy7aMKVgW": "PASS",
+    "1MCzJggrb7zRdoy7aMKVgZ": "PASS",
+    "1MCzJggrb7zRdoy7aMKVgc": "PASS",
+    "1MCzJggrb7zRdoy7aMKVgd": "PASS",
+    "1MCzJggrb7zRdoy7aMKVge": "PASS",
+    "1MCzJggrb7zRdoy7aMKVgg": "PASS",
+    "1MCzJggrb7zRdoy7aMKVgi": "PASS",
+    "1MCzJggrb7zRdoy7aMKVgk": "PASS",
+    "1MCzJggrb7zRdoy7aMKVl$": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlW": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlX": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlY": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlZ": "PASS",
+    "1MCzJggrb7zRdoy7aMKVl_": "PASS",
+    "1MCzJggrb7zRdoy7aMKVla": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlb": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlc": "PASS",
+    "1MCzJggrb7zRdoy7aMKVld": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlu": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlv": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlw": "PASS",
+    "1MCzJggrb7zRdoy7aMKVlx": "PASS",
+    "1rmiPmr3r27BAAf37fkLW$": "PASS",
+    "1rmiPmr3r27BAAf37fkLWW": "PASS",
+    "1rmiPmr3r27BAAf37fkLW_": "PASS",
+    "1rmiPmr3r27BAAf37fkLWm": "PASS",
+    "1rmiPmr3r27BAAf37fkLWo": "PASS",
+    "1rmiPmr3r27BAAf37fkLWq": "PASS",
+    "1rmiPmr3r27BAAf37fkLWz": "PASS",
+    "1rmiPmr3r27BAAf37fkLXE": "PASS",
+    "1rmiPmr3r27BAAf37fkLZG": "PASS",
+    "1rmiPmr3r27BAAf37fkLZH": "PASS",
+    "1rmiPmr3r27BAAf37fkLZI": "PASS",
+    "1rmiPmr3r27BAAf37fkLZJ": "PASS",
+    "1rmiPmr3r27BAAf37fkLZK": "PASS",
+    "1rmiPmr3r27BAAf37fkLZL": "PASS",
+    "1rmiPmr3r27BAAf37fkLZM": "PASS",
+    "1rmiPmr3r27BAAf37fkLZN": "PASS",
+    "1rmiPmr3r27BAAf37fkLZO": "PASS",
+    "1rmiPmr3r27BAAf37fkLZU": "PASS",
+    "1rmiPmr3r27BAAf37fkLZV": "PASS",
+    "1rmiPmr3r27BAAf37fkLZe": "PASS",
+    "1rmiPmr3r27BAAf37fkLZg": "PASS",
+    "1rmiPmr3r27BAAf37fkLZh": "PASS",
+    "1rmiPmr3r27BAAf37fkLZi": "PASS",
+    "1rmiPmr3r27BAAf37fkLZj": "PASS",
+    "1rmiPmr3r27BAAf37fkLZk": "PASS",
+    "1rmiPmr3r27BAAf37fkLZl": "PASS",
+    "1rmiPmr3r27BAAf37fkLam": "PASS",
+    "1rmiPmr3r27BAAf37fkLan": "PASS",
+    "1rmiPmr3r27BAAf37fkLao": "PASS",
+    "1rmiPmr3r27BAAf37fkLap": "PASS",
+    "1rmiPmr3r27BAAf37fkLaq": "PASS",
+    "1rmiPmr3r27BAAf37fkLar": "PASS",
+    "1rmiPmr3r27BAAf37fkLb5": "PASS",
+    "1rmiPmr3r27BAAf37fkLb7": "PASS",
+    "1rmiPmr3r27BAAf37fkLb9": "PASS",
+    "1rmiPmr3r27BAAf37fkLbB": "PASS",
+    "1rmiPmr3r27BAAf37fkLbC": "PASS",
+    "1rmiPmr3r27BAAf37fkLbD": "PASS",
+    "1rmiPmr3r27BAAf37fkLbE": "PASS",
+    "1rmiPmr3r27BAAf37fkLbF": "PASS",
+    "1rmiPmr3r27BAAf37fkLdm": "PASS",
+    "1rmiPmr3r27BAAf37fkLdn": "PASS",
+    "1rmiPmr3r27BAAf37fkLdo": "PASS",
+    "1rmiPmr3r27BAAf37fkLdp": "PASS",
+    "1rmiPmr3r27BAAf37fkLdq": "PASS",
+    "1rmiPmr3r27BAAf37fkLdr": "PASS",
+    "1rmiPmr3r27BAAf37fkLds": "PASS",
+    "1rmiPmr3r27BAAf37fkLdt": "PASS",
+    "1rmiPmr3r27BAAf37fkLdu": "PASS",
+    "1rmiPmr3r27BAAf37fkLdv": "PASS",
+    "1rmiPmr3r27BAAf37fkLdw": "PASS",
+    "1rmiPmr3r27BAAf37fkLdx": "PASS",
+    "1rmiPmr3r27BAAf37fkLdy": "PASS",
+    "1rmiPmr3r27BAAf37fkLdz": "PASS",
+    "1rmiPmr3r27BAAf37fkLf1": "PASS",
+    "1rmiPmr3r27BAAf37fkLf3": "PASS",
+    "1rmiPmr3r27BAAf37fkLfO": "PASS",
+    "1rmiPmr3r27BAAf37fkLfP": "PASS",
+    "1rmiPmr3r27BAAf37fkLfQ": "PASS",
+    "1rmiPmr3r27BAAf37fkLfT": "PASS",
+    "1rmiPmr3r27BAAf37fkLfV": "PASS",
+    "2287KmkhP52xj3wnZyStOs": "PASS",
+    "2287KmkhP52xj3wnZyStPX": "PASS",
+    "2287KmkhP52xj3wnZyStPZ": "PASS",
+    "2287KmkhP52xj3wnZyStPl": "PASS"
+  },
+  "notes": "Unallocated Areas on 211 IfcWall or IfcCurtainWall or IfcColumn: {'FAIL': 32, 'PASS': 179}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_wohnung_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 211,
+    "ifc_sha256": "6e4160d669c4873a1b1765ad121e2b192ca7cb050549b4930177de19bbbe5222",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Unallocated Areas",
+      "message": null,
+      "report_file": "ec3_wohnung_check.xlsx",
+      "report_sha256": "8a56b56c3b32b045b4bc11aeebce8dfb6bbc7f141662f574ee957257ac6f78eb",
+      "rule_issues": 1,
+      "matching_issues": 1
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "0$FG2iNr1DoO99Ip41SsoW": {
+      "name": "Basiswand:MW_10cm:355814",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41SsoX": {
+      "name": "Basiswand:MW_10cm:355815",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41SsoY": {
+      "name": "Basiswand:MW_10cm:355812",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41SsoZ": {
+      "name": "Basiswand:MW_10cm:355813",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41Ssoa": {
+      "name": "Basiswand:MW_10cm:355810",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41Ssob": {
+      "name": "Basiswand:MW_10cm:355811",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41Ssok": {
+      "name": "Basiswand:MW_10cm:355816",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41Ssol": {
+      "name": "Basiswand:MW_10cm:355817",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0$FG2iNr1DoO99Ip41StGF": {
+      "name": "Basiswand:Metall Panele:357705",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$eDQ": {
+      "name": "Basiswand:Ziegel 0.24 m:319299",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$h$W": {
+      "name": "Basiswand:GK 12.5:320505",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hSh": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:322354",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hU9": {
+      "name": "Basiswand:Ziegel 0.24 m:322448",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hXs": {
+      "name": "Basiswand:GK 12.5:320623",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hZS": {
+      "name": "Basiswand:GK 12.5:320709",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$haV": {
+      "name": "Basiswand:GK 12.5:320774",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hgp": {
+      "name": "Basiswand:GK 12.5:321194",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hks": {
+      "name": "Basiswand:GK 12.5:321455",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hnE": {
+      "name": "Basiswand:Ziegel 0.24 m:319575",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hqx": {
+      "name": "Basiswand:GK 12.5:319778",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hrm": {
+      "name": "Basiswand:GK 12.5:319849",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$htV": {
+      "name": "Basiswand:GK 12.5:319942",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hui": {
+      "name": "Basiswand:GK 12.5:320053",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hv6": {
+      "name": "Basiswand:GK 12.5:320095",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hwi": {
+      "name": "Basiswand:GK 12.5:320181",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hyU": {
+      "name": "Basiswand:GK 12.5:320263",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$hze": {
+      "name": "Basiswand:GK 12.5:320369",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$q3f": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:335088",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$q4u": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:335137",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$q5w": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:335203",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qF8": {
+      "name": "Basiswand:Ziegel 0.24 m:335825",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM0": {
+      "name": "Basiswand:GK 12.5:334233",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM1": {
+      "name": "Basiswand:GK 12.5:334232",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM2": {
+      "name": "Basiswand:GK 12.5:334235",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM3": {
+      "name": "Basiswand:GK 12.5:334234",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM4": {
+      "name": "Basiswand:GK 12.5:334237",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM5": {
+      "name": "Basiswand:GK 12.5:334236",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM6": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:334239",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM7": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:334238",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qM8": {
+      "name": "Basiswand:Ziegel 0.24 m:334225",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMC": {
+      "name": "Basiswand:GK 12.5:334229",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qME": {
+      "name": "Basiswand:GK 12.5:334231",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMF": {
+      "name": "Basiswand:GK 12.5:334230",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMK": {
+      "name": "Basiswand:Ziegel 0.24 m:334221",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qMM": {
+      "name": "Basiswand:Ziegel 0.24 m:334223",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOe": {
+      "name": "Basiswand:GK 12.5:334385",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOf": {
+      "name": "Basiswand:GK 12.5:334384",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOg": {
+      "name": "Basiswand:GK 12.5:334387",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOh": {
+      "name": "Basiswand:GK 12.5:334386",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOi": {
+      "name": "Basiswand:GK 12.5:334389",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOj": {
+      "name": "Basiswand:GK 12.5:334388",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOm": {
+      "name": "Basiswand:GK 12.5:334377",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOn": {
+      "name": "Basiswand:GK 12.5:334376",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOo": {
+      "name": "Basiswand:GK 12.5:334379",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOp": {
+      "name": "Basiswand:GK 12.5:334378",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOq": {
+      "name": "Basiswand:GK 12.5:334381",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOr": {
+      "name": "Basiswand:GK 12.5:334380",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOs": {
+      "name": "Basiswand:GK 12.5:334383",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$qOt": {
+      "name": "Basiswand:GK 12.5:334382",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$tnP": {
+      "name": "Basiswand:Ziegel 0.24 m:335936",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$to6": {
+      "name": "Basiswand:Ziegel 0.24 m:336031",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "0ZTT5Wp3H2aOtYWV7e$ttF": {
+      "name": "Basiswand:GK 12.5:336342",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68a1m": {
+      "name": "Basiswand:Ziegel 0.24 m:297170",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68a3d": {
+      "name": "Basiswand:Ziegel 0.24 m:297029",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68a4v": {
+      "name": "Basiswand:Ziegel 0.24 m:297371",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68a8O": {
+      "name": "Basiswand:GK 12.5:297658",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68aAs": {
+      "name": "Basiswand:Ziegel 0.24 m:297492",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68aCO": {
+      "name": "Basiswand:GK 12.5:297914",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68aEW": {
+      "name": "Basiswand:GK 12.5:297730",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68aFt": {
+      "name": "Basiswand:GK 12.5:297813",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68aGV": {
+      "name": "Basiswand:GK 12.5:298173",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68aHH": {
+      "name": "Basiswand:GK 12.5:298227",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68aJW": {
+      "name": "Basiswand:GK 12.5:298050",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68aKX": {
+      "name": "Basiswand:GK 12.5:298371",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68aNp": {
+      "name": "Basiswand:GK 12.5:298321",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "13r2DB9a17cBv_AmP68bYx": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:299033",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "13r2DB9a17cBv_AmP68bZL": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:299127",
+      "class": "IfcWall",
+      "label": "FAIL",
+      "issues": [
+        "Unallocated Area (32,20 m2)"
+      ]
+    },
+    "1MCzJggrb7zRdoy7aMKUHG": {
+      "name": "Basiswand:GK 12.5:339940",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHH": {
+      "name": "Basiswand:GK 12.5:339941",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHI": {
+      "name": "Basiswand:GK 12.5:339942",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHJ": {
+      "name": "Basiswand:GK 12.5:339943",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHK": {
+      "name": "Basiswand:Ziegel 0.24 m:339936",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHM": {
+      "name": "Basiswand:Ziegel 0.24 m:339938",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHO": {
+      "name": "Basiswand:GK 12.5:339948",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHP": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:339949",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHQ": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:339950",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHS": {
+      "name": "Basiswand:GK 12.5:339944",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHT": {
+      "name": "Basiswand:GK 12.5:339945",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHU": {
+      "name": "Basiswand:GK 12.5:339946",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHV": {
+      "name": "Basiswand:GK 12.5:339947",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUHg": {
+      "name": "Basiswand:Ziegel 0.24 m:339934",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI0": {
+      "name": "Basiswand:GK 12.5:339764",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI1": {
+      "name": "Basiswand:GK 12.5:339765",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI2": {
+      "name": "Basiswand:GK 12.5:339766",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI3": {
+      "name": "Basiswand:GK 12.5:339767",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI4": {
+      "name": "Basiswand:GK 12.5:339760",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI5": {
+      "name": "Basiswand:GK 12.5:339761",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI6": {
+      "name": "Basiswand:GK 12.5:339762",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUI7": {
+      "name": "Basiswand:GK 12.5:339763",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIC": {
+      "name": "Basiswand:GK 12.5:339768",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUID": {
+      "name": "Basiswand:GK 12.5:339769",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIE": {
+      "name": "Basiswand:GK 12.5:339770",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIF": {
+      "name": "Basiswand:GK 12.5:339771",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIP": {
+      "name": "Basiswand:Ziegel 0.24 m:339757",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIQ": {
+      "name": "Basiswand:GK 12.5:339758",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIR": {
+      "name": "Basiswand:GK 12.5:339759",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUIV": {
+      "name": "Basiswand:Ziegel 0.24 m:339755",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUJr": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:339777",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUJs": {
+      "name": "Basiswand:Ziegel 0.24 m:339778",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK0": {
+      "name": "Basiswand:GK 12.5:339636",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK1": {
+      "name": "Basiswand:GK 12.5:339637",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK2": {
+      "name": "Basiswand:GK 12.5:339638",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK3": {
+      "name": "Basiswand:GK 12.5:339639",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK4": {
+      "name": "Basiswand:Ziegel 0.24 m:339632",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK6": {
+      "name": "Basiswand:GK 12.5:339634",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK7": {
+      "name": "Basiswand:GK 12.5:339635",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUK8": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:339644",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKC": {
+      "name": "Basiswand:GK 12.5:339640",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKD": {
+      "name": "Basiswand:GK 12.5:339641",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKE": {
+      "name": "Basiswand:GK 12.5:339642",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKF": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:339643",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKO": {
+      "name": "Basiswand:Ziegel 0.24 m:339628",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKQ": {
+      "name": "Basiswand:Ziegel 0.24 m:339630",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKUKU": {
+      "name": "Basiswand:Ziegel 0.24 m:339626",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVgW": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:340244",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVgZ": {
+      "name": "Basiswand:Metall Panele:340247",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVgc": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:340242",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVgd": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:340243",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVge": {
+      "name": "Basiswand:Ziegel 0.24 m:340252",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVgg": {
+      "name": "Basiswand:GK 12.5:340254",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVgi": {
+      "name": "Basiswand:Ziegel 0.24 m:340248",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVgk": {
+      "name": "Basiswand:Ziegel 0.24 m:340250",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVl$": {
+      "name": "Basiswand:GK 12.5:340043",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlW": {
+      "name": "Basiswand:GK 12.5:340052",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlX": {
+      "name": "Basiswand:GK 12.5:340053",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlY": {
+      "name": "Basiswand:GK 12.5:340054",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlZ": {
+      "name": "Basiswand:GK 12.5:340055",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVl_": {
+      "name": "Basiswand:GK 12.5:340042",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVla": {
+      "name": "Basiswand:GK 12.5:340048",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlb": {
+      "name": "Basiswand:GK 12.5:340049",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlc": {
+      "name": "Basiswand:GK 12.5:340050",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVld": {
+      "name": "Basiswand:GK 12.5:340051",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlu": {
+      "name": "Basiswand:GK 12.5:340044",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlv": {
+      "name": "Basiswand:GK 12.5:340045",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlw": {
+      "name": "Basiswand:GK 12.5:340046",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1MCzJggrb7zRdoy7aMKVlx": {
+      "name": "Basiswand:GK 12.5:340047",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLW$": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353359",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLWW": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353360",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLW_": {
+      "name": "Basiswand:GK 12.5:353358",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLWm": {
+      "name": "Basiswand:Ziegel 0.24 m:353344",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLWo": {
+      "name": "Basiswand:Ziegel 0.24 m:353346",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLWq": {
+      "name": "Basiswand:Ziegel 0.24 m:353348",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLWz": {
+      "name": "Basiswand:GK 12.5:353357",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLXE": {
+      "name": "Basiswand:Ziegel 0.24 m:353342",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZG": {
+      "name": "Basiswand:GK 12.5:353440",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZH": {
+      "name": "Basiswand:GK 12.5:353441",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZI": {
+      "name": "Basiswand:GK 12.5:353442",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZJ": {
+      "name": "Basiswand:GK 12.5:353443",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZK": {
+      "name": "Basiswand:GK 12.5:353444",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZL": {
+      "name": "Basiswand:GK 12.5:353445",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZM": {
+      "name": "Basiswand:GK 12.5:353446",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZN": {
+      "name": "Basiswand:GK 12.5:353447",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZO": {
+      "name": "Basiswand:GK 12.5:353448",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZU": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353454",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZV": {
+      "name": "Basiswand:Ziegel 0.24 m:353455",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZe": {
+      "name": "Basiswand:Ziegel 0.24 m:353432",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZg": {
+      "name": "Basiswand:Ziegel 0.24 m:353434",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZh": {
+      "name": "Basiswand:GK 12.5:353435",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZi": {
+      "name": "Basiswand:GK 12.5:353436",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZj": {
+      "name": "Basiswand:GK 12.5:353437",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZk": {
+      "name": "Basiswand:GK 12.5:353438",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLZl": {
+      "name": "Basiswand:GK 12.5:353439",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLam": {
+      "name": "Basiswand:GK 12.5:353600",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLan": {
+      "name": "Basiswand:GK 12.5:353601",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLao": {
+      "name": "Basiswand:GK 12.5:353602",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLap": {
+      "name": "Basiswand:GK 12.5:353603",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLaq": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353604",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLar": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353605",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLb5": {
+      "name": "Basiswand:Ziegel 0.24 m:353589",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLb7": {
+      "name": "Basiswand:Ziegel 0.24 m:353591",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLb9": {
+      "name": "Basiswand:Ziegel 0.24 m:353593",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLbB": {
+      "name": "Basiswand:GK 12.5:353595",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLbC": {
+      "name": "Basiswand:GK 12.5:353596",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLbD": {
+      "name": "Basiswand:GK 12.5:353597",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLbE": {
+      "name": "Basiswand:GK 12.5:353598",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLbF": {
+      "name": "Basiswand:GK 12.5:353599",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdm": {
+      "name": "Basiswand:GK 12.5:353664",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdn": {
+      "name": "Basiswand:GK 12.5:353665",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdo": {
+      "name": "Basiswand:GK 12.5:353666",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdp": {
+      "name": "Basiswand:GK 12.5:353667",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdq": {
+      "name": "Basiswand:GK 12.5:353668",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdr": {
+      "name": "Basiswand:GK 12.5:353669",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLds": {
+      "name": "Basiswand:GK 12.5:353670",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdt": {
+      "name": "Basiswand:GK 12.5:353671",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdu": {
+      "name": "Basiswand:GK 12.5:353672",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdv": {
+      "name": "Basiswand:GK 12.5:353673",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdw": {
+      "name": "Basiswand:GK 12.5:353674",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdx": {
+      "name": "Basiswand:GK 12.5:353675",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdy": {
+      "name": "Basiswand:GK 12.5:353676",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLdz": {
+      "name": "Basiswand:GK 12.5:353677",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLf1": {
+      "name": "Basiswand:Ziegel 0.24 m:353841",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLf3": {
+      "name": "Basiswand:GK 12.5:353843",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLfO": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353832",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLfP": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353833",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLfQ": {
+      "name": "Basiswand:173_A_NT_WDVS_0160_TYP01_1S_EPS_0160:353834",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLfT": {
+      "name": "Basiswand:Ziegel 0.24 m:353837",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "1rmiPmr3r27BAAf37fkLfV": {
+      "name": "Basiswand:Ziegel 0.24 m:353839",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2287KmkhP52xj3wnZyStOs": {
+      "name": "Basiswand:Ziegel 0.24 m:526416",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2287KmkhP52xj3wnZyStPX": {
+      "name": "Basiswand:Ziegel 0.24 m:526343",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2287KmkhP52xj3wnZyStPZ": {
+      "name": "Basiswand:Ziegel 0.24 m:526341",
+      "class": "IfcWall",
+      "label": "PASS"
+    },
+    "2287KmkhP52xj3wnZyStPl": {
+      "name": "Basiswand:Ziegel 0.24 m:526345",
+      "class": "IfcWall",
+      "label": "PASS"
+    }
+  }
+}

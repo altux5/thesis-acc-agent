@@ -1,0 +1,55 @@
+{
+  "case_id": "slab_thickness_range__clinic",
+  "rule": "Every slab must have a thickness between 30 mm and 1000 mm inclusive.\nSource: rule 'Slab Thickness' of the EC3-2026 rule catalogue: This rule checks that slab thickness is not too small or too large.\nBenchmark convention: the thickness of a slab is the thickness of its own construction: the total of its material layers or its recorded thickness, or else the depth of its body. A slab fails when it is thinner than 30 mm or thicker than 1000 mm. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/dental_clinic/arc.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "04RQcjHB5Dgx411vE8P8XP": "PASS",
+    "0ZGcf06TjCI8_1ZVSPB0fu": "PASS",
+    "1Yhb_CCZzDzP4tYbACeeSH": "PASS"
+  },
+  "notes": "Slab Thickness on 3 IfcSlab: {'PASS': 3}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_clinic_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 3,
+    "ifc_sha256": "b90fe57b8aa9329d762a564770e697d4f7357677484e3a78ede4ab6d2163c0c0",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slab Thickness",
+      "message": null,
+      "report_file": "ec3_clinic_check.xlsx",
+      "report_sha256": "468252d117d8be28b1ed065902f7667f5521c9a3803d631b281341518ed798e7",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element.",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "04RQcjHB5Dgx411vE8P8XP": {
+      "name": "Stair:Concrete Pan - 180mm Max Riser 280mm Tread:251180:1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "0ZGcf06TjCI8_1ZVSPB0fu": {
+      "name": "Stair:Concrete Pan - 180mm Max Riser 280mm Tread:250693:1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "1Yhb_CCZzDzP4tYbACeeSH": {
+      "name": "Stair:Concrete Pan - 180mm Max Riser 280mm Tread:221039:1",
+      "class": "IfcSlab",
+      "label": "PASS"
+    }
+  }
+}

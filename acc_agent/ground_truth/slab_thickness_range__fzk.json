@@ -1,0 +1,61 @@
+{
+  "case_id": "slab_thickness_range__fzk",
+  "rule": "Every slab must have a thickness between 30 mm and 1000 mm inclusive.\nSource: rule 'Slab Thickness' of the EC3-2026 rule catalogue: This rule checks that slab thickness is not too small or too large.\nBenchmark convention: the thickness of a slab is the thickness of its own construction: the total of its material layers or its recorded thickness, or else the depth of its body. A slab fails when it is thinner than 30 mm or thicker than 1000 mm. Roof slabs (IfcSlab with PredefinedType ROOF) belong to the roof and are not assessed: label them NA.\n\nLabel every slab.\nReport the GlobalId of every element (modelled as IfcSlab) that does NOT satisfy this requirement.",
+  "ifc_path": "ACC-function-generation/acc/bim_models/fzk_house/arc.ifc",
+  "complexity": 1,
+  "threshold_mm": null,
+  "tolerance_mm": 0.5,
+  "violations": [],
+  "labels": {
+    "07Enbsqm9C7AQC9iyBwfSD": "NA",
+    "1pPHnf7cXCpPsNEnQf8_6B": "PASS",
+    "2IxUUNUVPB6Ob$eicCfP2N": "NA",
+    "2RGlQk4xH47RHK93zcTzUL": "PASS"
+  },
+  "notes": "Slab Thickness on 4 IfcSlab: {'NA': 2, 'PASS': 2}.",
+  "clause": "EC3 BIM validation",
+  "source": "solibri_reference.py::build_ec3 (ec3_fzk_check.xlsx)",
+  "reference": {
+    "tier": "heldout",
+    "review_date": "2026-10-17",
+    "version": 1,
+    "evaluation_scope": "full_population",
+    "population": 4,
+    "ifc_sha256": "70cc8ff245fc0894201d96496c031005a5cbd7a96b22d8a1b87c5a883fb77994",
+    "solibri": {
+      "version": "26.9.0.123",
+      "configuration": "The four rule sets of the EC3-2026 Solibri projects (ADA and ABA Accessibility Guidelines, Advanced Space Check, BIM Validation - Architectural, General Space Check) with their classifications, unchanged. EC3 models: their arc.smc; other models: ec3_template.smc (the EC3 smiley_west project with the model replaced through Update Models). Report template CheckingSummaryTemplate - Issue and Components.",
+      "rule": "Slab Thickness",
+      "message": null,
+      "report_file": "ec3_fzk_check.xlsx",
+      "report_sha256": "052c173bc79ae0d31073c5829f122757ec0f6b162fcaf01f192db302f3dd4201",
+      "rule_issues": 0,
+      "matching_issues": 0
+    },
+    "status": "Labels taken from the Solibri issues of the rule (the authority, as in the EC3 benchmark).",
+    "policy": "FAIL: a scope element listed by an issue of the Solibri rule whose text matches the message; PASS: every other scope element; NA: IfcSlab ROOF (a roof for Solibri).",
+    "limitations": "The geometric judgement is Solibri's and is not recomputed independently."
+  },
+  "provenance": {
+    "07Enbsqm9C7AQC9iyBwfSD": {
+      "name": "Dach-1",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "1pPHnf7cXCpPsNEnQf8_6B": {
+      "name": "Bodenplatte",
+      "class": "IfcSlab",
+      "label": "PASS"
+    },
+    "2IxUUNUVPB6Ob$eicCfP2N": {
+      "name": "Dach-2",
+      "class": "IfcSlab",
+      "label": "NA"
+    },
+    "2RGlQk4xH47RHK93zcTzUL": {
+      "name": "Slab-033",
+      "class": "IfcSlab",
+      "label": "PASS"
+    }
+  }
+}
