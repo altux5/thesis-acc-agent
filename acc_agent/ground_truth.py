@@ -65,9 +65,22 @@ def is_deprecated(case_id: str) -> bool:
     return DEPRECATED_MARK in case_id
 
 
-# The BCA test-case drops are untracked bulk data: they may sit directly at the
-# workspace root or inside the gitignored ``gitignore/`` folder.
+# Models are distributed in acc_agent/models; MODELS.json maps the stored paths to them.
+# Paths not listed there (BCA workbooks, Solibri exports) still resolve against the
+# workspace root or the gitignored ``gitignore/`` folder.
+MODELS_DIR = Path(__file__).resolve().parent / "models"
 MODEL_ROOTS = (WORKSPACE_ROOT, WORKSPACE_ROOT / "gitignore")
+
+
+def _model_manifest() -> dict[str, str]:
+    path = MODELS_DIR / "MODELS.json"
+    if not path.exists():
+        return {}
+    models = json.loads(path.read_text(encoding="utf-8"))["models"]
+    return {Path(rel).as_posix().lower(): entry["file"] for rel, entry in models.items()}
+
+
+MODEL_FILES = _model_manifest()
 
 DEFAULT_IFC_REL = (
     "bca_tests-main/bca_tests-main/BCATestCases/"
@@ -85,6 +98,9 @@ def resolve_model_path(rel: str | Path) -> Path:
     p = Path(rel)
     if p.is_absolute():
         return p
+    listed = MODEL_FILES.get(p.as_posix().lower())
+    if listed is not None:
+        return MODELS_DIR / listed
     for root in MODEL_ROOTS:
         candidate = root / p
         if candidate.exists():

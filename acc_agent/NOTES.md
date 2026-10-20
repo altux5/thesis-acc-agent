@@ -547,6 +547,22 @@ variable; preloading in both modes would be a separate, labelled experiment.
 
 ## Decisions
 
+- **2026-10-20 - IFC models distributed in `acc_agent/models/` (user).** The thesis cites
+  the thesis-acc-agent repository, so it must contain the models. All 20 model paths
+  stored in ground_truth/*.json (plus the GUI default) map to 16 unmodified files
+  (322 MB; the bca_tests-main and harness_improvements copies were byte-identical):
+  `ec3/` (EC3 repository models, CC BY 4.0 / KIT unrestricted use), `heldout/`
+  (Esplanades CC BY 4.0, Schependomlaan academic use, kleine Wohnung and NUS from the
+  web-ifc test files, MPL-2.0 repository), `bca/` (bca_tests, MIT). `MODELS.json` maps
+  each stored path to its file with SHA-256; `ground_truth.resolve_model_path` looks
+  there first, so the reference JSONs (and their hashes) are unchanged and other
+  paths (BCA workbooks, Solibri exports) still resolve to `gitignore/`. Licence and
+  attribution files sit next to the models (`SOURCES.txt`). `tests/test_models.py`
+  checks every reference model is present and byte-identical (including the frozen
+  `ifc_sha256` of the held-out references). The originals in `gitignore/` stay. In tez
+  the IFC files are git-ignored; the publishing repo tracks them (one `.gitignore`
+  exception). New runs record the new absolute IFC path; the IFC hash is unchanged.
+
 - **2026-10-20 - GPT-6 Luna tests (user, before deciding its held-out run).** Model id
   `openai/gpt-6-luna` via OpenRouter needs no code change (free model field; `load_llm`
   accepts any OpenRouter id). Reasoning: the frozen setting `reasoning: {enabled: false}`
@@ -570,6 +586,32 @@ variable; preloading in both modes would be a separate, labelled experiment.
     MiniMax API it is honoured: 0 of 1965 replies in the M3 main run. So M3 main, planning
     step and later MiniMax runs ran without reasoning; all OpenRouter runs (calibration,
     pilot 1, Sonnet, Luna) with the provider's reasoning. State this in the thesis.
+  - Reasoning effect estimate from existing data (M3 stateful, same 95 cases): pilot 1
+    via OpenRouter (reasoning text, 1 run) vs main run via MiniMax API (no reasoning,
+    2 runs): complete 64 % vs 61 %, exactly correct 54 % vs 46 %, accuracy of complete
+    runs 0.916 vs 0.874, output tokens per run 17.3k vs 9.9k. Per case: completion 16
+    better / 12 worse (p = 0.57), exact 17 / 6 (p = 0.035). Confounded with provider
+    (OpenRouter had output-limit cutoffs and multi-call replies) and run count. Mode and
+    planning-step comparisons are unaffected (all within the no-reasoning MiniMax API
+    runs). The calibration vs held-out comparison for M3 changes provider and reasoning
+    together. A clean check, if wanted: M3 via MiniMax API, stateful, REASONING=1
+    (thinking enabled; setting only, no code change), 2 x 95.
+  - **Reasoning-on run plan (user, 2026-10-20), fixed before the run:** M3 via MiniMax API
+    with reasoning on (`thinking: adaptive`, set per suite button; no frozen file
+    changed), H1, frozen budget, all 95 cases: stateful x1 and stateless x2 (two GUI
+    buttons, suite index kinds `heldout_m3_reasoning_stateful` / `_stateless`). Analysis
+    (user decision): stateful with reasoning = this run + pilot 1 (OpenRouter, reasoning
+    text present), stateless with reasoning = the two new runs; compared per case with
+    the main run (no reasoning, 2 + 2). The user accepts the provider difference in the
+    stateful arm because the question is the reasoning effect. Smoke test
+    stair_riser_height__duplex: stateful (bd8f5f6d) and stateless (16145d10) complete,
+    1.0, thinking blocks in 15/18 and 5/8 replies. LangChain warns that forced tool use
+    is dropped when thinking is on (the Anthropic API does not allow both), so with
+    reasoning the model may answer without a tool call; that is part of the condition,
+    as for Claude via OpenRouter.
+  - GUI cleanup (user): removed the pilot, main, Sonnet, 95-case and 7-case (no staircase)
+    suite buttons; kept the 8-case health suite, usable_2 suite, extra planning step,
+    Luna and the two reasoning-on buttons. Old suite indexes and results are unchanged.
   - **Luna held-out run plan, fixed before the run:** `openai/gpt-6-luna` via OpenRouter,
     stateful + stateless, 2 repeats, all 95 cases, H1, frozen agent and budget, REASONING=0
     as everywhere (Luna reasons at its default). Run on the second machine (user "PC");

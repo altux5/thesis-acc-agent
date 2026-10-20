@@ -1,0 +1,26 @@
+IFC models used by the reference cases
+======================================
+
+All files are unmodified copies. MODELS.json maps each model path stored in
+ground_truth/*.json to its file here and records its SHA-256; ground_truth.py
+resolves the stored paths through it.
+
+ec3/  (models of the EC3-2026 paper, copied from its repository)
+  Source  : https://github.com/stefan-1992/ACC-function-generation, acc/bim_models/<name>/arc.ifc
+            (Fuchs, Hellin and Borrmann 2026); repository licence in ACC-function-generation_LICENSE.txt
+  dental_clinic.ifc : BSI (2020) "Medical-Dental Test Files", buildingSMART International. CC BY 4.0.
+  duplex.ifc        : BSI (2020) "Duplex Apartment Test Files", buildingSMART International. CC BY 4.0.
+  fzk_house.ifc     : IAI / Karlsruhe Institute of Technology (KIT), KIT IFC Examples. Unrestricted use.
+  smiley_west.ifc   : IAI / Karlsruhe Institute of Technology (KIT), KIT IFC Examples. Unrestricted use.
+  Per-model notices: <name>_license.txt.
+
+heldout/  (additional public models of the held-out test set)
+  Esplanades, Schependomlaan, kleine Wohnung and NUS school: sources, licences, required
+  attribution and SHA-256 in heldout/SOURCES_AND_CITATIONS.txt. Schependomlaan: data owners
+  permit scientific and academic use. kleine Wohnung and NUS: public test files of the
+  web-ifc repository (MPL-2.0), no model-specific licence.
+
+bca/  (Singapore BCA test models used by the calibration cases)
+  Source  : the bca_tests repository by Stefan Fuchs (MIT licence, bca_tests_LICENSE.txt),
+            BCATestCases/<check>/Test models/. The copies under bca_tests-main and
+            bca_tests-harness_improvements were byte-identical and are stored once.
