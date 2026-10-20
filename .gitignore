@@ -33,3 +33,4 @@ bca_tests*/
 *.p12
 .DS_Store
 Thumbs.db
+!acc_agent/models/**/*.ifc

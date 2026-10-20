@@ -102,9 +102,12 @@ class StoredCaseTests(unittest.TestCase):
         self.assertEqual(case.reference["population"], 59)
 
     def test_recorded_evidence_matches_workbook_and_audit(self):
+        from import_bca_gt import GT_COMPARISON_DIR
+        from stair_width_reference import WORKBOOK
+
         case = ground_truth.load(CASE_ID)
-        if not case.resolve_ifc().exists():
-            self.skipTest("v8 IFC and expert workbook are not distributed with the repository")
+        if not case.resolve_ifc().exists() or not (GT_COMPARISON_DIR / WORKBOOK).exists():
+            self.skipTest("v8 IFC or expert workbook unavailable (the workbook is not distributed)")
         self.assertEqual(verify_recorded(case), [])
         result = audit_case(case)
         self.assertEqual(result["status"], "evidence-checked", result)

@@ -1,0 +1,116 @@
+Held-out IFC models: sources, licences and how to cite them
+Downloaded 2026-10-13. Files are unmodified. If a file is ever edited, the
+CC BY 4.0 licence requires stating what was changed.
+
+Role in the thesis
+  Main test models : Clinic_Architectural.ifc, Schependomlaan.ifc, AC-20-Smiley-West-10-Bldg.ifc
+  Reserve          : AC20-Institute-Var-2.ifc
+  Pipeline pilot   : Duplex_A_20110907.ifc (not part of the evaluation)
+
+
+1. Clinic_Architectural.ifc  (Medical-Dental Clinic, architectural model)
+   Tool / schema : Autodesk Revit Architecture 2011, IFC2X3
+   Source        : https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/main/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic
+   Licence       : Creative Commons Attribution 4.0 (CC BY 4.0)
+   Required attribution (from the dataset README):
+     BSI (2020) "Medical-Dental Test Files," buildingSMART International, plus the GitHub URL above.
+   Suggested reference:
+     buildingSMART International (2020). Medical-Dental Clinic test files [IFC dataset].
+     buildingSMART Community Sample Test Files. Licensed under CC BY 4.0.
+     https://github.com/buildingsmart-community/Community-Sample-Test-Files
+   Note: real two-storey clinic, redacted; originally provided to the US Construction
+   Engineering Research Laboratory and hosted by NIBS from 2010 to 2020.
+
+
+2. Schependomlaan.ifc  (design model, original file name "IFC Schependomlaan.ifc")
+   Tool / schema : ArchiCAD, IFC2X3, millimetre units
+   Source        : https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/main/IFC%202.3.0.1%20(IFC%202x3)/Schependomlaan/Design%20model%20IFC
+   Licence       : The README states that all data owners have given permission to use the
+                   data for scientific and academic purposes.
+   Attribution (from the dataset README):
+     Design model made in ArchiCAD by ROOT bv for Hendriks Bouw en Ontwikkeling. Data
+     gathered during the master thesis project of Stijn van Schaijk at the Information
+     Systems for the Built Environment (ISBE) group, TU Eindhoven, in collaboration with
+     Hendriks Bouw en Ontwikkeling, ROOT, TNO and RAAMAC.
+   Suggested reference:
+     van Schaijk, S. (dataset author). Dataset Schependomlaan [IFC dataset]. TU Eindhoven,
+     ISBE group; design model by ROOT bv. buildingSMART Community Sample Test Files.
+     https://github.com/buildingsmart-community/Community-Sample-Test-Files
+   TODO: check whether a thesis or paper by van Schaijk should be cited instead.
+   Note: real residential project in Nijmegen. The README warns that some files contain
+   errors. The same folder holds a Solibri model-quality check of this model as BCF
+   (ROOT-Compleet interne modelkwaliteit.bcfzip), which was not downloaded.
+
+
+3. AC-20-Smiley-West-10-Bldg.ifc  (KIT "Smiley West", terraced houses)
+   Tool / schema : ArchiCAD 20, IFC4
+   Source        : https://www.ifcwiki.org/index.php?title=KIT_IFC_Examples
+                   (downloaded as AC-20-Smiley-West-10-Bldg.zip)
+   Licence       : "for unrestricted use" (KIT IFC Examples page)
+   Required attribution (from the KIT page, for publications):
+     Institute for Automation and Applied Informatics (IAI) / Karlsruhe Institute of
+     Technology (KIT)
+   Suggested reference:
+     Institute for Automation and Applied Informatics (IAI), Karlsruhe Institute of
+     Technology (KIT). Smiley West (IFC4 example model, ArchiCAD 20) [IFC dataset].
+     https://www.ifcwiki.org/index.php?title=KIT_IFC_Examples
+
+
+4. AC20-Institute-Var-2.ifc  (KIT "Office Building", reserve)
+   Tool / schema : ArchiCAD 20, IFC4
+   Source        : https://www.ifcwiki.org/index.php?title=KIT_IFC_Examples
+   Licence and attribution: as for model 3.
+   Suggested reference:
+     Institute for Automation and Applied Informatics (IAI), Karlsruhe Institute of
+     Technology (KIT). Office Building (AC20-Institute-Var-2, IFC4 example model,
+     ArchiCAD 20) [IFC dataset]. https://www.ifcwiki.org/index.php?title=KIT_IFC_Examples
+
+
+5. Duplex_A_20110907.ifc  (Duplex Apartment, architectural model, pilot only)
+   Tool / schema : Autodesk Revit Architecture 2011, IFC2X3
+   Source        : https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/main/IFC%202.3.0.1%20(IFC%202x3)/Duplex%20Apartment
+   Licence       : Creative Commons Attribution 4.0 (CC BY 4.0)
+   Required attribution (from the dataset README):
+     BSI (2020) "Duplex Apartment Test Files," buildingSMART International, plus the GitHub URL above.
+   Cite only if the pilot is mentioned in the thesis.
+
+
+SHA-256 of the files as downloaded (record these with the frozen test cases)
+  2ac970ce065ecac4e0c9e5f453a257169e90d0067f419b7e33533a64ef837880  Clinic_Architectural.ifc
+  2c3565ca1904f2aa61adab92024cf3755b2c5b21a498144d3094d7cb58cebec7  Schependomlaan.ifc
+  26734e67bdc0fd2ab30cb560bddc279a0a4f23eb4d28861509524e4bbe201c48  AC-20-Smiley-West-10-Bldg.ifc
+  cfb2124497b25d9a72101075e84be0feb44ff669cb1bd3251be11efebeea945c  AC20-Institute-Var-2.ifc
+  b347a2c8aa8fff6db896a4417a9c50c22ac0ccd7c5cfc22b99b8d29336c606ed  Duplex_A_20110907.ifc
+
+Limitation for the thesis: all five models are public and may appear in LLM training
+data. The agent still has to compute every value from the file.
+
+Added 2026-10-16: the three new held-out models (with Schependomlaan: 4 new models vs 4 EC3 models)
+Files are unmodified copies of the downloads.
+
+6. Esplanades_1807_EP_AR_v18.ifc  (Estonian apartment building, architectural model)
+   Tool / schema : GRAPHISOFT ArchiCAD 22, IFC2X3, millimetre units
+   Source        : https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/main/IFC%202.3.0.1%20(IFC%202x3)/Esplanades
+                   (Git LFS object, sha256 matches the pointer)
+   Licence       : (c) Esplan, http://www.esplan.ee/en, Creative Commons Attribution 4.0 (CC BY 4.0)
+   Suggested reference:
+     Esplan (2018). Example model from Estonia, 1807_EP_AR_v18 [IFC dataset]. buildingSMART
+     Community Sample Test Files. CC BY 4.0. https://github.com/buildingsmart-community/Community-Sample-Test-Files
+
+7. ISSUE_159_kleine_Wohnung_R22.ifc  (German small apartment building)
+   Tool / schema : Autodesk Revit (German template, "R22"), re-saved with BlenderBIM 0.0.220420 / IfcOpenShell 0.7, IFC4
+   Source        : https://github.com/ThatOpen/engine_web-ifc/tree/main/tests/ifcfiles/public
+                   (shared in https://github.com/ThatOpen/engine_web-ifc/issues/159, May 2022)
+   Licence       : no model-specific licence; published in the public test-file folder of the web-ifc
+                   repository (repository licence MPL-2.0). Cite as a public test file; academic use only.
+
+8. ISSUE_068_ARK_NUS_skolebygg.ifc  (Norwegian school building, architectural model)
+   Tool / schema : Autodesk Revit 2019 (exporter 19.2.20.24), IFC2X3
+   Source        : https://github.com/ThatOpen/engine_web-ifc/tree/main/tests/ifcfiles/public
+                   (shared in https://github.com/ThatOpen/engine_web-ifc/issues/68, July 2021)
+   Licence       : as for model 7.
+
+SHA-256 (new models)
+  b97db10a2cb679a6543ccf4e34cfa8e77753f14e67f51b403e6cd9a819e3748f  Esplanades_1807_EP_AR_v18.ifc
+  6e4160d669c4873a1b1765ad121e2b192ca7cb050549b4930177de19bbbe5222  ISSUE_159_kleine_Wohnung_R22.ifc
+  362f0f5e5ad35557014100a6c4de75ec166f6dbd9197933170dc1423f4af2a76  ISSUE_068_ARK_NUS_skolebygg.ifc

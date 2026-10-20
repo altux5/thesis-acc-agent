@@ -140,7 +140,6 @@ USABLE_CASES = (
     "tread_width_e342__condo",
 )
 HEALTH_SUITE_CASES = USABLE_CASES + ("slab_thickness__mall", "staircase_width_v8")
-QUICK_SUITE_CASES = USABLE_CASES + ("slab_thickness__mall",)
 # One cap for every run so cases and modes are compared under the same budget.
 MAX_MODEL_CALLS = config.MAX_ITERATIONS
 # Held out for good after the 2026-09-29 review; files are kept for historical runs.
@@ -181,21 +180,18 @@ for _case_id in solibri_reference.BUILDERS:
         HELDOUT_CASES[_case_id] = (f"EC3 '{solibri_reference.EC3_BY_ID[_rule_id].solibri_rule}' labelled from Solibri issues"
                                    + ("; known rule, new model." if _rule_id in solibri_reference.KNOWN_RULES else "."))
 HELDOUT_SUITE_CASES = tuple(c for c in HELDOUT_CASES if (ground_truth.GT_DIR / f"{c}.json").exists())
-# Held-out passes (user, 2026-10-17): one run per case, then decide further runs. Key = suite index kind.
+# Held-out suite buttons. Key = suite index kind; "reasoning" overrides REASONING for that suite.
 HELDOUT_PILOTS = {
-    "heldout_pilot": {"label": "Held-out pilot: MiniMax M3 (OpenRouter), stateful", "provider": "openrouter",
-                      "model": "minimax/minimax-m3", "mode": "stateful", "repeats": 1, "harness": 1},
-    "heldout_pilot_stateless_minimax": {"label": "Held-out pilot: MiniMax M3 (MiniMax API), stateless",
-                                        "provider": "minimax", "model": "MiniMax-M3", "mode": "stateless",
-                                        "repeats": 1, "harness": 1},
-    "heldout_main_minimax": {"label": "Held-out main: MiniMax M3 (MiniMax API), stateful + stateless",
-                             "provider": "minimax", "model": "MiniMax-M3", "mode": "both", "repeats": 2, "harness": 1},
-    "heldout_sonnet_stateful": {"label": "Held-out: Sonnet 5.5 (OpenRouter), stateful", "provider": "openrouter",
-                                "model": "anthropic/claude-sonnet-5.5", "mode": "stateful", "repeats": 1, "harness": 1},
-    "heldout_h2_minimax": {"label": "Held-out H2: MiniMax M3 (MiniMax API), stateful, planning", "provider": "minimax",
+    "heldout_h2_minimax": {"label": "Held-out extra planning step: M3 (MiniMax API), stateful", "provider": "minimax",
                            "model": "MiniMax-M3", "mode": "stateful", "repeats": 2, "harness": 2},
     "heldout_luna": {"label": "Held-out: GPT-6 Luna (OpenRouter), stateful + stateless", "provider": "openrouter",
                      "model": "openai/gpt-6-luna", "mode": "both", "repeats": 2, "harness": 1},
+    "heldout_m3_reasoning_stateful": {"label": "Held-out reasoning on: M3 (MiniMax API), stateful",
+                                      "provider": "minimax", "model": "MiniMax-M3", "mode": "stateful",
+                                      "repeats": 1, "harness": 1, "reasoning": True},
+    "heldout_m3_reasoning_stateless": {"label": "Held-out reasoning on: M3 (MiniMax API), stateless",
+                                       "provider": "minimax", "model": "MiniMax-M3", "mode": "stateless",
+                                       "repeats": 2, "harness": 1, "reasoning": True},
 }
 CONTROL_CASES = {
     "doors_windows_storey__planterbox", "doors_windows_storey__scdf_3", "doors_windows_storey__scdf_5",
@@ -427,21 +423,11 @@ class App(ctk.CTk):
         self.suite_btn = ctk.CTkButton(footer, text="Run 8-case health suite", height=34,
             command=self._on_suite, fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.suite_btn.pack(fill="x", pady=(6, 0))
-        self.quick_suite_btn = ctk.CTkButton(
-            footer, text=f"Run {len(QUICK_SUITE_CASES)}-case suite (no staircase)", height=34,
-            command=lambda: self._on_suite(QUICK_SUITE_CASES),
-            fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
-        self.quick_suite_btn.pack(fill="x", pady=(6, 0))
         self.usable_2_suite_btn = ctk.CTkButton(
             footer, text=f"Run {len(USABLE_2_SUITE_CASES)}-case usable_2 suite", height=34,
             command=lambda: self._on_suite(USABLE_2_SUITE_CASES),
             fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.usable_2_suite_btn.pack(fill="x", pady=(6, 0))
-        self.heldout_suite_btn = ctk.CTkButton(
-            footer, text=f"Run {len(HELDOUT_SUITE_CASES)}-case held-out suite", height=34,
-            command=lambda: self._on_suite(HELDOUT_SUITE_CASES),
-            fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
-        self.heldout_suite_btn.pack(fill="x", pady=(6, 0))
         self.heldout_pilot_btns = {}
         for kind, pilot in HELDOUT_PILOTS.items():
             button = ctk.CTkButton(
@@ -894,8 +880,7 @@ class App(ctk.CTk):
 
     # ---- run lifecycle -----------------------------------------------------
     def _set_suite_buttons(self, state: str) -> None:
-        for button in (self.suite_btn, self.quick_suite_btn, self.usable_2_suite_btn, self.heldout_suite_btn,
-                       *self.heldout_pilot_btns.values()):
+        for button in (self.suite_btn, self.usable_2_suite_btn, *self.heldout_pilot_btns.values()):
             button.configure(state=state)
 
     def _pilot_finished_cases(self, kind: str) -> set[str]:
@@ -910,7 +895,7 @@ class App(ctk.CTk):
                 finished.update(entry["case_id"] for entry in suite.get("cases", []) if entry.get("status") == "finished")
         return finished
 
-    def _on_heldout_pilot(self, kind: str = "heldout_pilot") -> None:
+    def _on_heldout_pilot(self, kind: str) -> None:
         if self._suite is not None or (self.worker and self.worker.is_alive()):
             return
         pilot = HELDOUT_PILOTS[kind]
@@ -933,9 +918,10 @@ class App(ctk.CTk):
             if choice is None or (choice and not remaining):
                 return
             cases = remaining if choice else HELDOUT_SUITE_CASES
-        self._on_suite(cases, kind=kind)
+        self._on_suite(cases, kind=kind, reasoning=pilot.get("reasoning"))
 
-    def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES, kind: str = "suite") -> None:
+    def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES, kind: str = "suite",
+                  reasoning: bool | None = None) -> None:
         if self._suite is not None or (self.worker and self.worker.is_alive()):
             return
         try:
@@ -951,7 +937,8 @@ class App(ctk.CTk):
         modes = ["stateful", "stateless"] if mode == "both" else [mode]
         repeats = int(self.repeats_var.get())
         budget = MAX_MODEL_CALLS
-        reasoning = os.environ.get("REASONING", "1").lower() not in ("0", "false", "no")
+        if reasoning is None:
+            reasoning = os.environ.get("REASONING", "1").lower() not in ("0", "false", "no")
         runs = len(case_ids) * len(modes) * repeats
         tiers = ", ".join(f"{sum(case_assessment(c)[0] == tier for c in case_ids)} {tier.lower()}"
                           for tier in ("Usable", "usable_2", "Held-out", "Control", "Provisional") if any(case_assessment(c)[0] == tier for c in case_ids))

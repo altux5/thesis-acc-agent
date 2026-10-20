@@ -9,7 +9,7 @@ from unittest.mock import Mock, patch
 import ground_truth
 from agent import AgentResult
 from ground_truth import GroundTruth
-from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, HELDOUT_SUITE_CASES, MAX_MODEL_CALLS, QUICK_SUITE_CASES,
+from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, HELDOUT_SUITE_CASES, MAX_MODEL_CALLS,
                  USABLE_CASES, USABLE_2_CASES, USABLE_2_SUITE_CASES, case_assessment)
 from kernel_executor import KernelCodeExecutor
 from gui_widgets import METRIC_GUIDE, GREEN, ORANGE, RED, bind_wrapping, result_presentation
@@ -266,28 +266,6 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertEqual({row["case_id"] for row in stored}, set(HEALTH_SUITE_CASES))
             self.assertEqual(len({row["sweep_id"] for row in stored}), 8)
 
-    def test_quick_suite_skips_staircase_and_uses_slider_repeats(self):
-        app = self.app
-        with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors):
-            app.repeats_var.set(2)
-            app.quick_suite_btn.invoke()
-            for _ in range(8):
-                if app._suite is None:
-                    break
-                app._poll()
-            self.assertIsNone(app._suite)
-            self.assertNotIn("staircase_width_v8", QUICK_SUITE_CASES)
-            expected = [(case_id, stateful) for case_id in QUICK_SUITE_CASES for stateful in (True, False)
-                        for _ in range(2)]
-            self.assertEqual(sorted(seen), sorted(expected))
-            self.assertIn("28 runs", confirm.call_args.args[1])
-            self.assertNotIn("Staircase", confirm.call_args.args[1])
-            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
-            self.assertEqual(manifest["case_ids"], list(QUICK_SUITE_CASES))
-            self.assertEqual(manifest["settings"]["repeats"], 2)
-            self.assertEqual(manifest["finished_runs"], 28)
-            errors.assert_not_called()
-
     def test_usable_2_suite_runs_every_usable_2_case_with_slider_repeats(self):
         app = self.app
         with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors):
@@ -316,49 +294,53 @@ class GuiWorkflowTests(unittest.TestCase):
                 patch.object(app, "_on_suite") as on_suite, patch("gui.messagebox.askyesnocancel", return_value=True) as ask:
             app.mode_var.set("both")
             app.repeats_var.set(3)
-            app.harness_var.set(2)
-            app.heldout_pilot_btns["heldout_pilot"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_pilot")
-            ask.assert_not_called()
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get()),
-                             ("openrouter", "minimax/minimax-m3", "stateful"))
-            self.assertEqual((int(app.repeats_var.get()), int(app.harness_var.get())), (1, 1))
-            done = HELDOUT_SUITE_CASES[:2]
-            index = {"kind": "heldout_pilot", "cases": [{"case_id": done[0], "status": "finished"},
-                                                       {"case_id": done[1], "status": "finished"},
-                                                       {"case_id": HELDOUT_SUITE_CASES[2], "status": "error"}]}
-            (Path(directory) / "x_health_suite.json").write_text(json.dumps(index), encoding="utf-8")
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_pilot"].invoke()
-            ask.assert_called_once()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES[2:], kind="heldout_pilot")
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_pilot_stateless_minimax"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_pilot_stateless_minimax")
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get()),
-                             ("minimax", "MiniMax-M3", "stateless"))
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_main_minimax"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_main_minimax")
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(), int(app.repeats_var.get())),
-                             ("minimax", "MiniMax-M3", "both", 2))
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_sonnet_stateful"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_sonnet_stateful")
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(), int(app.repeats_var.get())),
-                             ("openrouter", "anthropic/claude-sonnet-5.5", "stateful", 1))
-            on_suite.reset_mock()
+            app.harness_var.set(1)
             app.heldout_pilot_btns["heldout_h2_minimax"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax")
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax", reasoning=None)
+            ask.assert_not_called()
             self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
                               int(app.repeats_var.get()), int(app.harness_var.get())),
                              ("minimax", "MiniMax-M3", "stateful", 2, 2))
+            done = HELDOUT_SUITE_CASES[:2]
+            index = {"kind": "heldout_h2_minimax", "cases": [{"case_id": done[0], "status": "finished"},
+                                                            {"case_id": done[1], "status": "finished"},
+                                                            {"case_id": HELDOUT_SUITE_CASES[2], "status": "error"}]}
+            (Path(directory) / "x_health_suite.json").write_text(json.dumps(index), encoding="utf-8")
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_h2_minimax"].invoke()
+            ask.assert_called_once()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES[2:], kind="heldout_h2_minimax", reasoning=None)
             on_suite.reset_mock()
             app.heldout_pilot_btns["heldout_luna"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_luna")
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_luna", reasoning=None)
             self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
                               int(app.repeats_var.get()), int(app.harness_var.get())),
                              ("openrouter", "openai/gpt-6-luna", "both", 2, 1))
+            for kind, mode, repeats in (("heldout_m3_reasoning_stateful", "stateful", 1),
+                                        ("heldout_m3_reasoning_stateless", "stateless", 2)):
+                on_suite.reset_mock()
+                app.heldout_pilot_btns[kind].invoke()
+                on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind=kind, reasoning=True)
+                self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
+                                  int(app.repeats_var.get()), int(app.harness_var.get())),
+                                 ("minimax", "MiniMax-M3", mode, repeats, 1))
+            self.assertEqual(set(app.heldout_pilot_btns), {"heldout_h2_minimax", "heldout_luna",
+                                                          "heldout_m3_reasoning_stateful",
+                                                          "heldout_m3_reasoning_stateless"})
+
+    def test_suite_reasoning_override_is_recorded(self):
+        app = self.app
+        with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors), \
+                patch.dict("os.environ", {"REASONING": "0"}):
+            app._on_suite(reasoning=True)
+            self.assertIn("Reasoning: on", confirm.call_args.args[1])
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertIs(manifest["settings"]["reasoning"], True)
+            app._stop_requested.set()
+            for _ in range(3):
+                if app._suite is None:
+                    break
+                app._poll()
 
     def test_declining_health_suite_makes_no_provider_or_worker_calls(self):
         with self.suite_fixture(approve=False) as (_, _, seen, executors, client, confirm, _):

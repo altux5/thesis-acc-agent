@@ -75,9 +75,12 @@ class BenchmarkAuditTests(unittest.TestCase):
             _ = case.unscored_ids
 
     def test_staircase_declared_subset_passes_workbook_and_ifc_audit(self):
+        from import_bca_gt import GT_COMPARISON_DIR
+        from stair_width_reference import WORKBOOK
+
         case = load("staircase_width_v8_deprecated_v1")
-        if not case.resolve_ifc().exists():
-            self.skipTest("Local IFC unavailable")
+        if not case.resolve_ifc().exists() or not (GT_COMPARISON_DIR / WORKBOOK).exists():
+            self.skipTest("Local IFC or expert workbook unavailable")
         result = audit_case(case)
         self.assertEqual(result["status"], "expert-subset-checked", result)
         self.assertEqual(len(result["missing_reference_ids"]), 10)
