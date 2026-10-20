@@ -547,6 +547,35 @@ variable; preloading in both modes would be a separate, labelled experiment.
 
 ## Decisions
 
+- **2026-10-20 - GPT-6 Luna tests (user, before deciding its held-out run).** Model id
+  `openai/gpt-6-luna` via OpenRouter needs no code change (free model field; `load_llm`
+  accepts any OpenRouter id). Reasoning: the frozen setting `reasoning: {enabled: false}`
+  is ignored by Luna; single calls returned about 30 reasoning tokens with
+  enabled false, enabled true or no field, 23 with effort "minimal", 0 with effort
+  "none". Agent tests, 5 held-out cases, stateful, outside any suite:
+  (a) frozen setting (Luna reasons, `reasoning_content` in most replies): 5/5 complete,
+  4/5 exactly correct (stair_slab_connection__wohnung wrong), 4-14 calls, 0.2-1.7 min,
+  $0.017 in total; runs f2e632d3, d12e1aea, 1595c064, 7d39f99d, 1696ba02.
+  (b) effort "none" via a temporary in-memory patch of `llm.with_reasoning` (no file
+  changed; recorded configuration still says reasoning false): 3/5 complete and
+  correct, 2 abstained at the 20-call cap (stair_slab_connection__wohnung,
+  door_front_clearance__fzk), up to 18 calls on an easy case; runs b00e1012, 180cfc09,
+  915a354e, 9f976e1e, 824d6089. No reasoning content in any reply. Decision pending:
+  run Luna with the frozen setting (provider-default reasoning, documented) or add an
+  explicit effort "none" mapping (changes `llm.py`, a frozen file).
+  - **Decision (user): option A**, frozen setting. Checked against recorded replies:
+    via OpenRouter, the "reasoning off" setting did not stop reasoning for other models
+    either: Sonnet 141 of 243 replies (first 30 runs) carry reasoning text (median 240
+    characters), M3 pilot 1 via OpenRouter 329 of 479 (median 718). Via the direct
+    MiniMax API it is honoured: 0 of 1965 replies in the M3 main run. So M3 main, planning
+    step and later MiniMax runs ran without reasoning; all OpenRouter runs (calibration,
+    pilot 1, Sonnet, Luna) with the provider's reasoning. State this in the thesis.
+  - **Luna held-out run plan, fixed before the run:** `openai/gpt-6-luna` via OpenRouter,
+    stateful + stateless, 2 repeats, all 95 cases, H1, frozen agent and budget, REASONING=0
+    as everywhere (Luna reasons at its default). Run on the second machine (user "PC");
+    suite index kind `heldout_luna`. Compared with M3 and Sonnet on completion, exact
+    correctness, accuracy, calls and tokens; its mode timing only within that machine.
+
 - **2026-10-20 - second Windows machine for the OpenRouter lane (user).** The tez remote
   is the old public repo and is not pushed. Transfer package, local and not synced:
   `C:\Users\Cogalgil\acc_transfer\` with `tez.bundle` (git bundle of `main`, including this
@@ -555,6 +584,19 @@ variable; preloading in both modes would be a separate, labelled experiment.
   pinned in `acc_agent/requirements.txt`; use Python 3.13.7. Own `acc_agent/.env` on that
   machine; its experiment database is separate and is merged afterwards. Record per suite
   which machine ran it.
+  - Route chosen (user): published to `altux5/thesis-acc-agent` main at f8dfba9 (v5.1
+    agent, held-out references, GUI buttons; 252 tests OK, 17 skipped for local data not
+    distributed). The second machine (user "PC") clones it and takes the IFC models from
+    `acc_transfer\gitignore` into `<clone>\gitignore\` (ignored by git there). Keep Git's
+    default `core.autocrlf=true` so files have the same bytes; code hashes of imported
+    modules include the file path and differ between machines, raw file hashes match.
+  - Second machine verified 2026-10-20 from its database (copied to `tez/experiments.sqlite3`,
+    integrity ok, no id collisions with the main database): one GUI test run
+    (space_storey_elevation__nus, M3 via OpenRouter, stateful) on the same Windows 11
+    build, Python 3.13.7 and identical recorded package versions; all core files, kernel
+    files, config, IFC hash and reference hash byte-identical to this machine; runtime
+    verified, usage complete. Clone at `C:\Users\PC\Desktop\thesis-acc\thesis-acc-agent`.
+    The test run is outside any suite.
 
 - **2026-10-20 - parallel-run timing test (user request).** Laptop: i5-1145G7, 4 cores /
   8 threads, 15.7 GB RAM. Fixed benchmark (open NUS IFC + 120 slab shapes, no API): alone
