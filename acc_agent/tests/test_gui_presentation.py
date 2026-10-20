@@ -353,6 +353,12 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
                               int(app.repeats_var.get()), int(app.harness_var.get())),
                              ("minimax", "MiniMax-M3", "stateful", 2, 2))
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_luna"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_luna")
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
+                              int(app.repeats_var.get()), int(app.harness_var.get())),
+                             ("openrouter", "openai/gpt-6-luna", "both", 2, 1))
 
     def test_declining_health_suite_makes_no_provider_or_worker_calls(self):
         with self.suite_fixture(approve=False) as (_, _, seen, executors, client, confirm, _):

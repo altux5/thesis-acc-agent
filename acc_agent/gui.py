@@ -194,6 +194,8 @@ HELDOUT_PILOTS = {
                                 "model": "anthropic/claude-sonnet-5.5", "mode": "stateful", "repeats": 1, "harness": 1},
     "heldout_h2_minimax": {"label": "Held-out H2: MiniMax M3 (MiniMax API), stateful, planning", "provider": "minimax",
                            "model": "MiniMax-M3", "mode": "stateful", "repeats": 2, "harness": 2},
+    "heldout_luna": {"label": "Held-out: GPT-6 Luna (OpenRouter), stateful + stateless", "provider": "openrouter",
+                     "model": "openai/gpt-6-luna", "mode": "both", "repeats": 2, "harness": 1},
 }
 CONTROL_CASES = {
     "doors_windows_storey__planterbox", "doors_windows_storey__scdf_3", "doors_windows_storey__scdf_5",
