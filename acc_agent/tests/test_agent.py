@@ -170,6 +170,18 @@ class AgentRegressionTests(unittest.TestCase):
         self.assertEqual(result.llm_calls[0]["phase"], "plan")
         self.assertEqual(result.completion_status, "complete")
 
+    def test_planning_with_one_extra_call_leaves_the_full_working_budget(self):
+        # heldout_h2_minimax_21: the plan is call 1 of 21, so 20 calls remain for code and FinalReport.
+        work = [reply(python_call(f"print({index})", call_id=f"execute{index}")) for index in range(18)]
+        result = self.run_script([reply(text="Plan."), *work,
+                                  reply(python_call('report_labels({"anchor":"PASS"})', call_id="label")),
+                                  reply(final_call())], budget=21, harness=2)
+        self.assertEqual(result.completion_status, "complete")
+        self.assertEqual(result.iterations, 21)
+        self.assertEqual(result.executions, 19)
+        self.assertEqual([call["phase"] for call in result.llm_calls][:2], ["plan", "iteration 2"])
+        self.assertIn("You have 21 model calls in total", " ".join(str(result.transcript[0]["content"]).split()))
+
     def test_reference_feedback_is_retired(self):
         with self.assertRaisesRegex(ValueError, "H3"):
             CodeActAgent(ScriptedClient(), None, harness=3)
