@@ -1021,6 +1021,13 @@ variable; preloading in both modes would be a separate, labelled experiment.
     2 incomplete, 0 abstained; mean union accuracy of complete runs 0.924, 62 runs exactly
     correct (MiniMax stateful: 88 of 190); 8.3 calls/run, median 0.9 min/run, 2.0 h,
     7.7M input (84 % cache), 0.55M output; 13 output-limit cutoffs, 11 of them in one run.
+  - **Sonnet stateless button (user, 2026-10-22):** "Held-out: Sonnet 5.5 (OpenRouter),
+    stateless", suite index kind `heldout_sonnet_stateless`: same settings as the stateful
+    run above (`anthropic/claude-sonnet-5.5`, 1 repeat, all 95 cases, H1, frozen budget),
+    mode stateless. Reasoning is pinned to false in the button (the stateful suite
+    recorded false from the environment), so the two arms pair case by case; as in every
+    OpenRouter run, Sonnet still returns reasoning text. Expect more cost and time than
+    the stateful run (stateless used 13-20 % more input in calibration).
   - Both incomplete runs are Schependomlaan cases that need a long FINAL violation list.
     doors_windows_storey (390 FAIL): labels exactly correct, but the FinalReport must
     restate all 390 GlobalIds; 11 replies stopped at the 8000-token output limit and the
@@ -1086,6 +1093,21 @@ variable; preloading in both modes would be a separate, labelled experiment.
     planning step (`slides/add_planning_slide_vol8.py`, edits the hand-edited deck in
     place): completed 64 % vs 73 % without, all labels right 46 % vs 54 %, abstained
     23 % vs 10 %; per case p = 0.24 / 0.45.
+  - **Planning step with one extra call (user, 2026-10-22), fixed before any run:** the
+    planning step above spends model call 1 of 20 on the plan, leaving 19 for the work.
+    Variant: identical (MiniMax M3 via the MiniMax API, H2, stateful, 2 repeats, all 95
+    cases, reasoning false as recorded by the planning suites, same plan request and
+    wiring, frozen agent) except a budget of 21 model calls, so plan + 20 calls, the
+    same working budget as H1. Implemented as a suite-level budget (`max_model_calls`
+    21 in the suite settings, `max_iterations` 21 in each run's configuration); no agent
+    code changed, so the model is told "21 model calls in total", sees "Model call k of
+    21" after each block, gets the wrap-up reminder at call 18 and the last-call rule at
+    call 21, and Python blocks are capped at 21 (at most 20 are reachable). GUI button
+    "Held-out extra planning step, 21 calls (plan + 20)", suite index kind
+    `heldout_h2_minimax_21`, separate resume from `heldout_h2_minimax`. Comparisons per
+    case: against the 20-call planning runs (effect of the lost call) and against the
+    H1 stateful main runs (planning at equal working budget). Test:
+    `test_planning_with_one_extra_call_leaves_the_full_working_budget`.
 
 - **2026-10-12 - freeze `langchain-codeact-v5` for the final evaluation (user).** No
   further agent behaviour changes: prompts, budget (20 calls, 8000 output tokens),

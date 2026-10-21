@@ -167,7 +167,7 @@ class GuiWorkflowTests(unittest.TestCase):
         self.assertEqual(case_assessment("staircase_width_v8_deprecated_v1")[0], "Deprecated")
 
     @contextlib.contextmanager
-    def suite_fixture(self, *, approve=True, stop=False, fail=False, provider_fail_calls=()):
+    def suite_fixture(self, *, approve=True, stop=False, fail=False, provider_fail_calls=(), budget=MAX_MODEL_CALLS):
         app = self.app
         with TemporaryDirectory() as directory, contextlib.ExitStack() as stack:
             root = Path(directory)
@@ -189,7 +189,7 @@ class GuiWorkflowTests(unittest.TestCase):
                 return executor
 
             def make_agent(client, executor, **settings):
-                self.assertEqual(settings["max_iterations"], MAX_MODEL_CALLS)
+                self.assertEqual(settings["max_iterations"], budget)
                 self.assertEqual(settings["harness"], 2)
 
                 def check(rule, ifc, on_event, trace_attrs):
@@ -310,7 +310,8 @@ class GuiWorkflowTests(unittest.TestCase):
             app.repeats_var.set(3)
             app.harness_var.set(1)
             app.heldout_pilot_btns["heldout_h2_minimax"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax", reasoning=None)
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax", reasoning=None,
+                                             budget=MAX_MODEL_CALLS)
             ask.assert_not_called()
             self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
                               int(app.repeats_var.get()), int(app.harness_var.get())),
@@ -323,10 +324,12 @@ class GuiWorkflowTests(unittest.TestCase):
             on_suite.reset_mock()
             app.heldout_pilot_btns["heldout_h2_minimax"].invoke()
             ask.assert_called_once()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES[2:], kind="heldout_h2_minimax", reasoning=None)
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES[2:], kind="heldout_h2_minimax", reasoning=None,
+                                             budget=MAX_MODEL_CALLS)
             on_suite.reset_mock()
             app.heldout_pilot_btns["heldout_luna"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_luna", reasoning=None)
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_luna", reasoning=None,
+                                             budget=MAX_MODEL_CALLS)
             self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
                               int(app.repeats_var.get()), int(app.harness_var.get())),
                              ("openrouter", "openai/gpt-6-luna", "both", 2, 1))
@@ -334,13 +337,46 @@ class GuiWorkflowTests(unittest.TestCase):
                                         ("heldout_m3_reasoning_stateless", "stateless", 2)):
                 on_suite.reset_mock()
                 app.heldout_pilot_btns[kind].invoke()
-                on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind=kind, reasoning=True)
+                on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind=kind, reasoning=True, budget=MAX_MODEL_CALLS)
                 self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
                                   int(app.repeats_var.get()), int(app.harness_var.get())),
                                  ("minimax", "MiniMax-M3", mode, repeats, 1))
-            self.assertEqual(set(app.heldout_pilot_btns), {"heldout_h2_minimax", "heldout_luna",
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_sonnet_stateless"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_sonnet_stateless", reasoning=False,
+                                             budget=MAX_MODEL_CALLS)
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
+                              int(app.repeats_var.get()), int(app.harness_var.get())),
+                             ("openrouter", "anthropic/claude-sonnet-5.5", "stateless", 1, 1))
+            on_suite.reset_mock()
+            app.heldout_pilot_btns["heldout_h2_minimax_21"].invoke()
+            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax_21", reasoning=False,
+                                             budget=MAX_MODEL_CALLS + 1)
+            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
+                              int(app.repeats_var.get()), int(app.harness_var.get())),
+                             ("minimax", "MiniMax-M3", "stateful", 2, 2))
+            self.assertIn("21 calls", app.heldout_pilot_btns["heldout_h2_minimax_21"].cget("text"))
+            self.assertEqual(set(app.heldout_pilot_btns), {"heldout_h2_minimax", "heldout_h2_minimax_21", "heldout_luna",
                                                           "heldout_m3_reasoning_stateful",
-                                                          "heldout_m3_reasoning_stateless"})
+                                                          "heldout_m3_reasoning_stateless",
+                                                          "heldout_sonnet_stateless"})
+
+    def test_suite_budget_override_reaches_agent_and_records(self):
+        app = self.app
+        with self.suite_fixture(budget=MAX_MODEL_CALLS + 1) as (root, _, seen, _, _, confirm, _):
+            app.mode_var.set("stateful")
+            app._on_suite(HEALTH_SUITE_CASES[:1], kind="budget_test", budget=MAX_MODEL_CALLS + 1)
+            app._poll()
+            self.assertIsNone(app._suite)
+            self.assertEqual(seen, [(HEALTH_SUITE_CASES[0], True)])
+            self.assertIn(f"Fixed {MAX_MODEL_CALLS + 1} model calls per run", confirm.call_args.args[1])
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["status"], "finished")
+            self.assertEqual(manifest["settings"]["max_model_calls"], MAX_MODEL_CALLS + 1)
+            from experiments import ExperimentStore
+
+            stored = ExperimentStore(root / "test.sqlite3").list_runs()
+            self.assertEqual([json.loads(row["configuration"])["max_iterations"] for row in stored], [MAX_MODEL_CALLS + 1])
 
     def test_suite_reasoning_override_is_recorded(self):
         app = self.app

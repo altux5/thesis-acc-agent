@@ -184,6 +184,10 @@ HELDOUT_SUITE_CASES = tuple(c for c in HELDOUT_CASES if (ground_truth.GT_DIR / f
 HELDOUT_PILOTS = {
     "heldout_h2_minimax": {"label": "Held-out extra planning step: M3 (MiniMax API), stateful", "provider": "minimax",
                            "model": "MiniMax-M3", "mode": "stateful", "repeats": 2, "harness": 2},
+    # Same as heldout_h2_minimax (recorded reasoning false), but the plan call is added on top of the 20-call budget.
+    "heldout_h2_minimax_21": {"label": "Held-out extra planning step, 21 calls (plan + 20): M3 (MiniMax API), stateful",
+                              "provider": "minimax", "model": "MiniMax-M3", "mode": "stateful", "repeats": 2,
+                              "harness": 2, "reasoning": False, "max_model_calls": MAX_MODEL_CALLS + 1},
     "heldout_luna": {"label": "Held-out: GPT-6 Luna (OpenRouter), stateful + stateless", "provider": "openrouter",
                      "model": "openai/gpt-6-luna", "mode": "both", "repeats": 2, "harness": 1},
     "heldout_m3_reasoning_stateful": {"label": "Held-out reasoning on: M3 (MiniMax API), stateful",
@@ -192,6 +196,10 @@ HELDOUT_PILOTS = {
     "heldout_m3_reasoning_stateless": {"label": "Held-out reasoning on: M3 (MiniMax API), stateless",
                                        "provider": "minimax", "model": "MiniMax-M3", "mode": "stateless",
                                        "repeats": 2, "harness": 1, "reasoning": True},
+    # Stateless counterpart of the Sonnet held-out run (suite 20261018-215712-011319: stateful, 1 x 95, reasoning false).
+    "heldout_sonnet_stateless": {"label": "Held-out: Sonnet 5.5 (OpenRouter), stateless", "provider": "openrouter",
+                                 "model": "anthropic/claude-sonnet-5.5", "mode": "stateless",
+                                 "repeats": 1, "harness": 1, "reasoning": False},
 }
 # Provider retries stay off per request (llm.max_retries=0, frozen). A suite case that fails inside
 # the provider client (overload, reply without content, connection) is rerun as a whole after a pause;
@@ -941,10 +949,11 @@ class App(ctk.CTk):
             if choice is None or (choice and not remaining):
                 return
             cases = remaining if choice else HELDOUT_SUITE_CASES
-        self._on_suite(cases, kind=kind, reasoning=pilot.get("reasoning"))
+        self._on_suite(cases, kind=kind, reasoning=pilot.get("reasoning"),
+                       budget=pilot.get("max_model_calls", MAX_MODEL_CALLS))
 
     def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES, kind: str = "suite",
-                  reasoning: bool | None = None) -> None:
+                  reasoning: bool | None = None, budget: int = MAX_MODEL_CALLS) -> None:
         if self._suite is not None or (self.worker and self.worker.is_alive()):
             return
         try:
@@ -959,7 +968,6 @@ class App(ctk.CTk):
         mode = self.mode_var.get()
         modes = ["stateful", "stateless"] if mode == "both" else [mode]
         repeats = int(self.repeats_var.get())
-        budget = MAX_MODEL_CALLS
         if reasoning is None:
             reasoning = os.environ.get("REASONING", "1").lower() not in ("0", "false", "no")
         runs = len(case_ids) * len(modes) * repeats
