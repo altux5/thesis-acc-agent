@@ -562,6 +562,10 @@ variable; preloading in both modes would be a separate, labelled experiment.
   `ifc_sha256` of the held-out references). The originals in `gitignore/` stay. In tez
   the IFC files are git-ignored; the publishing repo tracks them (one `.gitignore`
   exception). New runs record the new absolute IFC path; the IFC hash is unchanged.
+  Published as thesis-acc-agent 9d04e8a (also includes the reasoning-on buttons and the
+  button cleanup); a fresh clone passes `test_models.py` (byte-identical models, binary
+  attribute in `acc_agent/models/.gitattributes`). Tests there: 254, 6 skipped for
+  undistributed workbooks, authority templates and pilot logs.
 
 - **2026-10-20 - GPT-6 Luna tests (user, before deciding its held-out run).** Model id
   `openai/gpt-6-luna` via OpenRouter needs no code change (free model field; `load_llm`
@@ -609,6 +613,16 @@ variable; preloading in both modes would be a separate, labelled experiment.
     is dropped when thinking is on (the Anthropic API does not allow both), so with
     reasoning the model may answer without a tool call; that is part of the condition,
     as for Claude via OpenRouter.
+  - Stateless reasoning-on sessions 1-2 (2026-10-21, suites `20261021-002525-807727`,
+    `20261021-062228-289487`): 32 of 95 cases finished (64 runs: 57 complete, 5
+    incomplete, 2 abstained; no integrity errors, runtime verified, usage complete,
+    thinking blocks in 870 of 1060 replies, median 3.8 min/run). Both sessions ended on
+    provider-side failures on repeat 1, as in the H2 sessions: 529 `overloaded_error` on
+    the first call of stair_slab_connection__smiley, and a reply without content
+    (`'NoneType' object is not iterable`) after 101 s on call 19 of
+    door_front_clearance__duplex. Frozen `max_retries=0`, so these are infrastructure
+    errors, excluded; resume reruns the unfinished case as a whole. From session 3 the GUI
+    does that automatically after provider errors (Changelog 2026-10-21).
   - GUI cleanup (user): removed the pilot, main, Sonnet, 95-case and 7-case (no staircase)
     suite buttons; kept the 8-case health suite, usable_2 suite, extra planning step,
     Luna and the two reasoning-on buttons. Old suite indexes and results are unchanged.
@@ -617,6 +631,22 @@ variable; preloading in both modes would be a separate, labelled experiment.
     as everywhere (Luna reasons at its default). Run on the second machine (user "PC");
     suite index kind `heldout_luna`. Compared with M3 and Sonnet on completion, exact
     correctness, accuracy, calls and tokens; its mode timing only within that machine.
+  - Luna result 2026-10-21 (suite `20261020-212458-335465`, machine "PC", one session,
+    17.5 h wall clock). Transferred to `tez/gitignore/data-from-pc-aftergptluna/data-from-pc/`:
+    `backup.sqlite3` (GUI backup) and `experiments.sqlite3` (raw copy) have identical
+    content, integrity ok, 381 runs = 380 suite + the 20 Oct test run, no id collisions
+    with this machine's database; `logs/` holds the suite index and all 95 case logs and
+    reports (+ the test run's). Checked: 380/380 runs, every case exactly stateful r1-r2
+    and stateless r1-r2, no run or sweep errors, no integrity errors, runtime verified,
+    usage complete, no context changes, model `openai/gpt-6-luna`, reasoning false, H1,
+    20 calls. Against the M3 main run: configuration identical except `gui.py` (buttons)
+    and the system prompt hash, which differs only by the absolute IFC path (prompt
+    text identical after substituting it); IFC, reference and rule hashes equal for all
+    95 cases. Stateful: 175 complete / 10 incomplete / 5 abstained, 114 exactly correct,
+    mean union accuracy of complete runs 0.853, 11.7 calls/run, median 1.3 min, 6.6 h,
+    $1.26. Stateless: 178 / 3 / 9, 118 exact, 0.855, 11.0 calls/run, median 1.6 min,
+    10.7 h, $1.50. No output-limit cutoffs; reasoning text in 67-68 % of replies.
+    Not yet merged into the main database.
 
 - **2026-10-20 - second Windows machine for the OpenRouter lane (user).** The tez remote
   is the old public repo and is not pushed. Transfer package, local and not synced:
@@ -1464,6 +1494,22 @@ health-suite run.
 ---
 
 ## Changelog
+
+- **2026-10-21 - GUI suites rerun a case after a provider error (user).** Agent, `llm.py`
+  (`max_retries=0`) and budget unchanged; only `gui.py` differs, so the recorded code
+  hash changes from this point. When a suite case's sweep fails inside the provider
+  client (innermost frame in `anthropic`, `langchain_anthropic`, `openrouter`,
+  `langchain_openrouter`, `httpx`, `httpcore`; 4xx other than 408/409/429 excluded), the
+  GUI waits 1, 5, then 15 min and reruns the whole case, at most 3 times, then ends the
+  suite as `error`. Other errors still stop the suite. This is the manual resume rule,
+  automated: the failed attempt stays an error sweep (excluded from analysis as before),
+  its index entry gets `provider_error` and `discarded_runs`, and its finished runs are
+  subtracted from the index's `finished_runs`/`complete_runs` (known tokens keep them).
+  The suite settings record `provider_retry_delays`. Stop during the pause ends the suite
+  at once. Index readers must keep skipping entries whose status is `error`; a case can
+  now have several error entries before its finished one. A deterministic error raised
+  inside the SDK (like the pre-v5.1 malformed tool call) costs at most 3 extra attempts.
+  Tests in `test_gui_presentation.py` (rerun, bound, stop in pause, classifier).
 
 - **2026-10-13 - v5.1 crash fix: malformed tool calls (recording v6).** Protocol name
   stays `langchain-codeact-v5`; patch tag `v5.1-frozen` when published.
