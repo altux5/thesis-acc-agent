@@ -10,10 +10,21 @@ import ground_truth
 from agent import AgentResult
 from ground_truth import GroundTruth
 from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, HELDOUT_SUITE_CASES, MAX_MODEL_CALLS,
-                 USABLE_CASES, USABLE_2_CASES, USABLE_2_SUITE_CASES, case_assessment)
+                 PROVIDER_RETRY_DELAYS, USABLE_CASES, USABLE_2_CASES, USABLE_2_SUITE_CASES, case_assessment,
+                 is_provider_error)
 from kernel_executor import KernelCodeExecutor
 from gui_widgets import METRIC_GUIDE, GREEN, ORANGE, RED, bind_wrapping, result_presentation
 from scoring import ParsedVerdict, aggregate, score
+
+# Raises from a frame that belongs to the provider client, like langchain_anthropic on a reply without content.
+_PROVIDER_CLIENT = {"__name__": "langchain_anthropic.chat_models"}
+exec("def provider_failure():\n    raise TypeError(\"'NoneType' object is not iterable\")\n", _PROVIDER_CLIENT)
+provider_failure = _PROVIDER_CLIENT["provider_failure"]
+
+
+def local_failure():
+    raise TypeError("agent bug")
+
 
 
 class ImmediateThread:
@@ -156,7 +167,7 @@ class GuiWorkflowTests(unittest.TestCase):
         self.assertEqual(case_assessment("staircase_width_v8_deprecated_v1")[0], "Deprecated")
 
     @contextlib.contextmanager
-    def suite_fixture(self, *, approve=True, stop=False, fail=False):
+    def suite_fixture(self, *, approve=True, stop=False, fail=False, provider_fail_calls=()):
         app = self.app
         with TemporaryDirectory() as directory, contextlib.ExitStack() as stack:
             root = Path(directory)
@@ -187,9 +198,12 @@ class GuiWorkflowTests(unittest.TestCase):
                     self.assertEqual(rule, case.rule)
                     self.assertEqual(ifc, str(model))
                     self.assertTrue(trace_attrs["metadata"]["health_suite_id"].startswith("health-"))
+                    call = len(seen)
                     seen.append((case_id, executor.stateful))
                     if fail:
                         raise RuntimeError("Offline provider failure")
+                    if call in provider_fail_calls:
+                        provider_failure()
                     labels = {**case.labels, **dict.fromkeys(case.unscored_ids, "FAIL")}
                     failures = [guid for guid, label in labels.items() if label == "FAIL"]
                     verdict = "NON_COMPLIANT" if failures else "COMPLIANT"
@@ -360,7 +374,7 @@ class GuiWorkflowTests(unittest.TestCase):
             confirm.assert_not_called()
             errors.assert_called_once()
 
-    def test_health_suite_stop_and_provider_error_do_not_start_later_runs(self):
+    def test_health_suite_stop_and_non_provider_error_do_not_start_later_runs(self):
         for stop, fail, status in ((True, False, "stopped"), (False, True, "error")):
             with self.subTest(status=status), self.suite_fixture(stop=stop, fail=fail) as (_, _, seen, executors, _, _, _):
                 self.app._on_suite()
@@ -373,6 +387,96 @@ class GuiWorkflowTests(unittest.TestCase):
                 self.assertEqual(len(manifest["cases"]), 1)
                 self.assertEqual(manifest["cases"][0]["status"], status)
                 self.assertEqual(self.app.run_btn.cget("state"), "normal")
+
+    def scheduled_retry(self, delay):
+        calls = [c for c in self.app.after.call_args_list if c.args and c.args[0] == delay * 1000]
+        self.assertEqual(len(calls), 1)
+        return calls[0].args[1]
+
+    def test_provider_error_reruns_the_whole_case_after_a_pause(self):
+        app = self.app
+        # Call 1 is the stateless run of the first case, after its stateful run finished.
+        with self.suite_fixture(provider_fail_calls={1}) as (root, _, seen, _, _, confirm, _):
+            app._on_suite()
+            self.assertIn("A provider error reruns the whole case", confirm.call_args.args[1])
+            app._poll()
+            self.assertIsNotNone(app._suite)
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["status"], "running")
+            self.assertEqual(manifest["finished_runs"], 0)
+            self.assertEqual(manifest["cases"][0]["status"], "error")
+            self.assertTrue(manifest["cases"][0]["provider_error"])
+            self.assertEqual(manifest["cases"][0]["discarded_runs"], 1)
+            self.assertEqual(manifest["settings"]["provider_retry_delays"], list(PROVIDER_RETRY_DELAYS))
+            self.assertEqual(app.stop_btn.cget("state"), "normal")
+            self.assertEqual(app.run_btn.cget("state"), "disabled")
+            self.scheduled_retry(PROVIDER_RETRY_DELAYS[0])()
+            for _ in range(9):
+                if app._suite is None:
+                    break
+                app._poll()
+            self.assertIsNone(app._suite)
+            first = HEALTH_SUITE_CASES[0]
+            self.assertEqual(seen[:4], [(first, True), (first, False), (first, True), (first, False)])
+            self.assertEqual(len(seen), 18)
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["status"], "finished")
+            self.assertEqual(manifest["finished_runs"], 16)
+            self.assertEqual(manifest["complete_runs"], 16)
+            self.assertEqual([e["case_id"] for e in manifest["cases"]], [first, *HEALTH_SUITE_CASES])
+            self.assertEqual([e["status"] for e in manifest["cases"]], ["error"] + ["finished"] * 8)
+            from experiments import ExperimentStore
+
+            sweeps = {row["sweep_id"] for row in ExperimentStore(root / "test.sqlite3").list_runs()}
+            self.assertEqual(len(sweeps), 9)
+
+    def test_provider_error_retries_are_bounded(self):
+        app = self.app
+        attempts = len(PROVIDER_RETRY_DELAYS) + 1
+        with self.suite_fixture(provider_fail_calls=set(range(attempts))) as (_, _, seen, _, _, _, _):
+            app._on_suite()
+            app._poll()
+            for delay in PROVIDER_RETRY_DELAYS:
+                self.scheduled_retry(delay)()
+                app._poll()
+            self.assertIsNone(app._suite)
+            self.assertEqual(seen, [(HEALTH_SUITE_CASES[0], True)] * attempts)
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["status"], "error")
+            self.assertEqual([e["status"] for e in manifest["cases"]], ["error"] * attempts)
+            self.assertNotIn("discarded_runs", manifest["cases"][-1])
+            self.assertEqual(app.run_btn.cget("state"), "normal")
+
+    def test_stop_during_provider_retry_pause_ends_the_suite_now(self):
+        app = self.app
+        with self.suite_fixture(provider_fail_calls={0}) as (_, _, seen, _, _, _, _), \
+                patch.object(app, "after_cancel") as cancel:
+            app._on_suite()
+            app._poll()
+            pending = app._suite_retry
+            app._on_stop()
+            cancel.assert_called_once_with(pending)
+            self.assertIsNone(app._suite)
+            self.assertEqual(seen, [(HEALTH_SUITE_CASES[0], True)])
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["status"], "stopped")
+            self.assertEqual(app.stop_btn.cget("state"), "disabled")
+
+    def test_only_errors_raised_inside_provider_clients_count_as_provider_errors(self):
+        for raiser, expected in ((provider_failure, True), (local_failure, False)):
+            try:
+                raiser()
+            except TypeError as exc:
+                self.assertIs(is_provider_error(exc), expected)
+        self.assertFalse(is_provider_error(TypeError("never raised")))
+        for status, expected in ((529, True), (500, True), (429, True), (400, False), (401, False), (404, False)):
+            exc = TypeError("status")
+            exc.status_code = status
+            try:
+                provider_failure()
+            except TypeError as raised:
+                exc = exc.with_traceback(raised.__traceback__)
+            self.assertIs(is_provider_error(exc), expected, status)
 
     def test_health_suite_start_failure_restores_controls(self):
         with self.suite_fixture() as (_, _, seen, _, _, _, _):

@@ -193,6 +193,27 @@ HELDOUT_PILOTS = {
                                        "provider": "minimax", "model": "MiniMax-M3", "mode": "stateless",
                                        "repeats": 2, "harness": 1, "reasoning": True},
 }
+# Provider retries stay off per request (llm.max_retries=0, frozen). A suite case that fails inside
+# the provider client (overload, reply without content, connection) is rerun as a whole after a pause;
+# the failed attempt stays recorded as an error sweep, as with a manual resume.
+PROVIDER_RETRY_DELAYS = (60, 300, 900)
+PROVIDER_MODULES = {"anthropic", "langchain_anthropic", "openrouter", "langchain_openrouter", "httpx", "httpcore"}
+RETRYABLE_CLIENT_STATUSES = {408, 409, 429}
+
+
+def is_provider_error(exc: BaseException) -> bool:
+    """True when the exception was raised inside the provider client, not in agent, kernel or GUI code.
+
+    Client errors that waiting cannot fix (bad request, key, model or payment) are excluded."""
+    status = getattr(exc, "status_code", None)
+    if isinstance(status, int) and 400 <= status < 500 and status not in RETRYABLE_CLIENT_STATUSES:
+        return False
+    tb = exc.__traceback__
+    while tb is not None and tb.tb_next is not None:
+        tb = tb.tb_next
+    return tb is not None and tb.tb_frame.f_globals.get("__name__", "").split(".")[0] in PROVIDER_MODULES
+
+
 CONTROL_CASES = {
     "doors_windows_storey__planterbox", "doors_windows_storey__scdf_3", "doors_windows_storey__scdf_5",
     "landing_interval_e352__condo", "landing_interval_e352__planterbox", "landing_interval_e352__scdf_3",
@@ -289,6 +310,8 @@ class App(ctk.CTk):
         self._suite_path: Path | None = None
         self._suite_client = None
         self._suite_next = False
+        self._suite_retry = None
+        self._attempt_runs = [0, 0]
         self._stop_requested = threading.Event()
 
         self._build_sidebar()
@@ -953,7 +976,9 @@ class App(ctk.CTk):
             "Each case uses its stored rule and IFC, not the edited input fields.\n"
             f"{staircase}\n"
             "Token cost is unknown and can reach millions of tokens. This is not a token/spend cap.\n"
-            "Stop takes effect after the current agent run. Provider errors stop the suite.\n\nStart?",
+            "Stop takes effect after the current agent run.\n"
+            f"A provider error reruns the whole case, at most {len(PROVIDER_RETRY_DELAYS)} times "
+            f"(after {', '.join(f'{d // 60} min' for d in PROVIDER_RETRY_DELAYS)}); other errors stop the suite.\n\nStart?",
             parent=self, default="no",
         ):
             return
@@ -970,7 +995,8 @@ class App(ctk.CTk):
             "settings": {**llm.model_identity(self._suite_client), "modes": modes, "repeats": repeats,
                          "max_model_calls": budget, "harness": int(self.harness_var.get()),
                          "reasoning": reasoning,
-                         "env_primer": os.environ.get("ENV_PRIMER", "1").lower() not in ("0", "false", "no")},
+                         "env_primer": os.environ.get("ENV_PRIMER", "1").lower() not in ("0", "false", "no"),
+                         "provider_retry_delays": list(PROVIDER_RETRY_DELAYS)},
             "requested_runs": runs, "finished_runs": 0, "complete_runs": 0,
             "known_input_tokens": 0, "known_output_tokens": 0, "usage_complete": True,
         }
@@ -987,13 +1013,16 @@ class App(ctk.CTk):
             self._write(f"Suite index could not be saved: {exc}\n", "bad")
 
     def _start_next_suite_case(self) -> None:
+        self._suite_retry = None
         suite = self._suite
         if suite is None:
             return
         if self._stop_requested.is_set():
             self._end_suite("stopped")
             return
-        index = len(suite["cases"])
+        # Entries before the next case are finished cases or failed attempts that were rerun.
+        index = sum(entry["status"] == "finished" for entry in suite["cases"])
+        self._attempt_runs = [0, 0]
         if index == len(suite["case_ids"]):
             self._end_suite("finished")
             return
@@ -1026,7 +1055,35 @@ class App(ctk.CTk):
         suite["cases"][-1]["log_path"] = str(self.current_log_path)
         self._save_suite()
 
+    def _retry_suite_case(self) -> bool:
+        """Schedule a rerun of the failed case; its finished runs are discarded with the failed attempt."""
+        suite = self._suite
+        entry = suite["cases"][-1]
+        retry = sum(e["case_id"] == entry["case_id"] and e["status"] == "error" for e in suite["cases"])
+        if retry > len(PROVIDER_RETRY_DELAYS):
+            return False
+        finished, complete = self._attempt_runs
+        entry["provider_error"] = True
+        entry["discarded_runs"] = finished
+        suite["finished_runs"] -= finished
+        suite["complete_runs"] -= complete
+        self._save_suite()
+        delay = PROVIDER_RETRY_DELAYS[retry - 1]
+        message = (f"Provider error on {entry['case_id']}: rerunning the whole case in {delay // 60} min "
+                   f"(retry {retry} of {len(PROVIDER_RETRY_DELAYS)}).")
+        self._write("\n" + message + "\n", "notice")
+        self.suite_status.configure(text=message, text_color=ORANGE)
+        self.run_btn.configure(state="disabled")
+        self._set_suite_buttons("disabled")
+        self._set_settings_enabled(False)
+        self.stop_btn.configure(state="normal", text="Stop suite")
+        self._suite_retry = self.after(delay * 1000, self._start_next_suite_case)
+        return True
+
     def _end_suite(self, status: str) -> None:
+        if self._suite_retry is not None:
+            self.after_cancel(self._suite_retry)
+            self._suite_retry = None
         suite = self._suite
         suite["status"] = status
         self._save_suite()
@@ -1046,6 +1103,9 @@ class App(ctk.CTk):
 
     def _on_stop(self) -> None:
         self._stop_requested.set()
+        if self._suite_retry is not None:
+            self._end_suite("stopped")
+            return
         self.stop_btn.configure(state="disabled", text="Stopping after this run...")
         self.suite_status.configure(text="Stop requested. The current agent run may still consume tokens.", text_color=ORANGE)
 
@@ -1162,6 +1222,7 @@ class App(ctk.CTk):
             recorder = None
             ticket = None
             sweep_error = ""
+            provider_error = False
             agent = None
             executor = None
 
@@ -1266,6 +1327,7 @@ class App(ctk.CTk):
                         )
             except BaseException as exc:
                 sweep_error = traceback.format_exc()
+                provider_error = isinstance(exc, Exception) and is_provider_error(exc)
                 partial = getattr(agent, "partial_result", None)
                 partial = partial if isinstance(partial, AgentResult) else None
                 if recorder is not None:
@@ -1290,7 +1352,8 @@ class App(ctk.CTk):
                 # Flush here, on the worker, not on the Tk thread: a Langfuse
                 # flush does network I/O and would freeze the whole UI.
                 tracing.flush()
-                self.q.put(("__threaddone__", {"error": bool(sweep_error), "stopped": self._stop_requested.is_set()}))
+                self.q.put(("__threaddone__", {"error": bool(sweep_error), "provider_error": provider_error,
+                                               "stopped": self._stop_requested.is_set()}))
 
         self.worker = threading.Thread(target=work, daemon=True)
         self.worker.start()
@@ -1408,8 +1471,11 @@ class App(ctk.CTk):
                 suite["known_input_tokens"] += payload["prompt_tokens"]
                 suite["known_output_tokens"] += payload["completion_tokens"]
                 suite["usage_complete"] = suite["usage_complete"] and payload["usage_complete"]
+                self._attempt_runs[0] += 1
+                self._attempt_runs[1] += payload["completion_status"] == "complete"
                 tokens = suite["known_input_tokens"] + suite["known_output_tokens"]
-                self.suite_status.configure(text=f"Case {len(suite['cases'])}/{len(suite['case_ids'])} | {suite['finished_runs']}/{suite['requested_runs']} runs finished\n{tokens:,} known tokens")
+                case_number = sum(entry["status"] == "finished" for entry in suite["cases"]) + 1
+                self.suite_status.configure(text=f"Case {case_number}/{len(suite['case_ids'])} | {suite['finished_runs']}/{suite['requested_runs']} runs finished\n{tokens:,} known tokens")
                 self._save_suite()
         elif event_type == "__threaddone__":
             self.run_btn.configure(state="normal", text="Run checks")
@@ -1429,6 +1495,9 @@ class App(ctk.CTk):
                 self._suite["cases"][-1].update(status=status,
                     report_path=str(self.current_report_path) if self.current_report_path else None)
                 self._save_suite()
+                if status == "error" and payload.get("provider_error") and not self._stop_requested.is_set() \
+                        and self._retry_suite_case():
+                    return
                 if status != "finished" or self._stop_requested.is_set():
                     self._end_suite(status if status != "finished" else "stopped")
                 else:
