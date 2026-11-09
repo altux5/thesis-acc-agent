@@ -24,7 +24,7 @@ import tracing
 from agent import AgentResult, CodeActAgent, save_transcript
 from executor import make_executor
 from experiment_recorder import SweepRecorder
-from ground_truth import resolve_model_path
+from ground_truth import DEFAULT_DISTRIBUTED_IFC_REL, resolve_model_path
 
 PROJECT_DIR = Path(__file__).resolve().parent
 WORKSPACE_ROOT = PROJECT_DIR.parent
@@ -38,10 +38,7 @@ try:
 except ImportError:
     pass
 
-DEFAULT_IFC = resolve_model_path(
-    "bca_tests-main/bca_tests-main/BCATestCases/"
-    "Planter boxes/Test models/20240313_URA_Planterbox.ifc"
-)
+DEFAULT_IFC = resolve_model_path(DEFAULT_DISTRIBUTED_IFC_REL)
 
 DEFAULT_RULE = (
     "Every door (IfcDoor) in the model must have a clear width of at least 900 mm. "

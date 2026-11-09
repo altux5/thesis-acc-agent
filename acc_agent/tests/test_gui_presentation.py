@@ -10,8 +10,7 @@ import ground_truth
 from agent import AgentResult
 from ground_truth import GroundTruth
 from gui import (App, CUSTOM_CHOICE, HEALTH_SUITE_CASES, HELDOUT_SUITE_CASES, MAX_MODEL_CALLS,
-                 PROVIDER_RETRY_DELAYS, USABLE_CASES, USABLE_2_CASES, USABLE_2_SUITE_CASES, case_assessment,
-                 is_provider_error)
+                 PROVIDER_RETRY_DELAYS, USABLE_CASES, case_assessment, is_provider_error)
 from kernel_executor import KernelCodeExecutor
 from gui_widgets import METRIC_GUIDE, GREEN, ORANGE, RED, bind_wrapping, result_presentation
 from scoring import ParsedVerdict, aggregate, score
@@ -142,6 +141,16 @@ class GuiWorkflowTests(unittest.TestCase):
         self.assertFalse(hasattr(App, "_refresh_skill_health"))
         self.assertFalse(hasattr(App, "_show_skill_health"))
 
+    def test_sidebar_offers_only_single_run_health_suite_and_stop(self):
+        app = self.app
+        footer = app.run_btn.master
+        buttons = [child.cget("text") for child in footer.winfo_children() if hasattr(child, "invoke")]
+        self.assertEqual(buttons, ["Run checks", "Run 8-case health suite", "Stop after current run"])
+        for name in ("usable_2_suite_btn", "heldout_pilot_btns", "heldout_chain_btns", "_chain"):
+            self.assertFalse(hasattr(app, name))
+        for name in ("_on_heldout_pilot", "_on_heldout_chain", "_continue_chain", "_pilot_finished_cases"):
+            self.assertFalse(hasattr(App, name))
+
     def test_reference_tiers_cover_catalogue_and_health_suite(self):
         app = self.app
         self.assertGreaterEqual(len(HELDOUT_SUITE_CASES), 3)
@@ -167,14 +176,15 @@ class GuiWorkflowTests(unittest.TestCase):
         self.assertEqual(case_assessment("staircase_width_v8_deprecated_v1")[0], "Deprecated")
 
     @contextlib.contextmanager
-    def suite_fixture(self, *, approve=True, stop=False, fail=False, provider_fail_calls=(), budget=MAX_MODEL_CALLS):
+    def suite_fixture(self, *, approve=True, stop=False, fail=False, provider_fail_calls=(), budget=MAX_MODEL_CALLS,
+                      file_system=False, script_mode=False):
         app = self.app
         with TemporaryDirectory() as directory, contextlib.ExitStack() as stack:
             root = Path(directory)
             model = root / "fixture.ifc"
             model.touch()
             cases = {}
-            for case_id in HEALTH_SUITE_CASES + USABLE_2_SUITE_CASES:
+            for case_id in HEALTH_SUITE_CASES:
                 labels = {case_id + "-one": "FAIL", case_id + "-two": "PASS"}
                 if case_id == "slab_thickness__mall":
                     labels = {case_id + "-one": "PASS", case_id + "-two": "ALERT"}
@@ -184,13 +194,19 @@ class GuiWorkflowTests(unittest.TestCase):
             executors = []
 
             def make_executor(**settings):
+                self.assertEqual(settings.get("file_system", False), file_system or script_mode)
                 executor = Mock(stateful=settings["stateful"])
                 executors.append(executor)
                 return executor
 
             def make_agent(client, executor, **settings):
                 self.assertEqual(settings["max_iterations"], budget)
-                self.assertEqual(settings["harness"], 2)
+                if script_mode:
+                    self.assertNotIn("harness", settings)
+                    self.assertFalse(executor.stateful)
+                else:
+                    self.assertEqual(settings["harness"], 2)
+                    self.assertEqual(settings.get("file_system", False), file_system)
 
                 def check(rule, ifc, on_event, trace_attrs):
                     case_id = trace_attrs["metadata"]["case_id"]
@@ -227,7 +243,10 @@ class GuiWorkflowTests(unittest.TestCase):
             confirm = stack.enter_context(patch("gui.messagebox.askyesno", return_value=approve))
             errors = stack.enter_context(patch("gui.messagebox.showerror"))
             stack.enter_context(patch("gui.make_executor", side_effect=make_executor))
-            stack.enter_context(patch("gui.CodeActAgent", side_effect=make_agent))
+            stack.enter_context(patch("gui.CodeActAgent", side_effect=make_agent if not script_mode else
+                                      AssertionError("script mode must not build the frozen agent")))
+            stack.enter_context(patch("gui.ScriptAgent", side_effect=make_agent if script_mode else
+                                      AssertionError("only script mode builds the script agent")))
             stack.enter_context(patch("gui.threading.Thread", ImmediateThread))
             for name in ("score_run", "score_sweep", "flush"):
                 stack.enter_context(patch("gui.tracing." + name))
@@ -280,86 +299,56 @@ class GuiWorkflowTests(unittest.TestCase):
             self.assertEqual({row["case_id"] for row in stored}, set(HEALTH_SUITE_CASES))
             self.assertEqual(len({row["sweep_id"] for row in stored}), 8)
 
-    def test_usable_2_suite_runs_every_usable_2_case_with_slider_repeats(self):
+    def test_file_system_suite_passes_the_flag_to_executor_agent_and_records(self):
         app = self.app
-        with self.suite_fixture() as (root, cases, seen, executors, client, confirm, errors):
-            app.repeats_var.set(2)
-            app.usable_2_suite_btn.invoke()
-            for _ in range(len(USABLE_2_SUITE_CASES) + 1):
-                if app._suite is None:
-                    break
-                app._poll()
+        with self.suite_fixture(file_system=True) as (root, _, seen, executors, _, confirm, _):
+            app._on_suite(HEALTH_SUITE_CASES[:1], kind="files_test", file_system=True)
+            app._poll()
             self.assertIsNone(app._suite)
-            self.assertEqual(set(USABLE_2_SUITE_CASES), set(USABLE_2_CASES))
-            expected = [(case_id, stateful) for case_id in USABLE_2_SUITE_CASES for stateful in (True, False)
-                        for _ in range(2)]
-            self.assertEqual(sorted(seen), sorted(expected))
-            self.assertIn(f"{len(USABLE_2_SUITE_CASES)} usable_2", confirm.call_args.args[1])
-            self.assertIn(f"{len(expected)} runs", confirm.call_args.args[1])
+            self.assertEqual(seen, [(HEALTH_SUITE_CASES[0], True), (HEALTH_SUITE_CASES[0], False)])
+            self.assertIn("File system: on", confirm.call_args.args[1])
             manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
-            self.assertEqual(manifest["case_ids"], list(USABLE_2_SUITE_CASES))
-            self.assertEqual(manifest["settings"]["repeats"], 2)
-            self.assertEqual(manifest["finished_runs"], len(expected))
-            errors.assert_not_called()
+            self.assertEqual((manifest["status"], manifest["settings"]["file_system"]), ("finished", True))
+            self.assertIn("- **File system:** on", Path(manifest["cases"][0]["log_path"]).read_text(encoding="utf-8"))
+            from experiments import ExperimentStore
 
-    def test_heldout_pilot_sets_fixed_settings_and_resumes_finished_cases(self):
+            stored = ExperimentStore(root / "test.sqlite3").list_runs()
+            self.assertEqual({json.loads(row["configuration"])["agent_protocol"] for row in stored},
+                             {"langchain-codeact-v5-files-guided"})
+
+    def test_script_mode_suite_builds_the_script_agent_and_records_its_protocol(self):
         app = self.app
-        with TemporaryDirectory() as directory, patch("gui.LOG_DIR", Path(directory)), \
-                patch.object(app, "_on_suite") as on_suite, patch("gui.messagebox.askyesnocancel", return_value=True) as ask:
-            app.mode_var.set("both")
-            app.repeats_var.set(3)
+        with self.suite_fixture(script_mode=True) as (root, _, seen, executors, _, confirm, _):
+            app.mode_var.set("stateless")
             app.harness_var.set(1)
-            app.heldout_pilot_btns["heldout_h2_minimax"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax", reasoning=None,
-                                             budget=MAX_MODEL_CALLS)
-            ask.assert_not_called()
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
-                              int(app.repeats_var.get()), int(app.harness_var.get())),
-                             ("minimax", "MiniMax-M3", "stateful", 2, 2))
-            done = HELDOUT_SUITE_CASES[:2]
-            index = {"kind": "heldout_h2_minimax", "cases": [{"case_id": done[0], "status": "finished"},
-                                                            {"case_id": done[1], "status": "finished"},
-                                                            {"case_id": HELDOUT_SUITE_CASES[2], "status": "error"}]}
-            (Path(directory) / "x_health_suite.json").write_text(json.dumps(index), encoding="utf-8")
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_h2_minimax"].invoke()
-            ask.assert_called_once()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES[2:], kind="heldout_h2_minimax", reasoning=None,
-                                             budget=MAX_MODEL_CALLS)
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_luna"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_luna", reasoning=None,
-                                             budget=MAX_MODEL_CALLS)
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
-                              int(app.repeats_var.get()), int(app.harness_var.get())),
-                             ("openrouter", "openai/gpt-6-luna", "both", 2, 1))
-            for kind, mode, repeats in (("heldout_m3_reasoning_stateful", "stateful", 1),
-                                        ("heldout_m3_reasoning_stateless", "stateless", 2)):
-                on_suite.reset_mock()
-                app.heldout_pilot_btns[kind].invoke()
-                on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind=kind, reasoning=True, budget=MAX_MODEL_CALLS)
-                self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
-                                  int(app.repeats_var.get()), int(app.harness_var.get())),
-                                 ("minimax", "MiniMax-M3", mode, repeats, 1))
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_sonnet_stateless"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_sonnet_stateless", reasoning=False,
-                                             budget=MAX_MODEL_CALLS)
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
-                              int(app.repeats_var.get()), int(app.harness_var.get())),
-                             ("openrouter", "anthropic/claude-sonnet-5.5", "stateless", 1, 1))
-            on_suite.reset_mock()
-            app.heldout_pilot_btns["heldout_h2_minimax_21"].invoke()
-            on_suite.assert_called_once_with(HELDOUT_SUITE_CASES, kind="heldout_h2_minimax_21", reasoning=False,
-                                             budget=MAX_MODEL_CALLS + 1)
-            self.assertEqual((app.provider_var.get(), app.model_var.get(), app.mode_var.get(),
-                              int(app.repeats_var.get()), int(app.harness_var.get())),
-                             ("minimax", "MiniMax-M3", "stateful", 2, 2))
-            self.assertIn("21 calls", app.heldout_pilot_btns["heldout_h2_minimax_21"].cget("text"))
-            self.assertEqual(set(app.heldout_pilot_btns), {"heldout_h2_minimax", "heldout_h2_minimax_21", "heldout_luna",
-                                                          "heldout_m3_reasoning_stateful",
-                                                          "heldout_m3_reasoning_stateless",
-                                                          "heldout_sonnet_stateless"})
+            app._on_suite(HEALTH_SUITE_CASES[:1], kind="script_test", script_mode=True)
+            app._poll()
+            self.assertIsNone(app._suite)
+            self.assertEqual(seen, [(HEALTH_SUITE_CASES[0], False)])
+            self.assertIn("Script mode: code runs only from workspace files", confirm.call_args.args[1])
+            manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
+            self.assertEqual((manifest["status"], manifest["settings"]["script_mode"]), ("finished", True))
+            log = Path(manifest["cases"][0]["log_path"]).read_text(encoding="utf-8")
+            self.assertIn("- **Agent protocol:** langchain-codeact-v5-script-v2", log)
+            self.assertIn("- **Script mode:**", log)
+            from experiments import ExperimentStore
+
+            stored = ExperimentStore(root / "test.sqlite3").list_runs()
+            configurations = [json.loads(row["configuration"]) for row in stored]
+            self.assertEqual({item["agent_protocol"] for item in configurations}, {"langchain-codeact-v5-script-v2"})
+            self.assertTrue(all(item["core_files"]["script_agent.py"]["status"] == "matches" for item in configurations))
+            self.assertTrue(all(item["runtime_code_verified"] for item in configurations))
+
+    def test_file_tool_events_are_shown_and_logged(self):
+        app = Mock()
+        App._handle(app, "file_tool", {"name": "write_file", "arguments": {"path": "lib/a.py", "content": "x = 1\n"},
+                                       "result": "Wrote 6 bytes to lib/a.py.", "error": False})
+        shown = "".join(call.args[0] for call in app._write.call_args_list)
+        self.assertIn("File tool: write_file(path='lib/a.py', content=<6 chars>)", shown)
+        logged = app._log.call_args.args[0]
+        self.assertIn("### File tool: write_file(path='lib/a.py', content=<6 chars>)", logged)
+        self.assertIn("x = 1", logged)
+        self.assertIn("Wrote 6 bytes to lib/a.py.", logged)
 
     def test_suite_budget_override_reaches_agent_and_records(self):
         app = self.app
@@ -466,7 +455,7 @@ class GuiWorkflowTests(unittest.TestCase):
             sweeps = {row["sweep_id"] for row in ExperimentStore(root / "test.sqlite3").list_runs()}
             self.assertEqual(len(sweeps), 9)
 
-    def test_provider_error_retries_are_bounded(self):
+    def test_a_case_failing_all_retries_is_skipped_and_the_suite_continues(self):
         app = self.app
         attempts = len(PROVIDER_RETRY_DELAYS) + 1
         with self.suite_fixture(provider_fail_calls=set(range(attempts))) as (_, _, seen, _, _, _, _):
@@ -475,12 +464,23 @@ class GuiWorkflowTests(unittest.TestCase):
             for delay in PROVIDER_RETRY_DELAYS:
                 self.scheduled_retry(delay)()
                 app._poll()
+            for _ in range(10):
+                if app._suite is None:
+                    break
+                app._poll()
             self.assertIsNone(app._suite)
-            self.assertEqual(seen, [(HEALTH_SUITE_CASES[0], True)] * attempts)
+            first = HEALTH_SUITE_CASES[0]
+            self.assertEqual(seen[:attempts], [(first, True)] * attempts)
+            self.assertEqual(seen[attempts:], [(case, stateful) for case in HEALTH_SUITE_CASES[1:] for stateful in (True, False)])
             manifest = json.loads(app._suite_path.read_text(encoding="utf-8"))
-            self.assertEqual(manifest["status"], "error")
-            self.assertEqual([e["status"] for e in manifest["cases"]], ["error"] * attempts)
-            self.assertNotIn("discarded_runs", manifest["cases"][-1])
+            self.assertEqual(manifest["status"], "finished")
+            self.assertEqual(manifest["skipped_cases"], [first])
+            self.assertEqual([e["status"] for e in manifest["cases"]],
+                             ["error"] * attempts + ["finished"] * (len(HEALTH_SUITE_CASES) - 1))
+            self.assertTrue(manifest["cases"][attempts - 1]["skipped"])
+            self.assertEqual(manifest["cases"][attempts - 1]["discarded_runs"], 0)
+            self.assertEqual(manifest["finished_runs"], 2 * (len(HEALTH_SUITE_CASES) - 1))
+            self.assertIn("1 case(s) skipped after provider errors", app.suite_status.cget("text"))
             self.assertEqual(app.run_btn.cget("state"), "normal")
 
     def test_stop_during_provider_retry_pause_ends_the_suite_now(self):

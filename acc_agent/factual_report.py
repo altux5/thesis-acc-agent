@@ -323,6 +323,7 @@ def parse_log(text: str, source: Path) -> Report:
 
 
 def step_summary(step: Step) -> str:
+    files = sum(section.header.startswith("### File tool:") for section in step.sections)
     if step.errors:
         outcome = "; ".join(excerpt(error, 120) for error in step.errors)
         if step.restarts:
@@ -331,11 +332,14 @@ def step_summary(step: Step) -> str:
         outcome = "Output recorded; correctness not assessed"
     elif step.codes:
         outcome = "Code logged; no output recorded"
+    elif files:
+        outcome = "File tool result recorded"
     elif any(section.header == "### Verdict" for section in step.sections):
         outcome = "Final-response section recorded"
     else:
         outcome = "No code attempt logged"
-    return f"{step.title}: {len(step.codes)} code attempt(s). {outcome}. Source line {step.line}."
+    tools = f", {files} file tool call(s)" if files else ""
+    return f"{step.title}: {len(step.codes)} code attempt(s){tools}. {outcome}. Source line {step.line}."
 
 
 def step_explanation(step: Step) -> str:

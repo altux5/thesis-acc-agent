@@ -15,6 +15,7 @@ with this user's permissions and can read the filesystem.
 from __future__ import annotations
 
 import contextlib
+import gc
 import io
 import json
 import os
@@ -158,6 +159,9 @@ def main() -> int:
             continue
         operation = request.get("op")
         if operation == "shutdown":
+            # Release the agent's objects first, so files it left open are flushed and closed.
+            NAMESPACE.clear()
+            gc.collect()
             return 0
         try:
             response = handlers[operation](request)

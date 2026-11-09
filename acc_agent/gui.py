@@ -45,11 +45,12 @@ import llm
 import simple_rules
 import solibri_reference
 import tracing
-from agent import AGENT_PROTOCOL, AgentResult, CodeActAgent
+from agent import AGENT_PROTOCOL, FILES_PROTOCOL, SINGLE_SHOT_PROTOCOL, AgentResult, CodeActAgent
 from completion import COMPLETION_CHECKS_VERSION
 from executor import RUNTIME_ISOLATION, make_executor
 from experiment_recorder import SweepRecorder
 from experiment_view import ExperimentsView
+from script_agent import SCRIPT_PROTOCOL, ScriptAgent
 from scoring import ParsedVerdict, aggregate, score
 from gui_widgets import (
     ACCENT, BACKGROUND, BORDER, HOVER, MUTED, PANEL, PRIMARY, SURFACE, TEXT,
@@ -58,10 +59,7 @@ from gui_widgets import (
 
 WORKSPACE_ROOT = PROJECT_DIR.parent
 LOG_DIR = PROJECT_DIR / "logs"
-DEFAULT_IFC = ground_truth.resolve_model_path(
-    "bca_tests-main/bca_tests-main/BCATestCases/"
-    "Planter boxes/Test models/20240313_URA_Planterbox.ifc"
-)
+DEFAULT_IFC = ground_truth.resolve_model_path(ground_truth.DEFAULT_DISTRIBUTED_IFC_REL)
 DEFAULT_RULE = (
     "Every door (IfcDoor) in the model must have a clear width of at least 900 mm. "
     "For this first check, use the door's OverallWidth attribute as the width. "
@@ -167,7 +165,6 @@ USABLE_2_CASES = {
     "space_elevation__mall": "EC3 same-storey elevation rule: 19 FAIL / 186 PASS / 4 NA. BIM consistency, not a regulation.",
     "space_elevation__scdf_3": "EC3 same-storey elevation rule: 1 FAIL / 53 PASS / 5 NA. BIM consistency, not a regulation.",
 }
-USABLE_2_SUITE_CASES = tuple(USABLE_2_CASES)
 # Main experiment (decision 2026-10-13): Solibri-derived references on models never used in development.
 HELDOUT_CASES = {
     "door_clear_width__clinic": "DIN 18040-1 clear width from Solibri SOL/208: 8 FAIL / 246 PASS; 2 curtain-wall doors adjudicated PASS (0.5 mm tolerance).",
@@ -180,30 +177,9 @@ for _case_id in solibri_reference.BUILDERS:
         HELDOUT_CASES[_case_id] = (f"EC3 '{solibri_reference.EC3_BY_ID[_rule_id].solibri_rule}' labelled from Solibri issues"
                                    + ("; known rule, new model." if _rule_id in solibri_reference.KNOWN_RULES else "."))
 HELDOUT_SUITE_CASES = tuple(c for c in HELDOUT_CASES if (ground_truth.GT_DIR / f"{c}.json").exists())
-# Held-out suite buttons. Key = suite index kind; "reasoning" overrides REASONING for that suite.
-HELDOUT_PILOTS = {
-    "heldout_h2_minimax": {"label": "Held-out extra planning step: M3 (MiniMax API), stateful", "provider": "minimax",
-                           "model": "MiniMax-M3", "mode": "stateful", "repeats": 2, "harness": 2},
-    # Same as heldout_h2_minimax (recorded reasoning false), but the plan call is added on top of the 20-call budget.
-    "heldout_h2_minimax_21": {"label": "Held-out extra planning step, 21 calls (plan + 20): M3 (MiniMax API), stateful",
-                              "provider": "minimax", "model": "MiniMax-M3", "mode": "stateful", "repeats": 2,
-                              "harness": 2, "reasoning": False, "max_model_calls": MAX_MODEL_CALLS + 1},
-    "heldout_luna": {"label": "Held-out: GPT-6 Luna (OpenRouter), stateful + stateless", "provider": "openrouter",
-                     "model": "openai/gpt-6-luna", "mode": "both", "repeats": 2, "harness": 1},
-    "heldout_m3_reasoning_stateful": {"label": "Held-out reasoning on: M3 (MiniMax API), stateful",
-                                      "provider": "minimax", "model": "MiniMax-M3", "mode": "stateful",
-                                      "repeats": 1, "harness": 1, "reasoning": True},
-    "heldout_m3_reasoning_stateless": {"label": "Held-out reasoning on: M3 (MiniMax API), stateless",
-                                       "provider": "minimax", "model": "MiniMax-M3", "mode": "stateless",
-                                       "repeats": 2, "harness": 1, "reasoning": True},
-    # Stateless counterpart of the Sonnet held-out run (suite 20261018-215712-011319: stateful, 1 x 95, reasoning false).
-    "heldout_sonnet_stateless": {"label": "Held-out: Sonnet 5.5 (OpenRouter), stateless", "provider": "openrouter",
-                                 "model": "anthropic/claude-sonnet-5.5", "mode": "stateless",
-                                 "repeats": 1, "harness": 1, "reasoning": False},
-}
 # Provider retries stay off per request (llm.max_retries=0, frozen). A suite case that fails inside
 # the provider client (overload, reply without content, connection) is rerun as a whole after a pause;
-# the failed attempt stays recorded as an error sweep, as with a manual resume.
+# the failed attempt stays recorded as an error sweep.
 PROVIDER_RETRY_DELAYS = (60, 300, 900)
 PROVIDER_MODULES = {"anthropic", "langchain_anthropic", "openrouter", "langchain_openrouter", "httpx", "httpcore"}
 RETRYABLE_CLIENT_STATUSES = {408, 409, 429}
@@ -454,19 +430,6 @@ class App(ctk.CTk):
         self.suite_btn = ctk.CTkButton(footer, text="Run 8-case health suite", height=34,
             command=self._on_suite, fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
         self.suite_btn.pack(fill="x", pady=(6, 0))
-        self.usable_2_suite_btn = ctk.CTkButton(
-            footer, text=f"Run {len(USABLE_2_SUITE_CASES)}-case usable_2 suite", height=34,
-            command=lambda: self._on_suite(USABLE_2_SUITE_CASES),
-            fg_color=SURFACE, hover_color=HOVER, text_color=TEXT, corner_radius=4)
-        self.usable_2_suite_btn.pack(fill="x", pady=(6, 0))
-        self.heldout_pilot_btns = {}
-        for kind, pilot in HELDOUT_PILOTS.items():
-            button = ctk.CTkButton(
-                footer, text=f"{pilot['label']}, {pilot['repeats']} run(s) x {len(HELDOUT_SUITE_CASES)} cases", height=34,
-                command=lambda kind=kind: self._on_heldout_pilot(kind),
-                fg_color=PRIMARY, hover_color=HOVER, text_color=TEXT, corner_radius=4)
-            button.pack(fill="x", pady=(6, 0))
-            self.heldout_pilot_btns[kind] = button
         self.stop_btn = ctk.CTkButton(footer, text="Stop after current run", height=28,
             command=self._on_stop, state="disabled", fg_color=SURFACE, hover_color=HOVER,
             text_color=ORANGE, corner_radius=4)
@@ -911,49 +874,11 @@ class App(ctk.CTk):
 
     # ---- run lifecycle -----------------------------------------------------
     def _set_suite_buttons(self, state: str) -> None:
-        for button in (self.suite_btn, self.usable_2_suite_btn, *self.heldout_pilot_btns.values()):
-            button.configure(state=state)
-
-    def _pilot_finished_cases(self, kind: str) -> set[str]:
-        """Held-out cases whose pilot run finished in an earlier session of this pilot (from the suite indexes)."""
-        finished = set()
-        for path in LOG_DIR.glob("*_health_suite.json"):
-            try:
-                suite = json.loads(path.read_text(encoding="utf-8"))
-            except (OSError, ValueError):
-                continue
-            if suite.get("kind") == kind:
-                finished.update(entry["case_id"] for entry in suite.get("cases", []) if entry.get("status") == "finished")
-        return finished
-
-    def _on_heldout_pilot(self, kind: str) -> None:
-        if self._suite is not None or (self.worker and self.worker.is_alive()):
-            return
-        pilot = HELDOUT_PILOTS[kind]
-        self.provider_var.set(pilot["provider"])
-        self.model_var.set(pilot["model"])
-        self.mode_var.set(pilot["mode"])
-        self.harness_choice.set(HARNESS_LABELS[pilot["harness"]])
-        self._on_harness(HARNESS_LABELS[pilot["harness"]])
-        self.repeats_var.set(pilot["repeats"])
-        self._on_repeats(pilot["repeats"])
-        done = self._pilot_finished_cases(kind) & set(HELDOUT_SUITE_CASES)
-        cases = HELDOUT_SUITE_CASES
-        if done:
-            remaining = tuple(case for case in HELDOUT_SUITE_CASES if case not in done)
-            choice = messagebox.askyesnocancel(
-                "Resume held-out pilot",
-                f"{len(done)} of {len(HELDOUT_SUITE_CASES)} cases already finished in earlier pilot sessions.\n\n"
-                f"Yes: run the remaining {len(remaining)} cases.\nNo: run all {len(HELDOUT_SUITE_CASES)} cases again.\n"
-                "Cancel: do nothing.", parent=self)
-            if choice is None or (choice and not remaining):
-                return
-            cases = remaining if choice else HELDOUT_SUITE_CASES
-        self._on_suite(cases, kind=kind, reasoning=pilot.get("reasoning"),
-                       budget=pilot.get("max_model_calls", MAX_MODEL_CALLS))
+        self.suite_btn.configure(state=state)
 
     def _on_suite(self, case_ids: tuple[str, ...] = HEALTH_SUITE_CASES, kind: str = "suite",
-                  reasoning: bool | None = None, budget: int = MAX_MODEL_CALLS) -> None:
+                  reasoning: bool | None = None, budget: int = MAX_MODEL_CALLS, file_system: bool = False,
+                  single_shot: bool = False, script_mode: bool = False) -> None:
         if self._suite is not None or (self.worker and self.worker.is_alive()):
             return
         try:
@@ -978,7 +903,10 @@ class App(ctk.CTk):
             "Confirm paid health suite",
             f"{len(case_ids)} cases: {tiers}\n\n"
             f"Provider: {self.provider_var.get()}\nModel: {self.model_var.get()}\nModes: {', '.join(modes)}\n"
-            f"Harness: H{int(self.harness_var.get())} | Reasoning: {'on' if reasoning else 'off'}\n"
+            f"Harness: H{int(self.harness_var.get())} | Reasoning: {'on' if reasoning else 'off'}"
+            + (" | File system: on" if file_system else "")
+            + (" | Single-shot baseline: one model call, one script, no output shown" if single_shot else "")
+            + (" | Script mode: code runs only from workspace files" if script_mode else "") + "\n"
             f"{repeats} repeat(s) per mode: {runs} runs\n"
             f"Fixed {budget} model calls per run: at most {runs * budget} model calls\n\n"
             "Each case uses its stored rule and IFC, not the edited input fields.\n"
@@ -986,7 +914,8 @@ class App(ctk.CTk):
             "Token cost is unknown and can reach millions of tokens. This is not a token/spend cap.\n"
             "Stop takes effect after the current agent run.\n"
             f"A provider error reruns the whole case, at most {len(PROVIDER_RETRY_DELAYS)} times "
-            f"(after {', '.join(f'{d // 60} min' for d in PROVIDER_RETRY_DELAYS)}); other errors stop the suite.\n\nStart?",
+            f"(after {', '.join(f'{d // 60} min' for d in PROVIDER_RETRY_DELAYS)}), then skips it; "
+            "other errors stop the suite.\n\nStart?",
             parent=self, default="no",
         ):
             return
@@ -1004,6 +933,9 @@ class App(ctk.CTk):
                          "max_model_calls": budget, "harness": int(self.harness_var.get()),
                          "reasoning": reasoning,
                          "env_primer": os.environ.get("ENV_PRIMER", "1").lower() not in ("0", "false", "no"),
+                         "file_system": file_system,
+                         "single_shot": single_shot,
+                         "script_mode": script_mode,
                          "provider_retry_delays": list(PROVIDER_RETRY_DELAYS)},
             "requested_runs": runs, "finished_runs": 0, "complete_runs": 0,
             "known_input_tokens": 0, "known_output_tokens": 0, "usage_complete": True,
@@ -1028,8 +960,8 @@ class App(ctk.CTk):
         if self._stop_requested.is_set():
             self._end_suite("stopped")
             return
-        # Entries before the next case are finished cases or failed attempts that were rerun.
-        index = sum(entry["status"] == "finished" for entry in suite["cases"])
+        # Entries before the next case are finished cases, failed attempts that were rerun, and skipped cases.
+        index = self._suite_cases_done(suite)
         self._attempt_runs = [0, 0]
         if index == len(suite["case_ids"]):
             self._end_suite("finished")
@@ -1088,6 +1020,29 @@ class App(ctk.CTk):
         self._suite_retry = self.after(delay * 1000, self._start_next_suite_case)
         return True
 
+    @staticmethod
+    def _suite_cases_done(suite: dict) -> int:
+        return sum(entry["status"] == "finished" or bool(entry.get("skipped")) for entry in suite["cases"])
+
+    def _skip_suite_case(self) -> None:
+        """Retries used up: record the case as failed and continue. It stays unfinished for analysis."""
+        suite = self._suite
+        entry = suite["cases"][-1]
+        finished, complete = self._attempt_runs
+        entry.update(provider_error=True, discarded_runs=finished, skipped=True)
+        suite["finished_runs"] -= finished
+        suite["complete_runs"] -= complete
+        suite.setdefault("skipped_cases", []).append(entry["case_id"])
+        self._save_suite()
+        message = (f"Provider error on {entry['case_id']} after {len(PROVIDER_RETRY_DELAYS)} retries: "
+                   "case skipped, continuing with the next case.")
+        self._write("\n" + message + "\n", "notice")
+        self.suite_status.configure(text=message, text_color=ORANGE)
+        self.run_btn.configure(state="disabled")
+        self._set_suite_buttons("disabled")
+        self._set_settings_enabled(False)
+        self._suite_next = True
+
     def _end_suite(self, status: str) -> None:
         if self._suite_retry is not None:
             self.after_cancel(self._suite_retry)
@@ -1097,7 +1052,10 @@ class App(ctk.CTk):
         self._save_suite()
         tokens = suite["known_input_tokens"] + suite["known_output_tokens"]
         caption = f"Suite {status} | {suite['finished_runs']}/{suite['requested_runs']} runs finished\n{suite['complete_runs']} complete | {tokens:,} known tokens"
-        self.suite_status.configure(text=caption, text_color=RED if status == "error" else MUTED)
+        skipped = suite.get("skipped_cases") or []
+        if skipped:
+            caption += f"\n{len(skipped)} case(s) skipped after provider errors"
+        self.suite_status.configure(text=caption, text_color=RED if status == "error" else ORANGE if skipped else MUTED)
         self.header.configure(text=caption.replace("\n", " | "))
         self.artifact_label.configure(text=f"Suite index: {self._suite_path}")
         self._suite = None
@@ -1161,10 +1119,16 @@ class App(ctk.CTk):
         harness = int(self.harness_var.get())
         case_id = self.current_case or "custom"
         suite_id = self._suite["suite_id"] if self._suite is not None else ""
+        file_system = False
+        single_shot = False
+        script_mode = False
         if self._suite is not None:
             settings = self._suite["settings"]
             modes, repeats, max_iter = settings["modes"], settings["repeats"], settings["max_model_calls"]
             harness, reasoning_enabled, env_primer = settings["harness"], settings["reasoning"], settings["env_primer"]
+            file_system = bool(settings.get("file_system", False))
+            single_shot = bool(settings.get("single_shot", False))
+            script_mode = bool(settings.get("script_mode", False))
 
         stamp = _dt.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
         session_id = f"gui-{stamp}-{case_id}"
@@ -1201,7 +1165,14 @@ class App(ctk.CTk):
             f"- **Health suite:** {suite_id or 'none'}\n"
             f"- **Modes:** {', '.join(modes)}  \u00d7 {repeats}\n"
             f"- **Harness:** level {harness}\n"
-            f"- **Agent protocol:** {AGENT_PROTOCOL}\n"
+            f"- **Agent protocol:** {SCRIPT_PROTOCOL if script_mode else SINGLE_SHOT_PROTOCOL if single_shot else FILES_PROTOCOL if file_system else AGENT_PROTOCOL}\n"
+            + ("- **Single-shot baseline:** one model call; its first run_python call runs once; no output shown; "
+               "verdict derived from the committed labels\n" if single_shot else "")
+            + ("- **File system:** on (run workspace shared by all workers; tools ls, read_file, write_file, edit_file)\n"
+               if file_system else "")
+            + ("- **Script mode:** code runs only from workspace files, each run in a fresh interpreter; tools "
+               "write_file/edit_file (run=true saves and runs), run_file, ls, read_file; no run_python\n"
+               if script_mode else "") +
             f"- **Provider:** {identity['provider']}\n"
             f"- **Model:** {model}\n"
             f"- **Completion checks:** v{COMPLETION_CHECKS_VERSION} (IFC scope and committed labels; no reference answers)\n"
@@ -1246,6 +1217,7 @@ class App(ctk.CTk):
                     reasoning=reasoning_enabled, env_primer=env_primer, library=None,
                     output_limit=config.OUTPUT_CHAR_LIMIT, log_path=self.current_log_path,
                     warning=lambda message: self.q.put(("notice", {"message": message})),
+                    file_system=file_system, single_shot=single_shot, script_mode=script_mode,
                 )
                 per_mode: dict[str, list] = {}
                 for mode in modes:
@@ -1261,13 +1233,20 @@ class App(ctk.CTk):
                         executor = make_executor(
                             stateful=(mode == "stateful"),
                             output_char_limit=config.OUTPUT_CHAR_LIMIT,
+                            file_system=file_system or script_mode,
                         )
-                        agent = CodeActAgent(
-                            llm_client, executor,
-                            max_iterations=max_iter, reasoning_enabled=reasoning_enabled,
-                            env_primer=env_primer,
-                            harness=harness,
-                        )
+                        if script_mode:
+                            agent = ScriptAgent(llm_client, executor, max_iterations=max_iter,
+                                                reasoning_enabled=reasoning_enabled, env_primer=env_primer)
+                        else:
+                            agent = CodeActAgent(
+                                llm_client, executor,
+                                max_iterations=max_iter, reasoning_enabled=reasoning_enabled,
+                                env_primer=env_primer,
+                                harness=harness,
+                                file_system=file_system,
+                                single_shot=single_shot,
+                            )
                         trace_attrs = {
                             "session_id": session_id,
                             "tags": ["gui"],
@@ -1429,6 +1408,14 @@ class App(ctk.CTk):
             self._write("Plan\n", "hdr")
             self._write(payload["content"] + "\n", "reason")
             self._log(f"\n## Plan\n\n{payload['content']}\n")
+        elif event_type == "file_tool":
+            arguments = ", ".join(f"{key}={value!r}" if key not in ("content", "old_string", "new_string")
+                                  else f"{key}=<{len(str(value))} chars>" for key, value in payload["arguments"].items())
+            self._write(f"File tool: {payload['name']}({arguments})\n", "hdr")
+            self._write(payload["result"] + "\n", "bad" if payload["error"] else "out")
+            texts = "".join(f"\n{key}:\n\n```\n{str(value)[:4000]}\n```\n" for key, value in payload["arguments"].items()
+                            if key in ("content", "old_string", "new_string"))
+            self._log(f"\n### File tool: {payload['name']}({arguments})\n{texts}\n```\n{payload['result']}\n```\n")
         elif event_type == "evaluation":
             self._write(f"Evaluator \u00b7 A\u222a = {payload['accuracy']:.3f}\n", "hdr")
             self._write(payload["feedback"] + "\n", "notice")
@@ -1482,7 +1469,7 @@ class App(ctk.CTk):
                 self._attempt_runs[0] += 1
                 self._attempt_runs[1] += payload["completion_status"] == "complete"
                 tokens = suite["known_input_tokens"] + suite["known_output_tokens"]
-                case_number = sum(entry["status"] == "finished" for entry in suite["cases"]) + 1
+                case_number = self._suite_cases_done(suite) + 1
                 self.suite_status.configure(text=f"Case {case_number}/{len(suite['case_ids'])} | {suite['finished_runs']}/{suite['requested_runs']} runs finished\n{tokens:,} known tokens")
                 self._save_suite()
         elif event_type == "__threaddone__":
@@ -1503,8 +1490,9 @@ class App(ctk.CTk):
                 self._suite["cases"][-1].update(status=status,
                     report_path=str(self.current_report_path) if self.current_report_path else None)
                 self._save_suite()
-                if status == "error" and payload.get("provider_error") and not self._stop_requested.is_set() \
-                        and self._retry_suite_case():
+                if status == "error" and payload.get("provider_error") and not self._stop_requested.is_set():
+                    if not self._retry_suite_case():
+                        self._skip_suite_case()
                     return
                 if status != "finished" or self._stop_requested.is_set():
                     self._end_suite(status if status != "finished" else "stopped")

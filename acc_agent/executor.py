@@ -122,11 +122,13 @@ def make_executor(
     output_char_limit: int = 6000,
     skill_library: object | None = None,
     runtime: str | None = None,
+    file_system: bool = False,
 ):
     """Build the kernel runtime; explicit legacy runtime selections are rejected.
 
     EXECUTION_RUNTIME is retired. Stateful runs keep their worker, while
     stateless runs restart it between blocks. External files can still persist.
+    ``file_system`` gives the run one shared workspace (file-system condition).
     """
     choice = (runtime or RUNTIME_ISOLATION).strip().lower()
     if choice not in ("kernel", "subprocess", "worker"):
@@ -138,4 +140,5 @@ def make_executor(
         stateful=stateful,
         output_char_limit=output_char_limit,
         skill_library=skill_library,
+        file_system=file_system,
     )

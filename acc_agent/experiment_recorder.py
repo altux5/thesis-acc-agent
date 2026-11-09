@@ -14,7 +14,9 @@ from pathlib import Path
 from code_identity import capture_module, module_snapshot
 capture_module()
 
-from agent import AGENT_PROTOCOL, build_system_prompt, save_transcript
+from agent import (AGENT_PROTOCOL, FILE_TOOL_CALLS_PER_MODEL_CALL, FILES_PROTOCOL, SINGLE_SHOT_PROTOCOL,
+                   build_single_shot_prompt, build_system_prompt, save_transcript)
+from file_tools import FILE_TOOL_NAMES, MAX_FILE_BYTES
 from benchmark_audit import audit_case, file_hash
 from completion import COMPLETION_CHECKS_VERSION
 from executor import RUNTIME_ISOLATION
@@ -24,7 +26,7 @@ from llm import model_identity
 
 PROJECT_DIR = Path(__file__).resolve().parent
 CORE_FILES = ("agent.py", "completion.py", "executor.py", "llm.py", "scoring.py",
-              "experiment_recorder.py", "experiments.py", "code_identity.py")
+              "experiment_recorder.py", "experiments.py", "code_identity.py", "file_tools.py")
 
 
 def code_snapshot() -> dict:
@@ -91,12 +93,16 @@ class RunTicket:
 class SweepRecorder:
     def __init__(self, *, entrypoint, requested, case, rule, ifc_path, client,
                  max_iterations, reasoning, env_primer, library, output_limit,
-                 log_path="", warning=print, store=None, runtime=None):
+                 log_path="", warning=print, store=None, runtime=None, file_system=False, single_shot=False,
+                 script_mode=False):
         """Record kernel-only runs; library and runtime are ignored legacy inputs."""
         self.warning = warning
         self.store = None
         self.sweep_id = None
         self.library = None
+        self.file_system = file_system
+        self.single_shot = single_shot
+        self.script_mode = script_mode
         self.ifc_path = Path(ifc_path).resolve()
         self.log_path = str(Path(log_path).resolve()) if log_path else ""
         self.base = {}
@@ -144,6 +150,18 @@ class SweepRecorder:
                 "core_files": code_snapshot(), "runtime": runtime_snapshot(), "audit": audit,
                 "order": "mode-blocks", "token_accounting": "v2: input includes reported cache reads/writes once; partial usage is a known lower bound, not full request cost",
             }
+            if file_system:
+                self.base.update(agent_protocol=FILES_PROTOCOL, file_system={
+                    "tools": list(FILE_TOOL_NAMES), "workspace": "one folder per run, shared by every worker of the run",
+                    "max_file_bytes": MAX_FILE_BYTES, "file_tool_calls_per_model_call": FILE_TOOL_CALLS_PER_MODEL_CALL,
+                    "output_offload": False, "recorded": "per-tool call counts and a manifest (names, sizes, sha256; no contents)"})
+            if single_shot:
+                self.base.update(agent_protocol=SINGLE_SHOT_PROTOCOL, single_shot={
+                    "model_calls": 1, "executions": 1, "repairs": 0, "output_shown_to_model": False,
+                    "verdict": "derived from the committed labels and checked by the completion checks"})
+            if script_mode:
+                import script_agent
+                self.base.update(agent_protocol=script_agent.SCRIPT_PROTOCOL, script_mode=script_agent.RECORDING)
         except Exception as exc:
             self._warn(exc)
 
@@ -151,19 +169,34 @@ class SweepRecorder:
         self.last_error = f"Experiment recording warning: {type(exc).__name__}: {exc}"
         self.warning(self.last_error)
 
+    def _code_snapshot(self) -> dict:
+        snapshot = code_snapshot()
+        if self.entry_file:
+            snapshot[self.entry_file] = module_snapshot(PROJECT_DIR / self.entry_file)
+        if self.script_mode:
+            snapshot["script_agent.py"] = module_snapshot(PROJECT_DIR / "script_agent.py")
+        return snapshot
+
+    def _system_prompt(self, mode: str) -> str:
+        if self.single_shot:
+            return build_single_shot_prompt(str(self.ifc_path), self.base["env_primer"])
+        if self.script_mode:
+            import script_agent
+            return script_agent.build_script_prompt(str(self.ifc_path), self.base["env_primer"], self.base["max_iterations"])
+        return build_system_prompt(str(self.ifc_path), mode == "stateful", self.base["env_primer"],
+                                   self.base["max_iterations"], file_system=self.file_system)
+
     def start_run(self, mode: str, repeat: int, harness: int) -> RunTicket | None:
         if self.store is None or self.sweep_id is None or not self.base:
             return None
         try:
             skills = skills_snapshot(self.library)
-            system = build_system_prompt(str(self.ifc_path), mode == "stateful", self.base["env_primer"], self.base["max_iterations"])
+            system = self._system_prompt(mode)
             current = {**self.base, "mode": mode, "harness": harness, "feedback_leakage": False,
                        "skills_enabled": skills["enabled"], "skill_snapshot": skills,
                        "skill_hash": fingerprint(skills), "system_prompt_hash": fingerprint(system),
                        "system_prompt_hash_kind": "skills-disabled; actual prompt hash retained on run"}
-            current["core_files"] = code_snapshot()
-            if self.entry_file:
-                current["core_files"][self.entry_file] = module_snapshot(PROJECT_DIR / self.entry_file)
+            current["core_files"] = self._code_snapshot()
             current["runtime_code_verified"] = code_verified(current["core_files"])
             if not current["runtime_code_verified"]:
                 self.warning("Imported code differs from disk or is unverified; this run is excluded from comparable results. Restart the application after edits.")
@@ -184,9 +217,7 @@ class SweepRecorder:
             integrity_error = ""
             try:
                 after = skills_snapshot(self.library)
-                ending_code = code_snapshot()
-                if self.entry_file:
-                    ending_code[self.entry_file] = module_snapshot(PROJECT_DIR / self.entry_file)
+                ending_code = self._code_snapshot()
                 changed = (fingerprint(after) != fingerprint(ticket.initial_skills)
                            or not ticket.configuration["runtime_code_verified"]
                            or ending_code != ticket.configuration["core_files"]
@@ -226,6 +257,8 @@ class SweepRecorder:
                     messages=result.transcript, execution_records=result.execution_records, plan=result.plan,
                     actual_system_prompt_hash=fingerprint(result.transcript[0]["content"]) if result.transcript and result.transcript[0].get("role") == "system" else None,
                 )
+                if self.file_system or self.script_mode:
+                    metadata.update(file_tool_calls=result.file_tool_calls, workspace=result.workspace)
             status = "error" if error else result.completion_status if result is not None else "interrupted"
             self.store.finish_run(ticket.id, status, scores.as_dict() if scores is not None else None, **metadata)
         except Exception as exc:

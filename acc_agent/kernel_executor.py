@@ -36,6 +36,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import weakref
 from pathlib import Path
 # Bound at import: the reader must be a real background thread, and callers
@@ -85,10 +86,12 @@ class KernelError(RuntimeError):
 class _Worker:
     """One child process plus the reader thread draining its control channel."""
 
-    def __init__(self, skills: bool) -> None:
+    def __init__(self, skills: bool, workspace: str | None = None) -> None:
         # A private cwd, so a relative write neither lands in the source tree nor
         # outlives the worker; the worker refuses Python-level writes elsewhere.
-        self.scratch = tempfile.mkdtemp(prefix="acc_kernel_")
+        # With a run workspace (file-system condition) the executor owns the folder.
+        self.owns_scratch = workspace is None
+        self.scratch = tempfile.mkdtemp(prefix="acc_kernel_") if workspace is None else workspace
         environment = _child_environment()
         for name in ("TEMP", "TMP", "TMPDIR"):
             environment[name] = self.scratch
@@ -106,7 +109,8 @@ class _Worker:
                 bufsize=1,
             )
         except OSError as exc:
-            shutil.rmtree(self.scratch, ignore_errors=True)
+            if self.owns_scratch:
+                shutil.rmtree(self.scratch, ignore_errors=True)
             raise KernelError(f"could not start the execution kernel: {exc}") from exc
         self._replies: queue.Queue = queue.Queue()
         self._reader = Thread(target=self._drain, daemon=True)
@@ -167,7 +171,8 @@ class _Worker:
             proc.wait(timeout=10)
         except subprocess.TimeoutExpired:
             pass
-        shutil.rmtree(self.scratch, ignore_errors=True)
+        if self.owns_scratch:
+            shutil.rmtree(self.scratch, ignore_errors=True)
 
     def shutdown(self) -> None:
         try:
@@ -195,6 +200,10 @@ class KernelCodeExecutor:
         saving and prompt instructions are disabled in the host and worker.
     timeout:
         Seconds one code block may run before the worker is killed.
+    file_system:
+        File-system condition: one run workspace shared by every worker of the run,
+        so its files survive stateless resets and restarts. Off: each worker keeps
+        its own scratch directory, deleted with the worker (the frozen behaviour).
     """
 
     def __init__(
@@ -203,6 +212,7 @@ class KernelCodeExecutor:
         output_char_limit: int = 6000,
         skill_library: object | None = None,
         timeout: float | None = None,
+        file_system: bool = False,
     ) -> None:
         if not isinstance(output_char_limit, int) or output_char_limit < 1:
             raise ValueError("output_char_limit must be a positive integer")
@@ -210,6 +220,9 @@ class KernelCodeExecutor:
         self.output_char_limit = output_char_limit
         self.skill_library = None
         self.timeout = DEFAULT_TIMEOUT if timeout is None else float(timeout)
+        self.file_system = file_system
+        self.workspace: str | None = tempfile.mkdtemp(prefix="acc_workspace_") if file_system else None
+        self.workspace_released = False
         self.last_error = False
         self.last_execution: dict = {}
         self.reported_labels: dict[str, str] = {}
@@ -219,7 +232,7 @@ class KernelCodeExecutor:
         self.restarts = 0
         # The finalizer must not close over ``self`` or the executor could never
         # be collected, so the worker lives in a slot the callback can reach.
-        self._slot: dict = {"worker": None}
+        self._slot: dict = {"worker": None, "workspace": self.workspace}
         self._finalizer = weakref.finalize(self, _shutdown_slot, self._slot)
         self._start()
 
@@ -227,26 +240,58 @@ class KernelCodeExecutor:
     def _worker(self) -> "_Worker | None":
         return self._slot["worker"]
 
+    @property
+    def _files_note(self) -> str:
+        return (" Files in the working folder remain; a file the interrupted block was writing "
+                "may be incomplete.") if self.file_system else ""
+
     # ---- worker lifetime ---------------------------------------------------
     def _skills_enabled(self) -> bool:
         return False
 
     def _start(self) -> None:
-        worker = _Worker(self._skills_enabled())
+        if self.workspace_released:
+            raise KernelError("the run workspace was released; this executor cannot run more code")
+        worker = _Worker(self._skills_enabled(), self.workspace)
         self._slot["worker"] = worker
         self.skill_load_issues = list(worker.skill_issues)
 
-    def _replace_worker(self) -> None:
+    def _replace_worker(self, graceful: bool = False) -> None:
         worker = self._slot["worker"]
         if worker is not None:
             self._slot["worker"] = None
-            worker.kill()
+            # A clean shutdown lets the interpreter flush files the block left open.
+            if graceful:
+                worker.shutdown()
+            else:
+                worker.kill()
         self.restarts += 1
         self._start()
 
     def close(self) -> None:
         self._finalizer.detach()
         _shutdown_slot(self._slot)
+
+    def release_workspace(self) -> dict:
+        """Stop the worker, record the workspace manifest, then delete the folder (file-system condition)."""
+        if not self.file_system:
+            return {}
+        if self.workspace_released:
+            return self._released
+        worker = self._slot["worker"]
+        self._slot["worker"] = None
+        if worker is not None:
+            worker.shutdown()
+        import file_tools
+        try:
+            record = file_tools.manifest(Path(self.workspace))
+        except OSError as exc:
+            record = {"error": f"{type(exc).__name__}: {exc}"}
+        record["cleanup_error"] = _remove_tree(self.workspace)
+        self.workspace_released = True
+        self._slot["workspace"] = None
+        self._released = record
+        return record
 
     def skill_prompt_section(self) -> str:
         return ""
@@ -264,7 +309,7 @@ class KernelCodeExecutor:
         }
         self._replace_worker()
         self.last_execution["kernel_restarted"] = True
-        return f"{note}\n\n{detail}"
+        return f"{note}{self._files_note}\n\n{detail}"
 
     def run(self, code: str) -> str:
         """Execute *code* in the worker, returning its captured output."""
@@ -272,7 +317,7 @@ class KernelCodeExecutor:
         self.last_execution = {}
         worker = self._worker
         if not self.stateful and worker is not None and worker.blocks:
-            self._replace_worker()
+            self._replace_worker(graceful=self.file_system)
             worker = self._worker
         if worker is None or not worker.alive:
             return self._fail(
@@ -343,9 +388,24 @@ class KernelCodeExecutor:
             output += (
                 "\n\nThe execution kernel was restarted after a fatal exception. "
                 "Everything defined earlier in the session is gone; the next "
-                "block starts from a fresh interpreter."
+                "block starts from a fresh interpreter." + self._files_note
             )
         return output
+
+
+def _remove_tree(path: str | None) -> str:
+    """Delete a run workspace, retrying briefly while Windows releases file handles."""
+    if not path or not os.path.exists(path):
+        return ""
+    error = ""
+    for delay in (0, 0.2, 0.5, 1.0, 2.0):
+        time.sleep(delay)
+        try:
+            shutil.rmtree(path)
+            return ""
+        except OSError as exc:
+            error = f"{type(exc).__name__}: {exc}"
+    return error
 
 
 def _shutdown_slot(slot: dict) -> None:
@@ -353,3 +413,6 @@ def _shutdown_slot(slot: dict) -> None:
     if worker is not None:
         slot["worker"] = None
         worker.shutdown()
+    if slot.get("workspace"):
+        _remove_tree(slot["workspace"])
+        slot["workspace"] = None

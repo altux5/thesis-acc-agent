@@ -12,6 +12,100 @@ from .test_agent import ScriptedClient, reply, python_call
 
 
 class RecorderTests(unittest.TestCase):
+    def test_file_system_condition_is_labelled_and_its_workspace_recorded(self):
+        import json
+        from agent import build_system_prompt
+        from experiments import fingerprint
+        with TemporaryDirectory() as directory, patch.dict("os.environ", {"EXPERIMENTS": "1"}):
+            path = Path(directory) / "fixture.ifc"
+            path.write_text("fixture", encoding="utf-8")
+            store = ExperimentStore(Path(directory) / "test.sqlite3")
+            for file_system in (False, True):
+                recorder = SweepRecorder(
+                    entrypoint="test", requested=1, case=None, rule="rule", ifc_path=path,
+                    client=Mock(provider="offline", model="offline", max_tokens=8000),
+                    max_iterations=3, reasoning=False, env_primer=False, library=None,
+                    output_limit=6000, store=store, file_system=file_system,
+                )
+                ticket = recorder.start_run("stateless", 1, 1)
+                configuration = ticket.configuration
+                expected_prompt = build_system_prompt(str(path.resolve()), False, False, 3, file_system=file_system)
+                self.assertEqual(configuration["system_prompt_hash"], fingerprint(expected_prompt))
+                self.assertIn("file_tools.py", configuration["core_files"])
+                result = AgentResult("FINAL: {}", 1, completion_status="incomplete",
+                                     file_tool_calls={"ls": {"calls": 1, "errors": 0}},
+                                     workspace={"files": [{"path": "a.py", "bytes": 1, "sha256": "x"}]})
+                recorder.finish_run(ticket, result)
+                recorder.finish()
+                with store.connection() as connection:
+                    details = json.loads(connection.execute("SELECT details FROM runs WHERE id=?", (ticket.id,)).fetchone()["details"])
+                if file_system:
+                    self.assertEqual(configuration["agent_protocol"], "langchain-codeact-v5-files-guided")
+                    self.assertEqual(configuration["file_system"]["tools"], ["ls", "read_file", "write_file", "edit_file"])
+                    self.assertFalse(configuration["file_system"]["output_offload"])
+                    self.assertEqual(details["workspace"]["files"][0]["path"], "a.py")
+                    self.assertEqual(details["file_tool_calls"]["ls"]["calls"], 1)
+                else:
+                    self.assertEqual(configuration["agent_protocol"], "langchain-codeact-v5")
+                    self.assertNotIn("file_system", configuration)
+                    self.assertNotIn("workspace", details)
+
+    def test_script_mode_is_labelled_with_its_prompt_code_and_workspace(self):
+        import json
+        from experiments import fingerprint
+        from script_agent import RECORDING, build_script_prompt
+        with TemporaryDirectory() as directory, patch.dict("os.environ", {"EXPERIMENTS": "1"}):
+            path = Path(directory) / "fixture.ifc"
+            path.write_text("fixture", encoding="utf-8")
+            store = ExperimentStore(Path(directory) / "test.sqlite3")
+            recorder = SweepRecorder(
+                entrypoint="test", requested=1, case=None, rule="rule", ifc_path=path,
+                client=Mock(provider="offline", model="offline", max_tokens=8000),
+                max_iterations=3, reasoning=False, env_primer=False, library=None,
+                output_limit=6000, store=store, script_mode=True,
+            )
+            ticket = recorder.start_run("stateless", 1, 1)
+            configuration = ticket.configuration
+            self.assertEqual(configuration["agent_protocol"], "langchain-codeact-v5-script-v2")
+            self.assertEqual(configuration["script_mode"], RECORDING)
+            self.assertNotIn("file_system", configuration)
+            self.assertEqual(configuration["system_prompt_hash"],
+                             fingerprint(build_script_prompt(str(path.resolve()), False, 3)))
+            self.assertEqual(configuration["core_files"]["script_agent.py"]["status"], "matches")
+            result = AgentResult("FINAL: {}", 1, completion_status="incomplete",
+                                 file_tool_calls={"write_file": {"calls": 1, "errors": 0}},
+                                 workspace={"files": [{"path": "check.py", "bytes": 1, "sha256": "x"}]})
+            recorder.finish_run(ticket, result)
+            recorder.finish()
+            with store.connection() as connection:
+                details = json.loads(connection.execute("SELECT details FROM runs WHERE id=?", (ticket.id,)).fetchone()["details"])
+            self.assertEqual(details["workspace"]["files"][0]["path"], "check.py")
+            self.assertEqual(details["file_tool_calls"]["write_file"]["calls"], 1)
+            self.assertFalse(details["context_changed"])
+
+    def test_single_shot_baseline_is_labelled_with_its_own_prompt_hash(self):
+        from agent import build_single_shot_prompt
+        from experiments import fingerprint
+        with TemporaryDirectory() as directory, patch.dict("os.environ", {"EXPERIMENTS": "1"}):
+            path = Path(directory) / "fixture.ifc"
+            path.write_text("fixture", encoding="utf-8")
+            recorder = SweepRecorder(
+                entrypoint="test", requested=1, case=None, rule="rule", ifc_path=path,
+                client=Mock(provider="offline", model="offline", max_tokens=8000),
+                max_iterations=1, reasoning=False, env_primer=False, library=None,
+                output_limit=6000, store=ExperimentStore(Path(directory) / "test.sqlite3"), single_shot=True,
+            )
+            ticket = recorder.start_run("stateless", 1, 1)
+            configuration = ticket.configuration
+            self.assertEqual(configuration["agent_protocol"], "langchain-codeact-v5-single-shot")
+            self.assertEqual(configuration["single_shot"]["repairs"], 0)
+            self.assertFalse(configuration["single_shot"]["output_shown_to_model"])
+            self.assertEqual(configuration["system_prompt_hash"],
+                             fingerprint(build_single_shot_prompt(str(path.resolve()), False)))
+            recorder.finish_run(ticket, AgentResult("FINAL: {}", 1, completion_status="incomplete"))
+            recorder.finish()
+            self.assertEqual(recorder.last_error, "")
+
     def test_retired_library_cannot_change_new_run_metadata_or_prompt(self):
         with TemporaryDirectory() as directory, patch.dict("os.environ", {"EXPERIMENTS": "1", "SKILLS": "1"}):
             path = Path(directory) / "fixture.ifc"

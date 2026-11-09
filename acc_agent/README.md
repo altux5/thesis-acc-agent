@@ -429,6 +429,12 @@ cumulative token/cost cap. `finalization_attempts` now counts FinalReport submis
 
 New runs carry `agent_protocol=langchain-codeact-v5` and recording version 6; do not
 pool them with historical protocols or budgets as if they were identical settings.
+Agent variants carry their own protocol label: `langchain-codeact-v5-files-guided`
+(file tools beside `run_python`), `langchain-codeact-v5-single-shot` (one script, run
+once) and `langchain-codeact-v5-script-v2` (script mode, `script_agent.py`: code runs only
+from workspace files, each run in a fresh interpreter; `write_file`/`edit_file` with
+`run=true` save and run in one call, `run_file` re-runs; no `run_python`; v1 ran only as
+a pilot). Script mode subclasses the frozen agent and leaves its files unchanged.
 v5 is frozen for the final evaluation (2026-10-12). Recording v5 adds wall-clock
 `seconds` per model call and per code block (stateless blocks include the worker
 restart and IFC reload); agent behaviour is unchanged from recording v4. Recording v6
@@ -462,6 +468,11 @@ post-change results as identical experimental conditions. Existing scoring and
 its treatment of missing labels are unchanged; read completion alongside scores.
 
 ### Harder cases from the advisor's BCA test set
+
+The BCA test models and expert workbooks are local only: there is no permission to
+redistribute them, so the public repository contains neither (`models/MODELS.json`
+marks them `"distributed": false`). The BCA cases and their tests run, or skip, only
+where these files are available locally.
 
 The advisor's harness (`bca_tests-harness_improvements/`) ships expert ground
 truth for real, geometry-dependent rules. [import_bca_gt.py](import_bca_gt.py)
@@ -761,6 +772,11 @@ Restart an existing GUI process to load UI changes.
   case picker by Pilots, All cases, complexity, Controls or Custom. Reference
   details are expandable; model and rule remain editable. Run stays visible at the
   bottom while the settings scroll. Settings are locked during a sweep.
+- The sidebar footer has three buttons: **Run checks** (the selected case or a
+  custom rule), **Run 8-case health suite** and **Stop after current run**. The
+  buttons of the finished experiment suites (held-out pilots, chains, usable_2
+  suite) were retired on 2026-11-07 and archived in
+  [archive/heldout_suite_buttons.py](archive/heldout_suite_buttons.py).
 - The latest-result panel separates the verdict, completion status, violation
   count, submitted-label count, iterations and input/output tokens. **Raw verdict**
   retains access to the full recorded response and completion reason. Incomplete

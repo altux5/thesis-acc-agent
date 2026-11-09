@@ -86,6 +86,9 @@ DEFAULT_IFC_REL = (
     "bca_tests-main/bca_tests-main/BCATestCases/"
     "Planter boxes/Test models/20240313_URA_Planterbox.ifc"
 )
+# Prefilled model of the GUI and CLI. The BCA default above is local only (not
+# distributed), so they start from a published model instead.
+DEFAULT_DISTRIBUTED_IFC_REL = "ACC-function-generation/acc/bim_models/duplex/arc.ifc"
 DEFAULT_RULE = (
     "Every door (IfcDoor) in the model must have a clear width of at least 900 mm. "
     "For this first check, use the door's OverallWidth attribute as the width. "

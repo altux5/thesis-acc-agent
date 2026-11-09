@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import skill_library  # noqa: E402
 from agent import CodeActAgent  # noqa: E402
 from executor import make_executor  # noqa: E402
-from kernel_executor import KernelCodeExecutor  # noqa: E402
+from kernel_executor import KernelCodeExecutor, KernelError  # noqa: E402
 from .test_agent import ScriptedClient, reply, python_call, final_call  # noqa: E402
 
 
@@ -541,6 +541,78 @@ class FactoryTest(unittest.TestCase):
         self.addCleanup(kernel.close)
         for name in expected:
             self.assertTrue(hasattr(kernel, name), name)
+
+    def test_file_system_flag_reaches_the_executor(self):
+        for flag in (False, True):
+            executor = make_executor(file_system=flag)
+            self.addCleanup(executor.close)
+            self.assertEqual((executor.file_system, executor.workspace is not None), (flag, flag))
+
+
+class FileSystemWorkspaceTest(unittest.TestCase):
+    """File-system condition: one workspace per run, shared by every worker of the run."""
+
+    def executor(self, **kwargs) -> KernelCodeExecutor:
+        kwargs.setdefault("timeout", 30)
+        executor = KernelCodeExecutor(file_system=True, **kwargs)
+        self.addCleanup(executor.close)
+        return executor
+
+    def test_stateless_files_survive_resets_and_open_files_are_flushed(self):
+        executor = self.executor(stateful=False)
+        executor.run("open('saved.txt', 'w').write('kept')\nleft_open = open('open.txt', 'w')\nleft_open.write('flushed')")
+        output = executor.run("import os\nprint('left_open' in dir(), sorted(os.listdir('.')), open('saved.txt').read(),"
+                              " open('open.txt').read())")
+        self.assertIn("False ['open.txt', 'saved.txt'] kept flushed", output)
+        self.assertEqual(executor.restarts, 1)
+        self.assertEqual(os.path.normcase(executor.run("import os\nprint(os.getcwd())").strip()),
+                         os.path.normcase(executor.workspace))
+
+    def test_workers_restarted_after_a_timeout_keep_the_files(self):
+        executor = self.executor(stateful=True, timeout=3)
+        output = executor.run("import time\nopen('before.txt', 'w').write('x')\ntime.sleep(30)")
+        self.assertTrue(executor.last_execution["kernel_restarted"])
+        self.assertIn("Files in the working folder remain; a file the interrupted block was writing may be incomplete.",
+                      output)
+        self.assertIn("True", executor.run("import os\nprint(os.path.exists('before.txt'))"))
+
+    def test_writes_outside_the_workspace_are_still_refused(self):
+        executor = self.executor(stateful=False)
+        outside = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, outside, ignore_errors=True)
+        executor.run(f"open({str(outside / 'leak.txt')!r}, 'w').write('x')")
+        self.assertTrue(executor.last_error)
+        self.assertFalse((outside / "leak.txt").exists())
+
+    def test_release_records_a_manifest_then_deletes_the_workspace(self):
+        executor = self.executor(stateful=True)
+        executor.run("import os\nos.makedirs('lib', exist_ok=True)\nopen('lib/a.py', 'w').write('x = 1\\n')")
+        workspace = Path(executor.workspace)
+        record = executor.release_workspace()
+        self.assertEqual([item["path"] for item in record["files"]], ["lib/a.py"])
+        self.assertEqual(record["cleanup_error"], "")
+        self.assertFalse(workspace.exists())
+        self.assertIs(executor.release_workspace(), record)
+        with self.assertRaisesRegex(KernelError, "released"):
+            executor.run("print(1)")
+
+    def test_close_without_release_deletes_the_workspace(self):
+        executor = KernelCodeExecutor(file_system=True, stateful=False, timeout=30)
+        executor.run("open('a.txt', 'w').write('x')")
+        workspace = Path(executor.workspace)
+        executor.close()
+        self.assertFalse(workspace.exists())
+
+    def test_off_mode_keeps_the_frozen_restart_text_and_no_workspace(self):
+        executor = KernelCodeExecutor(stateful=True, timeout=3)
+        self.addCleanup(executor.close)
+        output = executor.run("import time\ntime.sleep(30)")
+        self.assertNotIn("Files in the working folder remain", output)
+        self.assertTrue(output.startswith("The execution kernel was restarted because this block exceeded its time "
+                                          "budget. Everything defined earlier in the session is gone; the next block "
+                                          "starts from a fresh interpreter. Reduce the work per block instead of "
+                                          "repeating it.\n\nExecutionTimeout"))
+        self.assertEqual((executor.workspace, executor.release_workspace()), (None, {}))
 
 
 if __name__ == "__main__":
