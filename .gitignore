@@ -34,3 +34,5 @@ bca_tests*/
 .DS_Store
 Thumbs.db
 !acc_agent/models/**/*.ifc
+acc_agent/models/bca/
+acc_agent/NOTES.md

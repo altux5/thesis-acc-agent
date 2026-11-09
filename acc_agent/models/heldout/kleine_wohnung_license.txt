@@ -1,0 +1,9 @@
+ISSUE_159_kleine_Wohnung_R22.ifc, unmodified copy.
+
+Source: public test files of the That Open Company web-ifc repository
+https://github.com/ThatOpen/engine_web-ifc/tree/main/tests/ifcfiles/public
+(shared in https://github.com/ThatOpen/engine_web-ifc/issues/159, May 2022)
+
+The file has no model-specific licence. It is distributed as part of the web-ifc repository,
+which is licensed under the Mozilla Public License, v. 2.0 (MPL-2.0). A copy of the MPL-2.0 is
+in engine_web-ifc_LICENSE.txt in this folder and at https://mozilla.org/MPL/2.0/.

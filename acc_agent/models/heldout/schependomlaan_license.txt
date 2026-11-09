@@ -1,0 +1,13 @@
+Schependomlaan.ifc (original file name "IFC Schependomlaan.ifc"), unmodified copy.
+
+Source: buildingSMART Community Sample Test Files, Dataset Schependomlaan, design model IFC
+https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/main/IFC%202.3.0.1%20(IFC%202x3)/Schependomlaan
+
+Terms (from the dataset README): "All data owners have given permission to use the data for
+scientific and academic purposes." No other licence is granted. Use this file for scientific
+and academic purposes only.
+
+Attribution: design model made in ArchiCAD by ROOT bv for Hendriks Bouw en Ontwikkeling. Data
+gathered during the master thesis project of Stijn van Schaijk at the Information Systems for
+the Built Environment (ISBE) group, TU Eindhoven, in collaboration with Hendriks Bouw en
+Ontwikkeling, ROOT, TNO and RAAMAC.

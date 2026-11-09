@@ -1,5 +1,5 @@
 {
-  "note": "Legacy model paths (as stored in ground_truth/*.json) mapped to files in this folder.",
+  "note": "Legacy model paths (as stored in ground_truth/*.json) mapped to files in this folder. Entries with \"distributed\": false are local only and not published.",
   "models": {
     "ACC-function-generation/acc/bim_models/dental_clinic/arc.ifc": {
       "file": "ec3/dental_clinic.ifc",
@@ -19,51 +19,63 @@
     },
     "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Headroom/Test Models/beta condo_uat1_v1.ifc": {
       "file": "bca/beta condo_uat1_v1.ifc",
-      "sha256": "e17e095343054e4ced8082fd5764db77d0ab3c4e42ef036a9d3d4fa092ec9e0b"
+      "sha256": "e17e095343054e4ced8082fd5764db77d0ab3c4e42ef036a9d3d4fa092ec9e0b",
+      "distributed": false
     },
     "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Location of exits & access to exits (EIB related)/Test models/uat2_scdf_2.2.12_5_v0.ifc": {
       "file": "bca/uat2_scdf_2.2.12_5_v0.ifc",
-      "sha256": "9650a46d924defce62d39522e7d7e682c938a0d201b470221c4db88be04ef8f9"
+      "sha256": "9650a46d924defce62d39522e7d7e682c938a0d201b470221c4db88be04ef8f9",
+      "distributed": false
     },
     "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Planter boxes/Test models/20240313_URA_Planterbox.ifc": {
       "file": "bca/20240313_URA_Planterbox.ifc",
-      "sha256": "166f23acd718e6b3e5d419c9d0fbc9d58a65a81fb0ca9c415bca89785d7cc164"
+      "sha256": "166f23acd718e6b3e5d419c9d0fbc9d58a65a81fb0ca9c415bca89785d7cc164",
+      "distributed": false
     },
     "bca_tests-harness_improvements/bca_tests-harness_improvements/BCATestCases/Staircase width/Test models/BCA_[E-3-3]_v8.ifc": {
       "file": "bca/BCA_[E-3-3]_v8.ifc",
-      "sha256": "89d11d0eb4a19773415b1239ebdd896264628a62f263c505643a986b2c738f81"
+      "sha256": "89d11d0eb4a19773415b1239ebdd896264628a62f263c505643a986b2c738f81",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Headroom/Test Models/beta condo_uat1_v1.ifc": {
       "file": "bca/beta condo_uat1_v1.ifc",
-      "sha256": "e17e095343054e4ced8082fd5764db77d0ab3c4e42ef036a9d3d4fa092ec9e0b"
+      "sha256": "e17e095343054e4ced8082fd5764db77d0ab3c4e42ef036a9d3d4fa092ec9e0b",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Headroom/Test Models/beta mall_UAT1_v6.4.ifc": {
       "file": "bca/beta mall_UAT1_v6.4.ifc",
-      "sha256": "544b8251f0f2dfb4e1e97df82a8b87a049d04609f8bc3a03ad36a6cceec6e77b"
+      "sha256": "544b8251f0f2dfb4e1e97df82a8b87a049d04609f8bc3a03ad36a6cceec6e77b",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Location of exits & access to exits (EIB related)/Test Models/uat2_scdf_2.2.12_3_v1.ifc": {
       "file": "bca/uat2_scdf_2.2.12_3_v1.ifc",
-      "sha256": "93c1cd5808ffac38501d5ad7dd29108dafaafdce8ba68a1024fc4691fa998911"
+      "sha256": "93c1cd5808ffac38501d5ad7dd29108dafaafdce8ba68a1024fc4691fa998911",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Location of exits & access to exits (EIB related)/Test Models/uat2_scdf_2.2.12_5_v0.ifc": {
       "file": "bca/uat2_scdf_2.2.12_5_v0.ifc",
-      "sha256": "9650a46d924defce62d39522e7d7e682c938a0d201b470221c4db88be04ef8f9"
+      "sha256": "9650a46d924defce62d39522e7d7e682c938a0d201b470221c4db88be04ef8f9",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Planter boxes/Test models/20240313_URA_Planterbox.ifc": {
       "file": "bca/20240313_URA_Planterbox.ifc",
-      "sha256": "166f23acd718e6b3e5d419c9d0fbc9d58a65a81fb0ca9c415bca89785d7cc164"
+      "sha256": "166f23acd718e6b3e5d419c9d0fbc9d58a65a81fb0ca9c415bca89785d7cc164",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Staircase width/Test models/BCA_[E-3-3]_v5-OBOS.ifc": {
       "file": "bca/BCA_[E-3-3]_v5-OBOS.ifc",
-      "sha256": "e0906e903387c18e21590cc8b39f86f9f61daa512a1188a615ce29a4c61224bc"
+      "sha256": "e0906e903387c18e21590cc8b39f86f9f61daa512a1188a615ce29a4c61224bc",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Staircase width/Test models/BCA_[E-3-3]_v8.ifc": {
       "file": "bca/BCA_[E-3-3]_v8.ifc",
-      "sha256": "89d11d0eb4a19773415b1239ebdd896264628a62f263c505643a986b2c738f81"
+      "sha256": "89d11d0eb4a19773415b1239ebdd896264628a62f263c505643a986b2c738f81",
+      "distributed": false
     },
     "bca_tests-main/bca_tests-main/BCATestCases/Staircase width/Test models/E3.3 INDUSTRIAL.V2.ifc": {
       "file": "bca/E3.3 INDUSTRIAL.V2.ifc",
-      "sha256": "c6eca3f01d94b06cfe7887bfa3ae680b45734298c8cdf2e8d200c5291a61d996"
+      "sha256": "c6eca3f01d94b06cfe7887bfa3ae680b45734298c8cdf2e8d200c5291a61d996",
+      "distributed": false
     },
     "heldout_models/Esplanades_1807_EP_AR_v18.ifc": {
       "file": "heldout/Esplanades_1807_EP_AR_v18.ifc",

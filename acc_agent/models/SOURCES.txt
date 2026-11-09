@@ -17,10 +17,14 @@ ec3/  (models of the EC3-2026 paper, copied from its repository)
 heldout/  (additional public models of the held-out test set)
   Esplanades, Schependomlaan, kleine Wohnung and NUS school: sources, licences, required
   attribution and SHA-256 in heldout/SOURCES_AND_CITATIONS.txt. Schependomlaan: data owners
-  permit scientific and academic use. kleine Wohnung and NUS: public test files of the
-  web-ifc repository (MPL-2.0), no model-specific licence.
+  permit scientific and academic use only (schependomlaan_license.txt). kleine Wohnung and
+  NUS: public test files of the web-ifc repository, no model-specific licence; distributed
+  under the repository's MPL-2.0 (kleine_wohnung_license.txt, nus_skolebygg_license.txt,
+  full licence text in engine_web-ifc_LICENSE.txt).
 
-bca/  (Singapore BCA test models used by the calibration cases)
-  Source  : the bca_tests repository by Stefan Fuchs (MIT licence, bca_tests_LICENSE.txt),
-            BCATestCases/<check>/Test models/. The copies under bca_tests-main and
-            bca_tests-harness_improvements were byte-identical and are stored once.
+bca/  (Singapore BCA test models used by the development cases; local only)
+  Not redistributed: there is no permission to publish these models. They are not in the
+  public repository; MODELS.json marks them "distributed": false and the BCA reference
+  cases are excluded from publication. Local source: the non-public bca_tests repository,
+  BCATestCases/<check>/Test models/. The copies under bca_tests-main and
+  bca_tests-harness_improvements were byte-identical and are stored once.

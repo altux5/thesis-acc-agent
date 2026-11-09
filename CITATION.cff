@@ -1,0 +1,83 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the master's thesis it was developed for.
+  The IFC models in acc_agent/models are third-party data; cite their original
+  sources as listed in acc_agent/models/SOURCES.txt.
+type: software
+title: "Thesis ACC Agent: a CodeAct agent for IFC compliance checking"
+authors:
+  - family-names: Cogalgil
+    given-names: Altug Eren
+    affiliation: Technical University of Munich
+repository-code: "https://github.com/altux5/thesis-acc-agent"
+license: MIT
+keywords:
+  - automated compliance checking
+  - building information modelling
+  - IFC
+  - large language models
+  - CodeAct
+  - LLM agents
+preferred-citation:
+  type: thesis
+  thesis-type: "Master's thesis"
+  title: "LLM-driven Automated Compliance Checking by Advancing CodeAct Strategies"
+  authors:
+    - family-names: Cogalgil
+      given-names: Altug Eren
+  institution:
+    name: Technical University of Munich
+  department: >-
+    TUM School of Engineering and Design, Chair of Computing in Civil and
+    Building Engineering
+  year: 2026
+  url: "https://github.com/altux5/thesis-acc-agent"
+references:
+  - type: data
+    title: "Medical-Dental Clinic and Duplex Apartment test files"
+    authors:
+      - name: buildingSMART International
+    year: 2020
+    license: CC-BY-4.0
+    url: "https://github.com/buildingsmart-community/Community-Sample-Test-Files"
+  - type: data
+    title: "Example model from Estonia, 1807_EP_AR_v18 (Esplanades)"
+    authors:
+      - name: Esplan
+    year: 2018
+    license: CC-BY-4.0
+    url: "https://github.com/buildingsmart-community/Community-Sample-Test-Files"
+  - type: data
+    title: "Dataset Schependomlaan"
+    authors:
+      - family-names: van Schaijk
+        given-names: Stijn
+    notes: >-
+      Design model by ROOT bv for Hendriks Bouw en Ontwikkeling; TU Eindhoven,
+      ISBE group. Scientific and academic use only.
+    url: "https://github.com/buildingsmart-community/Community-Sample-Test-Files"
+  - type: data
+    title: "KIT IFC Examples: FZK-Haus and Smiley West"
+    authors:
+      - name: >-
+          Institute for Automation and Applied Informatics (IAI), Karlsruhe
+          Institute of Technology (KIT)
+    url: "https://www.ifcwiki.org/index.php?title=KIT_IFC_Examples"
+  - type: software
+    title: "web-ifc (public IFC test files)"
+    authors:
+      - name: That Open Company
+    license: MPL-2.0
+    url: "https://github.com/ThatOpen/engine_web-ifc"
+  - type: software
+    title: "ACC-function-generation"
+    authors:
+      - family-names: Fuchs
+        given-names: Stefan
+      - family-names: Hellin
+        given-names: Sylvain
+      - family-names: Borrmann
+        given-names: André
+    year: 2026
+    license: MIT
+    url: "https://github.com/stefan-1992/ACC-function-generation"
